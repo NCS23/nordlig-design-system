@@ -1,0 +1,15 @@
+{
+  "color": {
+    "$description": "Level 4: Card component tokens",
+    "card": {
+      "bg":     { "$type": "color", "$value": "{color.bg.surface}" },
+      "border": { "$type": "color", "$value": "{color.border.muted}" }
+    }
+  },
+  "spacing": {
+    "card": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}" },
+      "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}" }
+    }
+  }
+}

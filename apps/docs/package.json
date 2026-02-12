@@ -1,0 +1,9 @@
+{
+  "name": "@nordlig/docs",
+  "version": "1.0.0-alpha",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Docs site coming soon'",
+    "build": "echo 'Docs site coming soon'"
+  }
+}

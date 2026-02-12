@@ -1,0 +1,16 @@
+{
+  "name": "@nordlig/styles",
+  "version": "1.0.0-alpha",
+  "description": "Nordlig Design System - Generated CSS & Tailwind Config",
+  "main": "dist/tokens.css",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@nordlig/tokens": "workspace:*"
+  },
+  "keywords": ["css", "tailwind", "nordlig", "design-system"]
+}

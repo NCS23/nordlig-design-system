@@ -1,0 +1,21 @@
+{
+  "color": {
+    "$description": "Level 4: Input component tokens",
+    "input": {
+      "bg":               { "$type": "color", "$value": "{color.bg.base}" },
+      "bg-disabled":      { "$type": "color", "$value": "{color.neutral.1.100}" },
+      "text":             { "$type": "color", "$value": "{color.text.base}" },
+      "text-placeholder": { "$type": "color", "$value": "{color.text.muted}" },
+      "border":           { "$type": "color", "$value": "{color.border.default}" },
+      "border-hover":     { "$type": "color", "$value": "{color.border.strong}" },
+      "border-focus":     { "$type": "color", "$value": "{color.border.focus}" },
+      "border-error":     { "$type": "color", "$value": "{color.border.error}" }
+    }
+  },
+  "spacing": {
+    "input": {
+      "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}" },
+      "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.sm}" }
+    }
+  }
+}

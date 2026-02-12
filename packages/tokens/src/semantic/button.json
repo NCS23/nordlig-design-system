@@ -1,0 +1,35 @@
+{
+  "color": {
+    "$description": "Level 4: Button component tokens - References Level 3 only",
+    "btn": {
+      "primary": {
+        "bg":        { "$type": "color", "$value": "{color.bg.primary}" },
+        "bg-hover":  { "$type": "color", "$value": "{color.bg.primary-hover}" },
+        "bg-active": { "$type": "color", "$value": "{color.bg.primary-active}" },
+        "text":      { "$type": "color", "$value": "{color.text.inverse}" },
+        "border":    { "$type": "color", "$value": "{color.bg.primary}" }
+      },
+      "secondary": {
+        "bg":        { "$type": "color", "$value": "{color.bg.surface}" },
+        "bg-hover":  { "$type": "color", "$value": "{color.neutral.1.200}" },
+        "text":      { "$type": "color", "$value": "{color.text.base}" },
+        "border":    { "$type": "color", "$value": "{color.border.default}" }
+      },
+      "ghost": {
+        "bg-hover": { "$type": "color", "$value": "{color.neutral.1.100}" },
+        "text":     { "$type": "color", "$value": "{color.text.primary}" }
+      },
+      "disabled": {
+        "bg":   { "$type": "color", "$value": "{color.interactive.primary-disabled}" },
+        "text": { "$type": "color", "$value": "{color.text.disabled}" }
+      }
+    }
+  },
+  "spacing": {
+    "btn": {
+      "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}" },
+      "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.sm}" },
+      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}" }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@nordlig/tokens",
+  "version": "1.0.0-alpha",
+  "description": "Nordlig Design System - Design Tokens (4-Layer Architecture)",
+  "main": "dist/tokens.js",
+  "types": "dist/tokens.d.ts",
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
+  "scripts": {
+    "build": "style-dictionary build --config style-dictionary.config.js",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.2.0"
+  },
+  "keywords": ["design-tokens", "nordlig", "design-system", "css-variables"]
+}

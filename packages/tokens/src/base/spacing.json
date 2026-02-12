@@ -1,0 +1,30 @@
+{
+  "spacing": {
+    "base": {
+      "$description": "Level 1: Base spacing scale",
+      "0":    { "$type": "dimension", "$value": "0px" },
+      "0-5":  { "$type": "dimension", "$value": "2px" },
+      "1":    { "$type": "dimension", "$value": "4px" },
+      "1-5":  { "$type": "dimension", "$value": "6px" },
+      "2":    { "$type": "dimension", "$value": "8px" },
+      "2-5":  { "$type": "dimension", "$value": "10px" },
+      "3":    { "$type": "dimension", "$value": "12px" },
+      "3-5":  { "$type": "dimension", "$value": "14px" },
+      "4":    { "$type": "dimension", "$value": "16px" },
+      "5":    { "$type": "dimension", "$value": "20px" },
+      "6":    { "$type": "dimension", "$value": "24px" },
+      "7":    { "$type": "dimension", "$value": "28px" },
+      "8":    { "$type": "dimension", "$value": "32px" },
+      "9":    { "$type": "dimension", "$value": "36px" },
+      "10":   { "$type": "dimension", "$value": "40px" },
+      "11":   { "$type": "dimension", "$value": "44px" },
+      "12":   { "$type": "dimension", "$value": "48px" },
+      "14":   { "$type": "dimension", "$value": "56px" },
+      "16":   { "$type": "dimension", "$value": "64px" },
+      "20":   { "$type": "dimension", "$value": "80px" },
+      "24":   { "$type": "dimension", "$value": "96px" },
+      "28":   { "$type": "dimension", "$value": "112px" },
+      "32":   { "$type": "dimension", "$value": "128px" }
+    }
+  }
+}

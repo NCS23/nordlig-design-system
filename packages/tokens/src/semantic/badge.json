@@ -1,0 +1,32 @@
+{
+  "color": {
+    "$description": "Level 4: Badge component tokens",
+    "badge": {
+      "success": {
+        "bg":     { "$type": "color", "$value": "{color.success.bg}" },
+        "text":   { "$type": "color", "$value": "{color.success.text}" },
+        "border": { "$type": "color", "$value": "{color.success.border}" }
+      },
+      "warning": {
+        "bg":     { "$type": "color", "$value": "{color.warning.bg}" },
+        "text":   { "$type": "color", "$value": "{color.warning.text}" },
+        "border": { "$type": "color", "$value": "{color.warning.border}" }
+      },
+      "error": {
+        "bg":     { "$type": "color", "$value": "{color.error.bg}" },
+        "text":   { "$type": "color", "$value": "{color.error.text}" },
+        "border": { "$type": "color", "$value": "{color.error.border}" }
+      },
+      "info": {
+        "bg":     { "$type": "color", "$value": "{color.info.bg}" },
+        "text":   { "$type": "color", "$value": "{color.info.text}" },
+        "border": { "$type": "color", "$value": "{color.info.border}" }
+      },
+      "neutral": {
+        "bg":     { "$type": "color", "$value": "{color.neutral.1.100}" },
+        "text":   { "$type": "color", "$value": "{color.text.muted}" },
+        "border": { "$type": "color", "$value": "{color.border.muted}" }
+      }
+    }
+  }
+}

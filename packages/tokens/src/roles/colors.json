@@ -1,0 +1,71 @@
+{
+  "color": {
+    "$description": "Level 3: Role/functional tokens - References Level 2 only",
+    "bg": {
+      "base":           { "$type": "color", "$value": "{color.neutral.1.50}" },
+      "surface":        { "$type": "color", "$value": "{color.neutral.1.100}" },
+      "elevated":       { "$type": "color", "$value": "{color.neutral.1.50}" },
+      "primary":        { "$type": "color", "$value": "{color.primary.1.500}" },
+      "primary-hover":  { "$type": "color", "$value": "{color.primary.1.600}" },
+      "primary-active": { "$type": "color", "$value": "{color.primary.1.700}" },
+      "secondary":       { "$type": "color", "$value": "{color.secondary.1.500}" },
+      "secondary-hover": { "$type": "color", "$value": "{color.secondary.1.600}" },
+      "success": { "$type": "color", "$value": "{color.accent.1.500}" },
+      "warning": { "$type": "color", "$value": "{color.accent.2.500}" },
+      "error":   { "$type": "color", "$value": "{color.accent.3.500}" },
+      "info":    { "$type": "color", "$value": "{color.accent.4.500}" }
+    },
+    "text": {
+      "base":     { "$type": "color", "$value": "{color.neutral.1.900}" },
+      "muted":    { "$type": "color", "$value": "{color.neutral.1.600}" },
+      "disabled": { "$type": "color", "$value": "{color.neutral.1.400}" },
+      "inverse":  { "$type": "color", "$value": "{color.neutral.1.50}" },
+      "primary":  { "$type": "color", "$value": "{color.primary.1.600}" },
+      "success":  { "$type": "color", "$value": "{color.accent.1.700}" },
+      "warning":  { "$type": "color", "$value": "{color.accent.2.700}" },
+      "error":    { "$type": "color", "$value": "{color.accent.3.700}" },
+      "info":     { "$type": "color", "$value": "{color.accent.4.700}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.neutral.1.300}" },
+      "muted":   { "$type": "color", "$value": "{color.neutral.1.200}" },
+      "strong":  { "$type": "color", "$value": "{color.neutral.1.400}" },
+      "focus":   { "$type": "color", "$value": "{color.primary.1.500}" },
+      "error":   { "$type": "color", "$value": "{color.accent.3.500}" },
+      "success": { "$type": "color", "$value": "{color.accent.1.500}" }
+    },
+    "interactive": {
+      "primary":          { "$type": "color", "$value": "{color.primary.1.500}" },
+      "primary-hover":    { "$type": "color", "$value": "{color.primary.1.600}" },
+      "primary-active":   { "$type": "color", "$value": "{color.primary.1.700}" },
+      "primary-disabled": { "$type": "color", "$value": "{color.neutral.1.300}" },
+      "secondary":        { "$type": "color", "$value": "{color.secondary.1.500}" },
+      "secondary-hover":  { "$type": "color", "$value": "{color.secondary.1.600}" },
+      "secondary-active": { "$type": "color", "$value": "{color.secondary.1.700}" }
+    },
+    "success": {
+      "bg-subtle": { "$type": "color", "$value": "{color.accent.1.50}" },
+      "bg":        { "$type": "color", "$value": "{color.accent.1.100}" },
+      "border":    { "$type": "color", "$value": "{color.accent.1.500}" },
+      "text":      { "$type": "color", "$value": "{color.accent.1.700}" }
+    },
+    "warning": {
+      "bg-subtle": { "$type": "color", "$value": "{color.accent.2.50}" },
+      "bg":        { "$type": "color", "$value": "{color.accent.2.100}" },
+      "border":    { "$type": "color", "$value": "{color.accent.2.500}" },
+      "text":      { "$type": "color", "$value": "{color.accent.2.700}" }
+    },
+    "error": {
+      "bg-subtle": { "$type": "color", "$value": "{color.accent.3.50}" },
+      "bg":        { "$type": "color", "$value": "{color.accent.3.100}" },
+      "border":    { "$type": "color", "$value": "{color.accent.3.500}" },
+      "text":      { "$type": "color", "$value": "{color.accent.3.700}" }
+    },
+    "info": {
+      "bg-subtle": { "$type": "color", "$value": "{color.accent.4.50}" },
+      "bg":        { "$type": "color", "$value": "{color.accent.4.100}" },
+      "border":    { "$type": "color", "$value": "{color.accent.4.500}" },
+      "text":      { "$type": "color", "$value": "{color.accent.4.700}" }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "spacing": {
+    "$description": "Level 3: Role spacing tokens",
+    "component": {
+      "padding": {
+        "sm": { "$type": "dimension", "$value": "{spacing.sm}" },
+        "md": { "$type": "dimension", "$value": "{spacing.md}" },
+        "lg": { "$type": "dimension", "$value": "{spacing.lg}" }
+      },
+      "gap": {
+        "sm": { "$type": "dimension", "$value": "{spacing.xs}" },
+        "md": { "$type": "dimension", "$value": "{spacing.sm}" },
+        "lg": { "$type": "dimension", "$value": "{spacing.md}" }
+      }
+    },
+    "layout": {
+      "gutter":  { "$type": "dimension", "$value": "{spacing.lg}" },
+      "section": { "$type": "dimension", "$value": "{spacing.2xl}" }
+    }
+  }
+}
