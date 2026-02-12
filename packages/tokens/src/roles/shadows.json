@@ -1,0 +1,10 @@
+{
+  "shadow": {
+    "$description": "Level 3: Role shadow tokens — functional elevation roles",
+    "elevation": {
+      "low":    { "$type": "shadow", "$value": "{shadow.sm}" },
+      "medium": { "$type": "shadow", "$value": "{shadow.md}" },
+      "high":   { "$type": "shadow", "$value": "{shadow.lg}" }
+    }
+  }
+}

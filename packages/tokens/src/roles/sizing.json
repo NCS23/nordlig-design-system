@@ -1,0 +1,27 @@
+{
+  "sizing": {
+    "$description": "Level 3: Role sizing tokens — functional component dimensions",
+    "component": {
+      "height": {
+        "sm": { "$type": "dimension", "$value": "{sizing.height.sm}" },
+        "md": { "$type": "dimension", "$value": "{sizing.height.md}" },
+        "lg": { "$type": "dimension", "$value": "{sizing.height.lg}" }
+      },
+      "padding-x": {
+        "sm": { "$type": "dimension", "$value": "{sizing.padding-x.sm}" },
+        "md": { "$type": "dimension", "$value": "{sizing.padding-x.md}" },
+        "lg": { "$type": "dimension", "$value": "{sizing.padding-x.lg}" }
+      },
+      "padding-y": {
+        "sm": { "$type": "dimension", "$value": "{sizing.padding-y.sm}" },
+        "md": { "$type": "dimension", "$value": "{sizing.padding-y.md}" },
+        "lg": { "$type": "dimension", "$value": "{sizing.padding-y.lg}" }
+      },
+      "gap": {
+        "sm": { "$type": "dimension", "$value": "{sizing.gap.sm}" },
+        "md": { "$type": "dimension", "$value": "{sizing.gap.md}" },
+        "lg": { "$type": "dimension", "$value": "{sizing.gap.lg}" }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "shadow": {
+    "$description": "Level 2: Global shadow tokens — semantic shadow mapping",
+    "xs":  { "$type": "shadow", "$value": "{shadow.base.xs}" },
+    "sm":  { "$type": "shadow", "$value": "{shadow.base.sm}" },
+    "md":  { "$type": "shadow", "$value": "{shadow.base.md}" },
+    "lg":  { "$type": "shadow", "$value": "{shadow.base.lg}" },
+    "xl":  { "$type": "shadow", "$value": "{shadow.base.xl}" },
+    "2xl": { "$type": "shadow", "$value": "{shadow.base.2xl}" }
+  }
+}

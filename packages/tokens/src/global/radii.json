@@ -1,0 +1,14 @@
+{
+  "radius": {
+    "$description": "Level 2: Global radius tokens — semantic radius mapping",
+    "none": { "$type": "dimension", "$value": "{radius.base.none}" },
+    "sm":   { "$type": "dimension", "$value": "{radius.base.sm}" },
+    "default": { "$type": "dimension", "$value": "{radius.base.base}" },
+    "md":   { "$type": "dimension", "$value": "{radius.base.md}" },
+    "lg":   { "$type": "dimension", "$value": "{radius.base.lg}" },
+    "xl":   { "$type": "dimension", "$value": "{radius.base.xl}" },
+    "2xl":  { "$type": "dimension", "$value": "{radius.base.2xl}" },
+    "3xl":  { "$type": "dimension", "$value": "{radius.base.3xl}" },
+    "full": { "$type": "dimension", "$value": "{radius.base.full}" }
+  }
+}

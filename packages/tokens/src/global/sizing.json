@@ -1,0 +1,25 @@
+{
+  "sizing": {
+    "$description": "Level 2: Global sizing tokens — semantic component dimensions",
+    "height": {
+      "sm": { "$type": "dimension", "$value": "{spacing.base.9}" },
+      "md": { "$type": "dimension", "$value": "{spacing.base.10}" },
+      "lg": { "$type": "dimension", "$value": "{spacing.base.11}" }
+    },
+    "padding-x": {
+      "sm": { "$type": "dimension", "$value": "{spacing.base.3}" },
+      "md": { "$type": "dimension", "$value": "{spacing.base.4}" },
+      "lg": { "$type": "dimension", "$value": "{spacing.base.8}" }
+    },
+    "padding-y": {
+      "sm": { "$type": "dimension", "$value": "{spacing.base.1-5}" },
+      "md": { "$type": "dimension", "$value": "{spacing.base.2}" },
+      "lg": { "$type": "dimension", "$value": "{spacing.base.2-5}" }
+    },
+    "gap": {
+      "sm": { "$type": "dimension", "$value": "{spacing.base.1-5}" },
+      "md": { "$type": "dimension", "$value": "{spacing.base.2}" },
+      "lg": { "$type": "dimension", "$value": "{spacing.base.2-5}" }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "font": {
+    "$description": "Level 2: Global typography tokens — semantic font mapping",
+    "size": {
+      "xs":   { "$type": "dimension", "$value": "{font.base.size.xs}" },
+      "sm":   { "$type": "dimension", "$value": "{font.base.size.sm}" },
+      "base": { "$type": "dimension", "$value": "{font.base.size.base}" },
+      "lg":   { "$type": "dimension", "$value": "{font.base.size.lg}" },
+      "xl":   { "$type": "dimension", "$value": "{font.base.size.xl}" },
+      "2xl":  { "$type": "dimension", "$value": "{font.base.size.2xl}" },
+      "3xl":  { "$type": "dimension", "$value": "{font.base.size.3xl}" },
+      "4xl":  { "$type": "dimension", "$value": "{font.base.size.4xl}" },
+      "5xl":  { "$type": "dimension", "$value": "{font.base.size.5xl}" }
+    },
+    "weight": {
+      "light":    { "$type": "fontWeight", "$value": "{font.base.weight.light}" },
+      "normal":   { "$type": "fontWeight", "$value": "{font.base.weight.normal}" },
+      "medium":   { "$type": "fontWeight", "$value": "{font.base.weight.medium}" },
+      "semibold": { "$type": "fontWeight", "$value": "{font.base.weight.semibold}" },
+      "bold":     { "$type": "fontWeight", "$value": "{font.base.weight.bold}" }
+    },
+    "family": {
+      "sans":  { "$type": "fontFamily", "$value": "{font.base.family.sans}" },
+      "serif": { "$type": "fontFamily", "$value": "{font.base.family.serif}" },
+      "mono":  { "$type": "fontFamily", "$value": "{font.base.family.mono}" }
+    },
+    "line-height": {
+      "tight":   { "$type": "number", "$value": "{font.base.lineHeight.tight}" },
+      "normal":  { "$type": "number", "$value": "{font.base.lineHeight.normal}" },
+      "relaxed": { "$type": "number", "$value": "{font.base.lineHeight.relaxed}" },
+      "loose":   { "$type": "number", "$value": "{font.base.lineHeight.loose}" }
+    },
+    "letter-spacing": {
+      "tight":  { "$type": "dimension", "$value": "{font.base.letterSpacing.tight}" },
+      "normal": { "$type": "dimension", "$value": "{font.base.letterSpacing.normal}" },
+      "wide":   { "$type": "dimension", "$value": "{font.base.letterSpacing.wide}" }
+    }
+  }
+}

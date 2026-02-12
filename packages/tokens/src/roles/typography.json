@@ -1,0 +1,26 @@
+{
+  "font": {
+    "$description": "Level 3: Role typography tokens — functional text roles",
+    "component": {
+      "size": {
+        "sm":   { "$type": "dimension", "$value": "{font.size.sm}" },
+        "md":   { "$type": "dimension", "$value": "{font.size.base}" },
+        "lg":   { "$type": "dimension", "$value": "{font.size.lg}" }
+      }
+    },
+    "heading": {
+      "size": {
+        "sm":  { "$type": "dimension", "$value": "{font.size.lg}" },
+        "md":  { "$type": "dimension", "$value": "{font.size.xl}" },
+        "lg":  { "$type": "dimension", "$value": "{font.size.2xl}" },
+        "xl":  { "$type": "dimension", "$value": "{font.size.3xl}" }
+      }
+    },
+    "body": {
+      "size": { "$type": "dimension", "$value": "{font.size.base}" }
+    },
+    "caption": {
+      "size": { "$type": "dimension", "$value": "{font.size.xs}" }
+    }
+  }
+}

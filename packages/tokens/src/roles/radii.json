@@ -1,0 +1,11 @@
+{
+  "radius": {
+    "$description": "Level 3: Role radius tokens — functional radius roles",
+    "component": {
+      "sm":   { "$type": "dimension", "$value": "{radius.sm}" },
+      "md":   { "$type": "dimension", "$value": "{radius.md}" },
+      "lg":   { "$type": "dimension", "$value": "{radius.lg}" },
+      "full": { "$type": "dimension", "$value": "{radius.full}" }
+    }
+  }
+}
