@@ -3,13 +3,13 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
 const cardVariants = cva(
-  'rounded-[var(--radius-card)] bg-white text-[var(--color-text-base)] flex flex-col gap-[var(--spacing-card-gap)] transition-shadow',
+  'rounded-[var(--radius-card)] bg-[var(--color-card-bg)] text-[var(--color-text-base)] flex flex-col gap-[var(--spacing-card-gap)] transition-shadow',
   {
     variants: {
       elevation: {
         flat: '',
-        raised: 'border border-[var(--color-card-border)] shadow-sm',
-        elevated: 'border border-[var(--color-card-border)] shadow-lg',
+        raised: 'border border-[var(--color-card-border)] [box-shadow:var(--shadow-card-raised)]',
+        elevated: 'border border-[var(--color-card-border)] [box-shadow:var(--shadow-card-elevated)]',
       },
       padding: {
         compact: 'p-[var(--spacing-card-padding-compact)]',
@@ -17,7 +17,7 @@ const cardVariants = cva(
         spacious: 'p-[var(--spacing-card-padding-spacious)]',
       },
       hoverable: {
-        true: 'cursor-pointer hover:shadow-xl',
+        true: 'cursor-pointer hover:[box-shadow:var(--shadow-card-hover)]',
         false: '',
       },
     },

@@ -1,0 +1,40 @@
+{
+  "color": {
+    "$description": "Level 4: FileUpload component tokens",
+    "fileupload": {
+      "zone-bg":          { "$type": "color", "$value": "{color.bg.surface}", "$description": "Upload zone background (slate-100) – visible against white page" },
+      "zone-border":      { "$type": "color", "$value": "{color.border.default}", "$description": "Dashed border – gray-300 for visibility" },
+      "zone-text":        { "$type": "color", "$value": "{color.text.base}", "$description": "Zone primary instruction text" },
+      "zone-text-sub":    { "$type": "color", "$value": "{color.text.muted}", "$description": "Zone secondary/sub text" },
+      "zone-icon":        { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Upload cloud icon – sky-500 brand color" },
+      "hover-bg":         { "$type": "color", "$value": "{color.primary.1.50}", "$description": "Sky-50 hover bg" },
+      "hover-border":     { "$type": "color", "$value": "{color.border.focus}", "$description": "Sky-500 solid hover border" },
+      "drag-bg":          { "$type": "color", "$value": "{color.primary.1.50}", "$description": "Sky-50 drag-over bg" },
+      "drag-border":      { "$type": "color", "$value": "{color.border.focus}", "$description": "Sky-500 drag-over border" },
+      "drag-icon":        { "$type": "color", "$value": "{color.bg.primary}", "$description": "Sky-500 drag-over icon" },
+      "drag-text":        { "$type": "color", "$value": "{color.text.primary}", "$description": "Sky-600 drag-over text" },
+      "file-text":        { "$type": "color", "$value": "{color.text.base}", "$description": "File name text" },
+      "file-size":        { "$type": "color", "$value": "{color.text.muted}", "$description": "File size text" },
+      "file-icon":        { "$type": "color", "$value": "{color.text.muted}", "$description": "File type icon" },
+      "file-remove":      { "$type": "color", "$value": "{color.text.muted}", "$description": "Remove button" },
+      "file-remove-hover": { "$type": "color", "$value": "{color.text.error}", "$description": "Remove hover" },
+      "progress-bg":      { "$type": "color", "$value": "{color.neutral.1.200}", "$description": "Progress track" },
+      "progress-fill":    { "$type": "color", "$value": "{color.bg.primary}", "$description": "Sky-500 progress bar" },
+      "error-text":       { "$type": "color", "$value": "{color.text.error}", "$description": "Error message" },
+      "error-border":     { "$type": "color", "$value": "{color.border.error}", "$description": "Error zone border" }
+    }
+  },
+  "radius": {
+    "fileupload": {
+      "zone":     { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px zone radius" },
+      "item":     { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px file item radius" },
+      "progress": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Pill progress bar" }
+    }
+  },
+  "spacing": {
+    "fileupload": {
+      "zone-padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "32px zone inner padding" },
+      "file-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between file items" }
+    }
+  }
+}

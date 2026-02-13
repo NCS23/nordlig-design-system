@@ -1,0 +1,20 @@
+{
+  "color": {
+    "$description": "Level 4: Checkbox component tokens",
+    "checkbox": {
+      "bg":              { "$type": "color", "$value": "{color.bg.paper}", "$description": "Unchecked background (white)" },
+      "border":          { "$type": "color", "$value": "{color.border.default}", "$description": "Unchecked border" },
+      "border-hover":    { "$type": "color", "$value": "{color.border.strong}", "$description": "Hover border" },
+      "checked-bg":      { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Sky blue checked bg" },
+      "checked-border":  { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Sky blue checked border" },
+      "checked-icon":    { "$type": "color", "$value": "{color.text.on-primary}", "$description": "White check icon" },
+      "focus-ring":      { "$type": "color", "$value": "{color.border.focus}", "$description": "Sky blue focus ring" },
+      "disabled-bg":     { "$type": "color", "$value": "{color.bg.surface}", "$description": "Disabled background" },
+      "label":           { "$type": "color", "$value": "{color.text.base}", "$description": "Label text color" },
+      "description":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
+    }
+  },
+  "radius": {
+    "checkbox": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "4px subtle rounding" }
+  }
+}

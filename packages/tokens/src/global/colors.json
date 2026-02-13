@@ -130,6 +130,9 @@
       }
     },
     "neutral": {
+      "white":   { "$type": "color", "$value": "{color.base.white}" },
+      "black":   { "$type": "color", "$value": "{color.base.black}" },
+      "overlay": { "$type": "color", "$value": "{color.base.overlay}" },
       "1": {
         "50":  { "$type": "color", "$value": "{color.base.slate.50}" },
         "100": { "$type": "color", "$value": "{color.base.slate.100}" },

@@ -1,0 +1,19 @@
+{
+  "color": {
+    "$description": "Level 4: Switch/Toggle component tokens",
+    "switch": {
+      "track-bg":           { "$type": "color", "$value": "{color.border.default}", "$description": "Unchecked track (gray-300)" },
+      "track-bg-checked":   { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Checked track (sky blue)" },
+      "thumb-bg":           { "$type": "color", "$value": "{color.bg.paper}", "$description": "White thumb" },
+      "focus-ring":         { "$type": "color", "$value": "{color.border.focus}", "$description": "Sky blue focus ring" },
+      "disabled-track-bg":  { "$type": "color", "$value": "{color.bg.surface}", "$description": "Disabled track" },
+      "label":              { "$type": "color", "$value": "{color.text.base}", "$description": "Label text color" },
+      "description":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
+    }
+  },
+  "shadow": {
+    "switch": {
+      "thumb": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Thumb shadow" }
+    }
+  }
+}

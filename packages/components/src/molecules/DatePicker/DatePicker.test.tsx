@@ -328,7 +328,7 @@ describe('DatePicker', () => {
 
   it('has right padding class for calendar icon', () => {
     render(<DatePicker />);
-    expect(screen.getByRole('textbox').className).toContain('pr-10');
+    expect(screen.getByRole('textbox').className).toContain('pr-[var(--spacing-input-icon-inset)]');
   });
 
   it('forwards ref to input', () => {

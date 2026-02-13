@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn';
 
 const inputVariants = cva(
   [
-    'w-full border bg-white text-[var(--color-input-text)]',
+    'w-full border bg-[var(--color-input-bg)] text-[var(--color-input-text)]',
     'placeholder:text-[var(--color-input-text-placeholder)]',
     'transition-colors',
     'hover:border-[var(--color-input-border-hover)]',
@@ -65,7 +65,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             type={effectiveType}
             aria-invalid={error || undefined}
-            className={cn(inputVariants({ inputSize, error }), 'pr-10', className)}
+            className={cn(inputVariants({ inputSize, error }), 'pr-[var(--spacing-input-icon-inset)]', className)}
             {...props}
           />
           <button
@@ -73,7 +73,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             tabIndex={-1}
             onClick={() => setShowPassword((prev) => !prev)}
             aria-label={showPassword ? 'Hide password' : 'Show password'}
-            className="absolute right-0 top-0 flex h-full items-center px-3 text-[var(--color-input-text-placeholder)] hover:text-[var(--color-input-text)] transition-colors"
+            className="absolute right-0 top-0 flex h-full items-center px-[var(--spacing-input-icon-padding)] text-[var(--color-input-text-placeholder)] hover:text-[var(--color-input-text)] transition-colors"
           >
             {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
           </button>

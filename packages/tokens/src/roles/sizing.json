@@ -15,7 +15,8 @@
       "padding-y": {
         "sm": { "$type": "dimension", "$value": "{sizing.padding-y.sm}" },
         "md": { "$type": "dimension", "$value": "{sizing.padding-y.md}" },
-        "lg": { "$type": "dimension", "$value": "{sizing.padding-y.lg}" }
+        "lg": { "$type": "dimension", "$value": "{sizing.padding-y.lg}" },
+        "xl": { "$type": "dimension", "$value": "{sizing.padding-y.xl}" }
       },
       "gap": {
         "sm": { "$type": "dimension", "$value": "{sizing.gap.sm}" },

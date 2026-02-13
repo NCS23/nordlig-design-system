@@ -2,6 +2,9 @@
   "color": {
     "base": {
       "$description": "Level 1: Base color palettes - Only layer with raw hex codes",
+      "white":   { "$type": "color", "$value": "#ffffff" },
+      "black":   { "$type": "color", "$value": "#000000" },
+      "overlay": { "$type": "color", "$value": "rgba(0, 0, 0, 0.5)", "$description": "50% black for modal overlays" },
       "slate": {
         "50":  { "$type": "color", "$value": "#f8fafc" },
         "100": { "$type": "color", "$value": "#f1f5f9" },

@@ -209,6 +209,194 @@ Level 4: font-{component}-{property}
 
 ---
 
+## 🔒 Token Hierarchy Enforcement - CRITICAL & MANDATORY
+
+### ⚠️ Prompt-Werte sind BEISPIELE — KEINE Implementierungswerte!
+
+Wenn ein Prompt, eine Anweisung oder ein Design-Mockup konkrete Werte wie `bg-white`, `text-gray-700`, `rounded-md`, `shadow-lg`, `px-4` enthält, sind das **BEISPIELE zur Kommunikation der Absicht**. Sie dürfen **NIEMALS** direkt als Tailwind-Klassen in den Code übernommen werden.
+
+**Jeder Wert MUSS durch die 4-Layer Token-Hierarchie übersetzt werden:**
+
+```
+Prompt sagt: "bg-white"
+  → L1: color.base.white (#ffffff)
+  → L2: color.neutral.white ({color.base.white})
+  → L3: color.bg.paper ({color.neutral.white})
+  → L4: color.{component}.bg ({color.bg.paper})
+  → Code: bg-[var(--color-{component}-bg)]
+```
+
+### Absolute Regeln
+
+#### 1. KEINE hardcoded Tailwind-Klassen für themeable Werte
+
+```tsx
+// ❌ VERBOTEN — hardcoded Farbe
+<div className="bg-white text-gray-700 border-gray-200">
+
+// ✅ RICHTIG — Token-basiert
+<div className="bg-[var(--color-card-bg)] text-[var(--color-text-base)] border-[var(--color-card-border)]">
+```
+
+#### 2. KEINE hardcoded Spacing für component-spezifische Werte
+
+```tsx
+// ❌ VERBOTEN — hardcoded Spacing
+<input className="px-4 py-2 pr-10" />
+
+// ✅ RICHTIG — Token-basiert
+<input className="px-[var(--spacing-input-padding-x)] py-[var(--spacing-input-padding-y)] pr-[var(--spacing-input-icon-inset)]" />
+```
+
+#### 3. KEINE hardcoded Shadows
+
+```tsx
+// ❌ VERBOTEN
+<div className="shadow-sm hover:shadow-lg">
+
+// ✅ RICHTIG — Arbitrary Property Syntax für compound shadows
+<div className="[box-shadow:var(--shadow-card-raised)] hover:[box-shadow:var(--shadow-card-hover)]">
+```
+
+#### 4. KEINE hardcoded Radii für Components
+
+```tsx
+// ❌ VERBOTEN
+<div className="rounded-md">
+
+// ✅ RICHTIG
+<div className="rounded-[var(--radius-card)]">
+```
+
+#### 5. KEINE Hex-Werte in Level 4 Token-Dateien
+
+```json
+// ❌ VERBOTEN — Hex in L4 semantic token
+{ "$value": "#ffffff" }
+
+// ✅ RICHTIG — Referenz auf L3 Role
+{ "$value": "{color.bg.paper}" }
+```
+
+#### 6. KEINE Ebenen überspringen
+
+```json
+// ❌ VERBOTEN — L4 referenziert L1 direkt
+{ "$value": "{color.base.sky.500}" }
+
+// ✅ RICHTIG — L4 referenziert L3
+{ "$value": "{color.interactive.primary}" }
+```
+
+### Häufige Violations & Fixes
+
+| Violation | Tailwind-Klasse | Token-Fix | Beispiel |
+|-----------|----------------|-----------|----------|
+| White Background | `bg-white` | `bg-[var(--color-{comp}-bg)]` | L4 → `{color.bg.paper}` |
+| White Text | `text-white` | `text-[var(--color-{comp}-text)]` | L4 → `{color.text.on-primary}` |
+| Gray Background | `bg-gray-50` | `bg-[var(--color-{comp}-bg)]` | L4 → `{color.bg.surface}` |
+| Border Color | `border-gray-200` | `border-[var(--color-{comp}-border)]` | L4 → `{color.border.default}` |
+| Text Color | `text-gray-700` | `text-[var(--color-{comp}-text)]` | L4 → `{color.text.base}` |
+| Shadow | `shadow-sm` | `[box-shadow:var(--shadow-{comp}-*)]` | L4 → `{shadow.elevation.low}` |
+| Radius | `rounded-md` | `rounded-[var(--radius-{comp})]` | L4 → `{radius.component.md}` |
+| Spacing | `px-4`, `py-2` | `px-[var(--spacing-{comp}-*)]` | L4 → `{spacing.component.padding.md}` |
+| Icon Spacing | `pr-10` | `pr-[var(--spacing-{comp}-icon-inset)]` | L4 → `{sizing.component.height.md}` |
+| Hex in JSON | `"#ffffff"` | `"{color.bg.paper}"` | L3 Role-Referenz |
+
+### Prompt-Interpretation: Übersetzungsbeispiele
+
+Wenn ein Prompt sagt:
+
+| Prompt-Anweisung | Bedeutung | Korrekte Implementierung |
+|-----------------|-----------|-------------------------|
+| "Verwende `bg-white`" | Hintergrund soll weiß sein | L4 Token → `{color.bg.paper}` → `bg-[var(--color-{comp}-bg)]` |
+| "Icon soll sky-blue sein" | Icon braucht Primary-Farbe | L4 Token → `{color.interactive.primary}` → `text-[var(--color-{comp}-icon)]` |
+| "Schatten wie `shadow-lg`" | Elevation soll hoch sein | L4 Token → `{shadow.elevation.high}` → `[box-shadow:var(--shadow-{comp}-*)]` |
+| "Padding `px-4 py-2`" | Standard Component Padding | L4 Token → `{spacing.component.padding.md}` → `px-[var(--spacing-{comp}-padding-x)]` |
+| "Abgerundete Ecken `rounded-lg`" | Größerer Radius | L4 Token → `{radius.component.lg}` → `rounded-[var(--radius-{comp})]` |
+| "Grauer Hintergrund" | Surface/Muted Background | L4 Token → `{color.bg.surface}` → `bg-[var(--color-{comp}-bg)]` |
+
+### Token-Erstellung: Wenn Tokens fehlen
+
+Wenn ein benötigter Token nicht existiert, **erstelle ihn auf der richtigen Ebene**:
+
+```
+1. Prüfe: Existiert ein passender L3 Role Token?
+   → JA: Erstelle L4 Token der L3 referenziert
+   → NEIN: Weiter zu Schritt 2
+
+2. Prüfe: Existiert ein passender L2 Global Token?
+   → JA: Erstelle L3 Role Token, dann L4
+   → NEIN: Weiter zu Schritt 3
+
+3. Prüfe: Existiert ein passender L1 Base Token?
+   → JA: Erstelle L2 → L3 → L4 Kette
+   → NEIN: Erstelle L1 → L2 → L3 → L4 Kette
+```
+
+**Beispiel: `color.bg.paper` fehlte für weiße Hintergründe:**
+
+```
+L1: color.base.white = #ffffff           (base/colors.json)
+L2: color.neutral.white = {color.base.white}    (global/colors.json)
+L3: color.bg.paper = {color.neutral.white}       (roles/colors.json)
+L4: color.card.bg = {color.bg.paper}             (semantic/card.json)
+```
+
+### Verification: Audit-Befehle
+
+Nach jeder Component-Entwicklung MÜSSEN diese Checks durchgeführt werden:
+
+```bash
+# 1. Suche nach hardcoded Farben in TSX-Dateien
+grep -rn "bg-white\|bg-gray\|bg-slate\|text-white\|text-gray\|border-gray" \
+  packages/components/src/**/*.tsx
+
+# 2. Suche nach hardcoded Spacing
+grep -rn "px-[0-9]\|py-[0-9]\|pr-[0-9]\|pl-[0-9]\|pt-[0-9]\|pb-[0-9]\|p-[0-9]" \
+  packages/components/src/**/*.tsx
+
+# 3. Suche nach hardcoded Shadows
+grep -rn "shadow-sm\|shadow-md\|shadow-lg\|shadow-xl" \
+  packages/components/src/**/*.tsx
+
+# 4. Suche nach hardcoded Radii
+grep -rn "rounded-sm\|rounded-md\|rounded-lg\|rounded-xl\|rounded-full" \
+  packages/components/src/**/*.tsx
+
+# 5. Suche nach Hex-Werten in L4 Token-Dateien
+grep -rn "#[0-9a-fA-F]" packages/tokens/src/semantic/*.json
+
+# 6. Suche nach L1-Referenzen in L4 (Ebenen überspringen)
+grep -rn "color\.base\.\|spacing\.base\.\|font\.base\." \
+  packages/tokens/src/semantic/*.json
+
+# 7. Token Build verifizieren
+pnpm --filter @nordlig/tokens build
+
+# 8. Tests laufen lassen
+pnpm --filter @nordlig/components test
+```
+
+**ZERO TOLERANCE:** Wenn einer dieser Checks Violations findet, müssen diese **sofort** behoben werden bevor weitergearbeitet wird.
+
+### Erlaubte Ausnahmen
+
+Folgende Tailwind-Klassen sind **KEINE Violations**, da sie strukturelle Layout-Klassen sind (nicht themeable):
+
+- **Layout:** `flex`, `grid`, `block`, `inline-flex`, `relative`, `absolute`
+- **Flex/Grid:** `items-center`, `justify-between`, `flex-col`, `gap-1.5` (micro-layout)
+- **Sizing:** `w-full`, `h-full`, `min-w-0`, `max-w-xs`
+- **Overflow:** `overflow-hidden`, `overflow-auto`, `truncate`
+- **Cursor:** `cursor-pointer`, `cursor-not-allowed`
+- **Transitions:** `transition-all`, `duration-200`, `ease-in-out`
+- **States:** `disabled:opacity-60`, `hover:scale-110`
+- **Micro-Spacing in Layouts:** `gap-1`, `gap-1.5`, `gap-2` (interne Layout-Abstände)
+
+**ABER:** Wenn ein Spacing-Wert das visuelle Erscheinungsbild einer Component definiert (Padding, Margin des Containers), **muss** er tokenisiert werden.
+
+---
+
 ## 🔄 Development Workflow
 
 ### 1. Neue Feature Branch

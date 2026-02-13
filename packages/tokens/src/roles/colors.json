@@ -2,6 +2,7 @@
   "color": {
     "$description": "Level 3: Role/functional tokens - References Level 2 only",
     "bg": {
+      "paper":          { "$type": "color", "$value": "{color.neutral.white}" },
       "base":           { "$type": "color", "$value": "{color.neutral.1.50}" },
       "surface":        { "$type": "color", "$value": "{color.neutral.1.100}" },
       "elevated":       { "$type": "color", "$value": "{color.neutral.1.50}" },
@@ -13,13 +14,15 @@
       "success": { "$type": "color", "$value": "{color.accent.1.500}" },
       "warning": { "$type": "color", "$value": "{color.accent.2.500}" },
       "error":   { "$type": "color", "$value": "{color.accent.3.500}" },
-      "info":    { "$type": "color", "$value": "{color.accent.4.500}" }
+      "info":    { "$type": "color", "$value": "{color.accent.4.500}" },
+      "overlay": { "$type": "color", "$value": "{color.neutral.overlay}", "$description": "Modal/dialog backdrop" }
     },
     "text": {
       "base":     { "$type": "color", "$value": "{color.neutral.1.900}" },
       "muted":    { "$type": "color", "$value": "{color.neutral.1.600}" },
       "disabled": { "$type": "color", "$value": "{color.neutral.1.400}" },
-      "inverse":  { "$type": "color", "$value": "{color.neutral.1.50}" },
+      "inverse":    { "$type": "color", "$value": "{color.neutral.1.50}" },
+      "on-primary": { "$type": "color", "$value": "{color.neutral.white}" },
       "primary":  { "$type": "color", "$value": "{color.primary.1.600}" },
       "success":  { "$type": "color", "$value": "{color.accent.1.700}" },
       "warning":  { "$type": "color", "$value": "{color.accent.2.700}" },

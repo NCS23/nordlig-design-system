@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: Input component tokens",
     "input": {
-      "bg":               { "$type": "color", "$value": "{color.bg.base}" },
+      "bg":               { "$type": "color", "$value": "{color.bg.paper}", "$description": "White paper background" },
       "bg-disabled":      { "$type": "color", "$value": "{color.neutral.1.100}" },
       "text":             { "$type": "color", "$value": "{color.text.base}" },
       "text-placeholder": { "$type": "color", "$value": "{color.text.muted}" },
@@ -34,8 +34,10 @@
   },
   "spacing": {
     "input": {
-      "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px" },
-      "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px" }
+      "padding-x":    { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px" },
+      "padding-y":    { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px" },
+      "icon-inset":   { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "40px – right padding when icon present" },
+      "icon-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px – icon button internal padding" }
     }
   }
 }

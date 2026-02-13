@@ -4,7 +4,8 @@
     "elevation": {
       "low":    { "$type": "shadow", "$value": "{shadow.sm}" },
       "medium": { "$type": "shadow", "$value": "{shadow.md}" },
-      "high":   { "$type": "shadow", "$value": "{shadow.lg}" }
+      "high":    { "$type": "shadow", "$value": "{shadow.lg}" },
+      "overlay": { "$type": "shadow", "$value": "{shadow.xl}", "$description": "Modal/dialog content shadow" }
     }
   }
 }

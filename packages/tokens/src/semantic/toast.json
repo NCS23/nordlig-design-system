@@ -1,0 +1,33 @@
+{
+  "color": {
+    "$description": "Level 4: Toast/Notification component tokens",
+    "toast": {
+      "bg":              { "$type": "color", "$value": "{color.bg.paper}", "$description": "White toast background" },
+      "border":          { "$type": "color", "$value": "{color.border.muted}", "$description": "Subtle outer border" },
+      "title":           { "$type": "color", "$value": "{color.text.base}", "$description": "Toast title text" },
+      "description":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Toast description text" },
+      "close-hover-bg":  { "$type": "color", "$value": "{color.bg.surface}", "$description": "Close button hover bg" },
+      "success-border":  { "$type": "color", "$value": "{color.success.border}", "$description": "Green left accent border" },
+      "success-icon":    { "$type": "color", "$value": "{color.success.text}", "$description": "Green icon color" },
+      "error-border":    { "$type": "color", "$value": "{color.error.border}", "$description": "Red left accent border" },
+      "error-icon":      { "$type": "color", "$value": "{color.error.text}", "$description": "Red icon color" },
+      "warning-border":  { "$type": "color", "$value": "{color.warning.border}", "$description": "Amber left accent border" },
+      "warning-icon":    { "$type": "color", "$value": "{color.warning.text}", "$description": "Amber icon color" },
+      "info-border":     { "$type": "color", "$value": "{color.info.border}", "$description": "Sky blue left accent border" },
+      "info-icon":       { "$type": "color", "$value": "{color.info.text}", "$description": "Sky blue icon color" }
+    }
+  },
+  "shadow": {
+    "toast": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Medium elevation shadow" }
+  },
+  "radius": {
+    "toast": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px rounded corners" }
+  },
+  "spacing": {
+    "toast": {
+      "padding":          { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px internal padding" },
+      "gap":              { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "8px gap between icon/content/close" },
+      "viewport-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px distance from screen edges" }
+    }
+  }
+}

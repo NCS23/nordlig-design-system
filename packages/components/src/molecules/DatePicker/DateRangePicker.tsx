@@ -161,7 +161,7 @@ const DateRangePicker = React.forwardRef<HTMLDivElement, DateRangePickerProps>(
                   onChange={handleToChange}
                   onFocus={handleFocus}
                   aria-label="Enddatum"
-                  className="pr-10"
+                  className="pr-[var(--spacing-input-icon-inset)]"
                 />
                 <button
                   type="button"
@@ -169,7 +169,7 @@ const DateRangePicker = React.forwardRef<HTMLDivElement, DateRangePickerProps>(
                   disabled={disabled}
                   onClick={handleIconClick}
                   aria-label="Kalender öffnen"
-                  className="absolute right-0 top-0 flex h-full items-center px-3 text-[var(--color-datepicker-weekday-text)] hover:text-[var(--color-datepicker-header-text)] transition-colors disabled:pointer-events-none"
+                  className="absolute right-0 top-0 flex h-full items-center px-[var(--spacing-input-icon-padding)] text-[var(--color-datepicker-weekday-text)] hover:text-[var(--color-datepicker-header-text)] transition-colors disabled:pointer-events-none"
                 >
                   <CalendarIcon size={16} />
                 </button>

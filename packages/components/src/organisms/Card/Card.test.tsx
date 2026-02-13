@@ -12,16 +12,16 @@ describe('Card', () => {
     render(<Card data-testid="card">Content</Card>);
     const card = screen.getByTestId('card');
     expect(card.className).toContain('p-[var(--spacing-card-padding-normal)]');
-    expect(card.className).toContain('bg-white');
+    expect(card.className).toContain('bg-[var(--color-card-bg)]');
     expect(card.className).not.toContain('border');
-    expect(card.className).not.toContain('shadow-sm');
-    expect(card.className).not.toContain('shadow-lg');
+    expect(card.className).not.toContain('[box-shadow:var(--shadow-card-raised)]');
+    expect(card.className).not.toContain('[box-shadow:var(--shadow-card-elevated)]');
   });
 
   it('applies elevation=raised variant', () => {
     render(<Card data-testid="card" elevation="raised">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('shadow-sm');
+    expect(card.className).toContain('[box-shadow:var(--shadow-card-raised)]');
     expect(card.className).toContain('border');
     expect(card.className).toContain('border-[var(--color-card-border)]');
   });
@@ -29,7 +29,7 @@ describe('Card', () => {
   it('applies elevation=elevated variant', () => {
     render(<Card data-testid="card" elevation="elevated">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('shadow-lg');
+    expect(card.className).toContain('[box-shadow:var(--shadow-card-elevated)]');
     expect(card.className).toContain('border');
     expect(card.className).toContain('border-[var(--color-card-border)]');
   });
@@ -50,14 +50,14 @@ describe('Card', () => {
     render(<Card data-testid="card" hoverable>Content</Card>);
     const card = screen.getByTestId('card');
     expect(card.className).toContain('cursor-pointer');
-    expect(card.className).toContain('hover:shadow-xl');
+    expect(card.className).toContain('hover:[box-shadow:var(--shadow-card-hover)]');
   });
 
   it('does not apply hoverable by default', () => {
     render(<Card data-testid="card">Content</Card>);
     const card = screen.getByTestId('card');
     expect(card.className).not.toContain('cursor-pointer');
-    expect(card.className).not.toContain('hover:shadow-xl');
+    expect(card.className).not.toContain('hover:[box-shadow:var(--shadow-card-hover)]');
   });
 
   it('applies custom className', () => {
@@ -82,7 +82,7 @@ describe('Card', () => {
   it('uses CSS custom properties for styling', () => {
     render(<Card data-testid="card">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('bg-white');
+    expect(card.className).toContain('bg-[var(--color-card-bg)]');
     expect(card.className).toContain('rounded-[var(--radius-card)]');
     expect(card.className).toContain('gap-[var(--spacing-card-gap)]');
   });
@@ -177,9 +177,9 @@ describe('Card Compound', () => {
       </Card>
     );
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('shadow-sm');
+    expect(card.className).toContain('[box-shadow:var(--shadow-card-raised)]');
     expect(card.className).toContain('cursor-pointer');
-    expect(card.className).toContain('hover:shadow-xl');
+    expect(card.className).toContain('hover:[box-shadow:var(--shadow-card-hover)]');
   });
 
   it('supports accessibility attributes', () => {

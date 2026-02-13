@@ -52,9 +52,9 @@ describe('Input', () => {
     expect(screen.getByTestId('input')).not.toHaveAttribute('aria-invalid');
   });
 
-  it('has white background', () => {
+  it('has background token class', () => {
     render(<Input data-testid="input" />);
-    expect(screen.getByTestId('input').className).toContain('bg-white');
+    expect(screen.getByTestId('input').className).toContain('bg-[var(--color-input-bg)]');
   });
 
   it('has text color token class', () => {
@@ -174,7 +174,7 @@ describe('Input password toggle', () => {
 
   it('adds right padding for toggle button', () => {
     render(<Input type="password" data-testid="input" />);
-    expect(screen.getByTestId('input').className).toContain('pr-10');
+    expect(screen.getByTestId('input').className).toContain('pr-[var(--spacing-input-icon-inset)]');
   });
 
   it('forwards ref for password input', () => {

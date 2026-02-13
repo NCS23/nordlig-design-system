@@ -1,0 +1,23 @@
+{
+  "color": {
+    "$description": "Level 4: Textarea component tokens – extends Input styling",
+    "textarea": {
+      "counter-text":      { "$type": "color", "$value": "{color.text.muted}", "$description": "Character counter default" },
+      "counter-text-over": { "$type": "color", "$value": "{color.text.error}", "$description": "Counter when over limit" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: Textarea sizing",
+    "textarea": {
+      "min-height": { "$type": "dimension", "$value": "100px", "$description": "Default minimum height" },
+      "max-height":  { "$type": "dimension", "$value": "400px", "$description": "Auto-resize maximum" }
+    }
+  },
+  "spacing": {
+    "textarea": {
+      "padding-y-sm": { "$type": "dimension", "$value": "{sizing.component.padding-y.md}", "$description": "8px – sm size vertical padding" },
+      "padding-y-md": { "$type": "dimension", "$value": "{sizing.component.padding-y.lg}", "$description": "10px – md size vertical padding" },
+      "padding-y-lg": { "$type": "dimension", "$value": "{sizing.component.padding-y.xl}", "$description": "12px – lg size vertical padding" }
+    }
+  }
+}

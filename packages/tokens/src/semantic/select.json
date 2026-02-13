@@ -1,0 +1,50 @@
+{
+  "color": {
+    "$description": "Level 4: Select/Combobox/MultiSelect component tokens",
+    "select": {
+      "trigger-bg":         { "$type": "color", "$value": "{color.bg.paper}", "$description": "White trigger background (matches Input)" },
+      "trigger-text":       { "$type": "color", "$value": "{color.text.base}", "$description": "Trigger text color" },
+      "trigger-placeholder": { "$type": "color", "$value": "{color.text.muted}", "$description": "Placeholder text" },
+      "trigger-border":     { "$type": "color", "$value": "{color.border.default}", "$description": "Default border" },
+      "trigger-border-hover": { "$type": "color", "$value": "{color.border.strong}", "$description": "Hover border" },
+      "trigger-border-focus": { "$type": "color", "$value": "{color.border.focus}", "$description": "Focus border (sky)" },
+      "trigger-border-error": { "$type": "color", "$value": "{color.border.error}", "$description": "Error border" },
+      "trigger-disabled-bg": { "$type": "color", "$value": "{color.neutral.1.100}", "$description": "Disabled background" },
+      "icon":               { "$type": "color", "$value": "{color.text.muted}", "$description": "Chevron/search icon color" },
+      "icon-hover":         { "$type": "color", "$value": "{color.text.base}", "$description": "Icon hover color" },
+      "popover-bg":         { "$type": "color", "$value": "{color.bg.paper}", "$description": "White dropdown background" },
+      "popover-border":     { "$type": "color", "$value": "{color.border.muted}", "$description": "Dropdown border" },
+      "item-text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Option text" },
+      "item-hover-bg":      { "$type": "color", "$value": "{color.neutral.1.100}", "$description": "Option hover/focus bg" },
+      "item-selected-bg":   { "$type": "color", "$value": "{color.primary.1.50}", "$description": "Selected option background" },
+      "item-selected-text":  { "$type": "color", "$value": "{color.text.primary}", "$description": "Selected option text (sky)" },
+      "item-disabled-text":  { "$type": "color", "$value": "{color.text.disabled}", "$description": "Disabled option text" },
+      "check-icon":         { "$type": "color", "$value": "{color.bg.primary}", "$description": "Checkmark icon color (sky)" },
+      "group-label":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Option group label" },
+      "separator":          { "$type": "color", "$value": "{color.border.muted}", "$description": "Separator line" },
+      "search-bg":          { "$type": "color", "$value": "{color.neutral.1.50}", "$description": "Combobox search input bg" },
+      "empty-text":         { "$type": "color", "$value": "{color.text.muted}", "$description": "No results text" },
+      "checkbox-text":      { "$type": "color", "$value": "{color.text.on-primary}", "$description": "Checkbox checked text (white)" },
+      "checkbox-bg":        { "$type": "color", "$value": "{color.bg.paper}", "$description": "Checkbox unchecked background" }
+    }
+  },
+  "shadow": {
+    "select": {
+      "popover": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Dropdown elevation" }
+    }
+  },
+  "radius": {
+    "select": {
+      "popover": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px dropdown radius" },
+      "item":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px item radius" }
+    }
+  },
+  "spacing": {
+    "select": {
+      "popover-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "4px inner padding for item list" },
+      "item-padding-x":   { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px item horizontal padding" },
+      "item-padding-y":   { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "8px item vertical padding" },
+      "item-gap":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and text in item" }
+    }
+  }
+}

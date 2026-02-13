@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: Card component tokens",
     "card": {
-      "bg":     { "$type": "color", "$value": "{color.bg.surface}" },
+      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "White paper background" },
       "border": { "$type": "color", "$value": "{color.border.muted}" }
     }
   },
@@ -17,7 +17,8 @@
   "shadow": {
     "card": {
       "raised":   { "$type": "shadow", "$value": "{shadow.elevation.low}" },
-      "elevated": { "$type": "shadow", "$value": "{shadow.elevation.medium}" }
+      "elevated": { "$type": "shadow", "$value": "{shadow.elevation.medium}" },
+      "hover":    { "$type": "shadow", "$value": "{shadow.elevation.high}" }
     }
   },
   "radius": {
