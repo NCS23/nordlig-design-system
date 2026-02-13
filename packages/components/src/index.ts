@@ -1,6 +1,10 @@
 // Atoms
 export { Button, buttonVariants, type ButtonProps } from './atoms/Button';
 export { Badge, badgeVariants, type BadgeProps } from './atoms/Badge';
+export { Input, inputVariants, type InputProps } from './atoms/Input';
+
+// Molecules
+export { InputField, type InputFieldProps } from './molecules/InputField';
 
 // Organisms
 export {

@@ -12,10 +12,30 @@
       "border-error":     { "$type": "color", "$value": "{color.border.error}" }
     }
   },
+  "sizing": {
+    "$description": "Level 4: Input sizing – matches Button heights for inline forms",
+    "input": {
+      "sm": {
+        "height":    { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "36px – matches Button sm" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "0.875rem" },
+        "radius":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px" }
+      },
+      "md": {
+        "height":    { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "40px – matches Button md" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "1rem" },
+        "radius":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px" }
+      },
+      "lg": {
+        "height":    { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "44px – matches Button lg" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "1.125rem" },
+        "radius":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px" }
+      }
+    }
+  },
   "spacing": {
     "input": {
-      "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}" },
-      "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.sm}" }
+      "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px" },
+      "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px" }
     }
   }
 }

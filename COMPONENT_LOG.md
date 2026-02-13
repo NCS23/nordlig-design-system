@@ -326,14 +326,136 @@
 
 ---
 
+## [Input] - 2026-02-13
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color (bereits vorhanden):**
+  - `color-input-bg` → L3 `color.bg.base`
+  - `color-input-bg-disabled` → L3 `color.neutral.1.100`
+  - `color-input-text` → L3 `color.text.base`
+  - `color-input-text-placeholder` → L3 `color.text.muted`
+  - `color-input-border` → L3 `color.border.default`
+  - `color-input-border-hover` → L3 `color.border.strong`
+  - `color-input-border-focus` → L3 `color.border.focus`
+  - `color-input-border-error` → L3 `color.border.error`
+- **Level 4 (Semantic) – Sizing (neu, pro Size sm/md/lg):**
+  - `sizing-input-{size}-height` → L3 `sizing.component.height.{size}` (36/40/44px – matches Button!)
+  - `sizing-input-{size}-font-size` → L3 `font.component.size.{size}`
+  - `sizing-input-{size}-radius` → L3 `radius.component.md` (6px)
+  - **9 Sizing-Tokens insgesamt** (3 pro Size × 3 Properties)
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-input-padding-x` → L3 `spacing.component.padding.md` (16px)
+  - `spacing-input-padding-y` → L3 `spacing.component.padding.sm` (12px)
+- **19 Tokens insgesamt** (8 Color + 9 Sizing + 2 Spacing) – alle referenzieren ausschließlich L3
+
+### Files
+- `packages/components/src/atoms/Input/Input.tsx`
+- `packages/components/src/atoms/Input/Input.test.tsx` (21 Tests)
+- `packages/components/src/atoms/Input/Input.stories.tsx` (7 Stories)
+- `packages/components/src/atoms/Input/index.ts`
+- `packages/tokens/src/semantic/input.json`
+
+### Variants (CVA)
+- **inputSize:** sm, md (default), lg – Heights match Button sizes!
+- **error:** boolean (red border + red focus ring)
+- **disabled:** native HTML attribute (gray bg, no-cursor)
+
+### Test Coverage
+- ✅ **21 Tests – alle bestanden**
+- ✅ **100% Coverage**
+- Getestet: Alle 3 Sizes, Error State, Disabled, ARIA attributes, Focus Ring, Hover, Placeholder, Type, Ref-Forwarding, User Input
+
+### Accessibility
+- ✅ `aria-invalid` automatisch bei error=true
+- ✅ Focus Ring (ring-2 + ring-offset-1 + sky blue)
+- ✅ Disabled State (cursor-not-allowed + visuelles Feedback)
+- ✅ Placeholder Color Token (muted, nicht zu dunkel)
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-input
+- **Stories:** Default, WithValue, Error, Disabled, AllSizes, InputTypes, States
+- **Controls:** inputSize, error, disabled, type
+
+### Notes
+- `inputSize` statt `size` als Prop-Name (Konflikt mit HTML `size` Attribut)
+- Heights exakt gleich wie Button (36/40/44px) für Inline-Formulare
+- Error-State: subtiles Rot – Border + Focus Ring werden rot, nicht der Background
+- Disabled: grauer Background, kein Hover-Effekt
+
+### Breaking Changes
+- None (initial release)
+
+### Issues / Todos
+- [ ] Add suffix/prefix support (z.B. "min/km", "bpm")
+- [ ] Add textarea variant für mehrzeiligen Text
+
+---
+
+## [InputField] - 2026-02-13
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Molecule
+
+### Composition
+- **Label** → `<label>` mit `htmlFor` Verknüpfung
+- **Input** → Atom `<Input>` Component
+- **Helper Text** → `<p>` mit muted Color
+- **Error Message** → `<p>` mit error Color + `role="alert"`
+
+### Files
+- `packages/components/src/molecules/InputField/InputField.tsx`
+- `packages/components/src/molecules/InputField/InputField.test.tsx` (18 Tests)
+- `packages/components/src/molecules/InputField/InputField.stories.tsx` (10 Stories)
+- `packages/components/src/molecules/InputField/index.ts`
+
+### Props
+- **label:** string – Erzeugt `<label>` mit `htmlFor`
+- **helperText:** string – Subtiler Hilfetext unter dem Input
+- **errorMessage:** string – Rot, ersetzt helperText, setzt error=true
+- **error:** boolean – Error-State ohne Message
+- Plus alle Input-Props (inputSize, type, placeholder, etc.)
+
+### Test Coverage
+- ✅ **18 Tests – alle bestanden**
+- ✅ **100% Coverage**
+- Getestet: Label-Linking, Helper Text, Error Message, ARIA describedby, Error Priority über Helper, Size Passthrough, Ref-Forwarding, Custom ID, className auf Wrapper
+
+### Accessibility
+- ✅ `<label htmlFor>` automatisch verknüpft
+- ✅ `aria-describedby` zeigt auf Helper oder Error
+- ✅ `aria-invalid` bei Error
+- ✅ `role="alert"` auf Error Message (Screen Reader Announcement)
+- ✅ Error Message ersetzt Helper (nicht beides gleichzeitig)
+- ✅ Auto-generierte IDs via `React.useId()` wenn keine `id` Prop
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-inputfield
+- **Stories:** Default, WithHelper, WithError, AllSizes, DisabledField
+- **Training Analyzer Stories:** GoalPace, MaxHR, MaxHRError, DateFilter, InlineWithButton
+- **Controls:** inputSize, error, disabled
+
+### Notes
+- Erste Molecule-Component im Design System
+- Error Message hat Vorrang über Helper Text (nur eins wird angezeigt)
+- `React.useId()` für automatische ID-Generierung wenn keine `id` Prop
+- InlineWithButton Story zeigt Input + Button nebeneinander (gleiche Höhe!)
+- Label nutzt `font-medium` + `text-sm` für klare Lesbarkeit
+
+### Breaking Changes
+- None (initial release)
+
+### Issues / Todos
+- [ ] Add required indicator (*) auf Label
+- [ ] Add character count für Textareas
+
+---
+
 ## Planned Components
-
-### High Priority (Training Analyzer Essentials)
-
-#### [Input / InputField] - Planned
-**Level:** Atom / Molecule  
-**Priority:** ⭐ MEDIUM  
-**Use Case:** Forms for training plan adjustments
 
 ### Medium Priority (Design System Completion)
 
@@ -361,17 +483,18 @@
 
 ## Development Statistics
 
-**Total Components:** 4 (4 complete)
-**Atoms:** 2 (Button, Badge)
-**Molecules:** 0
+**Total Components:** 6 (6 complete)
+**Atoms:** 3 (Button, Badge, Input)
+**Molecules:** 1 (InputField)
 **Organisms:** 2 (Card, Table)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage
-**Test Coverage:** Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
-**A11y Compliance:** Table + Badge + Card getestet | Button: nur manuell geprüft
-**Storybook Stories:** 34 Stories (Button: 4, Card: 11, Badge: 12, Table: 7)
-**Design Tokens:** 68+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 14) + 2 neue L3 Tokens (padding.xs, padding.xl)
+**Test Coverage:** Input 100% | InputField 100% | Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
+**A11y Compliance:** Input + InputField + Table + Badge + Card getestet | Button: nur manuell geprüft
+**Storybook Stories:** 51 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 7, InputField: 10)
+**Design Tokens:** 87+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 14 | Input: 19) + 2 L3 Tokens
+**Total Tests:** 113
 
 ---
 
@@ -449,7 +572,19 @@
   - Header KLEINER als Body = elegantere Hierarchie (invertiertes Padding-Verhältnis)
   - "Weniger ist mehr" gilt besonders für Table Headers im nordischen Design
 
+### 2026-02-13 - Input + InputField Components
+- Input als dritter Atom (CVA, 3 Sizes matching Button)
+- InputField als erste Molecule (Label + Input + Helper + Error)
+- 19 L4 Tokens (8 Color bereits vorhanden, 9 Sizing + 2 Spacing neu)
+- 39 Tests (21 Input + 18 InputField), alle bestanden
+- **Learnings:**
+  - `inputSize` statt `size` als Prop-Name (HTML `size` Attribut Konflikt!)
+  - `React.useId()` für automatische ID-Generierung in Molecules
+  - Error Message hat Vorrang über Helper Text – nur eins anzeigen
+  - `role="alert"` auf Error Messages für Screen Reader Announcements
+  - Input + Button gleiche Heights ermöglicht saubere Inline-Formulare
+
 ---
 
 **Last Updated:** 2026-02-13
-**Next Component:** Input / Select (siehe Planned Components)
+**Next Component:** Select / Icon (siehe Planned Components)
