@@ -378,6 +378,7 @@ export const RadiusComponentSm = "0.125rem";
 export const RadiusComponentMd = "0.375rem";
 export const RadiusComponentLg = "0.5rem";
 export const RadiusComponentFull = "9999px";
+export const RadiusCard = "0.5rem";
 export const ShadowBaseXs = "0 1px 2px rgba(0, 0, 0, 0.05)";
 export const ShadowBaseSm =
   "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)";
@@ -404,6 +405,10 @@ export const ShadowElevationMedium =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)";
 export const ShadowElevationHigh =
   "0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)";
+export const ShadowCardRaised =
+  "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)";
+export const ShadowCardElevated =
+  "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)";
 export const SpacingBase0 = "0px";
 export const SpacingBase1 = "4px";
 export const SpacingBase2 = "8px";
@@ -445,7 +450,9 @@ export const SpacingLayoutSection = "48px";
 export const SpacingBtnPaddingX = "16px";
 export const SpacingBtnPaddingY = "12px";
 export const SpacingBtnGap = "8px";
-export const SpacingCardPadding = "24px";
+export const SpacingCardPaddingCompact = "12px";
+export const SpacingCardPaddingNormal = "16px";
+export const SpacingCardPaddingSpacious = "24px";
 export const SpacingCardGap = "12px";
 export const SpacingInputPaddingX = "16px";
 export const SpacingInputPaddingY = "12px";
