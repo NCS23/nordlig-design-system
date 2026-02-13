@@ -375,4 +375,48 @@ describe('DatePicker', () => {
     );
     expect(screen.getByText('Februar 2025')).toBeInTheDocument();
   });
+
+  it('shows maxDate month when maxDate is in the past', async () => {
+    const user = userEvent.setup();
+    render(
+      <DatePicker
+        minDate={new Date(2024, 5, 1)}
+        maxDate={new Date(2024, 5, 30)}
+      />
+    );
+    await user.click(screen.getByRole('textbox'));
+    // Should jump to maxDate's month (June 2024), not current month
+    expect(screen.getByText('Juni 2024')).toBeInTheDocument();
+  });
+
+  it('shows minDate month when minDate is in the future', async () => {
+    const user = userEvent.setup();
+    render(
+      <DatePicker
+        minDate={new Date(2099, 0, 1)}
+        maxDate={new Date(2099, 0, 31)}
+      />
+    );
+    await user.click(screen.getByRole('textbox'));
+    // Should jump to minDate's month (January 2099), not current month
+    expect(screen.getByText('Januar 2099')).toBeInTheDocument();
+  });
+
+  it('shows current month when within min/max range', async () => {
+    const user = userEvent.setup();
+    const now = new Date();
+    render(
+      <DatePicker
+        minDate={new Date(2020, 0, 1)}
+        maxDate={new Date(2099, 11, 31)}
+      />
+    );
+    await user.click(screen.getByRole('textbox'));
+    // Current month should be shown since it's within range
+    const grid = screen.getByRole('grid');
+    expect(grid).toHaveAttribute(
+      'aria-label',
+      expect.stringContaining(String(now.getFullYear()))
+    );
+  });
 });

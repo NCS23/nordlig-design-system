@@ -1,12 +1,26 @@
 import React from 'react';
 import * as Popover from '@radix-ui/react-popover';
-import { format, parse, isValid, startOfMonth } from 'date-fns';
+import { format, parse, isValid, startOfMonth, isBefore, isAfter } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { Input, type InputProps } from '../../atoms/Input';
 import { cn } from '../../utils/cn';
 import { Calendar } from './Calendar';
 
 const DATE_FORMAT = 'dd.MM.yyyy';
+
+function getInitialMonth(value?: Date, minDate?: Date, maxDate?: Date): Date {
+  if (value) return startOfMonth(value);
+  const now = new Date();
+  // If current month is after maxDate, jump to maxDate's month
+  if (maxDate && isAfter(startOfMonth(now), startOfMonth(maxDate))) {
+    return startOfMonth(maxDate);
+  }
+  // If current month is before minDate, jump to minDate's month
+  if (minDate && isBefore(startOfMonth(now), startOfMonth(minDate))) {
+    return startOfMonth(minDate);
+  }
+  return startOfMonth(now);
+}
 
 export interface DatePickerProps {
   /** Currently selected date */
@@ -58,7 +72,7 @@ const DatePicker = React.forwardRef<HTMLInputElement, DatePickerProps>(
       value ? format(value, DATE_FORMAT) : ''
     );
     const [month, setMonth] = React.useState(
-      value ? startOfMonth(value) : startOfMonth(new Date())
+      getInitialMonth(value, minDate, maxDate)
     );
 
     // Sync external value changes

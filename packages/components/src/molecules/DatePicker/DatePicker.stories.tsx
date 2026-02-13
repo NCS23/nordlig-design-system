@@ -64,13 +64,16 @@ export const WithMinMax: Story = {
   name: 'Min/Max Dates',
   render: () => {
     const [date, setDate] = React.useState<Date | undefined>();
+    const today = new Date();
+    const minDate = new Date(today.getFullYear(), today.getMonth(), 5);
+    const maxDate = new Date(today.getFullYear(), today.getMonth(), 25);
     return (
       <DatePicker
         value={date}
         onChange={setDate}
-        minDate={new Date(2025, 0, 5)}
-        maxDate={new Date(2025, 0, 25)}
-        placeholder="05.01 – 25.01.2025"
+        minDate={minDate}
+        maxDate={maxDate}
+        placeholder={`05. – 25. dieses Monats`}
       />
     );
   },
@@ -170,10 +173,11 @@ export const CalendarDefault: StoryObj<typeof Calendar> = {
 export const CalendarWithSelection: StoryObj<typeof Calendar> = {
   name: 'Calendar - Pre-selected',
   render: () => {
+    const today = new Date();
     const [selected, setSelected] = React.useState<Date | undefined>(
-      new Date(2025, 0, 15)
+      new Date(today.getFullYear(), today.getMonth(), 15)
     );
-    const [month, setMonth] = React.useState(new Date(2025, 0, 1));
+    const [month, setMonth] = React.useState(new Date(today.getFullYear(), today.getMonth(), 1));
     return (
       <div
         style={{
@@ -196,8 +200,9 @@ export const CalendarWithSelection: StoryObj<typeof Calendar> = {
 export const CalendarWithConstraints: StoryObj<typeof Calendar> = {
   name: 'Calendar - Min/Max',
   render: () => {
+    const today = new Date();
     const [selected, setSelected] = React.useState<Date | undefined>();
-    const [month, setMonth] = React.useState(new Date(2025, 0, 1));
+    const [month, setMonth] = React.useState(new Date(today.getFullYear(), today.getMonth(), 1));
     return (
       <div
         style={{
@@ -211,8 +216,8 @@ export const CalendarWithConstraints: StoryObj<typeof Calendar> = {
           month={month}
           onSelect={setSelected}
           onMonthChange={setMonth}
-          minDate={new Date(2025, 0, 10)}
-          maxDate={new Date(2025, 0, 20)}
+          minDate={new Date(today.getFullYear(), today.getMonth(), 10)}
+          maxDate={new Date(today.getFullYear(), today.getMonth(), 20)}
         />
       </div>
     );
