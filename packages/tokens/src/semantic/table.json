@@ -10,14 +10,17 @@
     }
   },
   "spacing": {
-    "$description": "Level 4: Table cell padding per density",
+    "$description": "Level 4: Table spacing – generous for Scandinavian whitespace feel",
     "table": {
-      "cell-x-compact":  { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}" },
-      "cell-y-compact":  { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
-      "cell-x-normal":   { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
-      "cell-y-normal":   { "$type": "dimension", "$value": "{sizing.component.padding-y.md}" },
-      "cell-x-spacious": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
-      "cell-y-spacious": { "$type": "dimension", "$value": "{sizing.component.padding-y.lg}" }
+      "cell-x-compact":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px – airy even at compact" },
+      "cell-y-compact":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px – body vertical compact" },
+      "cell-x-normal":   { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px – generous horizontal" },
+      "cell-y-normal":   { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px – body vertical normal" },
+      "cell-x-spacious": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "32px – luxurious horizontal" },
+      "cell-y-spacious": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px – body vertical spacious" },
+      "head-y-compact":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px – header extra room compact" },
+      "head-y-normal":   { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px – header extra room normal" },
+      "head-y-spacious": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "32px – header extra room spacious" }
     }
   }
 }

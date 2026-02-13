@@ -6,14 +6,17 @@ const densityMap = {
   compact: {
     '--_table-px': 'var(--spacing-table-cell-x-compact)',
     '--_table-py': 'var(--spacing-table-cell-y-compact)',
+    '--_table-head-py': 'var(--spacing-table-head-y-compact)',
   },
   normal: {
     '--_table-px': 'var(--spacing-table-cell-x-normal)',
     '--_table-py': 'var(--spacing-table-cell-y-normal)',
+    '--_table-head-py': 'var(--spacing-table-head-y-normal)',
   },
   spacious: {
     '--_table-px': 'var(--spacing-table-cell-x-spacious)',
     '--_table-py': 'var(--spacing-table-cell-y-spacious)',
+    '--_table-head-py': 'var(--spacing-table-head-y-spacious)',
   },
 } as const;
 
@@ -30,7 +33,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
         <table
           ref={ref}
           data-striped={striped || undefined}
-          className={cn('w-full caption-bottom border-collapse text-[length:var(--font-component-size-sm)]', className)}
+          className={cn('w-full caption-bottom border-collapse text-[length:var(--font-component-size-sm)] leading-relaxed', className)}
           style={{ ...densityMap[density], ...style } as React.CSSProperties}
           {...props}
         />
@@ -107,7 +110,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
       <th
         ref={ref}
         className={cn(
-          'px-[var(--_table-px)] py-[var(--_table-py)] font-semibold text-[var(--color-table-header-text)] border-b-2 border-[var(--color-table-border)] whitespace-nowrap',
+          'px-[var(--_table-px)] py-[var(--_table-head-py)] font-semibold text-[var(--color-table-header-text)] border-b-2 border-[var(--color-table-border)] whitespace-nowrap',
           alignClass,
           className
         )}

@@ -243,25 +243,28 @@
   - `color-table-row-stripe` → L3 `color.neutral.1.50`
   - `color-table-row-hover` → L3 `color.neutral.1.100`
 - **Level 4 (Semantic) – Spacing (pro Density compact/normal/spacious):**
-  - `spacing-table-cell-x-{density}` → L3 `sizing.component.padding-x.*`
-  - `spacing-table-cell-y-{density}` → L3 `sizing.component.padding-y.*`
-  - **6 Spacing-Tokens insgesamt** (2 pro Density × 3)
-- **11 Tokens insgesamt** – alle referenzieren ausschließlich L3
+  - `spacing-table-cell-x-{density}` → L3 `spacing.component.padding.*` (16/24/32px)
+  - `spacing-table-cell-y-{density}` → L3 `spacing.component.padding.*` (12/16/24px)
+  - `spacing-table-head-y-{density}` → L3 `spacing.component.padding.*` (16/24/32px)
+  - **9 Spacing-Tokens insgesamt** (3 pro Density × 3 Properties)
+- **Neuer L3 Token:** `spacing.component.padding.xl` → L2 `spacing.xl` (32px) – für spacious Density
+- **14 Tokens insgesamt** (5 Color + 9 Spacing) – alle referenzieren ausschließlich L3
 
 ### Architecture
-- **Density via CSS Custom Properties:** Table setzt `--_table-px` und `--_table-py` per `style`, Kinder referenzieren diese
+- **Density via CSS Custom Properties:** Table setzt `--_table-px`, `--_table-py`, `--_table-head-py` per `style`, Kinder referenzieren diese
+- **Header Breathing Room:** TableHead nutzt separates `--_table-head-py` für extra vertikalen Raum vs. Body
 - **Striped via data-attribute:** `data-striped` auf `<table>`, Rows nutzen `[[data-striped]_&:nth-child(even)]`
 - **Semantic HTML:** `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`
 
 ### Files
 - `packages/components/src/organisms/Table/Table.tsx` (6 Compound Components)
-- `packages/components/src/organisms/Table/Table.test.tsx` (34 Tests)
+- `packages/components/src/organisms/Table/Table.test.tsx` (35 Tests)
 - `packages/components/src/organisms/Table/Table.stories.tsx` (7 Stories)
 - `packages/components/src/organisms/Table/index.ts`
 - `packages/tokens/src/semantic/table.json`
 
 ### Components
-- **Table** – Wrapper: `overflow-x-auto` div + `<table>`, Props: density, striped
+- **Table** – Wrapper: `overflow-x-auto` div + `<table>`, Props: density, striped, `leading-relaxed`
 - **TableHeader** – `<thead>`: sticky top-0, header background
 - **TableBody** – `<tbody>`: last-row border removal
 - **TableRow** – `<tr>`: border-b, hover state, striped support
@@ -275,10 +278,10 @@
 - **TableCell:** align (left/center/right), numeric (boolean → right-align + tabular-nums)
 
 ### Test Coverage
-- ✅ **34 Tests – alle bestanden**
+- ✅ **35 Tests – alle bestanden**
 - ✅ **100% Coverage** (Statements, Branches, Functions, Lines)
-- Test-Gruppen: Table (9), TableHeader (4), TableBody (2), TableRow (4), TableHead (7), TableCell (6), Compound (2)
-- Getestet: Density CSS Props, Striped, Hover, Alignment, Numeric, Semantic HTML, Ref-Forwarding, Accessibility
+- Test-Gruppen: Table (11), TableHeader (4), TableBody (2), TableRow (4), TableHead (7), TableCell (6), Compound (2)
+- Getestet: Density CSS Props (inkl. head-py), leading-relaxed, Striped, Hover, Alignment, Numeric, Semantic HTML, Ref-Forwarding, Accessibility
 
 ### Accessibility
 - ✅ Semantic HTML: proper `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`
@@ -294,15 +297,20 @@
 - **Docs:** Auto-generated via autodocs tag
 
 ### Notes
-- Density wird per CSS Custom Properties (`--_table-px`, `--_table-py`) auf dem Table-Element gesetzt
-- Kinder (TableHead, TableCell) referenzieren `var(--_table-px/py)` – kein Context nötig
+- **Scandinavian Spacing Redesign:** Von tight Button-Spacing (`sizing.component.padding-y.*` = 6/8/10px) auf großzügiges `spacing.component.padding.*` (12/16/24px) gewechselt
+- **Header Breathing Room:** Separates `--_table-head-py` (16/24/32px) gibt dem Header deutlich mehr Luft als dem Body
+- Density wird per CSS Custom Properties (`--_table-px`, `--_table-py`, `--_table-head-py`) auf dem Table-Element gesetzt
+- Kinder referenzieren: TableHead → `--_table-head-py`, TableCell → `--_table-py` (shared: `--_table-px`)
 - Striped nutzt `data-striped` Attribut + Tailwind arbitrary variant `[[data-striped]_&:nth-child(even)]`
 - `numeric` Prop auf TableCell: automatisch `text-right` + `tabular-nums` (monospace Ziffern)
 - Badge Component in Stories integriert (WorkoutTypes, HR Zones, Trends)
 - Conditional Styling via className (z.B. HF Max > 180 → error-text)
 
 ### Breaking Changes
-- None (initial release)
+- **v2:** Spacing-Tokens referenzieren jetzt `spacing.component.padding.*` statt `sizing.component.padding-*.*`
+- **v2:** 3 neue `head-y` Tokens für separates Header-Padding
+- **v2:** Neuer L3 Token `spacing.component.padding.xl` (32px)
+- **v2:** `leading-relaxed` auf Table für bessere Lesbarkeit
 
 ### Issues / Todos
 - [ ] Add sortable columns (click to sort)
@@ -357,7 +365,7 @@
 **Test Coverage:** Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
 **A11y Compliance:** Table + Badge + Card getestet | Button: nur manuell geprüft
 **Storybook Stories:** 34 Stories (Button: 4, Card: 11, Badge: 12, Table: 7)
-**Design Tokens:** 65+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 11)
+**Design Tokens:** 68+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 14) + 1 neuer L3 Token
 
 ---
 
@@ -401,6 +409,17 @@
   - `[[data-striped]_&:nth-child(even)]` Tailwind arbitrary variant für conditional child styling
   - `tabular-nums` für monospace-Ziffern in numerischen Spalten
   - `sticky top-0 z-10` für fixierten Table-Header beim Scrollen
+
+### 2026-02-13 - Table Spacing Redesign ("Scandinavian Whitespace")
+- Von tight Button-Spacing auf großzügiges Component-Padding gewechselt
+- Separates Header-Padding (`--_table-head-py`) für visuellen Hierarchie-Unterschied
+- L3 Token `spacing.component.padding.xl` (32px) für spacious Density erstellt
+- `leading-relaxed` für besseren vertikalen Rhythm
+- **Learnings:**
+  - `sizing.component.padding-y.*` (6/8/10px) ist für Buttons, nicht für Tabellen!
+  - `spacing.component.padding.*` (12/16/24px) ist besser für Inhalts-Components
+  - Header braucht eigene vertikale Padding-Tokens für klare Hierarchie
+  - "Scandinavian Design" = Minimum 2× mehr vertikaler Raum als man denkt
 
 ---
 

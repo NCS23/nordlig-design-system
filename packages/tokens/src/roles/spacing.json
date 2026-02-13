@@ -5,7 +5,8 @@
       "padding": {
         "sm": { "$type": "dimension", "$value": "{spacing.sm}" },
         "md": { "$type": "dimension", "$value": "{spacing.md}" },
-        "lg": { "$type": "dimension", "$value": "{spacing.lg}" }
+        "lg": { "$type": "dimension", "$value": "{spacing.lg}" },
+        "xl": { "$type": "dimension", "$value": "{spacing.xl}" }
       },
       "gap": {
         "sm": { "$type": "dimension", "$value": "{spacing.xs}" },

@@ -37,6 +37,18 @@ describe('Table', () => {
     const table = screen.getByTestId('table');
     expect(table.style.getPropertyValue('--_table-px')).toBe('var(--spacing-table-cell-x-normal)');
     expect(table.style.getPropertyValue('--_table-py')).toBe('var(--spacing-table-cell-y-normal)');
+    expect(table.style.getPropertyValue('--_table-head-py')).toBe('var(--spacing-table-head-y-normal)');
+  });
+
+  it('has leading-relaxed for vertical rhythm', () => {
+    render(
+      <Table data-testid="table">
+        <TableBody>
+          <TableRow><TableCell>Cell</TableCell></TableRow>
+        </TableBody>
+      </Table>
+    );
+    expect(screen.getByTestId('table').className).toContain('leading-relaxed');
   });
 
   it('applies compact density CSS custom properties', () => {
@@ -49,6 +61,7 @@ describe('Table', () => {
     );
     const table = screen.getByTestId('table');
     expect(table.style.getPropertyValue('--_table-px')).toBe('var(--spacing-table-cell-x-compact)');
+    expect(table.style.getPropertyValue('--_table-head-py')).toBe('var(--spacing-table-head-y-compact)');
   });
 
   it('applies spacious density CSS custom properties', () => {
@@ -61,6 +74,7 @@ describe('Table', () => {
     );
     const table = screen.getByTestId('table');
     expect(table.style.getPropertyValue('--_table-px')).toBe('var(--spacing-table-cell-x-spacious)');
+    expect(table.style.getPropertyValue('--_table-head-py')).toBe('var(--spacing-table-head-y-spacious)');
   });
 
   it('sets data-striped attribute when striped', () => {
@@ -287,7 +301,7 @@ describe('TableHead', () => {
     expect(screen.getByTestId('th').className).toContain('font-semibold');
   });
 
-  it('uses CSS custom properties for padding', () => {
+  it('uses CSS custom properties for padding with separate header vertical', () => {
     render(
       <table>
         <thead>
@@ -297,7 +311,7 @@ describe('TableHead', () => {
     );
     const th = screen.getByTestId('th');
     expect(th.className).toContain('px-[var(--_table-px)]');
-    expect(th.className).toContain('py-[var(--_table-py)]');
+    expect(th.className).toContain('py-[var(--_table-head-py)]');
   });
 
   it('forwards ref', () => {
