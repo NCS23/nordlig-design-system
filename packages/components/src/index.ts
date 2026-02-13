@@ -5,6 +5,12 @@ export { Input, inputVariants, type InputProps } from './atoms/Input';
 
 // Molecules
 export { InputField, type InputFieldProps } from './molecules/InputField';
+export {
+  DatePicker,
+  Calendar,
+  type DatePickerProps,
+  type CalendarProps,
+} from './molecules/DatePicker';
 
 // Organisms
 export {

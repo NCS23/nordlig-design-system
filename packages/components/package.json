@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@nordlig/tokens": "workspace:*",
+    "@radix-ui/react-popover": "^1.1.15",
+    "date-fns": "^4.1.0",
     "lucide-react": "^0.563.0"
   },
   "devDependencies": {

@@ -460,6 +460,120 @@
 
 ---
 
+## [DatePicker] - 2026-02-13
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-datepicker-popover-bg` → `#ffffff` (White popover)
+  - `color-datepicker-popover-border` → L3 `color.border.muted`
+  - `color-datepicker-header-text` → L3 `color.text.base`
+  - `color-datepicker-weekday-text` → L3 `color.text.muted`
+  - `color-datepicker-day-text` → L3 `color.text.base`
+  - `color-datepicker-day-hover-bg` → L3 `color.neutral.1.100`
+  - `color-datepicker-day-selected-bg` → L3 `color.bg.primary` (Sky Blue!)
+  - `color-datepicker-day-selected-text` → L3 `color.text.inverse`
+  - `color-datepicker-day-today-border` → L3 `color.border.focus` (Sky Blue Ring)
+  - `color-datepicker-day-disabled-text` → L3 `color.text.disabled`
+  - `color-datepicker-nav-hover-bg` → L3 `color.neutral.1.100`
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-datepicker-popover` → L3 `shadow.elevation.medium`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-datepicker-popover` → L3 `radius.component.lg` (8px)
+  - `radius-datepicker-day` → L3 `radius.component.md` (6px)
+- **Level 4 (Semantic) – Sizing:**
+  - `sizing-datepicker-day-size` → 36px (day cell width/height)
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-datepicker-popover-padding` → L3 `spacing.component.padding.md` (16px)
+  - `spacing-datepicker-grid-gap` → L3 `spacing.component.gap.sm` (8px)
+- **17 Tokens insgesamt** (11 Color + 1 Shadow + 2 Radius + 1 Sizing + 2 Spacing)
+
+### Architecture
+- **Radix UI Popover** für Overlay-Verhalten (Portal, Positioning, Focus Management)
+- **Custom Calendar Grid** statt externes Lib – volle Design-Kontrolle
+- **date-fns** für Datumslogik (startOfMonth, eachDayOfInterval, format, parse)
+- **German Locale** (de) – Monatsnamen deutsch, Wochenstart Montag
+- **Dual Input:** Textfeld (DD.MM.YYYY) + Kalender-Popover
+- **Popover.Anchor** statt Popover.Trigger – Input bleibt beschreibbar bei offenem Popover
+- **onOpenAutoFocus prevented** – Fokus bleibt auf Input, nicht auf Kalender
+
+### Components
+- **Calendar** – Standalone grid: Month navigation, weekday headers, day cells
+- **DatePicker** – Composite: Input + Calendar Icon Button + Popover + Calendar
+
+### Files
+- `packages/components/src/molecules/DatePicker/Calendar.tsx`
+- `packages/components/src/molecules/DatePicker/DatePicker.tsx`
+- `packages/components/src/molecules/DatePicker/DatePicker.test.tsx` (39 Tests)
+- `packages/components/src/molecules/DatePicker/DatePicker.stories.tsx` (10 Stories)
+- `packages/components/src/molecules/DatePicker/index.ts`
+- `packages/tokens/src/semantic/datepicker.json`
+
+### Props – DatePicker
+- **value:** Date | undefined – Selected date
+- **onChange:** (date: Date | undefined) => void
+- **placeholder:** string (default: 'TT.MM.JJJJ')
+- **inputSize:** sm | md | lg – Same as Input/Button
+- **error:** boolean
+- **disabled:** boolean
+- **minDate / maxDate:** Date constraints
+- **name / id / aria-label:** Form integration
+
+### Props – Calendar
+- **selected:** Date | undefined
+- **month:** Date (currently displayed month)
+- **onSelect / onMonthChange:** Callbacks
+- **minDate / maxDate:** Date constraints
+
+### Test Coverage
+- ✅ **39 Tests – alle bestanden**
+- ✅ **100% Coverage**
+- **Calendar Tests (20):** Grid rendering, German month names, weekday headers (Mo-So), month navigation, day selection, aria-selected, disabled outside-month days, min/max date constraints, today highlighting, selected styling, day-size token, popover-padding token, className, ref forwarding
+- **DatePicker Tests (19):** Placeholder, calendar icon button, formatted display, error/disabled states, aria-label/haspopup/expanded, onChange on typing, onChange on clear, popover open/close, day selection from popover, month navigation in popover, ref forwarding, id passthrough, custom className, disabled popover prevention
+
+### Accessibility
+- ✅ `role="grid"` auf Calendar mit `aria-label` (Monatsname)
+- ✅ `role="columnheader"` auf Wochentag-Labels
+- ✅ `role="gridcell"` auf Day-Buttons
+- ✅ `aria-selected` auf ausgewähltem Tag
+- ✅ `aria-disabled` auf deaktivierten Tagen
+- ✅ `aria-haspopup="dialog"` auf Input
+- ✅ `aria-expanded` auf Input (popover state)
+- ✅ `aria-label="Datum auswählen"` (default) auf Input
+- ✅ `aria-label="Kalender öffnen"` auf Icon Button
+- ✅ `aria-label="Vorheriger/Nächster Monat"` auf Nav Buttons
+- ✅ `aria-live="polite"` auf Monat/Jahr Anzeige
+- ✅ Keyboard Navigation: Arrow keys für Tagesauswahl
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-datepicker
+- **DatePicker Stories:** Default, WithValue, Error, Disabled, MinMaxDates, AllSizes, States, TrainingAnalyzer
+- **Calendar Stories:** CalendarDefault, CalendarWithSelection, CalendarWithConstraints
+- **Controls:** inputSize, error, disabled
+
+### Notes
+- **German Format:** DD.MM.YYYY (nicht ISO 8601) – `date-fns` parse/format
+- **Dual Entry:** Tippen (DD.MM.YYYY) ODER Kalender-Click
+- **Input bleibt fokussiert** bei offenem Popover (onOpenAutoFocus prevented)
+- **Calendar Icon als Button** (nicht span) – klickbar, mit aria-label
+- **Dependencies:** `@radix-ui/react-popover`, `date-fns`, `lucide-react`
+- **Popover.Anchor** statt Popover.Trigger vermeidet Focus-Stealing beim Tippen
+- **Hidden Input** für Form-Submission (ISO format: yyyy-MM-dd)
+
+### Breaking Changes
+- None (initial release)
+
+### Issues / Todos
+- [ ] Add date range picker variant (von-bis)
+- [ ] Add time picker option (Datum + Uhrzeit)
+- [ ] Add keyboard shortcut "T" für heute
+- [ ] Add "Heute" Button im Kalender-Footer
+
+---
+
 ## Planned Components
 
 ### Medium Priority (Design System Completion)
@@ -488,18 +602,18 @@
 
 ## Development Statistics
 
-**Total Components:** 6 (6 complete)
+**Total Components:** 8 (8 complete, inkl. Calendar als Sub-Component)
 **Atoms:** 3 (Button, Badge, Input)
-**Molecules:** 1 (InputField)
+**Molecules:** 2 (InputField, DatePicker + Calendar)
 **Organisms:** 2 (Card, Table)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage
-**Test Coverage:** Input 100% | InputField 100% | Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
-**A11y Compliance:** Input + InputField + Table + Badge + Card getestet | Button: nur manuell geprüft
-**Storybook Stories:** 53 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 8, InputField: 11)
-**Design Tokens:** 87+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 14 | Input: 19) + 2 L3 Tokens
-**Total Tests:** 123
+**Test Coverage:** DatePicker 100% | Input 100% | InputField 100% | Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
+**A11y Compliance:** DatePicker + Input + InputField + Table + Badge + Card getestet | Button: nur manuell geprüft
+**Storybook Stories:** 63 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 8, InputField: 11, DatePicker: 10)
+**Design Tokens:** 104+ L4-Tokens (Button: 18 | Card: 6 | Badge: 25 | Table: 14 | Input: 19 | DatePicker: 17) + 2 L3 Tokens
+**Total Tests:** 162
 
 ---
 
@@ -601,5 +715,17 @@
 
 ---
 
+### 2026-02-13 - DatePicker Component
+- Custom Calendar statt externe Lib – volle Design-Kontrolle + Token-Integration
+- Radix UI Popover für Overlay (Portal, Positioning, Dismiss on Outside Click)
+- date-fns für Datumslogik (leichtgewichtig, tree-shakeable)
+- **Learnings:**
+  - `Popover.Trigger` klaut Focus beim Tippen → `Popover.Anchor` + manuelle Open-Steuerung
+  - `onOpenAutoFocus={(e) => e.preventDefault()}` verhindert Focus-Jump in Popover
+  - German locale: `{ locale: de }` in date-fns format/parse für "Januar", "Februar" etc.
+  - `weekStartsOn: 1` für Montag-Start (Standard in DE/Europa)
+  - Calendar als eigenständige exportierte Component → wiederverwendbar ohne DatePicker
+  - Hidden `<input type="hidden">` für Form-Submission im ISO-Format (yyyy-MM-dd)
+
 **Last Updated:** 2026-02-13
-**Next Component:** Select / Icon (siehe Planned Components)
+**Next Component:** Select / Icon / Spinner (siehe Planned Components)

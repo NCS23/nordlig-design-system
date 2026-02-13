@@ -1,0 +1,41 @@
+{
+  "color": {
+    "$description": "Level 4: DatePicker component tokens",
+    "datepicker": {
+      "popover-bg":       { "$type": "color", "$value": "#ffffff", "$description": "White popover background" },
+      "popover-border":   { "$type": "color", "$value": "{color.border.muted}", "$description": "Subtle popover border" },
+      "header-text":      { "$type": "color", "$value": "{color.text.base}", "$description": "Month/year header text" },
+      "weekday-text":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Mo Di Mi weekday labels" },
+      "day-text":         { "$type": "color", "$value": "{color.text.base}", "$description": "Default day number" },
+      "day-hover-bg":     { "$type": "color", "$value": "{color.neutral.1.100}", "$description": "Day hover background" },
+      "day-selected-bg":  { "$type": "color", "$value": "{color.bg.primary}", "$description": "Sky Blue selected day" },
+      "day-selected-text": { "$type": "color", "$value": "{color.text.inverse}", "$description": "White text on selected" },
+      "day-today-border": { "$type": "color", "$value": "{color.border.focus}", "$description": "Sky Blue ring for today" },
+      "day-disabled-text": { "$type": "color", "$value": "{color.text.disabled}", "$description": "Disabled/outside day" },
+      "nav-hover-bg":     { "$type": "color", "$value": "{color.neutral.1.100}", "$description": "Chevron hover bg" }
+    }
+  },
+  "shadow": {
+    "datepicker": {
+      "popover": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Popover elevation" }
+    }
+  },
+  "radius": {
+    "datepicker": {
+      "popover": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px popover radius" },
+      "day":     { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px day cell radius" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: DatePicker sizing",
+    "datepicker": {
+      "day-size": { "$type": "dimension", "$value": "36px", "$description": "Day cell width/height" }
+    }
+  },
+  "spacing": {
+    "datepicker": {
+      "popover-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px popover inner padding" },
+      "grid-gap":        { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "2px gap between day cells" }
+    }
+  }
+}
