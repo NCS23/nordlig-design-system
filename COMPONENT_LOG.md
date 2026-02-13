@@ -229,14 +229,92 @@
 
 ---
 
+## [Table] - 2026-02-13
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Organism
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-table-header-bg` → L3 `color.bg.surface`
+  - `color-table-header-text` → L3 `color.text.base`
+  - `color-table-border` → L3 `color.border.muted`
+  - `color-table-row-stripe` → L3 `color.neutral.1.50`
+  - `color-table-row-hover` → L3 `color.neutral.1.100`
+- **Level 4 (Semantic) – Spacing (pro Density compact/normal/spacious):**
+  - `spacing-table-cell-x-{density}` → L3 `sizing.component.padding-x.*`
+  - `spacing-table-cell-y-{density}` → L3 `sizing.component.padding-y.*`
+  - **6 Spacing-Tokens insgesamt** (2 pro Density × 3)
+- **11 Tokens insgesamt** – alle referenzieren ausschließlich L3
+
+### Architecture
+- **Density via CSS Custom Properties:** Table setzt `--_table-px` und `--_table-py` per `style`, Kinder referenzieren diese
+- **Striped via data-attribute:** `data-striped` auf `<table>`, Rows nutzen `[[data-striped]_&:nth-child(even)]`
+- **Semantic HTML:** `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`
+
+### Files
+- `packages/components/src/organisms/Table/Table.tsx` (6 Compound Components)
+- `packages/components/src/organisms/Table/Table.test.tsx` (34 Tests)
+- `packages/components/src/organisms/Table/Table.stories.tsx` (7 Stories)
+- `packages/components/src/organisms/Table/index.ts`
+- `packages/tokens/src/semantic/table.json`
+
+### Components
+- **Table** – Wrapper: `overflow-x-auto` div + `<table>`, Props: density, striped
+- **TableHeader** – `<thead>`: sticky top-0, header background
+- **TableBody** – `<tbody>`: last-row border removal
+- **TableRow** – `<tr>`: border-b, hover state, striped support
+- **TableHead** – `<th>`: font-semibold, align (left/center/right)
+- **TableCell** – `<td>`: align, numeric (right-align + tabular-nums)
+
+### Props
+- **Table:** density (compact/normal/spacious), striped (boolean)
+- **TableRow:** hoverable (boolean, default true)
+- **TableHead:** align (left/center/right)
+- **TableCell:** align (left/center/right), numeric (boolean → right-align + tabular-nums)
+
+### Test Coverage
+- ✅ **34 Tests – alle bestanden**
+- ✅ **100% Coverage** (Statements, Branches, Functions, Lines)
+- Test-Gruppen: Table (9), TableHeader (4), TableBody (2), TableRow (4), TableHead (7), TableCell (6), Compound (2)
+- Getestet: Density CSS Props, Striped, Hover, Alignment, Numeric, Semantic HTML, Ref-Forwarding, Accessibility
+
+### Accessibility
+- ✅ Semantic HTML: proper `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`
+- ✅ `scope="col"` Support auf TableHead
+- ✅ `aria-label` auf Table
+- ✅ Hoverable rows mit `transition-colors`
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/organisms-table
+- **Stories:** Basic, Striped, AllDensities
+- **Training Analyzer Stories:** LapAnalysis, WeeklyLog (mit Badges), HeartRateZones (mit Badges), Interactive
+- **Controls:** density, striped
+- **Docs:** Auto-generated via autodocs tag
+
+### Notes
+- Density wird per CSS Custom Properties (`--_table-px`, `--_table-py`) auf dem Table-Element gesetzt
+- Kinder (TableHead, TableCell) referenzieren `var(--_table-px/py)` – kein Context nötig
+- Striped nutzt `data-striped` Attribut + Tailwind arbitrary variant `[[data-striped]_&:nth-child(even)]`
+- `numeric` Prop auf TableCell: automatisch `text-right` + `tabular-nums` (monospace Ziffern)
+- Badge Component in Stories integriert (WorkoutTypes, HR Zones, Trends)
+- Conditional Styling via className (z.B. HF Max > 180 → error-text)
+
+### Breaking Changes
+- None (initial release)
+
+### Issues / Todos
+- [ ] Add sortable columns (click to sort)
+- [ ] Add TableCaption sub-component
+- [ ] Add row selection (checkbox column)
+- [ ] Add empty state (no data message)
+
+---
+
 ## Planned Components
 
 ### High Priority (Training Analyzer Essentials)
-
-#### [Table] - Planned
-**Level:** Organism  
-**Priority:** ⭐⭐ CRITICAL  
-**Use Case:** Lap data, training history, heart rate zones
 
 #### [Input / InputField] - Planned
 **Level:** Atom / Molecule  
@@ -269,17 +347,17 @@
 
 ## Development Statistics
 
-**Total Components:** 3 (3 complete)
+**Total Components:** 4 (4 complete)
 **Atoms:** 2 (Button, Badge)
 **Molecules:** 0
-**Organisms:** 1 (Card)
+**Organisms:** 2 (Card, Table)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage
-**Test Coverage:** Badge 100% | Card 100% | Button: Tests ausstehend
-**A11y Compliance:** Badge + Card getestet | Button: nur manuell geprüft
-**Storybook Stories:** 27 Stories (Button: 4, Card: 11, Badge: 12)
-**Design Tokens:** 54+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25)
+**Test Coverage:** Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
+**A11y Compliance:** Table + Badge + Card getestet | Button: nur manuell geprüft
+**Storybook Stories:** 34 Stories (Button: 4, Card: 11, Badge: 12, Table: 7)
+**Design Tokens:** 65+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 11)
 
 ---
 
@@ -313,7 +391,18 @@
   - Tailwind `shadow-[var(...)]` funktioniert NICHT mit compound shadows (Kommas) → Tailwind Utilities nutzen
   - `bg-white` statt Token für besseren Kontrast auf farbigen Hintergründen
 
+### 2026-02-13 - Table Component
+- Table als zweites Organism (6 Compound Components)
+- Density-System via CSS Custom Properties statt React Context
+- Striped Rows via `data-striped` Attribut + Tailwind arbitrary variant
+- Badge-Integration in Stories (WorkoutTypes, HR Zones)
+- **Learnings:**
+  - CSS Custom Properties auf Parent-Element setzen, Kinder referenzieren → kein Context nötig
+  - `[[data-striped]_&:nth-child(even)]` Tailwind arbitrary variant für conditional child styling
+  - `tabular-nums` für monospace-Ziffern in numerischen Spalten
+  - `sticky top-0 z-10` für fixierten Table-Header beim Scrollen
+
 ---
 
 **Last Updated:** 2026-02-13
-**Next Component:** Table (siehe Planned Components)
+**Next Component:** Input / Select (siehe Planned Components)
