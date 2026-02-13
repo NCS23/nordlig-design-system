@@ -17,6 +17,7 @@ Diese Datei ist die **führende Quelle** für alle Entwicklungsentscheidungen im
 3. **4-Layer Hierarchie ist sakrosankt** - NIEMALS Ebenen überspringen.
 4. **Storybook ist Pflicht** - Jede Änderung muss dokumentiert werden.
 5. **Accessibility ist nicht optional** - WCAG 2.1 AA Minimum.
+6. **Development Log Pflicht** - Jede Component wird in COMPONENT_LOG.md dokumentiert.
 
 ### Prioritätenhierarchie
 
@@ -514,6 +515,93 @@ import '../../../packages/styles/dist/tokens.css';
 
 ---
 
+## 📋 Development Log
+
+### COMPONENT_LOG.md - Pflicht!
+
+Jede Component-Entwicklung MUSS dokumentiert werden:
+
+```markdown
+## [ComponentName] - YYYY-MM-DD
+
+**Status:** ✅ Complete | 🚧 In Progress | 📏 Planned
+**Developer:** Name
+**Level:** Atom | Molecule | Organism
+
+### Tokens Created
+- Level 4: Liste aller neuen Tokens
+
+### Files
+- packages/components/src/.../Component.tsx
+- packages/components/src/.../Component.stories.tsx
+- packages/components/src/.../Component.test.tsx
+
+### Variants
+- variant: primary, secondary
+- size: sm, md, lg
+
+### Test Coverage
+- XX% (Ziel: >80%)
+
+### Accessibility
+- ✅ Keyboard Navigation
+- ✅ Focus Indicators
+- ✅ ARIA Labels
+- ✅ Color Contrast
+
+### Storybook
+- URL: http://localhost:6006/?path=/story/...
+- Stories: Liste
+
+### Notes
+- Wichtige Design-Entscheidungen
+- Use Cases
+- Learnings
+
+### Breaking Changes
+- Keine | Liste
+
+### Issues / Todos
+- [ ] Offene Punkte
+```
+
+### Workflow
+
+**1. Vor dem Start:**
+```bash
+# COMPONENT_LOG.md öffnen
+# Neuen Eintrag mit Status "🚧 In Progress" anlegen
+```
+
+**2. Während Entwicklung:**
+- Tokens dokumentieren sobald erstellt
+- Files listen sobald angelegt
+- Notes zu Design-Entscheidungen
+
+**3. Nach Completion:**
+```bash
+# Status auf "✅ Complete" ändern
+# Test Coverage eintragen
+# A11y Checkliste ausfüllen
+# Storybook URL hinzufügen
+```
+
+**4. Commit & Push:**
+```bash
+git add COMPONENT_LOG.md
+git commit -m "docs: update component log for [ComponentName]"
+```
+
+### Warum?
+
+1. **Nachvollziehbarkeit** - Wer hat wann was warum gemacht?
+2. **Onboarding** - Neue Devs sehen Component-Historie
+3. **Audits** - Coverage/A11y/Tokens auf einen Blick
+4. **Learnings** - Was haben wir gelernt?
+5. **Breaking Changes** - Klar dokumentiert
+
+---
+
 ## 📞 Hilfe & Support
 
 ### Bei Fragen
@@ -534,6 +622,7 @@ import '../../../packages/styles/dist/tokens.css';
 
 ## 🎓 Weiterführende Docs
 
+- [COMPONENT_LOG.md](COMPONENT_LOG.md) - Component Development History
 - [ARCHITECTURE.md](docs/ARCHITECTURE.md) - 4-Layer System Deep Dive
 - [TOKEN_GUIDELINES.md](docs/TOKEN_GUIDELINES.md) - Wann welche Tokens
 - [COMPONENT_GUIDELINES.md](docs/COMPONENT_GUIDELINES.md) - Atomic Design Details

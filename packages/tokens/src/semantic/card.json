@@ -8,8 +8,19 @@
   },
   "spacing": {
     "card": {
-      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}" },
-      "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}" }
+      "padding-compact":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}" },
+      "padding-normal":   { "$type": "dimension", "$value": "{spacing.component.padding.md}" },
+      "padding-spacious": { "$type": "dimension", "$value": "{spacing.component.padding.lg}" },
+      "gap":              { "$type": "dimension", "$value": "{spacing.component.gap.md}" }
     }
+  },
+  "shadow": {
+    "card": {
+      "raised":   { "$type": "shadow", "$value": "{shadow.elevation.low}" },
+      "elevated": { "$type": "shadow", "$value": "{shadow.elevation.medium}" }
+    }
+  },
+  "radius": {
+    "card": { "$type": "dimension", "$value": "{radius.component.lg}" }
   }
 }

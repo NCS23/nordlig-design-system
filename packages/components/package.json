@@ -20,10 +20,15 @@
     "@nordlig/tokens": "workspace:*"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "@vitest/coverage-v8": "^1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.0",
+    "jsdom": "^28.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.6.0",
@@ -35,5 +40,10 @@
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
-  "keywords": ["react", "components", "nordlig", "design-system"]
+  "keywords": [
+    "react",
+    "components",
+    "nordlig",
+    "design-system"
+  ]
 }
