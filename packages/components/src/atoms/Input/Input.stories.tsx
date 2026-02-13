@@ -94,3 +94,13 @@ export const States: Story = {
     </div>
   ),
 };
+
+export const Password: Story = {
+  name: 'Password Toggle',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '320px' }}>
+      <Input type="password" placeholder="Enter password..." />
+      <Input type="password" placeholder="Error password" error />
+    </div>
+  ),
+};

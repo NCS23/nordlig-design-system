@@ -354,8 +354,8 @@
 
 ### Files
 - `packages/components/src/atoms/Input/Input.tsx`
-- `packages/components/src/atoms/Input/Input.test.tsx` (21 Tests)
-- `packages/components/src/atoms/Input/Input.stories.tsx` (7 Stories)
+- `packages/components/src/atoms/Input/Input.test.tsx` (31 Tests)
+- `packages/components/src/atoms/Input/Input.stories.tsx` (8 Stories)
 - `packages/components/src/atoms/Input/index.ts`
 - `packages/tokens/src/semantic/input.json`
 
@@ -363,21 +363,23 @@
 - **inputSize:** sm, md (default), lg – Heights match Button sizes!
 - **error:** boolean (red border + red focus ring)
 - **disabled:** native HTML attribute (gray bg, no-cursor)
+- **type=password:** Automatischer Eye/EyeOff Toggle Button (Lucide React)
 
 ### Test Coverage
-- ✅ **21 Tests – alle bestanden**
+- ✅ **31 Tests – alle bestanden**
 - ✅ **100% Coverage**
-- Getestet: Alle 3 Sizes, Error State, Disabled, ARIA attributes, Focus Ring, Hover, Placeholder, Type, Ref-Forwarding, User Input
+- Getestet: Alle 3 Sizes, Error State, Disabled, ARIA attributes, Focus Ring, Hover, Placeholder, Type, Ref-Forwarding, User Input, Password Toggle (10 Tests)
 
 ### Accessibility
 - ✅ `aria-invalid` automatisch bei error=true
 - ✅ Focus Ring (ring-2 + ring-offset-1 + sky blue)
 - ✅ Disabled State (cursor-not-allowed + visuelles Feedback)
 - ✅ Placeholder Color Token (muted, nicht zu dunkel)
+- ✅ Password Toggle: `aria-label="Show/Hide password"`
 
 ### Storybook
 - **URL:** http://localhost:6006/?path=/story/atoms-input
-- **Stories:** Default, WithValue, Error, Disabled, AllSizes, InputTypes, States
+- **Stories:** Default, WithValue, Error, Disabled, AllSizes, InputTypes, States, Password Toggle
 - **Controls:** inputSize, error, disabled, type
 
 ### Notes
@@ -385,9 +387,12 @@
 - Heights exakt gleich wie Button (36/40/44px) für Inline-Formulare
 - Error-State: subtiles Rot – Border + Focus Ring werden rot, nicht der Background
 - Disabled: grauer Background, kein Hover-Effekt
+- **Background: `bg-white`** statt Token für klare Papier-Optik auf farbigem Page BG (wie Card)
+- **Password Toggle:** Automatisch bei `type="password"` – Eye/EyeOff Icons (Lucide React), `tabIndex={-1}` auf Button
+- **Dependency:** `lucide-react` für Eye/EyeOff Icons
 
 ### Breaking Changes
-- None (initial release)
+- **v2:** Background von `bg-[var(--color-input-bg)]` auf `bg-white` geändert (Papier-Look)
 
 ### Issues / Todos
 - [ ] Add suffix/prefix support (z.B. "min/km", "bpm")
@@ -410,7 +415,7 @@
 ### Files
 - `packages/components/src/molecules/InputField/InputField.tsx`
 - `packages/components/src/molecules/InputField/InputField.test.tsx` (18 Tests)
-- `packages/components/src/molecules/InputField/InputField.stories.tsx` (10 Stories)
+- `packages/components/src/molecules/InputField/InputField.stories.tsx` (11 Stories)
 - `packages/components/src/molecules/InputField/index.ts`
 
 ### Props
@@ -492,9 +497,9 @@
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage
 **Test Coverage:** Input 100% | InputField 100% | Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
 **A11y Compliance:** Input + InputField + Table + Badge + Card getestet | Button: nur manuell geprüft
-**Storybook Stories:** 51 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 7, InputField: 10)
+**Storybook Stories:** 53 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 8, InputField: 11)
 **Design Tokens:** 87+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 14 | Input: 19) + 2 L3 Tokens
-**Total Tests:** 113
+**Total Tests:** 123
 
 ---
 
@@ -571,6 +576,16 @@
   - Zeitungsstil: Struktur durch Typografie (uppercase, tracking) nicht durch Hintergrundfarbe
   - Header KLEINER als Body = elegantere Hierarchie (invertiertes Padding-Verhältnis)
   - "Weniger ist mehr" gilt besonders für Table Headers im nordischen Design
+
+### 2026-02-13 - Input Improvements (White BG + Password Toggle)
+- Background von Token (`color.bg.base` = slate-50) auf `bg-white` geändert – klare Papier-Optik
+- Password Toggle: Eye/EyeOff Icons bei `type="password"` automatisch
+- `lucide-react` als Dependency hinzugefügt
+- 10 neue Tests für Password Toggle
+- **Learnings:**
+  - Gleiche bg-white Strategie wie Card – Token-BG (slate-50) ist auf slate-50 Page unsichtbar
+  - `tabIndex={-1}` auf Toggle Button – Focus soll auf dem Input bleiben
+  - Password Toggle als Teil des Input (nicht InputField) – funktioniert auch ohne Label
 
 ### 2026-02-13 - Input + InputField Components
 - Input als dritter Atom (CVA, 3 Sizes matching Button)

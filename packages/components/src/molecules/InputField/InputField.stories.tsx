@@ -128,6 +128,20 @@ export const DateFilter: Story = {
   ),
 };
 
+export const PasswordField: Story = {
+  name: 'Password mit Toggle',
+  render: () => (
+    <div style={{ maxWidth: '320px' }}>
+      <InputField
+        label="Passwort"
+        type="password"
+        placeholder="Passwort eingeben..."
+        helperText="Mindestens 8 Zeichen"
+      />
+    </div>
+  ),
+};
+
 export const InlineWithButton: Story = {
   name: 'Inline mit Button',
   render: () => (

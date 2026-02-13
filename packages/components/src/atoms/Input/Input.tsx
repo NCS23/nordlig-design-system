@@ -1,10 +1,11 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { Eye, EyeOff } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 const inputVariants = cva(
   [
-    'w-full border bg-[var(--color-input-bg)] text-[var(--color-input-text)]',
+    'w-full border bg-white text-[var(--color-input-text)]',
     'placeholder:text-[var(--color-input-text-placeholder)]',
     'transition-colors',
     'hover:border-[var(--color-input-border-hover)]',
@@ -52,10 +53,38 @@ export interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, inputSize, error = false, ...props }, ref) => {
+  ({ className, inputSize, error = false, type, ...props }, ref) => {
+    const [showPassword, setShowPassword] = React.useState(false);
+    const isPassword = type === 'password';
+    const effectiveType = isPassword && showPassword ? 'text' : type;
+
+    if (isPassword) {
+      return (
+        <div className="relative w-full">
+          <input
+            ref={ref}
+            type={effectiveType}
+            aria-invalid={error || undefined}
+            className={cn(inputVariants({ inputSize, error }), 'pr-10', className)}
+            {...props}
+          />
+          <button
+            type="button"
+            tabIndex={-1}
+            onClick={() => setShowPassword((prev) => !prev)}
+            aria-label={showPassword ? 'Hide password' : 'Show password'}
+            className="absolute right-0 top-0 flex h-full items-center px-3 text-[var(--color-input-text-placeholder)] hover:text-[var(--color-input-text)] transition-colors"
+          >
+            {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+          </button>
+        </div>
+      );
+    }
+
     return (
       <input
         ref={ref}
+        type={type}
         aria-invalid={error || undefined}
         className={cn(inputVariants({ inputSize, error, className }))}
         {...props}

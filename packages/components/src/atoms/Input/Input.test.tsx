@@ -52,9 +52,9 @@ describe('Input', () => {
     expect(screen.getByTestId('input')).not.toHaveAttribute('aria-invalid');
   });
 
-  it('has background token class', () => {
+  it('has white background', () => {
     render(<Input data-testid="input" />);
-    expect(screen.getByTestId('input').className).toContain('bg-[var(--color-input-bg)]');
+    expect(screen.getByTestId('input').className).toContain('bg-white');
   });
 
   it('has text color token class', () => {
@@ -123,5 +123,69 @@ describe('Input', () => {
   it('has padding-x from spacing token', () => {
     render(<Input data-testid="input" />);
     expect(screen.getByTestId('input').className).toContain('px-[var(--spacing-input-padding-x)]');
+  });
+});
+
+describe('Input password toggle', () => {
+  it('renders toggle button for type=password', () => {
+    render(<Input type="password" data-testid="input" />);
+    expect(screen.getByRole('button', { name: 'Show password' })).toBeInTheDocument();
+  });
+
+  it('does not render toggle for other types', () => {
+    render(<Input type="text" data-testid="input" />);
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it('starts with password hidden', () => {
+    render(<Input type="password" data-testid="input" />);
+    expect(screen.getByTestId('input')).toHaveAttribute('type', 'password');
+  });
+
+  it('toggles to text on button click', async () => {
+    const user = userEvent.setup();
+    render(<Input type="password" data-testid="input" />);
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+    expect(screen.getByTestId('input')).toHaveAttribute('type', 'text');
+  });
+
+  it('toggles back to password on second click', async () => {
+    const user = userEvent.setup();
+    render(<Input type="password" data-testid="input" />);
+    const btn = screen.getByRole('button');
+    await user.click(btn);
+    await user.click(btn);
+    expect(screen.getByTestId('input')).toHaveAttribute('type', 'password');
+  });
+
+  it('updates aria-label on toggle', async () => {
+    const user = userEvent.setup();
+    render(<Input type="password" data-testid="input" />);
+    const btn = screen.getByRole('button');
+    expect(btn).toHaveAttribute('aria-label', 'Show password');
+    await user.click(btn);
+    expect(btn).toHaveAttribute('aria-label', 'Hide password');
+  });
+
+  it('wraps input in relative container', () => {
+    const { container } = render(<Input type="password" />);
+    expect(container.firstChild).toHaveClass('relative');
+  });
+
+  it('adds right padding for toggle button', () => {
+    render(<Input type="password" data-testid="input" />);
+    expect(screen.getByTestId('input').className).toContain('pr-10');
+  });
+
+  it('forwards ref for password input', () => {
+    const ref = { current: null } as React.RefObject<HTMLInputElement>;
+    render(<Input ref={ref} type="password" />);
+    expect(ref.current).toBeInstanceOf(HTMLInputElement);
+  });
+
+  it('applies error state on password input', () => {
+    render(<Input type="password" data-testid="input" error />);
+    expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+    expect(screen.getByTestId('input').className).toContain('border-[var(--color-input-border-error)]');
   });
 });

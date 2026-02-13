@@ -17,7 +17,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@nordlig/tokens": "workspace:*"
+    "@nordlig/tokens": "workspace:*",
+    "lucide-react": "^0.563.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
