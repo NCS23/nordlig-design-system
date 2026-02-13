@@ -1,2 +1,3 @@
 export { DatePicker, type DatePickerProps } from './DatePicker';
-export { Calendar, type CalendarProps } from './Calendar';
+export { DateRangePicker, type DateRangePickerProps } from './DateRangePicker';
+export { Calendar, type CalendarProps, type DateRange } from './Calendar';

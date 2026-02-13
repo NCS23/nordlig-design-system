@@ -358,6 +358,7 @@ export const ColorDatepickerDaySelectedBg = "#0ea5e9"; // Sky Blue selected day
 export const ColorDatepickerDaySelectedText = "#f8fafc"; // White text on selected
 export const ColorDatepickerDayTodayBorder = "#0ea5e9"; // Sky Blue ring for today
 export const ColorDatepickerDayDisabledText = "#94a3b8"; // Disabled/outside day
+export const ColorDatepickerDayRangeBg = "#e0f2fe"; // Subtle sky-100 for range middle days
 export const ColorDatepickerNavHoverBg = "#f1f5f9"; // Chevron hover bg
 export const ColorInputBg = "#f8fafc";
 export const ColorInputBgDisabled = "#f1f5f9";

@@ -11,6 +11,8 @@ import {
   isToday,
   addMonths,
   subMonths,
+  isAfter,
+  isBefore,
 } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -18,13 +20,24 @@ import { cn } from '../../utils/cn';
 
 const WEEKDAYS = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'] as const;
 
+export interface DateRange {
+  from?: Date;
+  to?: Date;
+}
+
 export interface CalendarProps {
-  /** Currently selected date */
+  /** Selection mode */
+  mode?: 'single' | 'range';
+  /** Currently selected date (single mode) */
   selected?: Date;
+  /** Currently selected range (range mode) */
+  selectedRange?: DateRange;
   /** Currently displayed month */
   month: Date;
-  /** Callback when a day is clicked */
-  onSelect: (date: Date) => void;
+  /** Callback when a day is clicked (single mode) */
+  onSelect?: (date: Date) => void;
+  /** Callback when range changes (range mode) */
+  onRangeSelect?: (range: DateRange) => void;
   /** Callback when navigating months */
   onMonthChange: (date: Date) => void;
   /** Minimum selectable date */
@@ -53,15 +66,86 @@ function endOfDay(date: Date): Date {
   return d;
 }
 
+function isInRange(day: Date, from?: Date, to?: Date): boolean {
+  if (!from || !to) return false;
+  const d = startOfDay(day);
+  const f = startOfDay(from);
+  const t = startOfDay(to);
+  return d > f && d < t;
+}
+
+function isRangeStart(day: Date, from?: Date): boolean {
+  return !!from && isSameDay(day, from);
+}
+
+function isRangeEnd(day: Date, to?: Date): boolean {
+  return !!to && isSameDay(day, to);
+}
+
 const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
-  ({ selected, month, onSelect, onMonthChange, minDate, maxDate, className }, ref) => {
+  (
+    {
+      mode = 'single',
+      selected,
+      selectedRange,
+      month,
+      onSelect,
+      onRangeSelect,
+      onMonthChange,
+      minDate,
+      maxDate,
+      className,
+    },
+    ref
+  ) => {
+    const [hoverDay, setHoverDay] = React.useState<Date | undefined>();
+
     const monthStart = startOfMonth(month);
     const monthEnd = endOfMonth(month);
     const calendarStart = startOfWeek(monthStart, { weekStartsOn: 1 });
     const calendarEnd = endOfWeek(monthEnd, { weekStartsOn: 1 });
     const days = eachDayOfInterval({ start: calendarStart, end: calendarEnd });
 
+    // Determine effective range for visual highlighting (including hover preview)
+    const rangeFrom = selectedRange?.from;
+    const rangeTo = selectedRange?.to;
+    const previewTo = mode === 'range' && rangeFrom && !rangeTo ? hoverDay : undefined;
+    const effectiveFrom = rangeFrom;
+    const effectiveTo = rangeTo || previewTo;
+
+    // Normalize range direction (swap if from > to)
+    const normFrom = effectiveFrom && effectiveTo && isAfter(effectiveFrom, effectiveTo)
+      ? effectiveTo : effectiveFrom;
+    const normTo = effectiveFrom && effectiveTo && isAfter(effectiveFrom, effectiveTo)
+      ? effectiveFrom : effectiveTo;
+
+    const handleDayClick = (day: Date) => {
+      if (mode === 'single') {
+        onSelect?.(day);
+        return;
+      }
+
+      // Range mode
+      if (!rangeFrom || rangeTo) {
+        // Start new range
+        onRangeSelect?.({ from: day, to: undefined });
+      } else {
+        // Complete range
+        const from = rangeFrom;
+        const to = day;
+        if (isAfter(from, to)) {
+          onRangeSelect?.({ from: to, to: from });
+        } else if (isSameDay(from, to)) {
+          // Same day clicked twice = single day range
+          onRangeSelect?.({ from, to: from });
+        } else {
+          onRangeSelect?.({ from, to });
+        }
+      }
+    };
+
     const handleKeyDown = (e: React.KeyboardEvent) => {
+      if (mode === 'range') return; // Keyboard nav only for single mode
       if (!selected) return;
 
       let next: Date | null = null;
@@ -84,7 +168,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
 
       e.preventDefault();
       if (next && !isDayDisabled(next, minDate, maxDate)) {
-        onSelect(next);
+        onSelect?.(next);
         if (!isSameMonth(next, month)) {
           onMonthChange(startOfMonth(next));
         }
@@ -161,9 +245,19 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
         >
           {days.map((day) => {
             const inMonth = isSameMonth(day, month);
-            const isSelected = selected ? isSameDay(day, selected) : false;
             const today = isToday(day);
             const disabled = !inMonth || isDayDisabled(day, minDate, maxDate);
+
+            // Single mode
+            const isSelectedSingle = mode === 'single' && selected ? isSameDay(day, selected) : false;
+
+            // Range mode
+            const isStart = mode === 'range' && isRangeStart(day, normFrom);
+            const isEnd = mode === 'range' && isRangeEnd(day, normTo);
+            const inRange = mode === 'range' && isInRange(day, normFrom, normTo);
+            const isRangeEndpoint = isStart || isEnd;
+
+            const isSelected = isSelectedSingle || isRangeEndpoint;
 
             return (
               <button
@@ -171,23 +265,31 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
                 type="button"
                 role="gridcell"
                 tabIndex={isSelected ? 0 : -1}
-                aria-selected={isSelected}
+                aria-selected={isSelected || inRange}
                 aria-disabled={disabled}
                 disabled={disabled}
                 onClick={() => {
-                  if (!disabled) onSelect(day);
+                  if (!disabled) handleDayClick(day);
+                }}
+                onMouseEnter={() => {
+                  if (mode === 'range' && !disabled) setHoverDay(day);
+                }}
+                onMouseLeave={() => {
+                  if (mode === 'range') setHoverDay(undefined);
                 }}
                 className={cn(
                   'inline-flex items-center justify-center',
                   'h-[var(--sizing-datepicker-day-size)] w-[var(--sizing-datepicker-day-size)]',
                   'rounded-[var(--radius-datepicker-day)]',
                   'text-sm transition-colors',
-                  // Default state
-                  !isSelected && inMonth && 'text-[var(--color-datepicker-day-text)] hover:bg-[var(--color-datepicker-day-hover-bg)]',
-                  // Selected
+                  // Default state (in month, not selected, not in range)
+                  !isSelected && !inRange && inMonth && 'text-[var(--color-datepicker-day-text)] hover:bg-[var(--color-datepicker-day-hover-bg)]',
+                  // Selected (single or range endpoint)
                   isSelected && 'bg-[var(--color-datepicker-day-selected-bg)] text-[var(--color-datepicker-day-selected-text)] font-semibold',
-                  // Today (not selected)
-                  today && !isSelected && 'border border-[var(--color-datepicker-day-today-border)] font-medium',
+                  // In range (between start and end)
+                  inRange && !isSelected && inMonth && 'bg-[var(--color-datepicker-day-range-bg)] text-[var(--color-datepicker-day-text)]',
+                  // Today (not selected, not in range)
+                  today && !isSelected && !inRange && 'border border-[var(--color-datepicker-day-today-border)] font-medium',
                   // Outside month / disabled
                   disabled && 'text-[var(--color-datepicker-day-disabled-text)] cursor-default hover:bg-transparent',
                 )}

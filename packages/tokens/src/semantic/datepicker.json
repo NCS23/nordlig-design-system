@@ -12,6 +12,7 @@
       "day-selected-text": { "$type": "color", "$value": "{color.text.inverse}", "$description": "White text on selected" },
       "day-today-border": { "$type": "color", "$value": "{color.border.focus}", "$description": "Sky Blue ring for today" },
       "day-disabled-text": { "$type": "color", "$value": "{color.text.disabled}", "$description": "Disabled/outside day" },
+      "day-range-bg":     { "$type": "color", "$value": "{color.primary.1.100}", "$description": "Subtle sky-100 for range middle days" },
       "nav-hover-bg":     { "$type": "color", "$value": "{color.neutral.1.100}", "$description": "Chevron hover bg" }
     }
   },
