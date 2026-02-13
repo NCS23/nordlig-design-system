@@ -237,7 +237,7 @@
 
 ### Tokens Created
 - **Level 4 (Semantic) – Color:**
-  - `color-table-header-bg` → L3 `color.bg.surface`
+  - `color-table-header-bg` → L3 `color.bg.base`
   - `color-table-header-text` → L3 `color.text.base`
   - `color-table-border` → L3 `color.border.muted`
   - `color-table-row-stripe` → L3 `color.neutral.1.50`
@@ -245,14 +245,14 @@
 - **Level 4 (Semantic) – Spacing (pro Density compact/normal/spacious):**
   - `spacing-table-cell-x-{density}` → L3 `spacing.component.padding.*` (16/24/32px)
   - `spacing-table-cell-y-{density}` → L3 `spacing.component.padding.*` (12/16/24px)
-  - `spacing-table-head-y-{density}` → L3 `spacing.component.padding.*` (16/24/32px)
+  - `spacing-table-head-y-{density}` → L3 `spacing.component.padding.*` (8/8/12px – kompakter als Body!)
   - **9 Spacing-Tokens insgesamt** (3 pro Density × 3 Properties)
-- **Neuer L3 Token:** `spacing.component.padding.xl` → L2 `spacing.xl` (32px) – für spacious Density
+- **Neue L3 Tokens:** `spacing.component.padding.xs` (8px), `spacing.component.padding.xl` (32px)
 - **14 Tokens insgesamt** (5 Color + 9 Spacing) – alle referenzieren ausschließlich L3
 
 ### Architecture
-- **Density via CSS Custom Properties:** Table setzt `--_table-px`, `--_table-py`, `--_table-head-py` per `style`, Kinder referenzieren diese
-- **Header Breathing Room:** TableHead nutzt separates `--_table-head-py` für extra vertikalen Raum vs. Body
+- **Density via CSS Custom Properties:** Table setzt `--tbl-px`, `--tbl-py`, `--tbl-head-py` per `style`, Kinder referenzieren diese
+- **Compact Header:** TableHead nutzt separates `--tbl-head-py` – WENIGER Padding als Body für flachen, eleganten Header
 - **Striped via data-attribute:** `data-striped` auf `<table>`, Rows nutzen `[[data-striped]_&:nth-child(even)]`
 - **Semantic HTML:** `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`
 
@@ -268,7 +268,7 @@
 - **TableHeader** – `<thead>`: sticky top-0, header background
 - **TableBody** – `<tbody>`: last-row border removal
 - **TableRow** – `<tr>`: border-b, hover state, striped support
-- **TableHead** – `<th>`: font-semibold, align (left/center/right)
+- **TableHead** – `<th>`: font-medium, uppercase, tracking-wider, text-xs, align (left/center/right)
 - **TableCell** – `<td>`: align, numeric (right-align + tabular-nums)
 
 ### Props
@@ -297,10 +297,12 @@
 - **Docs:** Auto-generated via autodocs tag
 
 ### Notes
-- **Scandinavian Spacing Redesign:** Von tight Button-Spacing (`sizing.component.padding-y.*` = 6/8/10px) auf großzügiges `spacing.component.padding.*` (12/16/24px) gewechselt
-- **Header Breathing Room:** Separates `--_table-head-py` (16/24/32px) gibt dem Header deutlich mehr Luft als dem Body
-- Density wird per CSS Custom Properties (`--_table-px`, `--_table-py`, `--_table-head-py`) auf dem Table-Element gesetzt
-- Kinder referenzieren: TableHead → `--_table-head-py`, TableCell → `--_table-py` (shared: `--_table-px`)
+- **Scandinavian Spacing Redesign:** Von tight Button-Spacing auf großzügiges `spacing.component.padding.*` (12/16/24px) gewechselt
+- **Compact Header:** Header-Padding (8/8/12px) ist KLEINER als Body (12/16/24px) – Zeitungsstil
+- **Header Typography:** font-medium + uppercase + tracking-wider + text-xs – subtil aber klar strukturiert
+- **Header Background:** `color.bg.base` (slate-50, fast unsichtbar) statt `color.bg.surface` (slate-100)
+- Density wird per CSS Custom Properties (`--tbl-px`, `--tbl-py`, `--tbl-head-py`) auf dem Table-Element gesetzt
+- Kinder referenzieren: TableHead → `--tbl-head-py`, TableCell → `--tbl-py` (shared: `--tbl-px`)
 - Striped nutzt `data-striped` Attribut + Tailwind arbitrary variant `[[data-striped]_&:nth-child(even)]`
 - `numeric` Prop auf TableCell: automatisch `text-right` + `tabular-nums` (monospace Ziffern)
 - Badge Component in Stories integriert (WorkoutTypes, HR Zones, Trends)
@@ -309,8 +311,12 @@
 ### Breaking Changes
 - **v2:** Spacing-Tokens referenzieren jetzt `spacing.component.padding.*` statt `sizing.component.padding-*.*`
 - **v2:** 3 neue `head-y` Tokens für separates Header-Padding
-- **v2:** Neuer L3 Token `spacing.component.padding.xl` (32px)
+- **v2:** Neue L3 Tokens: `spacing.component.padding.xs` (8px) + `spacing.component.padding.xl` (32px)
 - **v2:** `leading-relaxed` auf Table für bessere Lesbarkeit
+- **v3:** CSS Custom Properties umbenannt: `--_table-*` → `--tbl-*` (Tailwind Underscore-Bug)
+- **v3:** Header-Background von `color.bg.surface` auf `color.bg.base` (subtiler)
+- **v3:** Header-Padding invertiert: jetzt KLEINER als Body (8/8/12px statt 16/24/32px)
+- **v3:** TableHead Typography: `font-semibold` → `font-medium` + `uppercase` + `tracking-wider` + `text-xs`
 
 ### Issues / Todos
 - [ ] Add sortable columns (click to sort)
@@ -365,7 +371,7 @@
 **Test Coverage:** Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
 **A11y Compliance:** Table + Badge + Card getestet | Button: nur manuell geprüft
 **Storybook Stories:** 34 Stories (Button: 4, Card: 11, Badge: 12, Table: 7)
-**Design Tokens:** 68+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 14) + 1 neuer L3 Token
+**Design Tokens:** 68+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25 | Table: 14) + 2 neue L3 Tokens (padding.xs, padding.xl)
 
 ---
 
@@ -405,14 +411,14 @@
 - Striped Rows via `data-striped` Attribut + Tailwind arbitrary variant
 - Badge-Integration in Stories (WorkoutTypes, HR Zones)
 - **Learnings:**
-  - CSS Custom Properties auf Parent-Element setzen, Kinder referenzieren → kein Context nötig
+  - CSS Custom Properties auf Parent-Element setzen (`--tbl-*`), Kinder referenzieren → kein Context nötig
   - `[[data-striped]_&:nth-child(even)]` Tailwind arbitrary variant für conditional child styling
   - `tabular-nums` für monospace-Ziffern in numerischen Spalten
   - `sticky top-0 z-10` für fixierten Table-Header beim Scrollen
 
 ### 2026-02-13 - Table Spacing Redesign ("Scandinavian Whitespace")
 - Von tight Button-Spacing auf großzügiges Component-Padding gewechselt
-- Separates Header-Padding (`--_table-head-py`) für visuellen Hierarchie-Unterschied
+- Separates Header-Padding für visuellen Hierarchie-Unterschied
 - L3 Token `spacing.component.padding.xl` (32px) für spacious Density erstellt
 - `leading-relaxed` für besseren vertikalen Rhythm
 - **Learnings:**
@@ -420,6 +426,28 @@
   - `spacing.component.padding.*` (12/16/24px) ist besser für Inhalts-Components
   - Header braucht eigene vertikale Padding-Tokens für klare Hierarchie
   - "Scandinavian Design" = Minimum 2× mehr vertikaler Raum als man denkt
+
+### 2026-02-13 - Tailwind v3 Underscore-Bug Fix
+- **KRITISCH:** Tailwind v3 konvertiert `_` zu Leerzeichen in Arbitrary Values `[...]`
+- `px-[var(--_table-px)]` generiert `padding-left: var(-- table-px)` → BROKEN!
+- Das bedeutet: Table-Padding hat seit Erstellung NIE funktioniert
+- Fix: Alle `--_table-*` → `--tbl-*` umbenannt (keine Underscores nach `--`)
+- **Learnings:**
+  - Niemals Underscores in CSS Custom Property Namen verwenden, die in Tailwind Arbitrary Values stehen
+  - Debug-Methode: Tailwind Output direkt bauen und CSS inspizieren (`npx tailwindcss -o /tmp/debug.css`)
+  - Kurze Prefixe nutzen: `--tbl-*`, `--btn-*`, `--crd-*` statt `--_table-*`, `--_button-*`
+
+### 2026-02-13 - Table Header Redesign ("Newspaper-Style")
+- Header war zu dominant: zu viel Padding + zu dunkler Background = dicker Balken
+- Komplett invertiert: Header jetzt KOMPAKTER als Body (8px vs 16px bei normal)
+- Background: `color.bg.base` (slate-50, fast unsichtbar) statt `color.bg.surface` (slate-100)
+- Typography: `font-medium` + `uppercase` + `tracking-wider` + `text-xs`
+- Neuer L3 Token: `spacing.component.padding.xs` (8px) für kompakte Header
+- **Learnings:**
+  - Header-Dominanz kommt durch Padding + Background Kombination – beides reduzieren!
+  - Zeitungsstil: Struktur durch Typografie (uppercase, tracking) nicht durch Hintergrundfarbe
+  - Header KLEINER als Body = elegantere Hierarchie (invertiertes Padding-Verhältnis)
+  - "Weniger ist mehr" gilt besonders für Table Headers im nordischen Design
 
 ---
 
