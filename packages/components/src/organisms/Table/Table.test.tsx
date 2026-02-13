@@ -290,7 +290,7 @@ describe('TableHead', () => {
     expect(screen.getByTestId('th').className).toContain('text-center');
   });
 
-  it('has font-semibold', () => {
+  it('has newspaper-style typography: medium weight, uppercase, tracking', () => {
     render(
       <table>
         <thead>
@@ -298,7 +298,10 @@ describe('TableHead', () => {
         </thead>
       </table>
     );
-    expect(screen.getByTestId('th').className).toContain('font-semibold');
+    const th = screen.getByTestId('th');
+    expect(th.className).toContain('font-medium');
+    expect(th.className).toContain('uppercase');
+    expect(th.className).toContain('tracking-wider');
   });
 
   it('uses CSS custom properties for padding with separate header vertical', () => {

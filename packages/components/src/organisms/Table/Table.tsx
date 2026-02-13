@@ -110,7 +110,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
       <th
         ref={ref}
         className={cn(
-          'px-[var(--tbl-px)] py-[var(--tbl-head-py)] font-semibold text-[var(--color-table-header-text)] border-b-2 border-[var(--color-table-border)] whitespace-nowrap',
+          'px-[var(--tbl-px)] py-[var(--tbl-head-py)] font-medium uppercase tracking-wider text-[length:var(--font-component-size-xs)] text-[var(--color-table-header-text)] border-b-2 border-[var(--color-table-border)] whitespace-nowrap',
           alignClass,
           className
         )}

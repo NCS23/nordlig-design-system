@@ -3,6 +3,7 @@
     "$description": "Level 3: Role spacing tokens",
     "component": {
       "padding": {
+        "xs": { "$type": "dimension", "$value": "{spacing.xs}" },
         "sm": { "$type": "dimension", "$value": "{spacing.sm}" },
         "md": { "$type": "dimension", "$value": "{spacing.md}" },
         "lg": { "$type": "dimension", "$value": "{spacing.lg}" },
