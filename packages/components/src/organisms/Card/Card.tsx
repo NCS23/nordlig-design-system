@@ -8,8 +8,8 @@ const cardVariants = cva(
     variants: {
       elevation: {
         flat: '',
-        raised: 'shadow-[var(--shadow-card-raised)]',
-        elevated: 'shadow-[var(--shadow-card-elevated)]',
+        raised: '[box-shadow:var(--shadow-card-raised)]',
+        elevated: '[box-shadow:var(--shadow-card-elevated)]',
       },
       padding: {
         compact: 'p-[var(--spacing-card-padding-compact)]',

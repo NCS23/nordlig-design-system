@@ -18,13 +18,13 @@ describe('Card', () => {
   it('applies elevation=raised variant', () => {
     render(<Card data-testid="card" elevation="raised">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('shadow-[var(--shadow-card-raised)]');
+    expect(card.className).toContain('[box-shadow:var(--shadow-card-raised)]');
   });
 
   it('applies elevation=elevated variant', () => {
     render(<Card data-testid="card" elevation="elevated">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('shadow-[var(--shadow-card-elevated)]');
+    expect(card.className).toContain('[box-shadow:var(--shadow-card-elevated)]');
   });
 
   it('applies padding=compact variant', () => {
