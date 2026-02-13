@@ -28,5 +28,28 @@
         "border": { "$type": "color", "$value": "{color.border.muted}" }
       }
     }
+  },
+  "sizing": {
+    "$description": "Level 4: Badge size tokens — References Level 3 only",
+    "badge": {
+      "sm": {
+        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}" },
+        "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" }
+      },
+      "md": {
+        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
+        "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" }
+      },
+      "lg": {
+        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
+        "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.md}" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}" }
+      }
+    }
+  },
+  "radius": {
+    "badge": { "$type": "dimension", "$value": "{radius.component.full}" }
   }
 }

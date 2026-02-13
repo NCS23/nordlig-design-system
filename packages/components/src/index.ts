@@ -1,5 +1,6 @@
 // Atoms
 export { Button, buttonVariants, type ButtonProps } from './atoms/Button';
+export { Badge, badgeVariants, type BadgeProps } from './atoms/Badge';
 
 // Organisms
 export {

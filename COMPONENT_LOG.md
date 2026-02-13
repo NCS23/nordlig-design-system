@@ -156,16 +156,84 @@
 
 ---
 
+## [Badge] - 2026-02-13
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color (pro Variant success/warning/error/info/neutral):**
+  - `color-badge-{variant}-bg` → L3 `color.{variant}.bg` (neutral: `color.neutral.1.100`)
+  - `color-badge-{variant}-text` → L3 `color.{variant}.text` (neutral: `color.text.muted`)
+  - `color-badge-{variant}-border` → L3 `color.{variant}.border` (neutral: `color.border.muted`)
+  - **15 Color-Tokens insgesamt** (3 pro Variant × 5 Variants)
+- **Level 4 (Semantic) – Sizing (pro Size sm/md/lg):**
+  - `sizing-badge-{size}-padding-x` → L3 `sizing.component.padding-x.*`
+  - `sizing-badge-{size}-padding-y` → L3 `sizing.component.padding-y.*`
+  - `sizing-badge-{size}-font-size` → L3 `font.component.size.*`
+  - **9 Sizing-Tokens insgesamt** (3 pro Size × 3 Sizes)
+- **Level 4 (Semantic) – Radius:**
+  - `radius-badge` → L3 `radius.component.full` (Pill Shape)
+- **25 Tokens insgesamt** – alle referenzieren ausschließlich L3
+
+### Files
+- `packages/components/src/atoms/Badge/Badge.tsx`
+- `packages/components/src/atoms/Badge/Badge.test.tsx` (15 Tests)
+- `packages/components/src/atoms/Badge/Badge.stories.tsx` (12 Stories)
+- `packages/components/src/atoms/Badge/index.ts`
+- `packages/tokens/src/semantic/badge.json`
+
+### Variants (CVA)
+- **variant:** success, warning, error, info, neutral (default)
+- **size:** sm, md (default), lg
+
+### Design Decisions
+- **Pill Shape:** `rounded-full` via `radius.component.full` (9999px) für weiche Form
+- **Inline-fähig:** `inline-flex` + `leading-none` für Fließtext-Kompatibilität
+- **Subtiler Border:** Alle Variants haben border für klare Abgrenzung
+- **Nicht interaktiv:** Kein hover/focus/click – rein dekorativ/informativ
+- **`<span>` statt `<div>`:** Semantisch korrekt für Inline-Elemente
+
+### Test Coverage
+- ✅ **15 Tests – alle bestanden**
+- ✅ **100% Coverage** (Statements, Branches, Functions, Lines)
+- Getestet: Alle 5 Variants, alle 3 Sizes, Ref-Forwarding, className-Merging, HTML-Attributes, Inline-Display, Border
+
+### Accessibility
+- ✅ HTML-Attribute Forwarding (role, aria-label)
+- ✅ `role="status"` empfohlen für dynamische Updates
+- ✅ Semantisches `<span>` Element
+- ✅ Min. 4.5:1 Kontrast durch L3 Color Tokens (text auf bg)
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-badge
+- **Stories:** Success, Warning, Error, Info, Neutral, AllVariants, AllSizes, InlineUsage
+- **Training Analyzer Stories:** TrainingStatus, HeartRateZones, WorkoutTypes, InlineMetrics
+- **Controls:** variant, size
+- **Docs:** Auto-generated via autodocs tag
+
+### Notes
+- Nordisches Design: Subtile Backgrounds, gedämpfte Farben, klare Typografie
+- Color Tokens nutzen L3 status colors (`color.success/warning/error/info.*`)
+- Neutral nutzt `color.neutral.1.100` / `color.text.muted` / `color.border.muted`
+- `text-[length:var(...)]` Syntax für font-size (Tailwind length-Prefix)
+
+### Breaking Changes
+- None (initial release)
+
+### Issues / Todos
+- [ ] Add icon support (leftIcon)
+- [ ] Add dismissible variant (mit X-Button)
+- [ ] Add dot indicator variant (ohne Text)
+
+---
+
 ## Planned Components
 
 ### High Priority (Training Analyzer Essentials)
 
-#### [Badge] - Planned
-**Level:** Atom  
-**Priority:** ⭐ HIGH  
-**Use Case:** Training status indicators (Success, Warning, Error, Info)
-
-#### [Table] - Planned  
+#### [Table] - Planned
 **Level:** Organism  
 **Priority:** ⭐⭐ CRITICAL  
 **Use Case:** Lap data, training history, heart rate zones
@@ -201,17 +269,17 @@
 
 ## Development Statistics
 
-**Total Components:** 2 (2 complete)
-**Atoms:** 1 (Button)
+**Total Components:** 3 (3 complete)
+**Atoms:** 2 (Button, Badge)
 **Molecules:** 0
 **Organisms:** 1 (Card)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage
-**Test Coverage:** Card 100% | Button: Tests ausstehend
-**A11y Compliance:** Card getestet (role, aria-*) | Button: nur manuell geprüft
-**Storybook Stories:** 15 Stories (Button: 4, Card: 11)
-**Design Tokens:** 29+ L4-Tokens (Button: 18 Sizing + Color | Card: 11)
+**Test Coverage:** Badge 100% | Card 100% | Button: Tests ausstehend
+**A11y Compliance:** Badge + Card getestet | Button: nur manuell geprüft
+**Storybook Stories:** 27 Stories (Button: 4, Card: 11, Badge: 12)
+**Design Tokens:** 54+ L4-Tokens (Button: 18 Sizing + Color | Card: 6 + TW | Badge: 25)
 
 ---
 
@@ -248,4 +316,4 @@
 ---
 
 **Last Updated:** 2026-02-13
-**Next Component:** Badge oder Table (siehe Planned Components)
+**Next Component:** Table (siehe Planned Components)
