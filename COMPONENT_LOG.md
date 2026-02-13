@@ -89,38 +89,37 @@
 **Developer:** Claude Code + Nils
 **Level:** Organism
 
-### Tokens Created
-- **Level 4 (Semantic) – Color:**
-  - `color-card-bg` → L3 `color.bg.surface`
-  - `color-card-border` → L3 `color.border.muted`
+### Tokens Used
 - **Level 4 (Semantic) – Spacing:**
   - `spacing-card-padding-compact` → L3 `spacing.component.padding.sm`
   - `spacing-card-padding-normal` → L3 `spacing.component.padding.md`
   - `spacing-card-padding-spacious` → L3 `spacing.component.padding.lg`
   - `spacing-card-gap` → L3 `spacing.component.gap.md`
-- **Level 4 (Semantic) – Shadow:**
-  - `shadow-card-raised` → L3 `shadow.elevation.low`
-  - `shadow-card-elevated` → L3 `shadow.elevation.medium`
 - **Level 4 (Semantic) – Radius:**
   - `radius-card` → L3 `radius.component.lg`
-- **11 Tokens insgesamt** – alle referenzieren ausschließlich L3
+- **Level 4 (Semantic) – Color:**
+  - `color-card-border` → L3 `color.border.muted` (nur bei raised/elevated)
+- **Tailwind Utilities (kein Token):**
+  - `bg-white` (Background)
+  - `shadow-sm` (raised), `shadow-lg` (elevated), `hover:shadow-xl` (hoverable)
 
 ### Files
 - `packages/components/src/organisms/Card/Card.tsx` (Compound: Card, CardHeader, CardBody, CardFooter)
-- `packages/components/src/organisms/Card/Card.test.tsx` (21 Tests)
-- `packages/components/src/organisms/Card/Card.stories.tsx` (9 Stories)
+- `packages/components/src/organisms/Card/Card.test.tsx` (24 Tests)
+- `packages/components/src/organisms/Card/Card.stories.tsx` (11 Stories)
 - `packages/components/src/organisms/Card/index.ts`
 - `packages/tokens/src/semantic/card.json`
 
 ### Variants (CVA)
-- **elevation:** flat (default), raised, elevated
+- **elevation:** flat (default, kein Border/Shadow), raised (border + shadow-sm), elevated (border + shadow-lg)
 - **padding:** compact, normal (default), spacious
+- **hoverable:** boolean (cursor-pointer + hover:shadow-xl)
 
 ### Test Coverage
-- ✅ **21 Tests – alle bestanden**
+- ✅ **24 Tests – alle bestanden**
 - ✅ **100% Coverage** (Statements, Branches, Functions, Lines)
-- Test-Gruppen: Card (9), CardHeader (3), CardBody (3), CardFooter (3), Card Compound (3)
-- Getestet: Variants, Ref-Forwarding, className-Merging, HTML-Attributes, CSS Custom Properties, Accessibility
+- Test-Gruppen: Card (12), CardHeader (3), CardBody (3), CardFooter (3), Card Compound (3)
+- Getestet: Variants, Hoverable, Ref-Forwarding, className-Merging, HTML-Attributes, CSS Custom Properties, Accessibility
 
 ### Accessibility
 - ✅ HTML-Attribute Forwarding (role, aria-label, aria-labelledby)
@@ -130,9 +129,9 @@
 
 ### Storybook
 - **URL:** http://localhost:6006/?path=/story/organisms-card
-- **Stories:** Flat, Raised, Elevated, AllElevations, AllPaddings, WithFooter
+- **Stories:** Flat, Raised, Elevated, AllElevations, AllPaddings, WithFooter, InteractiveCard, CombinedVariants
 - **Training Analyzer Stories:** WorkoutSessionCard, WeeklySummaryCard, MetricDisplayCard
-- **Controls:** elevation, padding
+- **Controls:** elevation, padding, hoverable
 - **Docs:** Auto-generated via autodocs tag + Accessibility-Hinweise
 
 ### Notes
@@ -140,13 +139,18 @@
 - Alle Sub-Components nutzen `React.forwardRef` mit `displayName`
 - CardBody hat `flex-1` für flexible Höhe
 - CardFooter hat `flex items-center` für Action-Layout
-- `transition-shadow` auf Card für smooth Elevation-Wechsel
+- `transition-shadow` auf Card für smooth Elevation-Wechsel und Hover-Effekt
+- Flat = kein Border, kein Shadow (clean surface)
+- Raised/Elevated = Border + Shadow-Hierarchie (sm → lg)
+- Shadows nutzen Tailwind Utilities statt CSS Custom Properties (Komma-Problem bei compound shadows)
 
 ### Breaking Changes
-- None (initial release)
+- **v2:** Border nur noch bei raised/elevated (flat hat keinen Border mehr)
+- **v2:** Background jetzt `bg-white` statt `bg-[var(--color-card-bg)]`
+- **v2:** Shadows nutzen Tailwind Utilities statt Token-basierte CSS Custom Properties
 
 ### Issues / Todos
-- [ ] Add hoverable variant für klickbare Cards
+- [x] ~~Add hoverable variant für klickbare Cards~~
 - [ ] Add `as` prop für polymorphe Nutzung (z.B. als `<a>`)
 - [ ] Add CardDivider Sub-Component
 
@@ -206,7 +210,7 @@
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage
 **Test Coverage:** Card 100% | Button: Tests ausstehend
 **A11y Compliance:** Card getestet (role, aria-*) | Button: nur manuell geprüft
-**Storybook Stories:** 13 Stories (Button: 4, Card: 9)
+**Storybook Stories:** 15 Stories (Button: 4, Card: 11)
 **Design Tokens:** 29+ L4-Tokens (Button: 18 Sizing + Color | Card: 11)
 
 ---
@@ -232,6 +236,14 @@
   - `@vitest/coverage-v8` Major-Version muss zu `vitest` passen (v1 ↔ v1, nicht v4)
   - Tailwind `text-[length:var(...)]` Syntax nötig für font-size mit CSS Custom Properties
   - Token-Collisions bei `$description` Metadaten sind harmlos (gleiche Namespace-Beschreibungen)
+
+### 2026-02-13 - Card Styling Verbesserung
+- Border nur bei raised/elevated – flat ist borderless für clean surface
+- Shadow-Hierarchie: flat (none) → raised (shadow-sm) → elevated (shadow-lg)
+- Hoverable Variant: `cursor-pointer hover:shadow-xl` für klickbare Cards
+- **Learnings:**
+  - Tailwind `shadow-[var(...)]` funktioniert NICHT mit compound shadows (Kommas) → Tailwind Utilities nutzen
+  - `bg-white` statt Token für besseren Kontrast auf farbigen Hintergründen
 
 ---
 

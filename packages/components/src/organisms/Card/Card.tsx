@@ -3,23 +3,28 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
 const cardVariants = cva(
-  'rounded-[var(--radius-card)] border border-[var(--color-card-border)] bg-[var(--color-card-bg)] text-[var(--color-text-base)] flex flex-col gap-[var(--spacing-card-gap)] transition-shadow',
+  'rounded-[var(--radius-card)] bg-white text-[var(--color-text-base)] flex flex-col gap-[var(--spacing-card-gap)] transition-shadow',
   {
     variants: {
       elevation: {
         flat: '',
-        raised: '[box-shadow:var(--shadow-card-raised)]',
-        elevated: '[box-shadow:var(--shadow-card-elevated)]',
+        raised: 'border border-[var(--color-card-border)] shadow-sm',
+        elevated: 'border border-[var(--color-card-border)] shadow-lg',
       },
       padding: {
         compact: 'p-[var(--spacing-card-padding-compact)]',
         normal: 'p-[var(--spacing-card-padding-normal)]',
         spacious: 'p-[var(--spacing-card-padding-spacious)]',
       },
+      hoverable: {
+        true: 'cursor-pointer hover:shadow-xl',
+        false: '',
+      },
     },
     defaultVariants: {
       elevation: 'flat',
       padding: 'normal',
+      hoverable: false,
     },
   }
 );
@@ -29,11 +34,11 @@ export interface CardProps
     VariantProps<typeof cardVariants> {}
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, elevation, padding, children, ...props }, ref) => {
+  ({ className, elevation, padding, hoverable, children, ...props }, ref) => {
     return (
       <div
         ref={ref}
-        className={cn(cardVariants({ elevation, padding, className }))}
+        className={cn(cardVariants({ elevation, padding, hoverable, className }))}
         {...props}
       >
         {children}

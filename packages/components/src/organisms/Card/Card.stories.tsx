@@ -15,6 +15,9 @@ const meta: Meta<typeof Card> = {
       control: 'select',
       options: ['compact', 'normal', 'spacious'],
     },
+    hoverable: {
+      control: 'boolean',
+    },
   },
   parameters: {
     docs: {
@@ -38,10 +41,10 @@ export const Flat: Story = {
     <Card {...args}>
       <CardHeader>
         <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Flat Card</h3>
-        <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>Default elevation with border only</p>
+        <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>No border, no shadow – clean surface</p>
       </CardHeader>
       <CardBody>
-        <p style={{ margin: 0 }}>This is the standard card without shadow, using a subtle border to define its boundaries.</p>
+        <p style={{ margin: 0 }}>Minimal card without border or shadow. Blends into the background for subtle grouping.</p>
       </CardBody>
     </Card>
   ),
@@ -231,6 +234,66 @@ export const MetricDisplayCard: Story = {
           <div style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>±0kg</div>
         </CardBody>
       </Card>
+    </div>
+  ),
+};
+
+export const InteractiveCard: Story = {
+  name: 'Interactive (Hoverable)',
+  render: () => (
+    <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+      <Card elevation="raised" hoverable style={{ width: '280px' }}>
+        <CardHeader>
+          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Hoverable Raised</h3>
+        </CardHeader>
+        <CardBody>
+          <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>
+            Hover over this card to see the shadow transition.
+          </p>
+        </CardBody>
+      </Card>
+      <Card elevation="elevated" hoverable style={{ width: '280px' }}>
+        <CardHeader>
+          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Hoverable Elevated</h3>
+        </CardHeader>
+        <CardBody>
+          <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>
+            Elevated card with hover effect for clickable areas.
+          </p>
+        </CardBody>
+      </Card>
+      <Card elevation="flat" hoverable style={{ width: '280px' }}>
+        <CardHeader>
+          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Hoverable Flat</h3>
+        </CardHeader>
+        <CardBody>
+          <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>
+            Flat card that gains shadow on hover.
+          </p>
+        </CardBody>
+      </Card>
+    </div>
+  ),
+};
+
+export const CombinedVariants: Story = {
+  name: 'Combined Variants',
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', maxWidth: '900px' }}>
+      {(['flat', 'raised', 'elevated'] as const).map((elev) =>
+        (['compact', 'normal', 'spacious'] as const).map((pad) => (
+          <Card key={`${elev}-${pad}`} elevation={elev} padding={pad}>
+            <CardHeader>
+              <h3 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>{elev} / {pad}</h3>
+            </CardHeader>
+            <CardBody>
+              <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
+                elevation=&quot;{elev}&quot; padding=&quot;{pad}&quot;
+              </p>
+            </CardBody>
+          </Card>
+        ))
+      )}
     </div>
   ),
 };
