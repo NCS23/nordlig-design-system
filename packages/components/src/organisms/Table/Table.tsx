@@ -4,19 +4,19 @@ import { cn } from '../../utils/cn';
 /* ─── Density CSS custom properties ─── */
 const densityMap = {
   compact: {
-    '--_table-px': 'var(--spacing-table-cell-x-compact)',
-    '--_table-py': 'var(--spacing-table-cell-y-compact)',
-    '--_table-head-py': 'var(--spacing-table-head-y-compact)',
+    '--tbl-px': 'var(--spacing-table-cell-x-compact)',
+    '--tbl-py': 'var(--spacing-table-cell-y-compact)',
+    '--tbl-head-py': 'var(--spacing-table-head-y-compact)',
   },
   normal: {
-    '--_table-px': 'var(--spacing-table-cell-x-normal)',
-    '--_table-py': 'var(--spacing-table-cell-y-normal)',
-    '--_table-head-py': 'var(--spacing-table-head-y-normal)',
+    '--tbl-px': 'var(--spacing-table-cell-x-normal)',
+    '--tbl-py': 'var(--spacing-table-cell-y-normal)',
+    '--tbl-head-py': 'var(--spacing-table-head-y-normal)',
   },
   spacious: {
-    '--_table-px': 'var(--spacing-table-cell-x-spacious)',
-    '--_table-py': 'var(--spacing-table-cell-y-spacious)',
-    '--_table-head-py': 'var(--spacing-table-head-y-spacious)',
+    '--tbl-px': 'var(--spacing-table-cell-x-spacious)',
+    '--tbl-py': 'var(--spacing-table-cell-y-spacious)',
+    '--tbl-head-py': 'var(--spacing-table-head-y-spacious)',
   },
 } as const;
 
@@ -110,7 +110,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
       <th
         ref={ref}
         className={cn(
-          'px-[var(--_table-px)] py-[var(--_table-head-py)] font-semibold text-[var(--color-table-header-text)] border-b-2 border-[var(--color-table-border)] whitespace-nowrap',
+          'px-[var(--tbl-px)] py-[var(--tbl-head-py)] font-semibold text-[var(--color-table-header-text)] border-b-2 border-[var(--color-table-border)] whitespace-nowrap',
           alignClass,
           className
         )}
@@ -135,7 +135,7 @@ const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
       <td
         ref={ref}
         className={cn(
-          'px-[var(--_table-px)] py-[var(--_table-py)]',
+          'px-[var(--tbl-px)] py-[var(--tbl-py)]',
           numeric && 'tabular-nums',
           alignClass,
           className

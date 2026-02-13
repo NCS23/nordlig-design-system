@@ -35,9 +35,9 @@ describe('Table', () => {
       </Table>
     );
     const table = screen.getByTestId('table');
-    expect(table.style.getPropertyValue('--_table-px')).toBe('var(--spacing-table-cell-x-normal)');
-    expect(table.style.getPropertyValue('--_table-py')).toBe('var(--spacing-table-cell-y-normal)');
-    expect(table.style.getPropertyValue('--_table-head-py')).toBe('var(--spacing-table-head-y-normal)');
+    expect(table.style.getPropertyValue('--tbl-px')).toBe('var(--spacing-table-cell-x-normal)');
+    expect(table.style.getPropertyValue('--tbl-py')).toBe('var(--spacing-table-cell-y-normal)');
+    expect(table.style.getPropertyValue('--tbl-head-py')).toBe('var(--spacing-table-head-y-normal)');
   });
 
   it('has leading-relaxed for vertical rhythm', () => {
@@ -60,8 +60,8 @@ describe('Table', () => {
       </Table>
     );
     const table = screen.getByTestId('table');
-    expect(table.style.getPropertyValue('--_table-px')).toBe('var(--spacing-table-cell-x-compact)');
-    expect(table.style.getPropertyValue('--_table-head-py')).toBe('var(--spacing-table-head-y-compact)');
+    expect(table.style.getPropertyValue('--tbl-px')).toBe('var(--spacing-table-cell-x-compact)');
+    expect(table.style.getPropertyValue('--tbl-head-py')).toBe('var(--spacing-table-head-y-compact)');
   });
 
   it('applies spacious density CSS custom properties', () => {
@@ -73,8 +73,8 @@ describe('Table', () => {
       </Table>
     );
     const table = screen.getByTestId('table');
-    expect(table.style.getPropertyValue('--_table-px')).toBe('var(--spacing-table-cell-x-spacious)');
-    expect(table.style.getPropertyValue('--_table-head-py')).toBe('var(--spacing-table-head-y-spacious)');
+    expect(table.style.getPropertyValue('--tbl-px')).toBe('var(--spacing-table-cell-x-spacious)');
+    expect(table.style.getPropertyValue('--tbl-head-py')).toBe('var(--spacing-table-head-y-spacious)');
   });
 
   it('sets data-striped attribute when striped', () => {
@@ -310,8 +310,8 @@ describe('TableHead', () => {
       </table>
     );
     const th = screen.getByTestId('th');
-    expect(th.className).toContain('px-[var(--_table-px)]');
-    expect(th.className).toContain('py-[var(--_table-head-py)]');
+    expect(th.className).toContain('px-[var(--tbl-px)]');
+    expect(th.className).toContain('py-[var(--tbl-head-py)]');
   });
 
   it('forwards ref', () => {
@@ -383,8 +383,8 @@ describe('TableCell', () => {
       </table>
     );
     const td = screen.getByTestId('td');
-    expect(td.className).toContain('px-[var(--_table-px)]');
-    expect(td.className).toContain('py-[var(--_table-py)]');
+    expect(td.className).toContain('px-[var(--tbl-px)]');
+    expect(td.className).toContain('py-[var(--tbl-py)]');
   });
 
   it('forwards ref', () => {
