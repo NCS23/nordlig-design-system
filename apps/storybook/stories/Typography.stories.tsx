@@ -136,10 +136,22 @@ const roleOtherSizes = [
 ];
 
 /* ── Level 4 — Component ── */
-const componentFontTokens = [
+const buttonFontTokens = [
   { Token: 'btn.sm.font-size', 'CSS Variable': '--sizing-btn-sm-font-size', References: 'var(--font-component-size-sm)', Value: '0.875rem' },
   { Token: 'btn.md.font-size', 'CSS Variable': '--sizing-btn-md-font-size', References: 'var(--font-component-size-md)', Value: '1rem' },
   { Token: 'btn.lg.font-size', 'CSS Variable': '--sizing-btn-lg-font-size', References: 'var(--font-component-size-lg)', Value: '1.125rem' },
+];
+
+const badgeFontTokens = [
+  { Token: 'badge.sm.font-size', 'CSS Variable': '--sizing-badge-sm-font-size', References: 'var(--font-component-size-sm)', Value: '0.875rem' },
+  { Token: 'badge.md.font-size', 'CSS Variable': '--sizing-badge-md-font-size', References: 'var(--font-component-size-sm)', Value: '0.875rem' },
+  { Token: 'badge.lg.font-size', 'CSS Variable': '--sizing-badge-lg-font-size', References: 'var(--font-component-size-md)', Value: '1rem' },
+];
+
+const inputFontTokens = [
+  { Token: 'input.sm.font-size', 'CSS Variable': '--sizing-input-sm-font-size', References: 'var(--font-component-size-sm)', Value: '0.875rem' },
+  { Token: 'input.md.font-size', 'CSS Variable': '--sizing-input-md-font-size', References: 'var(--font-component-size-md)', Value: '1rem' },
+  { Token: 'input.lg.font-size', 'CSS Variable': '--sizing-input-lg-font-size', References: 'var(--font-component-size-lg)', Value: '1.125rem' },
 ];
 
 function TypographyPage() {
@@ -304,7 +316,13 @@ function TypographyPage() {
           Komponentenspezifische Font-Tokens. Referenzieren ausschliesslich Level 3.
         </p>
         <SubSection title="Button Font Sizes">
-          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={componentFontTokens} color="#10b981" />
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={buttonFontTokens} color="#10b981" />
+        </SubSection>
+        <SubSection title="Badge Font Sizes">
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={badgeFontTokens} color="#10b981" />
+        </SubSection>
+        <SubSection title="Input Font Sizes">
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={inputFontTokens} color="#10b981" />
         </SubSection>
         <div style={{ marginTop: '16px', padding: '12px 16px', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', fontSize: '12px', color: '#166534', fontFamily: 'monospace' }}>
           <div style={{ fontWeight: 700, marginBottom: '8px', fontFamily: 'inherit' }}>Referenzkette (Beispiel btn.md):</div>

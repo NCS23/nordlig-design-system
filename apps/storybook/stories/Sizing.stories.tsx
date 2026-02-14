@@ -66,6 +66,7 @@ const globalSizingPaddingY = [
   { Token: 'padding-y.sm', 'CSS Variable': '--sizing-padding-y-sm', References: 'var(--spacing-base-1-5)', Value: '6px' },
   { Token: 'padding-y.md', 'CSS Variable': '--sizing-padding-y-md', References: 'var(--spacing-base-2)', Value: '8px' },
   { Token: 'padding-y.lg', 'CSS Variable': '--sizing-padding-y-lg', References: 'var(--spacing-base-2-5)', Value: '10px' },
+  { Token: 'padding-y.xl', 'CSS Variable': '--sizing-padding-y-xl', References: 'var(--spacing-base-3)', Value: '12px' },
 ];
 
 const globalSizingGap = [
@@ -91,6 +92,7 @@ const roleSizingPaddingY = [
   { Token: 'component.padding-y.sm', 'CSS Variable': '--sizing-component-padding-y-sm', References: 'var(--sizing-padding-y-sm)', Value: '6px' },
   { Token: 'component.padding-y.md', 'CSS Variable': '--sizing-component-padding-y-md', References: 'var(--sizing-padding-y-md)', Value: '8px' },
   { Token: 'component.padding-y.lg', 'CSS Variable': '--sizing-component-padding-y-lg', References: 'var(--sizing-padding-y-lg)', Value: '10px' },
+  { Token: 'component.padding-y.xl', 'CSS Variable': '--sizing-component-padding-y-xl', References: 'var(--sizing-padding-y-xl)', Value: '12px' },
 ];
 
 const roleSizingGap = [
@@ -125,6 +127,39 @@ const buttonTokens = [
   { Token: 'btn.lg.gap', 'CSS Variable': '--sizing-btn-lg-gap', References: 'var(--sizing-component-gap-lg)', Value: '10px' },
   { Token: 'btn.lg.font-size', 'CSS Variable': '--sizing-btn-lg-font-size', References: 'var(--font-component-size-lg)', Value: '1.125rem' },
   { Token: 'btn.lg.radius', 'CSS Variable': '--sizing-btn-lg-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
+];
+
+/* ── Level 4 — Component Badge Sizing ── */
+const badgeTokens = [
+  { Token: 'badge.sm.padding-x', 'CSS Variable': '--sizing-badge-sm-padding-x', References: 'var(--sizing-component-padding-x-sm)', Value: '12px' },
+  { Token: 'badge.sm.padding-y', 'CSS Variable': '--sizing-badge-sm-padding-y', References: 'var(--sizing-component-padding-y-sm)', Value: '6px' },
+  { Token: 'badge.sm.font-size', 'CSS Variable': '--sizing-badge-sm-font-size', References: 'var(--font-component-size-sm)', Value: '0.875rem' },
+  { Token: 'badge.md.padding-x', 'CSS Variable': '--sizing-badge-md-padding-x', References: 'var(--sizing-component-padding-x-md)', Value: '16px' },
+  { Token: 'badge.md.padding-y', 'CSS Variable': '--sizing-badge-md-padding-y', References: 'var(--sizing-component-padding-y-sm)', Value: '6px' },
+  { Token: 'badge.md.font-size', 'CSS Variable': '--sizing-badge-md-font-size', References: 'var(--font-component-size-sm)', Value: '0.875rem' },
+  { Token: 'badge.lg.padding-x', 'CSS Variable': '--sizing-badge-lg-padding-x', References: 'var(--sizing-component-padding-x-md)', Value: '16px' },
+  { Token: 'badge.lg.padding-y', 'CSS Variable': '--sizing-badge-lg-padding-y', References: 'var(--sizing-component-padding-y-md)', Value: '8px' },
+  { Token: 'badge.lg.font-size', 'CSS Variable': '--sizing-badge-lg-font-size', References: 'var(--font-component-size-md)', Value: '1rem' },
+];
+
+/* ── Level 4 — Component Input Sizing ── */
+const inputTokens = [
+  { Token: 'input.sm.height', 'CSS Variable': '--sizing-input-sm-height', References: 'var(--sizing-component-height-sm)', Value: '36px' },
+  { Token: 'input.sm.font-size', 'CSS Variable': '--sizing-input-sm-font-size', References: 'var(--font-component-size-sm)', Value: '0.875rem' },
+  { Token: 'input.sm.radius', 'CSS Variable': '--sizing-input-sm-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
+  { Token: 'input.md.height', 'CSS Variable': '--sizing-input-md-height', References: 'var(--sizing-component-height-md)', Value: '40px' },
+  { Token: 'input.md.font-size', 'CSS Variable': '--sizing-input-md-font-size', References: 'var(--font-component-size-md)', Value: '1rem' },
+  { Token: 'input.md.radius', 'CSS Variable': '--sizing-input-md-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
+  { Token: 'input.lg.height', 'CSS Variable': '--sizing-input-lg-height', References: 'var(--sizing-component-height-lg)', Value: '44px' },
+  { Token: 'input.lg.font-size', 'CSS Variable': '--sizing-input-lg-font-size', References: 'var(--font-component-size-lg)', Value: '1.125rem' },
+  { Token: 'input.lg.radius', 'CSS Variable': '--sizing-input-lg-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
+];
+
+/* ── Level 1 — Fixed Sizing (non-referencing) ── */
+const fixedSizingTokens = [
+  { Token: 'datepicker.day-size', 'CSS Variable': '--sizing-datepicker-day-size', References: '(fixed)', Value: '36px' },
+  { Token: 'textarea.min-height', 'CSS Variable': '--sizing-textarea-min-height', References: '(fixed)', Value: '100px' },
+  { Token: 'textarea.max-height', 'CSS Variable': '--sizing-textarea-max-height', References: '(fixed)', Value: '400px' },
 ];
 
 const SizePreview = ({ size, height, paddingX, paddingY }: typeof buttonSizes[0]) => (
@@ -208,19 +243,34 @@ function SizingPage() {
       </Section>
 
       {/* ── LEVEL 4 ── */}
-      <Section title="Level 4 — Component: Button Sizing">
+      <Section title="Level 4 — Component Sizing">
         <p style={{ margin: '0 0 16px', color: '#64748b', fontSize: '13px' }}>
-          Button-Sizing-Tokens. Referenzieren ausschliesslich Level 3.
+          Komponentenspezifische Sizing-Tokens. Referenzieren ausschliesslich Level 3.
         </p>
 
-        <SubSection title="Preview">
+        <SubSection title="Button — Preview">
           {buttonSizes.map((s) => (
             <SizePreview key={s.size} {...s} />
           ))}
         </SubSection>
 
-        <SubSection title="Alle Button-Sizing-Tokens">
+        <SubSection title="Button — Alle Tokens">
           <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={buttonTokens} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Badge">
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={badgeTokens} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Input">
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={inputTokens} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Feste Groessen (ohne Referenzkette)">
+          <p style={{ margin: '0 0 8px', color: '#64748b', fontSize: '13px' }}>
+            Diese Tokens verwenden feste Pixelwerte ohne Referenz auf die Token-Hierarchie.
+          </p>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={fixedSizingTokens} color="#10b981" />
         </SubSection>
 
         <div style={{ marginTop: '16px', padding: '12px 16px', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', fontSize: '12px', color: '#166534', fontFamily: 'monospace' }}>

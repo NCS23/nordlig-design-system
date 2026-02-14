@@ -54,7 +54,6 @@ const roleShadows = [
   { Token: 'elevation.low', 'CSS Variable': '--shadow-elevation-low', References: 'var(--shadow-sm)', Value: '0 1px 3px ...' },
   { Token: 'elevation.medium', 'CSS Variable': '--shadow-elevation-medium', References: 'var(--shadow-md)', Value: '0 4px 6px ...' },
   { Token: 'elevation.high', 'CSS Variable': '--shadow-elevation-high', References: 'var(--shadow-lg)', Value: '0 10px 15px ...' },
-  { Token: 'elevation.overlay', 'CSS Variable': '--shadow-elevation-overlay', References: 'var(--shadow-xl)', Value: '0 20px 25px ...' },
 ];
 
 /* ── Radii Level 1 ── */
@@ -91,39 +90,11 @@ const roleRadii = [
   { Token: 'component.full', 'CSS Variable': '--radius-component-full', References: 'var(--radius-full)', Value: '9999px' },
 ];
 
-/* ── Shadows Level 4 ── */
-const componentShadows = [
-  { Token: 'card.raised', 'CSS Variable': '--shadow-card-raised', References: 'var(--shadow-elevation-low)', Value: '0 1px 3px ...' },
-  { Token: 'card.elevated', 'CSS Variable': '--shadow-card-elevated', References: 'var(--shadow-elevation-medium)', Value: '0 4px 6px ...' },
-  { Token: 'card.hover', 'CSS Variable': '--shadow-card-hover', References: 'var(--shadow-elevation-high)', Value: '0 10px 15px ...' },
-  { Token: 'datepicker.popover', 'CSS Variable': '--shadow-datepicker-popover', References: 'var(--shadow-elevation-medium)', Value: '0 4px 6px ...' },
-  { Token: 'modal.content', 'CSS Variable': '--shadow-modal-content', References: 'var(--shadow-elevation-overlay)', Value: '0 20px 25px ...' },
-  { Token: 'select.popover', 'CSS Variable': '--shadow-select-popover', References: 'var(--shadow-elevation-medium)', Value: '0 4px 6px ...' },
-  { Token: 'switch.thumb', 'CSS Variable': '--shadow-switch-thumb', References: 'var(--shadow-elevation-low)', Value: '0 1px 3px ...' },
-  { Token: 'toast', 'CSS Variable': '--shadow-toast', References: 'var(--shadow-elevation-medium)', Value: '0 4px 6px ...' },
-];
-
 /* ── Radii Level 4 ── */
 const componentRadii = [
   { Token: 'btn.sm.radius', 'CSS Variable': '--sizing-btn-sm-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
   { Token: 'btn.md.radius', 'CSS Variable': '--sizing-btn-md-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
   { Token: 'btn.lg.radius', 'CSS Variable': '--sizing-btn-lg-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
-  { Token: 'badge', 'CSS Variable': '--radius-badge', References: 'var(--radius-component-full)', Value: '9999px' },
-  { Token: 'card', 'CSS Variable': '--radius-card', References: 'var(--radius-component-lg)', Value: '0.5rem' },
-  { Token: 'checkbox', 'CSS Variable': '--radius-checkbox', References: 'var(--radius-component-sm)', Value: '0.125rem' },
-  { Token: 'datepicker.popover', 'CSS Variable': '--radius-datepicker-popover', References: 'var(--radius-component-lg)', Value: '0.5rem' },
-  { Token: 'datepicker.day', 'CSS Variable': '--radius-datepicker-day', References: 'var(--radius-component-md)', Value: '0.375rem' },
-  { Token: 'fileupload.zone', 'CSS Variable': '--radius-fileupload-zone', References: 'var(--radius-component-lg)', Value: '0.5rem' },
-  { Token: 'fileupload.item', 'CSS Variable': '--radius-fileupload-item', References: 'var(--radius-component-md)', Value: '0.375rem' },
-  { Token: 'fileupload.progress', 'CSS Variable': '--radius-fileupload-progress', References: 'var(--radius-component-full)', Value: '9999px' },
-  { Token: 'modal', 'CSS Variable': '--radius-modal', References: 'var(--radius-component-lg)', Value: '0.5rem' },
-  { Token: 'radio.item', 'CSS Variable': '--radius-radio-item', References: 'var(--radius-component-md)', Value: '0.375rem' },
-  { Token: 'select.popover', 'CSS Variable': '--radius-select-popover', References: 'var(--radius-component-lg)', Value: '0.5rem' },
-  { Token: 'select.item', 'CSS Variable': '--radius-select-item', References: 'var(--radius-component-md)', Value: '0.375rem' },
-  { Token: 'toast', 'CSS Variable': '--radius-toast', References: 'var(--radius-component-lg)', Value: '0.5rem' },
-  { Token: 'input.sm.radius', 'CSS Variable': '--sizing-input-sm-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
-  { Token: 'input.md.radius', 'CSS Variable': '--sizing-input-md-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
-  { Token: 'input.lg.radius', 'CSS Variable': '--sizing-input-lg-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
 ];
 
 function ShadowsAndRadiiPage() {
@@ -185,13 +156,12 @@ function ShadowsAndRadiiPage() {
       </Section>
 
       <Section title="Level 4 — Component Shadows">
-        <p style={{ margin: '0 0 16px', color: '#64748b', fontSize: '13px' }}>
-          Komponentenspezifische Shadow-Tokens. Referenzieren ausschliesslich Level 3.
-        </p>
-        <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={componentShadows} color="#10b981" />
+        <div style={{ padding: '16px 20px', backgroundColor: '#f8fafc', border: '1px dashed #e2e8f0', borderRadius: '8px', color: '#94a3b8', fontSize: '13px', fontStyle: 'italic' }}>
+          Aktuell keine komponentenspezifischen Shadow-Tokens definiert. Komponenten verwenden Level-3-Elevation-Tokens direkt (z.B. --shadow-elevation-low fuer Cards).
+        </div>
         <div style={{ marginTop: '16px', padding: '12px 16px', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', fontSize: '12px', color: '#166534', fontFamily: 'monospace' }}>
-          <div style={{ fontWeight: 700, marginBottom: '8px', fontFamily: 'inherit' }}>Referenzkette (Beispiel card.elevated):</div>
-          <div>--shadow-card-elevated → var(--shadow-elevation-medium) → var(--shadow-md) → var(--shadow-base-md) = 0 4px 6px ...</div>
+          <div style={{ fontWeight: 700, marginBottom: '8px', fontFamily: 'inherit' }}>Referenzkette (Beispiel elevation.medium):</div>
+          <div>--shadow-elevation-medium → var(--shadow-md) → var(--shadow-base-md) = 0 4px 6px ...</div>
         </div>
       </Section>
 

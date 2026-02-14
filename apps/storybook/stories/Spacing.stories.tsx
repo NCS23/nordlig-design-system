@@ -103,14 +103,18 @@ const globalSizesTable = [
 
 /* ── Level 3 — Role Spacing ── */
 const rolePadding = [
+  { name: 'xs', value: '8px', cssVar: '--spacing-component-padding-xs' },
   { name: 'sm', value: '12px', cssVar: '--spacing-component-padding-sm' },
   { name: 'md', value: '16px', cssVar: '--spacing-component-padding-md' },
   { name: 'lg', value: '24px', cssVar: '--spacing-component-padding-lg' },
+  { name: 'xl', value: '32px', cssVar: '--spacing-component-padding-xl' },
 ];
 const rolePaddingTable = [
+  { Token: 'component.padding.xs', 'CSS Variable': '--spacing-component-padding-xs', References: 'var(--spacing-xs)', Value: '8px' },
   { Token: 'component.padding.sm', 'CSS Variable': '--spacing-component-padding-sm', References: 'var(--spacing-sm)', Value: '12px' },
   { Token: 'component.padding.md', 'CSS Variable': '--spacing-component-padding-md', References: 'var(--spacing-md)', Value: '16px' },
   { Token: 'component.padding.lg', 'CSS Variable': '--spacing-component-padding-lg', References: 'var(--spacing-lg)', Value: '24px' },
+  { Token: 'component.padding.xl', 'CSS Variable': '--spacing-component-padding-xl', References: 'var(--spacing-xl)', Value: '32px' },
 ];
 
 const roleGap = [
@@ -148,19 +152,114 @@ const buttonSpacingTable = [
 const inputSpacing = [
   { name: 'padding-x', value: '16px', cssVar: '--spacing-input-padding-x' },
   { name: 'padding-y', value: '12px', cssVar: '--spacing-input-padding-y' },
+  { name: 'icon-inset', value: '40px', cssVar: '--spacing-input-icon-inset' },
+  { name: 'icon-padding', value: '12px', cssVar: '--spacing-input-icon-padding' },
 ];
 const inputSpacingTable = [
   { Token: 'input.padding-x', 'CSS Variable': '--spacing-input-padding-x', References: 'var(--spacing-component-padding-md)', Value: '16px' },
   { Token: 'input.padding-y', 'CSS Variable': '--spacing-input-padding-y', References: 'var(--spacing-component-padding-sm)', Value: '12px' },
+  { Token: 'input.icon-inset', 'CSS Variable': '--spacing-input-icon-inset', References: 'var(--sizing-component-height-md)', Value: '40px' },
+  { Token: 'input.icon-padding', 'CSS Variable': '--spacing-input-icon-padding', References: 'var(--spacing-component-padding-sm)', Value: '12px' },
 ];
 
 const cardSpacing = [
-  { name: 'padding', value: '24px', cssVar: '--spacing-card-padding' },
+  { name: 'padding-compact', value: '12px', cssVar: '--spacing-card-padding-compact' },
+  { name: 'padding-normal', value: '16px', cssVar: '--spacing-card-padding-normal' },
+  { name: 'padding-spacious', value: '24px', cssVar: '--spacing-card-padding-spacious' },
   { name: 'gap', value: '12px', cssVar: '--spacing-card-gap' },
 ];
 const cardSpacingTable = [
-  { Token: 'card.padding', 'CSS Variable': '--spacing-card-padding', References: 'var(--spacing-component-padding-lg)', Value: '24px' },
+  { Token: 'card.padding-compact', 'CSS Variable': '--spacing-card-padding-compact', References: 'var(--spacing-component-padding-sm)', Value: '12px' },
+  { Token: 'card.padding-normal', 'CSS Variable': '--spacing-card-padding-normal', References: 'var(--spacing-component-padding-md)', Value: '16px' },
+  { Token: 'card.padding-spacious', 'CSS Variable': '--spacing-card-padding-spacious', References: 'var(--spacing-component-padding-lg)', Value: '24px' },
   { Token: 'card.gap', 'CSS Variable': '--spacing-card-gap', References: 'var(--spacing-component-gap-md)', Value: '12px' },
+];
+
+const datepickerSpacing = [
+  { name: 'popover-padding', value: '16px', cssVar: '--spacing-datepicker-popover-padding' },
+  { name: 'grid-gap', value: '8px', cssVar: '--spacing-datepicker-grid-gap' },
+];
+const datepickerSpacingTable = [
+  { Token: 'datepicker.popover-padding', 'CSS Variable': '--spacing-datepicker-popover-padding', References: 'var(--spacing-component-padding-md)', Value: '16px' },
+  { Token: 'datepicker.grid-gap', 'CSS Variable': '--spacing-datepicker-grid-gap', References: 'var(--spacing-component-gap-sm)', Value: '8px' },
+];
+
+const fileuploadSpacing = [
+  { name: 'zone-padding', value: '24px', cssVar: '--spacing-fileupload-zone-padding' },
+  { name: 'file-gap', value: '8px', cssVar: '--spacing-fileupload-file-gap' },
+];
+const fileuploadSpacingTable = [
+  { Token: 'fileupload.zone-padding', 'CSS Variable': '--spacing-fileupload-zone-padding', References: 'var(--spacing-component-padding-lg)', Value: '24px' },
+  { Token: 'fileupload.file-gap', 'CSS Variable': '--spacing-fileupload-file-gap', References: 'var(--spacing-component-gap-sm)', Value: '8px' },
+];
+
+const modalSpacing = [
+  { name: 'padding-x', value: '24px', cssVar: '--spacing-modal-padding-x' },
+  { name: 'padding-y', value: '16px', cssVar: '--spacing-modal-padding-y' },
+  { name: 'gap', value: '12px', cssVar: '--spacing-modal-gap' },
+];
+const modalSpacingTable = [
+  { Token: 'modal.padding-x', 'CSS Variable': '--spacing-modal-padding-x', References: 'var(--spacing-component-padding-lg)', Value: '24px' },
+  { Token: 'modal.padding-y', 'CSS Variable': '--spacing-modal-padding-y', References: 'var(--spacing-component-padding-md)', Value: '16px' },
+  { Token: 'modal.gap', 'CSS Variable': '--spacing-modal-gap', References: 'var(--spacing-component-gap-md)', Value: '12px' },
+];
+
+const selectSpacing = [
+  { name: 'popover-padding', value: '8px', cssVar: '--spacing-select-popover-padding' },
+  { name: 'item-padding-x', value: '12px', cssVar: '--spacing-select-item-padding-x' },
+  { name: 'item-padding-y', value: '8px', cssVar: '--spacing-select-item-padding-y' },
+  { name: 'item-gap', value: '8px', cssVar: '--spacing-select-item-gap' },
+];
+const selectSpacingTable = [
+  { Token: 'select.popover-padding', 'CSS Variable': '--spacing-select-popover-padding', References: 'var(--spacing-component-padding-xs)', Value: '8px' },
+  { Token: 'select.item-padding-x', 'CSS Variable': '--spacing-select-item-padding-x', References: 'var(--spacing-component-padding-sm)', Value: '12px' },
+  { Token: 'select.item-padding-y', 'CSS Variable': '--spacing-select-item-padding-y', References: 'var(--spacing-component-padding-xs)', Value: '8px' },
+  { Token: 'select.item-gap', 'CSS Variable': '--spacing-select-item-gap', References: 'var(--spacing-component-gap-sm)', Value: '8px' },
+];
+
+const tableSpacing = [
+  { name: 'cell-x-compact', value: '16px', cssVar: '--spacing-table-cell-x-compact' },
+  { name: 'cell-y-compact', value: '12px', cssVar: '--spacing-table-cell-y-compact' },
+  { name: 'cell-x-normal', value: '24px', cssVar: '--spacing-table-cell-x-normal' },
+  { name: 'cell-y-normal', value: '16px', cssVar: '--spacing-table-cell-y-normal' },
+  { name: 'cell-x-spacious', value: '32px', cssVar: '--spacing-table-cell-x-spacious' },
+  { name: 'cell-y-spacious', value: '24px', cssVar: '--spacing-table-cell-y-spacious' },
+  { name: 'head-y-compact', value: '8px', cssVar: '--spacing-table-head-y-compact' },
+  { name: 'head-y-normal', value: '8px', cssVar: '--spacing-table-head-y-normal' },
+  { name: 'head-y-spacious', value: '12px', cssVar: '--spacing-table-head-y-spacious' },
+];
+const tableSpacingTable = [
+  { Token: 'table.cell-x-compact', 'CSS Variable': '--spacing-table-cell-x-compact', References: 'var(--spacing-component-padding-md)', Value: '16px' },
+  { Token: 'table.cell-y-compact', 'CSS Variable': '--spacing-table-cell-y-compact', References: 'var(--spacing-component-padding-sm)', Value: '12px' },
+  { Token: 'table.cell-x-normal', 'CSS Variable': '--spacing-table-cell-x-normal', References: 'var(--spacing-component-padding-lg)', Value: '24px' },
+  { Token: 'table.cell-y-normal', 'CSS Variable': '--spacing-table-cell-y-normal', References: 'var(--spacing-component-padding-md)', Value: '16px' },
+  { Token: 'table.cell-x-spacious', 'CSS Variable': '--spacing-table-cell-x-spacious', References: 'var(--spacing-component-padding-xl)', Value: '32px' },
+  { Token: 'table.cell-y-spacious', 'CSS Variable': '--spacing-table-cell-y-spacious', References: 'var(--spacing-component-padding-lg)', Value: '24px' },
+  { Token: 'table.head-y-compact', 'CSS Variable': '--spacing-table-head-y-compact', References: 'var(--spacing-component-padding-xs)', Value: '8px' },
+  { Token: 'table.head-y-normal', 'CSS Variable': '--spacing-table-head-y-normal', References: 'var(--spacing-component-padding-xs)', Value: '8px' },
+  { Token: 'table.head-y-spacious', 'CSS Variable': '--spacing-table-head-y-spacious', References: 'var(--spacing-component-padding-sm)', Value: '12px' },
+];
+
+const textareaSpacing = [
+  { name: 'padding-y-sm', value: '8px', cssVar: '--spacing-textarea-padding-y-sm' },
+  { name: 'padding-y-md', value: '10px', cssVar: '--spacing-textarea-padding-y-md' },
+  { name: 'padding-y-lg', value: '12px', cssVar: '--spacing-textarea-padding-y-lg' },
+];
+const textareaSpacingTable = [
+  { Token: 'textarea.padding-y-sm', 'CSS Variable': '--spacing-textarea-padding-y-sm', References: 'var(--sizing-component-padding-y-md)', Value: '8px' },
+  { Token: 'textarea.padding-y-md', 'CSS Variable': '--spacing-textarea-padding-y-md', References: 'var(--sizing-component-padding-y-lg)', Value: '10px' },
+  { Token: 'textarea.padding-y-lg', 'CSS Variable': '--spacing-textarea-padding-y-lg', References: 'var(--sizing-component-padding-y-xl)', Value: '12px' },
+];
+
+const toastSpacing = [
+  { name: 'padding', value: '16px', cssVar: '--spacing-toast-padding' },
+  { name: 'gap', value: '12px', cssVar: '--spacing-toast-gap' },
+  { name: 'viewport-padding', value: '16px', cssVar: '--spacing-toast-viewport-padding' },
+];
+const toastSpacingTable = [
+  { Token: 'toast.padding', 'CSS Variable': '--spacing-toast-padding', References: 'var(--spacing-component-padding-md)', Value: '16px' },
+  { Token: 'toast.gap', 'CSS Variable': '--spacing-toast-gap', References: 'var(--spacing-component-gap-md)', Value: '12px' },
+  { Token: 'toast.viewport-padding', 'CSS Variable': '--spacing-toast-viewport-padding', References: 'var(--spacing-component-padding-md)', Value: '16px' },
 ];
 
 function SpacingPage() {
@@ -258,6 +357,69 @@ function SpacingPage() {
             ))}
           </div>
           <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={cardSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="DatePicker">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {datepickerSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={datepickerSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="FileUpload">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {fileuploadSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={fileuploadSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Modal">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {modalSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={modalSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Select">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {selectSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={selectSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Table">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {tableSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={tableSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Textarea">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {textareaSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={textareaSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Toast">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {toastSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={toastSpacingTable} color="#10b981" />
         </SubSection>
 
         <div style={{ marginTop: '16px', padding: '12px 16px', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', fontSize: '12px', color: '#166534', fontFamily: 'monospace' }}>

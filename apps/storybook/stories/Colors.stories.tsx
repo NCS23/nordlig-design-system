@@ -1,7 +1,14 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const ColorSwatch = ({ name, value, cssVar }: { name: string; value: string; cssVar: string }) => (
+type ColorToken = {
+  name: string;
+  value: string;
+  cssVar: string;
+  chain?: string;
+};
+
+const ColorSwatch = ({ name, value, cssVar, chain }: ColorToken) => (
   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px' }}>
     <div
       style={{
@@ -16,35 +23,72 @@ const ColorSwatch = ({ name, value, cssVar }: { name: string; value: string; css
     <div style={{ minWidth: 0 }}>
       <div style={{ fontWeight: 600, fontSize: '13px', color: '#0f172a' }}>{name}</div>
       <div style={{ fontSize: '12px', color: '#64748b', fontFamily: 'monospace' }}>{cssVar}</div>
+      {chain && (
+        <div style={{ fontSize: '10px', color: '#94a3b8', fontFamily: 'monospace', lineHeight: 1.4 }}>{chain}</div>
+      )}
       <div style={{ fontSize: '11px', color: '#94a3b8', fontFamily: 'monospace' }}>{value}</div>
     </div>
   </div>
 );
 
-const PaletteRow = ({ palette, shades }: { palette: string; shades: { shade: string; value: string }[] }) => (
-  <div style={{ marginBottom: '24px' }}>
-    <h4 style={{ margin: '0 0 8px', fontSize: '14px', fontWeight: 600, color: '#334155', textTransform: 'capitalize' }}>{palette}</h4>
-    <div style={{ display: 'flex', gap: '2px', borderRadius: '8px', overflow: 'hidden' }}>
-      {shades.map(({ shade, value }) => (
-        <div
-          key={shade}
-          style={{
-            flex: 1,
-            height: '64px',
-            backgroundColor: value,
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'center',
-            padding: '4px',
-          }}
-          title={`${palette}-${shade}: ${value}`}
-        >
-          <span style={{ fontSize: '10px', fontFamily: 'monospace', color: parseInt(shade) >= 500 ? '#fff' : '#1e293b' }}>{shade}</span>
-        </div>
-      ))}
+/** Alle Palette-CSS-Variablennamen (explizit für vollständige Dokumentation) */
+const paletteCssVars: Record<string, string[]> = {
+  '--color-base-slate': ['--color-base-slate-50', '--color-base-slate-100', '--color-base-slate-200', '--color-base-slate-300', '--color-base-slate-400', '--color-base-slate-500', '--color-base-slate-600', '--color-base-slate-700', '--color-base-slate-800', '--color-base-slate-900', '--color-base-slate-950'],
+  '--color-base-stone': ['--color-base-stone-50', '--color-base-stone-100', '--color-base-stone-200', '--color-base-stone-300', '--color-base-stone-400', '--color-base-stone-500', '--color-base-stone-600', '--color-base-stone-700', '--color-base-stone-800', '--color-base-stone-900', '--color-base-stone-950'],
+  '--color-base-zinc': ['--color-base-zinc-50', '--color-base-zinc-100', '--color-base-zinc-200', '--color-base-zinc-300', '--color-base-zinc-400', '--color-base-zinc-500', '--color-base-zinc-600', '--color-base-zinc-700', '--color-base-zinc-800', '--color-base-zinc-900', '--color-base-zinc-950'],
+  '--color-base-sky': ['--color-base-sky-50', '--color-base-sky-100', '--color-base-sky-200', '--color-base-sky-300', '--color-base-sky-400', '--color-base-sky-500', '--color-base-sky-600', '--color-base-sky-700', '--color-base-sky-800', '--color-base-sky-900', '--color-base-sky-950'],
+  '--color-base-cyan': ['--color-base-cyan-50', '--color-base-cyan-100', '--color-base-cyan-200', '--color-base-cyan-300', '--color-base-cyan-400', '--color-base-cyan-500', '--color-base-cyan-600', '--color-base-cyan-700', '--color-base-cyan-800', '--color-base-cyan-900', '--color-base-cyan-950'],
+  '--color-base-teal': ['--color-base-teal-50', '--color-base-teal-100', '--color-base-teal-200', '--color-base-teal-300', '--color-base-teal-400', '--color-base-teal-500', '--color-base-teal-600', '--color-base-teal-700', '--color-base-teal-800', '--color-base-teal-900', '--color-base-teal-950'],
+  '--color-base-indigo': ['--color-base-indigo-50', '--color-base-indigo-100', '--color-base-indigo-200', '--color-base-indigo-300', '--color-base-indigo-400', '--color-base-indigo-500', '--color-base-indigo-600', '--color-base-indigo-700', '--color-base-indigo-800', '--color-base-indigo-900', '--color-base-indigo-950'],
+  '--color-base-blue': ['--color-base-blue-50', '--color-base-blue-100', '--color-base-blue-200', '--color-base-blue-300', '--color-base-blue-400', '--color-base-blue-500', '--color-base-blue-600', '--color-base-blue-700', '--color-base-blue-800', '--color-base-blue-900', '--color-base-blue-950'],
+  '--color-base-emerald': ['--color-base-emerald-50', '--color-base-emerald-100', '--color-base-emerald-200', '--color-base-emerald-300', '--color-base-emerald-400', '--color-base-emerald-500', '--color-base-emerald-600', '--color-base-emerald-700', '--color-base-emerald-800', '--color-base-emerald-900', '--color-base-emerald-950'],
+  '--color-base-amber': ['--color-base-amber-50', '--color-base-amber-100', '--color-base-amber-200', '--color-base-amber-300', '--color-base-amber-400', '--color-base-amber-500', '--color-base-amber-600', '--color-base-amber-700', '--color-base-amber-800', '--color-base-amber-900', '--color-base-amber-950'],
+  '--color-base-red': ['--color-base-red-50', '--color-base-red-100', '--color-base-red-200', '--color-base-red-300', '--color-base-red-400', '--color-base-red-500', '--color-base-red-600', '--color-base-red-700', '--color-base-red-800', '--color-base-red-900', '--color-base-red-950'],
+  '--color-base-yellow': ['--color-base-yellow-50', '--color-base-yellow-100', '--color-base-yellow-200', '--color-base-yellow-300', '--color-base-yellow-400', '--color-base-yellow-500', '--color-base-yellow-600', '--color-base-yellow-700', '--color-base-yellow-800', '--color-base-yellow-900', '--color-base-yellow-950'],
+  '--color-base-green': ['--color-base-green-50', '--color-base-green-100', '--color-base-green-200', '--color-base-green-300', '--color-base-green-400', '--color-base-green-500', '--color-base-green-600', '--color-base-green-700', '--color-base-green-800', '--color-base-green-900', '--color-base-green-950'],
+  '--color-primary-1': ['--color-primary-1-50', '--color-primary-1-100', '--color-primary-1-200', '--color-primary-1-300', '--color-primary-1-400', '--color-primary-1-500', '--color-primary-1-600', '--color-primary-1-700', '--color-primary-1-800', '--color-primary-1-900', '--color-primary-1-950'],
+  '--color-primary-2': ['--color-primary-2-50', '--color-primary-2-100', '--color-primary-2-200', '--color-primary-2-300', '--color-primary-2-400', '--color-primary-2-500', '--color-primary-2-600', '--color-primary-2-700', '--color-primary-2-800', '--color-primary-2-900', '--color-primary-2-950'],
+  '--color-secondary-1': ['--color-secondary-1-50', '--color-secondary-1-100', '--color-secondary-1-200', '--color-secondary-1-300', '--color-secondary-1-400', '--color-secondary-1-500', '--color-secondary-1-600', '--color-secondary-1-700', '--color-secondary-1-800', '--color-secondary-1-900', '--color-secondary-1-950'],
+  '--color-secondary-2': ['--color-secondary-2-50', '--color-secondary-2-100', '--color-secondary-2-200', '--color-secondary-2-300', '--color-secondary-2-400', '--color-secondary-2-500', '--color-secondary-2-600', '--color-secondary-2-700', '--color-secondary-2-800', '--color-secondary-2-900', '--color-secondary-2-950'],
+  '--color-accent-1': ['--color-accent-1-50', '--color-accent-1-100', '--color-accent-1-200', '--color-accent-1-300', '--color-accent-1-400', '--color-accent-1-500', '--color-accent-1-600', '--color-accent-1-700', '--color-accent-1-800', '--color-accent-1-900', '--color-accent-1-950'],
+  '--color-accent-2': ['--color-accent-2-50', '--color-accent-2-100', '--color-accent-2-200', '--color-accent-2-300', '--color-accent-2-400', '--color-accent-2-500', '--color-accent-2-600', '--color-accent-2-700', '--color-accent-2-800', '--color-accent-2-900', '--color-accent-2-950'],
+  '--color-accent-3': ['--color-accent-3-50', '--color-accent-3-100', '--color-accent-3-200', '--color-accent-3-300', '--color-accent-3-400', '--color-accent-3-500', '--color-accent-3-600', '--color-accent-3-700', '--color-accent-3-800', '--color-accent-3-900', '--color-accent-3-950'],
+  '--color-accent-4': ['--color-accent-4-50', '--color-accent-4-100', '--color-accent-4-200', '--color-accent-4-300', '--color-accent-4-400', '--color-accent-4-500', '--color-accent-4-600', '--color-accent-4-700', '--color-accent-4-800', '--color-accent-4-900', '--color-accent-4-950'],
+  '--color-accent-5': ['--color-accent-5-50', '--color-accent-5-100', '--color-accent-5-200', '--color-accent-5-300', '--color-accent-5-400', '--color-accent-5-500', '--color-accent-5-600', '--color-accent-5-700', '--color-accent-5-800', '--color-accent-5-900', '--color-accent-5-950'],
+  '--color-neutral-1': ['--color-neutral-1-0', '--color-neutral-1-50', '--color-neutral-1-100', '--color-neutral-1-200', '--color-neutral-1-300', '--color-neutral-1-400', '--color-neutral-1-500', '--color-neutral-1-600', '--color-neutral-1-700', '--color-neutral-1-800', '--color-neutral-1-900', '--color-neutral-1-950', '--color-neutral-1-1000'],
+  '--color-neutral-2': ['--color-neutral-2-50', '--color-neutral-2-100', '--color-neutral-2-200', '--color-neutral-2-300', '--color-neutral-2-400', '--color-neutral-2-500', '--color-neutral-2-600', '--color-neutral-2-700', '--color-neutral-2-800', '--color-neutral-2-900', '--color-neutral-2-950'],
+};
+
+const PaletteRow = ({ palette, shades, cssVarPrefix }: { palette: string; shades: { shade: string; value: string }[]; cssVarPrefix: string }) => {
+  const vars = paletteCssVars[cssVarPrefix];
+  return (
+    <div style={{ marginBottom: '24px' }}>
+      <h4 style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 600, color: '#334155', textTransform: 'capitalize' }}>{palette}</h4>
+      <div style={{ display: 'flex', gap: '2px', borderRadius: '8px', overflow: 'hidden' }}>
+        {shades.map(({ shade, value }, i) => (
+          <div
+            key={shade}
+            style={{
+              flex: 1,
+              height: '64px',
+              backgroundColor: value,
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              padding: '4px',
+            }}
+            title={`${vars[i]}: ${value}`}
+          >
+            <span style={{ fontSize: '10px', fontFamily: 'monospace', color: parseInt(shade) >= 500 ? '#fff' : '#1e293b' }}>{shade}</span>
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: '4px', fontSize: '10px', color: '#94a3b8', fontFamily: 'monospace', lineHeight: 1.6 }}>
+        {vars.join(' · ')}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: '40px' }}>
@@ -52,6 +96,23 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
     {children}
   </div>
 );
+
+const SubSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div style={{ marginBottom: '24px' }}>
+    <h4 style={{ margin: '0 0 12px', fontSize: '14px', fontWeight: 600, color: '#475569' }}>{title}</h4>
+    {children}
+  </div>
+);
+
+const TokenGrid = ({ tokens }: { tokens: ColorToken[] }) => (
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '12px' }}>
+    {tokens.map((c) => <ColorSwatch key={c.cssVar} {...c} />)}
+  </div>
+);
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LEVEL 1: BASE PALETTES
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 const basePalettes: Record<string, { shade: string; value: string }[]> = {
   sky: [
@@ -71,6 +132,18 @@ const basePalettes: Record<string, { shade: string; value: string }[]> = {
     { shade: '300', value: '#cbd5e1' }, { shade: '400', value: '#94a3b8' }, { shade: '500', value: '#64748b' },
     { shade: '600', value: '#475569' }, { shade: '700', value: '#334155' }, { shade: '800', value: '#1e293b' },
     { shade: '900', value: '#0f172a' }, { shade: '950', value: '#020617' },
+  ],
+  stone: [
+    { shade: '50', value: '#fafaf9' }, { shade: '100', value: '#f5f5f4' }, { shade: '200', value: '#e7e5e4' },
+    { shade: '300', value: '#d6d3d1' }, { shade: '400', value: '#a8a29e' }, { shade: '500', value: '#78716c' },
+    { shade: '600', value: '#57534e' }, { shade: '700', value: '#44403c' }, { shade: '800', value: '#292524' },
+    { shade: '900', value: '#1c1917' }, { shade: '950', value: '#0c0a09' },
+  ],
+  zinc: [
+    { shade: '50', value: '#fafafa' }, { shade: '100', value: '#f4f4f5' }, { shade: '200', value: '#e4e4e7' },
+    { shade: '300', value: '#d4d4d8' }, { shade: '400', value: '#a1a1aa' }, { shade: '500', value: '#71717a' },
+    { shade: '600', value: '#52525b' }, { shade: '700', value: '#3f3f46' }, { shade: '800', value: '#27272a' },
+    { shade: '900', value: '#18181b' }, { shade: '950', value: '#09090b' },
   ],
   emerald: [
     { shade: '50', value: '#ecfdf5' }, { shade: '100', value: '#d1fae5' }, { shade: '200', value: '#a7f3d0' },
@@ -102,100 +175,464 @@ const basePalettes: Record<string, { shade: string; value: string }[]> = {
     { shade: '600', value: '#0d9488' }, { shade: '700', value: '#0f766e' }, { shade: '800', value: '#115e59' },
     { shade: '900', value: '#134e4a' }, { shade: '950', value: '#042f2e' },
   ],
+  cyan: [
+    { shade: '50', value: '#ecfeff' }, { shade: '100', value: '#cffafe' }, { shade: '200', value: '#a5f3fc' },
+    { shade: '300', value: '#67e8f9' }, { shade: '400', value: '#22d3ee' }, { shade: '500', value: '#06b6d4' },
+    { shade: '600', value: '#0891b2' }, { shade: '700', value: '#0e7490' }, { shade: '800', value: '#155e75' },
+    { shade: '900', value: '#164e63' }, { shade: '950', value: '#083344' },
+  ],
+  green: [
+    { shade: '50', value: '#f0fdf4' }, { shade: '100', value: '#dcfce7' }, { shade: '200', value: '#bbf7d0' },
+    { shade: '300', value: '#86efac' }, { shade: '400', value: '#4ade80' }, { shade: '500', value: '#22c55e' },
+    { shade: '600', value: '#16a34a' }, { shade: '700', value: '#15803d' }, { shade: '800', value: '#166534' },
+    { shade: '900', value: '#14532d' }, { shade: '950', value: '#052e16' },
+  ],
+  yellow: [
+    { shade: '50', value: '#fefce8' }, { shade: '100', value: '#fef9c3' }, { shade: '200', value: '#fef08a' },
+    { shade: '300', value: '#fde047' }, { shade: '400', value: '#facc15' }, { shade: '500', value: '#eab308' },
+    { shade: '600', value: '#ca8a04' }, { shade: '700', value: '#a16207' }, { shade: '800', value: '#854d0e' },
+    { shade: '900', value: '#713f12' }, { shade: '950', value: '#422006' },
+  ],
 };
 
-const roleColors = [
-  { name: 'bg-base', value: '#f8fafc', cssVar: '--color-bg-base' },
-  { name: 'bg-surface', value: '#f1f5f9', cssVar: '--color-bg-surface' },
-  { name: 'bg-primary', value: '#0ea5e9', cssVar: '--color-bg-primary' },
-  { name: 'bg-primary-hover', value: '#0284c7', cssVar: '--color-bg-primary-hover' },
-  { name: 'bg-primary-active', value: '#0369a1', cssVar: '--color-bg-primary-active' },
-  { name: 'bg-success', value: '#10b981', cssVar: '--color-bg-success' },
-  { name: 'bg-warning', value: '#f59e0b', cssVar: '--color-bg-warning' },
-  { name: 'bg-error', value: '#ef4444', cssVar: '--color-bg-error' },
-  { name: 'bg-info', value: '#3b82f6', cssVar: '--color-bg-info' },
-  { name: 'text-base', value: '#0f172a', cssVar: '--color-text-base' },
-  { name: 'text-muted', value: '#475569', cssVar: '--color-text-muted' },
-  { name: 'text-disabled', value: '#94a3b8', cssVar: '--color-text-disabled' },
-  { name: 'text-primary', value: '#0284c7', cssVar: '--color-text-primary' },
-  { name: 'border-default', value: '#cbd5e1', cssVar: '--color-border-default' },
-  { name: 'border-focus', value: '#0ea5e9', cssVar: '--color-border-focus' },
-  { name: 'border-error', value: '#ef4444', cssVar: '--color-border-error' },
+/** Neutral-1 Palette erweitert um Shade 0 (white) und 1000 (black) */
+const neutral1Extended = [
+  { shade: '0', value: '#ffffff' },
+  ...basePalettes.slate,
+  { shade: '1000', value: '#000000' },
 ];
 
-const componentColors = [
-  { name: 'btn-primary-bg', value: '#0ea5e9', cssVar: '--color-btn-primary-bg' },
-  { name: 'btn-primary-hover', value: '#0284c7', cssVar: '--color-btn-primary-bg-hover' },
-  { name: 'btn-primary-text', value: '#f8fafc', cssVar: '--color-btn-primary-text' },
-  { name: 'btn-secondary-bg', value: '#f1f5f9', cssVar: '--color-btn-secondary-bg' },
-  { name: 'btn-secondary-hover', value: '#e2e8f0', cssVar: '--color-btn-secondary-bg-hover' },
-  { name: 'btn-secondary-active', value: '#cbd5e1', cssVar: '--color-btn-secondary-bg-active' },
-  { name: 'btn-secondary-text', value: '#0f172a', cssVar: '--color-btn-secondary-text' },
-  { name: 'btn-ghost-text', value: '#0284c7', cssVar: '--color-btn-ghost-text' },
-  { name: 'btn-ghost-hover', value: '#f1f5f9', cssVar: '--color-btn-ghost-bg-hover' },
-  { name: 'btn-ghost-active', value: '#e2e8f0', cssVar: '--color-btn-ghost-bg-active' },
-  { name: 'btn-disabled-bg', value: '#cbd5e1', cssVar: '--color-btn-disabled-bg' },
-  { name: 'btn-disabled-text', value: '#94a3b8', cssVar: '--color-btn-disabled-text' },
+const baseUtilityColors: ColorToken[] = [
+  { name: 'white', value: '#ffffff', cssVar: '--color-base-white' },
+  { name: 'black', value: '#000000', cssVar: '--color-base-black' },
+  { name: 'overlay', value: 'rgba(0, 0, 0, 0.5)', cssVar: '--color-base-overlay' },
 ];
 
+const neutralUtilityColors: ColorToken[] = [
+  { name: 'neutral-overlay', value: 'rgba(0, 0, 0, 0.5)', cssVar: '--color-neutral-overlay', chain: '← base.overlay' },
+];
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LEVEL 3: ROLE TOKENS (komplett)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+const roleBgColors: ColorToken[] = [
+  { name: 'bg-paper', value: '#ffffff', cssVar: '--color-bg-paper', chain: '← neutral-1.0 ← base.white' },
+  { name: 'bg-base', value: '#f8fafc', cssVar: '--color-bg-base', chain: '← neutral-1.50 ← base.slate.50' },
+  { name: 'bg-surface', value: '#f1f5f9', cssVar: '--color-bg-surface', chain: '← neutral-1.100 ← base.slate.100' },
+  { name: 'bg-elevated', value: '#f8fafc', cssVar: '--color-bg-elevated', chain: '← neutral-1.50 ← base.slate.50' },
+  { name: 'bg-primary', value: '#0ea5e9', cssVar: '--color-bg-primary', chain: '← primary-1.500 ← base.sky.500' },
+  { name: 'bg-primary-hover', value: '#0284c7', cssVar: '--color-bg-primary-hover', chain: '← primary-1.600 ← base.sky.600' },
+  { name: 'bg-primary-active', value: '#0369a1', cssVar: '--color-bg-primary-active', chain: '← primary-1.700 ← base.sky.700' },
+  { name: 'bg-secondary', value: '#64748b', cssVar: '--color-bg-secondary', chain: '← secondary-1.500 ← base.slate.500' },
+  { name: 'bg-secondary-hover', value: '#475569', cssVar: '--color-bg-secondary-hover', chain: '← secondary-1.600 ← base.slate.600' },
+  { name: 'bg-success', value: '#10b981', cssVar: '--color-bg-success', chain: '← accent-1.500 ← base.emerald.500' },
+  { name: 'bg-warning', value: '#f59e0b', cssVar: '--color-bg-warning', chain: '← accent-2.500 ← base.amber.500' },
+  { name: 'bg-error', value: '#ef4444', cssVar: '--color-bg-error', chain: '← accent-3.500 ← base.red.500' },
+  { name: 'bg-info', value: '#3b82f6', cssVar: '--color-bg-info', chain: '← accent-4.500 ← base.blue.500' },
+  { name: 'bg-overlay', value: 'rgba(0,0,0,0.5)', cssVar: '--color-bg-overlay', chain: '← neutral.overlay' },
+];
+
+const roleTextColors: ColorToken[] = [
+  { name: 'text-base', value: '#0f172a', cssVar: '--color-text-base', chain: '← neutral-1.900 ← base.slate.900' },
+  { name: 'text-muted', value: '#475569', cssVar: '--color-text-muted', chain: '← neutral-1.600 ← base.slate.600' },
+  { name: 'text-disabled', value: '#94a3b8', cssVar: '--color-text-disabled', chain: '← neutral-1.400 ← base.slate.400' },
+  { name: 'text-inverse', value: '#f8fafc', cssVar: '--color-text-inverse', chain: '← neutral-1.50 ← base.slate.50' },
+  { name: 'text-on-primary', value: '#ffffff', cssVar: '--color-text-on-primary', chain: '← neutral-1.0 ← base.white' },
+  { name: 'text-primary', value: '#0284c7', cssVar: '--color-text-primary', chain: '← primary-1.600 ← base.sky.600' },
+  { name: 'text-success', value: '#047857', cssVar: '--color-text-success', chain: '← accent-1.700 ← base.emerald.700' },
+  { name: 'text-warning', value: '#b45309', cssVar: '--color-text-warning', chain: '← accent-2.700 ← base.amber.700' },
+  { name: 'text-error', value: '#b91c1c', cssVar: '--color-text-error', chain: '← accent-3.700 ← base.red.700' },
+  { name: 'text-info', value: '#1d4ed8', cssVar: '--color-text-info', chain: '← accent-4.700 ← base.blue.700' },
+];
+
+const roleBorderColors: ColorToken[] = [
+  { name: 'border-default', value: '#cbd5e1', cssVar: '--color-border-default', chain: '← neutral-1.300 ← base.slate.300' },
+  { name: 'border-muted', value: '#e2e8f0', cssVar: '--color-border-muted', chain: '← neutral-1.200 ← base.slate.200' },
+  { name: 'border-strong', value: '#94a3b8', cssVar: '--color-border-strong', chain: '← neutral-1.400 ← base.slate.400' },
+  { name: 'border-focus', value: '#0ea5e9', cssVar: '--color-border-focus', chain: '← primary-1.500 ← base.sky.500' },
+  { name: 'border-error', value: '#ef4444', cssVar: '--color-border-error', chain: '← accent-3.500 ← base.red.500' },
+  { name: 'border-success', value: '#10b981', cssVar: '--color-border-success', chain: '← accent-1.500 ← base.emerald.500' },
+];
+
+const roleInteractiveColors: ColorToken[] = [
+  { name: 'interactive-primary', value: '#0ea5e9', cssVar: '--color-interactive-primary', chain: '← primary-1.500 ← base.sky.500' },
+  { name: 'interactive-primary-hover', value: '#0284c7', cssVar: '--color-interactive-primary-hover', chain: '← primary-1.600 ← base.sky.600' },
+  { name: 'interactive-primary-active', value: '#0369a1', cssVar: '--color-interactive-primary-active', chain: '← primary-1.700 ← base.sky.700' },
+  { name: 'interactive-primary-disabled', value: '#cbd5e1', cssVar: '--color-interactive-primary-disabled', chain: '← neutral-1.300 ← base.slate.300' },
+  { name: 'interactive-secondary', value: '#64748b', cssVar: '--color-interactive-secondary', chain: '← secondary-1.500 ← base.slate.500' },
+  { name: 'interactive-secondary-hover', value: '#475569', cssVar: '--color-interactive-secondary-hover', chain: '← secondary-1.600 ← base.slate.600' },
+  { name: 'interactive-secondary-active', value: '#334155', cssVar: '--color-interactive-secondary-active', chain: '← secondary-1.700 ← base.slate.700' },
+];
+
+const roleStatusColors: ColorToken[] = [
+  { name: 'success-bg-subtle', value: '#ecfdf5', cssVar: '--color-success-bg-subtle', chain: '← accent-1.50 ← base.emerald.50' },
+  { name: 'success-bg', value: '#d1fae5', cssVar: '--color-success-bg', chain: '← accent-1.100 ← base.emerald.100' },
+  { name: 'success-border', value: '#10b981', cssVar: '--color-success-border', chain: '← accent-1.500 ← base.emerald.500' },
+  { name: 'success-text', value: '#047857', cssVar: '--color-success-text', chain: '← accent-1.700 ← base.emerald.700' },
+  { name: 'warning-bg-subtle', value: '#fffbeb', cssVar: '--color-warning-bg-subtle', chain: '← accent-2.50 ← base.amber.50' },
+  { name: 'warning-bg', value: '#fef3c7', cssVar: '--color-warning-bg', chain: '← accent-2.100 ← base.amber.100' },
+  { name: 'warning-border', value: '#f59e0b', cssVar: '--color-warning-border', chain: '← accent-2.500 ← base.amber.500' },
+  { name: 'warning-text', value: '#b45309', cssVar: '--color-warning-text', chain: '← accent-2.700 ← base.amber.700' },
+  { name: 'error-bg-subtle', value: '#fef2f2', cssVar: '--color-error-bg-subtle', chain: '← accent-3.50 ← base.red.50' },
+  { name: 'error-bg', value: '#fee2e2', cssVar: '--color-error-bg', chain: '← accent-3.100 ← base.red.100' },
+  { name: 'error-border', value: '#ef4444', cssVar: '--color-error-border', chain: '← accent-3.500 ← base.red.500' },
+  { name: 'error-text', value: '#b91c1c', cssVar: '--color-error-text', chain: '← accent-3.700 ← base.red.700' },
+  { name: 'info-bg-subtle', value: '#eff6ff', cssVar: '--color-info-bg-subtle', chain: '← accent-4.50 ← base.blue.50' },
+  { name: 'info-bg', value: '#dbeafe', cssVar: '--color-info-bg', chain: '← accent-4.100 ← base.blue.100' },
+  { name: 'info-border', value: '#3b82f6', cssVar: '--color-info-border', chain: '← accent-4.500 ← base.blue.500' },
+  { name: 'info-text', value: '#1d4ed8', cssVar: '--color-info-text', chain: '← accent-4.700 ← base.blue.700' },
+];
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LEVEL 4: COMPONENT TOKENS (komplett mit Referenzketten)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+const buttonColors: ColorToken[] = [
+  { name: 'btn-primary-bg', value: '#0ea5e9', cssVar: '--color-btn-primary-bg', chain: '← bg.primary ← primary-1.500' },
+  { name: 'btn-primary-bg-hover', value: '#0284c7', cssVar: '--color-btn-primary-bg-hover', chain: '← bg.primary-hover ← primary-1.600' },
+  { name: 'btn-primary-bg-active', value: '#0369a1', cssVar: '--color-btn-primary-bg-active', chain: '← bg.primary-active ← primary-1.700' },
+  { name: 'btn-primary-text', value: '#f8fafc', cssVar: '--color-btn-primary-text', chain: '← text.inverse ← neutral-1.50' },
+  { name: 'btn-primary-border', value: '#0ea5e9', cssVar: '--color-btn-primary-border', chain: '← bg.primary ← primary-1.500' },
+  { name: 'btn-secondary-bg', value: '#f1f5f9', cssVar: '--color-btn-secondary-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'btn-secondary-bg-hover', value: '#e2e8f0', cssVar: '--color-btn-secondary-bg-hover', chain: '← neutral-1.200 ← base.slate.200' },
+  { name: 'btn-secondary-bg-active', value: '#cbd5e1', cssVar: '--color-btn-secondary-bg-active', chain: '← neutral-1.300 ← base.slate.300' },
+  { name: 'btn-secondary-text', value: '#0f172a', cssVar: '--color-btn-secondary-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'btn-secondary-border', value: '#cbd5e1', cssVar: '--color-btn-secondary-border', chain: '← border.default ← neutral-1.300' },
+  { name: 'btn-ghost-text', value: '#0284c7', cssVar: '--color-btn-ghost-text', chain: '← text.primary ← primary-1.600' },
+  { name: 'btn-ghost-bg-hover', value: '#f1f5f9', cssVar: '--color-btn-ghost-bg-hover', chain: '← neutral-1.100 ← base.slate.100' },
+  { name: 'btn-ghost-bg-active', value: '#e2e8f0', cssVar: '--color-btn-ghost-bg-active', chain: '← neutral-1.200 ← base.slate.200' },
+  { name: 'btn-disabled-bg', value: '#cbd5e1', cssVar: '--color-btn-disabled-bg', chain: '← interactive.primary-disabled ← neutral-1.300' },
+  { name: 'btn-disabled-text', value: '#94a3b8', cssVar: '--color-btn-disabled-text', chain: '← text.disabled ← neutral-1.400' },
+];
+
+const badgeColors: ColorToken[] = [
+  { name: 'badge-success-bg', value: '#d1fae5', cssVar: '--color-badge-success-bg', chain: '← success.bg ← accent-1.100' },
+  { name: 'badge-success-text', value: '#047857', cssVar: '--color-badge-success-text', chain: '← success.text ← accent-1.700' },
+  { name: 'badge-success-border', value: '#10b981', cssVar: '--color-badge-success-border', chain: '← success.border ← accent-1.500' },
+  { name: 'badge-warning-bg', value: '#fef3c7', cssVar: '--color-badge-warning-bg', chain: '← warning.bg ← accent-2.100' },
+  { name: 'badge-warning-text', value: '#b45309', cssVar: '--color-badge-warning-text', chain: '← warning.text ← accent-2.700' },
+  { name: 'badge-warning-border', value: '#f59e0b', cssVar: '--color-badge-warning-border', chain: '← warning.border ← accent-2.500' },
+  { name: 'badge-error-bg', value: '#fee2e2', cssVar: '--color-badge-error-bg', chain: '← error.bg ← accent-3.100' },
+  { name: 'badge-error-text', value: '#b91c1c', cssVar: '--color-badge-error-text', chain: '← error.text ← accent-3.700' },
+  { name: 'badge-error-border', value: '#ef4444', cssVar: '--color-badge-error-border', chain: '← error.border ← accent-3.500' },
+  { name: 'badge-info-bg', value: '#dbeafe', cssVar: '--color-badge-info-bg', chain: '← info.bg ← accent-4.100' },
+  { name: 'badge-info-text', value: '#1d4ed8', cssVar: '--color-badge-info-text', chain: '← info.text ← accent-4.700' },
+  { name: 'badge-info-border', value: '#3b82f6', cssVar: '--color-badge-info-border', chain: '← info.border ← accent-4.500' },
+  { name: 'badge-neutral-bg', value: '#f1f5f9', cssVar: '--color-badge-neutral-bg', chain: '← neutral-1.100 ← base.slate.100' },
+  { name: 'badge-neutral-text', value: '#475569', cssVar: '--color-badge-neutral-text', chain: '← text.muted ← neutral-1.600' },
+  { name: 'badge-neutral-border', value: '#e2e8f0', cssVar: '--color-badge-neutral-border', chain: '← border.muted ← neutral-1.200' },
+];
+
+const cardColors: ColorToken[] = [
+  { name: 'card-bg', value: '#ffffff', cssVar: '--color-card-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'card-border', value: '#e2e8f0', cssVar: '--color-card-border', chain: '← border.muted ← neutral-1.200' },
+];
+
+const checkboxColors: ColorToken[] = [
+  { name: 'checkbox-bg', value: '#ffffff', cssVar: '--color-checkbox-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'checkbox-border', value: '#cbd5e1', cssVar: '--color-checkbox-border', chain: '← border.default ← neutral-1.300' },
+  { name: 'checkbox-border-hover', value: '#94a3b8', cssVar: '--color-checkbox-border-hover', chain: '← border.strong ← neutral-1.400' },
+  { name: 'checkbox-checked-bg', value: '#0ea5e9', cssVar: '--color-checkbox-checked-bg', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'checkbox-checked-border', value: '#0ea5e9', cssVar: '--color-checkbox-checked-border', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'checkbox-checked-icon', value: '#ffffff', cssVar: '--color-checkbox-checked-icon', chain: '← text.on-primary ← neutral-1.0' },
+  { name: 'checkbox-focus-ring', value: '#0ea5e9', cssVar: '--color-checkbox-focus-ring', chain: '← border.focus ← primary-1.500' },
+  { name: 'checkbox-disabled-bg', value: '#f1f5f9', cssVar: '--color-checkbox-disabled-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'checkbox-label', value: '#0f172a', cssVar: '--color-checkbox-label', chain: '← text.base ← neutral-1.900' },
+  { name: 'checkbox-description', value: '#475569', cssVar: '--color-checkbox-description', chain: '← text.muted ← neutral-1.600' },
+];
+
+const datepickerColors: ColorToken[] = [
+  { name: 'datepicker-popover-bg', value: '#ffffff', cssVar: '--color-datepicker-popover-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'datepicker-popover-border', value: '#e2e8f0', cssVar: '--color-datepicker-popover-border', chain: '← border.muted ← neutral-1.200' },
+  { name: 'datepicker-header-text', value: '#0f172a', cssVar: '--color-datepicker-header-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'datepicker-weekday-text', value: '#475569', cssVar: '--color-datepicker-weekday-text', chain: '← text.muted ← neutral-1.600' },
+  { name: 'datepicker-day-text', value: '#0f172a', cssVar: '--color-datepicker-day-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'datepicker-day-hover-bg', value: '#f1f5f9', cssVar: '--color-datepicker-day-hover-bg', chain: '← neutral-1.100 ← base.slate.100' },
+  { name: 'datepicker-day-selected-bg', value: '#0ea5e9', cssVar: '--color-datepicker-day-selected-bg', chain: '← bg.primary ← primary-1.500' },
+  { name: 'datepicker-day-selected-text', value: '#f8fafc', cssVar: '--color-datepicker-day-selected-text', chain: '← text.inverse ← neutral-1.50' },
+  { name: 'datepicker-day-today-border', value: '#0ea5e9', cssVar: '--color-datepicker-day-today-border', chain: '← border.focus ← primary-1.500' },
+  { name: 'datepicker-day-disabled-text', value: '#94a3b8', cssVar: '--color-datepicker-day-disabled-text', chain: '← text.disabled ← neutral-1.400' },
+  { name: 'datepicker-day-range-bg', value: '#e0f2fe', cssVar: '--color-datepicker-day-range-bg', chain: '← primary-1.100 ← base.sky.100' },
+  { name: 'datepicker-nav-hover-bg', value: '#f1f5f9', cssVar: '--color-datepicker-nav-hover-bg', chain: '← neutral-1.100 ← base.slate.100' },
+];
+
+const fileuploadColors: ColorToken[] = [
+  { name: 'fileupload-zone-bg', value: '#f1f5f9', cssVar: '--color-fileupload-zone-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'fileupload-zone-border', value: '#cbd5e1', cssVar: '--color-fileupload-zone-border', chain: '← border.default ← neutral-1.300' },
+  { name: 'fileupload-zone-text', value: '#0f172a', cssVar: '--color-fileupload-zone-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'fileupload-zone-text-sub', value: '#475569', cssVar: '--color-fileupload-zone-text-sub', chain: '← text.muted ← neutral-1.600' },
+  { name: 'fileupload-zone-icon', value: '#0ea5e9', cssVar: '--color-fileupload-zone-icon', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'fileupload-hover-bg', value: '#f0f9ff', cssVar: '--color-fileupload-hover-bg', chain: '← primary-1.50 ← base.sky.50' },
+  { name: 'fileupload-hover-border', value: '#0ea5e9', cssVar: '--color-fileupload-hover-border', chain: '← border.focus ← primary-1.500' },
+  { name: 'fileupload-drag-bg', value: '#f0f9ff', cssVar: '--color-fileupload-drag-bg', chain: '← primary-1.50 ← base.sky.50' },
+  { name: 'fileupload-drag-border', value: '#0ea5e9', cssVar: '--color-fileupload-drag-border', chain: '← border.focus ← primary-1.500' },
+  { name: 'fileupload-drag-icon', value: '#0ea5e9', cssVar: '--color-fileupload-drag-icon', chain: '← bg.primary ← primary-1.500' },
+  { name: 'fileupload-drag-text', value: '#0284c7', cssVar: '--color-fileupload-drag-text', chain: '← text.primary ← primary-1.600' },
+  { name: 'fileupload-file-text', value: '#0f172a', cssVar: '--color-fileupload-file-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'fileupload-file-size', value: '#475569', cssVar: '--color-fileupload-file-size', chain: '← text.muted ← neutral-1.600' },
+  { name: 'fileupload-file-icon', value: '#475569', cssVar: '--color-fileupload-file-icon', chain: '← text.muted ← neutral-1.600' },
+  { name: 'fileupload-file-remove', value: '#475569', cssVar: '--color-fileupload-file-remove', chain: '← text.muted ← neutral-1.600' },
+  { name: 'fileupload-file-remove-hover', value: '#b91c1c', cssVar: '--color-fileupload-file-remove-hover', chain: '← text.error ← accent-3.700' },
+  { name: 'fileupload-progress-bg', value: '#e2e8f0', cssVar: '--color-fileupload-progress-bg', chain: '← neutral-1.200 ← base.slate.200' },
+  { name: 'fileupload-progress-fill', value: '#0ea5e9', cssVar: '--color-fileupload-progress-fill', chain: '← bg.primary ← primary-1.500' },
+  { name: 'fileupload-error-text', value: '#b91c1c', cssVar: '--color-fileupload-error-text', chain: '← text.error ← accent-3.700' },
+  { name: 'fileupload-error-border', value: '#ef4444', cssVar: '--color-fileupload-error-border', chain: '← border.error ← accent-3.500' },
+];
+
+const inputColors: ColorToken[] = [
+  { name: 'input-bg', value: '#ffffff', cssVar: '--color-input-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'input-bg-disabled', value: '#f1f5f9', cssVar: '--color-input-bg-disabled', chain: '← neutral-1.100 ← base.slate.100' },
+  { name: 'input-text', value: '#0f172a', cssVar: '--color-input-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'input-text-placeholder', value: '#475569', cssVar: '--color-input-text-placeholder', chain: '← text.muted ← neutral-1.600' },
+  { name: 'input-border', value: '#cbd5e1', cssVar: '--color-input-border', chain: '← border.default ← neutral-1.300' },
+  { name: 'input-border-hover', value: '#94a3b8', cssVar: '--color-input-border-hover', chain: '← border.strong ← neutral-1.400' },
+  { name: 'input-border-focus', value: '#0ea5e9', cssVar: '--color-input-border-focus', chain: '← border.focus ← primary-1.500' },
+  { name: 'input-border-error', value: '#ef4444', cssVar: '--color-input-border-error', chain: '← border.error ← accent-3.500' },
+];
+
+const modalColors: ColorToken[] = [
+  { name: 'modal-overlay', value: 'rgba(0,0,0,0.5)', cssVar: '--color-modal-overlay', chain: '← bg.overlay ← neutral.overlay' },
+  { name: 'modal-bg', value: '#ffffff', cssVar: '--color-modal-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'modal-title', value: '#0f172a', cssVar: '--color-modal-title', chain: '← text.base ← neutral-1.900' },
+  { name: 'modal-description', value: '#475569', cssVar: '--color-modal-description', chain: '← text.muted ← neutral-1.600' },
+  { name: 'modal-divider', value: '#e2e8f0', cssVar: '--color-modal-divider', chain: '← border.muted ← neutral-1.200' },
+  { name: 'modal-close-hover-bg', value: '#f1f5f9', cssVar: '--color-modal-close-hover-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'modal-close-hover-text', value: '#0ea5e9', cssVar: '--color-modal-close-hover-text', chain: '← interactive.primary ← primary-1.500' },
+];
+
+const radioColors: ColorToken[] = [
+  { name: 'radio-bg', value: '#ffffff', cssVar: '--color-radio-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'radio-border', value: '#cbd5e1', cssVar: '--color-radio-border', chain: '← border.default ← neutral-1.300' },
+  { name: 'radio-border-hover', value: '#94a3b8', cssVar: '--color-radio-border-hover', chain: '← border.strong ← neutral-1.400' },
+  { name: 'radio-selected-border', value: '#0ea5e9', cssVar: '--color-radio-selected-border', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'radio-selected-dot', value: '#0ea5e9', cssVar: '--color-radio-selected-dot', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'radio-focus-ring', value: '#0ea5e9', cssVar: '--color-radio-focus-ring', chain: '← border.focus ← primary-1.500' },
+  { name: 'radio-disabled-bg', value: '#f1f5f9', cssVar: '--color-radio-disabled-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'radio-item-hover-bg', value: '#f1f5f9', cssVar: '--color-radio-item-hover-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'radio-label', value: '#0f172a', cssVar: '--color-radio-label', chain: '← text.base ← neutral-1.900' },
+  { name: 'radio-description', value: '#475569', cssVar: '--color-radio-description', chain: '← text.muted ← neutral-1.600' },
+];
+
+const selectColors: ColorToken[] = [
+  { name: 'select-trigger-bg', value: '#ffffff', cssVar: '--color-select-trigger-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'select-trigger-text', value: '#0f172a', cssVar: '--color-select-trigger-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'select-trigger-placeholder', value: '#475569', cssVar: '--color-select-trigger-placeholder', chain: '← text.muted ← neutral-1.600' },
+  { name: 'select-trigger-border', value: '#cbd5e1', cssVar: '--color-select-trigger-border', chain: '← border.default ← neutral-1.300' },
+  { name: 'select-trigger-border-hover', value: '#94a3b8', cssVar: '--color-select-trigger-border-hover', chain: '← border.strong ← neutral-1.400' },
+  { name: 'select-trigger-border-focus', value: '#0ea5e9', cssVar: '--color-select-trigger-border-focus', chain: '← border.focus ← primary-1.500' },
+  { name: 'select-trigger-border-error', value: '#ef4444', cssVar: '--color-select-trigger-border-error', chain: '← border.error ← accent-3.500' },
+  { name: 'select-trigger-disabled-bg', value: '#f1f5f9', cssVar: '--color-select-trigger-disabled-bg', chain: '← neutral-1.100 ← base.slate.100' },
+  { name: 'select-icon', value: '#475569', cssVar: '--color-select-icon', chain: '← text.muted ← neutral-1.600' },
+  { name: 'select-icon-hover', value: '#0f172a', cssVar: '--color-select-icon-hover', chain: '← text.base ← neutral-1.900' },
+  { name: 'select-popover-bg', value: '#ffffff', cssVar: '--color-select-popover-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'select-popover-border', value: '#e2e8f0', cssVar: '--color-select-popover-border', chain: '← border.muted ← neutral-1.200' },
+  { name: 'select-item-text', value: '#0f172a', cssVar: '--color-select-item-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'select-item-hover-bg', value: '#f1f5f9', cssVar: '--color-select-item-hover-bg', chain: '← neutral-1.100 ← base.slate.100' },
+  { name: 'select-item-selected-bg', value: '#f0f9ff', cssVar: '--color-select-item-selected-bg', chain: '← primary-1.50 ← base.sky.50' },
+  { name: 'select-item-selected-text', value: '#0284c7', cssVar: '--color-select-item-selected-text', chain: '← text.primary ← primary-1.600' },
+  { name: 'select-item-disabled-text', value: '#94a3b8', cssVar: '--color-select-item-disabled-text', chain: '← text.disabled ← neutral-1.400' },
+  { name: 'select-check-icon', value: '#0ea5e9', cssVar: '--color-select-check-icon', chain: '← bg.primary ← primary-1.500' },
+  { name: 'select-group-label', value: '#475569', cssVar: '--color-select-group-label', chain: '← text.muted ← neutral-1.600' },
+  { name: 'select-separator', value: '#e2e8f0', cssVar: '--color-select-separator', chain: '← border.muted ← neutral-1.200' },
+  { name: 'select-search-bg', value: '#f8fafc', cssVar: '--color-select-search-bg', chain: '← neutral-1.50 ← base.slate.50' },
+  { name: 'select-empty-text', value: '#475569', cssVar: '--color-select-empty-text', chain: '← text.muted ← neutral-1.600' },
+  { name: 'select-checkbox-text', value: '#ffffff', cssVar: '--color-select-checkbox-text', chain: '← text.on-primary ← neutral-1.0' },
+  { name: 'select-checkbox-bg', value: '#ffffff', cssVar: '--color-select-checkbox-bg', chain: '← bg.paper ← neutral-1.0' },
+];
+
+const switchColors: ColorToken[] = [
+  { name: 'switch-track-bg', value: '#cbd5e1', cssVar: '--color-switch-track-bg', chain: '← border.default ← neutral-1.300' },
+  { name: 'switch-track-bg-checked', value: '#0ea5e9', cssVar: '--color-switch-track-bg-checked', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'switch-thumb-bg', value: '#ffffff', cssVar: '--color-switch-thumb-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'switch-focus-ring', value: '#0ea5e9', cssVar: '--color-switch-focus-ring', chain: '← border.focus ← primary-1.500' },
+  { name: 'switch-disabled-track-bg', value: '#f1f5f9', cssVar: '--color-switch-disabled-track-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'switch-label', value: '#0f172a', cssVar: '--color-switch-label', chain: '← text.base ← neutral-1.900' },
+  { name: 'switch-description', value: '#475569', cssVar: '--color-switch-description', chain: '← text.muted ← neutral-1.600' },
+];
+
+const tableColors: ColorToken[] = [
+  { name: 'table-header-bg', value: '#f8fafc', cssVar: '--color-table-header-bg', chain: '← bg.base ← neutral-1.50' },
+  { name: 'table-header-text', value: '#0f172a', cssVar: '--color-table-header-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'table-border', value: '#e2e8f0', cssVar: '--color-table-border', chain: '← border.muted ← neutral-1.200' },
+  { name: 'table-row-stripe', value: '#f8fafc', cssVar: '--color-table-row-stripe', chain: '← neutral-1.50 ← base.slate.50' },
+  { name: 'table-row-hover', value: '#f1f5f9', cssVar: '--color-table-row-hover', chain: '← neutral-1.100 ← base.slate.100' },
+];
+
+const textareaColors: ColorToken[] = [
+  { name: 'textarea-counter-text', value: '#475569', cssVar: '--color-textarea-counter-text', chain: '← text.muted ← neutral-1.600' },
+  { name: 'textarea-counter-text-over', value: '#b91c1c', cssVar: '--color-textarea-counter-text-over', chain: '← text.error ← accent-3.700' },
+];
+
+const toastColors: ColorToken[] = [
+  { name: 'toast-bg', value: '#ffffff', cssVar: '--color-toast-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'toast-border', value: '#e2e8f0', cssVar: '--color-toast-border', chain: '← border.muted ← neutral-1.200' },
+  { name: 'toast-title', value: '#0f172a', cssVar: '--color-toast-title', chain: '← text.base ← neutral-1.900' },
+  { name: 'toast-description', value: '#475569', cssVar: '--color-toast-description', chain: '← text.muted ← neutral-1.600' },
+  { name: 'toast-close-hover-bg', value: '#f1f5f9', cssVar: '--color-toast-close-hover-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'toast-success-border', value: '#10b981', cssVar: '--color-toast-success-border', chain: '← success.border ← accent-1.500' },
+  { name: 'toast-success-icon', value: '#047857', cssVar: '--color-toast-success-icon', chain: '← success.text ← accent-1.700' },
+  { name: 'toast-error-border', value: '#ef4444', cssVar: '--color-toast-error-border', chain: '← error.border ← accent-3.500' },
+  { name: 'toast-error-icon', value: '#b91c1c', cssVar: '--color-toast-error-icon', chain: '← error.text ← accent-3.700' },
+  { name: 'toast-warning-border', value: '#f59e0b', cssVar: '--color-toast-warning-border', chain: '← warning.border ← accent-2.500' },
+  { name: 'toast-warning-icon', value: '#b45309', cssVar: '--color-toast-warning-icon', chain: '← warning.text ← accent-2.700' },
+  { name: 'toast-info-border', value: '#3b82f6', cssVar: '--color-toast-info-border', chain: '← info.border ← accent-4.500' },
+  { name: 'toast-info-icon', value: '#1d4ed8', cssVar: '--color-toast-info-icon', chain: '← info.text ← accent-4.700' },
+];
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PAGE COMPONENT
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 function ColorsPage() {
   return (
-    <div style={{ padding: '24px', maxWidth: '960px', fontFamily: "'Inter', -apple-system, sans-serif" }}>
+    <div style={{ padding: '24px', maxWidth: '1100px', fontFamily: "'Inter', -apple-system, sans-serif" }}>
       <h2 style={{ margin: '0 0 8px', fontSize: '28px', fontWeight: 700, color: '#0f172a' }}>Color Tokens</h2>
       <p style={{ margin: '0 0 32px', color: '#64748b', fontSize: '15px' }}>
-        4-Layer Architektur: Base → Global → Roles → Semantic
+        4-Layer Architektur: L1 Base → L2 Global → L3 Roles → L4 Semantic
       </p>
 
+      {/* ── L1 ───────────────────────────────────────────── */}
       <Section title="Level 1 — Base Palettes">
         {Object.entries(basePalettes).map(([name, shades]) => (
-          <PaletteRow key={name} palette={name} shades={shades} />
+          <PaletteRow key={name} palette={name} shades={shades} cssVarPrefix={`--color-base-${name}`} />
         ))}
+        <SubSection title="Utility Colors">
+          <TokenGrid tokens={baseUtilityColors} />
+        </SubSection>
       </Section>
 
+      {/* ── L2 ───────────────────────────────────────────── */}
       <Section title="Level 2 — Theme Mapping">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
           <div>
             <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Primary 1 → Sky</h4>
-            <PaletteRow palette="primary-1" shades={basePalettes.sky} />
+            <PaletteRow palette="primary-1" shades={basePalettes.sky} cssVarPrefix="--color-primary-1" />
           </div>
           <div>
             <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Primary 2 → Indigo</h4>
-            <PaletteRow palette="primary-2" shades={basePalettes.indigo} />
+            <PaletteRow palette="primary-2" shades={basePalettes.indigo} cssVarPrefix="--color-primary-2" />
+          </div>
+          <div>
+            <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Secondary 1 → Slate</h4>
+            <PaletteRow palette="secondary-1" shades={basePalettes.slate} cssVarPrefix="--color-secondary-1" />
+          </div>
+          <div>
+            <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Secondary 2 → Stone</h4>
+            <PaletteRow palette="secondary-2" shades={basePalettes.stone} cssVarPrefix="--color-secondary-2" />
+          </div>
+          <div>
+            <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Neutral 1 → Slate (+ White/Black)</h4>
+            <PaletteRow palette="neutral-1" shades={neutral1Extended} cssVarPrefix="--color-neutral-1" />
+          </div>
+          <div>
+            <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Neutral 2 → Zinc</h4>
+            <PaletteRow palette="neutral-2" shades={basePalettes.zinc} cssVarPrefix="--color-neutral-2" />
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginTop: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '12px', marginTop: '24px' }}>
           {[
-            { label: 'Accent 1 (Success)', color: '#10b981' },
-            { label: 'Accent 2 (Warning)', color: '#f59e0b' },
-            { label: 'Accent 3 (Error)', color: '#ef4444' },
-            { label: 'Accent 4 (Info)', color: '#3b82f6' },
-            { label: 'Accent 5 (Teal)', color: '#14b8a6' },
-          ].map(({ label, color }) => (
-            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <div style={{ width: '32px', height: '32px', borderRadius: '6px', backgroundColor: color }} />
-              <span style={{ fontSize: '13px', color: '#334155' }}>{label}</span>
-            </div>
-          ))}
+            { label: 'Accent 1 (Emerald)', palette: basePalettes.emerald, prefix: '--color-accent-1' },
+            { label: 'Accent 2 (Amber)', palette: basePalettes.amber, prefix: '--color-accent-2' },
+            { label: 'Accent 3 (Red)', palette: basePalettes.red, prefix: '--color-accent-3' },
+            { label: 'Accent 4 (Blue)', palette: basePalettes.blue, prefix: '--color-accent-4' },
+            { label: 'Accent 5 (Teal)', palette: basePalettes.teal, prefix: '--color-accent-5' },
+          ].map(({ label, palette, prefix }) => {
+            const vars = paletteCssVars[prefix];
+            return (
+              <div key={label}>
+                <h4 style={{ margin: '0 0 8px', fontSize: '11px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', borderRadius: '8px', overflow: 'hidden' }}>
+                  {palette.map(({ shade, value }, i) => (
+                    <div key={shade} style={{ height: '20px', backgroundColor: value, display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={`${vars[i]}: ${value}`}>
+                      <span style={{ fontSize: '9px', fontFamily: 'monospace', color: parseInt(shade) >= 500 ? '#fff' : '#1e293b' }}>{shade}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
+        <SubSection title="Utility Colors">
+          <TokenGrid tokens={neutralUtilityColors} />
+        </SubSection>
       </Section>
 
+      {/* ── L3 ───────────────────────────────────────────── */}
       <Section title="Level 3 — Role Colors">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '12px' }}>
-          {roleColors.map((c) => (
-            <ColorSwatch key={c.name} {...c} />
-          ))}
-        </div>
+        <SubSection title="Backgrounds">
+          <TokenGrid tokens={roleBgColors} />
+        </SubSection>
+        <SubSection title="Text">
+          <TokenGrid tokens={roleTextColors} />
+        </SubSection>
+        <SubSection title="Borders">
+          <TokenGrid tokens={roleBorderColors} />
+        </SubSection>
+        <SubSection title="Interactive">
+          <TokenGrid tokens={roleInteractiveColors} />
+        </SubSection>
+        <SubSection title="Semantic Status">
+          <TokenGrid tokens={roleStatusColors} />
+        </SubSection>
       </Section>
 
-      <Section title="Level 4 — Component: Button Colors">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '12px' }}>
-          {componentColors.map((c) => (
-            <ColorSwatch key={c.name} {...c} />
-          ))}
-        </div>
+      {/* ── L4 ───────────────────────────────────────────── */}
+      <Section title="Level 4 — Component: Button">
+        <TokenGrid tokens={buttonColors} />
       </Section>
 
+      <Section title="Level 4 — Component: Badge">
+        <TokenGrid tokens={badgeColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Card">
+        <TokenGrid tokens={cardColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Checkbox">
+        <TokenGrid tokens={checkboxColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: DatePicker">
+        <TokenGrid tokens={datepickerColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: FileUpload">
+        <TokenGrid tokens={fileuploadColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Input">
+        <TokenGrid tokens={inputColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Modal">
+        <TokenGrid tokens={modalColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: RadioGroup">
+        <TokenGrid tokens={radioColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Select">
+        <TokenGrid tokens={selectColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Switch">
+        <TokenGrid tokens={switchColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Table">
+        <TokenGrid tokens={tableColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Textarea">
+        <TokenGrid tokens={textareaColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Toast">
+        <TokenGrid tokens={toastColors} />
+      </Section>
     </div>
   );
 }

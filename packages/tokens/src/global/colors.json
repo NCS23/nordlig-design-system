@@ -130,10 +130,9 @@
       }
     },
     "neutral": {
-      "white":   { "$type": "color", "$value": "{color.base.white}" },
-      "black":   { "$type": "color", "$value": "{color.base.black}" },
       "overlay": { "$type": "color", "$value": "{color.base.overlay}" },
       "1": {
+        "0":   { "$type": "color", "$value": "{color.base.white}" },
         "50":  { "$type": "color", "$value": "{color.base.slate.50}" },
         "100": { "$type": "color", "$value": "{color.base.slate.100}" },
         "200": { "$type": "color", "$value": "{color.base.slate.200}" },
@@ -144,7 +143,8 @@
         "700": { "$type": "color", "$value": "{color.base.slate.700}" },
         "800": { "$type": "color", "$value": "{color.base.slate.800}" },
         "900": { "$type": "color", "$value": "{color.base.slate.900}" },
-        "950": { "$type": "color", "$value": "{color.base.slate.950}" }
+        "950": { "$type": "color", "$value": "{color.base.slate.950}" },
+        "1000": { "$type": "color", "$value": "{color.base.black}" }
       },
       "2": {
         "50":  { "$type": "color", "$value": "{color.base.zinc.50}" },

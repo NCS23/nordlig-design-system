@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 3: Role/functional tokens - References Level 2 only",
     "bg": {
-      "paper":          { "$type": "color", "$value": "{color.neutral.white}" },
+      "paper":          { "$type": "color", "$value": "{color.neutral.1.0}" },
       "base":           { "$type": "color", "$value": "{color.neutral.1.50}" },
       "surface":        { "$type": "color", "$value": "{color.neutral.1.100}" },
       "elevated":       { "$type": "color", "$value": "{color.neutral.1.50}" },
@@ -22,7 +22,7 @@
       "muted":    { "$type": "color", "$value": "{color.neutral.1.600}" },
       "disabled": { "$type": "color", "$value": "{color.neutral.1.400}" },
       "inverse":    { "$type": "color", "$value": "{color.neutral.1.50}" },
-      "on-primary": { "$type": "color", "$value": "{color.neutral.white}" },
+      "on-primary": { "$type": "color", "$value": "{color.neutral.1.0}" },
       "primary":  { "$type": "color", "$value": "{color.primary.1.600}" },
       "success":  { "$type": "color", "$value": "{color.accent.1.700}" },
       "warning":  { "$type": "color", "$value": "{color.accent.2.700}" },
