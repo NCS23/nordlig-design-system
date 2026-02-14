@@ -1,0 +1,24 @@
+{
+  "color": {
+    "$description": "Level 4: Accordion component tokens",
+    "accordion": {
+      "bg":                 { "$type": "color", "$value": "{color.bg.paper}", "$description": "Item background" },
+      "border":             { "$type": "color", "$value": "{color.border.muted}", "$description": "Item border/divider" },
+      "trigger-text":       { "$type": "color", "$value": "{color.text.base}", "$description": "Trigger text" },
+      "trigger-hover-bg":   { "$type": "color", "$value": "{color.bg.surface}", "$description": "Trigger hover background" },
+      "content-text":       { "$type": "color", "$value": "{color.text.base}", "$description": "Content text" },
+      "icon":               { "$type": "color", "$value": "{color.text.muted}", "$description": "Chevron icon color" }
+    }
+  },
+  "radius": {
+    "accordion": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px item radius" }
+  },
+  "spacing": {
+    "accordion": {
+      "trigger-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px trigger horizontal padding" },
+      "trigger-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px trigger vertical padding" },
+      "content-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px content horizontal padding" },
+      "content-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px content vertical padding" }
+    }
+  }
+}

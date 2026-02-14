@@ -1,0 +1,13 @@
+{
+  "color": {
+    "$description": "Level 4: Skeleton component tokens — References Level 3 only",
+    "skeleton": {
+      "base":    { "$type": "color", "$value": "{color.bg.surface}" },
+      "shimmer": { "$type": "color", "$value": "{color.bg.base}" }
+    }
+  },
+  "radius": {
+    "skeleton":        { "$type": "dimension", "$value": "{radius.component.md}" },
+    "skeleton-circle": { "$type": "dimension", "$value": "{radius.component.full}" }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "color": {
+    "$description": "Level 4: Alert component tokens",
+    "alert": {
+      "title":          { "$type": "color", "$value": "{color.text.base}", "$description": "Alert title text" },
+      "description":    { "$type": "color", "$value": "{color.text.base}", "$description": "Alert description text" },
+      "info-bg":        { "$type": "color", "$value": "{color.info.bg-subtle}", "$description": "Info variant background" },
+      "info-border":    { "$type": "color", "$value": "{color.info.border}", "$description": "Info left accent border" },
+      "info-icon":      { "$type": "color", "$value": "{color.info.text}", "$description": "Info icon color" },
+      "success-bg":     { "$type": "color", "$value": "{color.success.bg-subtle}", "$description": "Success variant background" },
+      "success-border": { "$type": "color", "$value": "{color.success.border}", "$description": "Success left accent border" },
+      "success-icon":   { "$type": "color", "$value": "{color.success.text}", "$description": "Success icon color" },
+      "warning-bg":     { "$type": "color", "$value": "{color.warning.bg-subtle}", "$description": "Warning variant background" },
+      "warning-border": { "$type": "color", "$value": "{color.warning.border}", "$description": "Warning left accent border" },
+      "warning-icon":   { "$type": "color", "$value": "{color.warning.text}", "$description": "Warning icon color" },
+      "error-bg":       { "$type": "color", "$value": "{color.error.bg-subtle}", "$description": "Error variant background" },
+      "error-border":   { "$type": "color", "$value": "{color.error.border}", "$description": "Error left accent border" },
+      "error-icon":     { "$type": "color", "$value": "{color.error.text}", "$description": "Error icon color" }
+    }
+  },
+  "radius": {
+    "alert": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px rounded corners" }
+  }
+}

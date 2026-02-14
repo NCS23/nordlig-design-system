@@ -1,0 +1,21 @@
+{
+  "color": {
+    "$description": "Level 4: Pagination component tokens",
+    "pagination": {
+      "item": {
+        "bg":            { "$type": "color", "$value": "{color.bg.paper}", "$description": "Page button background" },
+        "border":        { "$type": "color", "$value": "{color.border.default}", "$description": "Page button border" },
+        "text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Page button text" },
+        "hover-bg":      { "$type": "color", "$value": "{color.bg.surface}", "$description": "Page button hover background" },
+        "active-bg":     { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active page background (Sky Blue)" },
+        "active-text":   { "$type": "color", "$value": "{color.text.on-primary}", "$description": "Active page text (white)" },
+        "active-border": { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active page border (Sky Blue)" }
+      }
+    }
+  },
+  "radius": {
+    "pagination": {
+      "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px rounded corners" }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "color": {
+    "$description": "Level 4: Progress component tokens — References Level 3 only",
+    "progress": {
+      "track":        { "$type": "color", "$value": "{color.bg.surface}" },
+      "fill":         { "$type": "color", "$value": "{color.interactive.primary}" },
+      "fill-success": { "$type": "color", "$value": "{color.bg.success}" },
+      "fill-warning": { "$type": "color", "$value": "{color.bg.warning}" },
+      "fill-error":   { "$type": "color", "$value": "{color.bg.error}" },
+      "label":        { "$type": "color", "$value": "{color.text.base}" },
+      "value":        { "$type": "color", "$value": "{color.text.muted}" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: Progress size tokens",
+    "progress": {
+      "sm": {
+        "height": { "$type": "dimension", "$value": "{spacing.base.1}" }
+      },
+      "md": {
+        "height": { "$type": "dimension", "$value": "{spacing.base.2}" }
+      },
+      "lg": {
+        "height": { "$type": "dimension", "$value": "{spacing.base.3}" }
+      }
+    }
+  },
+  "radius": {
+    "progress": { "$type": "dimension", "$value": "{radius.component.full}" }
+  },
+  "spacing": {
+    "progress": {
+      "label-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}" }
+    }
+  }
+}

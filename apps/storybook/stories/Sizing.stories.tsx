@@ -155,6 +155,21 @@ const inputTokens = [
   { Token: 'input.lg.radius', 'CSS Variable': '--sizing-input-lg-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
 ];
 
+/* ── Level 4 — Component Progress Sizing ── */
+const progressTokens = [
+  { Token: 'progress.sm.height', 'CSS Variable': '--sizing-progress-sm-height', References: 'var(--spacing-base-1)', Value: '4px' },
+  { Token: 'progress.md.height', 'CSS Variable': '--sizing-progress-md-height', References: 'var(--spacing-base-2)', Value: '8px' },
+  { Token: 'progress.lg.height', 'CSS Variable': '--sizing-progress-lg-height', References: 'var(--spacing-base-3)', Value: '12px' },
+];
+
+/* ── Level 4 — Component Spinner Sizing ── */
+const spinnerTokens = [
+  { Token: 'spinner.sm', 'CSS Variable': '--sizing-spinner-sm', References: 'var(--spacing-base-4)', Value: '16px' },
+  { Token: 'spinner.md', 'CSS Variable': '--sizing-spinner-md', References: 'var(--spacing-base-6)', Value: '24px' },
+  { Token: 'spinner.lg', 'CSS Variable': '--sizing-spinner-lg', References: 'var(--spacing-base-8)', Value: '32px' },
+  { Token: 'spinner.xl', 'CSS Variable': '--sizing-spinner-xl', References: 'var(--spacing-base-12)', Value: '48px' },
+];
+
 /* ── Level 1 — Fixed Sizing (non-referencing) ── */
 const fixedSizingTokens = [
   { Token: 'datepicker.day-size', 'CSS Variable': '--sizing-datepicker-day-size', References: '(fixed)', Value: '36px' },
@@ -264,6 +279,14 @@ function SizingPage() {
 
         <SubSection title="Input">
           <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={inputTokens} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Progress">
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={progressTokens} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Spinner">
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={spinnerTokens} color="#10b981" />
         </SubSection>
 
         <SubSection title="Feste Groessen (ohne Referenzkette)">

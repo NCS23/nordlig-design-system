@@ -1,0 +1,6 @@
+{
+  "color": {
+    "$description": "Level 4: Separator component tokens",
+    "separator": { "$type": "color", "$value": "{color.border.muted}", "$description": "Separator line color" }
+  }
+}

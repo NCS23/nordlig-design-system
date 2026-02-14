@@ -1,0 +1,19 @@
+{
+  "color": {
+    "$description": "Level 4: Spinner component tokens — References Level 3 only",
+    "spinner": {
+      "primary": { "$type": "color", "$value": "{color.interactive.primary}" },
+      "track":   { "$type": "color", "$value": "{color.border.muted}" },
+      "label":   { "$type": "color", "$value": "{color.text.muted}" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: Spinner size tokens — icon-sized dimensions",
+    "spinner": {
+      "sm": { "$type": "dimension", "$value": "{spacing.base.4}" },
+      "md": { "$type": "dimension", "$value": "{spacing.base.6}" },
+      "lg": { "$type": "dimension", "$value": "{spacing.base.8}" },
+      "xl": { "$type": "dimension", "$value": "{spacing.base.12}" }
+    }
+  }
+}

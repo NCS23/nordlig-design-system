@@ -397,6 +397,51 @@ Folgende Tailwind-Klassen sind **KEINE Violations**, da sie strukturelle Layout-
 
 ---
 
+## 📋 Token Documentation - MANDATORY
+
+### **Centralized Token Documentation Architecture**
+
+**IMPORTANT:** Nordlig uses a **centralized token documentation approach**, NOT per-component token stories.
+
+**Token Documentation Location:**
+```
+/apps/storybook/stories/
+├── Colors.stories.tsx           (ALL color tokens, L1→L2→L3→L4)
+├── Spacing.stories.tsx          (ALL spacing tokens)
+├── Sizing.stories.tsx           (ALL sizing tokens)
+├── ShadowsAndRadii.stories.tsx  (Shadows + Border Radius)
+├── Typography.stories.tsx       (Font tokens)
+├── Transitions.stories.tsx      (Durations, Easings, Transitions)
+└── ZIndex.stories.tsx           (Z-Index layers)
+```
+
+### Rules:
+
+1. **NEVER** create `DesignTokens` stories inside component story files
+2. **ALWAYS** add new L4 tokens to the appropriate centralized story file
+3. Component stories (`*.stories.tsx` in component folders) contain **only** usage demos — no token documentation
+4. Each centralized story file documents the **full 4-layer chain** (L1 → L2 → L3 → L4)
+5. When adding a new component with new L4 tokens:
+   - Add color tokens → `Colors.stories.tsx`
+   - Add sizing tokens → `Sizing.stories.tsx`
+   - Add spacing tokens → `Spacing.stories.tsx`
+   - Add radius/shadow tokens → `ShadowsAndRadii.stories.tsx`
+   - Add transition tokens → `Transitions.stories.tsx`
+   - Add z-index tokens → `ZIndex.stories.tsx`
+
+---
+
+## 🖥️ Tech Stack Documentation - MANDATORY
+
+Die Tech-Stack-Übersicht in `apps/storybook/stories/TechStack.stories.tsx` (`Overview/Tech Stack`) muss bei jeder Änderung am Tech Stack aktualisiert werden:
+
+- **Neue Dependency hinzugefügt** → Eintrag in passender Kategorie ergänzen (Name, Version, Beschreibung, Logo)
+- **Dependency entfernt** → Eintrag löschen
+- **Major-Version-Upgrade** → Versionsnummer aktualisieren
+- **Neues Radix UI Package** → Beschreibung im Radix-UI-Eintrag + Package-Zähler im Summary-Banner anpassen
+
+---
+
 ## 🔄 Development Workflow
 
 ### 1. Neue Feature Branch

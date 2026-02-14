@@ -1,0 +1,20 @@
+{
+  "color": {
+    "$description": "Level 4: Popover component tokens",
+    "popover": {
+      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "White popover background" },
+      "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Subtle outer border" }
+    }
+  },
+  "shadow": {
+    "popover": { "$type": "shadow", "$value": "{shadow.elevation.high}", "$description": "Elevated popover shadow" }
+  },
+  "radius": {
+    "popover": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px rounded corners" }
+  },
+  "spacing": {
+    "popover": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px internal padding" }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "color": {
+    "$description": "Level 4: Tabs component tokens",
+    "tabs": {
+      "list-bg":              { "$type": "color", "$value": "{color.bg.surface}", "$description": "Pills variant list background" },
+      "trigger-text":         { "$type": "color", "$value": "{color.text.muted}", "$description": "Inactive tab text" },
+      "trigger-text-active":  { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Active tab text (sky)" },
+      "trigger-text-hover":   { "$type": "color", "$value": "{color.text.base}", "$description": "Hovered tab text" },
+      "trigger-bg-active":    { "$type": "color", "$value": "{color.bg.paper}", "$description": "Pills active tab background (white)" },
+      "trigger-hover-bg":     { "$type": "color", "$value": "{color.bg.surface}", "$description": "Underline hover background" },
+      "underline":            { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Active underline indicator (sky)" },
+      "border":               { "$type": "color", "$value": "{color.border.muted}", "$description": "Underline variant bottom border" },
+      "content-text":         { "$type": "color", "$value": "{color.text.base}", "$description": "Tab content text" }
+    }
+  },
+  "shadow": {
+    "tabs": {
+      "trigger-active": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Pills active tab shadow" }
+    }
+  },
+  "radius": {
+    "tabs": {
+      "list":    { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px pills list radius" },
+      "trigger": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px pills trigger radius" }
+    }
+  },
+  "spacing": {
+    "tabs": {
+      "list-padding":       { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "4px pills list inner padding" },
+      "trigger-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px tab horizontal padding" },
+      "trigger-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px tab vertical padding" },
+      "content-padding":    { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px content padding-top" },
+      "list-gap":           { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "4px gap between pills" }
+    }
+  }
+}

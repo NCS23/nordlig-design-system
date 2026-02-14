@@ -124,6 +124,9 @@ const componentRadii = [
   { Token: 'input.sm.radius', 'CSS Variable': '--sizing-input-sm-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
   { Token: 'input.md.radius', 'CSS Variable': '--sizing-input-md-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
   { Token: 'input.lg.radius', 'CSS Variable': '--sizing-input-lg-radius', References: 'var(--radius-component-md)', Value: '0.375rem' },
+  { Token: 'progress', 'CSS Variable': '--radius-progress', References: 'var(--radius-component-full)', Value: '9999px' },
+  { Token: 'skeleton', 'CSS Variable': '--radius-skeleton', References: 'var(--radius-component-md)', Value: '0.375rem' },
+  { Token: 'skeleton-circle', 'CSS Variable': '--radius-skeleton-circle', References: 'var(--radius-component-full)', Value: '9999px' },
 ];
 
 function ShadowsAndRadiiPage() {

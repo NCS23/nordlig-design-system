@@ -262,6 +262,13 @@ const toastSpacingTable = [
   { Token: 'toast.viewport-padding', 'CSS Variable': '--spacing-toast-viewport-padding', References: 'var(--spacing-component-padding-md)', Value: '16px' },
 ];
 
+const progressSpacing = [
+  { name: 'label-gap', value: '16px', cssVar: '--spacing-progress-label-gap' },
+];
+const progressSpacingTable = [
+  { Token: 'progress.label-gap', 'CSS Variable': '--spacing-progress-label-gap', References: 'var(--spacing-component-gap-lg)', Value: '16px' },
+];
+
 function SpacingPage() {
   return (
     <div style={{ padding: '24px', maxWidth: '960px', fontFamily: "'Inter', -apple-system, sans-serif" }}>
@@ -420,6 +427,15 @@ function SpacingPage() {
             ))}
           </div>
           <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={toastSpacingTable} color="#10b981" />
+        </SubSection>
+
+        <SubSection title="Progress">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+            {progressSpacing.map((t) => (
+              <SpacingBar key={t.name} name={t.name} value={t.value} cssVar={t.cssVar} color="#10b981" />
+            ))}
+          </div>
+          <TokenTable headers={['Token', 'CSS Variable', 'References', 'Value']} rows={progressSpacingTable} color="#10b981" />
         </SubSection>
 
         <div style={{ marginTop: '16px', padding: '12px 16px', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', fontSize: '12px', color: '#166534', fontFamily: 'monospace' }}>

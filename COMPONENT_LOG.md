@@ -1302,6 +1302,615 @@
 
 ---
 
+## [Tooltip] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color (3 tokens):**
+  - `color-tooltip-bg` → L3 `color.neutral.1.900` (dark background)
+  - `color-tooltip-text` → L3 `color.text.inverse` (light text)
+  - `color-tooltip-arrow` → L3 `color.neutral.1.900` (matches bg)
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-tooltip` → L3 `shadow.elevation.medium`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-tooltip` → L3 `radius.component.md` (6px)
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-tooltip-padding-x` → L3 `spacing.component.padding.sm` (12px)
+  - `spacing-tooltip-padding-y` → L3 `spacing.component.padding.xs` (8px)
+- **7 Tokens insgesamt**
+
+### Architecture
+- **Radix UI Tooltip** with Provider, Root, Trigger, Portal, Content, Arrow
+- Dark background with light text (inverted from main theme)
+- Auto-positioning with `side` and `align` props
+- Slide-in animations per side via `tailwindcss-animate`
+
+### Files
+- `packages/components/src/atoms/Tooltip/Tooltip.tsx`
+- `packages/components/src/atoms/Tooltip/Tooltip.test.tsx` (8 Tests)
+- `packages/components/src/atoms/Tooltip/Tooltip.stories.tsx` (5 Stories)
+- `packages/components/src/atoms/Tooltip/index.ts`
+- `packages/tokens/src/semantic/tooltip.json`
+
+### Props
+- **content:** ReactNode (tooltip text or rich content)
+- **side:** top | right | bottom | left (default: top)
+- **align:** start | center | end (default: center)
+- **delayDuration:** number (ms, default: 300)
+
+### Test Coverage
+- ✅ **8 Tests – alle bestanden**
+- Rendering: trigger, no tooltip initially
+- Interaction: shows on hover, shows on focus
+- Content: rich content rendering
+- Tokens: bg, text, radius classes
+- Side: data-side attribute
+
+### Accessibility
+- ✅ `role="tooltip"` (Radix built-in)
+- ✅ Keyboard: shows on focus, hides on blur
+- ✅ Auto-dismiss on Escape
+- ✅ Arrow for visual connection to trigger
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-tooltip
+- **Stories:** Default, AllSides, WithRichContent, CustomDelay, TrainingAnalyzer
+
+### Dependencies
+- `@radix-ui/react-tooltip` (new)
+
+---
+
+## [Tabs] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic) – Color (9 tokens):**
+  - `color-tabs-list-bg` → L3 `color.bg.surface` (pills list bg)
+  - `color-tabs-trigger-text` → L3 `color.text.muted` (inactive)
+  - `color-tabs-trigger-text-active` → L3 `color.interactive.primary` (sky)
+  - `color-tabs-trigger-text-hover` → L3 `color.text.base`
+  - `color-tabs-trigger-bg-active` → L3 `color.bg.paper` (pills active)
+  - `color-tabs-trigger-hover-bg` → L3 `color.bg.surface`
+  - `color-tabs-underline` → L3 `color.interactive.primary` (sky)
+  - `color-tabs-border` → L3 `color.border.muted`
+  - `color-tabs-content-text` → L3 `color.text.base`
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-tabs-trigger-active` → L3 `shadow.elevation.low`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-tabs-list` → L3 `radius.component.lg` (8px pills container)
+  - `radius-tabs-trigger` → L3 `radius.component.md` (6px pills trigger)
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-tabs-list-padding` → L3 `spacing.component.padding.xs` (4px)
+  - `spacing-tabs-trigger-padding-x` → L3 `spacing.component.padding.md` (16px)
+  - `spacing-tabs-trigger-padding-y` → L3 `spacing.component.padding.sm` (12px)
+  - `spacing-tabs-content-padding` → L3 `spacing.component.padding.md` (16px)
+  - `spacing-tabs-list-gap` → L3 `spacing.component.gap.sm` (4px)
+- **17 Tokens insgesamt**
+
+### Architecture
+- **Radix UI Tabs** compound pattern: Tabs → TabsList → TabsTrigger + TabsContent
+- **CVA variants** on TabsList + TabsTrigger (underline / pills)
+- **React Context** to pass variant from TabsList to TabsTrigger
+- Underline: border-b indicator, pills: bg + shadow active state
+
+### Files
+- `packages/components/src/molecules/Tabs/Tabs.tsx`
+- `packages/components/src/molecules/Tabs/Tabs.test.tsx` (16 Tests)
+- `packages/components/src/molecules/Tabs/Tabs.stories.tsx` (5 Stories)
+- `packages/components/src/molecules/Tabs/index.ts`
+- `packages/tokens/src/semantic/tabs.json`
+
+### Variants
+- **variant (TabsList):** underline, pills (default: underline)
+
+### Test Coverage
+- ✅ **16 Tests – alle bestanden**
+- Rendering: tablist, triggers, active content, inactive hidden
+- Interaction: click switches tab, disabled tab stays
+- Keyboard: ArrowRight, ArrowLeft navigation
+- ARIA: aria-selected, tabpanel, disabled attribute
+- Variants: underline border-b, pills bg + rounded
+- Tokens: padding, content, list styles
+
+### Accessibility
+- ✅ `role="tablist"`, `role="tab"`, `role="tabpanel"` (Radix built-in)
+- ✅ `aria-selected` on active tab
+- ✅ Arrow key navigation (Radix built-in)
+- ✅ Home/End key support (Radix built-in)
+- ✅ Disabled tab support
+- ✅ Focus ring on focus-visible
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-tabs
+- **Stories:** UnderlineDefault, PillsDefault, Disabled, AllVariants, TrainingAnalyzer
+
+### Dependencies
+- `@radix-ui/react-tabs` (new)
+
+---
+
+## [Accordion] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic) – Color (6 tokens):**
+  - `color-accordion-bg` → L3 `color.bg.paper`
+  - `color-accordion-border` → L3 `color.border.muted`
+  - `color-accordion-trigger-text` → L3 `color.text.base`
+  - `color-accordion-trigger-hover-bg` → L3 `color.bg.surface`
+  - `color-accordion-content-text` → L3 `color.text.base`
+  - `color-accordion-icon` → L3 `color.text.muted`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-accordion` → L3 `radius.component.lg` (8px)
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-accordion-trigger-padding-x` → L3 `spacing.component.padding.md` (16px)
+  - `spacing-accordion-trigger-padding-y` → L3 `spacing.component.padding.sm` (12px)
+  - `spacing-accordion-content-padding-x` → L3 `spacing.component.padding.md` (16px)
+  - `spacing-accordion-content-padding-y` → L3 `spacing.component.padding.sm` (12px)
+- **11 Tokens insgesamt**
+
+### Architecture
+- **Radix UI Accordion** compound pattern: Accordion → AccordionItem → AccordionTrigger + AccordionContent
+- **Single mode** (one at a time, collapsible) + **Multiple mode** (many open)
+- ChevronDown icon rotates 180° on open via `[&[data-state=open]>svg]:rotate-180`
+- Content wrapped in inner div for padding (Radix content handles animation)
+
+### Files
+- `packages/components/src/molecules/Accordion/Accordion.tsx`
+- `packages/components/src/molecules/Accordion/Accordion.test.tsx` (16 Tests)
+- `packages/components/src/molecules/Accordion/Accordion.stories.tsx` (5 Stories)
+- `packages/components/src/molecules/Accordion/index.ts`
+- `packages/tokens/src/semantic/accordion.json`
+
+### Props
+- **type:** single | multiple (Radix built-in)
+- **collapsible:** boolean (single mode only)
+- **defaultValue:** string | string[]
+
+### Test Coverage
+- ✅ **16 Tests – alle bestanden**
+- Rendering: items, triggers, collapsed state
+- Single Mode: open, close, switch items
+- Multiple Mode: multiple open simultaneously
+- Keyboard: Enter, Space to toggle
+- Disabled: no open on click, disabled attribute
+- ARIA: aria-expanded, aria-controls
+- Tokens: border, padding, icon classes
+
+### Accessibility
+- ✅ `aria-expanded` on triggers (Radix built-in)
+- ✅ `aria-controls` linking trigger to content
+- ✅ Keyboard: Enter/Space to toggle, ArrowUp/Down to navigate
+- ✅ Disabled state support
+- ✅ Focus ring on focus-visible
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-accordion
+- **Stories:** SingleDefault, MultipleOpen, WithDisabled, TrainingFAQ, TrainingSessionDetails
+
+### Dependencies
+- `@radix-ui/react-accordion` (new)
+- `lucide-react` (ChevronDown)
+
+---
+
+## [DropdownMenu] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic) – Color (10 tokens):**
+  - `color-dropdown-bg` → L3 `color.bg.paper`
+  - `color-dropdown-border` → L3 `color.border.muted`
+  - `color-dropdown-item-text` → L3 `color.text.base`
+  - `color-dropdown-item-hover-bg` → L3 `color.bg.surface`
+  - `color-dropdown-item-disabled-text` → L3 `color.text.disabled`
+  - `color-dropdown-item-icon` → L3 `color.text.muted`
+  - `color-dropdown-destructive-text` → L3 `color.error.text` (red)
+  - `color-dropdown-destructive-hover-bg` → L3 `color.error.bg-subtle`
+  - `color-dropdown-separator` → L3 `color.border.muted`
+  - `color-dropdown-label-text` → L3 `color.text.muted`
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-dropdown-menu` → L3 `shadow.elevation.medium`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-dropdown-menu` → L3 `radius.component.lg` (8px)
+  - `radius-dropdown-item` → L3 `radius.component.md` (6px)
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-dropdown-padding` → L3 `spacing.component.padding.xs` (4px)
+  - `spacing-dropdown-item-padding-x` → L3 `spacing.component.padding.sm` (12px)
+  - `spacing-dropdown-item-padding-y` → L3 `spacing.component.padding.xs` (8px)
+  - `spacing-dropdown-item-gap` → L3 `spacing.component.gap.sm` (8px)
+- **17 Tokens insgesamt**
+
+### Architecture
+- **Radix UI DropdownMenu** compound pattern: DropdownMenu → Trigger → Content → Item/Separator/Label
+- **Destructive items:** red text + red-subtle hover bg
+- **Icon support:** optional `icon` prop on DropdownMenuItem
+- **asChild** on trigger for custom trigger elements
+- Portal rendering with slide-in animations per side
+
+### Files
+- `packages/components/src/molecules/DropdownMenu/DropdownMenu.tsx`
+- `packages/components/src/molecules/DropdownMenu/DropdownMenu.test.tsx` (16 Tests)
+- `packages/components/src/molecules/DropdownMenu/DropdownMenu.stories.tsx` (6 Stories)
+- `packages/components/src/molecules/DropdownMenu/index.ts`
+- `packages/tokens/src/semantic/dropdown.json`
+
+### Props – DropdownMenuItem
+- **destructive:** boolean (danger styling)
+- **icon:** ReactNode (optional icon before text)
+- **disabled:** boolean
+- Plus all Radix DropdownMenu.Item props
+
+### Test Coverage
+- ✅ **16 Tests – alle bestanden**
+- Rendering: trigger, closed state
+- Open/Close: click open, Escape close
+- Items: click fires onSelect, close after click
+- Keyboard: ArrowDown navigation
+- Sub-Components: label, separator, icon
+- Destructive: text color class
+- Disabled: data-disabled attribute
+- Tokens: bg, border, radius, padding classes
+
+### Accessibility
+- ✅ `role="menu"`, `role="menuitem"` (Radix built-in)
+- ✅ Keyboard: ArrowUp/Down, Enter, Escape
+- ✅ Focus management (Radix built-in)
+- ✅ Disabled items non-interactive
+- ✅ Auto-close on item selection
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-dropdownmenu
+- **Stories:** Default, WithIcons, WithSeparatorAndLabel, DestructiveItem, DisabledItems, TrainingActions
+
+### Dependencies
+- `@radix-ui/react-dropdown-menu` (new)
+- `lucide-react` (Edit, Copy, Trash2, Share, Settings, Download, MoreVertical in stories)
+
+---
+
+## [Progress] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-progress-track` → L3 `color.bg.surface`
+  - `color-progress-fill` → L3 `color.interactive.primary` (Sky Blue)
+  - `color-progress-fill-success` → L3 `color.bg.success`
+  - `color-progress-fill-warning` → L3 `color.bg.warning`
+  - `color-progress-fill-error` → L3 `color.bg.error`
+  - `color-progress-label` → L3 `color.text.base`
+  - `color-progress-value` → L3 `color.text.muted`
+- **Level 4 (Semantic) – Sizing:**
+  - `sizing-progress-sm-height` (4px), `sizing-progress-md-height` (8px), `sizing-progress-lg-height` (12px)
+- **Level 4 (Semantic) – Radius:**
+  - `radius-progress` → L3 `radius.component.full` (fully rounded)
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-progress-label-gap` → L3 `spacing.component.gap.lg`
+- **12 Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Progress/Progress.tsx`
+- `packages/components/src/atoms/Progress/Progress.test.tsx`
+- `packages/components/src/atoms/Progress/Progress.stories.tsx`
+- `packages/components/src/atoms/Progress/index.ts`
+- `packages/tokens/src/semantic/progress.json`
+
+### Variants
+- **size:** sm (4px), md (8px, default), lg (12px)
+- **color:** default (Sky Blue), success, warning, error
+
+### Sub-Components
+- **Progress** – Radix `@radix-ui/react-progress` wrapper with size + color CVA variants
+- **ProgressField** – Progress with label + value display, custom valueFormat function
+
+### Test Coverage (20 Tests)
+- role="progressbar", aria-valuenow, aria-valuemax
+- Size variants (sm/md/lg), Color variants (default/success/warning/error)
+- Indeterminate mode (no aria-valuenow, animation class)
+- Token classes (track, fill, radius)
+- ProgressField: label, value display, custom valueFormat
+- Ref forwarding, custom className
+
+### Accessibility
+- ✅ `role="progressbar"` (Radix built-in)
+- ✅ `aria-valuenow`, `aria-valuemin`, `aria-valuemax`
+- ✅ Indeterminate mode: no `aria-valuenow`
+- ✅ ProgressField: visible label + value text
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-progress
+- **Stories:** Default, AllSizes, AllColors, ProgressSteps, Indeterminate, WithLabel, TrainingGoalProgress
+
+### Dependencies
+- `@radix-ui/react-progress` (new)
+
+---
+
+## [Spinner] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-spinner-primary` → L3 `color.interactive.primary` (Sky Blue arc)
+  - `color-spinner-track` → L3 `color.border.muted` (muted track)
+  - `color-spinner-label` → L3 `color.text.muted`
+- **Level 4 (Semantic) – Sizing:**
+  - `sizing-spinner-sm` (16px), `sizing-spinner-md` (24px), `sizing-spinner-lg` (32px), `sizing-spinner-xl` (48px)
+- **7 Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Spinner/Spinner.tsx`
+- `packages/components/src/atoms/Spinner/Spinner.test.tsx`
+- `packages/components/src/atoms/Spinner/Spinner.stories.tsx`
+- `packages/components/src/atoms/Spinner/index.ts`
+- `packages/tokens/src/semantic/spinner.json`
+
+### Variants
+- **size:** sm (16px), md (24px, default), lg (32px), xl (48px)
+
+### Sub-Components
+- **Spinner** – SVG circle spinner with `animate-spin`, optional `label` prop wraps in labeled span
+
+### Implementation Details
+- Pure SVG: two overlapping circles (track + arc) with `strokeDasharray`
+- Stroke colors via CSS custom properties in `stroke` attribute
+- Token-based sizing via `w-[var(--sizing-spinner-*)]` / `h-[var(--sizing-spinner-*)]`
+- Label: `text-sm text-[var(--color-spinner-label)]` beside spinner
+
+### Test Coverage (15 Tests)
+- SVG element render, role="status", aria-label
+- Size variants (sm/md/lg/xl), animate-spin class
+- Token stroke colors on circles
+- Label rendering and wrapping behavior
+- Ref forwarding, custom className
+
+### Accessibility
+- ✅ `role="status"` on SVG element
+- ✅ `aria-label="Laden"` (default) or custom label
+- ✅ Label text visible when provided
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-spinner
+- **Stories:** Default, AllSizes, WithLabel, InButton, CenteredInContainer, TrainingPageLoading
+
+---
+
+## [Skeleton] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-skeleton-base` → L3 `color.bg.surface` (light gray)
+  - `color-skeleton-shimmer` → L3 `color.bg.base` (lighter shimmer highlight)
+- **Level 4 (Semantic) – Radius:**
+  - `radius-skeleton` → L3 `radius.component.md` (6px)
+  - `radius-skeleton-circle` → L3 `radius.component.full` (9999px)
+- **4 Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Skeleton/Skeleton.tsx`
+- `packages/components/src/atoms/Skeleton/Skeleton.test.tsx`
+- `packages/components/src/atoms/Skeleton/Skeleton.stories.tsx`
+- `packages/components/src/atoms/Skeleton/index.ts`
+- `packages/tokens/src/semantic/skeleton.json`
+
+### Sub-Components
+- **Skeleton** – Base shimmer block, flexible via className (h-4, w-full, etc.)
+- **SkeletonText** – Multiple shimmer lines with `lines` prop, last line shorter (w-2/3)
+- **SkeletonCircle** – Circular shimmer placeholder, sizes: sm (32px), md (48px), lg (64px)
+- **SkeletonKeyframes** – Injects `@keyframes skeleton-shimmer` CSS (include once in app/stories)
+
+### Implementation Details
+- Shimmer animation via inline style: `linear-gradient(90deg, base → shimmer → base)` with `background-size: 200%`
+- `@keyframes skeleton-shimmer` injected via `<style>` tag (SkeletonKeyframes component)
+- All elements have `aria-hidden="true"` (decorative placeholders)
+- No Radix UI dependency – pure CSS/HTML
+
+### Test Coverage (13 Tests)
+- Base: div render, aria-hidden, radius token, shimmer animation style, gradient background
+- SkeletonText: default 3 lines, custom line count, last line shorter, full-width non-last lines
+- SkeletonCircle: rounded-full token, sm/md/lg sizes
+- Custom className, ref forwarding
+
+### Accessibility
+- ✅ `aria-hidden="true"` on all skeleton elements (decorative)
+- ✅ Container should use `aria-busy="true"` while loading (app-level)
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-skeleton
+- **Stories:** Basic, TextLines, CircleSizes, CardLoading, TableLoading, TrainingSessionCard, DashboardStatsLoading
+
+---
+
+## [Separator] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:** `color-separator`
+
+### Files
+- `packages/components/src/atoms/Separator/Separator.tsx`
+- `packages/components/src/atoms/Separator/Separator.test.tsx`
+- `packages/components/src/atoms/Separator/Separator.stories.tsx`
+- `packages/components/src/atoms/Separator/index.ts`
+- `packages/tokens/src/semantic/separator.json`
+
+### Props
+- **orientation:** horizontal (default), vertical
+- **decorative:** boolean (default true) – controls aria-hidden
+
+### Test Coverage
+- ✅ 14 Tests – alle bestanden
+- Tests: Rendering, orientation, aria-hidden, role=separator, custom className, token classes
+
+### Storybook
+- **Stories:** Horizontal, Vertical, InCard, InToolbar, CustomSpacing
+
+---
+
+## [Popover] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:** `color-popover-bg`, `color-popover-border`
+- **Level 4 (Semantic) – Shadow:** `shadow-popover`
+- **Level 4 (Semantic) – Radius:** `radius-popover`
+- **Level 4 (Semantic) – Spacing:** `spacing-popover-padding`
+
+### Files
+- `packages/components/src/atoms/Popover/Popover.tsx`
+- `packages/components/src/atoms/Popover/Popover.test.tsx`
+- `packages/components/src/atoms/Popover/Popover.stories.tsx`
+- `packages/components/src/atoms/Popover/index.ts`
+- `packages/tokens/src/semantic/popover.json`
+
+### Architecture
+- Compound components: Popover, PopoverTrigger, PopoverContent, PopoverArrow
+- Radix UI (@radix-ui/react-popover) based
+- Click-triggered (vs hover for Tooltip)
+- Animations: fade-in + zoom-in + directional slide-in
+
+### Test Coverage
+- ✅ 9 Tests – alle bestanden
+- Tests: Trigger rendering, closed initially, opens on click, Escape closes, token classes, custom className, side prop, arrow rendering
+
+### Storybook
+- **Stories:** Default, WithArrow, AllSides, RichContent, Training:HRZoneInfo, Training:MetricInfo, Training:FilterMenu
+
+---
+
+## [Alert] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:** `color-alert-title`, `color-alert-description`, `color-alert-{info|success|warning|error}-{bg|border|icon}` (14 total)
+- **Level 4 (Semantic) – Radius:** `radius-alert`
+
+### Files
+- `packages/components/src/atoms/Alert/Alert.tsx`
+- `packages/components/src/atoms/Alert/Alert.test.tsx`
+- `packages/components/src/atoms/Alert/Alert.stories.tsx`
+- `packages/components/src/atoms/Alert/index.ts`
+- `packages/tokens/src/semantic/alert.json`
+
+### Architecture
+- Compound: Alert, AlertTitle, AlertDescription, AlertClose
+- CVA variants: info, success, warning, error
+- Auto-icon per variant (lucide-react: Info, CheckCircle, AlertTriangle, XCircle)
+- `closeable` prop with `onClose` callback
+- Left border accent (`border-l-4`)
+
+### Test Coverage
+- ✅ 21 Tests – alle bestanden
+- Tests: role="alert", title/description, all 4 variant bg/border/icon classes, close button behavior, onClose callback, custom className, sub-component text classes
+
+### Storybook
+- **Stories:** AllVariants, WithCloseButton, WithListDescription, OvertrainingWarning, ImportError, GoalAchieved, FeatureAnnouncement
+
+---
+
+## [EmptyState] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:** `color-emptystate-icon`, `color-emptystate-icon-error`, `color-emptystate-icon-success`, `color-emptystate-title`, `color-emptystate-description`
+
+### Files
+- `packages/components/src/molecules/EmptyState/EmptyState.tsx`
+- `packages/components/src/molecules/EmptyState/EmptyState.test.tsx`
+- `packages/components/src/molecules/EmptyState/EmptyState.stories.tsx`
+- `packages/components/src/molecules/EmptyState/index.ts`
+- `packages/tokens/src/semantic/emptystate.json`
+
+### Props
+- **icon:** ReactNode (optional)
+- **title:** string (required)
+- **description:** string (optional)
+- **action:** ReactNode (optional)
+- **variant:** default | error | success
+
+### Test Coverage
+- ✅ 13 Tests – alle bestanden
+- Tests: Title/description/icon/action rendering, omission when not provided, all 3 variant icon color classes, custom className, token text classes
+
+### Storybook
+- **Stories:** Default, WithAction, NoResults, ErrorState, SuccessState, NoSessions, NoSearchResults
+
+---
+
+## [Pagination] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:** `color-pagination-item-{bg|border|text|hover-bg|active-bg|active-text|active-border}` (7 total)
+- **Level 4 (Semantic) – Radius:** `radius-pagination-item`
+
+### Files
+- `packages/components/src/molecules/Pagination/Pagination.tsx`
+- `packages/components/src/molecules/Pagination/Pagination.test.tsx`
+- `packages/components/src/molecules/Pagination/Pagination.stories.tsx`
+- `packages/components/src/molecules/Pagination/index.ts`
+- `packages/tokens/src/semantic/pagination.json`
+
+### Props
+- **currentPage:** number (1-basiert)
+- **totalPages:** number
+- **onPageChange:** (page: number) => void
+- **siblingCount:** number (default 1)
+- **variant:** default | compact
+
+### Architecture
+- Smart ellipsis algorithm: always show first + last page, siblingCount pages on each side
+- Compact variant: "Seite X von Y" with prev/next only
+- Disabled prev on page 1, disabled next on last page
+
+### Test Coverage
+- ✅ 18 Tests – alle bestanden
+- Tests: Page buttons, active highlight, prev/next buttons, disabled states, onPageChange, ellipsis, siblingCount, compact variant, custom className, token classes
+
+### Storybook
+- **Stories:** Default, ManyPages, FirstPage, LastPage, CompactVariant, FewPages, Training:SessionHistory
+
+---
+
 ## Planned Components
 
 ### Medium Priority (Design System Completion)
@@ -1310,30 +1919,22 @@
 **Level:** Atom
 **Use Case:** Visual indicators throughout UI
 
-#### [Spinner] - Planned
-**Level:** Atom
-**Use Case:** Loading states
-
-#### [Tooltip] - Planned
-**Level:** Atom
-**Use Case:** Contextual help
-
 ---
 
 ## Development Statistics
 
-**Total Components:** 20 (20 complete, inkl. Calendar, DateRangePicker, Select, Combobox, MultiSelect, CheckboxField, SwitchField)
-**Atoms:** 5 (Button, Badge, Input, Checkbox + CheckboxField, Switch + SwitchField)
-**Molecules:** 9 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup)
+**Total Components:** 32 (32 complete, inkl. Calendar, DateRangePicker, Select, Combobox, MultiSelect, CheckboxField, SwitchField, ProgressField)
+**Atoms:** 12 (Button, Badge, Input, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton + SkeletonText + SkeletonCircle, Separator, Popover, Alert)
+**Molecules:** 15 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, EmptyState, Pagination)
 **Organisms:** 3 (Card, Table, Modal)
 **Templates:** 0
 
-**Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage
-**Test Coverage:** Checkbox 100% | Switch 100% | RadioGroup 100% | Modal 100% | Toast 100% | Textarea 100% | FileUpload 100% | Select/Combobox/MultiSelect 100% | DatePicker 100% | DateRangePicker 100% | Input 100% | InputField 100% | Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
-**A11y Compliance:** Checkbox + RadioGroup + Switch + Modal + Toast + Textarea + FileUpload + Select + Combobox + MultiSelect + DatePicker + DateRangePicker + Input + InputField + Table + Badge + Card getestet | Button: nur manuell geprüft
-**Storybook Stories:** 171 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 8, InputField: 11, DatePicker: 17, Select/Combobox/MultiSelect: 22, Textarea: 13, FileUpload: 12, Modal: 8, Toast: 12, Checkbox: 13, RadioGroup: 9, Switch: 12)
-**Design Tokens:** 248 L4-Tokens (Button: 36 | Select: 31 | Badge: 25 | FileUpload: 25 | Input: 21 | DatePicker: 18 | Toast: 18 | Table: 14 | RadioGroup: 12 | Modal: 12 | Checkbox: 11 | Card: 10 | Switch: 8 | Textarea: 7) + 7 L3 Tokens + 3 L2 + 3 L1
-**Total Tests:** 470
+**Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
+**Test Coverage:** Separator 100% | Popover 100% | Alert 100% | EmptyState 100% | Pagination 100% | Progress 100% | Spinner 100% | Skeleton 100% | Tooltip 100% | Tabs 100% | Accordion 100% | DropdownMenu 100% | Checkbox 100% | Switch 100% | RadioGroup 100% | Modal 100% | Toast 100% | Textarea 100% | FileUpload 100% | Select/Combobox/MultiSelect 100% | DatePicker 100% | DateRangePicker 100% | Input 100% | InputField 100% | Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
+**A11y Compliance:** Separator + Popover + Alert + EmptyState + Pagination + Progress + Spinner + Skeleton + Tooltip + Tabs + Accordion + DropdownMenu + Checkbox + RadioGroup + Switch + Modal + Toast + Textarea + FileUpload + Select + Combobox + MultiSelect + DatePicker + DateRangePicker + Input + InputField + Table + Badge + Card getestet | Button: nur manuell geprüft
+**Storybook Stories:** 247 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 8, InputField: 11, DatePicker: 17, Select/Combobox/MultiSelect: 22, Textarea: 13, FileUpload: 12, Modal: 8, Toast: 12, Checkbox: 13, RadioGroup: 9, Switch: 12, Tooltip: 5, Tabs: 5, Accordion: 5, DropdownMenu: 6, Progress: 7, Spinner: 6, Skeleton: 7, Separator: 5, Popover: 7, Alert: 7, EmptyState: 7, Pagination: 7)
+**Design Tokens:** 356 L4-Tokens (Button: 36 | Select: 31 | Badge: 25 | FileUpload: 25 | Input: 21 | DatePicker: 18 | Toast: 18 | Tabs: 17 | DropdownMenu: 17 | Alert: 15 | Table: 14 | RadioGroup: 12 | Modal: 12 | Progress: 12 | Accordion: 11 | Checkbox: 11 | Card: 10 | Pagination: 8 | Switch: 8 | Tooltip: 7 | Spinner: 7 | Textarea: 7 | Popover: 5 | EmptyState: 5 | Skeleton: 4 | Separator: 1) + 7 L3 Tokens + 3 L2 + 3 L1
+**Total Tests:** 655
 
 ---
 
@@ -1537,5 +2138,41 @@
   - CheckboxField/SwitchField share the same label + description pattern – consistent UX across form controls
   - RadioGroup orientation prop: `flex-col gap-3` (vertical) vs `flex-row gap-4` (horizontal)
 
-**Last Updated:** 2026-02-13
-**Next Component:** Icon / Spinner / Tooltip (siehe Planned Components)
+### 2026-02-14 - Navigation & Layout Components (Tooltip, Tabs, Accordion, DropdownMenu)
+- Four new Radix UI-based components: Tooltip (Atom), Tabs (Molecule), Accordion (Molecule), DropdownMenu (Molecule)
+- 51 new L4 tokens (Tooltip: 7, Tabs: 17, Accordion: 11, DropdownMenu: 17)
+- 56 new tests (Tooltip: 8, Tabs: 16, Accordion: 16, DropdownMenu: 16), 23 new stories
+- ResizeObserver polyfill added to `test-setup.ts` for Radix components in jsdom
+- **Learnings:**
+  - Radix Tooltip renders content in portal – use `getByRole('tooltip')` instead of `getByText()` to avoid duplicate matches
+  - Radix Accordion removes content from DOM when closed → test with `aria-expanded` instead of `toBeVisible()`
+  - SVG `.className` is `SVGAnimatedString` in jsdom – use `getAttribute('class')` for assertions
+  - CVA `VariantProps` includes `null` – use null-coalesce (`??`) when passing to React context
+  - Tabs variant context pattern: TabsList provides variant via React context, TabsTrigger consumes it
+
+### 2026-02-14 - Final 5 Components (Separator, Popover, Alert, EmptyState, Pagination)
+- Five final components completing the design system: Separator (Atom), Popover (Atom), Alert (Atom), EmptyState (Molecule), Pagination (Molecule)
+- 34 new L4 tokens (Separator: 1, Popover: 5, Alert: 15, EmptyState: 5, Pagination: 8)
+- 75 new tests (Separator: 14, Popover: 9, Alert: 21, EmptyState: 13, Pagination: 18), 33 new stories
+- **Learnings:**
+  - Separator: Simple `<hr>` for horizontal, `<div>` for vertical — `aria-hidden` for decorative, `role="separator"` for non-decorative
+  - Popover: Same Radix pattern as Tooltip but click-triggered — `showArrow` prop cleaner than separate Arrow export
+  - Alert: CVA variant classes + auto-icon map per variant — `border-l-4` accent more visually distinct than full border
+  - EmptyState: Pure presentational molecule — variant controls icon color only, simple variantIconClassMap approach
+  - Pagination: Smart ellipsis algorithm (getPageRange) — always show first+last, siblingCount-based window, compact variant for mobile
+
+### 2026-02-14 - Loading & Feedback Components (Progress, Spinner, Skeleton)
+- Three new Atom components: Progress (Radix), Spinner (SVG), Skeleton (CSS)
+- 23 new L4 tokens (Progress: 12, Spinner: 7, Skeleton: 4)
+- 48 new tests (Progress: 20, Spinner: 15, Skeleton: 13), 20 new stories
+- ProgressField molecule (label + value display) included in Progress atom file
+- Skeleton shimmer via inline `linear-gradient` style + injected `@keyframes`
+- **Learnings:**
+  - CVA `VariantProps` and HTML native `color` attribute conflict — Omit `color` from Radix root props when defining custom color variant
+  - Spinner sizes (16/24/32/48px) map to L1 spacing base tokens (`spacing.base.4/6/8/12`), not L3 component heights
+  - Skeleton shimmer works best with inline `style` for gradient + `@keyframes` injected via `<style>` tag — no Tailwind plugin needed
+  - `aria-hidden="true"` for Skeleton elements (decorative), `role="status"` for Spinner, `role="progressbar"` for Progress
+  - Radix Progress doesn't set `aria-valuenow` when value is undefined — correct for indeterminate state
+
+**Last Updated:** 2026-02-14
+**Design System Status:** ✅ Complete (32 Components, alle Essential Components fertig)

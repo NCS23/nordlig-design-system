@@ -1,0 +1,36 @@
+{
+  "color": {
+    "$description": "Level 4: DropdownMenu component tokens",
+    "dropdown": {
+      "bg":                     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Menu background" },
+      "border":                 { "$type": "color", "$value": "{color.border.muted}", "$description": "Menu border" },
+      "item-text":              { "$type": "color", "$value": "{color.text.base}", "$description": "Item text" },
+      "item-hover-bg":          { "$type": "color", "$value": "{color.bg.surface}", "$description": "Item hover/focus background" },
+      "item-disabled-text":     { "$type": "color", "$value": "{color.text.disabled}", "$description": "Disabled item text" },
+      "item-icon":              { "$type": "color", "$value": "{color.text.muted}", "$description": "Item icon color" },
+      "destructive-text":       { "$type": "color", "$value": "{color.error.text}", "$description": "Destructive item text (red)" },
+      "destructive-hover-bg":   { "$type": "color", "$value": "{color.error.bg-subtle}", "$description": "Destructive item hover bg" },
+      "separator":              { "$type": "color", "$value": "{color.border.muted}", "$description": "Separator line" },
+      "label-text":             { "$type": "color", "$value": "{color.text.muted}", "$description": "Group label text" }
+    }
+  },
+  "shadow": {
+    "dropdown": {
+      "menu": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Menu elevation" }
+    }
+  },
+  "radius": {
+    "dropdown": {
+      "menu": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px menu radius" },
+      "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px item radius" }
+    }
+  },
+  "spacing": {
+    "dropdown": {
+      "padding":        { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "4px inner padding" },
+      "item-padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px item horizontal padding" },
+      "item-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "8px item vertical padding" },
+      "item-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px gap between icon and text" }
+    }
+  }
+}

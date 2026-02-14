@@ -480,6 +480,27 @@ const toastColors: ColorToken[] = [
   { name: 'toast-info-icon', value: '#1d4ed8', cssVar: '--color-toast-info-icon', chain: '← info.text ← accent-4.700' },
 ];
 
+const progressColors: ColorToken[] = [
+  { name: 'progress-track', value: '#f1f5f9', cssVar: '--color-progress-track', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'progress-fill', value: '#0ea5e9', cssVar: '--color-progress-fill', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'progress-fill-success', value: '#10b981', cssVar: '--color-progress-fill-success', chain: '← bg.success ← accent-1.500' },
+  { name: 'progress-fill-warning', value: '#f59e0b', cssVar: '--color-progress-fill-warning', chain: '← bg.warning ← accent-2.500' },
+  { name: 'progress-fill-error', value: '#ef4444', cssVar: '--color-progress-fill-error', chain: '← bg.error ← accent-3.500' },
+  { name: 'progress-label', value: '#0f172a', cssVar: '--color-progress-label', chain: '← text.base ← neutral-1.900' },
+  { name: 'progress-value', value: '#475569', cssVar: '--color-progress-value', chain: '← text.muted ← neutral-1.600' },
+];
+
+const spinnerColors: ColorToken[] = [
+  { name: 'spinner-primary', value: '#0ea5e9', cssVar: '--color-spinner-primary', chain: '← interactive.primary ← primary-1.500' },
+  { name: 'spinner-track', value: '#e2e8f0', cssVar: '--color-spinner-track', chain: '← border.muted ← neutral-1.200' },
+  { name: 'spinner-label', value: '#475569', cssVar: '--color-spinner-label', chain: '← text.muted ← neutral-1.600' },
+];
+
+const skeletonColors: ColorToken[] = [
+  { name: 'skeleton-base', value: '#f1f5f9', cssVar: '--color-skeleton-base', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'skeleton-shimmer', value: '#f8fafc', cssVar: '--color-skeleton-shimmer', chain: '← bg.base ← neutral-1.50' },
+];
+
 /* ═══════════════════════════════════════════════════════════════════════════
    PAGE COMPONENT
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -632,6 +653,18 @@ function ColorsPage() {
 
       <Section title="Level 4 — Component: Toast">
         <TokenGrid tokens={toastColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Progress">
+        <TokenGrid tokens={progressColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Spinner">
+        <TokenGrid tokens={spinnerColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Skeleton">
+        <TokenGrid tokens={skeletonColors} />
       </Section>
     </div>
   );
