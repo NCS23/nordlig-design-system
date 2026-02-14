@@ -1,0 +1,24 @@
+{
+  "color": {
+    "$description": "Level 4: Dialog component tokens",
+    "dialog": {
+      "overlay":     { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Dialog backdrop overlay" },
+      "bg":          { "$type": "color", "$value": "{color.bg.paper}", "$description": "Dialog content background" },
+      "title":       { "$type": "color", "$value": "{color.text.base}", "$description": "Dialog title text" },
+      "description": { "$type": "color", "$value": "{color.text.muted}", "$description": "Dialog description text" },
+      "border":      { "$type": "color", "$value": "{color.border.muted}", "$description": "Dialog border" }
+    }
+  },
+  "shadow": {
+    "dialog": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Dialog panel shadow" }
+  },
+  "radius": {
+    "dialog": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Dialog border radius" }
+  },
+  "spacing": {
+    "dialog": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Dialog content padding" },
+      "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Dialog content gap" }
+    }
+  }
+}

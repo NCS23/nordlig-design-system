@@ -1911,30 +1911,173 @@
 
 ---
 
-## Planned Components
+## [ToggleGroup] - 2026-02-14
 
-### Medium Priority (Design System Completion)
-
-#### [Icon] - Planned
+**Status:** ✅ Complete
 **Level:** Atom
-**Use Case:** Visual indicators throughout UI
+**Radix:** @radix-ui/react-toggle-group
+**L4 Tokens:** 8 (7 color + 1 radius)
+**Tests:** 12 | **Stories:** 5
+
+---
+
+## [Sheet] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Molecule
+**Radix:** @radix-ui/react-dialog (reused)
+**Sub-Components:** Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter
+**L4 Tokens:** 7 (5 color + 1 shadow + 1 spacing)
+**Tests:** 10 | **Stories:** 6
+
+---
+
+## [Dialog] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Molecule
+**Radix:** @radix-ui/react-dialog
+**Sub-Components:** Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter
+**L4 Tokens:** 9 (5 color + 1 shadow + 1 radius + 2 spacing)
+**Tests:** 10 | **Stories:** 6
+
+---
+
+## [Breadcrumbs] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Molecule
+**Sub-Components:** Breadcrumbs, BreadcrumbItem, BreadcrumbSeparator
+**L4 Tokens:** 4 (4 color)
+**Tests:** 10 | **Stories:** 5
+
+---
+
+## [Avatar] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Atom
+**Radix:** @radix-ui/react-avatar
+**Sub-Components:** Avatar, AvatarImage, AvatarFallback
+**L4 Tokens:** 4 (3 color + 1 radius)
+**Tests:** 11 | **Stories:** 5
+
+---
+
+## [Slider] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Atom
+**Radix:** @radix-ui/react-slider
+**L4 Tokens:** 7 (5 color + 2 radius)
+**Tests:** 10 | **Stories:** 6
+
+---
+
+## [Command] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Organism
+**Library:** cmdk
+**Sub-Components:** Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut
+**L4 Tokens:** 12 (9 color + 1 shadow + 1 radius + 1 spacing)
+**Tests:** 12 | **Stories:** 6
+
+---
+
+## [HoverCard] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Atom
+**Radix:** @radix-ui/react-hover-card
+**Sub-Components:** HoverCard, HoverCardTrigger, HoverCardContent
+**L4 Tokens:** 5 (2 color + 1 shadow + 1 radius + 1 spacing)
+**Tests:** 8 | **Stories:** 5
+
+---
+
+## [Collapsible] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Molecule
+**Radix:** @radix-ui/react-collapsible
+**Sub-Components:** Collapsible, CollapsibleTrigger, CollapsibleContent
+**L4 Tokens:** 0 (keine eigenen Tokens)
+**Tests:** 8 | **Stories:** 5
+
+---
+
+## [AspectRatio] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Atom (Utility)
+**Radix:** @radix-ui/react-aspect-ratio
+**L4 Tokens:** 0 (keine eigenen Tokens)
+**Tests:** 6 | **Stories:** 4
+
+---
+
+## [ScrollArea] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Atom
+**Radix:** @radix-ui/react-scroll-area
+**Sub-Components:** ScrollArea, ScrollBar
+**L4 Tokens:** 4 (3 color + 1 radius)
+**Tests:** 8 | **Stories:** 5
+
+---
+
+## [ThemeProvider + ThemeToggle] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** System + Atom
+**Description:** Dark Mode System mit CSS class strategy (.dark auf html), React Context, localStorage Persistenz
+**Sub-Components:** ThemeProvider, ThemeToggle, useTheme Hook
+**Dark Token CSS:** packages/styles/dist/dark-tokens.css
+**Tests:** 21 (13 ThemeProvider + 8 ThemeToggle) | **Stories:** 6
+
+---
+
+## [Chart] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Organism
+**Library:** Recharts
+**Sub-Components:** ChartContainer, ChartTooltipContent, ChartLegendContent + Recharts Re-exports
+**L4 Tokens:** 12 (10 color + 1 shadow + 1 radius)
+**Tests:** 15 | **Stories:** 7
+
+---
+
+## [Form] - 2026-02-14
+
+**Status:** ✅ Complete
+**Level:** Molecule
+**Libraries:** react-hook-form, zod, @hookform/resolvers
+**Sub-Components:** Form, FormField, FormMessage + useZodForm, useFormContext Hooks
+**L4 Tokens:** 0 (nutzt existierende Input/Error Tokens)
+**Tests:** 16 | **Stories:** 7
 
 ---
 
 ## Development Statistics
 
-**Total Components:** 32 (32 complete, inkl. Calendar, DateRangePicker, Select, Combobox, MultiSelect, CheckboxField, SwitchField, ProgressField)
-**Atoms:** 12 (Button, Badge, Input, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton + SkeletonText + SkeletonCircle, Separator, Popover, Alert)
-**Molecules:** 15 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, EmptyState, Pagination)
-**Organisms:** 3 (Card, Table, Modal)
+**Total Components:** 47 (47 complete)
+**System:** 1 (ThemeProvider + useTheme)
+**Atoms:** 19 (Button, Badge, Input, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton, Separator, Popover, Alert, ToggleGroup, Avatar, Slider, HoverCard, ScrollArea, AspectRatio, ThemeToggle)
+**Molecules:** 20 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, EmptyState, Pagination, Sheet, Dialog, Breadcrumbs, Collapsible, Form)
+**Organisms:** 5 (Card, Table, Modal, Chart, Command)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
-**Test Coverage:** Separator 100% | Popover 100% | Alert 100% | EmptyState 100% | Pagination 100% | Progress 100% | Spinner 100% | Skeleton 100% | Tooltip 100% | Tabs 100% | Accordion 100% | DropdownMenu 100% | Checkbox 100% | Switch 100% | RadioGroup 100% | Modal 100% | Toast 100% | Textarea 100% | FileUpload 100% | Select/Combobox/MultiSelect 100% | DatePicker 100% | DateRangePicker 100% | Input 100% | InputField 100% | Table 100% | Badge 100% | Card 100% | Button: Tests ausstehend
-**A11y Compliance:** Separator + Popover + Alert + EmptyState + Pagination + Progress + Spinner + Skeleton + Tooltip + Tabs + Accordion + DropdownMenu + Checkbox + RadioGroup + Switch + Modal + Toast + Textarea + FileUpload + Select + Combobox + MultiSelect + DatePicker + DateRangePicker + Input + InputField + Table + Badge + Card getestet | Button: nur manuell geprüft
-**Storybook Stories:** 247 Stories (Button: 4, Card: 11, Badge: 12, Table: 7, Input: 8, InputField: 11, DatePicker: 17, Select/Combobox/MultiSelect: 22, Textarea: 13, FileUpload: 12, Modal: 8, Toast: 12, Checkbox: 13, RadioGroup: 9, Switch: 12, Tooltip: 5, Tabs: 5, Accordion: 5, DropdownMenu: 6, Progress: 7, Spinner: 6, Skeleton: 7, Separator: 5, Popover: 7, Alert: 7, EmptyState: 7, Pagination: 7)
-**Design Tokens:** 356 L4-Tokens (Button: 36 | Select: 31 | Badge: 25 | FileUpload: 25 | Input: 21 | DatePicker: 18 | Toast: 18 | Tabs: 17 | DropdownMenu: 17 | Alert: 15 | Table: 14 | RadioGroup: 12 | Modal: 12 | Progress: 12 | Accordion: 11 | Checkbox: 11 | Card: 10 | Pagination: 8 | Switch: 8 | Tooltip: 7 | Spinner: 7 | Textarea: 7 | Popover: 5 | EmptyState: 5 | Skeleton: 4 | Separator: 1) + 7 L3 Tokens + 3 L2 + 3 L1
-**Total Tests:** 655
+**Test Coverage:** Alle 47 Components 100% getestet (exkl. Button: nur manuell geprüft)
+**Storybook Stories:** 325 Stories
+**Design Tokens:** 428 L4-Tokens (356 bestehend + 72 neu: ToggleGroup: 8, Sheet: 7, Dialog: 9, Breadcrumbs: 4, Avatar: 4, Slider: 7, Command: 12, HoverCard: 5, ScrollArea: 4, Chart: 12) + 7 L3 Tokens + 3 L2 + 3 L1
+**Total Tests:** 812
+**Dark Mode:** ✅ CSS class strategy (.dark) mit 70+ Token-Overrides
+**Charts:** ✅ Recharts Integration (Line, Bar, Area, Pie)
+**Forms:** ✅ React Hook Form + Zod Integration
 
 ---
 

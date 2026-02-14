@@ -1,0 +1,15 @@
+{
+  "color": {
+    "$description": "Level 4: ScrollArea component tokens",
+    "scrollarea": {
+      "thumb":       { "$type": "color", "$value": "{color.border.default}", "$description": "Scrollbar thumb color" },
+      "thumb-hover": { "$type": "color", "$value": "{color.border.strong}", "$description": "Scrollbar thumb hover color" },
+      "track":       { "$type": "color", "$value": "transparent", "$description": "Scrollbar track background" }
+    }
+  },
+  "radius": {
+    "scrollarea": {
+      "thumb": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Scrollbar thumb radius" }
+    }
+  }
+}

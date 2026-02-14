@@ -1,0 +1,11 @@
+{
+  "color": {
+    "$description": "Level 4: Breadcrumbs component tokens",
+    "breadcrumbs": {
+      "text":         { "$type": "color", "$value": "{color.text.muted}", "$description": "Breadcrumb link text" },
+      "text-current": { "$type": "color", "$value": "{color.text.base}", "$description": "Current breadcrumb text" },
+      "separator":    { "$type": "color", "$value": "{color.text.disabled}", "$description": "Breadcrumb separator color" },
+      "hover-text":   { "$type": "color", "$value": "{color.text.primary}", "$description": "Breadcrumb link hover text" }
+    }
+  }
+}

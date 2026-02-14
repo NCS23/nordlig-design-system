@@ -7,3 +7,8 @@ dist/
 .env.local
 coverage/
 storybook-static/
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/

@@ -1,0 +1,20 @@
+{
+  "color": {
+    "$description": "Level 4: HoverCard component tokens",
+    "hovercard": {
+      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "HoverCard background" },
+      "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "HoverCard border" }
+    }
+  },
+  "shadow": {
+    "hovercard": { "$type": "shadow", "$value": "{shadow.elevation.high}", "$description": "HoverCard shadow" }
+  },
+  "radius": {
+    "hovercard": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "HoverCard border radius" }
+  },
+  "spacing": {
+    "hovercard": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "HoverCard content padding" }
+    }
+  }
+}

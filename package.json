@@ -10,9 +10,18 @@
     "lint": "turbo lint",
     "test": "turbo test",
     "storybook": "turbo storybook",
-    "clean": "turbo clean && rm -rf node_modules"
+    "clean": "turbo clean && rm -rf node_modules",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
+    "analyze:css": "node scripts/analyze-css.js",
+    "validate:tokens": "node scripts/validate-tokens.js",
+    "qa": "turbo build && pnpm validate:tokens && pnpm analyze:css && pnpm test:visual"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "glob": "^13.0.3",
+    "postcss": "^8.5.6",
+    "postcss-value-parser": "^4.2.0",
     "turbo": "^2.3.0"
   },
   "packageManager": "pnpm@9.15.0",

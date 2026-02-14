@@ -1,0 +1,20 @@
+{
+  "color": {
+    "$description": "Level 4: Sheet component tokens",
+    "sheet": {
+      "overlay":     { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Sheet backdrop overlay" },
+      "bg":          { "$type": "color", "$value": "{color.bg.paper}", "$description": "Sheet panel background" },
+      "border":      { "$type": "color", "$value": "{color.border.muted}", "$description": "Sheet border" },
+      "title":       { "$type": "color", "$value": "{color.text.base}", "$description": "Sheet title text" },
+      "description": { "$type": "color", "$value": "{color.text.muted}", "$description": "Sheet description text" }
+    }
+  },
+  "shadow": {
+    "sheet": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Sheet panel shadow" }
+  },
+  "spacing": {
+    "sheet": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Sheet content padding" }
+    }
+  }
+}

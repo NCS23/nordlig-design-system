@@ -1,0 +1,27 @@
+{
+  "color": {
+    "$description": "Level 4: Command component tokens",
+    "command": {
+      "bg":                { "$type": "color", "$value": "{color.bg.paper}", "$description": "Command palette background" },
+      "border":            { "$type": "color", "$value": "{color.border.muted}", "$description": "Command palette border" },
+      "input-text":        { "$type": "color", "$value": "{color.text.base}", "$description": "Command input text" },
+      "input-placeholder": { "$type": "color", "$value": "{color.text.disabled}", "$description": "Command input placeholder" },
+      "item-text":         { "$type": "color", "$value": "{color.text.base}", "$description": "Command item text" },
+      "item-hover-bg":     { "$type": "color", "$value": "{color.bg.surface}", "$description": "Command item hover background" },
+      "group-heading":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Command group heading text" },
+      "separator":         { "$type": "color", "$value": "{color.border.muted}", "$description": "Command separator color" },
+      "empty-text":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Command empty state text" }
+    }
+  },
+  "shadow": {
+    "command": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Command palette shadow" }
+  },
+  "radius": {
+    "command": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Command palette border radius" }
+  },
+  "spacing": {
+    "command": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Command item padding" }
+    }
+  }
+}

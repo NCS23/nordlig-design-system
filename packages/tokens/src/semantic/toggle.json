@@ -1,0 +1,17 @@
+{
+  "color": {
+    "$description": "Level 4: ToggleGroup component tokens",
+    "toggle": {
+      "bg":            { "$type": "color", "$value": "{color.bg.surface}", "$description": "Toggle button default background" },
+      "border":        { "$type": "color", "$value": "{color.border.default}", "$description": "Toggle button border" },
+      "text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Toggle button text" },
+      "hover-bg":      { "$type": "color", "$value": "{color.neutral.1.200}", "$description": "Toggle button hover background" },
+      "active-bg":     { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active toggle background" },
+      "active-text":   { "$type": "color", "$value": "{color.text.inverse}", "$description": "Active toggle text" },
+      "active-border": { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active toggle border" }
+    }
+  },
+  "radius": {
+    "toggle": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Toggle button border radius" }
+  }
+}

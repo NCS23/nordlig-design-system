@@ -1,0 +1,18 @@
+{
+  "color": {
+    "$description": "Level 4: Slider component tokens",
+    "slider": {
+      "track":        { "$type": "color", "$value": "{color.bg.surface}", "$description": "Slider track background" },
+      "range":        { "$type": "color", "$value": "{color.bg.primary}", "$description": "Slider filled range" },
+      "thumb":        { "$type": "color", "$value": "{color.bg.paper}", "$description": "Slider thumb background" },
+      "thumb-border": { "$type": "color", "$value": "{color.bg.primary}", "$description": "Slider thumb border" },
+      "thumb-hover":  { "$type": "color", "$value": "{color.bg.primary-hover}", "$description": "Slider thumb hover border" }
+    }
+  },
+  "radius": {
+    "slider": {
+      "track": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Slider track radius" },
+      "thumb": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Slider thumb radius" }
+    }
+  }
+}
