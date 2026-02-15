@@ -75,11 +75,11 @@ const NavigationMenuTrigger = React.forwardRef<
     className={cn(
       'group inline-flex items-center gap-1 px-3 py-2 text-sm font-medium',
       'rounded-[var(--radius-nav)]',
-      'text-[var(--color-text-base)]',
-      'hover:bg-[var(--color-bg-muted)]',
+      'text-[var(--color-nav-text)]',
+      'hover:bg-[var(--color-nav-hover-bg)]',
       'transition-colors',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
-      'data-[state=open]:bg-[var(--color-bg-muted)]',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-nav-focus-ring)] focus-visible:ring-offset-1',
+      'data-[state=open]:bg-[var(--color-nav-active-bg)]',
       className
     )}
     {...props}
@@ -104,10 +104,10 @@ const NavigationMenuContent = React.forwardRef<
     ref={ref}
     className={cn(
       'absolute top-full left-0 mt-1',
-      'bg-[var(--color-dropdown-bg)]',
-      'border border-[var(--color-dropdown-border)]',
-      'rounded-[var(--radius-dropdown)]',
-      '[box-shadow:var(--shadow-dropdown)]',
+      'bg-[var(--color-nav-dropdown-bg)]',
+      'border border-[var(--color-nav-dropdown-border)]',
+      'rounded-[var(--radius-nav-dropdown)]',
+      '[box-shadow:var(--shadow-nav-dropdown)]',
       'p-4 min-w-[220px]',
       'data-[motion=from-start]:animate-in data-[motion=from-start]:fade-in-0 data-[motion=from-start]:slide-in-from-left-2',
       'data-[motion=from-end]:animate-in data-[motion=from-end]:fade-in-0 data-[motion=from-end]:slide-in-from-right-2',
@@ -131,11 +131,11 @@ const NavigationMenuLink = React.forwardRef<
     className={cn(
       'block px-3 py-2 text-sm',
       'rounded-[var(--radius-nav)]',
-      'text-[var(--color-text-base)]',
-      'hover:bg-[var(--color-bg-muted)]',
+      'text-[var(--color-nav-text)]',
+      'hover:bg-[var(--color-nav-hover-bg)]',
       'transition-colors',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
-      active && 'bg-[var(--color-bg-muted)] font-medium',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-nav-focus-ring)] focus-visible:ring-offset-1',
+      active && 'bg-[var(--color-nav-active-bg)] font-medium',
       className
     )}
     active={active}

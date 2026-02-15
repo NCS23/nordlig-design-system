@@ -5,6 +5,7 @@
     "xs":  { "$type": "dimension", "$value": "{spacing.base.2}" },
     "sm":  { "$type": "dimension", "$value": "{spacing.base.3}" },
     "md":  { "$type": "dimension", "$value": "{spacing.base.4}" },
+    "md-lg": { "$type": "dimension", "$value": "{spacing.base.5}", "$description": "20px — control element size (checkbox, switch thumb, slider thumb)" },
     "lg":  { "$type": "dimension", "$value": "{spacing.base.6}" },
     "xl":  { "$type": "dimension", "$value": "{spacing.base.8}" },
     "2xl": { "$type": "dimension", "$value": "{spacing.base.12}" },

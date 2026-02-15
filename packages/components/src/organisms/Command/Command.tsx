@@ -34,12 +34,13 @@ const CommandInput = React.forwardRef<
   React.ComponentRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b border-[var(--color-command-border)] px-3" cmdk-input-wrapper="">
-    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+  <div className="flex items-center border-b border-[var(--color-command-border)] px-3" cmdk-input-wrapper="" role="search">
+    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" aria-hidden="true" />
     <CommandPrimitive.Input
       ref={ref}
+      role="combobox"
       className={cn(
-        'flex h-10 w-full bg-transparent text-sm',
+        'flex h-[var(--sizing-input-md-height)] w-full bg-transparent text-sm',
         'text-[var(--color-command-input-text)]',
         'placeholder:text-[var(--color-command-input-placeholder)]',
         'outline-none',
@@ -116,7 +117,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-pointer select-none items-center rounded-md px-2 py-1.5 text-sm',
+      'relative flex cursor-pointer select-none items-center rounded-[var(--radius-component-md)] px-2 py-1.5 text-sm',
       'text-[var(--color-command-item-text)]',
       'outline-none transition-colors',
       'data-[selected=true]:bg-[var(--color-command-item-hover-bg)]',

@@ -16,7 +16,7 @@
     "switch": {
       "track-height": { "$type": "dimension", "$value": "{sizing.component.icon.md}", "$description": "Switch track height (24px = h-6)" },
       "track-width":  { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "Switch track width (44px = w-11)" },
-      "thumb-size":   { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Switch thumb size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available" }
+      "thumb-size":   { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Switch thumb size (20px)" }
     }
   },
   "shadow": {

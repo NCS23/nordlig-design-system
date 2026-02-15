@@ -25,6 +25,7 @@
       },
       "icon": {
         "sm": { "$type": "dimension", "$value": "{spacing.md}" },
+        "control": { "$type": "dimension", "$value": "{spacing.md-lg}", "$description": "20px — checkbox, switch thumb, slider thumb" },
         "md": { "$type": "dimension", "$value": "{spacing.lg}" },
         "lg": { "$type": "dimension", "$value": "{spacing.xl}" },
         "xl": { "$type": "dimension", "$value": "{spacing.2xl}" }

@@ -21,7 +21,7 @@ const Checkbox = React.forwardRef<
     ref={ref}
     aria-invalid={error || undefined}
     className={cn(
-      'peer inline-flex h-5 w-5 shrink-0 items-center justify-center',
+      'peer inline-flex h-[var(--sizing-checkbox-box-size)] w-[var(--sizing-checkbox-box-size)] shrink-0 items-center justify-center',
       'rounded-[var(--radius-checkbox)] border-2 transition-all duration-200',
       'border-[var(--color-checkbox-border)] bg-[var(--color-checkbox-bg)]',
       'hover:border-[var(--color-checkbox-border-hover)]',

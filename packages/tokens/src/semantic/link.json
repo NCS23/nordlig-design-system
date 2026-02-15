@@ -1,0 +1,9 @@
+{
+  "color": {
+    "$description": "Level 4: Link component tokens",
+    "link": {
+      "text":       { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Default link text color" },
+      "text-hover": { "$type": "color", "$value": "{color.interactive.primary-hover}", "$description": "Link hover text color" }
+    }
+  }
+}

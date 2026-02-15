@@ -57,7 +57,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
       const lines = textContent.split('\n');
       return lines.map((line, index) => (
         <div key={index} className="flex">
-          <span className="text-[var(--color-text-muted)] select-none pr-4 text-right inline-block w-8">
+          <span className="text-[var(--color-code-line-number)] select-none pr-4 text-right inline-block w-8">
             {index + 1}
           </span>
           <span>{line}</span>

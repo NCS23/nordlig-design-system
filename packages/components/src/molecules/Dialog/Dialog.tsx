@@ -74,7 +74,7 @@ const DialogContent = React.forwardRef<
       <DialogPrimitive.Close
         className={cn(
           'absolute right-4 top-4 inline-flex items-center justify-center',
-          'h-8 w-8 rounded-sm',
+          'h-8 w-8 rounded-[var(--radius-dialog)]',
           'text-[var(--color-dialog-description)]',
           'transition-colors',
           'hover:bg-[var(--color-dialog-border)] hover:text-[var(--color-dialog-title)]',

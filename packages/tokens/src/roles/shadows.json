@@ -5,7 +5,8 @@
       "low":    { "$type": "shadow", "$value": "{shadow.sm}" },
       "medium": { "$type": "shadow", "$value": "{shadow.md}" },
       "high":    { "$type": "shadow", "$value": "{shadow.lg}" },
-      "overlay": { "$type": "shadow", "$value": "{shadow.xl}", "$description": "Modal/dialog content shadow" }
+      "overlay": { "$type": "shadow", "$value": "{shadow.xl}", "$description": "Modal/dialog content shadow" },
+      "key":     { "$type": "shadow", "$value": "{shadow.xs}", "$description": "Subtle key/pressed element shadow (Kbd)" }
     }
   }
 }

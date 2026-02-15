@@ -9,6 +9,12 @@
       "thumb-hover":  { "$type": "color", "$value": "{color.bg.primary-hover}", "$description": "Slider thumb hover border" }
     }
   },
+  "sizing": {
+    "slider": {
+      "track-height": { "$type": "dimension", "$value": "{sizing.component.track.md}", "$description": "Slider track height (8px)" },
+      "thumb-size":   { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Slider thumb size (20px)" }
+    }
+  },
   "radius": {
     "slider": {
       "track": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Slider track radius" },

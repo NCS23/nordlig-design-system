@@ -4,14 +4,14 @@ import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 const statCardVariants = cva(
-  'rounded-[var(--radius-card)] border border-[var(--color-card-border)] bg-[var(--color-card-bg)] p-6',
+  'rounded-[var(--radius-stat-card)] border border-[var(--color-stat-card-border)] bg-[var(--color-stat-card-bg)] p-6',
   {
     variants: {
       variant: {
         default: '',
-        success: 'border-l-4 border-l-[var(--color-border-success)]',
-        warning: 'border-l-4 border-l-[var(--color-border-warning)]',
-        error: 'border-l-4 border-l-[var(--color-border-error)]',
+        success: 'border-l-4 border-l-[var(--color-stat-card-border-success)]',
+        warning: 'border-l-4 border-l-[var(--color-stat-card-border-warning)]',
+        error: 'border-l-4 border-l-[var(--color-stat-card-border-error)]',
       },
     },
     defaultVariants: {
@@ -47,15 +47,21 @@ const TrendIndicator: React.FC<{
   label?: string;
 }> = ({ value, direction, label }) => {
   const trendIcon = {
-    up: <TrendingUp size={16} />,
-    down: <TrendingDown size={16} />,
-    neutral: <Minus size={16} />,
+    up: <TrendingUp size={16} aria-hidden="true" />,
+    down: <TrendingDown size={16} aria-hidden="true" />,
+    neutral: <Minus size={16} aria-hidden="true" />,
+  };
+
+  const trendLabel = {
+    up: 'Trend steigend',
+    down: 'Trend fallend',
+    neutral: 'Trend gleichbleibend',
   };
 
   const trendColor = {
-    up: 'text-[var(--color-text-success)]',
-    down: 'text-[var(--color-text-error)]',
-    neutral: 'text-[var(--color-text-muted)]',
+    up: 'text-[var(--color-stat-card-trend-up)]',
+    down: 'text-[var(--color-stat-card-trend-down)]',
+    neutral: 'text-[var(--color-stat-card-text-secondary)]',
   };
 
   const formattedValue = direction === 'up'
@@ -71,12 +77,13 @@ const TrendIndicator: React.FC<{
           'inline-flex items-center gap-1 text-sm font-medium',
           trendColor[direction]
         )}
+        aria-label={`${trendLabel[direction]}: ${formattedValue}`}
       >
         {trendIcon[direction]}
         {formattedValue}
       </span>
       {label && (
-        <span className="text-xs text-[var(--color-text-muted)]">{label}</span>
+        <span className="text-xs text-[var(--color-stat-card-text-secondary)]">{label}</span>
       )}
     </div>
   );
@@ -107,9 +114,9 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2">
             {icon && (
-              <span className="text-[var(--color-text-muted)]">{icon}</span>
+              <span className="text-[var(--color-stat-card-text-secondary)]">{icon}</span>
             )}
-            <span className="text-sm font-medium text-[var(--color-text-muted)]">
+            <span className="text-sm font-medium text-[var(--color-stat-card-text-secondary)]">
               {title}
             </span>
           </div>
@@ -124,11 +131,11 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
 
         {/* Value */}
         <div className="mt-2">
-          <span className="text-3xl font-bold text-[var(--color-text-base)]">
+          <span className="text-3xl font-bold text-[var(--color-stat-card-text-primary)]">
             {value}
           </span>
           {unit && (
-            <span className="ml-1 text-lg font-normal text-[var(--color-text-muted)]">
+            <span className="ml-1 text-lg font-normal text-[var(--color-stat-card-text-secondary)]">
               {unit}
             </span>
           )}
@@ -136,7 +143,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
 
         {/* Description */}
         {description && (
-          <p className="mt-1 text-sm text-[var(--color-text-muted)]">
+          <p className="mt-1 text-sm text-[var(--color-stat-card-text-secondary)]">
             {description}
           </p>
         )}

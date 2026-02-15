@@ -1,0 +1,16 @@
+{
+  "color": {
+    "$description": "Level 4: Kbd component tokens",
+    "kbd": {
+      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Key background" },
+      "text":   { "$type": "color", "$value": "{color.text.base}", "$description": "Key text" },
+      "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Key border" }
+    }
+  },
+  "shadow": {
+    "kbd": { "$type": "shadow", "$value": "{shadow.elevation.key}", "$description": "Key pressed effect shadow" }
+  },
+  "radius": {
+    "kbd": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Key border radius" }
+  }
+}

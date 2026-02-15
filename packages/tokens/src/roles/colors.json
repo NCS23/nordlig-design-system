@@ -19,7 +19,9 @@
       "warning": { "$type": "color", "$value": "{color.accent.2.500}" },
       "error":   { "$type": "color", "$value": "{color.accent.3.500}" },
       "info":    { "$type": "color", "$value": "{color.accent.4.500}" },
-      "overlay": { "$type": "color", "$value": "{color.neutral.overlay}", "$description": "Modal/dialog backdrop" }
+      "overlay": { "$type": "color", "$value": "{color.neutral.overlay}", "$description": "Modal/dialog backdrop" },
+      "inverse": { "$type": "color", "$value": "{color.neutral.1.900}", "$description": "Dark/inverted background (code blocks)" },
+      "inverse-hover": { "$type": "color", "$value": "{color.neutral.1.700}", "$description": "Hover on inverted background" }
     },
     "text": {
       "base":     { "$type": "color", "$value": "{color.neutral.1.900}" },

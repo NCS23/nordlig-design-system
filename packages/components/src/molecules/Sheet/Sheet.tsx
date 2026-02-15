@@ -106,7 +106,7 @@ const SheetContent = React.forwardRef<
       <DialogPrimitive.Close
         className={cn(
           'absolute right-4 top-4 inline-flex items-center justify-center',
-          'h-8 w-8 rounded-sm',
+          'h-8 w-8 rounded-[var(--radius-component-sm)]',
           'text-[var(--color-sheet-description)]',
           'transition-colors',
           'hover:bg-[var(--color-sheet-border)] hover:text-[var(--color-sheet-title)]',

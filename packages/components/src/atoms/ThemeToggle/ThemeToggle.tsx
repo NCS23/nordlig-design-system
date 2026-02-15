@@ -34,7 +34,7 @@ const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>(
         onClick={handleClick}
         aria-label={themeLabels[theme]}
         className={cn(
-          'inline-flex items-center justify-center h-9 w-9 rounded-md',
+          'inline-flex items-center justify-center h-9 w-9 rounded-[var(--radius-toggle)]',
           'border border-[var(--color-toggle-border)]',
           'bg-[var(--color-toggle-bg)]',
           'hover:bg-[var(--color-toggle-hover-bg)]',

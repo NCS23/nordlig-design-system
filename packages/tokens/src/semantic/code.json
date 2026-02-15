@@ -1,0 +1,17 @@
+{
+  "color": {
+    "$description": "Level 4: Code component tokens",
+    "code": {
+      "bg":            { "$type": "color", "$value": "{color.bg.surface}", "$description": "Inline code background" },
+      "text":          { "$type": "color", "$value": "{color.text.primary}", "$description": "Inline code text" },
+      "block-bg":      { "$type": "color", "$value": "{color.bg.inverse}", "$description": "Code block dark background" },
+      "block-text":    { "$type": "color", "$value": "{color.text.inverse}", "$description": "Code block text on dark bg" },
+      "copy-hover-bg": { "$type": "color", "$value": "{color.bg.inverse-hover}", "$description": "Copy button hover on dark bg" },
+      "line-number":   { "$type": "color", "$value": "{color.text.muted}", "$description": "Line number text color" }
+    }
+  },
+  "radius": {
+    "code":       { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Inline code border radius" },
+    "code-block": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Code block border radius" }
+  }
+}

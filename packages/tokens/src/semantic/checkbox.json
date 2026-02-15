@@ -17,7 +17,7 @@
   "sizing": {
     "$description": "Level 4: Checkbox size tokens — References Level 3 only",
     "checkbox": {
-      "box-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Checkbox box size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available" },
+      "box-size": { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Checkbox box size (20px)" },
       "icon-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Check icon size inside checkbox (16px)" }
     }
   },
