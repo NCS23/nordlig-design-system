@@ -1,0 +1,25 @@
+{
+  "color": {
+    "$description": "Level 4: Drawer component tokens",
+    "drawer": {
+      "overlay":     { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Drawer backdrop overlay" },
+      "bg":          { "$type": "color", "$value": "{color.bg.paper}", "$description": "Drawer content background" },
+      "title":       { "$type": "color", "$value": "{color.text.base}", "$description": "Drawer title text" },
+      "description": { "$type": "color", "$value": "{color.text.muted}", "$description": "Drawer description text" },
+      "border":      { "$type": "color", "$value": "{color.border.muted}", "$description": "Drawer top border" },
+      "handle":      { "$type": "color", "$value": "{color.border.strong}", "$description": "Drag handle bar color" }
+    }
+  },
+  "shadow": {
+    "drawer": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Drawer elevation shadow" }
+  },
+  "radius": {
+    "drawer": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Drawer top corner radius" }
+  },
+  "spacing": {
+    "drawer": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Drawer content padding" },
+      "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Drawer section gap" }
+    }
+  }
+}

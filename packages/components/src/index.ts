@@ -111,6 +111,16 @@ export {
   numberInputVariants,
   type NumberInputProps,
 } from './atoms/NumberInput';
+export {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+  type InputOTPProps,
+  type InputOTPGroupProps,
+  type InputOTPSlotProps,
+  type InputOTPSeparatorProps,
+} from './atoms/InputOTP';
 
 // Molecules
 export { InputField, type InputFieldProps } from './molecules/InputField';
@@ -238,6 +248,20 @@ export {
   type DialogContentProps,
 } from './molecules/Dialog';
 export {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogAction,
+  AlertDialogCancel,
+  type AlertDialogContentProps,
+  type AlertDialogActionProps,
+  type AlertDialogCancelProps,
+} from './molecules/AlertDialog';
+export {
   Breadcrumbs,
   BreadcrumbItem,
   BreadcrumbSeparator,
@@ -279,6 +303,47 @@ export {
   type NavigationMenuContentProps,
   type NavigationMenuLinkProps,
 } from './molecules/NavigationMenu';
+export {
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+  MenubarSeparator,
+  MenubarLabel,
+  MenubarShortcut,
+  MenubarCheckboxItem,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  type MenubarProps,
+  type MenubarMenuProps,
+  type MenubarTriggerProps,
+  type MenubarContentProps,
+  type MenubarItemProps,
+  type MenubarSeparatorProps,
+  type MenubarLabelProps,
+  type MenubarShortcutProps,
+  type MenubarCheckboxItemProps,
+  type MenubarRadioGroupProps,
+  type MenubarRadioItemProps,
+} from './molecules/Menubar';
+export {
+  Drawer,
+  DrawerTrigger,
+  DrawerClose,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerFooter,
+  type DrawerProps,
+  type DrawerContentProps,
+  type DrawerHeaderProps,
+  type DrawerTitleProps,
+  type DrawerDescriptionProps,
+  type DrawerFooterProps,
+} from './molecules/Drawer';
 
 // Organisms
 export {
@@ -307,6 +372,12 @@ export {
   type TableHeadProps,
   type TableCellProps,
 } from './organisms/Table';
+export {
+  DataTable,
+  DataTableColumnHeader,
+  DataTablePagination,
+  type DataTableProps,
+} from './organisms/DataTable';
 
 export {
   Modal,

@@ -1,0 +1,29 @@
+{
+  "color": {
+    "$description": "Level 4: InputOTP component tokens",
+    "inputotp": {
+      "bg":            { "$type": "color", "$value": "{color.bg.paper}", "$description": "Slot background" },
+      "bg-disabled":   { "$type": "color", "$value": "{color.bg.surface}", "$description": "Disabled slot background" },
+      "text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Digit text color" },
+      "border":        { "$type": "color", "$value": "{color.border.default}", "$description": "Slot border" },
+      "border-focus":  { "$type": "color", "$value": "{color.border.focus}", "$description": "Active slot focus ring" },
+      "border-error":  { "$type": "color", "$value": "{color.border.error}", "$description": "Error state border" },
+      "caret":         { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Blinking caret color" },
+      "separator":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Group separator color" }
+    }
+  },
+  "sizing": {
+    "inputotp": {
+      "slot-size": { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Slot width and height (40px)" }
+    }
+  },
+  "radius": {
+    "inputotp": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Slot border radius" }
+  },
+  "spacing": {
+    "inputotp": {
+      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between slots" },
+      "group-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between groups" }
+    }
+  }
+}

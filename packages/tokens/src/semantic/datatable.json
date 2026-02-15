@@ -1,0 +1,18 @@
+{
+  "color": {
+    "$description": "Level 4: DataTable component tokens (base table styling reuses table.json tokens)",
+    "datatable": {
+      "toolbar-bg":        { "$type": "color", "$value": "{color.bg.paper}", "$description": "Toolbar background" },
+      "row-selected-bg":   { "$type": "color", "$value": "{color.bg.surface}", "$description": "Selected row background" },
+      "sort-icon":         { "$type": "color", "$value": "{color.text.muted}", "$description": "Sort icon inactive" },
+      "sort-icon-active":  { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Sort icon active" },
+      "empty-text":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Empty state text" }
+    }
+  },
+  "spacing": {
+    "datatable": {
+      "toolbar-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Toolbar padding" },
+      "toolbar-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Toolbar item gap" }
+    }
+  }
+}

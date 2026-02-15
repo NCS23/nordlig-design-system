@@ -2786,20 +2786,74 @@
 
 ---
 
+## [AlertDialog] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-alertdlg-overlay`, `color-alertdlg-bg`, `color-alertdlg-title`
+  - `color-alertdlg-description`, `color-alertdlg-border`
+  - `color-alertdlg-action-bg`, `color-alertdlg-action-text`, `color-alertdlg-action-hover-bg`
+  - `color-alertdlg-cancel-bg`, `color-alertdlg-cancel-text`, `color-alertdlg-cancel-hover-bg`
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-alertdlg`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-alertdlg`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-alertdlg-padding`, `spacing-alertdlg-gap`
+- **15 L4-Tokens insgesamt**
+
+### Architecture
+- Radix UI `@radix-ui/react-alert-dialog` als Basis
+- Compound-Component-Pattern (AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogAction, AlertDialogCancel)
+- Kein X-Schliessen-Button (im Gegensatz zu Dialog) — Nutzer muss explizit Action oder Cancel waehlen
+- AlertDialogAction als destruktiver Button gestylt (rot), AlertDialogCancel als sekundaerer Button
+- `alertdlg` Prefix statt `alert-dialog` (Tailwind v3 Underscore-Bug vermeiden)
+
+### Files
+- `packages/components/src/molecules/AlertDialog/AlertDialog.tsx`
+- `packages/components/src/molecules/AlertDialog/AlertDialog.stories.tsx`
+- `packages/components/src/molecules/AlertDialog/AlertDialog.test.tsx`
+- `packages/components/src/molecules/AlertDialog/index.ts`
+
+### Sub-Components
+- AlertDialog (Root), AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogAction, AlertDialogCancel
+
+### Test Coverage
+- ✅ 8 Tests: Rendering, Open/alertdialog role, Title/Description, Action handler + close, Cancel close, Token classes, Custom className, displayName
+
+### Accessibility
+- ✅ `role="alertdialog"` (native Radix)
+- ✅ Fokus wird beim Oeffnen automatisch in den Dialog verschoben
+- ✅ Escape schliesst den Dialog NICHT (AlertDialog erfordert explizite Aktion)
+- ✅ Focus Ring auf Action und Cancel Buttons
+- ✅ Screen Reader: Title + Description ueber `aria-labelledby` / `aria-describedby`
+
+### Storybook
+- **Stories:** Default (Destruktiv), NonDestructive (Primaere Aktion), OpenState, DesignTokens
+- **URL:** http://localhost:6006/?path=/story/molecules-alertdialog
+
+**Tests:** 8 | **Stories:** 4
+
+---
+
 ## Development Statistics
 
-**Total Components:** 60 (60 complete)
+**Total Components:** 61 (61 complete)
 **System:** 1 (ThemeProvider + useTheme)
 **Atoms:** 26 (Button, Badge, Code, Input, Link, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton, Separator, Popover, Alert, ToggleGroup, Avatar, Slider, HoverCard, ScrollArea, AspectRatio, ThemeToggle, Label, Kbd, VisuallyHidden, Tag, NumberInput)
-**Molecules:** 23 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, ContextMenu, NavigationMenu, EmptyState, Pagination, Sheet, Dialog, Breadcrumbs, Collapsible, Form, Stepper)
+**Molecules:** 24 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, ContextMenu, NavigationMenu, EmptyState, Pagination, Sheet, Dialog, AlertDialog, Breadcrumbs, Collapsible, Form, Stepper)
 **Organisms:** 9 (Card, Table, Modal, Chart, Command, StatCard, SessionCard, Timeline, Sidebar)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
-**Test Coverage:** 57 von 59 Components getestet (exkl. Button: nur manuell geprüft, StatCard: Tests ausstehend)
-**Storybook Stories:** 422 Stories (412 + 10 NumberInput)
-**Design Tokens:** 518 L4-Tokens (507 + 11 NumberInput) + 7 L3 Tokens + 3 L2 + 3 L1
-**Total Tests:** 1096 (1049 + 47 NumberInput)
+**Test Coverage:** 58 von 60 Components getestet (exkl. Button: nur manuell geprüft, StatCard: Tests ausstehend)
+**Storybook Stories:** 426 Stories (422 + 4 AlertDialog)
+**Design Tokens:** 533 L4-Tokens (518 + 15 AlertDialog) + 7 L3 Tokens + 3 L2 + 3 L1
+**Total Tests:** 1104 (1096 + 8 AlertDialog)
 **Dark Mode:** ✅ CSS class strategy (.dark) mit 74+ Token-Overrides
 **Charts:** ✅ Recharts Integration (Line, Bar, Area, Pie)
 **Forms:** ✅ React Hook Form + Zod Integration
@@ -3194,7 +3248,238 @@ interface TreeNode {
   - Roving tabindex pattern: focused item gets `tabIndex={0}`, all others `tabIndex={-1}`
   - AutoPlay cleanup via `useEffect` return function — prevents interval leaks on unmount
 
+---
+
+## [Menubar] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Description
+Horizontale Menuleiste (Menubar) mit Dropdown-Menues, basierend auf Radix UI Menubar Primitive. Unterstuetzt Trigger-Buttons, Menuepunkte, Separatoren, Labels, Tastenkuerzel-Hinweise, Checkbox-Items und Radio-Items.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-menubar-bg`, `color-menubar-border`
+  - `color-menubar-trigger-text`, `color-menubar-trigger-hover-bg`, `color-menubar-trigger-active-bg`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-menubar-bar`, `radius-menubar-item`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-menubar-padding`, `spacing-menubar-trigger-padding-x`, `spacing-menubar-trigger-padding-y`
+- **10 neue Menubar-Tokens** + Wiederverwendung aller DropdownMenu-Tokens fuer Content
+
+### Files
+- `packages/components/src/molecules/Menubar/Menubar.tsx`
+- `packages/components/src/molecules/Menubar/Menubar.test.tsx`
+- `packages/components/src/molecules/Menubar/Menubar.stories.tsx`
+- `packages/components/src/molecules/Menubar/index.ts`
+
+### Sub-Components
+- **Menubar** — Root container (forwardRef)
+- **MenubarMenu** — Menu group (re-export)
+- **MenubarTrigger** — Top-level button (forwardRef)
+- **MenubarContent** — Dropdown content in Portal (forwardRef, reuses dropdown tokens)
+- **MenubarItem** — Menu item with destructive + icon props (forwardRef)
+- **MenubarSeparator** — Separator line (forwardRef)
+- **MenubarLabel** — Group label (forwardRef)
+- **MenubarShortcut** — Keyboard shortcut hint span (forwardRef)
+- **MenubarCheckboxItem** — Checkable item with Check icon (forwardRef)
+- **MenubarRadioGroup** — Radio group (re-export)
+- **MenubarRadioItem** — Radio item with Circle icon (forwardRef)
+
+### Test Coverage
+- ✅ 11 Tests: Rendering, Trigger-Buttons, Menue oeffnen, Menuepunkte, onSelect, Separator, Label, Shortcut, Destructive Styling, Menubar-Tokens, Dropdown-Tokens, displayNames
+
+### Accessibility
+- ✅ `role="menubar"` auf Root
+- ✅ `role="menu"` auf Content
+- ✅ `role="menuitem"` auf Items
+- ✅ Keyboard Navigation (Arrow keys, Enter, Space, Escape)
+- ✅ Focus Ring auf Trigger (focus-visible ring-2)
+- ✅ data-[state=open] Styling fuer aktive Trigger
+
+### Storybook
+- **Stories:** Default, WithShortcuts, WithCheckboxItems, DesignTokens
+
+**Tests:** 11 | **Stories:** 4
+
+---
+
+## [InputOTP] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+OTP-Eingabefeld fuer Verifizierungscodes. Basiert auf der `input-otp` Bibliothek mit OTPInput und OTPInputContext. Unterstuetzt beliebige Laengen, Gruppen-Layouts mit Separatoren, Fehler- und Deaktiviert-Zustaende.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-inputotp-bg`, `color-inputotp-bg-disabled`
+  - `color-inputotp-text`
+  - `color-inputotp-border`, `color-inputotp-border-focus`, `color-inputotp-border-error`
+  - `color-inputotp-caret`, `color-inputotp-separator`
+- **Level 4 (Semantic) – Sizing:**
+  - `sizing-inputotp-slot-size`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-inputotp`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-inputotp-gap`, `spacing-inputotp-group-gap`
+- **12 neue InputOTP-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/InputOTP/InputOTP.tsx`
+- `packages/components/src/atoms/InputOTP/InputOTP.test.tsx`
+- `packages/components/src/atoms/InputOTP/InputOTP.stories.tsx`
+- `packages/components/src/atoms/InputOTP/index.ts`
+
+### Sub-Components
+- **InputOTP** — Root-Wrapper um OTPInput (forwardRef, error-Prop)
+- **InputOTPGroup** — Visuelle Gruppierung der Slots (forwardRef)
+- **InputOTPSlot** — Einzelner Ziffern-Slot mit Caret-Animation (forwardRef, index-Prop)
+- **InputOTPSeparator** — Trennzeichen zwischen Gruppen (forwardRef, role="separator")
+
+### Test Coverage
+- ✅ 6 Tests: Slot-Anzahl, displayNames, className-Merge, Separator, Token-Klassen, Error-Styling
+
+### Accessibility
+- ✅ Nativer Input unter der Haube (input-otp Bibliothek)
+- ✅ Focus Ring auf aktivem Slot (ring-2)
+- ✅ `role="separator"` auf Trennzeichen
+- ✅ Blinkender Caret bei Fokus (animate-caret-blink)
+- ✅ Disabled-Zustand via disabled-Prop
+
+### Storybook
+- **Stories:** Default, FourDigit, WithGroups, WithError, Disabled, DesignTokens
+
+**Tests:** 6 | **Stories:** 6
+
+---
+
+## [Drawer] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Description
+Mobile-first Bottom-Sheet-Komponente basierend auf vaul. Bietet Swipe-to-dismiss, Drag-Handle, und alle Standard-Unter-Komponenten (Header, Title, Description, Footer). Fuer mobile Dialoge, Quick-Edit-Formulare und Filteransichten.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-drawer-overlay` — Backdrop-Overlay
+  - `color-drawer-bg` — Content-Hintergrund
+  - `color-drawer-title` — Titeltext
+  - `color-drawer-description` — Beschreibungstext
+  - `color-drawer-border` — Oberer Rand
+  - `color-drawer-handle` — Drag-Handle-Farbe
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-drawer` — Drawer-Schatten
+- **Level 4 (Semantic) – Radius:**
+  - `radius-drawer` — Obere Ecken
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-drawer-padding` — Innenabstand
+  - `spacing-drawer-gap` — Sektions-Abstand
+- **10 neue Drawer-Tokens insgesamt**
+
+### Files
+- `packages/components/src/molecules/Drawer/Drawer.tsx`
+- `packages/components/src/molecules/Drawer/Drawer.test.tsx`
+- `packages/components/src/molecules/Drawer/Drawer.stories.tsx`
+- `packages/components/src/molecules/Drawer/index.ts`
+
+### Sub-Components
+- **Drawer** — Root-Wrapper um vaul Drawer.Root (shouldScaleBackground)
+- **DrawerTrigger** — Trigger-Button
+- **DrawerClose** — Close-Button
+- **DrawerOverlay** — Backdrop mit Fade-Animation (forwardRef)
+- **DrawerContent** — Portal + Overlay + Content mit optionalem Drag-Handle (forwardRef)
+- **DrawerHeader** — Flex-Column-Header mit Padding-Token (forwardRef)
+- **DrawerTitle** — Titel mit Token-Styling (forwardRef)
+- **DrawerDescription** — Beschreibung mit Token-Styling (forwardRef)
+- **DrawerFooter** — Footer mit Flex-Layout (forwardRef)
+
+### Test Coverage
+- ✅ 9 Tests: Trigger, displayNames, Handle sichtbar/versteckbar, Token-Klassen, Header/Footer/Title/Description Styling, className-Merge
+
+### Accessibility
+- ✅ vaul-basiertes Dialog-Pattern
+- ✅ Focus-Trapping (vaul-nativ)
+- ✅ Swipe-to-dismiss Geste
+- ✅ aria-label auf Close-Button
+
+### Storybook
+- **Stories:** Standard, MitFormular, LangerInhalt, OhneGriff, DesignTokens
+
+**Tests:** 9 | **Stories:** 5
+
+---
+
+## [DataTable] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Organism
+
+### Description
+Datenbasierte Tabellen-Komponente basierend auf @tanstack/react-table. Komponiert die bestehenden Table-Sub-Komponenten und bietet Sortierung, globale/spaltenbasierte Suche, Pagination und Zeilenauswahl mit Checkboxen.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-datatable-toolbar-bg` — Toolbar-/Header-Hover-Hintergrund
+  - `color-datatable-row-selected-bg` — Hintergrund ausgewaehlter Zeilen
+  - `color-datatable-sort-icon` — Inaktives Sort-Icon
+  - `color-datatable-sort-icon-active` — Aktives Sort-Icon (auf-/absteigend)
+  - `color-datatable-empty-text` — Leerzustand-Text und Seiteninformation
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-datatable-toolbar-padding` — Toolbar-Padding
+  - `spacing-datatable-toolbar-gap` — Abstand zwischen Sektionen
+- **7 neue DataTable-Tokens insgesamt**
+- Zusaetzlich werden alle Table-Tokens aus Table verwendet.
+
+### Files
+- `packages/components/src/organisms/DataTable/DataTable.tsx`
+- `packages/components/src/organisms/DataTable/DataTable.test.tsx`
+- `packages/components/src/organisms/DataTable/DataTable.stories.tsx`
+- `packages/components/src/organisms/DataTable/index.ts`
+
+### Sub-Components
+- **DataTable** — Generische Haupt-Komponente (function component, keine forwardRef wegen Generics)
+- **DataTableColumnHeader** — Sortierbare Spaltenheader-Buttons mit Icons
+- **DataTablePagination** — Paginierungssteuerung mit Seitenanzeige und Vor/Zurueck
+
+### Props - DataTable
+- **columns:** ColumnDef<TData, TValue>[] (Spaltendefinitionen)
+- **data:** TData[] (Tabellendaten)
+- **density:** 'compact' | 'normal' | 'spacious' (Tabellenabstand)
+- **striped:** boolean (Zebrastreifen)
+- **searchable:** boolean (Suchleiste anzeigen)
+- **searchPlaceholder:** string (Platzhalter der Suchleiste)
+- **searchColumn:** string (spaltenbasierte Suche statt global)
+- **pagination:** boolean (Pagination aktivieren)
+- **pageSize:** number (Zeilen pro Seite)
+- **selectable:** boolean (Checkbox-Auswahl)
+- **onSelectionChange:** (rows: TData[]) => void (Auswahl-Callback)
+- **emptyMessage:** React.ReactNode (Leerzustand-Nachricht)
+- **className:** string (zusaetzliche CSS-Klasse)
+
+### Test Coverage
+- ✅ 14 Tests: Rendering, Zeilenanzahl, Spaltenkoepfe, Leerzustand, displayNames, className-Merge, Pagination, Suchfilter, Checkbox-Auswahl, Token-Klassen
+
+### Accessibility
+- ✅ Semantische Table-Struktur (via Table-Subkomponenten)
+- ✅ aria-label auf Checkboxen ("Alle auswaehlen" / "Zeile auswaehlen")
+- ✅ focus-visible Ring auf Sort-Buttons
+- ✅ Disabled-Status auf Paginierungsbuttons
+
+### Storybook
+- **Stories:** Basic, WithSorting, WithSearch, WithPagination, WithSelection, FullFeatured, Empty, DesignTokens
+
+**Tests:** 14 | **Stories:** 8
+
 **Last Updated:** 2026-02-15
-**Design System Status:** ✅ Complete (60 Components, alle Essential Components fertig)
+**Design System Status:** ✅ Complete (65 Components, alle Essential Components fertig)
 | 1 | Tag | atoms | Done | 27 | 8 | 17 | Claude Code | No | 2026-02-15 |
 | 2 | NumberInput | atoms | Done | 47 | 10 | 11 | Claude Code | No | 2026-02-15 |

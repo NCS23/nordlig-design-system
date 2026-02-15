@@ -1,0 +1,25 @@
+{
+  "color": {
+    "$description": "Level 4: Menubar component tokens (dropdown content reuses dropdown.json tokens)",
+    "menubar": {
+      "bg":                { "$type": "color", "$value": "{color.bg.paper}", "$description": "Menubar background" },
+      "border":            { "$type": "color", "$value": "{color.border.muted}", "$description": "Menubar border" },
+      "trigger-text":      { "$type": "color", "$value": "{color.text.base}", "$description": "Trigger text" },
+      "trigger-hover-bg":  { "$type": "color", "$value": "{color.bg.surface}", "$description": "Trigger hover background" },
+      "trigger-active-bg": { "$type": "color", "$value": "{color.bg.surface}", "$description": "Trigger active/open background" }
+    }
+  },
+  "radius": {
+    "menubar": {
+      "bar":  { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Menubar container radius" },
+      "item": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Trigger item radius" }
+    }
+  },
+  "spacing": {
+    "menubar": {
+      "padding":            { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Menubar inner padding" },
+      "trigger-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Trigger horizontal padding" },
+      "trigger-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Trigger vertical padding" }
+    }
+  }
+}
