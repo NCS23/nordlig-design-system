@@ -1,0 +1,20 @@
+{
+  "color": {
+    "$description": "Level 4: Image component tokens",
+    "img": {
+      "bg":            { "$type": "color", "$value": "{color.bg.surface}", "$description": "Loading placeholder background" },
+      "fallback-bg":   { "$type": "color", "$value": "{color.bg.surface-hover}", "$description": "Error fallback background" },
+      "fallback-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Error fallback icon/text" },
+      "border":        { "$type": "color", "$value": "{color.border.muted}", "$description": "Optional border" }
+    }
+  },
+  "radius": {
+    "img": {
+      "none": { "$type": "dimension", "$value": "0px", "$description": "No radius" },
+      "sm":   { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Small radius" },
+      "md":   { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Medium radius" },
+      "lg":   { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Large radius" },
+      "full": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circle radius" }
+    }
+  }
+}

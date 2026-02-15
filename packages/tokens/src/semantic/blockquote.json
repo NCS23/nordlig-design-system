@@ -1,0 +1,21 @@
+{
+  "color": {
+    "$description": "Level 4: Blockquote component tokens",
+    "bq": {
+      "border":    { "$type": "color", "$value": "{color.border.strong}", "$description": "Left accent border" },
+      "bg":        { "$type": "color", "$value": "{color.bg.surface}", "$description": "Background" },
+      "text":      { "$type": "color", "$value": "{color.text.base}", "$description": "Quote text" },
+      "cite-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Citation/author text" }
+    }
+  },
+  "spacing": {
+    "bq": {
+      "padding":      { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Internal padding" },
+      "border-width": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Left border width (4px)" },
+      "cite-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap before citation" }
+    }
+  },
+  "radius": {
+    "bq": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Corner radius" }
+  }
+}

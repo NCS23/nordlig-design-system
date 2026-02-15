@@ -1,0 +1,21 @@
+{
+  "color": {
+    "$description": "Level 4: Resizable component tokens",
+    "rsz": {
+      "handle-bg":       { "$type": "color", "$value": "{color.border.muted}", "$description": "Handle default background" },
+      "handle-hover-bg": { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Handle hover/active" },
+      "handle-border":   { "$type": "color", "$value": "{color.border.default}", "$description": "Handle grip border" },
+      "panel-border":    { "$type": "color", "$value": "{color.border.muted}", "$description": "Panel divider border" }
+    }
+  },
+  "radius": {
+    "rsz": {
+      "handle": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Handle grip radius" }
+    }
+  },
+  "spacing": {
+    "rsz": {
+      "handle-size": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Handle hit-area width/height" }
+    }
+  }
+}

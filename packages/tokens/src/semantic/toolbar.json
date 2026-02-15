@@ -1,0 +1,31 @@
+{
+  "color": {
+    "$description": "Level 4: Toolbar component tokens",
+    "toolbar": {
+      "bg":              { "$type": "color", "$value": "{color.bg.paper}", "$description": "Toolbar background" },
+      "border":          { "$type": "color", "$value": "{color.border.muted}", "$description": "Toolbar border" },
+      "btn-text":        { "$type": "color", "$value": "{color.text.base}", "$description": "Button text" },
+      "btn-hover-bg":    { "$type": "color", "$value": "{color.bg.surface}", "$description": "Button hover background" },
+      "btn-active-bg":   { "$type": "color", "$value": "{color.bg.surface-active}", "$description": "Button active/pressed" },
+      "link-text":       { "$type": "color", "$value": "{color.text.primary}", "$description": "Link text" },
+      "link-hover-text": { "$type": "color", "$value": "{color.interactive.primary-hover}", "$description": "Link hover text" },
+      "toggle-on-bg":    { "$type": "color", "$value": "{color.bg.primary-subtle}", "$description": "Toggle pressed background" },
+      "toggle-on-text":  { "$type": "color", "$value": "{color.text.primary}", "$description": "Toggle pressed text" },
+      "separator":       { "$type": "color", "$value": "{color.border.muted}", "$description": "Separator color" }
+    }
+  },
+  "radius": {
+    "toolbar": {
+      "bar":  { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Toolbar container radius" },
+      "item": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Button/toggle item radius" }
+    }
+  },
+  "spacing": {
+    "toolbar": {
+      "padding":       { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Toolbar inner padding" },
+      "gap":           { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between items" },
+      "btn-padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Button horizontal padding" },
+      "btn-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Button vertical padding" }
+    }
+  }
+}

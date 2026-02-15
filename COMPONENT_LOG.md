@@ -3479,7 +3479,267 @@ Datenbasierte Tabellen-Komponente basierend auf @tanstack/react-table. Komponier
 
 **Tests:** 14 | **Stories:** 8
 
+---
+
+## [Blockquote] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Semantisches Blockquote-Element mit optionaler Zitations-Unterkomponente. Verwendet L4-Tokens mit dem Prefix `bq` fuer konsistentes Styling. Unterstuetzt Autor- und Quellenangabe ueber die BlockquoteCitation-Unterkomponente.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-bq-border` — Linke Akzent-Bordierung
+  - `color-bq-bg` — Hintergrund
+  - `color-bq-text` — Zitattext
+  - `color-bq-cite-text` — Autor-/Quellentext
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-bq-padding` — Innenabstand
+  - `spacing-bq-border-width` — Linke Border-Breite (4px)
+  - `spacing-bq-cite-gap` — Abstand vor Zitation
+- **Level 4 (Semantic) – Radius:**
+  - `radius-bq` — Eckenradius
+- **8 neue Blockquote-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Blockquote/Blockquote.tsx`
+- `packages/components/src/atoms/Blockquote/Blockquote.test.tsx`
+- `packages/components/src/atoms/Blockquote/Blockquote.stories.tsx`
+- `packages/components/src/atoms/Blockquote/index.ts`
+- `packages/tokens/src/semantic/blockquote.json`
+
+### Sub-Components
+- **Blockquote** — Semantisches `<blockquote>`-Element mit Token-Styling (forwardRef)
+- **BlockquoteCitation** — `<footer>` mit Autor/Quelle oder benutzerdefinierten Kindern (forwardRef)
+
+### Test Coverage
+- ✅ 10 Tests: Semantisches Element, Token-Klassen, Kinder, ref-Weiterleitung, className, Citation mit Autor, Citation mit Quelle, Citation mit beidem, benutzerdefinierte Kinder, displayName
+
+### Accessibility
+- ✅ Semantisches `<blockquote>`-Element
+- ✅ `<cite>`-Element fuer Quellenangaben
+- ✅ `<footer>`-Element fuer Citation
+
+### Storybook
+- **Stories:** Default, WithCitation, LongQuote, Nested
+
+**Tests:** 10 | **Stories:** 4
+
+---
+
+## [CopyButton] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Copy-to-Clipboard-Button mit visueller Rueckmeldung. Wechselt nach dem Klick zu einem Haekchen-Icon und setzt sich nach konfigurierbarem Timeout zurueck. Drei Groessen (sm/md/lg), deaktivierbarer Zustand.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-cpybtn-bg` — Standard-Hintergrund
+  - `color-cpybtn-bg-hover` — Hover-Hintergrund
+  - `color-cpybtn-icon` — Copy-Icon-Farbe
+  - `color-cpybtn-icon-copied` — Check-Icon nach dem Kopieren
+  - `color-cpybtn-border` — Button-Rahmen
+- **Level 4 (Semantic) – Radius:**
+  - `radius-cpybtn` — Button-Radius
+- **6 neue CopyButton-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/CopyButton/CopyButton.tsx`
+- `packages/components/src/atoms/CopyButton/CopyButton.test.tsx`
+- `packages/components/src/atoms/CopyButton/CopyButton.stories.tsx`
+- `packages/components/src/atoms/CopyButton/index.ts`
+- `packages/tokens/src/semantic/copybutton.json`
+
+### Props
+- **value:** string (zu kopierender Text)
+- **timeout:** number (Standard: 2000ms)
+- **onCopy:** () => void (Callback nach Kopieren)
+- **size:** 'sm' | 'md' | 'lg'
+
+### Test Coverage
+- ✅ 11 Tests: Button-Element, aria-label, Icon-Wechsel, onCopy-Callback, Timeout-Reset, Token-Klassen, Groessen sm/lg, ref-Weiterleitung, className, displayName
+
+### Accessibility
+- ✅ `aria-label` wechselt zwischen "In Zwischenablage kopieren" und "Kopiert"
+- ✅ `type="button"` explizit gesetzt
+- ✅ Focus-Ring mit ring-2
+
+### Storybook
+- **Stories:** Default, AllSizes, WithCallback, Disabled, InContext
+
+**Tests:** 11 | **Stories:** 5
+
+---
+
+## [Image] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Bild-Komponente mit Lade-Status, automatischem Fehler-Fallback und CVA-Varianten fuer Rundung und Objektanpassung. Setzt Status zurueck wenn sich die Quelle aendert. Benutzerdefinierter Fallback moeglich.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-img-bg` — Lade-Platzhalter-Hintergrund
+  - `color-img-fallback-bg` — Fehler-Fallback-Hintergrund
+  - `color-img-fallback-text` — Fehler-Fallback-Icon/Text
+  - `color-img-border` — Optionaler Rahmen
+- **Level 4 (Semantic) – Radius:**
+  - `radius-img-none` / `radius-img-sm` / `radius-img-md` / `radius-img-lg` / `radius-img-full`
+- **9 neue Image-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Image/Image.tsx`
+- `packages/components/src/atoms/Image/Image.test.tsx`
+- `packages/components/src/atoms/Image/Image.stories.tsx`
+- `packages/components/src/atoms/Image/index.ts`
+- `packages/tokens/src/semantic/image.json`
+
+### Variants (CVA)
+- **rounded:** none, sm, md, lg, full
+- **objectFit:** cover, contain, fill, none
+
+### Props
+- **fallback:** React.ReactNode (benutzerdefinierter Fehler-Fallback)
+- **aspectRatio:** number (Seitenverhaeltnis des Wrappers)
+- **onLoadingComplete:** () => void
+- **onError:** () => void
+
+### Test Coverage
+- ✅ 12 Tests: src/alt, rounded-Variante, objectFit-Variante, Lade-Hintergrund, erfolgreicher Load, Standard-Fallback, benutzerdefinierter Fallback, aspectRatio-Style, ref-Weiterleitung, className, onError-Callback, displayName
+
+### Accessibility
+- ✅ `alt`-Attribut auf `<img>` (Pflicht-Prop)
+- ✅ Fallback-Container mit data-testid
+
+### Storybook
+- **Stories:** Default, WithAspectRatio, ObjectFitVariants, RoundedVariants, ErrorFallback, CustomFallback, Loading
+
+**Tests:** 12 | **Stories:** 7
+
+---
+
+## [Toolbar] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Description
+Kompositionale Toolbar basierend auf @radix-ui/react-toolbar. Bietet Buttons, Links, Toggle-Gruppen und Trennlinien. Volle Keyboard-Navigation (Pfeiltasten) und ARIA-role="toolbar" durch Radix.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-toolbar-bg` — Toolbar-Hintergrund
+  - `color-toolbar-border` — Toolbar-Rahmen
+  - `color-toolbar-btn-text` — Button-Text
+  - `color-toolbar-btn-hover-bg` — Button-Hover-Hintergrund
+  - `color-toolbar-btn-active-bg` — Button-Active/Pressed
+  - `color-toolbar-link-text` — Link-Text
+  - `color-toolbar-link-hover-text` — Link-Hover-Text
+  - `color-toolbar-toggle-on-bg` — Toggle-Pressed-Hintergrund
+  - `color-toolbar-toggle-on-text` — Toggle-Pressed-Text
+  - `color-toolbar-separator` — Trenner-Farbe
+- **Level 4 (Semantic) – Radius:**
+  - `radius-toolbar-bar` — Container-Radius
+  - `radius-toolbar-item` — Button/Toggle-Radius
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-toolbar-padding` — Innenabstand
+  - `spacing-toolbar-gap` — Abstand zwischen Items
+  - `spacing-toolbar-btn-padding-x` — Button-Padding horizontal
+  - `spacing-toolbar-btn-padding-y` — Button-Padding vertikal
+- **16 neue Toolbar-Tokens insgesamt**
+
+### Files
+- `packages/components/src/molecules/Toolbar/Toolbar.tsx`
+- `packages/components/src/molecules/Toolbar/Toolbar.test.tsx`
+- `packages/components/src/molecules/Toolbar/Toolbar.stories.tsx`
+- `packages/components/src/molecules/Toolbar/index.ts`
+- `packages/tokens/src/semantic/toolbar.json`
+
+### Sub-Components
+- **Toolbar** — Root-Wrapper mit role="toolbar" (forwardRef)
+- **ToolbarButton** — Action-Button mit optionalem Icon (forwardRef)
+- **ToolbarLink** — Link-Element (forwardRef)
+- **ToolbarToggleGroup** — Toggle-Gruppe (single/multiple) (forwardRef)
+- **ToolbarToggleItem** — Toggle-Item mit optionalem Icon (forwardRef)
+- **ToolbarSeparator** — Vertikale Trennlinie (forwardRef)
+
+### Test Coverage
+- ✅ 12 Tests: role="toolbar", Button-Rendering, Token-Klassen, Separator, Link, ToggleGroup/ToggleItem, Toggle-On-Styling, Icon-Rendering, ref-Weiterleitung, className, Button mit Icon+Text, displayNames
+
+### Accessibility
+- ✅ `role="toolbar"` auf Root (Radix)
+- ✅ Keyboard-Navigation mit Pfeiltasten (Radix)
+- ✅ Focus-Ring mit ring-2
+- ✅ `aria-label` auf Toolbar und Toggle-Gruppen
+
+### Storybook
+- **Stories:** Default, WithToggleGroup, WithLinks, WithSeparators, Vertical, TextEditor
+
+**Tests:** 12 | **Stories:** 6
+
+---
+
+## [Resizable] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Description
+Resizable-Panel-Layout basierend auf react-resizable-panels. Bietet horizontale und vertikale Panel-Gruppen mit optionalem Griff-Indikator. Unterstuetzt verschachtelte Gruppen, einklappbare Panels und Mindest-/Maximalgroessen.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-rsz-handle-bg` — Handle-Standard-Hintergrund
+  - `color-rsz-handle-hover-bg` — Handle-Hover/Active
+  - `color-rsz-handle-border` — Handle-Griff-Rahmen
+  - `color-rsz-panel-border` — Panel-Trenner
+- **Level 4 (Semantic) – Radius:**
+  - `radius-rsz-handle` — Handle-Griff-Radius
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-rsz-handle-size` — Handle-Hit-Area
+- **6 neue Resizable-Tokens insgesamt**
+
+### Files
+- `packages/components/src/molecules/Resizable/Resizable.tsx`
+- `packages/components/src/molecules/Resizable/Resizable.test.tsx`
+- `packages/components/src/molecules/Resizable/Resizable.stories.tsx`
+- `packages/components/src/molecules/Resizable/index.ts`
+- `packages/tokens/src/semantic/resizable.json`
+
+### Sub-Components
+- **ResizablePanelGroup** — Root-Container (forwardRef, nutzt elementRef fuer v4-Kompatibilitaet)
+- **ResizablePanel** — Einzelnes Panel (re-export von react-resizable-panels Panel)
+- **ResizableHandle** — Drag-Handle mit optionalem GripVertical-Indikator
+
+### Props - ResizableHandle
+- **withHandle:** boolean (zeigt visuellen Griff-Indikator)
+
+### Test Coverage
+- ✅ 10 Tests: PanelGroup mit Panels, Handle zwischen Panels, Token-Klassen auf Handle, Griff-Indikator mit/ohne withHandle, Basis-Klassen, className auf PanelGroup/Handle, drei Panels, displayNames
+
+### Accessibility
+- ✅ `role="separator"` auf Handle (Radix)
+- ✅ Keyboard-Resize moeglich
+- ✅ Focus-Ring auf Handle
+
+### Storybook
+- **Stories:** Default, Vertical, WithHandle, ThreePanels, Collapsible, NestedGroups
+
+**Tests:** 10 | **Stories:** 6
+
+---
+
 **Last Updated:** 2026-02-15
-**Design System Status:** ✅ Complete (65 Components, alle Essential Components fertig)
-| 1 | Tag | atoms | Done | 27 | 8 | 17 | Claude Code | No | 2026-02-15 |
-| 2 | NumberInput | atoms | Done | 47 | 10 | 11 | Claude Code | No | 2026-02-15 |
+**Design System Status:** ✅ Complete (70 Components, alle Essential Components fertig)
