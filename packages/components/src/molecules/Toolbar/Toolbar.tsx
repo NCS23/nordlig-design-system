@@ -16,8 +16,8 @@ export interface ToolbarButtonProps
 export interface ToolbarLinkProps
   extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Link> {}
 
-export interface ToolbarToggleGroupProps
-  extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.ToggleGroup> {}
+export type ToolbarToggleGroupProps =
+  React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.ToggleGroup>;
 
 export interface ToolbarToggleItemProps
   extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.ToggleItem> {

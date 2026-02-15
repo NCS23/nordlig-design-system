@@ -10,7 +10,7 @@ const sizeMap = {
 } as const;
 
 export interface CopyButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'onError'> {
   /** Der zu kopierende Text */
   value: string;
   /** Dauer in ms, bis das Icon zurueckwechselt (Standard: 2000) */

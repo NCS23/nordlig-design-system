@@ -34,7 +34,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
     },
     ref
   ) => {
-    const inputRef = React.useRef<HTMLInputElement>(null);
+    const inputRef = React.useRef<HTMLInputElement | null>(null);
     const mountedRef = React.useRef(false);
     const [internalValue, setInternalValue] = React.useState<string>(
       (defaultValue as string) ?? ''

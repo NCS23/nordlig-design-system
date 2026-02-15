@@ -11,7 +11,7 @@ export interface TreeNode {
   children?: TreeNode[];
 }
 
-export interface TreeProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TreeProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onSelect'> {
   /** Baumdaten als verschachtelte Struktur */
   data: TreeNode[];
   /** Callback bei Auswahl eines Knotens */

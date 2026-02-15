@@ -66,7 +66,7 @@ Menubar.displayName = 'Menubar';
 
 // ─── MenubarMenu ────────────────────────────────────────────────────────────
 
-const MenubarMenu = MenubarPrimitive.Menu;
+const MenubarMenu: React.FC<React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Menu>> = MenubarPrimitive.Menu;
 MenubarMenu.displayName = 'MenubarMenu';
 
 // ─── MenubarTrigger ─────────────────────────────────────────────────────────
