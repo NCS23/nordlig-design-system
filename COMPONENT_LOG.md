@@ -2573,20 +2573,233 @@
 
 ---
 
+## [VisuallyHidden] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Used
+- Keine L4-Tokens — rein funktionale Utility-Komponente (sr-only)
+
+### Files
+- `packages/components/src/atoms/VisuallyHidden/VisuallyHidden.tsx`
+- `packages/components/src/atoms/VisuallyHidden/VisuallyHidden.test.tsx` (6 Tests)
+- `packages/components/src/atoms/VisuallyHidden/VisuallyHidden.stories.tsx` (3 Stories)
+- `packages/components/src/atoms/VisuallyHidden/index.ts`
+
+**Tests:** 6 | **Stories:** 3
+
+---
+
+## [Tag] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** MCP Agent + Claude Code (Rewrite)
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-tag-bg-default`, `color-tag-bg-success`, `color-tag-bg-warning`, `color-tag-bg-error`, `color-tag-bg-info`
+  - `color-tag-text-default`, `color-tag-text-success`, `color-tag-text-warning`, `color-tag-text-error`, `color-tag-text-info`
+  - `color-tag-border-default`, `color-tag-border-success`, `color-tag-border-warning`, `color-tag-border-error`, `color-tag-border-info`
+  - `color-tag-border-focus`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-tag`
+- **Token-Datei:** `packages/tokens/src/semantic/tag.json`
+
+### Architecture
+- **cva-Varianten:** default, success, warning, error, info
+- **Sizes:** sm, md
+- **Removable:** optionaler X-Button (lucide-react) mit `onRemove` Callback
+- **Clickable:** optionaler `onClick` mit role=button, tabIndex, Keyboard-Support
+- **ForwardRef:** Standard React.forwardRef Pattern (HTMLSpanElement)
+
+### Files
+- `packages/components/src/atoms/Tag/Tag.tsx`
+- `packages/components/src/atoms/Tag/Tag.test.tsx` (27 Tests)
+- `packages/components/src/atoms/Tag/Tag.stories.tsx` (8 Stories)
+- `packages/components/src/atoms/Tag/index.ts`
+
+### Accessibility
+- role=button + tabIndex=0 bei klickbaren Tags
+- Keyboard Navigation (Enter/Space fuer onClick)
+- Remove-Button mit aria-label "Tag entfernen"
+- Focus Ring via focus-visible
+
+### Note
+- Erster Test des MCP Agent Workflows — Agent generierte Component mit falschen Token-Referenzen,
+  fehlender info-Variante und falschem Import-Pfad. Komplett umgeschrieben.
+
+**Tests:** 27 | **Stories:** 8
+
+---
+
+## [NumberInput] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code (Direkt)
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-numberinput-bg`, `color-numberinput-bg-disabled`
+  - `color-numberinput-text`
+  - `color-numberinput-border`, `color-numberinput-border-hover`, `color-numberinput-border-focus`, `color-numberinput-border-error`
+  - `color-numberinput-stepper-text`, `color-numberinput-stepper-text-hover`, `color-numberinput-stepper-bg-hover`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-numberinput`
+- **Token-Datei:** `packages/tokens/src/semantic/number-input.json`
+
+### Architecture
+- **cva-Varianten:** error (true/false), disabled (true/false)
+- **Sizes:** sm (h-8), md (h-10)
+- **Stepper Buttons:** +/- mit lucide-react (Minus, Plus)
+- **Controlled/Uncontrolled:** value + onChange (controlled) oder defaultValue (uncontrolled)
+- **Min/Max/Step:** Begrenzung + Schrittweite, Buttons deaktiviert bei Grenzwerten
+- **Keyboard:** ArrowUp/ArrowDown zum Inkrementieren/Dekrementieren
+- **Mouse Wheel:** Scrollrad-Support bei Fokus
+- **ForwardRef:** Standard React.forwardRef Pattern (HTMLInputElement)
+
+### Files
+- `packages/components/src/atoms/NumberInput/NumberInput.tsx`
+- `packages/components/src/atoms/NumberInput/NumberInput.test.tsx` (47 Tests)
+- `packages/components/src/atoms/NumberInput/NumberInput.stories.tsx` (10 Stories)
+- `packages/components/src/atoms/NumberInput/index.ts`
+
+### Accessibility
+- role="group" mit aria-label auf Container
+- type="number" + dynamisches inputMode (numeric/decimal)
+- aria-invalid bei error-State
+- aria-valuemin, aria-valuemax, aria-valuenow
+- Stepper-Buttons mit konfigurierbaren aria-labels (decrementLabel/incrementLabel)
+- Native Spinbuttons versteckt via appearance:textfield
+- Focus Ring via focus-within auf Container
+
+### UX-Review Fixes (nach initialem Review)
+- Floating-Point-Praezision via preciseAdd() (0.1 + 0.2 = 0.3)
+- String-Display-State fuer Input-Clearing + onBlur-Validierung
+- Token-basierte Hoehen (--sizing-input-*-height) statt hardcoded h-8/h-10
+- lg Size-Variante hinzugefuegt (konsistent mit Input-Atom)
+- Error-Border bleibt bei hover bestehen
+- DesignTokens-Story mit allen 11 L4-Tokens
+
+**Tests:** 47 | **Stories:** 10
+
+---
+
+## [StatCard] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** MCP Agent + Claude Code (L4-Token-Korrektur)
+**Level:** Organism
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-stat-card-bg`, `color-stat-card-border`
+  - `color-stat-card-text-primary`, `color-stat-card-text-secondary`
+  - `color-stat-card-border-success`, `color-stat-card-border-warning`, `color-stat-card-border-error`
+  - `color-stat-card-trend-up`, `color-stat-card-trend-down`, `color-stat-card-trend-neutral`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-stat-card`
+- **Token-Datei:** `packages/tokens/src/semantic/stat-card.json`
+
+### Architecture
+- **cva-Varianten:** default, success, warning, error (border-left Akzent)
+- **TrendIndicator:** Inline Sub-Component mit Up/Down/Neutral Icons (lucide-react)
+- **ForwardRef:** Standard React.forwardRef Pattern
+
+### Files
+- `packages/components/src/organisms/StatCard/StatCard.tsx`
+- `packages/components/src/organisms/StatCard/StatCard.stories.tsx`
+- `packages/components/src/organisms/StatCard/index.ts`
+
+### Props
+- **title:** string (Pflicht – Metrik-Label)
+- **value:** string | number (Pflicht – Hauptwert)
+- **unit:** string (optional – km, bpm, etc.)
+- **trend:** { value: number, direction: 'up' | 'down' | 'neutral', label?: string }
+- **icon:** ReactNode (optional – Icon links oben)
+- **description:** string (optional – unter dem Wert)
+- **variant:** 'default' | 'success' | 'warning' | 'error'
+
+### Storybook
+- **Stories:** Default, WithTrend, WithIcon, SuccessVariant, WarningVariant, ErrorVariant
+- **Controls:** title, value, unit, variant, trend, icon, description
+
+### Note
+- Ursprünglich mit Card/L3-Tokens generiert, manuell auf eigene L4-Tokens umgestellt
+
+**Tests:** 0 (noch zu erstellen) | **Stories:** 6
+
+---
+
+## [SessionCard] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** MCP Agent + Claude Code (L4-Token-Korrektur)
+**Level:** Organism
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-session-card-bg`, `color-session-card-border`, `color-session-card-border-hover`, `color-session-card-bg-hover`
+  - `color-session-card-bg-error`, `color-session-card-border-error`
+  - `color-session-card-text-primary`, `color-session-card-text-secondary`, `color-session-card-text-tertiary`, `color-session-card-text-error`
+  - `color-session-card-skeleton`, `color-session-card-zone-bg`
+  - `color-session-card-zone-1` bis `color-session-card-zone-5`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-session-card`
+- **Token-Datei:** `packages/tokens/src/semantic/session-card.json`
+
+### Architecture
+- **cva-Varianten:** size (default/compact), state (default/loading/error/interactive)
+- **Sub-Components:** HrZoneBar (5-Zonen Farbbalken), MetricsGrid (max 4 Metriken), SessionCardSkeleton
+- **Smart State:** finalState wird automatisch aus loading/error/onClick abgeleitet
+- **ForwardRef:** Standard React.forwardRef Pattern
+- **Keyboard Support:** Enter/Space löst onClick aus
+
+### Files
+- `packages/components/src/organisms/SessionCard/SessionCard.tsx`
+- `packages/components/src/organisms/SessionCard/SessionCard.test.tsx` (15 Tests)
+- `packages/components/src/organisms/SessionCard/SessionCard.stories.tsx` (12 Stories)
+- `packages/components/src/organisms/SessionCard/index.ts`
+
+### Props
+- **sessionData:** SessionData (Pflicht – Typ, Dauer, Distanz, HF-Zonen, Metriken)
+- **onClick:** () => void (optional – macht Karte interaktiv)
+- **loading:** boolean (Skeleton State)
+- **error:** string (Error State)
+- **size:** 'default' | 'compact'
+- **state:** 'default' | 'loading' | 'error' | 'interactive'
+
+### Accessibility
+- ✅ `role="button"` + `tabIndex={0}` bei interaktiven Karten
+- ✅ `aria-label` mit Trainingstyp und Datum
+- ✅ Keyboard Navigation (Enter/Space)
+- ✅ Focus Ring via focus-visible
+
+### Storybook
+- **Stories:** Default, Interactive, Compact, Loading, Error, CyclingSession, SwimmingSession, StrengthSession, MinimalSession, DarkMode, SessionGrid, AllStates
+- **Controls:** sessionData, onClick, loading, error, size, state
+
+**Tests:** 15 | **Stories:** 12
+
+---
+
 ## Development Statistics
 
-**Total Components:** 56 (56 complete)
+**Total Components:** 60 (60 complete)
 **System:** 1 (ThemeProvider + useTheme)
-**Atoms:** 23 (Button, Badge, Code, Input, Link, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton, Separator, Popover, Alert, ToggleGroup, Avatar, Slider, HoverCard, ScrollArea, AspectRatio, ThemeToggle, Label, Kbd)
+**Atoms:** 26 (Button, Badge, Code, Input, Link, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton, Separator, Popover, Alert, ToggleGroup, Avatar, Slider, HoverCard, ScrollArea, AspectRatio, ThemeToggle, Label, Kbd, VisuallyHidden, Tag, NumberInput)
 **Molecules:** 23 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, ContextMenu, NavigationMenu, EmptyState, Pagination, Sheet, Dialog, Breadcrumbs, Collapsible, Form, Stepper)
-**Organisms:** 8 (Card, Table, Modal, Chart, Command, StatCard, Timeline, Sidebar)
+**Organisms:** 9 (Card, Table, Modal, Chart, Command, StatCard, SessionCard, Timeline, Sidebar)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
-**Test Coverage:** Alle 56 Components 100% getestet (exkl. Button: nur manuell geprüft)
-**Storybook Stories:** 383 Stories (378 + 5 Sidebar)
-**Design Tokens:** 461 L4-Tokens (451 bestehend + 10 Sidebar annotated) + 7 L3 Tokens + 3 L2 + 3 L1
-**Total Tests:** 1001 (949 + 52 Sidebar)
+**Test Coverage:** 57 von 59 Components getestet (exkl. Button: nur manuell geprüft, StatCard: Tests ausstehend)
+**Storybook Stories:** 422 Stories (412 + 10 NumberInput)
+**Design Tokens:** 518 L4-Tokens (507 + 11 NumberInput) + 7 L3 Tokens + 3 L2 + 3 L1
+**Total Tests:** 1096 (1049 + 47 NumberInput)
 **Dark Mode:** ✅ CSS class strategy (.dark) mit 74+ Token-Overrides
 **Charts:** ✅ Recharts Integration (Line, Bar, Area, Pie)
 **Forms:** ✅ React Hook Form + Zod Integration
@@ -2981,5 +3194,7 @@ interface TreeNode {
   - Roving tabindex pattern: focused item gets `tabIndex={0}`, all others `tabIndex={-1}`
   - AutoPlay cleanup via `useEffect` return function — prevents interval leaks on unmount
 
-**Last Updated:** 2026-02-14
-**Design System Status:** ✅ Complete (53 Components, alle Essential Components fertig)
+**Last Updated:** 2026-02-15
+**Design System Status:** ✅ Complete (60 Components, alle Essential Components fertig)
+| 1 | Tag | atoms | Done | 27 | 8 | 17 | Claude Code | No | 2026-02-15 |
+| 2 | NumberInput | atoms | Done | 47 | 10 | 11 | Claude Code | No | 2026-02-15 |

@@ -1,0 +1,20 @@
+{
+  "color": {
+    "$description": "Level 4: StatCard component tokens",
+    "stat-card": {
+      "bg":             { "$type": "color", "$value": "{color.bg.paper}", "$description": "Card background" },
+      "border":         { "$type": "color", "$value": "{color.border.muted}", "$description": "Default border" },
+      "text-primary":   { "$type": "color", "$value": "{color.text.base}", "$description": "Main value text" },
+      "text-secondary": { "$type": "color", "$value": "{color.text.muted}", "$description": "Title, unit, description" },
+      "border-success": { "$type": "color", "$value": "{color.success.border}", "$description": "Success variant left accent" },
+      "border-warning": { "$type": "color", "$value": "{color.warning.border}", "$description": "Warning variant left accent" },
+      "border-error":   { "$type": "color", "$value": "{color.error.border}", "$description": "Error variant left accent" },
+      "trend-up":       { "$type": "color", "$value": "{color.success.text}", "$description": "Positive trend indicator" },
+      "trend-down":     { "$type": "color", "$value": "{color.error.text}", "$description": "Negative trend indicator" },
+      "trend-neutral":  { "$type": "color", "$value": "{color.text.muted}", "$description": "Neutral trend indicator" }
+    }
+  },
+  "radius": {
+    "stat-card": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
+  }
+}

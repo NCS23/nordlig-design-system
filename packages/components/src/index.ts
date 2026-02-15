@@ -95,6 +95,23 @@ export {
   type SkeletonCircleProps,
 } from './atoms/Skeleton';
 
+export {
+  VisuallyHidden,
+  type VisuallyHiddenProps,
+} from './atoms/VisuallyHidden';
+
+export {
+  Tag,
+  tagVariants,
+  type TagProps,
+} from './atoms/Tag';
+
+export {
+  NumberInput,
+  numberInputVariants,
+  type NumberInputProps,
+} from './atoms/NumberInput';
+
 // Molecules
 export { InputField, type InputFieldProps } from './molecules/InputField';
 export {

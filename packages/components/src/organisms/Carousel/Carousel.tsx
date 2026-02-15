@@ -178,17 +178,17 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 
         {/* Dot Indicators */}
         {showDots && slideCount > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 bg-black/30 backdrop-blur-sm rounded-full px-2 py-1.5">
             {slides.map((_, index) => (
               <button
                 key={index}
                 type="button"
                 className={cn(
-                  'w-2 h-2 rounded-full transition-colors cursor-pointer',
+                  'w-2 h-2 rounded-full transition-colors duration-200 cursor-pointer',
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
                   index === currentIndex
-                    ? 'bg-[var(--color-bg-primary)]'
-                    : 'bg-[var(--color-bg-paper)]/60'
+                    ? 'bg-white'
+                    : 'bg-white/50 hover:bg-white/70'
                 )}
                 onClick={() => goToSlide(index)}
                 aria-label={`Gehe zu Slide ${index + 1}`}

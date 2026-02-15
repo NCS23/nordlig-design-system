@@ -12,3 +12,7 @@ storybook-static/
 test-results/
 playwright-report/
 playwright/.cache/
+
+# MCP Agents
+packages/mcp-agents/*/build/
+.agent-memory/

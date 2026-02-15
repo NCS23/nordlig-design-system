@@ -32,6 +32,8 @@ const atomStories: StoryConfig[] = [
   { component: 'Kbd',         stories: ['default', 'key-combination', 'all-sizes', 'shortcuts'] },
   { component: 'Text',        stories: ['body', 'small', 'caption', 'muted', 'all-variants'] },
   { component: 'Heading',     stories: ['level-1', 'level-2', 'level-3', 'all-levels'] },
+  { component: 'Tag',         stories: ['default', 'variants', 'sizes', 'removable', 'clickable', 'all-combinations'] },
+  { component: 'NumberInput', stories: ['default', 'with-min-max', 'error', 'disabled', 'sizes', 'states'] },
 ];
 
 for (const { component, stories } of atomStories) {

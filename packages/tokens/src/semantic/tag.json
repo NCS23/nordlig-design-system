@@ -1,0 +1,94 @@
+{
+  "color": {
+    "$description": "Level 4: Tag component tokens",
+    "tag": {
+      "bg-default": {
+        "$type": "color",
+        "$value": "{color.bg.surface}",
+        "$description": "Default tag background"
+      },
+      "bg-success": {
+        "$type": "color",
+        "$value": "{color.success.bg-subtle}",
+        "$description": "Success variant background"
+      },
+      "bg-warning": {
+        "$type": "color",
+        "$value": "{color.warning.bg-subtle}",
+        "$description": "Warning variant background"
+      },
+      "bg-error": {
+        "$type": "color",
+        "$value": "{color.error.bg-subtle}",
+        "$description": "Error variant background"
+      },
+      "bg-info": {
+        "$type": "color",
+        "$value": "{color.info.bg-subtle}",
+        "$description": "Info variant background"
+      },
+      "text-default": {
+        "$type": "color",
+        "$value": "{color.text.base}",
+        "$description": "Default tag text color"
+      },
+      "text-success": {
+        "$type": "color",
+        "$value": "{color.success.text}",
+        "$description": "Success variant text color"
+      },
+      "text-warning": {
+        "$type": "color",
+        "$value": "{color.warning.text}",
+        "$description": "Warning variant text color"
+      },
+      "text-error": {
+        "$type": "color",
+        "$value": "{color.error.text}",
+        "$description": "Error variant text color"
+      },
+      "text-info": {
+        "$type": "color",
+        "$value": "{color.info.text}",
+        "$description": "Info variant text color"
+      },
+      "border-default": {
+        "$type": "color",
+        "$value": "{color.border.muted}",
+        "$description": "Default tag border"
+      },
+      "border-success": {
+        "$type": "color",
+        "$value": "{color.success.border}",
+        "$description": "Success variant border"
+      },
+      "border-warning": {
+        "$type": "color",
+        "$value": "{color.warning.border}",
+        "$description": "Warning variant border"
+      },
+      "border-error": {
+        "$type": "color",
+        "$value": "{color.error.border}",
+        "$description": "Error variant border"
+      },
+      "border-info": {
+        "$type": "color",
+        "$value": "{color.info.border}",
+        "$description": "Info variant border"
+      },
+      "border-focus": {
+        "$type": "color",
+        "$value": "{color.border.focus}",
+        "$description": "Focus ring color"
+      }
+    }
+  },
+  "radius": {
+    "tag": {
+      "$type": "dimension",
+      "$value": "{radius.component.md}",
+      "$description": "Tag border radius"
+    }
+  }
+}

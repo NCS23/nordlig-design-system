@@ -329,6 +329,71 @@ const cardColors: ColorToken[] = [
   { name: 'card-border', value: '#e2e8f0', cssVar: '--color-card-border', chain: '← border.muted ← neutral-1.200' },
 ];
 
+const sessionCardColors: ColorToken[] = [
+  { name: 'session-card-bg', value: '#ffffff', cssVar: '--color-session-card-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'session-card-border', value: '#e2e8f0', cssVar: '--color-session-card-border', chain: '← border.muted ← neutral-1.200' },
+  { name: 'session-card-border-hover', value: '#cbd5e1', cssVar: '--color-session-card-border-hover', chain: '← border.default ← neutral-1.300' },
+  { name: 'session-card-bg-hover', value: '#f1f5f9', cssVar: '--color-session-card-bg-hover', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'session-card-bg-error', value: '#fef2f2', cssVar: '--color-session-card-bg-error', chain: '← error.bg-subtle ← accent-3.50' },
+  { name: 'session-card-border-error', value: '#ef4444', cssVar: '--color-session-card-border-error', chain: '← error.border ← accent-3.500' },
+  { name: 'session-card-text-primary', value: '#0f172a', cssVar: '--color-session-card-text-primary', chain: '← text.base ← neutral-1.900' },
+  { name: 'session-card-text-secondary', value: '#475569', cssVar: '--color-session-card-text-secondary', chain: '← text.muted ← neutral-1.600' },
+  { name: 'session-card-text-tertiary', value: '#94a3b8', cssVar: '--color-session-card-text-tertiary', chain: '← text.disabled ← neutral-1.400' },
+  { name: 'session-card-text-error', value: '#b91c1c', cssVar: '--color-session-card-text-error', chain: '← error.text ← accent-3.700' },
+  { name: 'session-card-skeleton', value: '#f1f5f9', cssVar: '--color-session-card-skeleton', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'session-card-zone-bg', value: '#f1f5f9', cssVar: '--color-session-card-zone-bg', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'session-card-zone-1', value: '#94a3b8', cssVar: '--color-session-card-zone-1', chain: '← border.strong ← neutral-1.400' },
+  { name: 'session-card-zone-2', value: '#10b981', cssVar: '--color-session-card-zone-2', chain: '← success.border ← accent-1.500' },
+  { name: 'session-card-zone-3', value: '#f59e0b', cssVar: '--color-session-card-zone-3', chain: '← warning.border ← accent-2.500' },
+  { name: 'session-card-zone-4', value: '#b45309', cssVar: '--color-session-card-zone-4', chain: '← warning.text ← accent-2.700' },
+  { name: 'session-card-zone-5', value: '#ef4444', cssVar: '--color-session-card-zone-5', chain: '← error.border ← accent-3.500' },
+];
+
+const statCardColors: ColorToken[] = [
+  { name: 'stat-card-bg', value: '#ffffff', cssVar: '--color-stat-card-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'stat-card-border', value: '#e2e8f0', cssVar: '--color-stat-card-border', chain: '← border.muted ← neutral-1.200' },
+  { name: 'stat-card-text-primary', value: '#0f172a', cssVar: '--color-stat-card-text-primary', chain: '← text.base ← neutral-1.900' },
+  { name: 'stat-card-text-secondary', value: '#475569', cssVar: '--color-stat-card-text-secondary', chain: '← text.muted ← neutral-1.600' },
+  { name: 'stat-card-border-success', value: '#10b981', cssVar: '--color-stat-card-border-success', chain: '← success.border ← accent-1.500' },
+  { name: 'stat-card-border-warning', value: '#f59e0b', cssVar: '--color-stat-card-border-warning', chain: '← warning.border ← accent-2.500' },
+  { name: 'stat-card-border-error', value: '#ef4444', cssVar: '--color-stat-card-border-error', chain: '← error.border ← accent-3.500' },
+  { name: 'stat-card-trend-up', value: '#047857', cssVar: '--color-stat-card-trend-up', chain: '← success.text ← accent-1.700' },
+  { name: 'stat-card-trend-down', value: '#b91c1c', cssVar: '--color-stat-card-trend-down', chain: '← error.text ← accent-3.700' },
+  { name: 'stat-card-trend-neutral', value: '#475569', cssVar: '--color-stat-card-trend-neutral', chain: '← text.muted ← neutral-1.600' },
+];
+
+const tagColors: ColorToken[] = [
+  { name: 'tag-bg-default', value: '#f1f5f9', cssVar: '--color-tag-bg-default', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'tag-bg-success', value: '#ecfdf5', cssVar: '--color-tag-bg-success', chain: '← success.bg-subtle ← accent-1.50' },
+  { name: 'tag-bg-warning', value: '#fffbeb', cssVar: '--color-tag-bg-warning', chain: '← warning.bg-subtle ← accent-2.50' },
+  { name: 'tag-bg-error', value: '#fef2f2', cssVar: '--color-tag-bg-error', chain: '← error.bg-subtle ← accent-3.50' },
+  { name: 'tag-bg-info', value: '#eff6ff', cssVar: '--color-tag-bg-info', chain: '← info.bg-subtle ← accent-4.50' },
+  { name: 'tag-text-default', value: '#0f172a', cssVar: '--color-tag-text-default', chain: '← text.base ← neutral-1.900' },
+  { name: 'tag-text-success', value: '#047857', cssVar: '--color-tag-text-success', chain: '← success.text ← accent-1.700' },
+  { name: 'tag-text-warning', value: '#b45309', cssVar: '--color-tag-text-warning', chain: '← warning.text ← accent-2.700' },
+  { name: 'tag-text-error', value: '#b91c1c', cssVar: '--color-tag-text-error', chain: '← error.text ← accent-3.700' },
+  { name: 'tag-text-info', value: '#1d4ed8', cssVar: '--color-tag-text-info', chain: '← info.text ← accent-4.700' },
+  { name: 'tag-border-default', value: '#e2e8f0', cssVar: '--color-tag-border-default', chain: '← border.muted ← neutral-1.200' },
+  { name: 'tag-border-success', value: '#10b981', cssVar: '--color-tag-border-success', chain: '← success.border ← accent-1.500' },
+  { name: 'tag-border-warning', value: '#f59e0b', cssVar: '--color-tag-border-warning', chain: '← warning.border ← accent-2.500' },
+  { name: 'tag-border-error', value: '#ef4444', cssVar: '--color-tag-border-error', chain: '← error.border ← accent-3.500' },
+  { name: 'tag-border-info', value: '#3b82f6', cssVar: '--color-tag-border-info', chain: '← info.border ← accent-4.500' },
+  { name: 'tag-border-focus', value: '#0ea5e9', cssVar: '--color-tag-border-focus', chain: '← border.focus ← primary-1.500' },
+];
+
+const numberInputColors: ColorToken[] = [
+  { name: 'numberinput-bg', value: '#ffffff', cssVar: '--color-numberinput-bg', chain: '← bg.paper ← neutral-1.0' },
+  { name: 'numberinput-bg-disabled', value: '#f1f5f9', cssVar: '--color-numberinput-bg-disabled', chain: '← bg.surface ← neutral-1.100' },
+  { name: 'numberinput-text', value: '#0f172a', cssVar: '--color-numberinput-text', chain: '← text.base ← neutral-1.900' },
+  { name: 'numberinput-border', value: '#cbd5e1', cssVar: '--color-numberinput-border', chain: '← border.default ← neutral-1.300' },
+  { name: 'numberinput-border-hover', value: '#94a3b8', cssVar: '--color-numberinput-border-hover', chain: '← border.strong ← neutral-1.400' },
+  { name: 'numberinput-border-focus', value: '#0ea5e9', cssVar: '--color-numberinput-border-focus', chain: '← border.focus ← primary-1.500' },
+  { name: 'numberinput-border-error', value: '#ef4444', cssVar: '--color-numberinput-border-error', chain: '← error.border ← accent-3.500' },
+  { name: 'numberinput-stepper-text', value: '#475569', cssVar: '--color-numberinput-stepper-text', chain: '← text.muted ← neutral-1.600' },
+  { name: 'numberinput-stepper-text-hover', value: '#0f172a', cssVar: '--color-numberinput-stepper-text-hover', chain: '← text.base ← neutral-1.900' },
+  { name: 'numberinput-stepper-bg-hover', value: '#f1f5f9', cssVar: '--color-numberinput-stepper-bg-hover', chain: '← bg.surface ← neutral-1.100' },
+];
+
 const checkboxColors: ColorToken[] = [
   { name: 'checkbox-bg', value: '#ffffff', cssVar: '--color-checkbox-bg', chain: '← bg.paper ← neutral-1.0' },
   { name: 'checkbox-border', value: '#cbd5e1', cssVar: '--color-checkbox-border', chain: '← border.default ← neutral-1.300' },
@@ -609,6 +674,22 @@ function ColorsPage() {
 
       <Section title="Level 4 — Component: Card">
         <TokenGrid tokens={cardColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: SessionCard">
+        <TokenGrid tokens={sessionCardColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: StatCard">
+        <TokenGrid tokens={statCardColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: Tag">
+        <TokenGrid tokens={tagColors} />
+      </Section>
+
+      <Section title="Level 4 — Component: NumberInput">
+        <TokenGrid tokens={numberInputColors} />
       </Section>
 
       <Section title="Level 4 — Component: Checkbox">

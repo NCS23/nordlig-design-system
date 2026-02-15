@@ -35,6 +35,9 @@ const darkModeStories = [
   { id: 'organisms-tree--default',                name: 'tree-default' },
   { id: 'organisms-sidebar--default',             name: 'sidebar-default' },
   { id: 'organisms-carousel--default',            name: 'carousel-default' },
+  // Neue Atoms
+  { id: 'atoms-tag--all-combinations',            name: 'tag-all-combinations' },
+  { id: 'atoms-numberinput--states',              name: 'numberinput-states' },
 ];
 
 test.describe('Dark Mode', () => {
