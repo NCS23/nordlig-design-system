@@ -34,6 +34,15 @@ const atomStories: StoryConfig[] = [
   { component: 'Heading',     stories: ['level-1', 'level-2', 'level-3', 'all-levels'] },
   { component: 'Tag',         stories: ['default', 'variants', 'sizes', 'removable', 'clickable', 'all-combinations'] },
   { component: 'NumberInput', stories: ['default', 'with-min-max', 'error', 'disabled', 'sizes', 'states'] },
+  // Tier-2 Batch
+  { component: 'Toggle',      stories: ['default', 'outline', 'ghost', 'all-sizes', 'pressed', 'disabled'] },
+  { component: 'Banner',      stories: ['all-variants', 'dismissible', 'with-action', 'custom-icon'] },
+  { component: 'SearchInput', stories: ['default', 'with-value', 'all-sizes', 'error', 'disabled'] },
+  // P2 Batch
+  { component: 'PasswordInput', stories: ['default', 'with-strength', 'all-sizes', 'disabled'] },
+  { component: 'LoadingOverlay', stories: ['default', 'with-text', 'with-blur'] },
+  { component: 'Rating',        stories: ['default', 'read-only', 'half-stars', 'all-sizes'] },
+  { component: 'Highlight',     stories: ['default', 'multiple-matches', 'case-insensitive'] },
 ];
 
 for (const { component, stories } of atomStories) {

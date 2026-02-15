@@ -1,0 +1,31 @@
+{
+  "color": {
+    "$description": "Level 4: Combobox component tokens",
+    "cmb": {
+      "trigger-bg":          { "$type": "color", "$value": "{color.bg.paper}",          "$description": "Trigger background (matches Input)" },
+      "trigger-border":      { "$type": "color", "$value": "{color.border.default}",    "$description": "Trigger border" },
+      "trigger-text":        { "$type": "color", "$value": "{color.text.base}",         "$description": "Trigger text" },
+      "trigger-placeholder": { "$type": "color", "$value": "{color.text.muted}",        "$description": "Placeholder text" },
+      "content-bg":          { "$type": "color", "$value": "{color.bg.paper}",          "$description": "Dropdown background" },
+      "content-border":      { "$type": "color", "$value": "{color.border.muted}",      "$description": "Dropdown border (subtle)" },
+      "item-hover-bg":       { "$type": "color", "$value": "{color.bg.surface-hover}",  "$description": "Item hover" },
+      "item-selected-bg":    { "$type": "color", "$value": "{color.bg.primary-subtle}", "$description": "Selected item background" },
+      "item-selected-text":  { "$type": "color", "$value": "{color.text.primary}",      "$description": "Selected item text" },
+      "search-bg":           { "$type": "color", "$value": "{color.bg.paper}",          "$description": "Search input background" },
+      "empty-text":          { "$type": "color", "$value": "{color.text.muted}",        "$description": "No results text" }
+    }
+  },
+  "radius": {
+    "cmb": {
+      "trigger": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Trigger border radius" },
+      "content": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Dropdown border radius" }
+    }
+  },
+  "spacing": {
+    "cmb": {
+      "content-padding": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Dropdown inner padding" },
+      "item-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Item horizontal padding" },
+      "item-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Item vertical padding" }
+    }
+  }
+}

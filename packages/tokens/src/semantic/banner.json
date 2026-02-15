@@ -1,0 +1,27 @@
+{
+  "color": {
+    "$description": "Level 4: Banner component tokens",
+    "banner": {
+      "info-bg":        { "$type": "color", "$value": "{color.info.bg}",      "$description": "Info background" },
+      "info-text":      { "$type": "color", "$value": "{color.info.text}",    "$description": "Info text" },
+      "info-border":    { "$type": "color", "$value": "{color.info.border}",  "$description": "Info border" },
+      "success-bg":     { "$type": "color", "$value": "{color.success.bg}",     "$description": "Success background" },
+      "success-text":   { "$type": "color", "$value": "{color.success.text}",   "$description": "Success text" },
+      "success-border": { "$type": "color", "$value": "{color.success.border}", "$description": "Success border" },
+      "warning-bg":     { "$type": "color", "$value": "{color.warning.bg}",     "$description": "Warning background" },
+      "warning-text":   { "$type": "color", "$value": "{color.warning.text}",   "$description": "Warning text" },
+      "warning-border": { "$type": "color", "$value": "{color.warning.border}", "$description": "Warning border" },
+      "error-bg":       { "$type": "color", "$value": "{color.error.bg}",       "$description": "Error background" },
+      "error-text":     { "$type": "color", "$value": "{color.error.text}",     "$description": "Error text" },
+      "error-border":   { "$type": "color", "$value": "{color.error.border}",   "$description": "Error border" },
+      "dismiss":        { "$type": "color", "$value": "{color.text.muted}",     "$description": "Dismiss icon color" }
+    }
+  },
+  "spacing": {
+    "banner": {
+      "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Horizontal padding" },
+      "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Vertical padding" },
+      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.md}",     "$description": "Gap between elements" }
+    }
+  }
+}

@@ -239,6 +239,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
           {isSelected && (
             <Check
               size={14}
+              aria-hidden="true"
               className="shrink-0 text-[var(--color-select-check-icon)]"
             />
           )}
@@ -271,6 +272,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               </span>
               <ChevronDown
                 size={16}
+                aria-hidden="true"
                 className={cn(
                   'shrink-0 transition-transform text-[var(--color-select-icon)]',
                   open && 'rotate-180'
@@ -298,6 +300,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                 <div className="relative">
                   <Search
                     size={14}
+                    aria-hidden="true"
                     className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--color-select-icon)]"
                   />
                   <input

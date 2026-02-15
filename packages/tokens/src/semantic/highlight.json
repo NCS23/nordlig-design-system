@@ -1,0 +1,12 @@
+{
+  "color": {
+    "$description": "Level 4: Highlight component tokens",
+    "hl": {
+      "bg":   { "$type": "color", "$value": "{color.warning.bg}",  "$description": "Highlight background (yellow)" },
+      "text": { "$type": "color", "$value": "{color.text.base}",   "$description": "Highlight text" }
+    }
+  },
+  "radius": {
+    "hl": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Highlight border radius" }
+  }
+}

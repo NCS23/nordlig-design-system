@@ -79,7 +79,7 @@ Kontext, Entscheidungen, Blocker, offene Fragen.
 
 ### [NDS-001] Toggle (Atom) — P1
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P1 (kritisch) — Standalone Toggle fehlt, nur ToggleGroup vorhanden
 **Prefix:** `tgl` | **Blueprint:** `atoms/Switch/Switch.tsx`
 **Dependencies:** `@radix-ui/react-toggle` (muss installiert werden)
@@ -111,24 +111,24 @@ aber ein einzelner Toggle fehlt.
 | `sizing.tgl.lg` | 36px | Hoehe lg |
 
 **Task Breakdown:**
-- [ ] 1. `@radix-ui/react-toggle` installieren + L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (forwardRef, cva-Varianten)
-- [ ] 3. Unit Tests schreiben (~12 Tests)
-- [ ] 4. Stories schreiben (Default, Outline, WithIcon, AllSizes, Controlled, Disabled)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. `@radix-ui/react-toggle` installieren + L4-Tokens (nutzt bestehende `toggle.json`)
+- [x] 2. Komponente implementiert (forwardRef, cva 3 Varianten, 3 Groessen)
+- [x] 3. 12 Unit Tests — alle bestanden
+- [x] 4. 8 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert
+- [x] 6. UX Review: 0 Issues (sauber)
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- Radix Toggle ist ein einfaches Primitive — weniger komplex als ToggleGroup.
-- Sizing-Tokens analog zu CopyButton (28/32/36px fuer icon-zentrierte Buttons).
+- Kein neues Token-JSON noetig — nutzt bestehende ToggleGroup-Tokens (`toggle.json`).
+- UX Review ergab 0 Issues — saubere Radix-Delegation.
 
 ---
 
 ### [NDS-002] Combobox (Molecule) — P1
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P1 (kritisch) — Autocomplete/Searchable-Select ist eine Kernluecke
 **Prefix:** `cmb` | **Blueprint:** `organisms/Command/Command.tsx` + `molecules/Select/Select.tsx`
 **Dependencies:** keine neuen — nutzt bestehende Popover + Command intern
@@ -167,25 +167,25 @@ shadcn/ui-Pattern: `<Popover><Command>` Komposition.
 | `spacing.cmb.item-padding-y` | `{spacing.component.padding.sm}` | Item Padding Y |
 
 **Task Breakdown:**
-- [ ] 1. L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (Popover + Command Komposition, forwardRef auf Trigger)
-- [ ] 3. Unit Tests schreiben (~15 Tests)
-- [ ] 4. Stories schreiben (Default, WithGroups, Controlled, Empty, Disabled, InForm)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. L4-Tokens erstellt (`combobox.json` mit 16 Tokens) + Token Build
+- [x] 2. Komponente implementiert (Popover + cmdk, forwardRef, 11 color + 2 radius + 3 spacing Tokens)
+- [x] 3. 13 Unit Tests — alle bestanden
+- [x] 4. 7 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert (ersetzt alten Select/Combobox-Export)
+- [x] 6. UX Review: 1 Critical + 2 Major gefixt (Shadow-Token, aria-hidden Icons)
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- Kein neues Package noetig! Popover + Command (cmdk) sind bereits installiert.
-- Pattern analog zu shadcn/ui Combobox: Popover wrapping CommandInput + CommandList.
-- Trigger soll wie Select-Trigger aussehen (Input-aehnlich mit Chevron).
+- Falsches L3-Token `color.bg.input` → korrigiert zu `color.bg.paper`.
+- Shadow-Token `--shadow-elevation-md` existiert nicht → korrigiert zu `--shadow-select-popover`.
+- Eigenstaendige Komponente (nicht mehr Teil von Select-Modul).
 
 ---
 
 ### [NDS-003] Banner (Atom) — P1
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P1 (kritisch) — Persistente Benachrichtigungen fehlen (Toast ist transient)
 **Prefix:** `banner` | **Blueprint:** `atoms/Alert/Alert.tsx`
 **Dependencies:** keine
@@ -224,20 +224,18 @@ full-width, optional dismissible. Unterschied zu Toast: persistent, nicht auto-h
 | `radius.banner` | `{radius.component.none}` | Kein Radius (full-width) |
 
 **Task Breakdown:**
-- [ ] 1. L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (forwardRef, cva fuer Varianten)
-- [ ] 3. Unit Tests schreiben (~14 Tests)
-- [ ] 4. Stories schreiben (AllVariants, Dismissible, WithAction, WithCustomIcon, Stacked)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. L4-Tokens erstellt (`banner.json` mit 16 Tokens) + Token Build
+- [x] 2. Komponente implementiert (forwardRef, cva 4 Varianten, BannerContent Sub-Komponente)
+- [x] 3. 15 Unit Tests — alle bestanden
+- [x] 4. 8 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert
+- [x] 6. UX Review: 1 Critical + 2 Major gefixt (focus-visible Dismiss, aria-hidden Icons, statische Icon-Klassen-Map)
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- Alert ist fuer Inline-Benachrichtigungen, Banner fuer seitenweite/persistente.
-- radius: none weil typischerweise full-width am oberen/unteren Rand.
-- L3-Tokens `color.info.*`, `color.success.*` etc. muessen geprueft werden ob sie existieren.
-  Falls nicht: direkt auf L2/L1 verweisen oder L3 erweitern.
+- L3-Tokens `color.info.*`, `color.success.*` etc. existieren alle.
+- Template-Literal fuer Icon-Klassen durch statische Map ersetzt (Tailwind JIT-kompatibel).
 
 ---
 
@@ -293,7 +291,7 @@ Trigger. Durchsuchbar wie Combobox. Baut auf NDS-002 (Combobox) Pattern auf.
 
 ### [NDS-005] Rating (Atom) — P2
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P2 (wichtig) — Standard fuer Bewertungen, Feedback, Reviews
 **Prefix:** `rtg` | **Blueprint:** keiner (neu)
 **Dependencies:** keine — lucide-react (Star-Icon) ist installiert
@@ -303,12 +301,12 @@ Sterne-Bewertung (oder beliebiges Icon). Interaktiv oder read-only.
 Unterstuetzt halbe Sterne, Custom-Icons, und verschiedene Groessen.
 
 **Akzeptanzkriterien:**
-- [ ] Klickbare Sterne (1 bis `max`)
-- [ ] Read-only Modus
-- [ ] Hover-Preview (zeigt Bewertung vor Klick)
-- [ ] Halbe Sterne optional (`precision: 0.5`)
+- [x] Klickbare Sterne (1 bis `max`)
+- [x] Read-only Modus
+- [x] Hover-Preview (zeigt Bewertung vor Klick)
+- [x] Halbe Sterne optional (`precision: 0.5`)
 - [ ] Custom Icon moeglich
-- [ ] Keyboard: Pfeiltasten + Home/End
+- [x] Keyboard: Pfeiltasten + Home/End
 
 **L4-Token-Mapping:**
 | Token | L3 Referenz | Zweck |
@@ -323,25 +321,26 @@ Unterstuetzt halbe Sterne, Custom-Icons, und verschiedene Groessen.
 | `sizing.rtg.lg` | 24px | Stern-Groesse lg |
 
 **Task Breakdown:**
-- [ ] 1. L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (forwardRef, Keyboard-Navigation)
-- [ ] 3. Unit Tests schreiben (~14 Tests)
-- [ ] 4. Stories schreiben (Default, ReadOnly, HalfStars, CustomIcon, AllSizes, WithLabel)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. L4-Tokens erstellt (8 Tokens) + Token Build
+- [x] 2. Komponente implementiert (forwardRef, Keyboard-Navigation, roving tabindex)
+- [x] 3. 14 Unit Tests — alle bestanden
+- [x] 4. 6 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert
+- [x] 6. UX Review: 3 Critical + 3 Major gefixt (roving tabindex, focus-visible, aria-label, text-[color:], aria-orientation)
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- `role="radiogroup"` mit `role="radio"` pro Stern fuer Accessibility.
-- Precision 0.5: Halber Stern via CSS `clip-path` oder zwei ueberlagerte Icons.
-- Warning-Tokens (Gold/Amber) passen gut fuer Sterne-Farbe.
+- `role="radiogroup"` mit `role="radio"` pro Stern fuer interaktiven Modus, `role="img"` fuer readOnly/disabled.
+- Precision 0.5: Halber Stern via CSS `clip-path: inset(0 50% 0 0)`.
+- Roving tabindex: Aktiver Stern hat `tabIndex={0}`, rest `tabIndex={-1}`.
+- Custom Icon nicht implementiert (nicht im Scope, kann spaeter ergaenzt werden).
 
 ---
 
 ### [NDS-006] LoadingOverlay (Atom) — P2
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P2 (wichtig) — Fehlt fuer Container-Ladezustaende
 **Prefix:** `ldovl` | **Blueprint:** `atoms/Spinner/Spinner.tsx`
 **Dependencies:** keine — nutzt Spinner intern
@@ -351,11 +350,11 @@ Semi-transparentes Overlay ueber einem Container waehrend Ladezustaenden.
 Zeigt Spinner + optionalen Text. Kann auf beliebige Container angewendet werden.
 
 **Akzeptanzkriterien:**
-- [ ] Absolut positioniertes Overlay ueber Parent-Container
-- [ ] Spinner (bestehende Komponente) zentriert
-- [ ] Optionaler Lade-Text
-- [ ] Backdrop-Blur optional
-- [ ] `aria-busy="true"` auf Container
+- [x] Absolut positioniertes Overlay ueber Parent-Container
+- [x] Spinner (bestehende Komponente) zentriert
+- [x] Optionaler Lade-Text
+- [x] Backdrop-Blur optional
+- [x] `aria-busy="true"` auf Container
 
 **L4-Token-Mapping:**
 | Token | L3 Referenz | Zweck |
@@ -367,18 +366,18 @@ Zeigt Spinner + optionalen Text. Kann auf beliebige Container angewendet werden.
 | `radius.ldovl` | `{radius.component.md}` | Eckenradius (matching Container) |
 
 **Task Breakdown:**
-- [ ] 1. L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (forwardRef, Spinner-Integration)
-- [ ] 3. Unit Tests schreiben (~10 Tests)
-- [ ] 4. Stories schreiben (Default, WithText, WithBlur, OnCard, OnTable)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. L4-Tokens erstellt (5 Tokens) + Token Build
+- [x] 2. Komponente implementiert (forwardRef, Spinner-Integration, HTML hidden-Attr fuer Live-Region)
+- [x] 3. 10 Unit Tests — alle bestanden
+- [x] 4. 5 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert
+- [x] 6. UX Review: 1 Critical + 2 Major gefixt (Live-Region via hidden-Attr statt null, text-[color:])
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- Spinner-Atom existiert bereits — wiederverwenden.
-- `color.bg.overlay` L3-Token muss geprueft werden ob er existiert.
+- Spinner-Atom wiederverwendet. `color.bg.overlay` L3-Token existiert.
+- Live-Region-Fix: HTML `hidden` Attribut statt `return null` damit `role="status"` im DOM bleibt.
 - Pattern: Parent braucht `position: relative`, Overlay ist `position: absolute inset-0`.
 
 ---
@@ -510,7 +509,7 @@ Baseline-Screenshots generieren. Dark-Mode Coverage sicherstellen.
 
 ### [NDS-010] SearchInput (Atom) — P1
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P1 (kritisch) — Extrem haeufiges Pattern, fehlt komplett
 **Prefix:** `sinput` | **Blueprint:** `atoms/Input/Input.tsx`
 **Dependencies:** keine — lucide-react (Search, X Icons) ist installiert
@@ -538,19 +537,19 @@ Erweitert das bestehende Input-Atom um Such-spezifisches Verhalten.
 | `spacing.sinput.icon-gap` | `{spacing.component.gap.sm}` | Abstand Icon–Text |
 
 **Task Breakdown:**
-- [ ] 1. L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (forwardRef, Input-Wrapper mit Icons)
-- [ ] 3. Unit Tests schreiben (~14 Tests)
-- [ ] 4. Stories schreiben (Default, WithValue, WithDebounce, Disabled, InTable, WithClear)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. L4-Tokens erstellt (`searchinput.json` mit 5 Tokens) + Token Build
+- [x] 2. Komponente implementiert (forwardRef auf Input, mergedRef-Pattern, inputVariants wiederverwendet)
+- [x] 3. 14 Unit Tests — alle bestanden
+- [x] 4. 7 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert
+- [x] 6. UX Review: 1 Critical + 2 Major gefixt (Ref auf Input statt Div, Debounce mount-guard, role="search")
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- Baut auf dem bestehenden Input-Atom auf — kein eigenes Textfeld, sondern Wrapper.
-- Debounce via `useEffect` + `setTimeout` (kein lodash noetig).
-- Wenige eigene Tokens weil Input-Tokens fuer Basis-Styling wiederverwendet werden.
+- Ref forwarded jetzt auf `<input>` (nicht wrapper-div) fuer konsistentes Focus-Management.
+- Debounce feuert nicht mehr beim initialen Mount (mountedRef guard).
+- Wrapper-div hat `role="search"` Landmark fuer bessere Screen-Reader-Navigation.
 
 ---
 
@@ -609,7 +608,7 @@ Zwei Modi: Dropdown-Scroll (wie iOS) oder Input-basiert.
 
 ### [NDS-012] PasswordInput (Atom) — P2
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P2 (wichtig) — Standard fuer Login/Registrierung
 **Prefix:** `pwinput` | **Blueprint:** `atoms/Input/Input.tsx`
 **Dependencies:** keine — lucide-react (Eye, EyeOff Icons) ist installiert
@@ -619,11 +618,11 @@ Passwort-Eingabefeld mit Toggle-Button zum Ein-/Ausblenden des Passworts.
 Erweitert das bestehende Input-Atom. Optional: Staerke-Indikator.
 
 **Akzeptanzkriterien:**
-- [ ] Standard: `type="password"` (Punkte)
-- [ ] Toggle-Button zum Umschalten auf `type="text"`
-- [ ] Optional: Passwort-Staerke-Indikator (weak/medium/strong)
-- [ ] Alle Input-Props durchgereicht
-- [ ] `aria-label` auf Toggle-Button
+- [x] Standard: `type="password"` (Punkte)
+- [x] Toggle-Button zum Umschalten auf `type="text"`
+- [x] Optional: Passwort-Staerke-Indikator (weak/medium/strong)
+- [x] Alle Input-Props durchgereicht
+- [x] `aria-label` auf Toggle-Button
 
 **L4-Token-Mapping:**
 | Token | L3 Referenz | Zweck |
@@ -635,19 +634,19 @@ Erweitert das bestehende Input-Atom. Optional: Staerke-Indikator.
 | `color.pwinput.strength-strong` | `{color.success.text}` | Staerke: stark |
 
 **Task Breakdown:**
-- [ ] 1. L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (forwardRef, Input-Wrapper mit Toggle)
-- [ ] 3. Unit Tests schreiben (~12 Tests)
-- [ ] 4. Stories schreiben (Default, Visible, WithStrength, Disabled, InForm)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. L4-Tokens erstellt (5 Tokens) + Token Build
+- [x] 2. Komponente implementiert (forwardRef, Input-Wrapper, Eye/EyeOff Toggle, Strength-Meter)
+- [x] 3. 12 Unit Tests — alle bestanden
+- [x] 4. 5 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert
+- [x] 6. UX Review: 2 Critical + 2 Major gefixt (role=meter auf Strength-Bar, aria-live, Toggle fokussierbar, text-[color:])
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- Baut auf Input-Atom auf, wenige eigene Tokens.
-- Staerke-Indikator: Optionale `strengthFn`-Prop (User bringt eigene Logik mit).
-- Toggle MUSS `type="button"` haben (nicht Submit im Form).
+- Baut auf Input-Atom auf (inputVariants wiederverwendet).
+- Staerke-Indikator: `role="meter"` mit `aria-valuenow`/`aria-valuetext` + `aria-live="polite"`.
+- Toggle-Button ist Tab-fokussierbar (kein `tabIndex={-1}`) + focus-visible Styles.
 
 ---
 
@@ -802,7 +801,7 @@ gegen WCAG 2.1 AA Kriterien via axe-core.
 
 ### [NDS-017] Highlight (Atom) — P3
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P3 (nice-to-have) — Text-Markierung fuer Suchtreffer, Keywords
 **Prefix:** `hl` | **Blueprint:** `atoms/Text/Text.tsx`
 **Dependencies:** keine
@@ -812,11 +811,11 @@ Markiert Teile eines Textes visuell hervor (z.B. Suchtreffer in einer Liste).
 Nimmt einen Suchbegriff und den Text als Props und wrapped Treffer in `<mark>`.
 
 **Akzeptanzkriterien:**
-- [ ] Markiert alle Vorkommen eines Suchbegriffs im Text
-- [ ] Case-insensitive matching
-- [ ] Custom Highlight-Styling via Tokens
-- [ ] Mehrere Suchbegriffe gleichzeitig
-- [ ] Keine Markierung bei leerem Suchbegriff
+- [x] Markiert alle Vorkommen eines Suchbegriffs im Text
+- [x] Case-insensitive matching
+- [x] Custom Highlight-Styling via Tokens
+- [x] Mehrere Suchbegriffe gleichzeitig
+- [x] Keine Markierung bei leerem Suchbegriff
 
 **L4-Token-Mapping:**
 | Token | L3 Referenz | Zweck |
@@ -826,19 +825,19 @@ Nimmt einen Suchbegriff und den Text als Props und wrapped Treffer in `<mark>`.
 | `radius.hl` | `{radius.component.sm}` | Highlight-Radius |
 
 **Task Breakdown:**
-- [ ] 1. L4-Tokens erstellen + Token Build
-- [ ] 2. Komponente implementieren (forwardRef, Regex-basiertes Splitting)
-- [ ] 3. Unit Tests schreiben (~10 Tests)
-- [ ] 4. Stories schreiben (Default, MultipleMatches, CaseInsensitive, NoMatch, InList)
-- [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
-- [ ] 6. Design & UX Review + Fixes
-- [ ] 7. Visual Tests (Playwright)
-- [ ] 8. Storybook Build verifizieren
+- [x] 1. L4-Tokens erstellt (3 Tokens) + Token Build
+- [x] 2. Komponente implementiert (forwardRef, Regex-basiertes Splitting, escapeRegExp)
+- [x] 3. 10 Unit Tests — alle bestanden
+- [x] 4. 5 Stories geschrieben
+- [x] 5. Infrastructure aktualisiert
+- [x] 6. UX Review: 1 Major gefixt (Runtime-Guard fuer leeren/undefined children)
+- [x] 7. Visual Tests hinzugefuegt
+- [x] 8. Storybook Build erfolgreich
 
 **Notizen:**
-- Einfache Komponente: `text.split(regex)` → abwechselnd Text/Mark Elemente.
-- `<mark>` ist semantisch korrekt fuer Hervorhebungen.
-- Warning-BG Token (Gelb) ist Standard fuer Highlight-Farbe.
+- `<mark>` Element ist semantisch korrekt fuer Hervorhebungen.
+- `escapeRegExp` schuetzt vor Regex-Injection in Suchbegriffen.
+- Runtime-Guard: `children ?? ''` Fallback fuer undefined-Faelle.
 
 ---
 
@@ -889,7 +888,9 @@ Fuer Beschreibungen, Kommentare, Produktbeschreibungen.
 
 > Stories die aktuell in Bearbeitung sind. Maximal 5 gleichzeitig (1 Batch).
 
-_Aktuell leer._
+_(leer — naechster Batch kann gestartet werden)_
+
+
 
 ---
 
@@ -922,6 +923,8 @@ Table, Timeline, Tree
 - _Basis-Set:_ ~59 Komponenten (initiale Entwicklung)
 - _Tier 1 (5):_ AlertDialog, InputOTP, Menubar, Drawer, DataTable
 - _Tier 2 (5):_ Blockquote, CopyButton, Image, Toolbar, Resizable
+- _Tier 3 / P1 Batch (4):_ Toggle (NDS-001), Combobox (NDS-002), Banner (NDS-003), SearchInput (NDS-010)
+- _P2 Batch (4):_ PasswordInput (NDS-012), LoadingOverlay (NDS-006), Rating (NDS-005), Highlight (NDS-017)
 
 ---
 
@@ -933,3 +936,5 @@ Table, Timeline, Tree
 | 2026-02-15 | 9 Stories hinzugefuegt: Toggle, Combobox, Banner, MultiSelect, Rating, LoadingOverlay, SegmentedControl, Test-Nachruestung, Visual Regression. |
 | 2026-02-15 | NDS-008 Scope reduziert (P2→P3, nur 3 Atoms unter 8 Tests). NDS-009 heraufgestuft (P3→P2, nur 6% Coverage). |
 | 2026-02-15 | 9 neue Stories: SearchInput (NDS-010), TimePicker (NDS-011), PasswordInput (NDS-012), ColorPicker (NDS-013), Generator CLI (NDS-014), Changelog (NDS-015), a11y CI (NDS-016), Highlight (NDS-017), Spoiler (NDS-018). |
+| 2026-02-15 | **P1 Batch Done:** NDS-001 (Toggle), NDS-002 (Combobox), NDS-003 (Banner), NDS-010 (SearchInput). 54 Tests, 30 Stories, 37 neue Tokens. UX Review mit 3 Critical + 6 Major Issues — alle gefixt. Komponentenstand: 74. |
+| 2026-02-15 | **P2 Batch Done:** NDS-012 (PasswordInput), NDS-006 (LoadingOverlay), NDS-005 (Rating), NDS-017 (Highlight). 46 Tests, 21 Stories, 21 neue Tokens. UX Review mit 5 Critical + 8 Major Issues — alle gefixt. Komponentenstand: 78. |

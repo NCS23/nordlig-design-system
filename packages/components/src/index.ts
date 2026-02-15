@@ -129,6 +129,19 @@ export {
 } from './atoms/Blockquote';
 export { CopyButton, type CopyButtonProps } from './atoms/CopyButton';
 export { Image, imageVariants, type ImageProps } from './atoms/Image';
+export { Toggle, toggleVariants, type ToggleProps } from './atoms/Toggle';
+export {
+  Banner,
+  bannerVariants,
+  BannerContent,
+  type BannerProps,
+  type BannerContentProps,
+} from './atoms/Banner';
+export { SearchInput, type SearchInputProps } from './atoms/SearchInput';
+export { PasswordInput, type PasswordInputProps } from './atoms/PasswordInput';
+export { LoadingOverlay, type LoadingOverlayProps } from './atoms/LoadingOverlay';
+export { Rating, type RatingProps } from './atoms/Rating';
+export { Highlight, type HighlightProps } from './atoms/Highlight';
 
 // Molecules
 export { InputField, type InputFieldProps } from './molecules/InputField';
@@ -143,15 +156,20 @@ export {
 } from './molecules/DatePicker';
 export {
   Select,
-  Combobox,
   MultiSelect,
   type SelectProps,
   type SelectOption,
   type SelectGroup,
   type SelectOptions,
-  type ComboboxProps,
   type MultiSelectProps,
 } from './molecules/Select';
+export {
+  Combobox,
+  type ComboboxProps,
+  type ComboboxOption,
+  type ComboboxGroup,
+  type ComboboxOptions,
+} from './molecules/Combobox';
 export {
   Textarea,
   textareaVariants,

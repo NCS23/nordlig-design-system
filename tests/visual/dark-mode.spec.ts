@@ -38,6 +38,16 @@ const darkModeStories = [
   // Neue Atoms
   { id: 'atoms-tag--all-combinations',            name: 'tag-all-combinations' },
   { id: 'atoms-numberinput--states',              name: 'numberinput-states' },
+  // Tier-2 Batch
+  { id: 'atoms-toggle--default',                 name: 'toggle-default' },
+  { id: 'atoms-banner--all-variants',            name: 'banner-all-variants' },
+  { id: 'atoms-searchinput--default',            name: 'searchinput-default' },
+  { id: 'molecules-combobox--default',           name: 'combobox-default' },
+  // P2 Batch
+  { id: 'atoms-passwordinput--default',         name: 'passwordinput-default' },
+  { id: 'atoms-loadingoverlay--default',        name: 'loadingoverlay-default' },
+  { id: 'atoms-rating--default',                name: 'rating-default' },
+  { id: 'atoms-highlight--default',             name: 'highlight-default' },
 ];
 
 test.describe('Dark Mode', () => {

@@ -3741,5 +3741,356 @@ Resizable-Panel-Layout basierend auf react-resizable-panels. Bietet horizontale 
 
 ---
 
+## [Toggle] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Standalone Toggle-Button basierend auf `@radix-ui/react-toggle`. Bietet Pressed/Unpressed-Zustand mit 3 Varianten (default, outline, ghost) und 3 Groessen (sm, md, lg). Verwendet bestehende ToggleGroup-Tokens.
+
+### Tokens Created
+- **Keine neuen Tokens** — nutzt bestehende ToggleGroup L4-Tokens (`toggle.json`)
+- `color-toggle-bg`, `color-toggle-border`, `color-toggle-text`, `color-toggle-hover-bg`
+- `color-toggle-active-bg`, `color-toggle-active-text`, `color-toggle-active-border`
+- `sizing-toggle-{sm|md|lg}-{height|padding-x|font-size}`, `radius-toggle`
+
+### Files
+- `packages/components/src/atoms/Toggle/Toggle.tsx`
+- `packages/components/src/atoms/Toggle/Toggle.test.tsx`
+- `packages/components/src/atoms/Toggle/Toggle.stories.tsx`
+- `packages/components/src/atoms/Toggle/index.ts`
+
+### Variants (CVA)
+- **variant:** default, outline, ghost
+- **size:** sm, md, lg
+
+### Test Coverage
+- ✅ 12 Tests: Rendering, ref-Forwarding, className, displayName, Token-Klassen, 3 Varianten, 3 Groessen, Toggle-Zustand (aria-pressed/data-state), disabled, kontrollierter Modus
+
+### Accessibility
+- ✅ `aria-pressed` Toggle-Semantik (Radix)
+- ✅ `data-state=on/off` fuer Styling
+- ✅ Focus-Ring auf focus-visible
+- ✅ Disabled-State
+
+### Storybook
+- **Stories:** Default, AllVariants, AllSizes, Controlled, WithIcon, Disabled, InGroup, TextFormatting
+
+**Tests:** 12 | **Stories:** 8
+
+---
+
+## [Banner] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Vollbreiter persistenter Benachrichtigungs-Banner mit 4 Varianten (info, success, warning, error). Unterstuetzt dismiss, custom Icon, Action-Slot. Setzt `role="status"` fuer info/success und `role="alert"` fuer warning/error.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-banner-info-bg`, `color-banner-info-text`, `color-banner-info-border`
+  - `color-banner-success-bg`, `color-banner-success-text`, `color-banner-success-border`
+  - `color-banner-warning-bg`, `color-banner-warning-text`, `color-banner-warning-border`
+  - `color-banner-error-bg`, `color-banner-error-text`, `color-banner-error-border`
+  - `color-banner-dismiss`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-banner-padding-x`, `spacing-banner-padding-y`, `spacing-banner-gap`
+- **16 neue Banner-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Banner/Banner.tsx`
+- `packages/components/src/atoms/Banner/Banner.test.tsx`
+- `packages/components/src/atoms/Banner/Banner.stories.tsx`
+- `packages/components/src/atoms/Banner/index.ts`
+- `packages/tokens/src/semantic/banner.json`
+
+### Sub-Components
+- **Banner** — Hauptkomponente mit forwardRef
+- **BannerContent** — Optionaler Content-Wrapper mit forwardRef
+
+### Props
+- **variant:** info, success, warning, error
+- **dismissible:** boolean
+- **onDismiss:** () => void
+- **icon:** ReactNode (custom Icon, null zum Ausblenden)
+- **action:** ReactNode (CTA-Slot)
+
+### Test Coverage
+- ✅ 15 Tests: Rendering, ref, className, displayName, Token-Klassen, 4 Varianten, role=status/alert, Standard-Icon, Custom-Icon, icon={null}, Action-Slot, dismissible, onDismiss, BannerContent displayName
+
+### Accessibility
+- ✅ `role="status"` fuer info/success
+- ✅ `role="alert"` fuer warning/error
+- ✅ Dismiss-Button mit `aria-label="Schließen"`
+
+### Storybook
+- **Stories:** Default, AllVariants, Dismissible, WithAction, CustomIcon, NoIcon, LongContent, Stacked
+
+**Tests:** 15 | **Stories:** 8
+
+---
+
+## [SearchInput] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Such-Eingabefeld mit Such-Icon (links), Clear-Button (rechts), Debounce-Support. Nutzt bestehende Input-Varianten (`inputVariants`). Unterstuetzt kontrolliert/unkontrolliert, Escape leert, Enter loest Suche aus.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-sinput-icon` — Such-Icon Standard
+  - `color-sinput-icon-focus` — Such-Icon bei Fokus
+  - `color-sinput-clear` — Clear-Button Standard
+  - `color-sinput-clear-hover` — Clear-Button Hover
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-sinput-icon-gap` — Abstand Icon-Text
+- **5 neue SearchInput-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/SearchInput/SearchInput.tsx`
+- `packages/components/src/atoms/SearchInput/SearchInput.test.tsx`
+- `packages/components/src/atoms/SearchInput/SearchInput.stories.tsx`
+- `packages/components/src/atoms/SearchInput/index.ts`
+- `packages/tokens/src/semantic/searchinput.json`
+
+### Props
+- **inputSize:** sm, md, lg (via inputVariants)
+- **error:** boolean
+- **onSearch:** (value: string) => void
+- **onClear:** () => void
+- **debounceMs:** number
+
+### Test Coverage
+- ✅ 14 Tests: Rendering mit Such-Icon, ref auf wrapper, className, displayName, Token-Klassen, Clear-Button Sichtbarkeit, Clear leert Wert, onClear, Enter/onSearch, Escape/onClear, disabled, kontrolliert, Groessen, Debounce
+
+### Accessibility
+- ✅ `type="search"` fuer native Semantik
+- ✅ `aria-invalid` bei Fehler
+- ✅ Clear-Button mit `aria-label="Leeren"`
+- ✅ Keyboard: Enter sucht, Escape leert
+
+### Storybook
+- **Stories:** Default, WithPlaceholder, Controlled, Disabled, Error, Sizes, Debounce
+
+**Tests:** 14 | **Stories:** 7
+
+---
+
+## [Combobox] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Description
+Durchsuchbare Dropdown-Auswahl basierend auf Popover + cmdk (Command). Bietet Keyboard-Navigation, Filterung, Einzel-Auswahl, gruppierte Optionen. Ersetzt die alte Combobox aus dem Select-Modul als eigenstaendige Komponente mit L4-Tokens.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-cmb-trigger-bg`, `color-cmb-trigger-border`, `color-cmb-trigger-text`, `color-cmb-trigger-placeholder`
+  - `color-cmb-content-bg`, `color-cmb-content-border`
+  - `color-cmb-item-hover-bg`, `color-cmb-item-selected-bg`, `color-cmb-item-selected-text`
+  - `color-cmb-search-bg`, `color-cmb-empty-text`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-cmb-trigger`, `radius-cmb-content`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-cmb-content-padding`, `spacing-cmb-item-padding-x`, `spacing-cmb-item-padding-y`
+- **16 neue Combobox-Tokens insgesamt**
+
+### Files
+- `packages/components/src/molecules/Combobox/Combobox.tsx`
+- `packages/components/src/molecules/Combobox/Combobox.test.tsx`
+- `packages/components/src/molecules/Combobox/Combobox.stories.tsx`
+- `packages/components/src/molecules/Combobox/index.ts`
+- `packages/tokens/src/semantic/combobox.json`
+
+### Props
+- **options:** ComboboxOption[] | ComboboxGroup[]
+- **value:** string (kontrolliert)
+- **onChange:** (value: string | undefined) => void
+- **placeholder / searchPlaceholder / emptyMessage:** string
+- **inputSize:** sm, md, lg
+- **error / disabled:** boolean
+
+### Test Coverage
+- ✅ 13 Tests: Rendering mit Placeholder, ref, className, displayName, Token-Klassen, Placeholder-Text, Dropdown oeffnen, Optionen anzeigen, Auswahl + onChange, ausgewaehlter Text, disabled, ARIA, Groessen
+
+### Accessibility
+- ✅ `role="combobox"` + `aria-expanded`
+- ✅ `aria-haspopup="listbox"`
+- ✅ Keyboard-Navigation via cmdk
+- ✅ Focus-Return nach Auswahl
+
+### Storybook
+- **Stories:** Default, Grouped, Controlled, Disabled, WithError, Sizes, CustomMessages
+
+**Tests:** 13 | **Stories:** 7
+
+---
+
+---
+
+## [PasswordInput] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Passwort-Eingabefeld mit Toggle-Button zum Ein-/Ausblenden. Optionaler Staerke-Indikator (weak/medium/strong). Nutzt bestehende Input-Varianten (`inputVariants`).
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-pwinput-toggle`, `color-pwinput-toggle-hover`
+  - `color-pwinput-strength-weak`, `color-pwinput-strength-medium`, `color-pwinput-strength-strong`
+- **5 neue PasswordInput-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/PasswordInput/PasswordInput.tsx`
+- `packages/components/src/atoms/PasswordInput/PasswordInput.test.tsx`
+- `packages/components/src/atoms/PasswordInput/PasswordInput.stories.tsx`
+- `packages/components/src/atoms/PasswordInput/index.ts`
+- `packages/tokens/src/semantic/passwordinput.json`
+
+### Props
+- **inputSize:** sm, md, lg (via inputVariants)
+- **error:** boolean
+- **strength:** weak, medium, strong
+- **strengthFn:** (value: string) => strength | undefined
+
+### Accessibility
+- ✅ Toggle-Button mit `aria-label` (kontextabhaengig)
+- ✅ `aria-invalid` bei Fehler
+- ✅ `type="button"` auf Toggle (kein Form-Submit)
+
+**Tests:** 12 | **Stories:** 5
+
+---
+
+## [LoadingOverlay] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Semi-transparentes Overlay ueber einem Container waehrend Ladezustaenden. Zeigt Spinner (bestehende Komponente) + optionalen Text. Optionaler Backdrop-Blur.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-ldovl-bg`, `color-ldovl-text`, `color-ldovl-spinner`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-ldovl-gap`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-ldovl`
+- **5 neue LoadingOverlay-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/LoadingOverlay/LoadingOverlay.tsx`
+- `packages/components/src/atoms/LoadingOverlay/LoadingOverlay.test.tsx`
+- `packages/components/src/atoms/LoadingOverlay/LoadingOverlay.stories.tsx`
+- `packages/components/src/atoms/LoadingOverlay/index.ts`
+- `packages/tokens/src/semantic/loadingoverlay.json`
+
+### Props
+- **text:** string (Lade-Text)
+- **blur:** boolean (Backdrop-Blur)
+- **spinnerSize:** sm, md, lg
+- **visible:** boolean (Sichtbarkeit)
+
+### Accessibility
+- ✅ `role="status"` + `aria-busy="true"`
+- ✅ `aria-label` fuer Screen-Reader
+- ✅ Spinner mit `aria-hidden="true"`
+
+**Tests:** 10 | **Stories:** 5
+
+---
+
+## [Rating] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Sterne-Bewertung (interaktiv oder read-only). Unterstuetzt halbe Sterne (precision 0.5), Keyboard-Navigation. Warning-Tokens fuer goldene Sterne.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-rtg-filled`, `color-rtg-empty`, `color-rtg-hover`, `color-rtg-text`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-rtg-gap`
+- **Level 4 (Semantic) – Sizing:**
+  - `sizing-rtg-sm`, `sizing-rtg-md`, `sizing-rtg-lg`
+- **8 neue Rating-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Rating/Rating.tsx`
+- `packages/components/src/atoms/Rating/Rating.test.tsx`
+- `packages/components/src/atoms/Rating/Rating.stories.tsx`
+- `packages/components/src/atoms/Rating/index.ts`
+- `packages/tokens/src/semantic/rating.json`
+
+### Props
+- **value:** number
+- **onChange:** (value: number) => void
+- **max:** number (default 5)
+- **readOnly / disabled:** boolean
+- **size:** sm, md, lg
+- **precision:** 0.5 | 1
+
+### Accessibility
+- ✅ `role="radiogroup"` (interaktiv) / `role="img"` (readOnly)
+- ✅ `role="radio"` + `aria-checked` pro Stern
+- ✅ Keyboard: Pfeiltasten, Home, End
+
+**Tests:** 14 | **Stories:** 6
+
+---
+
+## [Highlight] - 2026-02-15
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Markiert Teile eines Textes visuell hervor (z.B. Suchtreffer). Suchbegriff(e) als Props, wrapped Treffer in semantisches `<mark>`. Case-insensitive standardmaessig.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-hl-bg`, `color-hl-text`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-hl`
+- **3 neue Highlight-Tokens insgesamt**
+
+### Files
+- `packages/components/src/atoms/Highlight/Highlight.tsx`
+- `packages/components/src/atoms/Highlight/Highlight.test.tsx`
+- `packages/components/src/atoms/Highlight/Highlight.stories.tsx`
+- `packages/components/src/atoms/Highlight/index.ts`
+- `packages/tokens/src/semantic/highlight.json`
+
+### Props
+- **children:** string (Text)
+- **query:** string | string[] (Suchbegriff)
+- **caseSensitive:** boolean
+
+### Accessibility
+- ✅ Semantisches `<mark>` Element
+
+**Tests:** 10 | **Stories:** 5
+
+---
+
 **Last Updated:** 2026-02-15
-**Design System Status:** ✅ Complete (70 Components, alle Essential Components fertig)
+**Design System Status:** ✅ Complete (78 Components, alle Essential Components fertig)

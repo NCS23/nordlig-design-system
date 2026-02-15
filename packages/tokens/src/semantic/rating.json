@@ -1,0 +1,23 @@
+{
+  "color": {
+    "$description": "Level 4: Rating component tokens",
+    "rtg": {
+      "filled": { "$type": "color", "$value": "{color.warning.text}",     "$description": "Filled star (gold/amber)" },
+      "empty":  { "$type": "color", "$value": "{color.text.disabled}",    "$description": "Empty star" },
+      "hover":  { "$type": "color", "$value": "{color.warning.border}",   "$description": "Hover color" },
+      "text":   { "$type": "color", "$value": "{color.text.muted}",       "$description": "Optional rating text" }
+    }
+  },
+  "spacing": {
+    "rtg": {
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between stars" }
+    }
+  },
+  "sizing": {
+    "rtg": {
+      "sm": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Star size sm" },
+      "md": { "$type": "dimension", "$value": "{sizing.component.icon.md}", "$description": "Star size md" },
+      "lg": { "$type": "dimension", "$value": "{sizing.component.icon.lg}", "$description": "Star size lg" }
+    }
+  }
+}

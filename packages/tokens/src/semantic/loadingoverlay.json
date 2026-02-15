@@ -1,0 +1,18 @@
+{
+  "color": {
+    "$description": "Level 4: LoadingOverlay component tokens",
+    "ldovl": {
+      "bg":      { "$type": "color", "$value": "{color.bg.overlay}",       "$description": "Overlay background (semi-transparent)" },
+      "text":    { "$type": "color", "$value": "{color.text.base}",        "$description": "Loading text color" },
+      "spinner": { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Spinner color" }
+    }
+  },
+  "spacing": {
+    "ldovl": {
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between spinner and text" }
+    }
+  },
+  "radius": {
+    "ldovl": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Corner radius (matching container)" }
+  }
+}

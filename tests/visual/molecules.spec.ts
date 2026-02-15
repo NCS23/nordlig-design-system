@@ -25,6 +25,8 @@ const moleculeStories: StoryConfig[] = [
   // Neue Komponenten (Completion Package)
   { component: 'Stepper',         stories: ['horizontal-default', 'vertical-default', 'with-descriptions', 'clickable-steps'] },
   { component: 'NavigationMenu',  stories: ['default', 'with-active-state', 'with-dropdown'] },
+  // Tier-2 Batch
+  { component: 'Combobox',        stories: ['default', 'with-groups', 'all-sizes', 'disabled'] },
 ];
 
 for (const { component, stories } of moleculeStories) {
