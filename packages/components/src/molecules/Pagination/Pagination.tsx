@@ -76,7 +76,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
     const isLastPage = currentPage >= totalPages;
 
     const baseButtonClasses = cn(
-      'w-10 h-10 flex items-center justify-center text-sm font-medium',
+      'w-[var(--sizing-pagination-item-size)] h-[var(--sizing-pagination-item-size)] flex items-center justify-center text-[length:var(--sizing-pagination-font-size)] font-medium',
       'rounded-[var(--radius-pagination-item)]',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
     );
@@ -161,7 +161,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
             return (
               <span
                 key={`ellipsis-${index}`}
-                className="w-10 h-10 flex items-center justify-center text-sm text-[var(--color-pagination-item-text)]"
+                className="w-[var(--sizing-pagination-item-size)] h-[var(--sizing-pagination-item-size)] flex items-center justify-center text-[length:var(--sizing-pagination-font-size)] text-[var(--color-pagination-item-text)]"
               >
                 ...
               </span>

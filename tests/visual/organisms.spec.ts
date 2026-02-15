@@ -9,9 +9,15 @@ interface StoryConfig {
 }
 
 const organismStories: StoryConfig[] = [
-  { component: 'Card',    stories: ['flat', 'raised', 'elevated', 'all-elevations', 'all-paddings'] },
-  { component: 'Table',   stories: ['basic', 'striped', 'all-densities'] },
-  { component: 'Command', stories: ['default', 'with-groups'] },
+  { component: 'Card',     stories: ['flat', 'raised', 'elevated', 'all-elevations', 'all-paddings'] },
+  { component: 'Table',    stories: ['basic', 'striped', 'all-densities'] },
+  { component: 'Command',  stories: ['default', 'with-groups'] },
+  // Neue Komponenten (Completion Package)
+  { component: 'StatCard', stories: ['default', 'with-trend-up', 'with-trend-down', 'with-icon', 'all-variants'] },
+  { component: 'Timeline', stories: ['default', 'with-icons', 'all-variants'] },
+  { component: 'Tree',     stories: ['default', 'with-icons', 'with-selection', 'deep-nesting'] },
+  { component: 'Sidebar',  stories: ['default', 'collapsed', 'with-badges'] },
+  { component: 'Carousel', stories: ['default', 'with-arrows', 'with-dots', 'all-features'] },
 ];
 
 for (const { component, stories } of organismStories) {

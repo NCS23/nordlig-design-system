@@ -5,8 +5,8 @@
       "header-bg":   { "$type": "color", "$value": "{color.bg.base}" },
       "header-text": { "$type": "color", "$value": "{color.text.base}" },
       "border":      { "$type": "color", "$value": "{color.border.muted}" },
-      "row-stripe":  { "$type": "color", "$value": "{color.neutral.1.50}" },
-      "row-hover":   { "$type": "color", "$value": "{color.neutral.1.100}" }
+      "row-stripe":  { "$type": "color", "$value": "{color.bg.base}" },
+      "row-hover":   { "$type": "color", "$value": "{color.bg.surface}" }
     }
   },
   "spacing": {

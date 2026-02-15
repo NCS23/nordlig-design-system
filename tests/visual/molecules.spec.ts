@@ -9,19 +9,22 @@ interface StoryConfig {
 }
 
 const moleculeStories: StoryConfig[] = [
-  { component: 'InputField',   stories: ['default', 'with-helper', 'with-error', 'all-sizes'] },
-  { component: 'DatePicker',   stories: ['default', 'with-value', 'error'] },
-  { component: 'Select',       stories: ['default', 'with-value', 'grouped'] },
-  { component: 'Textarea',     stories: ['default', 'with-label', 'with-counter', 'error-state'] },
-  { component: 'FileUpload',   stories: ['default', 'multiple'] },
-  { component: 'RadioGroup',   stories: ['basic', 'vertical-layout', 'horizontal-layout'] },
-  { component: 'Tabs',         stories: ['underline-default', 'pills-default', 'all-variants'] },
-  { component: 'Accordion',    stories: ['single-default', 'multiple-open'] },
-  { component: 'Pagination',   stories: ['default', 'many-pages', 'compact-variant'] },
-  { component: 'EmptyState',   stories: ['default', 'with-action', 'error-state'] },
-  { component: 'Breadcrumbs',  stories: ['default', 'custom-separator', 'many-levels'] },
-  { component: 'Collapsible',  stories: ['default'] },
-  { component: 'Form',         stories: ['default'] },
+  { component: 'InputField',      stories: ['default', 'with-helper', 'with-error', 'all-sizes'] },
+  { component: 'DatePicker',      stories: ['default', 'with-value', 'error'] },
+  { component: 'Select',          stories: ['default', 'with-value', 'grouped'] },
+  { component: 'Textarea',        stories: ['default', 'with-label', 'with-counter', 'error-state'] },
+  { component: 'FileUpload',      stories: ['default', 'multiple'] },
+  { component: 'RadioGroup',      stories: ['basic', 'vertical-layout', 'horizontal-layout'] },
+  { component: 'Tabs',            stories: ['underline-default', 'pills-default', 'all-variants'] },
+  { component: 'Accordion',       stories: ['single-default', 'multiple-open'] },
+  { component: 'Pagination',      stories: ['default', 'many-pages', 'compact-variant'] },
+  { component: 'EmptyState',      stories: ['default', 'with-action', 'error-state'] },
+  { component: 'Breadcrumbs',     stories: ['default', 'custom-separator', 'many-levels'] },
+  { component: 'Collapsible',     stories: ['default'] },
+  { component: 'Form',            stories: ['default'] },
+  // Neue Komponenten (Completion Package)
+  { component: 'Stepper',         stories: ['horizontal-default', 'vertical-default', 'with-descriptions', 'clickable-steps'] },
+  { component: 'NavigationMenu',  stories: ['default', 'with-active-state', 'with-dropdown'] },
 ];
 
 for (const { component, stories } of moleculeStories) {
@@ -76,6 +79,29 @@ test.describe('DropdownMenu', () => {
     await page.locator('#storybook-root button').first().click();
     await page.waitForTimeout(500);
     await screenshotFullPage(page, 'molecules-dropdownmenu-default');
+  });
+});
+
+test.describe('ContextMenu', () => {
+  test('default', async ({ page }) => {
+    await gotoStory(page, 'molecules-contextmenu--default');
+    await page.locator('#storybook-root').first().click({ button: 'right' });
+    await page.waitForTimeout(500);
+    await screenshotFullPage(page, 'molecules-contextmenu-default');
+  });
+
+  test('with-icons', async ({ page }) => {
+    await gotoStory(page, 'molecules-contextmenu--with-icons');
+    await page.locator('#storybook-root').first().click({ button: 'right' });
+    await page.waitForTimeout(500);
+    await screenshotFullPage(page, 'molecules-contextmenu-with-icons');
+  });
+
+  test('with-separator-and-label', async ({ page }) => {
+    await gotoStory(page, 'molecules-contextmenu--with-separator-and-label');
+    await page.locator('#storybook-root').first().click({ button: 'right' });
+    await page.waitForTimeout(500);
+    await screenshotFullPage(page, 'molecules-contextmenu-with-separator-and-label');
   });
 });
 

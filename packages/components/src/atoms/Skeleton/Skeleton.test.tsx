@@ -89,25 +89,25 @@ describe('SkeletonCircle', () => {
     expect(el.className).toContain('rounded-[var(--radius-skeleton-circle)]');
   });
 
-  it('applies size=sm (w-8 h-8)', () => {
+  it('applies size=sm', () => {
     render(<SkeletonCircle size="sm" />);
     const el = document.querySelector('[aria-hidden="true"]')!;
-    expect(el.className).toContain('w-8');
-    expect(el.className).toContain('h-8');
+    expect(el.className).toContain('w-[var(--sizing-skeleton-circle-sm)]');
+    expect(el.className).toContain('h-[var(--sizing-skeleton-circle-sm)]');
   });
 
-  it('applies size=md by default (w-12 h-12)', () => {
+  it('applies size=md by default', () => {
     render(<SkeletonCircle />);
     const el = document.querySelector('[aria-hidden="true"]')!;
-    expect(el.className).toContain('w-12');
-    expect(el.className).toContain('h-12');
+    expect(el.className).toContain('w-[var(--sizing-skeleton-circle-md)]');
+    expect(el.className).toContain('h-[var(--sizing-skeleton-circle-md)]');
   });
 
-  it('applies size=lg (w-16 h-16)', () => {
+  it('applies size=lg', () => {
     render(<SkeletonCircle size="lg" />);
     const el = document.querySelector('[aria-hidden="true"]')!;
-    expect(el.className).toContain('w-16');
-    expect(el.className).toContain('h-16');
+    expect(el.className).toContain('w-[var(--sizing-skeleton-circle-lg)]');
+    expect(el.className).toContain('h-[var(--sizing-skeleton-circle-lg)]');
   });
 
   it('applies custom className', () => {

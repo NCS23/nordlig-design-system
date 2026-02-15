@@ -320,7 +320,7 @@ describe('FileUpload', () => {
   it('applies disabled styling', () => {
     render(<FileUpload disabled />);
     const zone = screen.getByRole('button');
-    expect(zone.className).toContain('opacity-60');
+    expect(zone.className).toContain('opacity-50');
     expect(zone.className).toContain('cursor-not-allowed');
   });
 

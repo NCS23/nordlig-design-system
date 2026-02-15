@@ -7,6 +7,15 @@
       "border": { "$type": "color", "$value": "{color.border.default}", "$description": "Avatar border" }
     }
   },
+  "sizing": {
+    "$description": "Level 4: Avatar size tokens — References Level 3 only",
+    "avatar": {
+      "sm": { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Avatar size sm (h-9 = 36px)" },
+      "md": { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Avatar size md (h-10 = 40px)" },
+      "lg": { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "Avatar size lg (h-11 = 44px)" },
+      "xl": { "$type": "dimension", "$value": "{sizing.component.icon.xl}", "$description": "Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16)" }
+    }
+  },
   "radius": {
     "avatar": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Avatar border radius (circle)" }
   }

@@ -14,6 +14,13 @@
       "description":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
     }
   },
+  "sizing": {
+    "$description": "Level 4: Checkbox size tokens — References Level 3 only",
+    "checkbox": {
+      "box-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Checkbox box size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available" },
+      "icon-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Check icon size inside checkbox (16px)" }
+    }
+  },
   "radius": {
     "checkbox": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "4px subtle rounding" }
   }

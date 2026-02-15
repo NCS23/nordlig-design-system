@@ -253,8 +253,8 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
           aria-disabled={disabled || undefined}
           className={cn(
             'group relative rounded-[var(--radius-fileupload-zone)] transition-all duration-200 cursor-pointer',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-input-border-focus)] focus-visible:ring-offset-1',
-            disabled && 'cursor-not-allowed opacity-60',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
+            disabled && 'cursor-not-allowed opacity-50',
             // Default state (with hover)
             !dragOver && !hasError && [
               'border-2 border-dashed',

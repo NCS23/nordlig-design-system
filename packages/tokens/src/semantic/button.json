@@ -11,14 +11,14 @@
       },
       "secondary": {
         "bg":        { "$type": "color", "$value": "{color.bg.surface}" },
-        "bg-hover":  { "$type": "color", "$value": "{color.neutral.1.200}" },
-        "bg-active": { "$type": "color", "$value": "{color.neutral.1.300}" },
+        "bg-hover":  { "$type": "color", "$value": "{color.bg.surface-hover}" },
+        "bg-active": { "$type": "color", "$value": "{color.bg.surface-active}" },
         "text":      { "$type": "color", "$value": "{color.text.base}" },
         "border":    { "$type": "color", "$value": "{color.border.default}" }
       },
       "ghost": {
-        "bg-hover":  { "$type": "color", "$value": "{color.neutral.1.100}" },
-        "bg-active": { "$type": "color", "$value": "{color.neutral.1.200}" },
+        "bg-hover":  { "$type": "color", "$value": "{color.bg.surface}" },
+        "bg-active": { "$type": "color", "$value": "{color.bg.surface-hover}" },
         "text":      { "$type": "color", "$value": "{color.text.primary}" }
       },
       "disabled": {

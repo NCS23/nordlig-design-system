@@ -57,8 +57,8 @@ describe('Avatar', () => {
       </Avatar>
     );
     const avatar = screen.getByTestId('avatar');
-    expect(avatar.className).toContain('h-8');
-    expect(avatar.className).toContain('w-8');
+    expect(avatar.className).toContain('h-[var(--sizing-avatar-sm)]');
+    expect(avatar.className).toContain('w-[var(--sizing-avatar-sm)]');
   });
 
   it('applies size=md classes (default)', () => {
@@ -68,8 +68,8 @@ describe('Avatar', () => {
       </Avatar>
     );
     const avatar = screen.getByTestId('avatar');
-    expect(avatar.className).toContain('h-10');
-    expect(avatar.className).toContain('w-10');
+    expect(avatar.className).toContain('h-[var(--sizing-avatar-md)]');
+    expect(avatar.className).toContain('w-[var(--sizing-avatar-md)]');
   });
 
   it('applies size=lg classes', () => {
@@ -79,8 +79,8 @@ describe('Avatar', () => {
       </Avatar>
     );
     const avatar = screen.getByTestId('avatar');
-    expect(avatar.className).toContain('h-12');
-    expect(avatar.className).toContain('w-12');
+    expect(avatar.className).toContain('h-[var(--sizing-avatar-lg)]');
+    expect(avatar.className).toContain('w-[var(--sizing-avatar-lg)]');
   });
 
   it('applies size=xl classes', () => {
@@ -90,8 +90,8 @@ describe('Avatar', () => {
       </Avatar>
     );
     const avatar = screen.getByTestId('avatar');
-    expect(avatar.className).toContain('h-16');
-    expect(avatar.className).toContain('w-16');
+    expect(avatar.className).toContain('h-[var(--sizing-avatar-xl)]');
+    expect(avatar.className).toContain('w-[var(--sizing-avatar-xl)]');
   });
 
   // --- Custom className ---

@@ -10,10 +10,10 @@
   "sizing": {
     "$description": "Level 4: Spinner size tokens — icon-sized dimensions",
     "spinner": {
-      "sm": { "$type": "dimension", "$value": "{spacing.base.4}" },
-      "md": { "$type": "dimension", "$value": "{spacing.base.6}" },
-      "lg": { "$type": "dimension", "$value": "{spacing.base.8}" },
-      "xl": { "$type": "dimension", "$value": "{spacing.base.12}" }
+      "sm": { "$type": "dimension", "$value": "{sizing.component.icon.sm}" },
+      "md": { "$type": "dimension", "$value": "{sizing.component.icon.md}" },
+      "lg": { "$type": "dimension", "$value": "{sizing.component.icon.lg}" },
+      "xl": { "$type": "dimension", "$value": "{sizing.component.icon.xl}" }
     }
   }
 }

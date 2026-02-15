@@ -58,9 +58,9 @@ SkeletonText.displayName = 'SkeletonText';
 // ─── SkeletonCircle ──────────────────────────────────────────────────────────
 
 const circleSize = {
-  sm: 'w-8 h-8',
-  md: 'w-12 h-12',
-  lg: 'w-16 h-16',
+  sm: 'w-[var(--sizing-skeleton-circle-sm)] h-[var(--sizing-skeleton-circle-sm)]',
+  md: 'w-[var(--sizing-skeleton-circle-md)] h-[var(--sizing-skeleton-circle-md)]',
+  lg: 'w-[var(--sizing-skeleton-circle-lg)] h-[var(--sizing-skeleton-circle-lg)]',
 } as const;
 
 const SkeletonCircle: React.FC<SkeletonCircleProps> = ({ size = 'md', className }) => (

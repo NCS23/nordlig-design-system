@@ -14,6 +14,13 @@
       "description":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
     }
   },
+  "sizing": {
+    "$description": "Level 4: Radio size tokens — References Level 3 only",
+    "radio": {
+      "button-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Radio button outer size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available" },
+      "dot-size":    { "$type": "dimension", "$value": "{sizing.component.track.lg}", "$description": "Radio inner dot size (12px)" }
+    }
+  },
   "radius": {
     "radio": {
       "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px item row rounding" }

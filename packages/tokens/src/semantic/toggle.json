@@ -5,10 +5,30 @@
       "bg":            { "$type": "color", "$value": "{color.bg.surface}", "$description": "Toggle button default background" },
       "border":        { "$type": "color", "$value": "{color.border.default}", "$description": "Toggle button border" },
       "text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Toggle button text" },
-      "hover-bg":      { "$type": "color", "$value": "{color.neutral.1.200}", "$description": "Toggle button hover background" },
+      "hover-bg":      { "$type": "color", "$value": "{color.bg.surface-hover}", "$description": "Toggle button hover background" },
       "active-bg":     { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active toggle background" },
       "active-text":   { "$type": "color", "$value": "{color.text.inverse}", "$description": "Active toggle text" },
       "active-border": { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active toggle border" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: Toggle size tokens — References Level 3 only",
+    "toggle": {
+      "sm": {
+        "height":    { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Toggle item height sm" },
+        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}", "$description": "Toggle item horizontal padding sm" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Toggle item font size sm" }
+      },
+      "md": {
+        "height":    { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Toggle item height md" },
+        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}", "$description": "Toggle item horizontal padding md" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Toggle item font size md" }
+      },
+      "lg": {
+        "height":    { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "Toggle item height lg" },
+        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.lg}", "$description": "Toggle item horizontal padding lg" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Toggle item font size lg" }
+      }
     }
   },
   "radius": {

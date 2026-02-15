@@ -110,6 +110,75 @@ export const TrainingFAQ: Story = {
   ),
 };
 
+// ─── Accordion vs Collapsible Guidance ──────────────────────────────────────
+
+export const AccordionVsCollapsible: Story = {
+  name: 'Leitfaden: Accordion vs Collapsible',
+  render: () => (
+    <div className="max-w-2xl space-y-6">
+      <div className="rounded-md border p-4 space-y-2">
+        <h3 className="text-sm font-semibold">Wann Accordion verwenden?</h3>
+        <ul className="list-disc pl-5 text-sm space-y-1">
+          <li>Mehrere verwandte Abschnitte, die als Gruppe zusammengehoeren</li>
+          <li>Nur ein Abschnitt gleichzeitig soll geoeffnet sein (<code>type="single"</code>)</li>
+          <li>FAQ-Bereiche, Einstellungskategorien, Formular-Sektionen</li>
+          <li>Konsistente Darstellung mit Trennlinien und Chevron-Icons</li>
+        </ul>
+      </div>
+      <div className="rounded-md border p-4 space-y-2">
+        <h3 className="text-sm font-semibold">Wann Collapsible verwenden?</h3>
+        <ul className="list-disc pl-5 text-sm space-y-1">
+          <li>Einzelner ein-/ausklappbarer Bereich (kein Gruppen-Kontext)</li>
+          <li>Eigener Trigger-Button mit individuellem Design</li>
+          <li>Erweiterte Filter, optionale Details, Zusatzinfos</li>
+          <li>Kontrolliert von aussen via <code>open</code>/<code>onOpenChange</code></li>
+        </ul>
+      </div>
+      <div className="rounded-md border border-dashed p-4 space-y-3">
+        <h3 className="text-sm font-semibold">Vergleich</h3>
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b text-left">
+              <th className="py-1.5 pr-4 font-medium">Eigenschaft</th>
+              <th className="py-1.5 pr-4 font-medium">Accordion</th>
+              <th className="py-1.5 font-medium">Collapsible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b">
+              <td className="py-1.5 pr-4">Anzahl Bereiche</td>
+              <td className="py-1.5 pr-4">Mehrere</td>
+              <td className="py-1.5">Einzelner</td>
+            </tr>
+            <tr className="border-b">
+              <td className="py-1.5 pr-4">Exklusiv-Modus</td>
+              <td className="py-1.5 pr-4">Ja (<code>type="single"</code>)</td>
+              <td className="py-1.5">Nein</td>
+            </tr>
+            <tr className="border-b">
+              <td className="py-1.5 pr-4">Custom Trigger</td>
+              <td className="py-1.5 pr-4">Eingeschraenkt</td>
+              <td className="py-1.5">Volle Freiheit (<code>asChild</code>)</td>
+            </tr>
+            <tr className="border-b">
+              <td className="py-1.5 pr-4">Animationen</td>
+              <td className="py-1.5 pr-4">Eingebaut</td>
+              <td className="py-1.5">Eingebaut</td>
+            </tr>
+            <tr>
+              <td className="py-1.5 pr-4">Kontrollierbar</td>
+              <td className="py-1.5 pr-4"><code>defaultValue</code></td>
+              <td className="py-1.5"><code>open</code> + <code>onOpenChange</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  ),
+};
+
+// ─── Training: Session Details ─────────────────────────────────────────────
+
 export const TrainingSessionDetails: Story = {
   name: 'Training Analyzer: Session Details',
   render: () => (

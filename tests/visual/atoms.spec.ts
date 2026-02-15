@@ -25,6 +25,13 @@ const atomStories: StoryConfig[] = [
   { component: 'ToggleGroup', stories: ['default', 'multiple', 'sizes'] },
   { component: 'ScrollArea',  stories: ['default'] },
   { component: 'AspectRatio', stories: ['default-16-by-9', 'square'] },
+  // Neue Komponenten (Completion Package)
+  { component: 'Label',       stories: ['default', 'required', 'disabled', 'all-states'] },
+  { component: 'Link',        stories: ['default', 'all-variants', 'external-link', 'disabled', 'destructive'] },
+  { component: 'Code',        stories: ['inline-code', 'code-block-default', 'all-variants', 'code-block-with-line-numbers'] },
+  { component: 'Kbd',         stories: ['default', 'key-combination', 'all-sizes', 'shortcuts'] },
+  { component: 'Text',        stories: ['body', 'small', 'caption', 'muted', 'all-variants'] },
+  { component: 'Heading',     stories: ['level-1', 'level-2', 'level-3', 'all-levels'] },
 ];
 
 for (const { component, stories } of atomStories) {

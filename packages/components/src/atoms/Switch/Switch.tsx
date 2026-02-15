@@ -21,7 +21,7 @@ const Switch = React.forwardRef<
       'rounded-full transition-colors duration-200',
       'bg-[var(--color-switch-track-bg)]',
       'data-[state=checked]:bg-[var(--color-switch-track-bg-checked)]',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-switch-focus-ring)] focus-visible:ring-offset-2',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-switch-focus-ring)] focus-visible:ring-offset-1',
       'disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-[var(--color-switch-disabled-track-bg)]',
       className
     )}

@@ -132,7 +132,7 @@ const TabsContent = React.forwardRef<
     className={cn(
       'pt-[var(--spacing-tabs-content-padding)]',
       'text-[var(--color-tabs-content-text)]',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tabs-underline)] focus-visible:ring-offset-2',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tabs-underline)] focus-visible:ring-offset-1',
       className
     )}
     {...props}

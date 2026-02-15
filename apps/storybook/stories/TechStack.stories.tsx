@@ -228,6 +228,7 @@ const categories: Category[] = [
     title: 'Testing',
     items: [
       { name: 'Vitest', version: '1.6', description: 'Schnelles Unit-Testing-Framework mit Vite-Integration', color: '#6E9F18', logo: <VitestLogo /> },
+      { name: 'Playwright', version: '1.58', description: 'Visual Regression Testing gegen Storybook-Stories', color: '#2EAD33', logo: <LetterLogo letter="Pw" color="#2EAD33" /> },
       { name: 'Testing Library', version: '16.3', description: 'User-zentriertes Testen von React-Komponenten', color: '#E33332', logo: <LetterLogo letter="TL" color="#E33332" /> },
       { name: 'jsdom', version: '28.0', description: 'Browser-Umgebungs-Simulation f\u00FCr Node.js-Tests', color: '#1E88E5', logo: <LetterLogo letter="JS" color="#1E88E5" /> },
     ],

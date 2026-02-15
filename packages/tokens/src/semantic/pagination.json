@@ -13,6 +13,13 @@
       }
     }
   },
+  "sizing": {
+    "$description": "Level 4: Pagination size tokens — References Level 3 only",
+    "pagination": {
+      "item-size": { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Page button width & height (36px square)" },
+      "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Page button font size" }
+    }
+  },
   "radius": {
     "pagination": {
       "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px rounded corners" }

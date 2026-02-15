@@ -2061,21 +2061,533 @@
 
 ---
 
+## [Label] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Keine neuen L4-Tokens** — nutzt existierende L3 Tokens:
+  - `color-text-base` (Label-Textfarbe)
+  - `color-text-error` (Pflichtfeld-Stern)
+
+### Files
+- `packages/components/src/atoms/Label/Label.tsx`
+- `packages/components/src/atoms/Label/Label.test.tsx`
+- `packages/components/src/atoms/Label/Label.stories.tsx`
+- `packages/components/src/atoms/Label/index.ts`
+
+### Props
+- **required:** boolean — zeigt roten Stern (*) mit `aria-hidden="true"`
+- **disabled:** boolean — reduziert Deckkraft auf 50%, `cursor-not-allowed`
+- **htmlFor:** string — nativer Label-Attribut fuer Input-Verknuepfung
+
+### Test Coverage
+- ✅ 12 Tests (Rendering, Required Asterisk, Disabled State, htmlFor, Custom className, Ref, HTML Attributes, Combined states)
+
+### Accessibility
+- ✅ Semantisches `<label>` Element
+- ✅ `aria-hidden="true"` auf Required-Stern (nur dekorativ)
+- ✅ `htmlFor` fuer Input-Verknuepfung
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-label
+- **Stories:** Default, Required, Disabled, WithHtmlFor, AllStates, DesignTokens
+- **Controls:** required, disabled, htmlFor
+
+**Tests:** 12 | **Stories:** 6
+
+---
+
+## [Kbd] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-kbd-bg` → L3 `color-bg-paper`
+  - `color-kbd-text` → L3 `color-text-base`
+  - `color-kbd-border` → L3 `color-border-default`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-kbd` → L3 `radius-component-sm`
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-kbd` → Custom 3D bottom edge shadow
+- **5 L4-Tokens insgesamt** (3 Color + 1 Radius + 1 Shadow)
+- **Dark Mode:** 4 Overrides in dark-tokens.css
+
+### Files
+- `packages/components/src/atoms/Kbd/Kbd.tsx`
+- `packages/components/src/atoms/Kbd/Kbd.test.tsx`
+- `packages/components/src/atoms/Kbd/Kbd.stories.tsx`
+- `packages/components/src/atoms/Kbd/index.ts`
+
+### Variants
+- **size:** sm, md, lg (via CVA)
+
+### Test Coverage
+- ✅ 13 Tests (Rendering, All 3 Sizes, Token Classes, Custom className, Ref, HTML Attributes)
+
+### Accessibility
+- ✅ Semantisches `<kbd>` Element
+- ✅ Inline-flex fuer korrektes Inline-Layout
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-kbd
+- **Stories:** Default, AllSizes, KeyCombination, Shortcuts, DesignTokens
+- **Controls:** size
+
+**Tests:** 13 | **Stories:** 5
+
+---
+
+## [Link] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-link-text` → L3 `color-interactive-primary`
+  - `color-link-text-hover` → L3 `color-interactive-primary-hover`
+- **2 L4-Tokens insgesamt** (2 Color)
+- Nutzt zusätzlich L3-Tokens: `color-text-muted`, `color-text-base`, `color-text-error`, `color-border-focus`
+
+### Files
+- `packages/components/src/atoms/Link/Link.tsx`
+- `packages/components/src/atoms/Link/Link.test.tsx`
+- `packages/components/src/atoms/Link/Link.stories.tsx`
+- `packages/components/src/atoms/Link/index.ts`
+
+### Variants
+- **variant:** default, muted, destructive (via CVA)
+- **underline:** always, hover, none (via CVA)
+- **showExternalIcon:** boolean
+- **disabled:** boolean
+
+### Test Coverage
+- ✅ 18 Tests (Rendering, All 3 Variants, All 3 Underline Modes, External Link Detection, Disabled State, ExternalIcon, Custom className, Ref, HTML Attributes, Focus Ring)
+
+### Accessibility
+- ✅ Focus Ring (focus-visible:ring-2 + ring-offset-1)
+- ✅ `aria-disabled` bei disabled State
+- ✅ Auto `target="_blank"` + `rel="noopener noreferrer"` für externe Links
+- ✅ Semantisches `<a>` Element
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-link
+- **Stories:** Default, Muted, Destructive, ExternalLink, UnderlineAlways, UnderlineNone, Disabled, AllVariants, InlineUsage, DesignTokens
+- **Controls:** variant, underline, showExternalIcon, disabled
+
+**Tests:** 18 | **Stories:** 10
+
+---
+
+## [Code] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-code-bg` → L3 `color-bg-surface`
+  - `color-code-text` → L3 `color-text-primary`
+  - `color-code-block-bg` → L2 `color-neutral-1-900`
+  - `color-code-block-text` → L2 `color-neutral-1-100`
+  - `color-code-copy-hover-bg` → L2 `color-neutral-1-700`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-code` → L3 `radius-component-sm`
+  - `radius-code-block` → L3 `radius-component-lg`
+- **7 L4-Tokens insgesamt** (5 Color + 2 Radius)
+- Nutzt zusätzlich L3-Token: `color-text-muted` (Zeilennummern)
+
+### Files
+- `packages/components/src/atoms/Code/Code.tsx`
+- `packages/components/src/atoms/Code/Code.test.tsx`
+- `packages/components/src/atoms/Code/Code.stories.tsx`
+- `packages/components/src/atoms/Code/index.ts`
+
+### Components
+- **Code** — Inline `<code>` Element
+- **CodeBlock** — `<pre><code>` Block mit Copy-Button und Zeilennummern
+
+### Variants
+- **copyable:** boolean (CodeBlock)
+- **showLineNumbers:** boolean (CodeBlock)
+
+### Test Coverage
+- ✅ 18 Tests (Code Inline: 6 Tests, CodeBlock: 12 Tests — Rendering, Copy Button, Line Numbers, Custom className, Ref, HTML Attributes)
+
+### Accessibility
+- ✅ Semantische `<code>` und `<pre>` Elemente
+- ✅ `aria-label` auf Copy-Button (wechselt zwischen "Code kopieren" und "Kopiert")
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/atoms-code
+- **Stories:** InlineCode, CodeBlockDefault, CodeBlockCopyable, CodeBlockWithLineNumbers, CodeBlockCopyableWithLineNumbers, AllVariants, DesignTokens
+- **Controls:** copyable, showLineNumbers
+
+**Tests:** 18 | **Stories:** 7
+
+---
+
+## [NavigationMenu] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+**Libraries:** @radix-ui/react-navigation-menu, lucide-react
+**Sub-Components:** NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, NavigationMenuViewport
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-nav-text` → L3 `color-text-base`
+  - `color-nav-hover-bg` → L3 `color-bg-muted`
+  - `color-nav-active-bg` → L3 `color-bg-muted`
+  - `color-nav-dropdown-bg` → L3 `color-bg-surface` (shared with DropdownMenu)
+  - `color-nav-dropdown-border` → L3 `color-border-default`
+  - `color-nav-focus-ring` → L3 `color-border-focus`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-nav` → L3 `radius-component-md`
+  - `radius-nav-dropdown` → L3 `radius-component-lg`
+- **Level 4 (Semantic) – Shadow:**
+  - `shadow-nav-dropdown` → L3 `shadow-elevation-sm`
+- **9 L4-Tokens insgesamt** (6 Color + 2 Radius + 1 Shadow)
+- Nutzt auch existierende Tokens: `--color-dropdown-bg`, `--color-dropdown-border`, `--radius-dropdown`, `--shadow-dropdown`
+
+### Files
+- `packages/components/src/molecules/NavigationMenu/NavigationMenu.tsx`
+- `packages/components/src/molecules/NavigationMenu/NavigationMenu.test.tsx`
+- `packages/components/src/molecules/NavigationMenu/NavigationMenu.stories.tsx`
+- `packages/components/src/molecules/NavigationMenu/index.ts`
+
+### Components
+- **NavigationMenu** — Root-Container (Radix NavigationMenu.Root)
+- **NavigationMenuList** — Horizontale Linkliste
+- **NavigationMenuItem** — Einzelnes Navigationselement
+- **NavigationMenuTrigger** — Dropdown-Ausloeser mit ChevronDown-Icon
+- **NavigationMenuContent** — Dropdown-Panel mit Animationen
+- **NavigationMenuLink** — Navigationslink mit active-State
+- **NavigationMenuViewport** — Viewport fuer Dropdown-Positionierung
+
+### Test Coverage
+- ✅ 10 Tests (Rendering: 3, Trigger: 2, Interaction: 1, Active State: 1, Token Classes: 2, Custom className: 1)
+
+### Accessibility
+- ✅ Radix NavigationMenu ARIA-Rollen (navigation, list, link)
+- ✅ Keyboard Navigation (Tab, Arrow Keys via Radix)
+- ✅ Focus Indicators (ring-2 + ring-offset-1 on focus-visible)
+- ✅ data-[state=open] fuer Trigger-Zustand
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-navigationmenu
+- **Stories:** Default, WithDropdown, WithActiveState, TrainingNavigation, DesignTokens
+- **Controls:** autodocs
+
+**Tests:** 10 | **Stories:** 5
+
+---
+
+## [ContextMenu] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Molecule
+
+### Tokens Created
+- **Keine neuen L4-Tokens** — ContextMenu teilt ALLE Tokens mit DropdownMenu (identisches visuelles Erscheinungsbild):
+  - `color-dropdown-bg`, `color-dropdown-border`, `color-dropdown-item-text`, `color-dropdown-item-hover-bg`
+  - `color-dropdown-item-disabled-text`, `color-dropdown-item-icon`, `color-dropdown-destructive-text`
+  - `color-dropdown-destructive-hover-bg`, `color-dropdown-separator`, `color-dropdown-label-text`
+  - `shadow-dropdown-menu`, `radius-dropdown-menu`, `radius-dropdown-item`
+  - `spacing-dropdown-padding`, `spacing-dropdown-item-padding-x`, `spacing-dropdown-item-padding-y`, `spacing-dropdown-item-gap`
+
+### Architecture
+- **Radix UI ContextMenu** compound pattern: ContextMenu → Trigger → Content → Item/Separator/Label/Shortcut
+- **Rechtsklick-Trigger:** oeffnet Menue per contextmenu-Event (statt Click wie DropdownMenu)
+- **Destructive items:** red text + red-subtle hover bg (identisch zu DropdownMenu)
+- **Icon support:** optional `icon` prop auf ContextMenuItem
+- **Shortcut support:** ContextMenuShortcut fuer Tastaturkuerzel-Anzeige
+- **asChild** auf Trigger fuer custom Trigger-Elemente
+- Portal rendering mit fade/zoom Animationen
+
+### Files
+- `packages/components/src/molecules/ContextMenu/ContextMenu.tsx`
+- `packages/components/src/molecules/ContextMenu/ContextMenu.test.tsx` (17 Tests)
+- `packages/components/src/molecules/ContextMenu/ContextMenu.stories.tsx` (7 Stories)
+- `packages/components/src/molecules/ContextMenu/index.ts`
+
+### Props – ContextMenuItem
+- **destructive:** boolean (danger styling)
+- **icon:** ReactNode (optional icon before text)
+- **disabled:** boolean
+- Plus all Radix ContextMenu.Item props
+
+### Sub-Components
+- **ContextMenu** — Root wrapper
+- **ContextMenuTrigger** — Rechtsklick-Bereich (asChild)
+- **ContextMenuContent** — Portal'd menu content mit Animationen
+- **ContextMenuItem** — Menuepunkt mit optionalem Icon + destructive Variante
+- **ContextMenuSeparator** — Trennlinie
+- **ContextMenuLabel** — Abschnitts-Label
+- **ContextMenuShortcut** — Tastaturkuerzel-Anzeige (ml-auto, text-xs)
+
+### Test Coverage
+- ✅ **17 Tests – alle bestanden**
+- Rendering: trigger area, closed state
+- Open/Close: right-click open, Escape close
+- Items: click fires onSelect, close after click
+- Keyboard: ArrowDown navigation
+- Sub-Components: label, separator, icon, shortcut
+- Destructive: text color class
+- Disabled: data-disabled attribute
+- Tokens: bg, border, radius, padding classes
+
+### Accessibility
+- ✅ `role="menu"`, `role="menuitem"` (Radix built-in)
+- ✅ Keyboard: ArrowUp/Down, Enter, Escape
+- ✅ Focus management (Radix built-in)
+- ✅ Disabled items non-interactive
+- ✅ Auto-close on item selection
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-contextmenu
+- **Stories:** Default, WithIcons, WithSeparatorAndLabel, DestructiveItem, DisabledItems, TrainingActions, DesignTokens
+
+### Dependencies
+- `@radix-ui/react-context-menu` (new — NOT YET INSTALLED)
+- `lucide-react` (Edit, Copy, Clipboard, Trash2, Share, Download, RefreshCw in stories)
+
+**Tests:** 17 | **Stories:** 7
+
+---
+
+## [Stepper] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Molecule
+
+### Tokens Created
+- **Keine neuen L4-Tokens** -- Stepper nutzt ausschliesslich existierende L3 Role-Tokens:
+  - `color-bg-success` (completed step indicator + completed connecting line)
+  - `color-bg-primary` (current step indicator)
+  - `color-bg-surface` (upcoming step indicator)
+  - `color-text-base` (current step label)
+  - `color-text-muted` (other labels, descriptions, upcoming step numbers)
+  - `color-border-default` (upcoming connecting line)
+  - `color-border-focus` (focus ring on clickable steps)
+
+### Files
+- `packages/components/src/molecules/Stepper/Stepper.tsx`
+- `packages/components/src/molecules/Stepper/Stepper.test.tsx`
+- `packages/components/src/molecules/Stepper/Stepper.stories.tsx`
+- `packages/components/src/molecules/Stepper/index.ts`
+
+### Props
+- **currentStep:** number (0-indexed active step)
+- **steps:** StepperStep[] (label, description?, icon?)
+- **orientation:** 'horizontal' | 'vertical' (default: 'horizontal')
+- **onStepClick:** (step: number) => void (makes completed steps clickable)
+
+### Architecture
+- `React.forwardRef<HTMLDivElement, StepperProps>` mit displayName
+- Step-Indikator: 3 Zustaende (completed/current/upcoming) mit unterschiedlichen Farben
+- Completed: Check-Icon (lucide), Current: Schrittnummer, Upcoming: Schrittnummer
+- Connecting Lines zwischen Schritten (horizontal: h-0.5 flex-1, vertical: w-0.5 min-h-24px)
+- Klickbare completed Steps mit focus-visible Ring bei gesetztem onStepClick
+
+### Test Coverage
+- ✅ **24 Tests -- alle bestanden**
+- Rendering: labels, step numbers, descriptions, accessibility roles
+- Current step: aria-current, primary bg
+- Completed: check icon, success bg
+- Upcoming: muted bg
+- Connecting lines: rendered between steps, success/default colors
+- Click handler: fires on completed steps, no buttons for non-completed
+- Orientation: horizontal flex-row, vertical flex-col, line classes
+- Custom props: className, ref, HTML attributes
+
+### Accessibility
+- ✅ `role="list"` / `role="listitem"` Semantik
+- ✅ `aria-current="step"` auf aktuellem Schritt
+- ✅ `aria-label` auf klickbaren Schritten
+- ✅ Focus ring (ring-2 + ring-offset-1) auf klickbaren Schritten
+- ✅ Connecting lines `aria-hidden="true"`
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/molecules-stepper
+- **Stories:** HorizontalDefault, VerticalDefault, WithDescriptions, ClickableSteps, TrainingOnboardingWizard, DesignTokens
+
+**Tests:** 24 | **Stories:** 6
+
+---
+
+## [Timeline] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Organism
+
+### Tokens Created
+- **Keine neuen L4-Tokens** -- Timeline nutzt ausschliesslich existierende L3 Role-Tokens:
+  - `color-bg-surface` (default variant icon dot)
+  - `color-bg-success` (success variant icon dot)
+  - `color-bg-warning` (warning variant icon dot)
+  - `color-bg-error` (error variant icon dot)
+  - `color-text-base` (title text)
+  - `color-text-muted` (timestamp, description, default dot fill)
+  - `color-border-default` (vertical connecting line)
+
+### Files
+- `packages/components/src/organisms/Timeline/Timeline.tsx`
+- `packages/components/src/organisms/Timeline/Timeline.test.tsx`
+- `packages/components/src/organisms/Timeline/Timeline.stories.tsx`
+- `packages/components/src/organisms/Timeline/index.ts`
+
+### Architecture
+- Compound Pattern: `Timeline` (wrapper) + `TimelineItem` (entry)
+- Beide `React.forwardRef<HTMLDivElement>` mit displayName
+- TimelineItem Layout: flex-row mit Icon-Spalte (w-8 h-8 rounded-full) + Content-Spalte (ml-4)
+- Vertikale Verbindungslinie via `absolute left-4 top-8 bottom-0 w-0.5`
+- 4 Varianten: default, success, warning, error (steuern Icon-Dot-Farbe)
+- Default: kleiner gefuellter Kreis (w-2.5 h-2.5) statt Icon
+- Custom children unterhalb der description fuer erweiterten Content
+
+### Props -- TimelineItem
+- **title:** string (required)
+- **description:** string (optional)
+- **timestamp:** string (optional)
+- **icon:** ReactNode (optional, default: small dot)
+- **variant:** 'default' | 'success' | 'warning' | 'error'
+- **children:** ReactNode (custom content below description)
+
+### Test Coverage
+- ✅ **25 Tests -- alle bestanden**
+- Rendering: items, list/listitem roles, flex-col layout
+- Content: title, description, timestamp, custom children
+- Variants: default/success/warning/error dot colors
+- Icons: custom icon, default dot fallback
+- Connecting line: rendered, border-default color
+- Custom props: className (Timeline + Item), ref (Timeline + Item), HTML attributes
+- Token classes: text-base, text-muted on title/description/timestamp
+
+### Accessibility
+- ✅ `role="list"` / `role="listitem"` Semantik
+- ✅ `aria-label="Zeitverlauf"` auf Timeline
+- ✅ Connecting line `aria-hidden="true"`
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/organisms-timeline
+- **Stories:** Default, WithIcons, AllVariants, TrainingActivityFeed, TrainingWeeklyLog, DesignTokens
+
+**Tests:** 25 | **Stories:** 7
+
+---
+
+## [Sidebar] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code + Nils
+**Level:** Organism
+
+### Tokens Used
+- **Keine neuen L4-Tokens** -- nutzt existierende L3 Role-Tokens direkt:
+  - `color-bg-paper` (Sidebar-Hintergrundfarbe)
+  - `color-border-base` (Rechter Rand, Footer-Trennlinie)
+  - `color-text-base` (Standard-Textfarbe der SidebarItems)
+  - `color-text-muted` (Gruppen-Labels, Collapse-Button-Farbe)
+  - `color-bg-muted` (Hover-Hintergrund der SidebarItems)
+  - `color-bg-primary` (Aktiver Item-Hintergrund)
+  - `color-text-on-primary` (Aktiver Item-Text)
+  - `color-border-focus` (Focus-Ring)
+  - `radius-md` (Border-Radius der Items und Collapse-Button)
+- **L4 Badge-Tokens wiederverwendet:**
+  - `color-badge-error-bg`, `color-badge-error-text` (Badge auf SidebarItems)
+
+### Architecture
+- **React Context Pattern:** SidebarContext teilt collapsed/toggle State mit allen Sub-Components
+- **Controlled + Uncontrolled:** `collapsed` (controlled) oder `defaultCollapsed` (uncontrolled)
+- **Polymorphe Items:** `<a>` mit href, sonst `<button>` -- semantisch korrekt
+- **Collapsible Mode:** Label, Text und Badge werden im collapsed State ausgeblendet, nur Icons bleiben
+- **title Tooltip:** Collapsed Items zeigen Label als native title-Attribut
+
+### Files
+- `packages/components/src/organisms/Sidebar/Sidebar.tsx` (Compound: Sidebar, SidebarHeader, SidebarContent, SidebarFooter, SidebarGroup, SidebarItem, SidebarCollapseButton + useSidebar Hook)
+- `packages/components/src/organisms/Sidebar/Sidebar.test.tsx` (52 Tests)
+- `packages/components/src/organisms/Sidebar/Sidebar.stories.tsx` (5 Stories)
+- `packages/components/src/organisms/Sidebar/index.ts`
+
+### Sub-Components
+- **Sidebar** -- Root `<aside>` mit Context Provider, width management
+- **SidebarHeader** -- Top-Bereich (Logo, Brand, Collapse-Button)
+- **SidebarContent** -- Scrollbarer Hauptbereich (`flex-1 overflow-y-auto`)
+- **SidebarFooter** -- Bottom-Bereich mit border-top
+- **SidebarGroup** -- Gruppen-Container mit optionalem Label
+- **SidebarItem** -- Navigationslink/-button mit Icon, Badge, Active State
+- **SidebarCollapseButton** -- Toggle-Button (ChevronLeft/ChevronRight)
+
+### Props -- Sidebar (Root)
+- **collapsible:** boolean (Collapse-Modus aktivieren)
+- **defaultCollapsed:** boolean (initialer Zustand, uncontrolled)
+- **collapsed:** boolean (kontrollierter Zustand)
+- **onCollapsedChange:** (collapsed: boolean) => void
+- **width/collapsedWidth:** string (custom widths via style)
+
+### Props -- SidebarItem
+- **icon:** ReactNode (Icon vor dem Label)
+- **label:** string (Pflicht)
+- **href:** string (optional, rendert `<a>` statt `<button>`)
+- **active:** boolean (aktiver Zustand)
+- **badge:** string | number (Notification Badge)
+- **disabled:** boolean
+
+### Test Coverage
+- ✅ **52 Tests -- alle bestanden**
+- Test-Gruppen: Sidebar (12), SidebarHeader (5), SidebarContent (3), SidebarFooter (3), SidebarGroup (5), SidebarItem (18), SidebarCollapseButton (7), useSidebar (2), Compound (2)
+- Getestet: Rendering, Collapsed/Expanded States, Active/Disabled, Badges, Tooltips, Controlled/Uncontrolled, Custom widths, Ref-Forwarding, Focus Ring, aria-current, Context Integration
+
+### Accessibility
+- ✅ `<aside>` Landmark mit `aria-label`
+- ✅ `aria-current="page"` auf aktiven Items
+- ✅ Focus Ring (`focus-visible:ring-2`)
+- ✅ Disabled State (`opacity-50`, `pointer-events-none`, `disabled` Attribut)
+- ✅ Collapse-Button mit dynamischem `aria-label` ("Expand/Collapse sidebar")
+- ✅ title Attribut fuer Tooltip bei collapsed Items
+- ✅ Keyboard Navigation (Tab + Enter/Space)
+
+### Storybook
+- **URL:** http://localhost:6006/?path=/story/organisms-sidebar
+- **Stories:** Default, Collapsed, WithBadges, TrainingAppSidebar, DesignTokens
+- **Controls:** collapsible, defaultCollapsed, width, collapsedWidth
+- **Docs:** Auto-generated via autodocs tag
+
+### Dependencies
+- `lucide-react` (ChevronLeft, ChevronRight fuer Collapse-Button; Home, Activity, TrendingUp, Settings, User etc. in Stories)
+
+**Tests:** 52 | **Stories:** 5
+
+---
+
 ## Development Statistics
 
-**Total Components:** 47 (47 complete)
+**Total Components:** 56 (56 complete)
 **System:** 1 (ThemeProvider + useTheme)
-**Atoms:** 19 (Button, Badge, Input, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton, Separator, Popover, Alert, ToggleGroup, Avatar, Slider, HoverCard, ScrollArea, AspectRatio, ThemeToggle)
-**Molecules:** 20 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, EmptyState, Pagination, Sheet, Dialog, Breadcrumbs, Collapsible, Form)
-**Organisms:** 5 (Card, Table, Modal, Chart, Command)
+**Atoms:** 23 (Button, Badge, Code, Input, Link, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton, Separator, Popover, Alert, ToggleGroup, Avatar, Slider, HoverCard, ScrollArea, AspectRatio, ThemeToggle, Label, Kbd)
+**Molecules:** 23 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, ContextMenu, NavigationMenu, EmptyState, Pagination, Sheet, Dialog, Breadcrumbs, Collapsible, Form, Stepper)
+**Organisms:** 8 (Card, Table, Modal, Chart, Command, StatCard, Timeline, Sidebar)
 **Templates:** 0
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
-**Test Coverage:** Alle 47 Components 100% getestet (exkl. Button: nur manuell geprüft)
-**Storybook Stories:** 325 Stories
-**Design Tokens:** 428 L4-Tokens (356 bestehend + 72 neu: ToggleGroup: 8, Sheet: 7, Dialog: 9, Breadcrumbs: 4, Avatar: 4, Slider: 7, Command: 12, HoverCard: 5, ScrollArea: 4, Chart: 12) + 7 L3 Tokens + 3 L2 + 3 L1
-**Total Tests:** 812
-**Dark Mode:** ✅ CSS class strategy (.dark) mit 70+ Token-Overrides
+**Test Coverage:** Alle 56 Components 100% getestet (exkl. Button: nur manuell geprüft)
+**Storybook Stories:** 383 Stories (378 + 5 Sidebar)
+**Design Tokens:** 461 L4-Tokens (451 bestehend + 10 Sidebar annotated) + 7 L3 Tokens + 3 L2 + 3 L1
+**Total Tests:** 1001 (949 + 52 Sidebar)
+**Dark Mode:** ✅ CSS class strategy (.dark) mit 74+ Token-Overrides
 **Charts:** ✅ Recharts Integration (Line, Bar, Area, Pie)
 **Forms:** ✅ React Hook Form + Zod Integration
 
@@ -2317,5 +2829,157 @@
   - `aria-hidden="true"` for Skeleton elements (decorative), `role="status"` for Spinner, `role="progressbar"` for Progress
   - Radix Progress doesn't set `aria-valuenow` when value is undefined — correct for indeterminate state
 
+### 2026-02-14 - Typography Components (Text, Heading)
+- Two new Atom components: Text (polymorphic body text) and Heading (semantic heading levels 1-6)
+- 1 new L3 token: `color-text-heading` (references `color-neutral-1-900`)
+- Text uses existing L3 tokens: `color-text-base`, `color-text-muted`
+- Heading uses new L3 token: `color-text-heading`
+- 23 new tests (Text: 11, Heading: 12), 16 new stories (Text: 7, Heading: 9)
+- **Files:**
+  - `packages/components/src/atoms/Text/Text.tsx` — CVA variants: body, caption, small, muted; polymorphic `as` prop (p/span/div)
+  - `packages/components/src/atoms/Text/Text.test.tsx`
+  - `packages/components/src/atoms/Text/Text.stories.tsx`
+  - `packages/components/src/atoms/Text/index.ts`
+  - `packages/components/src/atoms/Heading/Heading.tsx` — CVA variants: level 1-6; `as` prop overrides semantic tag
+  - `packages/components/src/atoms/Heading/Heading.test.tsx`
+  - `packages/components/src/atoms/Heading/Heading.stories.tsx`
+  - `packages/components/src/atoms/Heading/index.ts`
+- **Learnings:**
+  - Text `as` prop enables polymorphic rendering — `<p>` default, `<span>` for inline, `<div>` for block containers
+  - Heading separates visual `level` from semantic `as` tag — allows visual H1 style on semantic H3 for sidebar headings
+  - `--color-text-heading` added as separate L3 token (same value as `--color-text-base`) for future independent theming
+
+### 2026-02-14 - Form Utility Components (Label, Kbd)
+- Two new Atom components: Label (form labels), Kbd (keyboard shortcuts)
+- 5 new L4 tokens (Kbd: 3 color + 1 radius + 1 shadow), 4 dark mode overrides
+- 25 new tests (Label: 12, Kbd: 13), 11 new stories (Label: 6, Kbd: 5)
+- **Learnings:**
+  - Label reuses existing L3 tokens (`color-text-base`, `color-text-error`) — not every component needs new L4 tokens
+  - Kbd uses `[box-shadow:var(--shadow-kbd)]` instead of `shadow-[var(...)]` for compound shadow values (Tailwind v3 limitation)
+  - `React.forwardRef<HTMLElement, KbdProps>` works for `<kbd>` since HTMLElement is the generic base
+
+---
+
+## [Carousel] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Organism
+
+### Description
+Karussell-Komponente fuer Bild- und Inhalts-Galerien. Unterstuetzt Navigation per Pfeile, Punkt-Indikatoren, Tastaturnavigation (ArrowLeft/ArrowRight) und automatisches Abspielen mit konfigurierbarem Intervall.
+
+### Tokens Used
+- Keine neuen L4 Tokens — nutzt bestehende L3/L4 Tokens:
+  - `--radius-card` (Container-Eckenradius)
+  - `--color-bg-paper` (Pfeil-Hintergrund)
+  - `--color-text-base` (Pfeil-Icon-Farbe)
+  - `--shadow-card-raised` (Pfeil-Schatten)
+  - `--color-bg-primary` (Aktiver Punkt-Indikator)
+  - `--color-border-focus` (Fokus-Ring)
+
+### Files
+- `packages/components/src/organisms/Carousel/Carousel.tsx`
+- `packages/components/src/organisms/Carousel/Carousel.test.tsx`
+- `packages/components/src/organisms/Carousel/Carousel.stories.tsx`
+- `packages/components/src/organisms/Carousel/index.ts`
+
+### Sub-Components
+- **Carousel** — Wrapper mit Slide-Management, Navigation, AutoPlay
+- **CarouselItem** — Einzelner Slide (min-w-full, flex-shrink-0)
+
+### Props - Carousel
+- **autoPlay:** boolean (automatisches Abspielen)
+- **interval:** number (Millisekunden zwischen Slides, default 5000)
+- **showDots:** boolean (Punkt-Indikatoren anzeigen)
+- **showArrows:** boolean (Navigations-Pfeile anzeigen)
+- **loop:** boolean (Endlos-Schleife)
+
+### Test Coverage
+- ✅ 24 Tests: Rendering, Navigation (next/prev), Dots, AutoPlay (mock timers), Keyboard, Loop, Token-Klassen
+
+### Accessibility
+- ✅ `role="region"` mit `aria-roledescription="carousel"`
+- ✅ `role="group"` mit `aria-roledescription="slide"` pro Slide
+- ✅ Keyboard Navigation (ArrowLeft/ArrowRight)
+- ✅ Focus Ring auf Pfeilen und Dot-Indikatoren
+- ✅ `aria-label` auf allen interaktiven Elementen
+- ✅ `aria-current` auf aktivem Dot-Indikator
+
+### Storybook
+- **Stories:** Default, WithDots, WithArrows, AutoPlay, AllFeatures, TrainingPhotoGallery, DesignTokens
+- **Controls:** autoPlay, interval, showDots, showArrows, loop
+
+**Tests:** 24 | **Stories:** 7
+
+---
+
+## [Tree] - 2026-02-14
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Organism
+
+### Description
+Baumstruktur-Komponente fuer hierarchische Daten. Rekursives Rendering mit Expand/Collapse, optionalen Icons, Tastaturnavigation und Auswahl-Callbacks.
+
+### Tokens Used
+- Keine neuen L4 Tokens — nutzt bestehende L3/L4 Tokens:
+  - `--radius-sm` (Knoten-Eckenradius)
+  - `--color-bg-muted` (Hover/Auswahl-Hintergrund)
+  - `--color-text-base` (Knotenbezeichnung)
+  - `--color-text-muted` (Knoten-Icons)
+  - `--color-border-focus` (Fokus-Ring)
+
+### Files
+- `packages/components/src/organisms/Tree/Tree.tsx`
+- `packages/components/src/organisms/Tree/Tree.test.tsx`
+- `packages/components/src/organisms/Tree/Tree.stories.tsx`
+- `packages/components/src/organisms/Tree/index.ts`
+
+### Data Structure
+```typescript
+interface TreeNode {
+  id: string;
+  label: string;
+  icon?: React.ReactNode;
+  children?: TreeNode[];
+}
+```
+
+### Props - Tree
+- **data:** TreeNode[] (Baumdaten)
+- **onSelect:** (node: TreeNode) => void (Auswahl-Callback)
+- **defaultExpanded:** string[] (initial aufgeklappte Knoten-IDs)
+
+### Test Coverage
+- ✅ 24 Tests: Rendering, Expand/Collapse, defaultExpanded, Deep Nesting, Selection, Keyboard, Token-Klassen, Icons
+
+### Accessibility
+- ✅ `role="tree"` mit `aria-label`
+- ✅ `role="treeitem"` mit `aria-expanded`, `aria-selected`, `aria-level`
+- ✅ `role="group"` fuer Kinder-Container
+- ✅ Keyboard Navigation (ArrowUp/Down/Left/Right, Enter, Space)
+- ✅ Focus Ring pro Eintrag
+- ✅ Roving tabindex pattern
+
+### Storybook
+- **Stories:** Default, DeepNesting, WithIcons, WithSelection, TrainingPlanStructure, FileExplorer, DesignTokens
+
+**Tests:** 24 | **Stories:** 7
+
+---
+
+### 2026-02-14 - Interactive Data Components (Carousel, Tree)
+- Two new Organism components: Carousel (image/content galleries) and Tree (hierarchical data)
+- No new L4 tokens — both components reuse existing L3/L4 tokens
+- 48 new tests (Carousel: 24, Tree: 24), 14 new stories (Carousel: 7, Tree: 7)
+- **Learnings:**
+  - Carousel uses `translateX(-${currentIndex * 100}%)` for slide transitions — CSS transform-based, no layout shifts
+  - Tree uses recursive `TreeNodeItem` (internal, not exported) with `collectVisibleIds` helper for keyboard navigation
+  - `style={{ paddingLeft: level * 16 + 8 }}` for dynamic indentation — avoids Tailwind dynamic class generation issues
+  - Roving tabindex pattern: focused item gets `tabIndex={0}`, all others `tabIndex={-1}`
+  - AutoPlay cleanup via `useEffect` return function — prevents interval leaks on unmount
+
 **Last Updated:** 2026-02-14
-**Design System Status:** ✅ Complete (32 Components, alle Essential Components fertig)
+**Design System Status:** ✅ Complete (53 Components, alle Essential Components fertig)

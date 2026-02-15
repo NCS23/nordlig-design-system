@@ -101,22 +101,22 @@ describe('ToggleGroup', () => {
   it('applies sm size classes', () => {
     renderToggleGroup({ size: 'sm' });
     const item = screen.getByText('Option A');
-    expect(item).toHaveClass('h-8');
-    expect(item).toHaveClass('px-2.5');
+    expect(item).toHaveClass('h-[var(--sizing-toggle-sm-height)]');
+    expect(item).toHaveClass('px-[var(--sizing-toggle-sm-padding-x)]');
   });
 
   it('applies md size classes by default', () => {
     renderToggleGroup();
     const item = screen.getByText('Option A');
-    expect(item).toHaveClass('h-9');
-    expect(item).toHaveClass('px-3');
+    expect(item).toHaveClass('h-[var(--sizing-toggle-md-height)]');
+    expect(item).toHaveClass('px-[var(--sizing-toggle-md-padding-x)]');
   });
 
   it('applies lg size classes', () => {
     renderToggleGroup({ size: 'lg' });
     const item = screen.getByText('Option A');
-    expect(item).toHaveClass('h-10');
-    expect(item).toHaveClass('px-4');
+    expect(item).toHaveClass('h-[var(--sizing-toggle-lg-height)]');
+    expect(item).toHaveClass('px-[var(--sizing-toggle-lg-padding-x)]');
   });
 
   // ─── Outline Variant ──────────────────────────────────────────────────

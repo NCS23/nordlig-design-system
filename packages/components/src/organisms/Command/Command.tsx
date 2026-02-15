@@ -43,6 +43,7 @@ const CommandInput = React.forwardRef<
         'text-[var(--color-command-input-text)]',
         'placeholder:text-[var(--color-command-input-placeholder)]',
         'outline-none',
+        'focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
         'disabled:cursor-not-allowed disabled:opacity-50',
         className
       )}

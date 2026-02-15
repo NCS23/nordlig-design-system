@@ -314,7 +314,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                       'text-[var(--color-select-trigger-text)]',
                       'placeholder:text-[var(--color-select-trigger-placeholder)]',
                       'border-none outline-none',
-                      'focus-visible:ring-1 focus-visible:ring-[var(--color-select-trigger-border-focus)]'
+                      'focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
                     )}
                   />
                 </div>

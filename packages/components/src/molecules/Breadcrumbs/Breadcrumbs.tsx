@@ -45,7 +45,7 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
           'text-[var(--color-breadcrumbs-text)]',
           'hover:text-[var(--color-breadcrumbs-hover-text)]',
           'transition-colors underline-offset-2 hover:underline',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 rounded-sm'
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
         )}
       >
         {children}

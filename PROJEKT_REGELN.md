@@ -143,6 +143,13 @@ Pages       → (in Consumer-Apps, nicht im Design System)
   - [ ] Docs mit Usage Examples
   - [ ] A11y Add-on aktiviert
 
+- [ ] **6. Design & UX Review:**
+  - [ ] Visuelle Konsistenz mit bestehenden Komponenten geprueft
+  - [ ] Alle States (Hover, Focus, Active, Disabled) geprueft
+  - [ ] Dark Mode geprueft
+  - [ ] Keyboard-Navigation getestet
+  - [ ] Screenshot in `/Screenshots/` abgelegt
+
 ---
 
 ## 📝 Token Naming Conventions
@@ -390,7 +397,7 @@ Folgende Tailwind-Klassen sind **KEINE Violations**, da sie strukturelle Layout-
 - **Overflow:** `overflow-hidden`, `overflow-auto`, `truncate`
 - **Cursor:** `cursor-pointer`, `cursor-not-allowed`
 - **Transitions:** `transition-all`, `duration-200`, `ease-in-out`
-- **States:** `disabled:opacity-60`, `hover:scale-110`
+- **States:** `disabled:opacity-50`, `hover:scale-110`
 - **Micro-Spacing in Layouts:** `gap-1`, `gap-1.5`, `gap-2` (interne Layout-Abstände)
 
 **ABER:** Wenn ein Spacing-Wert das visuelle Erscheinungsbild einer Component definiert (Padding, Margin des Containers), **muss** er tokenisiert werden.
@@ -853,6 +860,187 @@ git commit -m "docs: update component log for [ComponentName]"
 
 ---
 
+## 🎯 Focus-Ring Standard (MANDATORY)
+
+Jede interaktive Komponente MUSS einen einheitlichen Focus-Ring haben. Dieses Pattern ist verbindlich:
+
+```tsx
+'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
+```
+
+### Absolute Regeln
+
+1. **Immer `ring-2`** — niemals `ring-1` (zu schwach fuer WCAG 2.4.7)
+2. **Immer `ring-offset-1`** — niemals `ring-offset-2` (einheitlicher Abstand)
+3. **Immer `focus-visible:`** — niemals `focus:` (nur Tastatur-Fokus, nicht Maus-Klick)
+4. **Immer `var(--color-border-focus)`** als Ring-Farbe (ausser bei Komponenten mit eigenem Focus-Token wie `--color-checkbox-focus-ring`)
+5. **Niemals `outline-none` ohne Alternative** — `focus-visible:outline-none` NUR zusammen mit `focus-visible:ring-*`
+6. **Kein `rounded-sm` oder andere Form-Klassen im Focus-Ring** — der Ring folgt der Komponenten-Form automatisch
+
+### Haeufige Fehler
+
+```tsx
+// ❌ VERBOTEN — zu schwacher Ring
+'focus-visible:ring-1 focus-visible:ring-[var(--color-select-trigger-border-focus)]'
+
+// ❌ VERBOTEN — inkonsistenter Offset
+'focus-visible:ring-offset-2'
+
+// ❌ VERBOTEN — outline-none ohne Ring
+'outline-none'
+
+// ✅ RICHTIG — Standard-Pattern
+'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
+```
+
+---
+
+## 🚫 Disabled-State Standard (MANDATORY)
+
+Jede deaktivierbare Komponente MUSS einen einheitlichen Disabled-State haben:
+
+### Standard-Pattern
+
+```tsx
+// Fuer native HTML-Elemente (<button>, <input>)
+'disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-[var(--color-{component}-disabled-bg)]'
+
+// Fuer Radix-Primitives (data-Attribute)
+'data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[disabled]:text-[var(--color-{component}-disabled-text)]'
+```
+
+### Regeln
+
+1. **Opacity immer `50`** — niemals `60` oder andere Werte
+2. **Dedizierte Farb-Tokens** fuer Disabled-Background/Text wenn moeglich
+3. **cursor-not-allowed** fuer Elemente die noch sichtbar bleiben, **pointer-events-none** fuer Elemente die komplett deaktiviert werden
+4. **disabled hover state** zuruecksetzen: `disabled:hover:border-[var(--color-{comp}-border)]` wenn hover-Effekte existieren
+
+---
+
+## 🎬 Animation & Transition Standard
+
+### Animations-Dauer
+
+Verwende konsistente Durations:
+
+| Kontext | Duration | Beispiel |
+|---------|----------|----------|
+| Micro-Interaction | `duration-150` | Farbaenderung, Opacity |
+| Standard-Transition | `duration-200` | Accordion, Collapsible, Hover |
+| Overlay-Animation | `duration-300` | Sheet, Toast, Modal |
+| Progress/Data | `duration-500` | Progress Bar Fill |
+
+### Popup/Overlay-Animation
+
+Popovers, Tooltips, Dropdowns, Selects:
+```tsx
+'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95'
+'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95'
+```
+
+### Collapsible/Accordion-Animation
+
+```tsx
+'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-top-1'
+'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-1'
+'transition-all duration-200'
+```
+
+---
+
+## 📏 Sizing-Token Pflicht (MANDATORY)
+
+### Alle visuellen Dimensionen MUESSEN tokenisiert werden
+
+Hardcodierte Tailwind-Klassen fuer Component-Groessen sind **VERBOTEN**:
+
+```tsx
+// ❌ VERBOTEN — hardcoded Groessen
+size: { sm: 'h-8 w-8', md: 'h-10 w-10' }
+
+// ✅ RICHTIG — Token-basiert
+size: { sm: 'h-[var(--sizing-avatar-sm)] w-[var(--sizing-avatar-sm)]' }
+```
+
+### Was tokenisiert werden MUSS
+
+- **Component-Hoehen** (Button, Input, Toggle, Avatar, etc.)
+- **Component-Breiten** (Avatar, Checkbox, Switch, etc.)
+- **Icon-Groessen** innerhalb von Components
+- **Font-Sizes** innerhalb von CVA-Varianten → `text-[length:var(--sizing-{comp}-{size}-font-size)]`
+
+### Erlaubte Ausnahmen
+
+- `h-full`, `w-full`, `min-w-0`, `max-w-xs` (Layout-Constraints)
+- `h-px` (Separator/Divider — 1px ist universell)
+- Lucide Icon `size={16}` Props (nicht CSS-basiert)
+
+---
+
+## 🔍 Design & UX Review Pflicht (MANDATORY)
+
+Bei **jeder neuen Komponente** und bei **jeder aenderungsrelevanten Modifikation** bestehender Komponenten MUSS ein Design & UX Review durchgefuehrt werden.
+
+### Wann ist ein Review Pflicht?
+
+| Aenderung | Review noetig? |
+|-----------|---------------|
+| Neue Komponente erstellt | ✅ Ja — vollstaendiges Review |
+| Variante hinzugefuegt (z.B. neuer size/variant) | ✅ Ja — Review der neuen Variante |
+| Token-Werte geaendert (Farben, Spacing, Sizing) | ✅ Ja — visuelles Review |
+| Layout/Struktur einer Komponente geaendert | ✅ Ja — UX Review |
+| Bugfix ohne visuelle Aenderung | ❌ Nein |
+| Reine Code-Refactors (kein visueller Impact) | ❌ Nein |
+| Dokumentation / Stories aktualisiert | ❌ Nein |
+
+### Review-Kriterien
+
+Das Review prueft folgende Aspekte (orientiert an DESIGN_UX_REVIEW.md):
+
+1. **Design-Sprache Konformitaet**
+   - Passt die Komponente zur nordischen Aesthetik (Minimalismus, Klarheit, Weissraum)?
+   - Sind die visuellen Proportionen harmonisch?
+
+2. **Visuelle Konsistenz**
+   - Einheitliche Spacing-, Sizing- und Radius-Werte (Token-basiert)?
+   - Konsistente Farbverwendung ueber alle Varianten?
+   - Hover/Focus/Active/Disabled States vollstaendig und einheitlich?
+
+3. **Accessibility (WCAG 2.1 AA)**
+   - Focus-Ring Standard eingehalten (ring-2, offset-1, focus-visible)?
+   - Farbkontrast >= 4.5:1 (Text) / >= 3:1 (UI-Elemente)?
+   - Touch-Target >= 44x44px fuer interaktive Elemente?
+   - ARIA-Labels und Keyboard-Navigation vorhanden?
+
+4. **Token-Architektur**
+   - Alle visuellen Werte tokenisiert (keine hardcoded Tailwind-Klassen)?
+   - L4 Tokens referenzieren nur L3 (keine Ebenen uebersprungen)?
+   - Token-Naming konsistent mit bestehenden Patterns?
+
+5. **UX Pattern-Konsistenz**
+   - Interaktionsmuster konsistent mit aehnlichen Komponenten?
+   - Animation/Transition Standards eingehalten?
+   - Disabled-State Standard eingehalten?
+
+### Review-Prozess
+
+```
+1. Storybook starten → Komponente visuell pruefen
+2. Alle Varianten und States durchklicken
+3. Dark Mode pruefen (falls unterstuetzt)
+4. Keyboard-Navigation testen (Tab, Enter, Escape)
+5. Storybook A11y Panel pruefen (keine Violations)
+6. Screenshot fuer /Screenshots/ Ordner erstellen
+7. Findings dokumentieren und beheben
+```
+
+### In der Checkliste
+
+Das Review ist Teil der bestehenden "Neue Komponente anlegen - Checkliste" und wird als **letzter Schritt vor dem Commit** durchgefuehrt.
+
+---
+
 ## 🎓 Weiterführende Docs
 
 - [COMPONENT_LOG.md](COMPONENT_LOG.md) - Component Development History
@@ -860,8 +1048,9 @@ git commit -m "docs: update component log for [ComponentName]"
 - [TOKEN_GUIDELINES.md](docs/TOKEN_GUIDELINES.md) - Wann welche Tokens
 - [COMPONENT_GUIDELINES.md](docs/COMPONENT_GUIDELINES.md) - Atomic Design Details
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Für externe Contributors
+- [DESIGN_UX_REVIEW.md](DESIGN_UX_REVIEW.md) - Design & UX Review (14.02.2026)
 
 ---
 
-**Letzte Änderung:** 13.02.2026  
+**Letzte Änderung:** 14.02.2026
 **Nächstes Review:** Bei v1.0.0 Release

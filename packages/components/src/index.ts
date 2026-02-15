@@ -10,6 +10,8 @@ export {
 // Atoms
 export { ThemeToggle, type ThemeToggleProps } from './atoms/ThemeToggle';
 export { Button, buttonVariants, type ButtonProps } from './atoms/Button';
+export { Text, textVariants, type TextProps } from './atoms/Text';
+export { Heading, headingVariants, type HeadingProps } from './atoms/Heading';
 export {
   ToggleGroup,
   ToggleGroupItem,
@@ -34,7 +36,9 @@ export {
 export { ScrollArea, ScrollBar, type ScrollAreaProps } from './atoms/ScrollArea';
 export { AspectRatio, type AspectRatioProps } from './atoms/AspectRatio';
 export { Badge, badgeVariants, type BadgeProps } from './atoms/Badge';
+export { Code, CodeBlock, type CodeProps, type CodeBlockProps } from './atoms/Code';
 export { Input, inputVariants, type InputProps } from './atoms/Input';
+export { Link, linkVariants, type LinkProps } from './atoms/Link';
 export {
   Checkbox,
   CheckboxField,
@@ -49,6 +53,8 @@ export {
 } from './atoms/Switch';
 export { Tooltip, type TooltipProps } from './atoms/Tooltip';
 export { Separator, type SeparatorProps } from './atoms/Separator';
+export { Label, type LabelProps } from './atoms/Label';
+export { Kbd, kbdVariants, type KbdProps } from './atoms/Kbd';
 export {
   Alert,
   alertVariants,
@@ -174,6 +180,22 @@ export {
   type DropdownMenuLabelProps,
 } from './molecules/DropdownMenu';
 export {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuLabel,
+  ContextMenuShortcut,
+  type ContextMenuProps,
+  type ContextMenuTriggerProps,
+  type ContextMenuContentProps,
+  type ContextMenuItemProps,
+  type ContextMenuSeparatorProps,
+  type ContextMenuLabelProps,
+  type ContextMenuShortcutProps,
+} from './molecules/ContextMenu';
+export {
   Pagination,
   type PaginationProps,
 } from './molecules/Pagination';
@@ -225,6 +247,21 @@ export {
   type UseFormReturn,
   type SubmitHandler,
 } from './molecules/Form';
+export {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+  NavigationMenuViewport,
+  type NavigationMenuProps,
+  type NavigationMenuListProps,
+  type NavigationMenuItemProps,
+  type NavigationMenuTriggerProps,
+  type NavigationMenuContentProps,
+  type NavigationMenuLinkProps,
+} from './molecules/NavigationMenu';
 
 // Organisms
 export {
@@ -310,6 +347,56 @@ export {
   CommandShortcut,
   type CommandProps,
 } from './organisms/Command';
+
+export {
+  StatCard,
+  statCardVariants,
+  type StatCardProps,
+} from './organisms/StatCard';
+
+export {
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarItem,
+  SidebarCollapseButton,
+  useSidebar,
+  type SidebarProps,
+  type SidebarHeaderProps,
+  type SidebarContentProps,
+  type SidebarFooterProps,
+  type SidebarGroupProps,
+  type SidebarItemProps,
+  type SidebarCollapseButtonProps,
+} from './organisms/Sidebar';
+
+export {
+  Carousel,
+  CarouselItem,
+  type CarouselProps,
+  type CarouselItemProps,
+} from './organisms/Carousel';
+
+export {
+  Tree,
+  type TreeProps,
+  type TreeNode,
+} from './organisms/Tree';
+
+export {
+  Timeline,
+  TimelineItem,
+  type TimelineProps,
+  type TimelineItemProps,
+} from './organisms/Timeline';
+
+export {
+  Stepper,
+  type StepperProps,
+  type StepperStep,
+} from './molecules/Stepper';
 
 // Utils
 export { cn } from './utils/cn';

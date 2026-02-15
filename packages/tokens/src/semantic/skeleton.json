@@ -6,6 +6,14 @@
       "shimmer": { "$type": "color", "$value": "{color.bg.base}" }
     }
   },
+  "sizing": {
+    "$description": "Level 4: Skeleton size tokens — References Level 3 only",
+    "skeleton": {
+      "circle-sm": { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Skeleton circle sm (36px)" },
+      "circle-md": { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Skeleton circle md (40px)" },
+      "circle-lg": { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "Skeleton circle lg (44px)" }
+    }
+  },
   "radius": {
     "skeleton":        { "$type": "dimension", "$value": "{radius.component.md}" },
     "skeleton-circle": { "$type": "dimension", "$value": "{radius.component.full}" }

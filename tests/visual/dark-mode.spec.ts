@@ -21,6 +21,20 @@ const darkModeStories = [
   // Organisms
   { id: 'organisms-card--all-elevations', name: 'card-all-elevations' },
   { id: 'organisms-table--basic',         name: 'table-basic' },
+  // Neue Komponenten (Completion Package)
+  { id: 'atoms-label--all-states',                name: 'label-all-states' },
+  { id: 'atoms-link--all-variants',               name: 'link-all-variants' },
+  { id: 'atoms-code--all-variants',               name: 'code-all-variants' },
+  { id: 'atoms-kbd--default',                     name: 'kbd-default' },
+  { id: 'atoms-heading--all-levels',              name: 'heading-all-levels' },
+  { id: 'atoms-text--all-variants',               name: 'text-all-variants' },
+  { id: 'molecules-stepper--horizontal-default',  name: 'stepper-default' },
+  { id: 'molecules-navigationmenu--default',      name: 'navigationmenu-default' },
+  { id: 'organisms-statcard--all-variants',       name: 'statcard-all-variants' },
+  { id: 'organisms-timeline--all-variants',       name: 'timeline-all-variants' },
+  { id: 'organisms-tree--default',                name: 'tree-default' },
+  { id: 'organisms-sidebar--default',             name: 'sidebar-default' },
+  { id: 'organisms-carousel--default',            name: 'carousel-default' },
 ];
 
 test.describe('Dark Mode', () => {

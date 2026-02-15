@@ -35,9 +35,9 @@ const toggleGroupItemVariants = cva(
         outline: 'bg-transparent border border-[var(--color-toggle-border)]',
       },
       size: {
-        sm: 'h-8 px-2.5 text-sm',
-        md: 'h-9 px-3 text-sm',
-        lg: 'h-10 px-4 text-base',
+        sm: 'h-[var(--sizing-toggle-sm-height)] px-[var(--sizing-toggle-sm-padding-x)] text-[length:var(--sizing-toggle-sm-font-size)]',
+        md: 'h-[var(--sizing-toggle-md-height)] px-[var(--sizing-toggle-md-padding-x)] text-[length:var(--sizing-toggle-md-font-size)]',
+        lg: 'h-[var(--sizing-toggle-lg-height)] px-[var(--sizing-toggle-lg-padding-x)] text-[length:var(--sizing-toggle-lg-font-size)]',
       },
     },
     defaultVariants: {

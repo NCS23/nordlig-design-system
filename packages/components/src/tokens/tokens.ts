@@ -279,6 +279,10 @@ export const ColorBgElevated = "#f8fafc";
 export const ColorBgPrimary = "#0ea5e9";
 export const ColorBgPrimaryHover = "#0284c7";
 export const ColorBgPrimaryActive = "#0369a1";
+export const ColorBgPrimarySubtle = "#f0f9ff";
+export const ColorBgPrimaryMuted = "#e0f2fe";
+export const ColorBgSurfaceHover = "#e2e8f0";
+export const ColorBgSurfaceActive = "#cbd5e1";
 export const ColorBgSecondary = "#64748b";
 export const ColorBgSecondaryHover = "#475569";
 export const ColorBgSuccess = "#10b981";
@@ -738,6 +742,7 @@ export const SpacingBase05 = "2px";
 export const SpacingBase15 = "6px";
 export const SpacingBase25 = "10px";
 export const SpacingBase35 = "14px";
+export const Spacing2xs = "4px";
 export const SpacingXs = "8px";
 export const SpacingSm = "12px";
 export const SpacingMd = "16px";
@@ -899,6 +904,17 @@ export const SizingComponentPaddingYXl = "12px";
 export const SizingComponentGapSm = "6px";
 export const SizingComponentGapMd = "8px";
 export const SizingComponentGapLg = "10px";
+export const SizingComponentIconSm = "16px";
+export const SizingComponentIconMd = "24px";
+export const SizingComponentIconLg = "32px";
+export const SizingComponentIconXl = "48px";
+export const SizingComponentTrackSm = "4px";
+export const SizingComponentTrackMd = "8px";
+export const SizingComponentTrackLg = "12px";
+export const SizingAvatarSm = "36px"; // Avatar size sm (h-9 = 36px)
+export const SizingAvatarMd = "40px"; // Avatar size md (h-10 = 40px)
+export const SizingAvatarLg = "44px"; // Avatar size lg (h-11 = 44px)
+export const SizingAvatarXl = "48px"; // Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16)
 export const SizingBadgeSmPaddingX = "12px";
 export const SizingBadgeSmPaddingY = "6px";
 export const SizingBadgeSmFontSize = "0.875rem";
@@ -926,6 +942,8 @@ export const SizingBtnLgPaddingY = "10px";
 export const SizingBtnLgGap = "10px";
 export const SizingBtnLgFontSize = "1.125rem";
 export const SizingBtnLgRadius = "0.375rem";
+export const SizingCheckboxBoxSize = "16px"; // Checkbox box size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available
+export const SizingCheckboxIconSize = "16px"; // Check icon size inside checkbox (16px)
 export const SizingDatepickerDaySize = "36px"; // Day cell width/height
 export const SizingInputSmHeight = "36px"; // 36px – matches Button sm
 export const SizingInputSmFontSize = "0.875rem"; // 0.875rem
@@ -936,12 +954,31 @@ export const SizingInputMdRadius = "0.375rem"; // 6px
 export const SizingInputLgHeight = "44px"; // 44px – matches Button lg
 export const SizingInputLgFontSize = "1.125rem"; // 1.125rem
 export const SizingInputLgRadius = "0.375rem"; // 6px
+export const SizingPaginationItemSize = "36px"; // Page button width & height (36px square)
+export const SizingPaginationFontSize = "0.875rem"; // Page button font size
 export const SizingProgressSmHeight = "4px";
 export const SizingProgressMdHeight = "8px";
 export const SizingProgressLgHeight = "12px";
+export const SizingRadioButtonSize = "16px"; // Radio button outer size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available
+export const SizingRadioDotSize = "12px"; // Radio inner dot size (12px)
+export const SizingSkeletonCircleSm = "36px"; // Skeleton circle sm (36px)
+export const SizingSkeletonCircleMd = "40px"; // Skeleton circle md (40px)
+export const SizingSkeletonCircleLg = "44px"; // Skeleton circle lg (44px)
 export const SizingSpinnerSm = "16px";
 export const SizingSpinnerMd = "24px";
 export const SizingSpinnerLg = "32px";
 export const SizingSpinnerXl = "48px";
+export const SizingSwitchTrackHeight = "24px"; // Switch track height (24px = h-6)
+export const SizingSwitchTrackWidth = "44px"; // Switch track width (44px = w-11)
+export const SizingSwitchThumbSize = "16px"; // Switch thumb size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available
 export const SizingTextareaMinHeight = "100px"; // Default minimum height
 export const SizingTextareaMaxHeight = "400px"; // Auto-resize maximum
+export const SizingToggleSmHeight = "36px"; // Toggle item height sm
+export const SizingToggleSmPaddingX = "12px"; // Toggle item horizontal padding sm
+export const SizingToggleSmFontSize = "0.875rem"; // Toggle item font size sm
+export const SizingToggleMdHeight = "40px"; // Toggle item height md
+export const SizingToggleMdPaddingX = "16px"; // Toggle item horizontal padding md
+export const SizingToggleMdFontSize = "0.875rem"; // Toggle item font size md
+export const SizingToggleLgHeight = "44px"; // Toggle item height lg
+export const SizingToggleLgPaddingX = "32px"; // Toggle item horizontal padding lg
+export const SizingToggleLgFontSize = "1rem"; // Toggle item font size lg

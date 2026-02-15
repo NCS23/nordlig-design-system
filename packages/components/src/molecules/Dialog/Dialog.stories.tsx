@@ -190,6 +190,67 @@ export const TrainingExportData: Story = {
 
 // ─── Long Content ───────────────────────────────────────────────────────────
 
+// ─── Open State ─────────────────────────────────────────────────────────────
+
+export const OpenState: Story = {
+  name: 'Geoeffneter Zustand',
+  render: () => (
+    <Dialog defaultOpen>
+      <DialogTrigger>
+        <button className="px-4 py-2 text-sm font-medium rounded border">
+          Dialog oeffnen
+        </button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Geoeffneter Dialog</DialogTitle>
+          <DialogDescription>
+            Dieser Dialog wird standardmaessig geoeffnet dargestellt, um Overlay,
+            Animationen und Layoutverhalten direkt sichtbar zu machen.
+          </DialogDescription>
+        </DialogHeader>
+        <p className="text-sm">
+          Ideal fuer visuelle Regression-Tests und Design-Reviews.
+        </p>
+        <DialogFooter>
+          <button className="px-3 py-1.5 text-sm rounded border">Schliessen</button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+};
+
+// ─── Open Confirmation ─────────────────────────────────────────────────────
+
+export const OpenConfirmation: Story = {
+  name: 'Geoeffnete Loeschbestätigung',
+  render: () => (
+    <Dialog defaultOpen>
+      <DialogTrigger>
+        <button className="px-4 py-2 text-sm font-medium rounded border text-red-600">
+          Eintrag loeschen
+        </button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Eintrag endgueltig loeschen?</DialogTitle>
+          <DialogDescription>
+            Diese Aktion kann nicht rueckgaengig gemacht werden.
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
+          <button className="px-3 py-1.5 text-sm rounded bg-red-600 text-white">
+            Endgueltig loeschen
+          </button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+};
+
+// ─── Long Content ───────────────────────────────────────────────────────────
+
 export const LongContent: Story = {
   name: 'Langer Inhalt',
   render: () => (

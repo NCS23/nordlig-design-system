@@ -349,3 +349,77 @@ export const LoginForm: StoryObj = {
     return <Login />;
   },
 };
+
+// ---------------------------------------------------------------------------
+// 8. DesignTokens - Verwendete Design-Tokens
+// ---------------------------------------------------------------------------
+
+export const DesignTokens: StoryObj = {
+  name: 'DesignTokens',
+  render: () => {
+    const tokens = [
+      {
+        token: '--color-input-text',
+        resolved: '#0f172a (Slate 900)',
+        usage: 'Label-Textfarbe',
+      },
+      {
+        token: '--color-error-text',
+        resolved: '#dc2626 (Red 600)',
+        usage: 'Fehlermeldung-Textfarbe (FormField + FormMessage)',
+      },
+      {
+        token: '--color-text-muted',
+        resolved: '#64748b (Slate 500)',
+        usage: 'Beschreibungstext-Farbe (FormField description)',
+      },
+    ];
+
+    return (
+      <div style={{ maxWidth: 700 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 12 }}>
+          Form Design Tokens
+        </h3>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
+          <thead>
+            <tr style={{ borderBottom: '2px solid #e2e8f0' }}>
+              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Token</th>
+              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Wert</th>
+              <th style={{ textAlign: 'left', padding: '8px 12px' }}>Verwendung</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tokens.map((t) => (
+              <tr key={t.token} style={{ borderBottom: '1px solid #e2e8f0' }}>
+                <td style={{ padding: '8px 12px', fontFamily: 'monospace', fontSize: 13 }}>
+                  {t.token}
+                </td>
+                <td style={{ padding: '8px 12px' }}>
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      width: 14,
+                      height: 14,
+                      borderRadius: 3,
+                      backgroundColor: t.resolved.split(' ')[0],
+                      border: '1px solid #e2e8f0',
+                      verticalAlign: 'middle',
+                      marginRight: 8,
+                    }}
+                  />
+                  {t.resolved}
+                </td>
+                <td style={{ padding: '8px 12px' }}>{t.usage}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p style={{ marginTop: 16, fontSize: 13, color: '#64748b' }}>
+          Form nutzt primaer die Tokens der eingebetteten Atom-Komponenten (Input, Button, Label).
+          Die hier gelisteten Tokens betreffen die Form-spezifischen Elemente: Labels, Fehlermeldungen
+          und Beschreibungstexte.
+        </p>
+      </div>
+    );
+  },
+};

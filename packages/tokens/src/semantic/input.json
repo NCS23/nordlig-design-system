@@ -3,7 +3,7 @@
     "$description": "Level 4: Input component tokens",
     "input": {
       "bg":               { "$type": "color", "$value": "{color.bg.paper}", "$description": "White paper background" },
-      "bg-disabled":      { "$type": "color", "$value": "{color.neutral.1.100}" },
+      "bg-disabled":      { "$type": "color", "$value": "{color.bg.surface}" },
       "text":             { "$type": "color", "$value": "{color.text.base}" },
       "text-placeholder": { "$type": "color", "$value": "{color.text.muted}" },
       "border":           { "$type": "color", "$value": "{color.border.default}" },

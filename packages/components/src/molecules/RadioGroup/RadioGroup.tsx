@@ -69,7 +69,7 @@ const RadioGroupItem = React.forwardRef<
           'rounded-full border-2 transition-all duration-200',
           'border-[var(--color-radio-border)] bg-[var(--color-radio-bg)]',
           'hover:border-[var(--color-radio-border-hover)]',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-radio-focus-ring)] focus-visible:ring-offset-2',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-radio-focus-ring)] focus-visible:ring-offset-1',
           'disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-[var(--color-radio-disabled-bg)]',
           'data-[state=checked]:border-[var(--color-radio-selected-border)]'
         )}

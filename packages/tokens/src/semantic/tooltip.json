@@ -2,9 +2,9 @@
   "color": {
     "$description": "Level 4: Tooltip component tokens",
     "tooltip": {
-      "bg":    { "$type": "color", "$value": "{color.neutral.1.900}", "$description": "Dark tooltip background" },
+      "bg":    { "$type": "color", "$value": "{color.text.base}", "$description": "Dark tooltip background" },
       "text":  { "$type": "color", "$value": "{color.text.inverse}", "$description": "Light text on dark bg" },
-      "arrow": { "$type": "color", "$value": "{color.neutral.1.900}", "$description": "Arrow matches bg" }
+      "arrow": { "$type": "color", "$value": "{color.text.base}", "$description": "Arrow matches bg" }
     }
   },
   "shadow": {
