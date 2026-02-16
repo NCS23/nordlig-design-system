@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: nordlig-storybook
-    command: pnpm storybook -- --host 0.0.0.0
+    command: pnpm storybook -- --host 0.0.0.0 --ci
     ports:
       - "6006:6006"
     volumes:
