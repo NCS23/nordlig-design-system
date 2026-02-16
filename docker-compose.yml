@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  storybook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nordlig-storybook
+    command: pnpm storybook --host 0.0.0.0
+    ports:
+      - "6006:6006"
+    volumes:
+      - .:/app
+      - nordlig_node_modules:/app/node_modules
+    restart: unless-stopped
+
+volumes:
+  nordlig_node_modules:
+
+networks:
+  default:
+    name: nordlig-network
