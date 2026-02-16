@@ -1,0 +1,2226 @@
+/**
+ * Nordlig Design System - Annotated Tokens for Storybook
+ * Auto-imported by storybook-design-token addon
+ *
+ * This file mirrors ALL tokens from tokens.css with resolved values
+ * (no var() references) so the Storybook addon can display them.
+ *
+ * Last updated: 2026-02-13
+ */
+
+:root {
+  /* ═══════════════════════════════════════════════════════════════════════════
+     LEVEL 1: BASE (Raw Values)
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  /* @tokens L1 Base: Core Colors */
+  /* @presenter Color */
+  --color-base-white: #ffffff;
+  --color-base-black: #000000;
+  --color-base-overlay: rgba(0, 0, 0, 0.5);
+  /* @end */
+
+  /* @tokens L1 Base: Slate */
+  /* @presenter Color */
+  --color-base-slate-50: #f8fafc;
+  --color-base-slate-100: #f1f5f9;
+  --color-base-slate-200: #e2e8f0;
+  --color-base-slate-300: #cbd5e1;
+  --color-base-slate-400: #94a3b8;
+  --color-base-slate-500: #64748b;
+  --color-base-slate-600: #475569;
+  --color-base-slate-700: #334155;
+  --color-base-slate-800: #1e293b;
+  --color-base-slate-900: #0f172a;
+  --color-base-slate-950: #020617;
+  /* @end */
+
+  /* @tokens L1 Base: Stone */
+  /* @presenter Color */
+  --color-base-stone-50: #fafaf9;
+  --color-base-stone-100: #f5f5f4;
+  --color-base-stone-200: #e7e5e4;
+  --color-base-stone-300: #d6d3d1;
+  --color-base-stone-400: #a8a29e;
+  --color-base-stone-500: #78716c;
+  --color-base-stone-600: #57534e;
+  --color-base-stone-700: #44403c;
+  --color-base-stone-800: #292524;
+  --color-base-stone-900: #1c1917;
+  --color-base-stone-950: #0c0a09;
+  /* @end */
+
+  /* @tokens L1 Base: Zinc */
+  /* @presenter Color */
+  --color-base-zinc-50: #fafafa;
+  --color-base-zinc-100: #f4f4f5;
+  --color-base-zinc-200: #e4e4e7;
+  --color-base-zinc-300: #d4d4d8;
+  --color-base-zinc-400: #a1a1aa;
+  --color-base-zinc-500: #71717a;
+  --color-base-zinc-600: #52525b;
+  --color-base-zinc-700: #3f3f46;
+  --color-base-zinc-800: #27272a;
+  --color-base-zinc-900: #18181b;
+  --color-base-zinc-950: #09090b;
+  /* @end */
+
+  /* @tokens L1 Base: Sky */
+  /* @presenter Color */
+  --color-base-sky-50: #f0f9ff;
+  --color-base-sky-100: #e0f2fe;
+  --color-base-sky-200: #bae6fd;
+  --color-base-sky-300: #7dd3fc;
+  --color-base-sky-400: #38bdf8;
+  --color-base-sky-500: #0ea5e9;
+  --color-base-sky-600: #0284c7;
+  --color-base-sky-700: #0369a1;
+  --color-base-sky-800: #075985;
+  --color-base-sky-900: #0c4a6e;
+  --color-base-sky-950: #082f49;
+  /* @end */
+
+  /* @tokens L1 Base: Cyan */
+  /* @presenter Color */
+  --color-base-cyan-50: #ecfeff;
+  --color-base-cyan-100: #cffafe;
+  --color-base-cyan-200: #a5f3fc;
+  --color-base-cyan-300: #67e8f9;
+  --color-base-cyan-400: #22d3ee;
+  --color-base-cyan-500: #06b6d4;
+  --color-base-cyan-600: #0891b2;
+  --color-base-cyan-700: #0e7490;
+  --color-base-cyan-800: #155e75;
+  --color-base-cyan-900: #164e63;
+  --color-base-cyan-950: #083344;
+  /* @end */
+
+  /* @tokens L1 Base: Teal */
+  /* @presenter Color */
+  --color-base-teal-50: #f0fdfa;
+  --color-base-teal-100: #ccfbf1;
+  --color-base-teal-200: #99f6e4;
+  --color-base-teal-300: #5eead4;
+  --color-base-teal-400: #2dd4bf;
+  --color-base-teal-500: #14b8a6;
+  --color-base-teal-600: #0d9488;
+  --color-base-teal-700: #0f766e;
+  --color-base-teal-800: #115e59;
+  --color-base-teal-900: #134e4a;
+  --color-base-teal-950: #042f2e;
+  /* @end */
+
+  /* @tokens L1 Base: Indigo */
+  /* @presenter Color */
+  --color-base-indigo-50: #eef2ff;
+  --color-base-indigo-100: #e0e7ff;
+  --color-base-indigo-200: #c7d2fe;
+  --color-base-indigo-300: #a5b4fc;
+  --color-base-indigo-400: #818cf8;
+  --color-base-indigo-500: #6366f1;
+  --color-base-indigo-600: #4f46e5;
+  --color-base-indigo-700: #4338ca;
+  --color-base-indigo-800: #3730a3;
+  --color-base-indigo-900: #312e81;
+  --color-base-indigo-950: #1e1b4b;
+  /* @end */
+
+  /* @tokens L1 Base: Blue */
+  /* @presenter Color */
+  --color-base-blue-50: #eff6ff;
+  --color-base-blue-100: #dbeafe;
+  --color-base-blue-200: #bfdbfe;
+  --color-base-blue-300: #93c5fd;
+  --color-base-blue-400: #60a5fa;
+  --color-base-blue-500: #3b82f6;
+  --color-base-blue-600: #2563eb;
+  --color-base-blue-700: #1d4ed8;
+  --color-base-blue-800: #1e40af;
+  --color-base-blue-900: #1e3a8a;
+  --color-base-blue-950: #172554;
+  /* @end */
+
+  /* @tokens L1 Base: Emerald */
+  /* @presenter Color */
+  --color-base-emerald-50: #ecfdf5;
+  --color-base-emerald-100: #d1fae5;
+  --color-base-emerald-200: #a7f3d0;
+  --color-base-emerald-300: #6ee7b7;
+  --color-base-emerald-400: #34d399;
+  --color-base-emerald-500: #10b981;
+  --color-base-emerald-600: #059669;
+  --color-base-emerald-700: #047857;
+  --color-base-emerald-800: #065f46;
+  --color-base-emerald-900: #064e3b;
+  --color-base-emerald-950: #022c22;
+  /* @end */
+
+  /* @tokens L1 Base: Amber */
+  /* @presenter Color */
+  --color-base-amber-50: #fffbeb;
+  --color-base-amber-100: #fef3c7;
+  --color-base-amber-200: #fde68a;
+  --color-base-amber-300: #fcd34d;
+  --color-base-amber-400: #fbbf24;
+  --color-base-amber-500: #f59e0b;
+  --color-base-amber-600: #d97706;
+  --color-base-amber-700: #b45309;
+  --color-base-amber-800: #92400e;
+  --color-base-amber-900: #78350f;
+  --color-base-amber-950: #451a03;
+  /* @end */
+
+  /* @tokens L1 Base: Red */
+  /* @presenter Color */
+  --color-base-red-50: #fef2f2;
+  --color-base-red-100: #fee2e2;
+  --color-base-red-200: #fecaca;
+  --color-base-red-300: #fca5a5;
+  --color-base-red-400: #f87171;
+  --color-base-red-500: #ef4444;
+  --color-base-red-600: #dc2626;
+  --color-base-red-700: #b91c1c;
+  --color-base-red-800: #991b1b;
+  --color-base-red-900: #7f1d1d;
+  --color-base-red-950: #450a0a;
+  /* @end */
+
+  /* @tokens L1 Base: Yellow */
+  /* @presenter Color */
+  --color-base-yellow-50: #fefce8;
+  --color-base-yellow-100: #fef9c3;
+  --color-base-yellow-200: #fef08a;
+  --color-base-yellow-300: #fde047;
+  --color-base-yellow-400: #facc15;
+  --color-base-yellow-500: #eab308;
+  --color-base-yellow-600: #ca8a04;
+  --color-base-yellow-700: #a16207;
+  --color-base-yellow-800: #854d0e;
+  --color-base-yellow-900: #713f12;
+  --color-base-yellow-950: #422006;
+  /* @end */
+
+  /* @tokens L1 Base: Green */
+  /* @presenter Color */
+  --color-base-green-50: #f0fdf4;
+  --color-base-green-100: #dcfce7;
+  --color-base-green-200: #bbf7d0;
+  --color-base-green-300: #86efac;
+  --color-base-green-400: #4ade80;
+  --color-base-green-500: #22c55e;
+  --color-base-green-600: #16a34a;
+  --color-base-green-700: #15803d;
+  --color-base-green-800: #166534;
+  --color-base-green-900: #14532d;
+  --color-base-green-950: #052e16;
+  /* @end */
+
+  /* @tokens L1 Base: Border Radius */
+  /* @presenter BorderRadius */
+  --radius-base-none: 0px;
+  --radius-base-sm: 0.125rem;
+  --radius-base-base: 0.25rem;
+  --radius-base-md: 0.375rem;
+  --radius-base-lg: 0.5rem;
+  --radius-base-xl: 0.75rem;
+  --radius-base-2xl: 1rem;
+  --radius-base-3xl: 1.5rem;
+  --radius-base-full: 9999px;
+  /* @end */
+
+  /* @tokens L1 Base: Shadows */
+  /* @presenter Shadow */
+  --shadow-base-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-base-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-base-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-base-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-base-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  /* @end */
+
+  /* @tokens L1 Base: Spacing */
+  /* @presenter Spacing */
+  --spacing-base-0: 0px;
+  --spacing-base-0-5: 2px;
+  --spacing-base-1: 4px;
+  --spacing-base-1-5: 6px;
+  --spacing-base-2: 8px;
+  --spacing-base-2-5: 10px;
+  --spacing-base-3: 12px;
+  --spacing-base-3-5: 14px;
+  --spacing-base-4: 16px;
+  --spacing-base-5: 20px;
+  --spacing-base-6: 24px;
+  --spacing-base-7: 28px;
+  --spacing-base-8: 32px;
+  --spacing-base-9: 36px;
+  --spacing-base-10: 40px;
+  --spacing-base-11: 44px;
+  --spacing-base-12: 48px;
+  --spacing-base-14: 56px;
+  --spacing-base-16: 64px;
+  --spacing-base-20: 80px;
+  --spacing-base-24: 96px;
+  --spacing-base-28: 112px;
+  --spacing-base-32: 128px;
+  /* @end */
+
+  /* @tokens L1 Base: Font Family */
+  /* @presenter FontFamily */
+  --font-base-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-base-family-serif: 'Merriweather', Georgia, serif;
+  --font-base-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* @end */
+
+  /* @tokens L1 Base: Font Size */
+  /* @presenter FontSize */
+  --font-base-size-xs: 0.75rem;
+  --font-base-size-sm: 0.875rem;
+  --font-base-size-base: 1rem;
+  --font-base-size-lg: 1.125rem;
+  --font-base-size-xl: 1.25rem;
+  --font-base-size-2xl: 1.5rem;
+  --font-base-size-3xl: 1.875rem;
+  --font-base-size-4xl: 2.25rem;
+  --font-base-size-5xl: 3rem;
+  /* @end */
+
+  /* @tokens L1 Base: Font Weight */
+  /* @presenter FontWeight */
+  --font-base-weight-light: 300;
+  --font-base-weight-normal: 400;
+  --font-base-weight-medium: 500;
+  --font-base-weight-semibold: 600;
+  --font-base-weight-bold: 700;
+  /* @end */
+
+  /* @tokens L1 Base: Line Height */
+  /* @presenter LineHeight */
+  --font-base-line-height-tight: 1.25;
+  --font-base-line-height-normal: 1.5;
+  --font-base-line-height-relaxed: 1.75;
+  --font-base-line-height-loose: 2;
+  /* @end */
+
+  /* @tokens L1 Base: Letter Spacing */
+  /* @presenter LetterSpacing */
+  --font-base-letter-spacing-tight: -0.025em;
+  --font-base-letter-spacing-normal: 0em;
+  --font-base-letter-spacing-wide: 0.025em;
+  /* @end */
+
+  /* @tokens L1 Base: Sizing */
+  /* @presenter Spacing */
+  --sizing-datepicker-day-size: 36px;
+  --sizing-textarea-min-height: 100px;
+  --sizing-textarea-max-height: 400px;
+  /* @end */
+
+  /* ═══════════════════════════════════════════════════════════════════════════
+     LEVEL 2: GLOBAL (Theme & Branding)
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  /* @tokens L2 Global: Primary 1 (Sky) */
+  /* @presenter Color */
+  --color-primary-1-50: #f0f9ff;
+  --color-primary-1-100: #e0f2fe;
+  --color-primary-1-200: #bae6fd;
+  --color-primary-1-300: #7dd3fc;
+  --color-primary-1-400: #38bdf8;
+  --color-primary-1-500: #0ea5e9;
+  --color-primary-1-600: #0284c7;
+  --color-primary-1-700: #0369a1;
+  --color-primary-1-800: #075985;
+  --color-primary-1-900: #0c4a6e;
+  --color-primary-1-950: #082f49;
+  /* @end */
+
+  /* @tokens L2 Global: Primary 2 (Indigo) */
+  /* @presenter Color */
+  --color-primary-2-50: #eef2ff;
+  --color-primary-2-100: #e0e7ff;
+  --color-primary-2-200: #c7d2fe;
+  --color-primary-2-300: #a5b4fc;
+  --color-primary-2-400: #818cf8;
+  --color-primary-2-500: #6366f1;
+  --color-primary-2-600: #4f46e5;
+  --color-primary-2-700: #4338ca;
+  --color-primary-2-800: #3730a3;
+  --color-primary-2-900: #312e81;
+  --color-primary-2-950: #1e1b4b;
+  /* @end */
+
+  /* @tokens L2 Global: Secondary 1 (Slate) */
+  /* @presenter Color */
+  --color-secondary-1-50: #f8fafc;
+  --color-secondary-1-100: #f1f5f9;
+  --color-secondary-1-200: #e2e8f0;
+  --color-secondary-1-300: #cbd5e1;
+  --color-secondary-1-400: #94a3b8;
+  --color-secondary-1-500: #64748b;
+  --color-secondary-1-600: #475569;
+  --color-secondary-1-700: #334155;
+  --color-secondary-1-800: #1e293b;
+  --color-secondary-1-900: #0f172a;
+  --color-secondary-1-950: #020617;
+  /* @end */
+
+  /* @tokens L2 Global: Secondary 2 (Stone) */
+  /* @presenter Color */
+  --color-secondary-2-50: #fafaf9;
+  --color-secondary-2-100: #f5f5f4;
+  --color-secondary-2-200: #e7e5e4;
+  --color-secondary-2-300: #d6d3d1;
+  --color-secondary-2-400: #a8a29e;
+  --color-secondary-2-500: #78716c;
+  --color-secondary-2-600: #57534e;
+  --color-secondary-2-700: #44403c;
+  --color-secondary-2-800: #292524;
+  --color-secondary-2-900: #1c1917;
+  --color-secondary-2-950: #0c0a09;
+  /* @end */
+
+  /* @tokens L2 Global: Accent 1 (Emerald) */
+  /* @presenter Color */
+  --color-accent-1-50: #ecfdf5;
+  --color-accent-1-100: #d1fae5;
+  --color-accent-1-200: #a7f3d0;
+  --color-accent-1-300: #6ee7b7;
+  --color-accent-1-400: #34d399;
+  --color-accent-1-500: #10b981;
+  --color-accent-1-600: #059669;
+  --color-accent-1-700: #047857;
+  --color-accent-1-800: #065f46;
+  --color-accent-1-900: #064e3b;
+  --color-accent-1-950: #022c22;
+  /* @end */
+
+  /* @tokens L2 Global: Accent 2 (Amber) */
+  /* @presenter Color */
+  --color-accent-2-50: #fffbeb;
+  --color-accent-2-100: #fef3c7;
+  --color-accent-2-200: #fde68a;
+  --color-accent-2-300: #fcd34d;
+  --color-accent-2-400: #fbbf24;
+  --color-accent-2-500: #f59e0b;
+  --color-accent-2-600: #d97706;
+  --color-accent-2-700: #b45309;
+  --color-accent-2-800: #92400e;
+  --color-accent-2-900: #78350f;
+  --color-accent-2-950: #451a03;
+  /* @end */
+
+  /* @tokens L2 Global: Accent 3 (Red) */
+  /* @presenter Color */
+  --color-accent-3-50: #fef2f2;
+  --color-accent-3-100: #fee2e2;
+  --color-accent-3-200: #fecaca;
+  --color-accent-3-300: #fca5a5;
+  --color-accent-3-400: #f87171;
+  --color-accent-3-500: #ef4444;
+  --color-accent-3-600: #dc2626;
+  --color-accent-3-700: #b91c1c;
+  --color-accent-3-800: #991b1b;
+  --color-accent-3-900: #7f1d1d;
+  --color-accent-3-950: #450a0a;
+  /* @end */
+
+  /* @tokens L2 Global: Accent 4 (Blue) */
+  /* @presenter Color */
+  --color-accent-4-50: #eff6ff;
+  --color-accent-4-100: #dbeafe;
+  --color-accent-4-200: #bfdbfe;
+  --color-accent-4-300: #93c5fd;
+  --color-accent-4-400: #60a5fa;
+  --color-accent-4-500: #3b82f6;
+  --color-accent-4-600: #2563eb;
+  --color-accent-4-700: #1d4ed8;
+  --color-accent-4-800: #1e40af;
+  --color-accent-4-900: #1e3a8a;
+  --color-accent-4-950: #172554;
+  /* @end */
+
+  /* @tokens L2 Global: Accent 5 (Teal) */
+  /* @presenter Color */
+  --color-accent-5-50: #f0fdfa;
+  --color-accent-5-100: #ccfbf1;
+  --color-accent-5-200: #99f6e4;
+  --color-accent-5-300: #5eead4;
+  --color-accent-5-400: #2dd4bf;
+  --color-accent-5-500: #14b8a6;
+  --color-accent-5-600: #0d9488;
+  --color-accent-5-700: #0f766e;
+  --color-accent-5-800: #115e59;
+  --color-accent-5-900: #134e4a;
+  --color-accent-5-950: #042f2e;
+  /* @end */
+
+  /* @tokens L2 Global: Neutral 1 (Slate) */
+  /* @presenter Color */
+  --color-neutral-1-0: #ffffff;
+  --color-neutral-1-50: #f8fafc;
+  --color-neutral-1-100: #f1f5f9;
+  --color-neutral-1-200: #e2e8f0;
+  --color-neutral-1-300: #cbd5e1;
+  --color-neutral-1-400: #94a3b8;
+  --color-neutral-1-500: #64748b;
+  --color-neutral-1-600: #475569;
+  --color-neutral-1-700: #334155;
+  --color-neutral-1-800: #1e293b;
+  --color-neutral-1-900: #0f172a;
+  --color-neutral-1-950: #020617;
+  --color-neutral-1-1000: #000000;
+  /* @end */
+
+  /* @tokens L2 Global: Neutral 2 (Zinc) */
+  /* @presenter Color */
+  --color-neutral-2-50: #fafafa;
+  --color-neutral-2-100: #f4f4f5;
+  --color-neutral-2-200: #e4e4e7;
+  --color-neutral-2-300: #d4d4d8;
+  --color-neutral-2-400: #a1a1aa;
+  --color-neutral-2-500: #71717a;
+  --color-neutral-2-600: #52525b;
+  --color-neutral-2-700: #3f3f46;
+  --color-neutral-2-800: #27272a;
+  --color-neutral-2-900: #18181b;
+  --color-neutral-2-950: #09090b;
+  /* @end */
+
+  /* @tokens L2 Global: Neutral Overlay */
+  /* @presenter Color */
+  --color-neutral-overlay: rgba(0, 0, 0, 0.5);
+  /* @end */
+
+  /* @tokens L2 Global: Border Radius */
+  /* @presenter BorderRadius */
+  --radius-none: 0px;
+  --radius-sm: 0.125rem;
+  --radius-default: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+  /* @end */
+
+  /* @tokens L2 Global: Shadows */
+  /* @presenter Shadow */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  /* @end */
+
+  /* @tokens L2 Global: Spacing */
+  /* @presenter Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  /* @end */
+
+  /* @tokens L2 Global: Font Size */
+  /* @presenter FontSize */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  /* @end */
+
+  /* @tokens L2 Global: Font Weight */
+  /* @presenter FontWeight */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  /* @end */
+
+  /* @tokens L2 Global: Font Family */
+  /* @presenter FontFamily */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-serif: 'Merriweather', Georgia, serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* @end */
+
+  /* @tokens L2 Global: Line Height */
+  /* @presenter LineHeight */
+  --font-line-height-tight: 1.25;
+  --font-line-height-normal: 1.5;
+  --font-line-height-relaxed: 1.75;
+  --font-line-height-loose: 2;
+  /* @end */
+
+  /* @tokens L2 Global: Letter Spacing */
+  /* @presenter LetterSpacing */
+  --font-letter-spacing-tight: -0.025em;
+  --font-letter-spacing-normal: 0em;
+  --font-letter-spacing-wide: 0.025em;
+  /* @end */
+
+  /* @tokens L2 Global: Sizing */
+  /* @presenter Spacing */
+  --sizing-height-sm: 36px;
+  --sizing-height-md: 40px;
+  --sizing-height-lg: 44px;
+  --sizing-padding-x-sm: 12px;
+  --sizing-padding-x-md: 16px;
+  --sizing-padding-x-lg: 32px;
+  --sizing-padding-y-sm: 6px;
+  --sizing-padding-y-md: 8px;
+  --sizing-padding-y-lg: 10px;
+  --sizing-padding-y-xl: 12px;
+  --sizing-gap-sm: 6px;
+  --sizing-gap-md: 8px;
+  --sizing-gap-lg: 10px;
+  /* @end */
+
+  /* ═══════════════════════════════════════════════════════════════════════════
+     LEVEL 3: ROLES (Functional)
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  /* @tokens L3 Role: Background Colors */
+  /* @presenter Color */
+  --color-bg-paper: #ffffff;
+  --color-bg-base: #f8fafc;
+  --color-bg-surface: #f1f5f9;
+  --color-bg-elevated: #f8fafc;
+  --color-bg-primary: #0ea5e9;
+  --color-bg-primary-hover: #0284c7;
+  --color-bg-primary-active: #0369a1;
+  --color-bg-secondary: #64748b;
+  --color-bg-secondary-hover: #475569;
+  --color-bg-success: #10b981;
+  --color-bg-warning: #f59e0b;
+  --color-bg-error: #ef4444;
+  --color-bg-info: #3b82f6;
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  --color-bg-inverse: #0f172a;
+  --color-bg-inverse-hover: #334155;
+  /* @end */
+
+  /* @tokens L3 Role: Text Colors */
+  /* @presenter Color */
+  --color-text-base: #0f172a;
+  --color-text-heading: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-disabled: #94a3b8;
+  --color-text-inverse: #f8fafc;
+  --color-text-on-primary: #ffffff;
+  --color-text-primary: #0284c7;
+  --color-text-success: #047857;
+  --color-text-warning: #b45309;
+  --color-text-error: #b91c1c;
+  --color-text-info: #1d4ed8;
+  /* @end */
+
+  /* @tokens L3 Role: Border Colors */
+  /* @presenter Color */
+  --color-border-default: #cbd5e1;
+  --color-border-muted: #e2e8f0;
+  --color-border-strong: #94a3b8;
+  --color-border-focus: #0ea5e9;
+  --color-border-error: #ef4444;
+  --color-border-success: #10b981;
+  /* @end */
+
+  /* @tokens L3 Role: Interactive Colors */
+  /* @presenter Color */
+  --color-interactive-primary: #0ea5e9;
+  --color-interactive-primary-hover: #0284c7;
+  --color-interactive-primary-active: #0369a1;
+  --color-interactive-primary-disabled: #cbd5e1;
+  --color-interactive-secondary: #64748b;
+  --color-interactive-secondary-hover: #475569;
+  --color-interactive-secondary-active: #334155;
+  /* @end */
+
+  /* @tokens L3 Role: Semantic Status Colors */
+  /* @presenter Color */
+  --color-success-bg-subtle: #ecfdf5;
+  --color-success-bg: #d1fae5;
+  --color-success-border: #10b981;
+  --color-success-text: #047857;
+  --color-warning-bg-subtle: #fffbeb;
+  --color-warning-bg: #fef3c7;
+  --color-warning-border: #f59e0b;
+  --color-warning-text: #b45309;
+  --color-error-bg-subtle: #fef2f2;
+  --color-error-bg: #fee2e2;
+  --color-error-border: #ef4444;
+  --color-error-text: #b91c1c;
+  --color-info-bg-subtle: #eff6ff;
+  --color-info-bg: #dbeafe;
+  --color-info-border: #3b82f6;
+  --color-info-text: #1d4ed8;
+  /* @end */
+
+  /* @tokens L3 Role: Component Radius */
+  /* @presenter BorderRadius */
+  --radius-component-sm: 0.125rem;
+  --radius-component-md: 0.375rem;
+  --radius-component-lg: 0.5rem;
+  --radius-component-full: 9999px;
+  /* @end */
+
+  /* @tokens L3 Role: Elevation Shadows */
+  /* @presenter Shadow */
+  --shadow-elevation-low: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-elevation-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-elevation-high: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-elevation-overlay: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-key: 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* @end */
+
+  /* @tokens L3 Role: Component Spacing */
+  /* @presenter Spacing */
+  --spacing-component-padding-xs: 8px;
+  --spacing-component-padding-sm: 12px;
+  --spacing-component-padding-md: 16px;
+  --spacing-component-padding-lg: 24px;
+  --spacing-component-padding-xl: 32px;
+  --spacing-component-gap-sm: 8px;
+  --spacing-component-gap-md: 12px;
+  --spacing-component-gap-lg: 16px;
+  --spacing-layout-gutter: 24px;
+  --spacing-layout-section: 48px;
+  --spacing-md-lg: 20px;
+  /* @end */
+
+  /* @tokens L3 Role: Component Font Size */
+  /* @presenter FontSize */
+  --font-component-size-sm: 0.875rem;
+  --font-component-size-md: 1rem;
+  --font-component-size-lg: 1.125rem;
+  --font-heading-size-sm: 1.125rem;
+  --font-heading-size-md: 1.25rem;
+  --font-heading-size-lg: 1.5rem;
+  --font-heading-size-xl: 1.875rem;
+  --font-body-size: 1rem;
+  --font-caption-size: 0.75rem;
+  /* @end */
+
+  /* @tokens L3 Role: Component Sizing */
+  /* @presenter Spacing */
+  --sizing-component-height-sm: 36px;
+  --sizing-component-height-md: 40px;
+  --sizing-component-height-lg: 44px;
+  --sizing-component-padding-x-sm: 12px;
+  --sizing-component-padding-x-md: 16px;
+  --sizing-component-padding-x-lg: 32px;
+  --sizing-component-padding-y-sm: 6px;
+  --sizing-component-padding-y-md: 8px;
+  --sizing-component-padding-y-lg: 10px;
+  --sizing-component-padding-y-xl: 12px;
+  --sizing-component-gap-sm: 6px;
+  --sizing-component-gap-md: 8px;
+  --sizing-component-gap-lg: 10px;
+  --sizing-component-icon-control: 20px;
+  /* @end */
+
+  /* ═══════════════════════════════════════════════════════════════════════════
+     LEVEL 4: SEMANTIC (Component-Specific)
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  /* ─── Badge ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Badge: Colors */
+  /* @presenter Color */
+  --color-badge-success-bg: #d1fae5;
+  --color-badge-success-text: #047857;
+  --color-badge-success-border: #10b981;
+  --color-badge-warning-bg: #fef3c7;
+  --color-badge-warning-text: #b45309;
+  --color-badge-warning-border: #f59e0b;
+  --color-badge-error-bg: #fee2e2;
+  --color-badge-error-text: #b91c1c;
+  --color-badge-error-border: #ef4444;
+  --color-badge-info-bg: #dbeafe;
+  --color-badge-info-text: #1d4ed8;
+  --color-badge-info-border: #3b82f6;
+  --color-badge-neutral-bg: #f1f5f9;
+  --color-badge-neutral-text: #475569;
+  --color-badge-neutral-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Badge: Radius */
+  /* @presenter BorderRadius */
+  --radius-badge: 9999px;
+  /* @end */
+
+  /* @tokens L4 Badge: Sizing */
+  /* @presenter Spacing */
+  --sizing-badge-sm-padding-x: 12px;
+  --sizing-badge-sm-padding-y: 6px;
+  --sizing-badge-sm-font-size: 0.875rem;
+  --sizing-badge-md-padding-x: 16px;
+  --sizing-badge-md-padding-y: 6px;
+  --sizing-badge-md-font-size: 0.875rem;
+  --sizing-badge-lg-padding-x: 16px;
+  --sizing-badge-lg-padding-y: 8px;
+  --sizing-badge-lg-font-size: 1rem;
+  /* @end */
+
+  /* ─── Button ─────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Button: Colors */
+  /* @presenter Color */
+  --color-btn-primary-bg: #0ea5e9;
+  --color-btn-primary-bg-hover: #0284c7;
+  --color-btn-primary-bg-active: #0369a1;
+  --color-btn-primary-text: #f8fafc;
+  --color-btn-primary-border: #0ea5e9;
+  --color-btn-secondary-bg: #f1f5f9;
+  --color-btn-secondary-bg-hover: #e2e8f0;
+  --color-btn-secondary-bg-active: #cbd5e1;
+  --color-btn-secondary-text: #0f172a;
+  --color-btn-secondary-border: #cbd5e1;
+  --color-btn-ghost-text: #0284c7;
+  --color-btn-ghost-bg-hover: #f1f5f9;
+  --color-btn-ghost-bg-active: #e2e8f0;
+  --color-btn-disabled-bg: #cbd5e1;
+  --color-btn-disabled-text: #94a3b8;
+  /* @end */
+
+  /* @tokens L4 Button: Spacing */
+  /* @presenter Spacing */
+  --spacing-btn-padding-x: 16px;
+  --spacing-btn-padding-y: 12px;
+  --spacing-btn-gap: 8px;
+  /* @end */
+
+  /* @tokens L4 Button: Sizing */
+  /* @presenter Spacing */
+  --sizing-btn-sm-height: 36px;
+  --sizing-btn-sm-padding-x: 12px;
+  --sizing-btn-sm-padding-y: 6px;
+  --sizing-btn-sm-gap: 6px;
+  --sizing-btn-sm-font-size: 0.875rem;
+  --sizing-btn-sm-radius: 0.375rem;
+  --sizing-btn-md-height: 40px;
+  --sizing-btn-md-padding-x: 16px;
+  --sizing-btn-md-padding-y: 8px;
+  --sizing-btn-md-gap: 8px;
+  --sizing-btn-md-font-size: 1rem;
+  --sizing-btn-md-radius: 0.375rem;
+  --sizing-btn-lg-height: 44px;
+  --sizing-btn-lg-padding-x: 32px;
+  --sizing-btn-lg-padding-y: 10px;
+  --sizing-btn-lg-gap: 10px;
+  --sizing-btn-lg-font-size: 1.125rem;
+  --sizing-btn-lg-radius: 0.375rem;
+  /* @end */
+
+  /* ─── Card ───────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Card: Colors */
+  /* @presenter Color */
+  --color-card-bg: #ffffff;
+  --color-card-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Card: Shadows */
+  /* @presenter Shadow */
+  --shadow-card-raised: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-card-elevated: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* @end */
+
+  /* @tokens L4 Card: Radius */
+  /* @presenter BorderRadius */
+  --radius-card: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Card: Spacing */
+  /* @presenter Spacing */
+  --spacing-card-padding-compact: 12px;
+  --spacing-card-padding-normal: 16px;
+  --spacing-card-padding-spacious: 24px;
+  --spacing-card-gap: 12px;
+  /* @end */
+
+  /* ─── SessionCard ─────────────────────────────────────────────────────── */
+
+  /* @tokens L4 SessionCard: Colors */
+  /* @presenter Color */
+  --color-session-card-bg: #ffffff;
+  --color-session-card-border: #e2e8f0;
+  --color-session-card-border-hover: #cbd5e1;
+  --color-session-card-bg-hover: #f1f5f9;
+  --color-session-card-bg-error: #fef2f2;
+  --color-session-card-border-error: #ef4444;
+  --color-session-card-text-primary: #0f172a;
+  --color-session-card-text-secondary: #475569;
+  --color-session-card-text-tertiary: #94a3b8;
+  --color-session-card-text-error: #b91c1c;
+  --color-session-card-skeleton: #f1f5f9;
+  --color-session-card-zone-bg: #f1f5f9;
+  --color-session-card-zone-1: #94a3b8;
+  --color-session-card-zone-2: #10b981;
+  --color-session-card-zone-3: #f59e0b;
+  --color-session-card-zone-4: #b45309;
+  --color-session-card-zone-5: #ef4444;
+  --color-session-card-focus-ring: #0ea5e9;
+  /* @end */
+
+  /* @tokens L4 SessionCard: Radius */
+  /* @presenter BorderRadius */
+  --radius-session-card: 0.5rem;
+  /* @end */
+
+  /* ─── StatCard ──────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 StatCard: Colors */
+  /* @presenter Color */
+  --color-stat-card-bg: #ffffff;
+  --color-stat-card-border: #e2e8f0;
+  --color-stat-card-text-primary: #0f172a;
+  --color-stat-card-text-secondary: #475569;
+  --color-stat-card-border-success: #10b981;
+  --color-stat-card-border-warning: #f59e0b;
+  --color-stat-card-border-error: #ef4444;
+  --color-stat-card-trend-up: #047857;
+  --color-stat-card-trend-down: #b91c1c;
+  --color-stat-card-trend-neutral: #475569;
+  /* @end */
+
+  /* @tokens L4 StatCard: Radius */
+  /* @presenter BorderRadius */
+  --radius-stat-card: 0.5rem;
+  /* @end */
+
+  /* ─── Tag ────────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Tag: Colors */
+  /* @presenter Color */
+  --color-tag-bg-default: #f1f5f9;
+  --color-tag-bg-success: #ecfdf5;
+  --color-tag-bg-warning: #fffbeb;
+  --color-tag-bg-error: #fef2f2;
+  --color-tag-bg-info: #eff6ff;
+  --color-tag-text-default: #0f172a;
+  --color-tag-text-success: #047857;
+  --color-tag-text-warning: #b45309;
+  --color-tag-text-error: #b91c1c;
+  --color-tag-text-info: #1d4ed8;
+  --color-tag-border-default: #e2e8f0;
+  --color-tag-border-success: #10b981;
+  --color-tag-border-warning: #f59e0b;
+  --color-tag-border-error: #ef4444;
+  --color-tag-border-info: #3b82f6;
+  --color-tag-border-focus: #0ea5e9;
+  /* @end */
+
+  /* @tokens L4 Tag: Radius */
+  /* @presenter BorderRadius */
+  --radius-tag: 0.375rem;
+  /* @end */
+
+  /* ─── NumberInput ────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 NumberInput: Colors */
+  /* @presenter Color */
+  --color-numberinput-bg: #ffffff;
+  --color-numberinput-bg-disabled: #f1f5f9;
+  --color-numberinput-text: #0f172a;
+  --color-numberinput-border: #cbd5e1;
+  --color-numberinput-border-hover: #94a3b8;
+  --color-numberinput-border-focus: #0ea5e9;
+  --color-numberinput-border-error: #ef4444;
+  --color-numberinput-stepper-text: #475569;
+  --color-numberinput-stepper-text-hover: #0f172a;
+  --color-numberinput-stepper-bg-hover: #f1f5f9;
+  /* @end */
+
+  /* @tokens L4 NumberInput: Radius */
+  /* @presenter BorderRadius */
+  --radius-numberinput: 0.375rem;
+  /* @end */
+
+  /* ─── Checkbox ───────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Checkbox: Colors */
+  /* @presenter Color */
+  --color-checkbox-bg: #ffffff;
+  --color-checkbox-border: #cbd5e1;
+  --color-checkbox-border-hover: #94a3b8;
+  --color-checkbox-checked-bg: #0ea5e9;
+  --color-checkbox-checked-border: #0ea5e9;
+  --color-checkbox-checked-icon: #ffffff;
+  --color-checkbox-focus-ring: #0ea5e9;
+  --color-checkbox-disabled-bg: #f1f5f9;
+  --color-checkbox-label: #0f172a;
+  --color-checkbox-description: #475569;
+  /* @end */
+
+  /* @tokens L4 Checkbox: Radius */
+  /* @presenter BorderRadius */
+  --radius-checkbox: 0.125rem;
+  /* @end */
+
+  /* ─── DatePicker ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 DatePicker: Colors */
+  /* @presenter Color */
+  --color-datepicker-popover-bg: #ffffff;
+  --color-datepicker-popover-border: #e2e8f0;
+  --color-datepicker-header-text: #0f172a;
+  --color-datepicker-weekday-text: #475569;
+  --color-datepicker-day-text: #0f172a;
+  --color-datepicker-day-hover-bg: #f1f5f9;
+  --color-datepicker-day-selected-bg: #0ea5e9;
+  --color-datepicker-day-selected-text: #f8fafc;
+  --color-datepicker-day-today-border: #0ea5e9;
+  --color-datepicker-day-disabled-text: #94a3b8;
+  --color-datepicker-day-range-bg: #e0f2fe;
+  --color-datepicker-nav-hover-bg: #f1f5f9;
+  /* @end */
+
+  /* @tokens L4 DatePicker: Shadows */
+  /* @presenter Shadow */
+  --shadow-datepicker-popover: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* @tokens L4 DatePicker: Radius */
+  /* @presenter BorderRadius */
+  --radius-datepicker-popover: 0.5rem;
+  --radius-datepicker-day: 0.375rem;
+  /* @end */
+
+  /* @tokens L4 DatePicker: Spacing */
+  /* @presenter Spacing */
+  --spacing-datepicker-popover-padding: 16px;
+  --spacing-datepicker-grid-gap: 8px;
+  /* @end */
+
+  /* ─── FileUpload ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 FileUpload: Colors */
+  /* @presenter Color */
+  --color-fileupload-zone-bg: #f1f5f9;
+  --color-fileupload-zone-border: #cbd5e1;
+  --color-fileupload-zone-text: #0f172a;
+  --color-fileupload-zone-text-sub: #475569;
+  --color-fileupload-zone-icon: #0ea5e9;
+  --color-fileupload-hover-bg: #f0f9ff;
+  --color-fileupload-hover-border: #0ea5e9;
+  --color-fileupload-drag-bg: #f0f9ff;
+  --color-fileupload-drag-border: #0ea5e9;
+  --color-fileupload-drag-icon: #0ea5e9;
+  --color-fileupload-drag-text: #0284c7;
+  --color-fileupload-file-text: #0f172a;
+  --color-fileupload-file-size: #475569;
+  --color-fileupload-file-icon: #475569;
+  --color-fileupload-file-remove: #475569;
+  --color-fileupload-file-remove-hover: #b91c1c;
+  --color-fileupload-progress-bg: #e2e8f0;
+  --color-fileupload-progress-fill: #0ea5e9;
+  --color-fileupload-error-text: #b91c1c;
+  --color-fileupload-error-border: #ef4444;
+  /* @end */
+
+  /* @tokens L4 FileUpload: Radius */
+  /* @presenter BorderRadius */
+  --radius-fileupload-zone: 0.5rem;
+  --radius-fileupload-item: 0.375rem;
+  --radius-fileupload-progress: 9999px;
+  /* @end */
+
+  /* @tokens L4 FileUpload: Spacing */
+  /* @presenter Spacing */
+  --spacing-fileupload-zone-padding: 24px;
+  --spacing-fileupload-file-gap: 8px;
+  /* @end */
+
+  /* ─── Input ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Input: Colors */
+  /* @presenter Color */
+  --color-input-bg: #ffffff;
+  --color-input-bg-disabled: #f1f5f9;
+  --color-input-text: #0f172a;
+  --color-input-text-placeholder: #475569;
+  --color-input-border: #cbd5e1;
+  --color-input-border-hover: #94a3b8;
+  --color-input-border-focus: #0ea5e9;
+  --color-input-border-error: #ef4444;
+  /* @end */
+
+  /* @tokens L4 Input: Spacing */
+  /* @presenter Spacing */
+  --spacing-input-padding-x: 16px;
+  --spacing-input-padding-y: 12px;
+  --spacing-input-icon-inset: 40px;
+  --spacing-input-icon-padding: 12px;
+  /* @end */
+
+  /* @tokens L4 Input: Sizing */
+  /* @presenter Spacing */
+  --sizing-input-sm-height: 36px;
+  --sizing-input-sm-font-size: 0.875rem;
+  --sizing-input-sm-radius: 0.375rem;
+  --sizing-input-md-height: 40px;
+  --sizing-input-md-font-size: 1rem;
+  --sizing-input-md-radius: 0.375rem;
+  --sizing-input-lg-height: 44px;
+  --sizing-input-lg-font-size: 1.125rem;
+  --sizing-input-lg-radius: 0.375rem;
+  /* @end */
+
+  /* ─── Link ────────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Link: Colors */
+  /* @presenter Color */
+  --color-link-text: #0ea5e9;
+  --color-link-text-hover: #0284c7;
+  /* @end */
+
+  /* ─── Modal ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Modal: Colors */
+  /* @presenter Color */
+  --color-modal-overlay: rgba(0, 0, 0, 0.5);
+  --color-modal-bg: #ffffff;
+  --color-modal-title: #0f172a;
+  --color-modal-description: #475569;
+  --color-modal-divider: #e2e8f0;
+  --color-modal-close-hover-bg: #f1f5f9;
+  --color-modal-close-hover-text: #0ea5e9;
+  /* @end */
+
+  /* @tokens L4 Modal: Shadows */
+  /* @presenter Shadow */
+  --shadow-modal-content: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  /* @end */
+
+  /* @tokens L4 Modal: Radius */
+  /* @presenter BorderRadius */
+  --radius-modal: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Modal: Spacing */
+  /* @presenter Spacing */
+  --spacing-modal-padding-x: 24px;
+  --spacing-modal-padding-y: 16px;
+  --spacing-modal-gap: 12px;
+  /* @end */
+
+  /* ─── RadioGroup ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 RadioGroup: Colors */
+  /* @presenter Color */
+  --color-radio-bg: #ffffff;
+  --color-radio-border: #cbd5e1;
+  --color-radio-border-hover: #94a3b8;
+  --color-radio-selected-border: #0ea5e9;
+  --color-radio-selected-dot: #0ea5e9;
+  --color-radio-focus-ring: #0ea5e9;
+  --color-radio-disabled-bg: #f1f5f9;
+  --color-radio-item-hover-bg: #f1f5f9;
+  --color-radio-label: #0f172a;
+  --color-radio-description: #475569;
+  /* @end */
+
+  /* @tokens L4 RadioGroup: Radius */
+  /* @presenter BorderRadius */
+  --radius-radio-item: 0.375rem;
+  /* @end */
+
+  /* ─── Select ─────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Select: Colors */
+  /* @presenter Color */
+  --color-select-trigger-bg: #ffffff;
+  --color-select-trigger-text: #0f172a;
+  --color-select-trigger-placeholder: #475569;
+  --color-select-trigger-border: #cbd5e1;
+  --color-select-trigger-border-hover: #94a3b8;
+  --color-select-trigger-border-focus: #0ea5e9;
+  --color-select-trigger-border-error: #ef4444;
+  --color-select-trigger-disabled-bg: #f1f5f9;
+  --color-select-icon: #475569;
+  --color-select-icon-hover: #0f172a;
+  --color-select-popover-bg: #ffffff;
+  --color-select-popover-border: #e2e8f0;
+  --color-select-item-text: #0f172a;
+  --color-select-item-hover-bg: #f1f5f9;
+  --color-select-item-selected-bg: #f0f9ff;
+  --color-select-item-selected-text: #0284c7;
+  --color-select-item-disabled-text: #94a3b8;
+  --color-select-check-icon: #0ea5e9;
+  --color-select-group-label: #475569;
+  --color-select-separator: #e2e8f0;
+  --color-select-search-bg: #f8fafc;
+  --color-select-empty-text: #475569;
+  --color-select-checkbox-text: #ffffff;
+  --color-select-checkbox-bg: #ffffff;
+  /* @end */
+
+  /* @tokens L4 Select: Shadows */
+  /* @presenter Shadow */
+  --shadow-select-popover: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* @tokens L4 Select: Radius */
+  /* @presenter BorderRadius */
+  --radius-select-popover: 0.5rem;
+  --radius-select-item: 0.375rem;
+  /* @end */
+
+  /* @tokens L4 Select: Spacing */
+  /* @presenter Spacing */
+  --spacing-select-popover-padding: 8px;
+  --spacing-select-item-padding-x: 12px;
+  --spacing-select-item-padding-y: 8px;
+  --spacing-select-item-gap: 8px;
+  /* @end */
+
+  /* ─── Switch ─────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Switch: Colors */
+  /* @presenter Color */
+  --color-switch-track-bg: #cbd5e1;
+  --color-switch-track-bg-checked: #0ea5e9;
+  --color-switch-thumb-bg: #ffffff;
+  --color-switch-focus-ring: #0ea5e9;
+  --color-switch-disabled-track-bg: #f1f5f9;
+  --color-switch-label: #0f172a;
+  --color-switch-description: #475569;
+  /* @end */
+
+  /* @tokens L4 Switch: Shadows */
+  /* @presenter Shadow */
+  --shadow-switch-thumb: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* ─── Table ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Table: Colors */
+  /* @presenter Color */
+  --color-table-header-bg: #f8fafc;
+  --color-table-header-text: #0f172a;
+  --color-table-border: #e2e8f0;
+  --color-table-row-stripe: #f8fafc;
+  --color-table-row-hover: #f1f5f9;
+  /* @end */
+
+  /* @tokens L4 Table: Spacing */
+  /* @presenter Spacing */
+  --spacing-table-cell-x-compact: 16px;
+  --spacing-table-cell-y-compact: 12px;
+  --spacing-table-cell-x-normal: 24px;
+  --spacing-table-cell-y-normal: 16px;
+  --spacing-table-cell-x-spacious: 32px;
+  --spacing-table-cell-y-spacious: 24px;
+  --spacing-table-head-y-compact: 8px;
+  --spacing-table-head-y-normal: 8px;
+  --spacing-table-head-y-spacious: 12px;
+  /* @end */
+
+  /* ─── Textarea ───────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Textarea: Colors */
+  /* @presenter Color */
+  --color-textarea-counter-text: #475569;
+  --color-textarea-counter-text-over: #b91c1c;
+  /* @end */
+
+  /* @tokens L4 Textarea: Spacing */
+  /* @presenter Spacing */
+  --spacing-textarea-padding-y-sm: 8px;
+  --spacing-textarea-padding-y-md: 10px;
+  --spacing-textarea-padding-y-lg: 12px;
+  /* @end */
+
+  /* ─── Toast ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Toast: Colors */
+  /* @presenter Color */
+  --color-toast-bg: #ffffff;
+  --color-toast-border: #e2e8f0;
+  --color-toast-title: #0f172a;
+  --color-toast-description: #475569;
+  --color-toast-close-hover-bg: #f1f5f9;
+  --color-toast-success-border: #10b981;
+  --color-toast-success-icon: #047857;
+  --color-toast-error-border: #ef4444;
+  --color-toast-error-icon: #b91c1c;
+  --color-toast-warning-border: #f59e0b;
+  --color-toast-warning-icon: #b45309;
+  --color-toast-info-border: #3b82f6;
+  --color-toast-info-icon: #1d4ed8;
+  /* @end */
+
+  /* @tokens L4 Toast: Shadows */
+  /* @presenter Shadow */
+  --shadow-toast: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* @tokens L4 Toast: Radius */
+  /* @presenter BorderRadius */
+  --radius-toast: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Toast: Spacing */
+  /* @presenter Spacing */
+  --spacing-toast-padding: 16px;
+  --spacing-toast-gap: 12px;
+  --spacing-toast-viewport-padding: 16px;
+  /* @end */
+
+  /* ─── Tooltip ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Tooltip: Colors */
+  /* @presenter Color */
+  --color-tooltip-bg: #0f172a;
+  --color-tooltip-text: #f8fafc;
+  --color-tooltip-arrow: #0f172a;
+  /* @end */
+
+  /* @tokens L4 Tooltip: Shadows */
+  /* @presenter Shadow */
+  --shadow-tooltip: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* @tokens L4 Tooltip: Radius */
+  /* @presenter BorderRadius */
+  --radius-tooltip: 0.375rem;
+  /* @end */
+
+  /* @tokens L4 Tooltip: Spacing */
+  /* @presenter Spacing */
+  --spacing-tooltip-padding-x: 12px;
+  --spacing-tooltip-padding-y: 8px;
+  /* @end */
+
+  /* ─── Tabs ────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Tabs: Colors */
+  /* @presenter Color */
+  --color-tabs-list-bg: #f1f5f9;
+  --color-tabs-trigger-text: #475569;
+  --color-tabs-trigger-text-active: #0ea5e9;
+  --color-tabs-trigger-text-hover: #0f172a;
+  --color-tabs-trigger-bg-active: #ffffff;
+  --color-tabs-trigger-hover-bg: #f1f5f9;
+  --color-tabs-underline: #0ea5e9;
+  --color-tabs-border: #e2e8f0;
+  --color-tabs-content-text: #0f172a;
+  /* @end */
+
+  /* @tokens L4 Tabs: Shadows */
+  /* @presenter Shadow */
+  --shadow-tabs-trigger-active: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* @tokens L4 Tabs: Radius */
+  /* @presenter BorderRadius */
+  --radius-tabs-list: 0.5rem;
+  --radius-tabs-trigger: 0.375rem;
+  /* @end */
+
+  /* @tokens L4 Tabs: Spacing */
+  /* @presenter Spacing */
+  --spacing-tabs-list-padding: 4px;
+  --spacing-tabs-trigger-padding-x: 16px;
+  --spacing-tabs-trigger-padding-y: 12px;
+  --spacing-tabs-content-padding: 16px;
+  --spacing-tabs-list-gap: 4px;
+  /* @end */
+
+  /* ─── Accordion ───────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Accordion: Colors */
+  /* @presenter Color */
+  --color-accordion-bg: #ffffff;
+  --color-accordion-border: #e2e8f0;
+  --color-accordion-trigger-text: #0f172a;
+  --color-accordion-trigger-hover-bg: #f1f5f9;
+  --color-accordion-content-text: #0f172a;
+  --color-accordion-icon: #475569;
+  /* @end */
+
+  /* @tokens L4 Accordion: Radius */
+  /* @presenter BorderRadius */
+  --radius-accordion: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Accordion: Spacing */
+  /* @presenter Spacing */
+  --spacing-accordion-trigger-padding-x: 16px;
+  --spacing-accordion-trigger-padding-y: 12px;
+  --spacing-accordion-content-padding-x: 16px;
+  --spacing-accordion-content-padding-y: 12px;
+  /* @end */
+
+  /* ─── DropdownMenu ────────────────────────────────────────────────────── */
+
+  /* @tokens L4 DropdownMenu: Colors */
+  /* @presenter Color */
+  --color-dropdown-bg: #ffffff;
+  --color-dropdown-border: #e2e8f0;
+  --color-dropdown-item-text: #0f172a;
+  --color-dropdown-item-hover-bg: #f1f5f9;
+  --color-dropdown-item-disabled-text: #94a3b8;
+  --color-dropdown-item-icon: #475569;
+  --color-dropdown-destructive-text: #b91c1c;
+  --color-dropdown-destructive-hover-bg: #fef2f2;
+  --color-dropdown-separator: #e2e8f0;
+  --color-dropdown-label-text: #475569;
+  /* @end */
+
+  /* @tokens L4 DropdownMenu: Shadows */
+  /* @presenter Shadow */
+  --shadow-dropdown-menu: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* @tokens L4 DropdownMenu: Radius */
+  /* @presenter BorderRadius */
+  --radius-dropdown-menu: 0.5rem;
+  --radius-dropdown-item: 0.375rem;
+  /* @end */
+
+  /* @tokens L4 DropdownMenu: Spacing */
+  /* @presenter Spacing */
+  --spacing-dropdown-padding: 4px;
+  --spacing-dropdown-item-padding-x: 12px;
+  --spacing-dropdown-item-padding-y: 8px;
+  --spacing-dropdown-item-gap: 8px;
+  /* @end */
+
+  /* ─── ContextMenu ──────────────────────────────────────────────────── */
+  /* ContextMenu shares ALL tokens with DropdownMenu (same visual appearance).
+     No additional L4 tokens required — see DropdownMenu section above. */
+
+  /* ─── Menubar ────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Menubar: Colors */
+  /* @presenter Color */
+  --color-menubar-bg: #ffffff;
+  --color-menubar-border: #e2e8f0;
+  --color-menubar-trigger-text: #0f172a;
+  --color-menubar-trigger-hover-bg: #f1f5f9;
+  --color-menubar-trigger-active-bg: #f1f5f9;
+  /* @end */
+
+  /* @tokens L4 Menubar: Radius */
+  /* @presenter Spacing */
+  --radius-menubar-bar: 6px;
+  --radius-menubar-item: 4px;
+  /* @end */
+
+  /* @tokens L4 Menubar: Spacing */
+  /* @presenter Spacing */
+  --spacing-menubar-padding: 4px;
+  --spacing-menubar-trigger-padding-x: 12px;
+  --spacing-menubar-trigger-padding-y: 4px;
+  /* @end */
+
+  /* Menubar dropdown content reuses ALL DropdownMenu tokens.
+     No additional content tokens required — see DropdownMenu section above. */
+
+  /* ─── Progress ──────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Progress: Colors */
+  /* @presenter Color */
+  --color-progress-track: #f1f5f9;
+  --color-progress-fill: #0ea5e9;
+  --color-progress-fill-success: #10b981;
+  --color-progress-fill-warning: #f59e0b;
+  --color-progress-fill-error: #ef4444;
+  --color-progress-label: #0f172a;
+  --color-progress-value: #475569;
+  /* @end */
+
+  /* @tokens L4 Progress: Sizing */
+  /* @presenter Spacing */
+  --sizing-progress-sm-height: 4px;
+  --sizing-progress-md-height: 8px;
+  --sizing-progress-lg-height: 12px;
+  /* @end */
+
+  /* @tokens L4 Progress: Radius */
+  /* @presenter BorderRadius */
+  --radius-progress: 9999px;
+  /* @end */
+
+  /* @tokens L4 Progress: Spacing */
+  /* @presenter Spacing */
+  --spacing-progress-label-gap: 12px;
+  /* @end */
+
+  /* ─── Spinner ───────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Spinner: Colors */
+  /* @presenter Color */
+  --color-spinner-primary: #0ea5e9;
+  --color-spinner-track: #e2e8f0;
+  --color-spinner-label: #475569;
+  /* @end */
+
+  /* @tokens L4 Spinner: Sizing */
+  /* @presenter Spacing */
+  --sizing-spinner-sm: 16px;
+  --sizing-spinner-md: 24px;
+  --sizing-spinner-lg: 32px;
+  --sizing-spinner-xl: 48px;
+  /* @end */
+
+  /* ─── Skeleton ──────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Skeleton: Colors */
+  /* @presenter Color */
+  --color-skeleton-base: #f1f5f9;
+  --color-skeleton-shimmer: #f8fafc;
+  /* @end */
+
+  /* @tokens L4 Skeleton: Radius */
+  /* @presenter BorderRadius */
+  --radius-skeleton: 0.375rem;
+  --radius-skeleton-circle: 9999px;
+  /* @end */
+
+  /* ─── Separator ────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Separator: Colors */
+  /* @presenter Color */
+  --color-separator: #e2e8f0;
+  /* @end */
+
+  /* ─── Popover ──────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Popover: Colors */
+  /* @presenter Color */
+  --color-popover-bg: #ffffff;
+  --color-popover-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Popover: Shadows */
+  /* @presenter Shadow */
+  --shadow-popover: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* @end */
+
+  /* @tokens L4 Popover: Radius */
+  /* @presenter BorderRadius */
+  --radius-popover: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Popover: Spacing */
+  /* @presenter Spacing */
+  --spacing-popover-padding: 16px;
+  /* @end */
+
+  /* ─── Alert ────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Alert: Colors */
+  /* @presenter Color */
+  --color-alert-title: #0f172a;
+  --color-alert-description: #0f172a;
+  --color-alert-info-bg: #eff6ff;
+  --color-alert-info-border: #3b82f6;
+  --color-alert-info-icon: #1d4ed8;
+  --color-alert-success-bg: #ecfdf5;
+  --color-alert-success-border: #10b981;
+  --color-alert-success-icon: #047857;
+  --color-alert-warning-bg: #fffbeb;
+  --color-alert-warning-border: #f59e0b;
+  --color-alert-warning-icon: #b45309;
+  --color-alert-error-bg: #fef2f2;
+  --color-alert-error-border: #ef4444;
+  --color-alert-error-icon: #b91c1c;
+  /* @end */
+
+  /* @tokens L4 Alert: Radius */
+  /* @presenter BorderRadius */
+  --radius-alert: 0.375rem;
+  /* @end */
+
+  /* ─── EmptyState ───────────────────────────────────────────────────── */
+
+  /* @tokens L4 EmptyState: Colors */
+  /* @presenter Color */
+  --color-emptystate-icon: #475569;
+  --color-emptystate-icon-error: #b91c1c;
+  --color-emptystate-icon-success: #047857;
+  --color-emptystate-title: #0f172a;
+  --color-emptystate-description: #475569;
+  /* @end */
+
+  /* ─── Pagination ───────────────────────────────────────────────────── */
+
+  /* @tokens L4 Pagination: Colors */
+  /* @presenter Color */
+  --color-pagination-item-bg: #ffffff;
+  --color-pagination-item-border: #cbd5e1;
+  --color-pagination-item-text: #0f172a;
+  --color-pagination-item-hover-bg: #f1f5f9;
+  --color-pagination-item-active-bg: #0ea5e9;
+  --color-pagination-item-active-text: #ffffff;
+  --color-pagination-item-active-border: #0ea5e9;
+  /* @end */
+
+  /* @tokens L4 Pagination: Radius */
+  /* @presenter BorderRadius */
+  --radius-pagination-item: 0.375rem;
+  /* @end */
+
+  /* ================================================================
+     NEW COMPONENTS (Batch 2)
+     ================================================================ */
+
+  /* @tokens L4 ToggleGroup: Colors */
+  /* @presenter Color */
+  --color-toggle-bg: #f1f5f9;
+  --color-toggle-border: #cbd5e1;
+  --color-toggle-text: #0f172a;
+  --color-toggle-hover-bg: #e2e8f0;
+  --color-toggle-active-bg: #0ea5e9;
+  --color-toggle-active-text: #f8fafc;
+  --color-toggle-active-border: #0ea5e9;
+  /* @end */
+
+  /* @tokens L4 ToggleGroup: Radius */
+  /* @presenter BorderRadius */
+  --radius-toggle: 0.375rem;
+  /* @end */
+
+  /* @tokens L4 Sheet: Colors */
+  /* @presenter Color */
+  --color-sheet-overlay: rgba(0, 0, 0, 0.5);
+  --color-sheet-bg: #ffffff;
+  --color-sheet-border: #e2e8f0;
+  --color-sheet-title: #0f172a;
+  --color-sheet-description: #475569;
+  /* @end */
+
+  /* @tokens L4 Sheet: Shadow */
+  /* @presenter Shadow */
+  --shadow-sheet: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  /* @end */
+
+  /* @tokens L4 Sheet: Spacing */
+  /* @presenter Spacing */
+  --spacing-sheet-padding: 24px;
+  /* @end */
+
+  /* @tokens L4 Dialog: Colors */
+  /* @presenter Color */
+  --color-dialog-overlay: rgba(0, 0, 0, 0.5);
+  --color-dialog-bg: #ffffff;
+  --color-dialog-title: #0f172a;
+  --color-dialog-description: #475569;
+  --color-dialog-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Dialog: Shadow */
+  /* @presenter Shadow */
+  --shadow-dialog: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  /* @end */
+
+  /* @tokens L4 Dialog: Radius */
+  /* @presenter BorderRadius */
+  --radius-dialog: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Dialog: Spacing */
+  /* @presenter Spacing */
+  --spacing-dialog-padding: 24px;
+  --spacing-dialog-gap: 12px;
+  /* @end */
+
+  /* @tokens L4 AlertDialog: Colors */
+  /* @presenter Color */
+  --color-alertdlg-overlay: rgba(0, 0, 0, 0.5);
+  --color-alertdlg-bg: #ffffff;
+  --color-alertdlg-title: #0f172a;
+  --color-alertdlg-description: #475569;
+  --color-alertdlg-border: #e2e8f0;
+  --color-alertdlg-action-bg: #ef4444;
+  --color-alertdlg-action-text: #ffffff;
+  --color-alertdlg-action-hover-bg: #b91c1c;
+  --color-alertdlg-cancel-bg: #f1f5f9;
+  --color-alertdlg-cancel-text: #0f172a;
+  --color-alertdlg-cancel-hover-bg: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 AlertDialog: Shadow */
+  /* @presenter Shadow */
+  --shadow-alertdlg: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  /* @end */
+
+  /* @tokens L4 AlertDialog: Radius */
+  /* @presenter BorderRadius */
+  --radius-alertdlg: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 AlertDialog: Spacing */
+  /* @presenter Spacing */
+  --spacing-alertdlg-padding: 24px;
+  --spacing-alertdlg-gap: 12px;
+  /* @end */
+
+  /* @tokens L4 Breadcrumbs: Colors */
+  /* @presenter Color */
+  --color-breadcrumbs-text: #475569;
+  --color-breadcrumbs-text-current: #0f172a;
+  --color-breadcrumbs-separator: #94a3b8;
+  --color-breadcrumbs-hover-text: #0284c7;
+  /* @end */
+
+  /* @tokens L4 Avatar: Colors */
+  /* @presenter Color */
+  --color-avatar-bg: #f1f5f9;
+  --color-avatar-text: #475569;
+  --color-avatar-border: #cbd5e1;
+  /* @end */
+
+  /* @tokens L4 Avatar: Radius */
+  /* @presenter BorderRadius */
+  --radius-avatar: 9999px;
+  /* @end */
+
+  /* @tokens L4 Slider: Colors */
+  /* @presenter Color */
+  --color-slider-track: #f1f5f9;
+  --color-slider-range: #0ea5e9;
+  --color-slider-thumb: #ffffff;
+  --color-slider-thumb-border: #0ea5e9;
+  --color-slider-thumb-hover: #0284c7;
+  /* @end */
+
+  /* @tokens L4 Slider: Radius */
+  /* @presenter BorderRadius */
+  --radius-slider-track: 9999px;
+  --radius-slider-thumb: 9999px;
+  /* @end */
+
+  /* @tokens L4 Command: Colors */
+  /* @presenter Color */
+  --color-command-bg: #ffffff;
+  --color-command-border: #e2e8f0;
+  --color-command-input-text: #0f172a;
+  --color-command-input-placeholder: #94a3b8;
+  --color-command-item-text: #0f172a;
+  --color-command-item-hover-bg: #f1f5f9;
+  --color-command-group-heading: #475569;
+  --color-command-separator: #e2e8f0;
+  --color-command-empty-text: #475569;
+  /* @end */
+
+  /* @tokens L4 Command: Shadow */
+  /* @presenter Shadow */
+  --shadow-command: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  /* @end */
+
+  /* @tokens L4 Command: Radius */
+  /* @presenter BorderRadius */
+  --radius-command: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Command: Spacing */
+  /* @presenter Spacing */
+  --spacing-command-padding: 12px;
+  /* @end */
+
+  /* @tokens L4 HoverCard: Colors */
+  /* @presenter Color */
+  --color-hovercard-bg: #ffffff;
+  --color-hovercard-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 HoverCard: Shadow */
+  /* @presenter Shadow */
+  --shadow-hovercard: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* @end */
+
+  /* @tokens L4 HoverCard: Radius */
+  /* @presenter BorderRadius */
+  --radius-hovercard: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 HoverCard: Spacing */
+  /* @presenter Spacing */
+  --spacing-hovercard-padding: 16px;
+  /* @end */
+
+  /* @tokens L4 ScrollArea: Colors */
+  /* @presenter Color */
+  --color-scrollarea-thumb: #cbd5e1;
+  --color-scrollarea-thumb-hover: #94a3b8;
+  --color-scrollarea-track: rgba(0, 0, 0, 0);
+  /* @end */
+
+  /* @tokens L4 ScrollArea: Radius */
+  /* @presenter BorderRadius */
+  --radius-scrollarea-thumb: 9999px;
+  /* @end */
+
+  /* @tokens L4 Chart: Colors */
+  /* @presenter Color */
+  --color-chart-1: #0ea5e9;
+  --color-chart-2: #047857;
+  --color-chart-3: #b45309;
+  --color-chart-4: #b91c1c;
+  --color-chart-5: #1d4ed8;
+  --color-chart-grid: #e2e8f0;
+  --color-chart-axis: #475569;
+  --color-chart-tooltip-bg: #ffffff;
+  --color-chart-tooltip-border: #e2e8f0;
+  --color-chart-tooltip-text: #0f172a;
+  /* @end */
+
+  /* @tokens L4 Chart: Shadow */
+  /* @presenter Shadow */
+  --shadow-chart-tooltip: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* @tokens L4 Chart: Radius */
+  /* @presenter BorderRadius */
+  --radius-chart-tooltip: 0.375rem;
+  /* @end */
+
+  /* ─── Code ────────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Code: Colors */
+  /* @presenter Color */
+  --color-code-bg: #f1f5f9;
+  --color-code-text: #0284c7;
+  --color-code-block-bg: #0f172a;
+  --color-code-block-text: #f1f5f9;
+  --color-code-copy-hover-bg: #334155;
+  --color-code-line-number: #475569;
+  /* @end */
+
+  /* @tokens L4 Code: Radius */
+  /* @presenter BorderRadius */
+  --radius-code: 0.125rem;
+  --radius-code-block: 0.5rem;
+  /* @end */
+
+  /* ─── Label ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Label: Colors */
+  /* @presenter Color */
+  --color-text-base: #0f172a;
+  --color-text-error: #b91c1c;
+  /* @end */
+
+  /* ─── Kbd ────────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Kbd: Colors */
+  /* @presenter Color */
+  --color-kbd-bg: #ffffff;
+  --color-kbd-text: #0f172a;
+  --color-kbd-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Kbd: Radius */
+  /* @presenter BorderRadius */
+  --radius-kbd: 0.125rem;
+  /* @end */
+
+  /* @tokens L4 Kbd: Shadow */
+  /* @presenter Shadow */
+  --shadow-kbd: 0 1px 0 1px #e2e8f0;
+  /* @end */
+
+  /* ─── Text ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Text: Colors */
+  /* @presenter Color */
+  --color-text-base: #0f172a;
+  --color-text-muted: #475569;
+  /* @end */
+
+  /* ─── Heading ───────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Heading: Colors */
+  /* @presenter Color */
+  --color-text-heading: #0f172a;
+  /* @end */
+
+  /* ─── NavigationMenu ─────────────────────────────────────────────────── */
+
+  /* @tokens L4 NavigationMenu: Colors */
+  /* @presenter Color */
+  --color-nav-text: #0f172a;
+  --color-nav-hover-bg: #f1f5f9;
+  --color-nav-active-bg: #f1f5f9;
+  --color-nav-dropdown-bg: #ffffff;
+  --color-nav-dropdown-border: #e2e8f0;
+  --color-nav-focus-ring: #0ea5e9;
+  /* @end */
+
+  /* @tokens L4 NavigationMenu: Radius */
+  /* @presenter BorderRadius */
+  --radius-nav: 0.375rem;
+  --radius-nav-dropdown: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 NavigationMenu: Shadow */
+  /* @presenter Shadow */
+  --shadow-nav-dropdown: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  /* @end */
+
+  /* ─── Sidebar ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Sidebar: Colors */
+  /* @presenter Color */
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-border: #e2e8f0;
+  --color-sidebar-item-text: #0f172a;
+  --color-sidebar-item-hover-bg: #f1f5f9;
+  --color-sidebar-item-active-bg: #0ea5e9;
+  --color-sidebar-item-active-text: #ffffff;
+  --color-sidebar-group-label: #475569;
+  --color-sidebar-collapse-text: #475569;
+  --color-sidebar-focus-ring: #0ea5e9;
+  /* @end */
+
+  /* @tokens L4 Sidebar: Radius */
+  /* @presenter BorderRadius */
+  --radius-sidebar-item: 0.375rem;
+  /* @end */
+
+  /* ─── Carousel ────────────────────────────────────────────────────────────── */
+
+  /* @tokens Component: Carousel */
+  /* @presenter Color */
+  /* Carousel reuses existing L3/L4 tokens: */
+  /* --radius-card: 0.5rem (Container-Eckenradius) */
+  /* --color-bg-paper: #ffffff (Pfeil-Hintergrund) */
+  /* --color-text-base: #0f172a (Pfeil-Icon-Farbe) */
+  /* --shadow-card-raised: (Pfeil-Schatten) */
+  /* --color-bg-primary: #2563eb (Aktiver Punkt-Indikator) */
+  /* --color-border-focus: #2563eb (Fokus-Ring) */
+  /* @end */
+
+  /* ─── Tree ────────────────────────────────────────────────────────────────── */
+
+  /* @tokens Component: Tree */
+  /* @presenter Color */
+  /* Tree reuses existing L3/L4 tokens: */
+  /* --radius-sm: 0.125rem (Knoten-Eckenradius) */
+  /* --color-bg-muted: #f1f5f9 (Hover/Auswahl-Hintergrund) */
+  /* --color-text-base: #0f172a (Knotenbezeichnung) */
+  /* --color-text-muted: #64748b (Knoten-Icons) */
+  /* --color-border-focus: #2563eb (Fokus-Ring) */
+  /* @end */
+
+  /* ─── InputOTP ───────────────────────────────────────────────────────────── */
+
+  /* @tokens Component: InputOTP */
+  /* @presenter Color */
+  --color-inputotp-bg: #ffffff;
+  --color-inputotp-bg-disabled: #f1f5f9;
+  --color-inputotp-text: #0f172a;
+  --color-inputotp-border: #cbd5e1;
+  --color-inputotp-border-focus: #0ea5e9;
+  --color-inputotp-border-error: #ef4444;
+  --color-inputotp-caret: #0284c7;
+  --color-inputotp-separator: #475569;
+  --sizing-inputotp-slot-size: 40px;
+  --radius-inputotp: 6px;
+  --spacing-inputotp-gap: 8px;
+  --spacing-inputotp-group-gap: 12px;
+  /* @end */
+
+  /* ─── Drawer ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Drawer: Colors */
+  /* @presenter Color */
+  --color-drawer-overlay: rgba(0, 0, 0, 0.5);
+  --color-drawer-bg: #ffffff;
+  --color-drawer-title: #0f172a;
+  --color-drawer-description: #475569;
+  --color-drawer-border: #e2e8f0;
+  --color-drawer-handle: #94a3b8;
+  /* @end */
+
+  /* @tokens L4 Drawer: Shadow */
+  /* @presenter Shadow */
+  --shadow-drawer: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  /* @end */
+
+  /* @tokens L4 Drawer: Radius */
+  /* @presenter BorderRadius */
+  --radius-drawer: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Drawer: Spacing */
+  /* @presenter Spacing */
+  --spacing-drawer-padding: 24px;
+  --spacing-drawer-gap: 12px;
+  /* @end */
+
+  /* ─── DataTable ────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 DataTable: Colors */
+  /* @presenter Color */
+  --color-datatable-toolbar-bg: #ffffff;
+  --color-datatable-row-selected-bg: #f1f5f9;
+  --color-datatable-sort-icon: #475569;
+  --color-datatable-sort-icon-active: #0284c7;
+  --color-datatable-empty-text: #475569;
+  /* @end */
+
+  /* @tokens L4 DataTable: Spacing */
+  /* @presenter Spacing */
+  --spacing-datatable-toolbar-padding: 16px;
+  --spacing-datatable-toolbar-gap: 12px;
+  /* @end */
+
+  /* ─── Blockquote ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Blockquote: Colors */
+  /* @presenter Color */
+  --color-bq-border: #94a3b8;
+  --color-bq-bg: #f1f5f9;
+  --color-bq-text: #0f172a;
+  --color-bq-cite-text: #475569;
+  /* @end */
+
+  /* @tokens L4 Blockquote: Radius */
+  /* @presenter BorderRadius */
+  --radius-bq: 0.125rem;
+  /* @end */
+
+  /* @tokens L4 Blockquote: Spacing */
+  /* @presenter Spacing */
+  --spacing-bq-padding: 24px;
+  --spacing-bq-border-width: 8px;
+  --spacing-bq-cite-gap: 12px;
+  /* @end */
+
+  /* ─── CopyButton ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 CopyButton: Colors */
+  /* @presenter Color */
+  --color-cpybtn-bg: #f1f5f9;
+  --color-cpybtn-bg-hover: #e2e8f0;
+  --color-cpybtn-icon: #475569;
+  --color-cpybtn-icon-copied: #047857;
+  --color-cpybtn-border: #cbd5e1;
+  /* @end */
+
+  /* @tokens L4 CopyButton: Radius */
+  /* @presenter BorderRadius */
+  --radius-cpybtn: 0.375rem;
+  /* @end */
+
+  /* @tokens L4 CopyButton: Sizing */
+  /* @presenter Sizing */
+  --sizing-cpybtn-sm: 28px;
+  --sizing-cpybtn-md: 32px;
+  --sizing-cpybtn-lg: 36px;
+  /* @end */
+
+  /* ─── Image ──────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Image: Colors */
+  /* @presenter Color */
+  --color-img-bg: #f1f5f9;
+  --color-img-fallback-bg: #e2e8f0;
+  --color-img-fallback-text: #475569;
+  --color-img-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Image: Radius */
+  /* @presenter BorderRadius */
+  --radius-img-none: 0px;
+  --radius-img-sm: 0.125rem;
+  --radius-img-md: 0.375rem;
+  --radius-img-lg: 0.5rem;
+  --radius-img-full: 9999px;
+  /* @end */
+
+  /* ─── Toolbar ────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Toolbar: Colors */
+  /* @presenter Color */
+  --color-toolbar-bg: #ffffff;
+  --color-toolbar-border: #e2e8f0;
+  --color-toolbar-btn-text: #0f172a;
+  --color-toolbar-btn-hover-bg: #f1f5f9;
+  --color-toolbar-btn-active-bg: #cbd5e1;
+  --color-toolbar-link-text: #0284c7;
+  --color-toolbar-link-hover-text: #0284c7;
+  --color-toolbar-toggle-on-bg: #f0f9ff;
+  --color-toolbar-toggle-on-text: #0284c7;
+  --color-toolbar-separator: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Toolbar: Radius */
+  /* @presenter BorderRadius */
+  --radius-toolbar-bar: 0.375rem;
+  --radius-toolbar-item: 0.125rem;
+  /* @end */
+
+  /* @tokens L4 Toolbar: Spacing */
+  /* @presenter Spacing */
+  --spacing-toolbar-padding: 8px;
+  --spacing-toolbar-gap: 8px;
+  --spacing-toolbar-btn-padding-x: 16px;
+  --spacing-toolbar-btn-padding-y: 8px;
+  /* @end */
+
+  /* ─── Banner ────────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Banner: Colors */
+  /* @presenter Color */
+  --color-banner-info-bg: #dbeafe;
+  --color-banner-info-text: #1d4ed8;
+  --color-banner-info-border: #3b82f6;
+  --color-banner-success-bg: #d1fae5;
+  --color-banner-success-text: #047857;
+  --color-banner-success-border: #10b981;
+  --color-banner-warning-bg: #fef3c7;
+  --color-banner-warning-text: #b45309;
+  --color-banner-warning-border: #f59e0b;
+  --color-banner-error-bg: #fee2e2;
+  --color-banner-error-text: #b91c1c;
+  --color-banner-error-border: #ef4444;
+  --color-banner-dismiss: #475569;
+  /* @end */
+
+  /* @tokens L4 Banner: Spacing */
+  /* @presenter Spacing */
+  --spacing-banner-padding-x: 24px;
+  --spacing-banner-padding-y: 16px;
+  --spacing-banner-gap: 12px;
+  /* @end */
+
+  /* ─── SearchInput ──────────────────────────────────────────────────────── */
+
+  /* @tokens L4 SearchInput: Colors */
+  /* @presenter Color */
+  --color-sinput-icon: #475569;
+  --color-sinput-icon-focus: #0f172a;
+  --color-sinput-clear: #475569;
+  --color-sinput-clear-hover: #0f172a;
+  /* @end */
+
+  /* @tokens L4 SearchInput: Spacing */
+  /* @presenter Spacing */
+  --spacing-sinput-icon-gap: 8px;
+  /* @end */
+
+  /* ─── Combobox ─────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 Combobox: Colors */
+  /* @presenter Color */
+  --color-cmb-trigger-bg: #ffffff;
+  --color-cmb-trigger-border: #cbd5e1;
+  --color-cmb-trigger-text: #0f172a;
+  --color-cmb-trigger-placeholder: #475569;
+  --color-cmb-content-bg: #ffffff;
+  --color-cmb-content-border: #e2e8f0;
+  --color-cmb-item-hover-bg: #e2e8f0;
+  --color-cmb-item-selected-bg: #f0f9ff;
+  --color-cmb-item-selected-text: #0284c7;
+  --color-cmb-search-bg: #ffffff;
+  --color-cmb-empty-text: #475569;
+  /* @end */
+
+  /* @tokens L4 Combobox: Radius */
+  /* @presenter BorderRadius */
+  --radius-cmb-trigger: 0.375rem;
+  --radius-cmb-content: 0.5rem;
+  /* @end */
+
+  /* @tokens L4 Combobox: Spacing */
+  /* @presenter Spacing */
+  --spacing-cmb-content-padding: 8px;
+  --spacing-cmb-item-padding-x: 16px;
+  --spacing-cmb-item-padding-y: 12px;
+  /* @end */
+
+  /* ─── Resizable ──────────────────────────────────────────────────────────── */
+
+  /* @tokens L4 PasswordInput: Colors */
+  /* @presenter Color */
+  --color-pwinput-toggle: #475569; /** Toggle icon color */
+  --color-pwinput-toggle-hover: #0f172a; /** Toggle icon hover */
+  --color-pwinput-strength-weak: #b91c1c; /** Strength: weak */
+  --color-pwinput-strength-medium: #b45309; /** Strength: medium */
+  --color-pwinput-strength-strong: #047857; /** Strength: strong */
+  /* @end */
+
+  /* @tokens L4 LoadingOverlay: Colors */
+  /* @presenter Color */
+  --color-ldovl-bg: rgba(0, 0, 0, 0.5); /** Overlay background (semi-transparent) */
+  --color-ldovl-text: #0f172a; /** Loading text color */
+  --color-ldovl-spinner: #0ea5e9; /** Spinner color */
+  /* @end */
+
+  /* @tokens L4 LoadingOverlay: Spacing */
+  /* @presenter Spacing */
+  --spacing-ldovl-gap: 12px; /** Gap between spinner and text */
+  /* @end */
+
+  /* @tokens L4 LoadingOverlay: Radius */
+  /* @presenter BorderRadius */
+  --radius-ldovl: 0.375rem; /** Corner radius (matching container) */
+  /* @end */
+
+  /* @tokens L4 Rating: Colors */
+  /* @presenter Color */
+  --color-rtg-filled: #b45309; /** Filled star (gold/amber) */
+  --color-rtg-empty: #94a3b8; /** Empty star */
+  --color-rtg-hover: #f59e0b; /** Hover color */
+  --color-rtg-text: #475569; /** Optional rating text */
+  /* @end */
+
+  /* @tokens L4 Rating: Spacing */
+  /* @presenter Spacing */
+  --spacing-rtg-gap: 8px; /** Gap between stars */
+  /* @end */
+
+  /* @tokens L4 Rating: Sizing */
+  /* @presenter Spacing */
+  --sizing-rtg-sm: 16px; /** Star size sm */
+  --sizing-rtg-md: 24px; /** Star size md */
+  --sizing-rtg-lg: 32px; /** Star size lg */
+  /* @end */
+
+  /* @tokens L4 Highlight: Colors */
+  /* @presenter Color */
+  --color-hl-bg: #fef3c7; /** Highlight background (yellow) */
+  --color-hl-text: #0f172a; /** Highlight text */
+  /* @end */
+
+  /* @tokens L4 Highlight: Radius */
+  /* @presenter BorderRadius */
+  --radius-hl: 0.125rem; /** Highlight border radius */
+  /* @end */
+
+  /* @tokens L4 Resizable: Colors */
+  /* @presenter Color */
+  --color-rsz-handle-bg: #e2e8f0;
+  --color-rsz-handle-hover-bg: #0ea5e9;
+  --color-rsz-handle-border: #cbd5e1;
+  --color-rsz-panel-border: #e2e8f0;
+  /* @end */
+
+  /* @tokens L4 Resizable: Radius */
+  /* @presenter BorderRadius */
+  --radius-rsz-handle: 0.125rem;
+  /* @end */
+
+  /* @tokens L4 Resizable: Spacing */
+  /* @presenter Spacing */
+  --spacing-rsz-handle-size: 8px;
+  /* @end */
+}

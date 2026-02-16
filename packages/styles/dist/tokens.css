@@ -1,0 +1,1205 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-base-white: #ffffff;
+  --color-base-black: #000000;
+  --color-base-overlay: rgba(0, 0, 0, 0.5); /** 50% black for modal overlays */
+  --color-base-slate-50: #f8fafc;
+  --color-base-slate-100: #f1f5f9;
+  --color-base-slate-200: #e2e8f0;
+  --color-base-slate-300: #cbd5e1;
+  --color-base-slate-400: #94a3b8;
+  --color-base-slate-500: #64748b;
+  --color-base-slate-600: #475569;
+  --color-base-slate-700: #334155;
+  --color-base-slate-800: #1e293b;
+  --color-base-slate-900: #0f172a;
+  --color-base-slate-950: #020617;
+  --color-base-stone-50: #fafaf9;
+  --color-base-stone-100: #f5f5f4;
+  --color-base-stone-200: #e7e5e4;
+  --color-base-stone-300: #d6d3d1;
+  --color-base-stone-400: #a8a29e;
+  --color-base-stone-500: #78716c;
+  --color-base-stone-600: #57534e;
+  --color-base-stone-700: #44403c;
+  --color-base-stone-800: #292524;
+  --color-base-stone-900: #1c1917;
+  --color-base-stone-950: #0c0a09;
+  --color-base-zinc-50: #fafafa;
+  --color-base-zinc-100: #f4f4f5;
+  --color-base-zinc-200: #e4e4e7;
+  --color-base-zinc-300: #d4d4d8;
+  --color-base-zinc-400: #a1a1aa;
+  --color-base-zinc-500: #71717a;
+  --color-base-zinc-600: #52525b;
+  --color-base-zinc-700: #3f3f46;
+  --color-base-zinc-800: #27272a;
+  --color-base-zinc-900: #18181b;
+  --color-base-zinc-950: #09090b;
+  --color-base-sky-50: #f0f9ff;
+  --color-base-sky-100: #e0f2fe;
+  --color-base-sky-200: #bae6fd;
+  --color-base-sky-300: #7dd3fc;
+  --color-base-sky-400: #38bdf8;
+  --color-base-sky-500: #0ea5e9;
+  --color-base-sky-600: #0284c7;
+  --color-base-sky-700: #0369a1;
+  --color-base-sky-800: #075985;
+  --color-base-sky-900: #0c4a6e;
+  --color-base-sky-950: #082f49;
+  --color-base-cyan-50: #ecfeff;
+  --color-base-cyan-100: #cffafe;
+  --color-base-cyan-200: #a5f3fc;
+  --color-base-cyan-300: #67e8f9;
+  --color-base-cyan-400: #22d3ee;
+  --color-base-cyan-500: #06b6d4;
+  --color-base-cyan-600: #0891b2;
+  --color-base-cyan-700: #0e7490;
+  --color-base-cyan-800: #155e75;
+  --color-base-cyan-900: #164e63;
+  --color-base-cyan-950: #083344;
+  --color-base-teal-50: #f0fdfa;
+  --color-base-teal-100: #ccfbf1;
+  --color-base-teal-200: #99f6e4;
+  --color-base-teal-300: #5eead4;
+  --color-base-teal-400: #2dd4bf;
+  --color-base-teal-500: #14b8a6;
+  --color-base-teal-600: #0d9488;
+  --color-base-teal-700: #0f766e;
+  --color-base-teal-800: #115e59;
+  --color-base-teal-900: #134e4a;
+  --color-base-teal-950: #042f2e;
+  --color-base-indigo-50: #eef2ff;
+  --color-base-indigo-100: #e0e7ff;
+  --color-base-indigo-200: #c7d2fe;
+  --color-base-indigo-300: #a5b4fc;
+  --color-base-indigo-400: #818cf8;
+  --color-base-indigo-500: #6366f1;
+  --color-base-indigo-600: #4f46e5;
+  --color-base-indigo-700: #4338ca;
+  --color-base-indigo-800: #3730a3;
+  --color-base-indigo-900: #312e81;
+  --color-base-indigo-950: #1e1b4b;
+  --color-base-blue-50: #eff6ff;
+  --color-base-blue-100: #dbeafe;
+  --color-base-blue-200: #bfdbfe;
+  --color-base-blue-300: #93c5fd;
+  --color-base-blue-400: #60a5fa;
+  --color-base-blue-500: #3b82f6;
+  --color-base-blue-600: #2563eb;
+  --color-base-blue-700: #1d4ed8;
+  --color-base-blue-800: #1e40af;
+  --color-base-blue-900: #1e3a8a;
+  --color-base-blue-950: #172554;
+  --color-base-emerald-50: #ecfdf5;
+  --color-base-emerald-100: #d1fae5;
+  --color-base-emerald-200: #a7f3d0;
+  --color-base-emerald-300: #6ee7b7;
+  --color-base-emerald-400: #34d399;
+  --color-base-emerald-500: #10b981;
+  --color-base-emerald-600: #059669;
+  --color-base-emerald-700: #047857;
+  --color-base-emerald-800: #065f46;
+  --color-base-emerald-900: #064e3b;
+  --color-base-emerald-950: #022c22;
+  --color-base-amber-50: #fffbeb;
+  --color-base-amber-100: #fef3c7;
+  --color-base-amber-200: #fde68a;
+  --color-base-amber-300: #fcd34d;
+  --color-base-amber-400: #fbbf24;
+  --color-base-amber-500: #f59e0b;
+  --color-base-amber-600: #d97706;
+  --color-base-amber-700: #b45309;
+  --color-base-amber-800: #92400e;
+  --color-base-amber-900: #78350f;
+  --color-base-amber-950: #451a03;
+  --color-base-red-50: #fef2f2;
+  --color-base-red-100: #fee2e2;
+  --color-base-red-200: #fecaca;
+  --color-base-red-300: #fca5a5;
+  --color-base-red-400: #f87171;
+  --color-base-red-500: #ef4444;
+  --color-base-red-600: #dc2626;
+  --color-base-red-700: #b91c1c;
+  --color-base-red-800: #991b1b;
+  --color-base-red-900: #7f1d1d;
+  --color-base-red-950: #450a0a;
+  --color-base-yellow-50: #fefce8;
+  --color-base-yellow-100: #fef9c3;
+  --color-base-yellow-200: #fef08a;
+  --color-base-yellow-300: #fde047;
+  --color-base-yellow-400: #facc15;
+  --color-base-yellow-500: #eab308;
+  --color-base-yellow-600: #ca8a04;
+  --color-base-yellow-700: #a16207;
+  --color-base-yellow-800: #854d0e;
+  --color-base-yellow-900: #713f12;
+  --color-base-yellow-950: #422006;
+  --color-base-green-50: #f0fdf4;
+  --color-base-green-100: #dcfce7;
+  --color-base-green-200: #bbf7d0;
+  --color-base-green-300: #86efac;
+  --color-base-green-400: #4ade80;
+  --color-base-green-500: #22c55e;
+  --color-base-green-600: #16a34a;
+  --color-base-green-700: #15803d;
+  --color-base-green-800: #166534;
+  --color-base-green-900: #14532d;
+  --color-base-green-950: #052e16;
+  --color-scrollarea-track: rgba(0, 0, 0, 0); /** Scrollbar track background */
+  --radius-base-none: 0px;
+  --radius-base-sm: 0.125rem;
+  --radius-base-base: 0.25rem;
+  --radius-base-md: 0.375rem;
+  --radius-base-lg: 0.5rem;
+  --radius-base-xl: 0.75rem;
+  --radius-base-2xl: 1rem;
+  --radius-base-3xl: 1.5rem;
+  --radius-base-full: 9999px;
+  --radius-img-none: 0px; /** No radius */
+  --shadow-base-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-base-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-base-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-base-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-base-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --spacing-base-0: 0px;
+  --spacing-base-1: 4px;
+  --spacing-base-2: 8px;
+  --spacing-base-3: 12px;
+  --spacing-base-4: 16px;
+  --spacing-base-5: 20px;
+  --spacing-base-6: 24px;
+  --spacing-base-7: 28px;
+  --spacing-base-8: 32px;
+  --spacing-base-9: 36px;
+  --spacing-base-10: 40px;
+  --spacing-base-11: 44px;
+  --spacing-base-12: 48px;
+  --spacing-base-14: 56px;
+  --spacing-base-16: 64px;
+  --spacing-base-20: 80px;
+  --spacing-base-24: 96px;
+  --spacing-base-28: 112px;
+  --spacing-base-32: 128px;
+  --spacing-base-0-5: 2px;
+  --spacing-base-1-5: 6px;
+  --spacing-base-2-5: 10px;
+  --spacing-base-3-5: 14px;
+  --font-base-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-base-family-serif: 'Merriweather', Georgia, serif;
+  --font-base-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-base-size-xs: 0.75rem;
+  --font-base-size-sm: 0.875rem;
+  --font-base-size-base: 1rem;
+  --font-base-size-lg: 1.125rem;
+  --font-base-size-xl: 1.25rem;
+  --font-base-size-2xl: 1.5rem;
+  --font-base-size-3xl: 1.875rem;
+  --font-base-size-4xl: 2.25rem;
+  --font-base-size-5xl: 3rem;
+  --font-base-weight-light: 300;
+  --font-base-weight-normal: 400;
+  --font-base-weight-medium: 500;
+  --font-base-weight-semibold: 600;
+  --font-base-weight-bold: 700;
+  --font-base-line-height-tight: 1.25;
+  --font-base-line-height-normal: 1.5;
+  --font-base-line-height-relaxed: 1.75;
+  --font-base-line-height-loose: 2;
+  --font-base-letter-spacing-tight: -0.025em;
+  --font-base-letter-spacing-normal: 0em;
+  --font-base-letter-spacing-wide: 0.025em;
+  --sizing-cpybtn-sm: 28px; /** CopyButton size sm (compact icon-only) */
+  --sizing-cpybtn-md: 32px; /** CopyButton size md */
+  --sizing-cpybtn-lg: 36px; /** CopyButton size lg */
+  --sizing-datepicker-day-size: 36px; /** Day cell width/height */
+  --sizing-textarea-min-height: 100px; /** Default minimum height */
+  --sizing-textarea-max-height: 400px; /** Auto-resize maximum */
+  --color-primary-1-50: var(--color-base-sky-50);
+  --color-primary-1-100: var(--color-base-sky-100);
+  --color-primary-1-200: var(--color-base-sky-200);
+  --color-primary-1-300: var(--color-base-sky-300);
+  --color-primary-1-400: var(--color-base-sky-400);
+  --color-primary-1-500: var(--color-base-sky-500);
+  --color-primary-1-600: var(--color-base-sky-600);
+  --color-primary-1-700: var(--color-base-sky-700);
+  --color-primary-1-800: var(--color-base-sky-800);
+  --color-primary-1-900: var(--color-base-sky-900);
+  --color-primary-1-950: var(--color-base-sky-950);
+  --color-primary-2-50: var(--color-base-indigo-50);
+  --color-primary-2-100: var(--color-base-indigo-100);
+  --color-primary-2-200: var(--color-base-indigo-200);
+  --color-primary-2-300: var(--color-base-indigo-300);
+  --color-primary-2-400: var(--color-base-indigo-400);
+  --color-primary-2-500: var(--color-base-indigo-500);
+  --color-primary-2-600: var(--color-base-indigo-600);
+  --color-primary-2-700: var(--color-base-indigo-700);
+  --color-primary-2-800: var(--color-base-indigo-800);
+  --color-primary-2-900: var(--color-base-indigo-900);
+  --color-primary-2-950: var(--color-base-indigo-950);
+  --color-secondary-1-50: var(--color-base-slate-50);
+  --color-secondary-1-100: var(--color-base-slate-100);
+  --color-secondary-1-200: var(--color-base-slate-200);
+  --color-secondary-1-300: var(--color-base-slate-300);
+  --color-secondary-1-400: var(--color-base-slate-400);
+  --color-secondary-1-500: var(--color-base-slate-500);
+  --color-secondary-1-600: var(--color-base-slate-600);
+  --color-secondary-1-700: var(--color-base-slate-700);
+  --color-secondary-1-800: var(--color-base-slate-800);
+  --color-secondary-1-900: var(--color-base-slate-900);
+  --color-secondary-1-950: var(--color-base-slate-950);
+  --color-secondary-2-50: var(--color-base-stone-50);
+  --color-secondary-2-100: var(--color-base-stone-100);
+  --color-secondary-2-200: var(--color-base-stone-200);
+  --color-secondary-2-300: var(--color-base-stone-300);
+  --color-secondary-2-400: var(--color-base-stone-400);
+  --color-secondary-2-500: var(--color-base-stone-500);
+  --color-secondary-2-600: var(--color-base-stone-600);
+  --color-secondary-2-700: var(--color-base-stone-700);
+  --color-secondary-2-800: var(--color-base-stone-800);
+  --color-secondary-2-900: var(--color-base-stone-900);
+  --color-secondary-2-950: var(--color-base-stone-950);
+  --color-accent-1-50: var(--color-base-emerald-50);
+  --color-accent-1-100: var(--color-base-emerald-100);
+  --color-accent-1-200: var(--color-base-emerald-200);
+  --color-accent-1-300: var(--color-base-emerald-300);
+  --color-accent-1-400: var(--color-base-emerald-400);
+  --color-accent-1-500: var(--color-base-emerald-500);
+  --color-accent-1-600: var(--color-base-emerald-600);
+  --color-accent-1-700: var(--color-base-emerald-700);
+  --color-accent-1-800: var(--color-base-emerald-800);
+  --color-accent-1-900: var(--color-base-emerald-900);
+  --color-accent-1-950: var(--color-base-emerald-950);
+  --color-accent-2-50: var(--color-base-amber-50);
+  --color-accent-2-100: var(--color-base-amber-100);
+  --color-accent-2-200: var(--color-base-amber-200);
+  --color-accent-2-300: var(--color-base-amber-300);
+  --color-accent-2-400: var(--color-base-amber-400);
+  --color-accent-2-500: var(--color-base-amber-500);
+  --color-accent-2-600: var(--color-base-amber-600);
+  --color-accent-2-700: var(--color-base-amber-700);
+  --color-accent-2-800: var(--color-base-amber-800);
+  --color-accent-2-900: var(--color-base-amber-900);
+  --color-accent-2-950: var(--color-base-amber-950);
+  --color-accent-3-50: var(--color-base-red-50);
+  --color-accent-3-100: var(--color-base-red-100);
+  --color-accent-3-200: var(--color-base-red-200);
+  --color-accent-3-300: var(--color-base-red-300);
+  --color-accent-3-400: var(--color-base-red-400);
+  --color-accent-3-500: var(--color-base-red-500);
+  --color-accent-3-600: var(--color-base-red-600);
+  --color-accent-3-700: var(--color-base-red-700);
+  --color-accent-3-800: var(--color-base-red-800);
+  --color-accent-3-900: var(--color-base-red-900);
+  --color-accent-3-950: var(--color-base-red-950);
+  --color-accent-4-50: var(--color-base-blue-50);
+  --color-accent-4-100: var(--color-base-blue-100);
+  --color-accent-4-200: var(--color-base-blue-200);
+  --color-accent-4-300: var(--color-base-blue-300);
+  --color-accent-4-400: var(--color-base-blue-400);
+  --color-accent-4-500: var(--color-base-blue-500);
+  --color-accent-4-600: var(--color-base-blue-600);
+  --color-accent-4-700: var(--color-base-blue-700);
+  --color-accent-4-800: var(--color-base-blue-800);
+  --color-accent-4-900: var(--color-base-blue-900);
+  --color-accent-4-950: var(--color-base-blue-950);
+  --color-accent-5-50: var(--color-base-teal-50);
+  --color-accent-5-100: var(--color-base-teal-100);
+  --color-accent-5-200: var(--color-base-teal-200);
+  --color-accent-5-300: var(--color-base-teal-300);
+  --color-accent-5-400: var(--color-base-teal-400);
+  --color-accent-5-500: var(--color-base-teal-500);
+  --color-accent-5-600: var(--color-base-teal-600);
+  --color-accent-5-700: var(--color-base-teal-700);
+  --color-accent-5-800: var(--color-base-teal-800);
+  --color-accent-5-900: var(--color-base-teal-900);
+  --color-accent-5-950: var(--color-base-teal-950);
+  --color-neutral-1-0: var(--color-base-white);
+  --color-neutral-1-50: var(--color-base-slate-50);
+  --color-neutral-1-100: var(--color-base-slate-100);
+  --color-neutral-1-200: var(--color-base-slate-200);
+  --color-neutral-1-300: var(--color-base-slate-300);
+  --color-neutral-1-400: var(--color-base-slate-400);
+  --color-neutral-1-500: var(--color-base-slate-500);
+  --color-neutral-1-600: var(--color-base-slate-600);
+  --color-neutral-1-700: var(--color-base-slate-700);
+  --color-neutral-1-800: var(--color-base-slate-800);
+  --color-neutral-1-900: var(--color-base-slate-900);
+  --color-neutral-1-950: var(--color-base-slate-950);
+  --color-neutral-1-1000: var(--color-base-black);
+  --color-neutral-2-50: var(--color-base-zinc-50);
+  --color-neutral-2-100: var(--color-base-zinc-100);
+  --color-neutral-2-200: var(--color-base-zinc-200);
+  --color-neutral-2-300: var(--color-base-zinc-300);
+  --color-neutral-2-400: var(--color-base-zinc-400);
+  --color-neutral-2-500: var(--color-base-zinc-500);
+  --color-neutral-2-600: var(--color-base-zinc-600);
+  --color-neutral-2-700: var(--color-base-zinc-700);
+  --color-neutral-2-800: var(--color-base-zinc-800);
+  --color-neutral-2-900: var(--color-base-zinc-900);
+  --color-neutral-2-950: var(--color-base-zinc-950);
+  --color-neutral-overlay: var(--color-base-overlay);
+  --radius-none: var(--radius-base-none);
+  --radius-sm: var(--radius-base-sm);
+  --radius-default: var(--radius-base-base);
+  --radius-md: var(--radius-base-md);
+  --radius-lg: var(--radius-base-lg);
+  --radius-xl: var(--radius-base-xl);
+  --radius-2xl: var(--radius-base-2xl);
+  --radius-3xl: var(--radius-base-3xl);
+  --radius-full: var(--radius-base-full);
+  --shadow-xs: var(--shadow-base-xs);
+  --shadow-sm: var(--shadow-base-sm);
+  --shadow-md: var(--shadow-base-md);
+  --shadow-lg: var(--shadow-base-lg);
+  --shadow-xl: var(--shadow-base-xl);
+  --shadow-2xl: var(--shadow-base-2xl);
+  --spacing-2xs: var(--spacing-base-1);
+  --spacing-xs: var(--spacing-base-2);
+  --spacing-sm: var(--spacing-base-3);
+  --spacing-md: var(--spacing-base-4);
+  --spacing-md-lg: var(--spacing-base-5); /** 20px — control element size (checkbox, switch thumb, slider thumb) */
+  --spacing-lg: var(--spacing-base-6);
+  --spacing-xl: var(--spacing-base-8);
+  --spacing-2xl: var(--spacing-base-12);
+  --spacing-3xl: var(--spacing-base-16);
+  --font-size-xs: var(--font-base-size-xs);
+  --font-size-sm: var(--font-base-size-sm);
+  --font-size-base: var(--font-base-size-base);
+  --font-size-lg: var(--font-base-size-lg);
+  --font-size-xl: var(--font-base-size-xl);
+  --font-size-2xl: var(--font-base-size-2xl);
+  --font-size-3xl: var(--font-base-size-3xl);
+  --font-size-4xl: var(--font-base-size-4xl);
+  --font-size-5xl: var(--font-base-size-5xl);
+  --font-weight-light: var(--font-base-weight-light);
+  --font-weight-normal: var(--font-base-weight-normal);
+  --font-weight-medium: var(--font-base-weight-medium);
+  --font-weight-semibold: var(--font-base-weight-semibold);
+  --font-weight-bold: var(--font-base-weight-bold);
+  --font-family-sans: var(--font-base-family-sans);
+  --font-family-serif: var(--font-base-family-serif);
+  --font-family-mono: var(--font-base-family-mono);
+  --font-line-height-tight: var(--font-base-line-height-tight);
+  --font-line-height-normal: var(--font-base-line-height-normal);
+  --font-line-height-relaxed: var(--font-base-line-height-relaxed);
+  --font-line-height-loose: var(--font-base-line-height-loose);
+  --font-letter-spacing-tight: var(--font-base-letter-spacing-tight);
+  --font-letter-spacing-normal: var(--font-base-letter-spacing-normal);
+  --font-letter-spacing-wide: var(--font-base-letter-spacing-wide);
+  --sizing-height-sm: var(--spacing-base-9);
+  --sizing-height-md: var(--spacing-base-10);
+  --sizing-height-lg: var(--spacing-base-11);
+  --sizing-padding-x-sm: var(--spacing-base-3);
+  --sizing-padding-x-md: var(--spacing-base-4);
+  --sizing-padding-x-lg: var(--spacing-base-8);
+  --sizing-padding-y-sm: var(--spacing-base-1-5);
+  --sizing-padding-y-md: var(--spacing-base-2);
+  --sizing-padding-y-lg: var(--spacing-base-2-5);
+  --sizing-padding-y-xl: var(--spacing-base-3);
+  --sizing-gap-sm: var(--spacing-base-1-5);
+  --sizing-gap-md: var(--spacing-base-2);
+  --sizing-gap-lg: var(--spacing-base-2-5);
+  --color-bg-paper: var(--color-neutral-1-0);
+  --color-bg-base: var(--color-neutral-1-50);
+  --color-bg-surface: var(--color-neutral-1-100);
+  --color-bg-elevated: var(--color-neutral-1-50);
+  --color-bg-primary: var(--color-primary-1-500);
+  --color-bg-primary-hover: var(--color-primary-1-600);
+  --color-bg-primary-active: var(--color-primary-1-700);
+  --color-bg-primary-subtle: var(--color-primary-1-50);
+  --color-bg-primary-muted: var(--color-primary-1-100);
+  --color-bg-surface-hover: var(--color-neutral-1-200);
+  --color-bg-surface-active: var(--color-neutral-1-300);
+  --color-bg-secondary: var(--color-secondary-1-500);
+  --color-bg-secondary-hover: var(--color-secondary-1-600);
+  --color-bg-success: var(--color-accent-1-500);
+  --color-bg-warning: var(--color-accent-2-500);
+  --color-bg-error: var(--color-accent-3-500);
+  --color-bg-info: var(--color-accent-4-500);
+  --color-bg-overlay: var(--color-neutral-overlay); /** Modal/dialog backdrop */
+  --color-bg-inverse: var(--color-neutral-1-900); /** Dark/inverted background (code blocks) */
+  --color-bg-inverse-hover: var(--color-neutral-1-700); /** Hover on inverted background */
+  --color-text-base: var(--color-neutral-1-900);
+  --color-text-heading: var(--color-neutral-1-900);
+  --color-text-muted: var(--color-neutral-1-600);
+  --color-text-disabled: var(--color-neutral-1-400);
+  --color-text-inverse: var(--color-neutral-1-50);
+  --color-text-on-primary: var(--color-neutral-1-0);
+  --color-text-primary: var(--color-primary-1-600);
+  --color-text-success: var(--color-accent-1-700);
+  --color-text-warning: var(--color-accent-2-700);
+  --color-text-error: var(--color-accent-3-700);
+  --color-text-info: var(--color-accent-4-700);
+  --color-border-default: var(--color-neutral-1-300);
+  --color-border-muted: var(--color-neutral-1-200);
+  --color-border-strong: var(--color-neutral-1-400);
+  --color-border-focus: var(--color-primary-1-500);
+  --color-border-error: var(--color-accent-3-500);
+  --color-border-success: var(--color-accent-1-500);
+  --color-interactive-primary: var(--color-primary-1-500);
+  --color-interactive-primary-hover: var(--color-primary-1-600);
+  --color-interactive-primary-active: var(--color-primary-1-700);
+  --color-interactive-primary-disabled: var(--color-neutral-1-300);
+  --color-interactive-secondary: var(--color-secondary-1-500);
+  --color-interactive-secondary-hover: var(--color-secondary-1-600);
+  --color-interactive-secondary-active: var(--color-secondary-1-700);
+  --color-success-bg-subtle: var(--color-accent-1-50);
+  --color-success-bg: var(--color-accent-1-100);
+  --color-success-border: var(--color-accent-1-500);
+  --color-success-text: var(--color-accent-1-700);
+  --color-warning-bg-subtle: var(--color-accent-2-50);
+  --color-warning-bg: var(--color-accent-2-100);
+  --color-warning-border: var(--color-accent-2-500);
+  --color-warning-text: var(--color-accent-2-700);
+  --color-error-bg-subtle: var(--color-accent-3-50);
+  --color-error-bg: var(--color-accent-3-100);
+  --color-error-border: var(--color-accent-3-500);
+  --color-error-text: var(--color-accent-3-700);
+  --color-info-bg-subtle: var(--color-accent-4-50);
+  --color-info-bg: var(--color-accent-4-100);
+  --color-info-border: var(--color-accent-4-500);
+  --color-info-text: var(--color-accent-4-700);
+  --radius-component-sm: var(--radius-sm);
+  --radius-component-md: var(--radius-md);
+  --radius-component-lg: var(--radius-lg);
+  --radius-component-full: var(--radius-full);
+  --shadow-elevation-low: var(--shadow-sm);
+  --shadow-elevation-medium: var(--shadow-md);
+  --shadow-elevation-high: var(--shadow-lg);
+  --shadow-elevation-overlay: var(--shadow-xl); /** Modal/dialog content shadow */
+  --shadow-elevation-key: var(--shadow-xs); /** Subtle key/pressed element shadow (Kbd) */
+  --spacing-component-padding-xs: var(--spacing-xs);
+  --spacing-component-padding-sm: var(--spacing-sm);
+  --spacing-component-padding-md: var(--spacing-md);
+  --spacing-component-padding-lg: var(--spacing-lg);
+  --spacing-component-padding-xl: var(--spacing-xl);
+  --spacing-component-gap-sm: var(--spacing-xs);
+  --spacing-component-gap-md: var(--spacing-sm);
+  --spacing-component-gap-lg: var(--spacing-md);
+  --spacing-layout-gutter: var(--spacing-lg);
+  --spacing-layout-section: var(--spacing-2xl);
+  --font-component-size-sm: var(--font-size-sm);
+  --font-component-size-md: var(--font-size-base);
+  --font-component-size-lg: var(--font-size-lg);
+  --font-heading-size-sm: var(--font-size-lg);
+  --font-heading-size-md: var(--font-size-xl);
+  --font-heading-size-lg: var(--font-size-2xl);
+  --font-heading-size-xl: var(--font-size-3xl);
+  --font-body-size: var(--font-size-base);
+  --font-caption-size: var(--font-size-xs);
+  --sizing-component-height-sm: var(--sizing-height-sm);
+  --sizing-component-height-md: var(--sizing-height-md);
+  --sizing-component-height-lg: var(--sizing-height-lg);
+  --sizing-component-padding-x-sm: var(--sizing-padding-x-sm);
+  --sizing-component-padding-x-md: var(--sizing-padding-x-md);
+  --sizing-component-padding-x-lg: var(--sizing-padding-x-lg);
+  --sizing-component-padding-y-sm: var(--sizing-padding-y-sm);
+  --sizing-component-padding-y-md: var(--sizing-padding-y-md);
+  --sizing-component-padding-y-lg: var(--sizing-padding-y-lg);
+  --sizing-component-padding-y-xl: var(--sizing-padding-y-xl);
+  --sizing-component-gap-sm: var(--sizing-gap-sm);
+  --sizing-component-gap-md: var(--sizing-gap-md);
+  --sizing-component-gap-lg: var(--sizing-gap-lg);
+  --sizing-component-icon-sm: var(--spacing-md);
+  --sizing-component-icon-control: var(--spacing-md-lg); /** 20px — checkbox, switch thumb, slider thumb */
+  --sizing-component-icon-md: var(--spacing-lg);
+  --sizing-component-icon-lg: var(--spacing-xl);
+  --sizing-component-icon-xl: var(--spacing-2xl);
+  --sizing-component-track-sm: var(--spacing-2xs);
+  --sizing-component-track-md: var(--spacing-xs);
+  --sizing-component-track-lg: var(--spacing-sm);
+  --color-accordion-bg: var(--color-bg-paper); /** Item background */
+  --color-accordion-border: var(--color-border-muted); /** Item border/divider */
+  --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-accordion-trigger-hover-bg: var(--color-bg-surface); /** Trigger hover background */
+  --color-accordion-content-text: var(--color-text-base); /** Content text */
+  --color-accordion-icon: var(--color-text-muted); /** Chevron icon color */
+  --color-alert-title: var(--color-text-base); /** Alert title text */
+  --color-alert-description: var(--color-text-base); /** Alert description text */
+  --color-alert-info-bg: var(--color-info-bg-subtle); /** Info variant background */
+  --color-alert-info-border: var(--color-info-border); /** Info left accent border */
+  --color-alert-info-icon: var(--color-info-text); /** Info icon color */
+  --color-alert-success-bg: var(--color-success-bg-subtle); /** Success variant background */
+  --color-alert-success-border: var(--color-success-border); /** Success left accent border */
+  --color-alert-success-icon: var(--color-success-text); /** Success icon color */
+  --color-alert-warning-bg: var(--color-warning-bg-subtle); /** Warning variant background */
+  --color-alert-warning-border: var(--color-warning-border); /** Warning left accent border */
+  --color-alert-warning-icon: var(--color-warning-text); /** Warning icon color */
+  --color-alert-error-bg: var(--color-error-bg-subtle); /** Error variant background */
+  --color-alert-error-border: var(--color-error-border); /** Error left accent border */
+  --color-alert-error-icon: var(--color-error-text); /** Error icon color */
+  --color-alertdlg-overlay: var(--color-bg-overlay); /** AlertDialog backdrop overlay */
+  --color-alertdlg-bg: var(--color-bg-paper); /** AlertDialog content background */
+  --color-alertdlg-title: var(--color-text-base); /** AlertDialog title text */
+  --color-alertdlg-description: var(--color-text-muted); /** AlertDialog description text */
+  --color-alertdlg-border: var(--color-border-muted); /** AlertDialog border */
+  --color-alertdlg-action-bg: var(--color-error-bg); /** Destructive action button background */
+  --color-alertdlg-action-text: var(--color-text-inverse); /** Destructive action button text */
+  --color-alertdlg-action-hover-bg: var(--color-error-text); /** Destructive action button hover */
+  --color-alertdlg-cancel-bg: var(--color-bg-surface); /** Cancel button background */
+  --color-alertdlg-cancel-text: var(--color-text-base); /** Cancel button text */
+  --color-alertdlg-cancel-hover-bg: var(--color-bg-surface-hover); /** Cancel button hover */
+  --color-avatar-bg: var(--color-bg-surface); /** Avatar fallback background */
+  --color-avatar-text: var(--color-text-muted); /** Avatar fallback text */
+  --color-avatar-border: var(--color-border-default); /** Avatar border */
+  --color-badge-success-bg: var(--color-success-bg);
+  --color-badge-success-text: var(--color-success-text);
+  --color-badge-success-border: var(--color-success-border);
+  --color-badge-warning-bg: var(--color-warning-bg);
+  --color-badge-warning-text: var(--color-warning-text);
+  --color-badge-warning-border: var(--color-warning-border);
+  --color-badge-error-bg: var(--color-error-bg);
+  --color-badge-error-text: var(--color-error-text);
+  --color-badge-error-border: var(--color-error-border);
+  --color-badge-info-bg: var(--color-info-bg);
+  --color-badge-info-text: var(--color-info-text);
+  --color-badge-info-border: var(--color-info-border);
+  --color-badge-neutral-bg: var(--color-bg-surface);
+  --color-badge-neutral-text: var(--color-text-muted);
+  --color-badge-neutral-border: var(--color-border-muted);
+  --color-banner-info-bg: var(--color-info-bg); /** Info background */
+  --color-banner-info-text: var(--color-info-text); /** Info text */
+  --color-banner-info-border: var(--color-info-border); /** Info border */
+  --color-banner-success-bg: var(--color-success-bg); /** Success background */
+  --color-banner-success-text: var(--color-success-text); /** Success text */
+  --color-banner-success-border: var(--color-success-border); /** Success border */
+  --color-banner-warning-bg: var(--color-warning-bg); /** Warning background */
+  --color-banner-warning-text: var(--color-warning-text); /** Warning text */
+  --color-banner-warning-border: var(--color-warning-border); /** Warning border */
+  --color-banner-error-bg: var(--color-error-bg); /** Error background */
+  --color-banner-error-text: var(--color-error-text); /** Error text */
+  --color-banner-error-border: var(--color-error-border); /** Error border */
+  --color-banner-dismiss: var(--color-text-muted); /** Dismiss icon color */
+  --color-bq-border: var(--color-border-strong); /** Left accent border */
+  --color-bq-bg: var(--color-bg-surface); /** Background */
+  --color-bq-text: var(--color-text-base); /** Quote text */
+  --color-bq-cite-text: var(--color-text-muted); /** Citation/author text */
+  --color-breadcrumbs-text: var(--color-text-muted); /** Breadcrumb link text */
+  --color-breadcrumbs-text-current: var(--color-text-base); /** Current breadcrumb text */
+  --color-breadcrumbs-separator: var(--color-text-disabled); /** Breadcrumb separator color */
+  --color-breadcrumbs-hover-text: var(--color-text-primary); /** Breadcrumb link hover text */
+  --color-btn-primary-bg: var(--color-bg-primary);
+  --color-btn-primary-bg-hover: var(--color-bg-primary-hover);
+  --color-btn-primary-bg-active: var(--color-bg-primary-active);
+  --color-btn-primary-text: var(--color-text-inverse);
+  --color-btn-primary-border: var(--color-bg-primary);
+  --color-btn-secondary-bg: var(--color-bg-surface);
+  --color-btn-secondary-bg-hover: var(--color-bg-surface-hover);
+  --color-btn-secondary-bg-active: var(--color-bg-surface-active);
+  --color-btn-secondary-text: var(--color-text-base);
+  --color-btn-secondary-border: var(--color-border-default);
+  --color-btn-ghost-bg-hover: var(--color-bg-surface);
+  --color-btn-ghost-bg-active: var(--color-bg-surface-hover);
+  --color-btn-ghost-text: var(--color-text-primary);
+  --color-btn-disabled-bg: var(--color-interactive-primary-disabled);
+  --color-btn-disabled-text: var(--color-text-disabled);
+  --color-card-bg: var(--color-bg-paper); /** White paper background */
+  --color-card-border: var(--color-border-muted);
+  --color-chart-1: var(--color-bg-primary); /** Chart color 1 (primary blue) */
+  --color-chart-2: var(--color-success-text); /** Chart color 2 (green) */
+  --color-chart-3: var(--color-warning-text); /** Chart color 3 (amber) */
+  --color-chart-4: var(--color-error-text); /** Chart color 4 (red) */
+  --color-chart-5: var(--color-info-text); /** Chart color 5 (info blue) */
+  --color-chart-grid: var(--color-border-muted); /** Chart grid line color */
+  --color-chart-axis: var(--color-text-muted); /** Chart axis text color */
+  --color-chart-tooltip-bg: var(--color-bg-paper); /** Chart tooltip background */
+  --color-chart-tooltip-border: var(--color-border-muted); /** Chart tooltip border */
+  --color-chart-tooltip-text: var(--color-text-base); /** Chart tooltip text */
+  --color-checkbox-bg: var(--color-bg-paper); /** Unchecked background (white) */
+  --color-checkbox-border: var(--color-border-default); /** Unchecked border */
+  --color-checkbox-border-hover: var(--color-border-strong); /** Hover border */
+  --color-checkbox-checked-bg: var(--color-interactive-primary); /** Sky blue checked bg */
+  --color-checkbox-checked-border: var(--color-interactive-primary); /** Sky blue checked border */
+  --color-checkbox-checked-icon: var(--color-text-on-primary); /** White check icon */
+  --color-checkbox-focus-ring: var(--color-border-focus); /** Sky blue focus ring */
+  --color-checkbox-disabled-bg: var(--color-bg-surface); /** Disabled background */
+  --color-checkbox-label: var(--color-text-base); /** Label text color */
+  --color-checkbox-description: var(--color-text-muted); /** Description text color */
+  --color-code-bg: var(--color-bg-surface); /** Inline code background */
+  --color-code-text: var(--color-text-primary); /** Inline code text */
+  --color-code-block-bg: var(--color-bg-inverse); /** Code block dark background */
+  --color-code-block-text: var(--color-text-inverse); /** Code block text on dark bg */
+  --color-code-copy-hover-bg: var(--color-bg-inverse-hover); /** Copy button hover on dark bg */
+  --color-code-line-number: var(--color-text-muted); /** Line number text color */
+  --color-cmb-trigger-bg: var(--color-bg-paper); /** Trigger background (matches Input) */
+  --color-cmb-trigger-border: var(--color-border-default); /** Trigger border */
+  --color-cmb-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-cmb-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
+  --color-cmb-content-bg: var(--color-bg-paper); /** Dropdown background */
+  --color-cmb-content-border: var(--color-border-muted); /** Dropdown border (subtle) */
+  --color-cmb-item-hover-bg: var(--color-bg-surface-hover); /** Item hover */
+  --color-cmb-item-selected-bg: var(--color-bg-primary-subtle); /** Selected item background */
+  --color-cmb-item-selected-text: var(--color-text-primary); /** Selected item text */
+  --color-cmb-search-bg: var(--color-bg-paper); /** Search input background */
+  --color-cmb-empty-text: var(--color-text-muted); /** No results text */
+  --color-command-bg: var(--color-bg-paper); /** Command palette background */
+  --color-command-border: var(--color-border-muted); /** Command palette border */
+  --color-command-input-text: var(--color-text-base); /** Command input text */
+  --color-command-input-placeholder: var(--color-text-disabled); /** Command input placeholder */
+  --color-command-item-text: var(--color-text-base); /** Command item text */
+  --color-command-item-hover-bg: var(--color-bg-surface); /** Command item hover background */
+  --color-command-group-heading: var(--color-text-muted); /** Command group heading text */
+  --color-command-separator: var(--color-border-muted); /** Command separator color */
+  --color-command-empty-text: var(--color-text-muted); /** Command empty state text */
+  --color-cpybtn-bg: var(--color-bg-surface); /** Default background */
+  --color-cpybtn-bg-hover: var(--color-bg-surface-hover); /** Hover background */
+  --color-cpybtn-icon: var(--color-text-muted); /** Copy icon color */
+  --color-cpybtn-icon-copied: var(--color-success-text); /** Check icon after copy */
+  --color-cpybtn-border: var(--color-border-default); /** Button border */
+  --color-datatable-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
+  --color-datatable-row-selected-bg: var(--color-bg-surface); /** Selected row background */
+  --color-datatable-sort-icon: var(--color-text-muted); /** Sort icon inactive */
+  --color-datatable-sort-icon-active: var(--color-interactive-primary); /** Sort icon active */
+  --color-datatable-empty-text: var(--color-text-muted); /** Empty state text */
+  --color-datepicker-popover-bg: var(--color-bg-paper); /** White popover background */
+  --color-datepicker-popover-border: var(--color-border-muted); /** Subtle popover border */
+  --color-datepicker-header-text: var(--color-text-base); /** Month/year header text */
+  --color-datepicker-weekday-text: var(--color-text-muted); /** Mo Di Mi weekday labels */
+  --color-datepicker-day-text: var(--color-text-base); /** Default day number */
+  --color-datepicker-day-hover-bg: var(--color-bg-surface); /** Day hover background */
+  --color-datepicker-day-selected-bg: var(--color-bg-primary); /** Sky Blue selected day */
+  --color-datepicker-day-selected-text: var(--color-text-inverse); /** White text on selected */
+  --color-datepicker-day-today-border: var(--color-border-focus); /** Sky Blue ring for today */
+  --color-datepicker-day-disabled-text: var(--color-text-disabled); /** Disabled/outside day */
+  --color-datepicker-day-range-bg: var(--color-bg-primary-muted); /** Subtle sky-100 for range middle days */
+  --color-datepicker-nav-hover-bg: var(--color-bg-surface); /** Chevron hover bg */
+  --color-dialog-overlay: var(--color-bg-overlay); /** Dialog backdrop overlay */
+  --color-dialog-bg: var(--color-bg-paper); /** Dialog content background */
+  --color-dialog-title: var(--color-text-base); /** Dialog title text */
+  --color-dialog-description: var(--color-text-muted); /** Dialog description text */
+  --color-dialog-border: var(--color-border-muted); /** Dialog border */
+  --color-drawer-overlay: var(--color-bg-overlay); /** Drawer backdrop overlay */
+  --color-drawer-bg: var(--color-bg-paper); /** Drawer content background */
+  --color-drawer-title: var(--color-text-base); /** Drawer title text */
+  --color-drawer-description: var(--color-text-muted); /** Drawer description text */
+  --color-drawer-border: var(--color-border-muted); /** Drawer top border */
+  --color-drawer-handle: var(--color-border-strong); /** Drag handle bar color */
+  --color-dropdown-bg: var(--color-bg-paper); /** Menu background */
+  --color-dropdown-border: var(--color-border-muted); /** Menu border */
+  --color-dropdown-item-text: var(--color-text-base); /** Item text */
+  --color-dropdown-item-hover-bg: var(--color-bg-surface); /** Item hover/focus background */
+  --color-dropdown-item-disabled-text: var(--color-text-disabled); /** Disabled item text */
+  --color-dropdown-item-icon: var(--color-text-muted); /** Item icon color */
+  --color-dropdown-destructive-text: var(--color-error-text); /** Destructive item text (red) */
+  --color-dropdown-destructive-hover-bg: var(--color-error-bg-subtle); /** Destructive item hover bg */
+  --color-dropdown-separator: var(--color-border-muted); /** Separator line */
+  --color-dropdown-label-text: var(--color-text-muted); /** Group label text */
+  --color-emptystate-icon: var(--color-text-muted); /** Default icon color (muted) */
+  --color-emptystate-icon-error: var(--color-error-text); /** Error variant icon color */
+  --color-emptystate-icon-success: var(--color-success-text); /** Success variant icon color */
+  --color-emptystate-title: var(--color-text-base); /** Title text color */
+  --color-emptystate-description: var(--color-text-muted); /** Description text color (muted) */
+  --color-fileupload-zone-bg: var(--color-bg-surface); /** Upload zone background (slate-100) – visible against white page */
+  --color-fileupload-zone-border: var(--color-border-default); /** Dashed border – gray-300 for visibility */
+  --color-fileupload-zone-text: var(--color-text-base); /** Zone primary instruction text */
+  --color-fileupload-zone-text-sub: var(--color-text-muted); /** Zone secondary/sub text */
+  --color-fileupload-zone-icon: var(--color-interactive-primary); /** Upload cloud icon – sky-500 brand color */
+  --color-fileupload-hover-bg: var(--color-bg-primary-subtle); /** Sky-50 hover bg */
+  --color-fileupload-hover-border: var(--color-border-focus); /** Sky-500 solid hover border */
+  --color-fileupload-drag-bg: var(--color-bg-primary-subtle); /** Sky-50 drag-over bg */
+  --color-fileupload-drag-border: var(--color-border-focus); /** Sky-500 drag-over border */
+  --color-fileupload-drag-icon: var(--color-bg-primary); /** Sky-500 drag-over icon */
+  --color-fileupload-drag-text: var(--color-text-primary); /** Sky-600 drag-over text */
+  --color-fileupload-file-text: var(--color-text-base); /** File name text */
+  --color-fileupload-file-size: var(--color-text-muted); /** File size text */
+  --color-fileupload-file-icon: var(--color-text-muted); /** File type icon */
+  --color-fileupload-file-remove: var(--color-text-muted); /** Remove button */
+  --color-fileupload-file-remove-hover: var(--color-text-error); /** Remove hover */
+  --color-fileupload-progress-bg: var(--color-bg-surface-hover); /** Progress track */
+  --color-fileupload-progress-fill: var(--color-bg-primary); /** Sky-500 progress bar */
+  --color-fileupload-error-text: var(--color-text-error); /** Error message */
+  --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
+  --color-hl-bg: var(--color-warning-bg); /** Highlight background (yellow) */
+  --color-hl-text: var(--color-text-base); /** Highlight text */
+  --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
+  --color-hovercard-border: var(--color-border-muted); /** HoverCard border */
+  --color-img-bg: var(--color-bg-surface); /** Loading placeholder background */
+  --color-img-fallback-bg: var(--color-bg-surface-hover); /** Error fallback background */
+  --color-img-fallback-text: var(--color-text-muted); /** Error fallback icon/text */
+  --color-img-border: var(--color-border-muted); /** Optional border */
+  --color-input-bg: var(--color-bg-paper); /** White paper background */
+  --color-input-bg-disabled: var(--color-bg-surface);
+  --color-input-text: var(--color-text-base);
+  --color-input-text-placeholder: var(--color-text-muted);
+  --color-input-border: var(--color-border-default);
+  --color-input-border-hover: var(--color-border-strong);
+  --color-input-border-focus: var(--color-border-focus);
+  --color-input-border-error: var(--color-border-error);
+  --color-inputotp-bg: var(--color-bg-paper); /** Slot background */
+  --color-inputotp-bg-disabled: var(--color-bg-surface); /** Disabled slot background */
+  --color-inputotp-text: var(--color-text-base); /** Digit text color */
+  --color-inputotp-border: var(--color-border-default); /** Slot border */
+  --color-inputotp-border-focus: var(--color-border-focus); /** Active slot focus ring */
+  --color-inputotp-border-error: var(--color-border-error); /** Error state border */
+  --color-inputotp-caret: var(--color-interactive-primary); /** Blinking caret color */
+  --color-inputotp-separator: var(--color-text-muted); /** Group separator color */
+  --color-kbd-bg: var(--color-bg-paper); /** Key background */
+  --color-kbd-text: var(--color-text-base); /** Key text */
+  --color-kbd-border: var(--color-border-muted); /** Key border */
+  --color-link-text: var(--color-interactive-primary); /** Default link text color */
+  --color-link-text-hover: var(--color-interactive-primary-hover); /** Link hover text color */
+  --color-ldovl-bg: var(--color-bg-overlay); /** Overlay background (semi-transparent) */
+  --color-ldovl-text: var(--color-text-base); /** Loading text color */
+  --color-ldovl-spinner: var(--color-interactive-primary); /** Spinner color */
+  --color-menubar-bg: var(--color-bg-paper); /** Menubar background */
+  --color-menubar-border: var(--color-border-muted); /** Menubar border */
+  --color-menubar-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-menubar-trigger-hover-bg: var(--color-bg-surface); /** Trigger hover background */
+  --color-menubar-trigger-active-bg: var(--color-bg-surface); /** Trigger active/open background */
+  --color-modal-overlay: var(--color-bg-overlay); /** Dark backdrop behind modal */
+  --color-modal-bg: var(--color-bg-paper); /** White content background */
+  --color-modal-title: var(--color-text-base); /** Modal title text */
+  --color-modal-description: var(--color-text-muted); /** Modal description text */
+  --color-modal-divider: var(--color-border-muted); /** Header/footer border */
+  --color-modal-close-hover-bg: var(--color-bg-surface); /** Close button hover bg */
+  --color-modal-close-hover-text: var(--color-interactive-primary); /** Close button hover color (sky blue) */
+  --color-nav-text: var(--color-text-base); /** Navigation item text */
+  --color-nav-hover-bg: var(--color-bg-surface); /** Item hover background */
+  --color-nav-active-bg: var(--color-bg-surface); /** Active item background */
+  --color-nav-dropdown-bg: var(--color-bg-paper); /** Dropdown panel background */
+  --color-nav-dropdown-border: var(--color-border-muted); /** Dropdown panel border */
+  --color-nav-focus-ring: var(--color-border-focus); /** Focus ring color */
+  --color-numberinput-bg: var(--color-bg-paper); /** Input background */
+  --color-numberinput-bg-disabled: var(--color-bg-surface); /** Disabled background */
+  --color-numberinput-text: var(--color-text-base); /** Input value text */
+  --color-numberinput-border: var(--color-border-default); /** Default border */
+  --color-numberinput-border-hover: var(--color-border-strong); /** Hover border */
+  --color-numberinput-border-focus: var(--color-border-focus); /** Focus ring color */
+  --color-numberinput-border-error: var(--color-error-border); /** Error border */
+  --color-numberinput-stepper-text: var(--color-text-muted); /** Stepper button icon color */
+  --color-numberinput-stepper-text-hover: var(--color-text-base); /** Stepper button icon hover color */
+  --color-numberinput-stepper-bg-hover: var(--color-bg-surface); /** Stepper button hover background */
+  --color-pagination-item-bg: var(--color-bg-paper); /** Page button background */
+  --color-pagination-item-border: var(--color-border-default); /** Page button border */
+  --color-pagination-item-text: var(--color-text-base); /** Page button text */
+  --color-pagination-item-hover-bg: var(--color-bg-surface); /** Page button hover background */
+  --color-pagination-item-active-bg: var(--color-bg-primary); /** Active page background (Sky Blue) */
+  --color-pagination-item-active-text: var(--color-text-on-primary); /** Active page text (white) */
+  --color-pagination-item-active-border: var(--color-bg-primary); /** Active page border (Sky Blue) */
+  --color-pwinput-toggle: var(--color-text-muted); /** Toggle icon color */
+  --color-pwinput-toggle-hover: var(--color-text-base); /** Toggle icon hover */
+  --color-pwinput-strength-weak: var(--color-error-text); /** Strength: weak */
+  --color-pwinput-strength-medium: var(--color-warning-text); /** Strength: medium */
+  --color-pwinput-strength-strong: var(--color-success-text); /** Strength: strong */
+  --color-popover-bg: var(--color-bg-paper); /** White popover background */
+  --color-popover-border: var(--color-border-muted); /** Subtle outer border */
+  --color-progress-track: var(--color-bg-surface);
+  --color-progress-fill: var(--color-interactive-primary);
+  --color-progress-fill-success: var(--color-bg-success);
+  --color-progress-fill-warning: var(--color-bg-warning);
+  --color-progress-fill-error: var(--color-bg-error);
+  --color-progress-label: var(--color-text-base);
+  --color-progress-value: var(--color-text-muted);
+  --color-radio-bg: var(--color-bg-paper); /** Unchecked background (white) */
+  --color-radio-border: var(--color-border-default); /** Unchecked border */
+  --color-radio-border-hover: var(--color-border-strong); /** Hover border */
+  --color-radio-selected-border: var(--color-interactive-primary); /** Sky blue selected border */
+  --color-radio-selected-dot: var(--color-interactive-primary); /** Sky blue inner dot */
+  --color-radio-focus-ring: var(--color-border-focus); /** Sky blue focus ring */
+  --color-radio-disabled-bg: var(--color-bg-surface); /** Disabled background */
+  --color-radio-item-hover-bg: var(--color-bg-surface); /** Row hover background */
+  --color-radio-label: var(--color-text-base); /** Label text color */
+  --color-radio-description: var(--color-text-muted); /** Description text color */
+  --color-rtg-filled: var(--color-warning-text); /** Filled star (gold/amber) */
+  --color-rtg-empty: var(--color-text-disabled); /** Empty star */
+  --color-rtg-hover: var(--color-warning-border); /** Hover color */
+  --color-rtg-text: var(--color-text-muted); /** Optional rating text */
+  --color-rsz-handle-bg: var(--color-border-muted); /** Handle default background */
+  --color-rsz-handle-hover-bg: var(--color-interactive-primary); /** Handle hover/active */
+  --color-rsz-handle-border: var(--color-border-default); /** Handle grip border */
+  --color-rsz-panel-border: var(--color-border-muted); /** Panel divider border */
+  --color-scrollarea-thumb: var(--color-border-default); /** Scrollbar thumb color */
+  --color-scrollarea-thumb-hover: var(--color-border-strong); /** Scrollbar thumb hover color */
+  --color-sinput-icon: var(--color-text-muted); /** Search icon color */
+  --color-sinput-icon-focus: var(--color-text-base); /** Search icon on focus */
+  --color-sinput-clear: var(--color-text-muted); /** Clear button color */
+  --color-sinput-clear-hover: var(--color-text-base); /** Clear button hover */
+  --color-select-trigger-bg: var(--color-bg-paper); /** White trigger background (matches Input) */
+  --color-select-trigger-text: var(--color-text-base); /** Trigger text color */
+  --color-select-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
+  --color-select-trigger-border: var(--color-border-default); /** Default border */
+  --color-select-trigger-border-hover: var(--color-border-strong); /** Hover border */
+  --color-select-trigger-border-focus: var(--color-border-focus); /** Focus border (sky) */
+  --color-select-trigger-border-error: var(--color-border-error); /** Error border */
+  --color-select-trigger-disabled-bg: var(--color-bg-surface); /** Disabled background */
+  --color-select-icon: var(--color-text-muted); /** Chevron/search icon color */
+  --color-select-icon-hover: var(--color-text-base); /** Icon hover color */
+  --color-select-popover-bg: var(--color-bg-paper); /** White dropdown background */
+  --color-select-popover-border: var(--color-border-muted); /** Dropdown border */
+  --color-select-item-text: var(--color-text-base); /** Option text */
+  --color-select-item-hover-bg: var(--color-bg-surface); /** Option hover/focus bg */
+  --color-select-item-selected-bg: var(--color-bg-primary-subtle); /** Selected option background */
+  --color-select-item-selected-text: var(--color-text-primary); /** Selected option text (sky) */
+  --color-select-item-disabled-text: var(--color-text-disabled); /** Disabled option text */
+  --color-select-check-icon: var(--color-bg-primary); /** Checkmark icon color (sky) */
+  --color-select-group-label: var(--color-text-muted); /** Option group label */
+  --color-select-separator: var(--color-border-muted); /** Separator line */
+  --color-select-search-bg: var(--color-bg-base); /** Combobox search input bg */
+  --color-select-empty-text: var(--color-text-muted); /** No results text */
+  --color-select-checkbox-text: var(--color-text-on-primary); /** Checkbox checked text (white) */
+  --color-select-checkbox-bg: var(--color-bg-paper); /** Checkbox unchecked background */
+  --color-separator: var(--color-border-muted); /** Separator line color */
+  --color-session-card-bg: var(--color-bg-paper); /** Card background */
+  --color-session-card-border: var(--color-border-muted); /** Default border */
+  --color-session-card-border-hover: var(--color-border-default); /** Hover border */
+  --color-session-card-bg-hover: var(--color-bg-surface); /** Hover background */
+  --color-session-card-bg-error: var(--color-error-bg-subtle); /** Error state background */
+  --color-session-card-border-error: var(--color-error-border); /** Error state border */
+  --color-session-card-text-primary: var(--color-text-base); /** Title and value text */
+  --color-session-card-text-secondary: var(--color-text-muted); /** Date, labels, description */
+  --color-session-card-text-tertiary: var(--color-text-disabled); /** Zone labels (Z1-Z5) */
+  --color-session-card-text-error: var(--color-error-text); /** Error message text */
+  --color-session-card-skeleton: var(--color-bg-surface); /** Skeleton placeholder */
+  --color-session-card-zone-bg: var(--color-bg-surface); /** Zone bar background */
+  --color-session-card-zone-1: var(--color-border-strong); /** HR Zone 1 Recovery */
+  --color-session-card-zone-2: var(--color-success-border); /** HR Zone 2 Aerobic */
+  --color-session-card-zone-3: var(--color-warning-border); /** HR Zone 3 Tempo */
+  --color-session-card-zone-4: var(--color-warning-text); /** HR Zone 4 Threshold */
+  --color-session-card-zone-5: var(--color-error-border); /** HR Zone 5 Maximum */
+  --color-session-card-focus-ring: var(--color-border-focus); /** Focus ring for interactive state */
+  --color-sheet-overlay: var(--color-bg-overlay); /** Sheet backdrop overlay */
+  --color-sheet-bg: var(--color-bg-paper); /** Sheet panel background */
+  --color-sheet-border: var(--color-border-muted); /** Sheet border */
+  --color-sheet-title: var(--color-text-base); /** Sheet title text */
+  --color-sheet-description: var(--color-text-muted); /** Sheet description text */
+  --color-skeleton-base: var(--color-bg-surface);
+  --color-skeleton-shimmer: var(--color-bg-base);
+  --color-slider-track: var(--color-bg-surface); /** Slider track background */
+  --color-slider-range: var(--color-bg-primary); /** Slider filled range */
+  --color-slider-thumb: var(--color-bg-paper); /** Slider thumb background */
+  --color-slider-thumb-border: var(--color-bg-primary); /** Slider thumb border */
+  --color-slider-thumb-hover: var(--color-bg-primary-hover); /** Slider thumb hover border */
+  --color-spinner-primary: var(--color-interactive-primary);
+  --color-spinner-track: var(--color-border-muted);
+  --color-spinner-label: var(--color-text-muted);
+  --color-stat-card-bg: var(--color-bg-paper); /** Card background */
+  --color-stat-card-border: var(--color-border-muted); /** Default border */
+  --color-stat-card-text-primary: var(--color-text-base); /** Main value text */
+  --color-stat-card-text-secondary: var(--color-text-muted); /** Title, unit, description */
+  --color-stat-card-border-success: var(--color-success-border); /** Success variant left accent */
+  --color-stat-card-border-warning: var(--color-warning-border); /** Warning variant left accent */
+  --color-stat-card-border-error: var(--color-error-border); /** Error variant left accent */
+  --color-stat-card-trend-up: var(--color-success-text); /** Positive trend indicator */
+  --color-stat-card-trend-down: var(--color-error-text); /** Negative trend indicator */
+  --color-stat-card-trend-neutral: var(--color-text-muted); /** Neutral trend indicator */
+  --color-switch-track-bg: var(--color-border-default); /** Unchecked track (gray-300) */
+  --color-switch-track-bg-checked: var(--color-interactive-primary); /** Checked track (sky blue) */
+  --color-switch-thumb-bg: var(--color-bg-paper); /** White thumb */
+  --color-switch-focus-ring: var(--color-border-focus); /** Sky blue focus ring */
+  --color-switch-disabled-track-bg: var(--color-bg-surface); /** Disabled track */
+  --color-switch-label: var(--color-text-base); /** Label text color */
+  --color-switch-description: var(--color-text-muted); /** Description text color */
+  --color-table-header-bg: var(--color-bg-base);
+  --color-table-header-text: var(--color-text-base);
+  --color-table-border: var(--color-border-muted);
+  --color-table-row-stripe: var(--color-bg-base);
+  --color-table-row-hover: var(--color-bg-surface);
+  --color-tabs-list-bg: var(--color-bg-surface); /** Pills variant list background */
+  --color-tabs-trigger-text: var(--color-text-muted); /** Inactive tab text */
+  --color-tabs-trigger-text-active: var(--color-interactive-primary); /** Active tab text (sky) */
+  --color-tabs-trigger-text-hover: var(--color-text-base); /** Hovered tab text */
+  --color-tabs-trigger-bg-active: var(--color-bg-paper); /** Pills active tab background (white) */
+  --color-tabs-trigger-hover-bg: var(--color-bg-surface); /** Underline hover background */
+  --color-tabs-underline: var(--color-interactive-primary); /** Active underline indicator (sky) */
+  --color-tabs-border: var(--color-border-muted); /** Underline variant bottom border */
+  --color-tabs-content-text: var(--color-text-base); /** Tab content text */
+  --color-tag-bg-default: var(--color-bg-surface); /** Default tag background */
+  --color-tag-bg-success: var(--color-success-bg-subtle); /** Success variant background */
+  --color-tag-bg-warning: var(--color-warning-bg-subtle); /** Warning variant background */
+  --color-tag-bg-error: var(--color-error-bg-subtle); /** Error variant background */
+  --color-tag-bg-info: var(--color-info-bg-subtle); /** Info variant background */
+  --color-tag-text-default: var(--color-text-base); /** Default tag text color */
+  --color-tag-text-success: var(--color-success-text); /** Success variant text color */
+  --color-tag-text-warning: var(--color-warning-text); /** Warning variant text color */
+  --color-tag-text-error: var(--color-error-text); /** Error variant text color */
+  --color-tag-text-info: var(--color-info-text); /** Info variant text color */
+  --color-tag-border-default: var(--color-border-muted); /** Default tag border */
+  --color-tag-border-success: var(--color-success-border); /** Success variant border */
+  --color-tag-border-warning: var(--color-warning-border); /** Warning variant border */
+  --color-tag-border-error: var(--color-error-border); /** Error variant border */
+  --color-tag-border-info: var(--color-info-border); /** Info variant border */
+  --color-tag-border-focus: var(--color-border-focus); /** Focus ring color */
+  --color-textarea-counter-text: var(--color-text-muted); /** Character counter default */
+  --color-textarea-counter-text-over: var(--color-text-error); /** Counter when over limit */
+  --color-toast-bg: var(--color-bg-paper); /** White toast background */
+  --color-toast-border: var(--color-border-muted); /** Subtle outer border */
+  --color-toast-title: var(--color-text-base); /** Toast title text */
+  --color-toast-description: var(--color-text-muted); /** Toast description text */
+  --color-toast-close-hover-bg: var(--color-bg-surface); /** Close button hover bg */
+  --color-toast-success-border: var(--color-success-border); /** Green left accent border */
+  --color-toast-success-icon: var(--color-success-text); /** Green icon color */
+  --color-toast-error-border: var(--color-error-border); /** Red left accent border */
+  --color-toast-error-icon: var(--color-error-text); /** Red icon color */
+  --color-toast-warning-border: var(--color-warning-border); /** Amber left accent border */
+  --color-toast-warning-icon: var(--color-warning-text); /** Amber icon color */
+  --color-toast-info-border: var(--color-info-border); /** Sky blue left accent border */
+  --color-toast-info-icon: var(--color-info-text); /** Sky blue icon color */
+  --color-toggle-bg: var(--color-bg-surface); /** Toggle button default background */
+  --color-toggle-border: var(--color-border-default); /** Toggle button border */
+  --color-toggle-text: var(--color-text-base); /** Toggle button text */
+  --color-toggle-hover-bg: var(--color-bg-surface-hover); /** Toggle button hover background */
+  --color-toggle-active-bg: var(--color-bg-primary); /** Active toggle background */
+  --color-toggle-active-text: var(--color-text-inverse); /** Active toggle text */
+  --color-toggle-active-border: var(--color-bg-primary); /** Active toggle border */
+  --color-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
+  --color-toolbar-border: var(--color-border-muted); /** Toolbar border */
+  --color-toolbar-btn-text: var(--color-text-base); /** Button text */
+  --color-toolbar-btn-hover-bg: var(--color-bg-surface); /** Button hover background */
+  --color-toolbar-btn-active-bg: var(--color-bg-surface-active); /** Button active/pressed */
+  --color-toolbar-link-text: var(--color-text-primary); /** Link text */
+  --color-toolbar-link-hover-text: var(--color-interactive-primary-hover); /** Link hover text */
+  --color-toolbar-toggle-on-bg: var(--color-bg-primary-subtle); /** Toggle pressed background */
+  --color-toolbar-toggle-on-text: var(--color-text-primary); /** Toggle pressed text */
+  --color-toolbar-separator: var(--color-border-muted); /** Separator color */
+  --color-tooltip-bg: var(--color-text-base); /** Dark tooltip background */
+  --color-tooltip-text: var(--color-text-inverse); /** Light text on dark bg */
+  --color-tooltip-arrow: var(--color-text-base); /** Arrow matches bg */
+  --radius-accordion: var(--radius-component-lg); /** 8px item radius */
+  --radius-alert: var(--radius-component-md); /** 6px rounded corners */
+  --radius-alertdlg: var(--radius-component-lg); /** AlertDialog border radius */
+  --radius-avatar: var(--radius-component-full); /** Avatar border radius (circle) */
+  --radius-badge: var(--radius-component-full);
+  --radius-bq: var(--radius-component-sm); /** Corner radius */
+  --radius-card: var(--radius-component-lg);
+  --radius-chart-tooltip: var(--radius-component-md); /** Chart tooltip border radius */
+  --radius-checkbox: var(--radius-component-sm); /** 4px subtle rounding */
+  --radius-code: var(--radius-component-sm); /** Inline code border radius */
+  --radius-code-block: var(--radius-component-lg); /** Code block border radius */
+  --radius-cmb-trigger: var(--radius-component-md); /** Trigger border radius */
+  --radius-cmb-content: var(--radius-component-lg); /** Dropdown border radius */
+  --radius-command: var(--radius-component-lg); /** Command palette border radius */
+  --radius-cpybtn: var(--radius-component-md); /** Button radius */
+  --radius-datepicker-popover: var(--radius-component-lg); /** 8px popover radius */
+  --radius-datepicker-day: var(--radius-component-md); /** 6px day cell radius */
+  --radius-dialog: var(--radius-component-lg); /** Dialog border radius */
+  --radius-drawer: var(--radius-component-lg); /** Drawer top corner radius */
+  --radius-dropdown-menu: var(--radius-component-lg); /** 8px menu radius */
+  --radius-dropdown-item: var(--radius-component-md); /** 6px item radius */
+  --radius-fileupload-zone: var(--radius-component-lg); /** 8px zone radius */
+  --radius-fileupload-item: var(--radius-component-md); /** 6px file item radius */
+  --radius-fileupload-progress: var(--radius-component-full); /** Pill progress bar */
+  --radius-hl: var(--radius-component-sm); /** Highlight border radius */
+  --radius-hovercard: var(--radius-component-lg); /** HoverCard border radius */
+  --radius-img-sm: var(--radius-component-sm); /** Small radius */
+  --radius-img-md: var(--radius-component-md); /** Medium radius */
+  --radius-img-lg: var(--radius-component-lg); /** Large radius */
+  --radius-img-full: var(--radius-component-full); /** Circle radius */
+  --radius-inputotp: var(--radius-component-md); /** Slot border radius */
+  --radius-kbd: var(--radius-component-sm); /** Key border radius */
+  --radius-ldovl: var(--radius-component-md); /** Corner radius (matching container) */
+  --radius-menubar-bar: var(--radius-component-md); /** Menubar container radius */
+  --radius-menubar-item: var(--radius-component-sm); /** Trigger item radius */
+  --radius-modal: var(--radius-component-lg); /** 8px rounded corners */
+  --radius-nav: var(--radius-component-md); /** Navigation item radius */
+  --radius-nav-dropdown: var(--radius-component-lg); /** Dropdown panel radius */
+  --radius-numberinput: var(--radius-component-md); /** NumberInput border radius */
+  --radius-pagination-item: var(--radius-component-md); /** 6px rounded corners */
+  --radius-popover: var(--radius-component-lg); /** 8px rounded corners */
+  --radius-progress: var(--radius-component-full);
+  --radius-radio-item: var(--radius-component-md); /** 6px item row rounding */
+  --radius-rsz-handle: var(--radius-component-sm); /** Handle grip radius */
+  --radius-scrollarea-thumb: var(--radius-component-full); /** Scrollbar thumb radius */
+  --radius-select-popover: var(--radius-component-lg); /** 8px dropdown radius */
+  --radius-select-item: var(--radius-component-md); /** 6px item radius */
+  --radius-session-card: var(--radius-component-lg); /** Card border radius */
+  --radius-skeleton: var(--radius-component-md);
+  --radius-skeleton-circle: var(--radius-component-full);
+  --radius-slider-track: var(--radius-component-full); /** Slider track radius */
+  --radius-slider-thumb: var(--radius-component-full); /** Slider thumb radius */
+  --radius-stat-card: var(--radius-component-lg); /** Card border radius */
+  --radius-tabs-list: var(--radius-component-lg); /** 8px pills list radius */
+  --radius-tabs-trigger: var(--radius-component-md); /** 6px pills trigger radius */
+  --radius-tag: var(--radius-component-md); /** Tag border radius */
+  --radius-toast: var(--radius-component-lg); /** 8px rounded corners */
+  --radius-toggle: var(--radius-component-md); /** Toggle button border radius */
+  --radius-toolbar-bar: var(--radius-component-md); /** Toolbar container radius */
+  --radius-toolbar-item: var(--radius-component-sm); /** Button/toggle item radius */
+  --radius-tooltip: var(--radius-component-md); /** 6px rounded corners */
+  --shadow-alertdlg: var(--shadow-elevation-overlay); /** AlertDialog panel shadow */
+  --shadow-card-raised: var(--shadow-elevation-low);
+  --shadow-card-elevated: var(--shadow-elevation-medium);
+  --shadow-card-hover: var(--shadow-elevation-high);
+  --shadow-chart-tooltip: var(--shadow-elevation-medium); /** Chart tooltip shadow */
+  --shadow-command: var(--shadow-elevation-overlay); /** Command palette shadow */
+  --shadow-datepicker-popover: var(--shadow-elevation-medium); /** Popover elevation */
+  --shadow-dialog: var(--shadow-elevation-overlay); /** Dialog panel shadow */
+  --shadow-drawer: var(--shadow-elevation-overlay); /** Drawer elevation shadow */
+  --shadow-dropdown-menu: var(--shadow-elevation-medium); /** Menu elevation */
+  --shadow-hovercard: var(--shadow-elevation-high); /** HoverCard shadow */
+  --shadow-kbd: var(--shadow-elevation-key); /** Key pressed effect shadow */
+  --shadow-modal-content: var(--shadow-elevation-overlay); /** Prominent modal shadow */
+  --shadow-nav-dropdown: var(--shadow-elevation-medium); /** Dropdown panel shadow */
+  --shadow-popover: var(--shadow-elevation-high); /** Elevated popover shadow */
+  --shadow-select-popover: var(--shadow-elevation-medium); /** Dropdown elevation */
+  --shadow-sheet: var(--shadow-elevation-overlay); /** Sheet panel shadow */
+  --shadow-switch-thumb: var(--shadow-elevation-low); /** Thumb shadow */
+  --shadow-tabs-trigger-active: var(--shadow-elevation-low); /** Pills active tab shadow */
+  --shadow-toast: var(--shadow-elevation-medium); /** Medium elevation shadow */
+  --shadow-tooltip: var(--shadow-elevation-medium); /** Tooltip elevation */
+  --spacing-accordion-trigger-padding-x: var(--spacing-component-padding-md); /** 16px trigger horizontal padding */
+  --spacing-accordion-trigger-padding-y: var(--spacing-component-padding-sm); /** 12px trigger vertical padding */
+  --spacing-accordion-content-padding-x: var(--spacing-component-padding-md); /** 16px content horizontal padding */
+  --spacing-accordion-content-padding-y: var(--spacing-component-padding-sm); /** 12px content vertical padding */
+  --spacing-alertdlg-padding: var(--spacing-component-padding-lg); /** AlertDialog content padding */
+  --spacing-alertdlg-gap: var(--spacing-component-gap-md); /** AlertDialog content gap */
+  --spacing-banner-padding-x: var(--spacing-component-padding-lg); /** Horizontal padding */
+  --spacing-banner-padding-y: var(--spacing-component-padding-md); /** Vertical padding */
+  --spacing-banner-gap: var(--spacing-component-gap-md); /** Gap between elements */
+  --spacing-bq-padding: var(--spacing-component-padding-lg); /** Internal padding */
+  --spacing-bq-border-width: var(--spacing-component-padding-xs); /** Left border width (4px) */
+  --spacing-bq-cite-gap: var(--spacing-component-gap-md); /** Gap before citation */
+  --spacing-btn-padding-x: var(--spacing-component-padding-md);
+  --spacing-btn-padding-y: var(--spacing-component-padding-sm);
+  --spacing-btn-gap: var(--spacing-component-gap-sm);
+  --spacing-card-padding-compact: var(--spacing-component-padding-sm);
+  --spacing-card-padding-normal: var(--spacing-component-padding-md);
+  --spacing-card-padding-spacious: var(--spacing-component-padding-lg);
+  --spacing-card-gap: var(--spacing-component-gap-md);
+  --spacing-cmb-content-padding: var(--spacing-component-padding-xs); /** Dropdown inner padding */
+  --spacing-cmb-item-padding-x: var(--spacing-component-padding-md); /** Item horizontal padding */
+  --spacing-cmb-item-padding-y: var(--spacing-component-padding-sm); /** Item vertical padding */
+  --spacing-command-padding: var(--spacing-component-padding-sm); /** Command item padding */
+  --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
+  --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
+  --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
+  --spacing-datepicker-grid-gap: var(--spacing-component-gap-sm); /** 2px gap between day cells */
+  --spacing-dialog-padding: var(--spacing-component-padding-lg); /** Dialog content padding */
+  --spacing-dialog-gap: var(--spacing-component-gap-md); /** Dialog content gap */
+  --spacing-drawer-padding: var(--spacing-component-padding-lg); /** Drawer content padding */
+  --spacing-drawer-gap: var(--spacing-component-gap-md); /** Drawer section gap */
+  --spacing-dropdown-padding: var(--spacing-component-padding-xs); /** 4px inner padding */
+  --spacing-dropdown-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
+  --spacing-dropdown-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
+  --spacing-dropdown-item-gap: var(--spacing-component-gap-sm); /** 8px gap between icon and text */
+  --spacing-fileupload-zone-padding: var(--spacing-component-padding-lg); /** 32px zone inner padding */
+  --spacing-fileupload-file-gap: var(--spacing-component-gap-sm); /** Gap between file items */
+  --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
+  --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
+  --spacing-input-padding-y: var(--spacing-component-padding-sm); /** 12px */
+  --spacing-input-icon-inset: var(--sizing-component-height-md); /** 40px – right padding when icon present */
+  --spacing-input-icon-padding: var(--spacing-component-padding-sm); /** 12px – icon button internal padding */
+  --spacing-inputotp-gap: var(--spacing-component-gap-sm); /** Gap between slots */
+  --spacing-inputotp-group-gap: var(--spacing-component-gap-md); /** Gap between groups */
+  --spacing-ldovl-gap: var(--spacing-component-gap-md); /** Gap between spinner and text */
+  --spacing-menubar-padding: var(--spacing-component-padding-xs); /** Menubar inner padding */
+  --spacing-menubar-trigger-padding-x: var(--spacing-component-padding-md); /** Trigger horizontal padding */
+  --spacing-menubar-trigger-padding-y: var(--spacing-component-padding-xs); /** Trigger vertical padding */
+  --spacing-modal-padding-x: var(--spacing-component-padding-lg); /** 24px horizontal padding */
+  --spacing-modal-padding-y: var(--spacing-component-padding-md); /** 16px vertical padding */
+  --spacing-modal-gap: var(--spacing-component-gap-md); /** 8px footer button gap */
+  --spacing-popover-padding: var(--spacing-component-padding-md); /** 16px internal padding */
+  --spacing-progress-label-gap: var(--spacing-component-gap-lg);
+  --spacing-rtg-gap: var(--spacing-component-gap-sm); /** Gap between stars */
+  --spacing-rsz-handle-size: var(--spacing-component-padding-xs); /** Handle hit-area width/height */
+  --spacing-sinput-icon-gap: var(--spacing-component-gap-sm); /** Gap between icon and text */
+  --spacing-select-popover-padding: var(--spacing-component-padding-xs); /** 4px inner padding for item list */
+  --spacing-select-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
+  --spacing-select-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
+  --spacing-select-item-gap: var(--spacing-component-gap-sm); /** Gap between icon and text in item */
+  --spacing-sheet-padding: var(--spacing-component-padding-lg); /** Sheet content padding */
+  --spacing-table-cell-x-compact: var(--spacing-component-padding-md); /** 16px – airy even at compact */
+  --spacing-table-cell-y-compact: var(--spacing-component-padding-sm); /** 12px – body vertical compact */
+  --spacing-table-cell-x-normal: var(--spacing-component-padding-lg); /** 24px – generous horizontal */
+  --spacing-table-cell-y-normal: var(--spacing-component-padding-md); /** 16px – body vertical normal */
+  --spacing-table-cell-x-spacious: var(--spacing-component-padding-xl); /** 32px – luxurious horizontal */
+  --spacing-table-cell-y-spacious: var(--spacing-component-padding-lg); /** 24px – body vertical spacious */
+  --spacing-table-head-y-compact: var(--spacing-component-padding-xs); /** 8px – compact flat header */
+  --spacing-table-head-y-normal: var(--spacing-component-padding-xs); /** 8px – slim elegant header */
+  --spacing-table-head-y-spacious: var(--spacing-component-padding-sm); /** 12px – still compact vs 24px body */
+  --spacing-tabs-list-padding: var(--spacing-component-padding-xs); /** 4px pills list inner padding */
+  --spacing-tabs-trigger-padding-x: var(--spacing-component-padding-md); /** 16px tab horizontal padding */
+  --spacing-tabs-trigger-padding-y: var(--spacing-component-padding-sm); /** 12px tab vertical padding */
+  --spacing-tabs-content-padding: var(--spacing-component-padding-md); /** 16px content padding-top */
+  --spacing-tabs-list-gap: var(--spacing-component-gap-sm); /** 4px gap between pills */
+  --spacing-textarea-padding-y-sm: var(--sizing-component-padding-y-md); /** 8px – sm size vertical padding */
+  --spacing-textarea-padding-y-md: var(--sizing-component-padding-y-lg); /** 10px – md size vertical padding */
+  --spacing-textarea-padding-y-lg: var(--sizing-component-padding-y-xl); /** 12px – lg size vertical padding */
+  --spacing-toast-padding: var(--spacing-component-padding-md); /** 16px internal padding */
+  --spacing-toast-gap: var(--spacing-component-gap-md); /** 8px gap between icon/content/close */
+  --spacing-toast-viewport-padding: var(--spacing-component-padding-md); /** 16px distance from screen edges */
+  --spacing-toolbar-padding: var(--spacing-component-padding-xs); /** Toolbar inner padding */
+  --spacing-toolbar-gap: var(--spacing-component-gap-sm); /** Gap between items */
+  --spacing-toolbar-btn-padding-x: var(--spacing-component-padding-md); /** Button horizontal padding */
+  --spacing-toolbar-btn-padding-y: var(--spacing-component-padding-xs); /** Button vertical padding */
+  --spacing-tooltip-padding-x: var(--spacing-component-padding-sm); /** 12px horizontal padding */
+  --spacing-tooltip-padding-y: var(--spacing-component-padding-xs); /** 8px vertical padding */
+  --sizing-avatar-sm: var(--sizing-component-height-sm); /** Avatar size sm (h-9 = 36px) */
+  --sizing-avatar-md: var(--sizing-component-height-md); /** Avatar size md (h-10 = 40px) */
+  --sizing-avatar-lg: var(--sizing-component-height-lg); /** Avatar size lg (h-11 = 44px) */
+  --sizing-avatar-xl: var(--sizing-component-icon-xl); /** Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16) */
+  --sizing-badge-sm-padding-x: var(--sizing-component-padding-x-sm);
+  --sizing-badge-sm-padding-y: var(--sizing-component-padding-y-sm);
+  --sizing-badge-sm-font-size: var(--font-component-size-sm);
+  --sizing-badge-md-padding-x: var(--sizing-component-padding-x-md);
+  --sizing-badge-md-padding-y: var(--sizing-component-padding-y-sm);
+  --sizing-badge-md-font-size: var(--font-component-size-sm);
+  --sizing-badge-lg-padding-x: var(--sizing-component-padding-x-md);
+  --sizing-badge-lg-padding-y: var(--sizing-component-padding-y-md);
+  --sizing-badge-lg-font-size: var(--font-component-size-md);
+  --sizing-btn-sm-height: var(--sizing-component-height-sm);
+  --sizing-btn-sm-padding-x: var(--sizing-component-padding-x-sm);
+  --sizing-btn-sm-padding-y: var(--sizing-component-padding-y-sm);
+  --sizing-btn-sm-gap: var(--sizing-component-gap-sm);
+  --sizing-btn-sm-font-size: var(--font-component-size-sm);
+  --sizing-btn-sm-radius: var(--radius-component-md);
+  --sizing-btn-md-height: var(--sizing-component-height-md);
+  --sizing-btn-md-padding-x: var(--sizing-component-padding-x-md);
+  --sizing-btn-md-padding-y: var(--sizing-component-padding-y-md);
+  --sizing-btn-md-gap: var(--sizing-component-gap-md);
+  --sizing-btn-md-font-size: var(--font-component-size-md);
+  --sizing-btn-md-radius: var(--radius-component-md);
+  --sizing-btn-lg-height: var(--sizing-component-height-lg);
+  --sizing-btn-lg-padding-x: var(--sizing-component-padding-x-lg);
+  --sizing-btn-lg-padding-y: var(--sizing-component-padding-y-lg);
+  --sizing-btn-lg-gap: var(--sizing-component-gap-lg);
+  --sizing-btn-lg-font-size: var(--font-component-size-lg);
+  --sizing-btn-lg-radius: var(--radius-component-md);
+  --sizing-checkbox-box-size: var(--sizing-component-icon-control); /** Checkbox box size (20px) */
+  --sizing-checkbox-icon-size: var(--sizing-component-icon-sm); /** Check icon size inside checkbox (16px) */
+  --sizing-input-sm-height: var(--sizing-component-height-sm); /** 36px – matches Button sm */
+  --sizing-input-sm-font-size: var(--font-component-size-sm); /** 0.875rem */
+  --sizing-input-sm-radius: var(--radius-component-md); /** 6px */
+  --sizing-input-md-height: var(--sizing-component-height-md); /** 40px – matches Button md */
+  --sizing-input-md-font-size: var(--font-component-size-md); /** 1rem */
+  --sizing-input-md-radius: var(--radius-component-md); /** 6px */
+  --sizing-input-lg-height: var(--sizing-component-height-lg); /** 44px – matches Button lg */
+  --sizing-input-lg-font-size: var(--font-component-size-lg); /** 1.125rem */
+  --sizing-input-lg-radius: var(--radius-component-md); /** 6px */
+  --sizing-inputotp-slot-size: var(--sizing-component-height-md); /** Slot width and height (40px) */
+  --sizing-pagination-item-size: var(--sizing-component-height-sm); /** Page button width & height (36px square) */
+  --sizing-pagination-font-size: var(--font-component-size-sm); /** Page button font size */
+  --sizing-progress-sm-height: var(--sizing-component-track-sm);
+  --sizing-progress-md-height: var(--sizing-component-track-md);
+  --sizing-progress-lg-height: var(--sizing-component-track-lg);
+  --sizing-radio-button-size: var(--sizing-component-icon-sm); /** Radio button outer size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available */
+  --sizing-radio-dot-size: var(--sizing-component-track-lg); /** Radio inner dot size (12px) */
+  --sizing-rtg-sm: var(--sizing-component-icon-sm); /** Star size sm */
+  --sizing-rtg-md: var(--sizing-component-icon-md); /** Star size md */
+  --sizing-rtg-lg: var(--sizing-component-icon-lg); /** Star size lg */
+  --sizing-skeleton-circle-sm: var(--sizing-component-height-sm); /** Skeleton circle sm (36px) */
+  --sizing-skeleton-circle-md: var(--sizing-component-height-md); /** Skeleton circle md (40px) */
+  --sizing-skeleton-circle-lg: var(--sizing-component-height-lg); /** Skeleton circle lg (44px) */
+  --sizing-slider-track-height: var(--sizing-component-track-md); /** Slider track height (8px) */
+  --sizing-slider-thumb-size: var(--sizing-component-icon-control); /** Slider thumb size (20px) */
+  --sizing-spinner-sm: var(--sizing-component-icon-sm);
+  --sizing-spinner-md: var(--sizing-component-icon-md);
+  --sizing-spinner-lg: var(--sizing-component-icon-lg);
+  --sizing-spinner-xl: var(--sizing-component-icon-xl);
+  --sizing-switch-track-height: var(--sizing-component-icon-md); /** Switch track height (24px = h-6) */
+  --sizing-switch-track-width: var(--sizing-component-height-lg); /** Switch track width (44px = w-11) */
+  --sizing-switch-thumb-size: var(--sizing-component-icon-control); /** Switch thumb size (20px) */
+  --sizing-toggle-sm-height: var(--sizing-component-height-sm); /** Toggle item height sm */
+  --sizing-toggle-sm-padding-x: var(--sizing-component-padding-x-sm); /** Toggle item horizontal padding sm */
+  --sizing-toggle-sm-font-size: var(--font-component-size-sm); /** Toggle item font size sm */
+  --sizing-toggle-md-height: var(--sizing-component-height-md); /** Toggle item height md */
+  --sizing-toggle-md-padding-x: var(--sizing-component-padding-x-md); /** Toggle item horizontal padding md */
+  --sizing-toggle-md-font-size: var(--font-component-size-sm); /** Toggle item font size md */
+  --sizing-toggle-lg-height: var(--sizing-component-height-lg); /** Toggle item height lg */
+  --sizing-toggle-lg-padding-x: var(--sizing-component-padding-x-lg); /** Toggle item horizontal padding lg */
+  --sizing-toggle-lg-font-size: var(--font-component-size-md); /** Toggle item font size lg */
+}

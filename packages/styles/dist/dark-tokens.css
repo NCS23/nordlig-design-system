@@ -1,0 +1,281 @@
+/* Nordlig Design System – Dark Mode Token Overrides */
+/* Applied when .dark class is on <html> */
+/* Strategy: Override L3 role tokens so all downstream L4 component tokens adapt automatically */
+
+.dark {
+  /* ===================================================================
+     L2 Global: Neutral palette inversions
+     =================================================================== */
+  --color-neutral-1-0: #0f172a;     /* was white -> slate-900 */
+  --color-neutral-1-50: #1e293b;    /* was slate-50 -> slate-800 */
+  --color-neutral-1-100: #334155;   /* was slate-100 -> slate-700 */
+  --color-neutral-1-200: #475569;   /* was slate-200 -> slate-600 */
+  --color-neutral-1-300: #64748b;   /* was slate-300 -> slate-500 */
+  --color-neutral-1-400: #94a3b8;   /* stays slate-400 (midpoint) */
+  --color-neutral-1-500: #cbd5e1;   /* was slate-500 -> slate-300 */
+  --color-neutral-1-600: #e2e8f0;   /* was slate-600 -> slate-200 */
+  --color-neutral-1-700: #f1f5f9;   /* was slate-700 -> slate-100 */
+  --color-neutral-1-800: #f8fafc;   /* was slate-800 -> slate-50 */
+  --color-neutral-1-900: #f8fafc;   /* was slate-900 -> slate-50 */
+  --color-neutral-1-950: #ffffff;   /* was slate-950 -> white */
+  --color-neutral-1-1000: #ffffff;  /* was black -> white */
+  --color-neutral-overlay: rgba(0, 0, 0, 0.7); /* Darker overlay for dark mode */
+
+  /* Neutral 2 (zinc) inversions */
+  --color-neutral-2-50: #18181b;    /* was zinc-50 -> zinc-900 */
+  --color-neutral-2-100: #27272a;   /* was zinc-100 -> zinc-800 */
+  --color-neutral-2-200: #3f3f46;   /* was zinc-200 -> zinc-700 */
+  --color-neutral-2-300: #52525b;   /* was zinc-300 -> zinc-600 */
+  --color-neutral-2-400: #a1a1aa;   /* stays zinc-400 (midpoint) */
+  --color-neutral-2-500: #d4d4d8;   /* was zinc-500 -> zinc-300 */
+  --color-neutral-2-600: #e4e4e7;   /* was zinc-600 -> zinc-200 */
+  --color-neutral-2-700: #f4f4f5;   /* was zinc-700 -> zinc-100 */
+  --color-neutral-2-800: #fafafa;   /* was zinc-800 -> zinc-50 */
+  --color-neutral-2-900: #fafafa;   /* was zinc-900 -> zinc-50 */
+  --color-neutral-2-950: #ffffff;   /* was zinc-950 -> white */
+
+  /* ===================================================================
+     L2 Global: Primary palette (sky – shift up for vibrancy in dark)
+     =================================================================== */
+  --color-primary-1-50: #082f49;    /* sky-950 */
+  --color-primary-1-100: #0c4a6e;   /* sky-900 */
+  --color-primary-1-200: #075985;   /* sky-800 */
+  --color-primary-1-300: #0369a1;   /* sky-700 */
+  --color-primary-1-400: #0284c7;   /* sky-600 */
+  --color-primary-1-500: #38bdf8;   /* sky-400 (brighter in dark) */
+  --color-primary-1-600: #7dd3fc;   /* sky-300 */
+  --color-primary-1-700: #bae6fd;   /* sky-200 */
+  --color-primary-1-800: #e0f2fe;   /* sky-100 */
+  --color-primary-1-900: #f0f9ff;   /* sky-50 */
+  --color-primary-1-950: #f0f9ff;   /* sky-50 */
+
+  /* ===================================================================
+     L2 Global: Secondary palette (slate – mirrors neutral-1 inversions)
+     =================================================================== */
+  --color-secondary-1-50: #0f172a;
+  --color-secondary-1-100: #1e293b;
+  --color-secondary-1-200: #334155;
+  --color-secondary-1-300: #475569;
+  --color-secondary-1-400: #64748b;
+  --color-secondary-1-500: #94a3b8;
+  --color-secondary-1-600: #cbd5e1;
+  --color-secondary-1-700: #e2e8f0;
+  --color-secondary-1-800: #f1f5f9;
+  --color-secondary-1-900: #f8fafc;
+  --color-secondary-1-950: #ffffff;
+
+  /* Secondary 2 (stone) inversions */
+  --color-secondary-2-50: #1c1917;
+  --color-secondary-2-100: #292524;
+  --color-secondary-2-200: #44403c;
+  --color-secondary-2-300: #57534e;
+  --color-secondary-2-400: #78716c;
+  --color-secondary-2-500: #a8a29e;
+  --color-secondary-2-600: #d6d3d1;
+  --color-secondary-2-700: #e7e5e4;
+  --color-secondary-2-800: #f5f5f4;
+  --color-secondary-2-900: #fafaf9;
+  --color-secondary-2-950: #ffffff;
+
+  /* ===================================================================
+     L2 Global: Accent palettes – shift to brighter tones for dark bg
+     =================================================================== */
+
+  /* Accent 1 (emerald/success) */
+  --color-accent-1-50: #022c22;
+  --color-accent-1-100: #064e3b;
+  --color-accent-1-200: #065f46;
+  --color-accent-1-300: #047857;
+  --color-accent-1-400: #059669;
+  --color-accent-1-500: #34d399;   /* emerald-400 */
+  --color-accent-1-600: #6ee7b7;   /* emerald-300 */
+  --color-accent-1-700: #4ade80;   /* green-400 (readable on dark) */
+  --color-accent-1-800: #a7f3d0;
+  --color-accent-1-900: #d1fae5;
+  --color-accent-1-950: #ecfdf5;
+
+  /* Accent 2 (amber/warning) */
+  --color-accent-2-50: #451a03;
+  --color-accent-2-100: #78350f;
+  --color-accent-2-200: #92400e;
+  --color-accent-2-300: #b45309;
+  --color-accent-2-400: #d97706;
+  --color-accent-2-500: #fbbf24;   /* amber-400 */
+  --color-accent-2-600: #fcd34d;   /* amber-300 */
+  --color-accent-2-700: #fbbf24;   /* amber-400 */
+  --color-accent-2-800: #fde68a;
+  --color-accent-2-900: #fef3c7;
+  --color-accent-2-950: #fffbeb;
+
+  /* Accent 3 (red/error) */
+  --color-accent-3-50: #450a0a;
+  --color-accent-3-100: #7f1d1d;
+  --color-accent-3-200: #991b1b;
+  --color-accent-3-300: #b91c1c;
+  --color-accent-3-400: #dc2626;
+  --color-accent-3-500: #f87171;   /* red-400 */
+  --color-accent-3-600: #fca5a5;   /* red-300 */
+  --color-accent-3-700: #f87171;   /* red-400 */
+  --color-accent-3-800: #fecaca;
+  --color-accent-3-900: #fee2e2;
+  --color-accent-3-950: #fef2f2;
+
+  /* Accent 4 (blue/info) */
+  --color-accent-4-50: #172554;
+  --color-accent-4-100: #1e3a8a;
+  --color-accent-4-200: #1e40af;
+  --color-accent-4-300: #1d4ed8;
+  --color-accent-4-400: #2563eb;
+  --color-accent-4-500: #60a5fa;   /* blue-400 */
+  --color-accent-4-600: #93c5fd;   /* blue-300 */
+  --color-accent-4-700: #7dd3fc;   /* sky-300 for readability */
+  --color-accent-4-800: #bfdbfe;
+  --color-accent-4-900: #dbeafe;
+  --color-accent-4-950: #eff6ff;
+
+  /* Accent 5 (teal) */
+  --color-accent-5-50: #042f2e;
+  --color-accent-5-100: #134e4a;
+  --color-accent-5-200: #115e59;
+  --color-accent-5-300: #0f766e;
+  --color-accent-5-400: #0d9488;
+  --color-accent-5-500: #2dd4bf;   /* teal-400 */
+  --color-accent-5-600: #5eead4;   /* teal-300 */
+  --color-accent-5-700: #2dd4bf;   /* teal-400 */
+  --color-accent-5-800: #99f6e4;
+  --color-accent-5-900: #ccfbf1;
+  --color-accent-5-950: #f0fdfa;
+
+  /* Primary 2 (indigo) adjustments */
+  --color-primary-2-50: #1e1b4b;
+  --color-primary-2-100: #312e81;
+  --color-primary-2-200: #3730a3;
+  --color-primary-2-300: #4338ca;
+  --color-primary-2-400: #4f46e5;
+  --color-primary-2-500: #818cf8;   /* indigo-400 */
+  --color-primary-2-600: #a5b4fc;   /* indigo-300 */
+  --color-primary-2-700: #c7d2fe;   /* indigo-200 */
+  --color-primary-2-800: #e0e7ff;
+  --color-primary-2-900: #eef2ff;
+  --color-primary-2-950: #eef2ff;
+
+  /* ===================================================================
+     L3 Role: Backgrounds
+     These use var() references to the L2 values above, so they adapt.
+     However, some need direct overrides for correct dark-mode semantics.
+     =================================================================== */
+  --color-bg-paper: #1e293b;        /* slate-800: primary surface */
+  --color-bg-base: #0f172a;         /* slate-900: page background */
+  --color-bg-surface: #334155;      /* slate-700: raised surface */
+  --color-bg-elevated: #334155;     /* slate-700: elevated cards */
+  --color-bg-primary: #38bdf8;      /* sky-400: vibrant in dark */
+  --color-bg-primary-hover: #7dd3fc; /* sky-300 */
+  --color-bg-primary-active: #0ea5e9; /* sky-500 */
+  --color-bg-secondary: #334155;    /* slate-700 */
+  --color-bg-secondary-hover: #475569; /* slate-600 */
+  --color-bg-overlay: rgba(0, 0, 0, 0.7);
+
+  /* ===================================================================
+     L3 Role: Text
+     =================================================================== */
+  --color-text-base: #f1f5f9;       /* slate-100 */
+  --color-text-heading: #f1f5f9;    /* slate-100 */
+  --color-text-muted: #94a3b8;      /* slate-400 */
+  --color-text-disabled: #64748b;   /* slate-500 */
+  --color-text-inverse: #0f172a;    /* slate-900 */
+  --color-text-on-primary: #0f172a; /* dark text on bright sky-400 */
+  --color-text-primary: #38bdf8;    /* sky-400 */
+  --color-text-success: #4ade80;    /* green-400 */
+  --color-text-warning: #fbbf24;    /* amber-400 */
+  --color-text-error: #f87171;      /* red-400 */
+  --color-text-info: #7dd3fc;       /* sky-300 */
+
+  /* ===================================================================
+     L3 Role: Borders
+     =================================================================== */
+  --color-border-default: #475569;  /* slate-600 */
+  --color-border-muted: #334155;    /* slate-700 */
+  --color-border-strong: #64748b;   /* slate-500 */
+  --color-border-focus: #38bdf8;    /* sky-400 */
+  --color-border-error: #f87171;    /* red-400 */
+  --color-border-success: #4ade80;  /* green-400 */
+
+  /* ===================================================================
+     L3 Role: Interactive
+     =================================================================== */
+  --color-interactive-primary: #38bdf8;         /* sky-400 */
+  --color-interactive-primary-hover: #7dd3fc;   /* sky-300 */
+  --color-interactive-primary-active: #0ea5e9;  /* sky-500 */
+  --color-interactive-primary-disabled: #475569; /* slate-600 */
+  --color-interactive-secondary: #94a3b8;       /* slate-400 */
+  --color-interactive-secondary-hover: #cbd5e1; /* slate-300 */
+  --color-interactive-secondary-active: #e2e8f0; /* slate-200 */
+
+  /* ===================================================================
+     L3 Role: Status colors
+     =================================================================== */
+  --color-success-bg-subtle: rgba(34, 197, 94, 0.15);
+  --color-success-bg: #065f46;       /* emerald-800 */
+  --color-success-border: #22c55e;   /* green-500 */
+  --color-success-text: #4ade80;     /* green-400 */
+
+  --color-warning-bg-subtle: rgba(245, 158, 11, 0.15);
+  --color-warning-bg: #92400e;       /* amber-800 */
+  --color-warning-border: #f59e0b;   /* amber-500 */
+  --color-warning-text: #fbbf24;     /* amber-400 */
+
+  --color-error-bg-subtle: rgba(239, 68, 68, 0.15);
+  --color-error-bg: #991b1b;         /* red-800 */
+  --color-error-border: #ef4444;     /* red-500 */
+  --color-error-text: #f87171;       /* red-400 */
+
+  --color-info-bg-subtle: rgba(56, 189, 248, 0.15);
+  --color-info-bg: #075985;          /* sky-800 */
+  --color-info-border: #38bdf8;      /* sky-400 */
+  --color-info-text: #7dd3fc;        /* sky-300 */
+
+  /* ===================================================================
+     L4 Component overrides (only where L3 cascading is insufficient)
+     =================================================================== */
+
+  /* Button: primary text needs to be dark on bright bg */
+  --color-btn-primary-text: #0f172a;  /* slate-900 on sky-400 */
+
+  /* Badge neutral */
+  --color-badge-neutral-bg: #334155;  /* slate-700 */
+
+  /* Button secondary/ghost hover states */
+  --color-btn-secondary-bg-hover: #475569; /* slate-600 */
+  --color-btn-secondary-bg-active: #64748b; /* slate-500 */
+  --color-btn-ghost-bg-hover: #334155;     /* slate-700 */
+  --color-btn-ghost-bg-active: #475569;    /* slate-600 */
+
+  /* Tooltip (inverted in dark: light bg with dark text) */
+  --color-tooltip-bg: #f1f5f9;       /* slate-100 */
+  --color-tooltip-arrow: #f1f5f9;    /* slate-100 */
+  --color-tooltip-text: #0f172a;     /* slate-900 */
+
+  /* Toggle */
+  --color-toggle-hover-bg: #475569;  /* slate-600 */
+
+  /* Kbd */
+  --color-kbd-bg: #334155;       /* slate-700 */
+  --color-kbd-text: #f1f5f9;     /* slate-100 */
+  --color-kbd-border: #475569;   /* slate-600 */
+  --shadow-kbd: 0 1px 0 1px #1e293b; /* slate-800 bottom edge */
+
+  /* Scrollarea */
+  --color-scrollarea-track: rgba(0, 0, 0, 0);
+  --color-scrollarea-thumb: #64748b;       /* slate-500 */
+  --color-scrollarea-thumb-hover: #94a3b8; /* slate-400 */
+
+  /* ===================================================================
+     Shadows (darker, more pronounced for dark backgrounds)
+     =================================================================== */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
