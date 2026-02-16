@@ -1,11 +1,10 @@
 #!/bin/sh
 set -e
 
-# Install dependencies if node_modules is empty
-if [ ! -d "node_modules/.pnpm" ]; then
-  echo "Installing dependencies..."
-  pnpm install
-fi
+# Always run pnpm install to recreate workspace symlinks
+# (bind mount overwrites symlinks created during Docker build)
+echo "Installing/linking dependencies..."
+pnpm install
 
 # Build tokens if not built yet
 if [ ! -f "packages/styles/dist/tokens.css" ]; then
