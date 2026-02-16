@@ -6,10 +6,10 @@ set -e
 echo "Installing/linking dependencies..."
 CI=true pnpm install
 
-# Build tokens if not built yet
-if [ ! -f "packages/styles/dist/tokens.css" ]; then
-  echo "Building tokens..."
-  pnpm build:tokens
+# Build tokens and components if not built yet
+if [ ! -f "packages/styles/dist/tokens.css" ] || [ ! -d "packages/components/dist" ]; then
+  echo "Building packages..."
+  pnpm build
 fi
 
 exec "$@"
