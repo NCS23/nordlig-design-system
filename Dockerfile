@@ -18,7 +18,7 @@ COPY packages/mcp-agents/testing/package.json ./packages/mcp-agents/testing/
 COPY packages/mcp-agents/training-analyzer/package.json ./packages/mcp-agents/training-analyzer/
 COPY packages/mcp-agents/ux-review/package.json ./packages/mcp-agents/ux-review/
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 
 COPY . .
 
