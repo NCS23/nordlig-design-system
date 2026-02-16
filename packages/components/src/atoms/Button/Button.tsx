@@ -9,13 +9,13 @@ const buttonVariants = cva(
       variant: {
         primary: [
           'bg-[var(--color-btn-primary-bg)] text-[var(--color-btn-primary-text)]',
-          'border border-[var(--color-btn-primary-border)]',
+          '[border-width:var(--sizing-btn-border-width)] border-[var(--color-btn-primary-border)]',
           'hover:bg-[var(--color-btn-primary-bg-hover)]',
           'active:bg-[var(--color-btn-primary-bg-active)]',
         ].join(' '),
         secondary: [
           'bg-[var(--color-btn-secondary-bg)] text-[var(--color-btn-secondary-text)]',
-          'border border-[var(--color-btn-secondary-border)]',
+          '[border-width:var(--sizing-btn-border-width)] border-[var(--color-btn-secondary-border)]',
           'hover:bg-[var(--color-btn-secondary-bg-hover)]',
           'active:bg-[var(--color-btn-secondary-bg-active)]',
         ].join(' '),

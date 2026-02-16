@@ -1,0 +1,865 @@
+{
+  "name": "Badge",
+  "category": "atoms",
+  "extractedAt": "2026-02-16T20:46:02.589Z",
+  "variants": {
+    "variant": [
+      "success",
+      "warning",
+      "error",
+      "info",
+      "neutral"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "defaultVariant": {
+    "variant": "neutral",
+    "size": "md"
+  },
+  "combinations": [
+    {
+      "props": {
+        "variant": "success",
+        "size": "sm"
+      },
+      "label": "Success",
+      "layout": {
+        "width": 65,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-success-bg",
+          "value": "#d1fae5"
+        },
+        "strokes": {
+          "token": "--color-badge-success-border",
+          "value": "#10b981"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Erfolg",
+        "fills": {
+          "token": "--color-badge-success-text",
+          "value": "#047857"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-sm-padding-x",
+        "paddingRight": "--sizing-badge-sm-padding-x",
+        "paddingTop": "--sizing-badge-sm-padding-y",
+        "paddingBottom": "--sizing-badge-sm-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-sm-font-size",
+        "lineHeight": "--sizing-badge-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "success",
+        "size": "md"
+      },
+      "label": "Success",
+      "layout": {
+        "width": 73,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-success-bg",
+          "value": "#d1fae5"
+        },
+        "strokes": {
+          "token": "--color-badge-success-border",
+          "value": "#10b981"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Erfolg",
+        "fills": {
+          "token": "--color-badge-success-text",
+          "value": "#047857"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-md-padding-x",
+        "paddingRight": "--sizing-badge-md-padding-x",
+        "paddingTop": "--sizing-badge-md-padding-y",
+        "paddingBottom": "--sizing-badge-md-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-md-font-size",
+        "lineHeight": "--sizing-badge-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "success",
+        "size": "lg"
+      },
+      "label": "Success",
+      "layout": {
+        "width": 78,
+        "height": 42,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-success-bg",
+          "value": "#d1fae5"
+        },
+        "strokes": {
+          "token": "--color-badge-success-border",
+          "value": "#10b981"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Erfolg",
+        "fills": {
+          "token": "--color-badge-success-text",
+          "value": "#047857"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-lg-padding-x",
+        "paddingRight": "--sizing-badge-lg-padding-x",
+        "paddingTop": "--sizing-badge-lg-padding-y",
+        "paddingBottom": "--sizing-badge-lg-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-lg-font-size",
+        "lineHeight": "--sizing-badge-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "warning",
+        "size": "sm"
+      },
+      "label": "Warning",
+      "layout": {
+        "width": 85,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-warning-bg",
+          "value": "#fef3c7"
+        },
+        "strokes": {
+          "token": "--color-badge-warning-border",
+          "value": "#f59e0b"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Warnung",
+        "fills": {
+          "token": "--color-badge-warning-text",
+          "value": "#b45309"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-sm-padding-x",
+        "paddingRight": "--sizing-badge-sm-padding-x",
+        "paddingTop": "--sizing-badge-sm-padding-y",
+        "paddingBottom": "--sizing-badge-sm-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-sm-font-size",
+        "lineHeight": "--sizing-badge-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "warning",
+        "size": "md"
+      },
+      "label": "Warning",
+      "layout": {
+        "width": 93,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-warning-bg",
+          "value": "#fef3c7"
+        },
+        "strokes": {
+          "token": "--color-badge-warning-border",
+          "value": "#f59e0b"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Warnung",
+        "fills": {
+          "token": "--color-badge-warning-text",
+          "value": "#b45309"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-md-padding-x",
+        "paddingRight": "--sizing-badge-md-padding-x",
+        "paddingTop": "--sizing-badge-md-padding-y",
+        "paddingBottom": "--sizing-badge-md-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-md-font-size",
+        "lineHeight": "--sizing-badge-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "warning",
+        "size": "lg"
+      },
+      "label": "Warning",
+      "layout": {
+        "width": 101,
+        "height": 42,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-warning-bg",
+          "value": "#fef3c7"
+        },
+        "strokes": {
+          "token": "--color-badge-warning-border",
+          "value": "#f59e0b"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Warnung",
+        "fills": {
+          "token": "--color-badge-warning-text",
+          "value": "#b45309"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-lg-padding-x",
+        "paddingRight": "--sizing-badge-lg-padding-x",
+        "paddingTop": "--sizing-badge-lg-padding-y",
+        "paddingBottom": "--sizing-badge-lg-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-lg-font-size",
+        "lineHeight": "--sizing-badge-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "error",
+        "size": "sm"
+      },
+      "label": "Error",
+      "layout": {
+        "width": 67,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-error-bg",
+          "value": "#fee2e2"
+        },
+        "strokes": {
+          "token": "--color-badge-error-border",
+          "value": "#ef4444"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Fehler",
+        "fills": {
+          "token": "--color-badge-error-text",
+          "value": "#b91c1c"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-sm-padding-x",
+        "paddingRight": "--sizing-badge-sm-padding-x",
+        "paddingTop": "--sizing-badge-sm-padding-y",
+        "paddingBottom": "--sizing-badge-sm-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-sm-font-size",
+        "lineHeight": "--sizing-badge-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "error",
+        "size": "md"
+      },
+      "label": "Error",
+      "layout": {
+        "width": 75,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-error-bg",
+          "value": "#fee2e2"
+        },
+        "strokes": {
+          "token": "--color-badge-error-border",
+          "value": "#ef4444"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Fehler",
+        "fills": {
+          "token": "--color-badge-error-text",
+          "value": "#b91c1c"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-md-padding-x",
+        "paddingRight": "--sizing-badge-md-padding-x",
+        "paddingTop": "--sizing-badge-md-padding-y",
+        "paddingBottom": "--sizing-badge-md-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-md-font-size",
+        "lineHeight": "--sizing-badge-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "error",
+        "size": "lg"
+      },
+      "label": "Error",
+      "layout": {
+        "width": 80,
+        "height": 42,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-error-bg",
+          "value": "#fee2e2"
+        },
+        "strokes": {
+          "token": "--color-badge-error-border",
+          "value": "#ef4444"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Fehler",
+        "fills": {
+          "token": "--color-badge-error-text",
+          "value": "#b91c1c"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-lg-padding-x",
+        "paddingRight": "--sizing-badge-lg-padding-x",
+        "paddingTop": "--sizing-badge-lg-padding-y",
+        "paddingBottom": "--sizing-badge-lg-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-lg-font-size",
+        "lineHeight": "--sizing-badge-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "info",
+        "size": "sm"
+      },
+      "label": "Info",
+      "layout": {
+        "width": 51,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-info-bg",
+          "value": "#dbeafe"
+        },
+        "strokes": {
+          "token": "--color-badge-info-border",
+          "value": "#3b82f6"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Info",
+        "fills": {
+          "token": "--color-badge-info-text",
+          "value": "#1d4ed8"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-sm-padding-x",
+        "paddingRight": "--sizing-badge-sm-padding-x",
+        "paddingTop": "--sizing-badge-sm-padding-y",
+        "paddingBottom": "--sizing-badge-sm-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-sm-font-size",
+        "lineHeight": "--sizing-badge-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "info",
+        "size": "md"
+      },
+      "label": "Info",
+      "layout": {
+        "width": 59,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-info-bg",
+          "value": "#dbeafe"
+        },
+        "strokes": {
+          "token": "--color-badge-info-border",
+          "value": "#3b82f6"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Info",
+        "fills": {
+          "token": "--color-badge-info-text",
+          "value": "#1d4ed8"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-md-padding-x",
+        "paddingRight": "--sizing-badge-md-padding-x",
+        "paddingTop": "--sizing-badge-md-padding-y",
+        "paddingBottom": "--sizing-badge-md-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-md-font-size",
+        "lineHeight": "--sizing-badge-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "info",
+        "size": "lg"
+      },
+      "label": "Info",
+      "layout": {
+        "width": 62,
+        "height": 42,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-info-bg",
+          "value": "#dbeafe"
+        },
+        "strokes": {
+          "token": "--color-badge-info-border",
+          "value": "#3b82f6"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Info",
+        "fills": {
+          "token": "--color-badge-info-text",
+          "value": "#1d4ed8"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-lg-padding-x",
+        "paddingRight": "--sizing-badge-lg-padding-x",
+        "paddingTop": "--sizing-badge-lg-padding-y",
+        "paddingBottom": "--sizing-badge-lg-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-lg-font-size",
+        "lineHeight": "--sizing-badge-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "neutral",
+        "size": "sm"
+      },
+      "label": "Neutral",
+      "layout": {
+        "width": 86,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-neutral-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": {
+          "token": "--color-badge-neutral-border",
+          "value": "#e2e8f0"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Standard",
+        "fills": {
+          "token": "--color-badge-neutral-text",
+          "value": "#475569"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-sm-padding-x",
+        "paddingRight": "--sizing-badge-sm-padding-x",
+        "paddingTop": "--sizing-badge-sm-padding-y",
+        "paddingBottom": "--sizing-badge-sm-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-sm-font-size",
+        "lineHeight": "--sizing-badge-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "neutral",
+        "size": "md"
+      },
+      "label": "Neutral",
+      "layout": {
+        "width": 94,
+        "height": 35,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-neutral-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": {
+          "token": "--color-badge-neutral-border",
+          "value": "#e2e8f0"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Standard",
+        "fills": {
+          "token": "--color-badge-neutral-text",
+          "value": "#475569"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-md-padding-x",
+        "paddingRight": "--sizing-badge-md-padding-x",
+        "paddingTop": "--sizing-badge-md-padding-y",
+        "paddingBottom": "--sizing-badge-md-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-md-font-size",
+        "lineHeight": "--sizing-badge-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    },
+    {
+      "props": {
+        "variant": "neutral",
+        "size": "lg"
+      },
+      "label": "Neutral",
+      "layout": {
+        "width": 102,
+        "height": 42,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-badge-neutral-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": {
+          "token": "--color-badge-neutral-border",
+          "value": "#e2e8f0"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "Standard",
+        "fills": {
+          "token": "--color-badge-neutral-text",
+          "value": "#475569"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-badge-lg-padding-x",
+        "paddingRight": "--sizing-badge-lg-padding-x",
+        "paddingTop": "--sizing-badge-lg-padding-y",
+        "paddingBottom": "--sizing-badge-lg-padding-y",
+        "itemSpacing": "--spacing-base-2",
+        "cornerRadius": "--radius-badge",
+        "strokeWeight": "--sizing-border-width-default",
+        "fontSize": "--sizing-badge-lg-font-size",
+        "lineHeight": "--sizing-badge-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-badge-weight"
+      }
+    }
+  ]
+}

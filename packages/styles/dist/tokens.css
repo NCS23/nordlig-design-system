@@ -185,6 +185,7 @@
   --spacing-base-24: 96px;
   --spacing-base-28: 112px;
   --spacing-base-32: 128px;
+  --spacing-base-px: 1px;
   --spacing-base-0-5: 2px;
   --spacing-base-1-5: 6px;
   --spacing-base-2-5: 10px;
@@ -206,10 +207,15 @@
   --font-base-weight-medium: 500;
   --font-base-weight-semibold: 600;
   --font-base-weight-bold: 700;
-  --font-base-line-height-tight: 1.25;
-  --font-base-line-height-normal: 1.5;
-  --font-base-line-height-relaxed: 1.75;
-  --font-base-line-height-loose: 2;
+  --font-base-line-height-xs: 18px;
+  --font-base-line-height-sm: 21px;
+  --font-base-line-height-base: 24px;
+  --font-base-line-height-lg: 27px;
+  --font-base-line-height-xl: 30px;
+  --font-base-line-height-2xl: 36px;
+  --font-base-line-height-3xl: 45px;
+  --font-base-line-height-4xl: 54px;
+  --font-base-line-height-5xl: 72px;
   --font-base-letter-spacing-tight: -0.025em;
   --font-base-letter-spacing-normal: 0em;
   --font-base-letter-spacing-wide: 0.025em;
@@ -358,6 +364,7 @@
   --shadow-lg: var(--shadow-base-lg);
   --shadow-xl: var(--shadow-base-xl);
   --shadow-2xl: var(--shadow-base-2xl);
+  --spacing-3xs: var(--spacing-base-0-5); /** 2px */
   --spacing-2xs: var(--spacing-base-1);
   --spacing-xs: var(--spacing-base-2);
   --spacing-sm: var(--spacing-base-3);
@@ -384,10 +391,15 @@
   --font-family-sans: var(--font-base-family-sans);
   --font-family-serif: var(--font-base-family-serif);
   --font-family-mono: var(--font-base-family-mono);
-  --font-line-height-tight: var(--font-base-line-height-tight);
-  --font-line-height-normal: var(--font-base-line-height-normal);
-  --font-line-height-relaxed: var(--font-base-line-height-relaxed);
-  --font-line-height-loose: var(--font-base-line-height-loose);
+  --font-line-height-xs: var(--font-base-line-height-xs);
+  --font-line-height-sm: var(--font-base-line-height-sm);
+  --font-line-height-base: var(--font-base-line-height-base);
+  --font-line-height-lg: var(--font-base-line-height-lg);
+  --font-line-height-xl: var(--font-base-line-height-xl);
+  --font-line-height-2xl: var(--font-base-line-height-2xl);
+  --font-line-height-3xl: var(--font-base-line-height-3xl);
+  --font-line-height-4xl: var(--font-base-line-height-4xl);
+  --font-line-height-5xl: var(--font-base-line-height-5xl);
   --font-letter-spacing-tight: var(--font-base-letter-spacing-tight);
   --font-letter-spacing-normal: var(--font-base-letter-spacing-normal);
   --font-letter-spacing-wide: var(--font-base-letter-spacing-wide);
@@ -404,6 +416,8 @@
   --sizing-gap-sm: var(--spacing-base-1-5);
   --sizing-gap-md: var(--spacing-base-2);
   --sizing-gap-lg: var(--spacing-base-2-5);
+  --sizing-border-width-default: var(--spacing-base-px);
+  --sizing-border-width-thick: var(--spacing-base-0-5);
   --color-bg-paper: var(--color-neutral-1-0);
   --color-bg-base: var(--color-neutral-1-50);
   --color-bg-surface: var(--color-neutral-1-100);
@@ -478,6 +492,8 @@
   --spacing-component-padding-md: var(--spacing-md);
   --spacing-component-padding-lg: var(--spacing-lg);
   --spacing-component-padding-xl: var(--spacing-xl);
+  --spacing-component-gap-2xs: var(--spacing-3xs);
+  --spacing-component-gap-xs: var(--spacing-2xs);
   --spacing-component-gap-sm: var(--spacing-xs);
   --spacing-component-gap-md: var(--spacing-sm);
   --spacing-component-gap-lg: var(--spacing-md);
@@ -486,12 +502,20 @@
   --font-component-size-sm: var(--font-size-sm);
   --font-component-size-md: var(--font-size-base);
   --font-component-size-lg: var(--font-size-lg);
+  --font-component-line-height-xs: var(--font-line-height-xs);
+  --font-component-line-height-sm: var(--font-line-height-sm);
+  --font-component-line-height-md: var(--font-line-height-base);
+  --font-component-line-height-lg: var(--font-line-height-lg);
   --font-heading-size-sm: var(--font-size-lg);
   --font-heading-size-md: var(--font-size-xl);
   --font-heading-size-lg: var(--font-size-2xl);
   --font-heading-size-xl: var(--font-size-3xl);
   --font-body-size: var(--font-size-base);
   --font-caption-size: var(--font-size-xs);
+  --font-badge-weight: var(--font-weight-medium); /** Font weight 500 (medium) */
+  --font-checkbox-label-weight: var(--font-weight-medium); /** Label font weight 500 (font-medium) */
+  --font-checkbox-desc-weight: var(--font-weight-normal); /** Description font weight 400 */
+  --font-input-weight: var(--font-weight-normal); /** Font weight 400 (normal) */
   --sizing-component-height-sm: var(--sizing-height-sm);
   --sizing-component-height-md: var(--sizing-height-md);
   --sizing-component-height-lg: var(--sizing-height-lg);
@@ -513,6 +537,10 @@
   --sizing-component-track-sm: var(--spacing-2xs);
   --sizing-component-track-md: var(--spacing-xs);
   --sizing-component-track-lg: var(--spacing-sm);
+  --sizing-component-border-width-default: var(--sizing-border-width-default);
+  --sizing-component-border-width-thick: var(--sizing-border-width-thick);
+  --sizing-alert-title-weight: var(--font-weight-semibold); /** Title font weight (600) */
+  --sizing-alert-desc-weight: var(--font-weight-normal); /** Description font weight (400) */
   --color-accordion-bg: var(--color-bg-paper); /** Item background */
   --color-accordion-border: var(--color-border-muted); /** Item border/divider */
   --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
@@ -718,6 +746,8 @@
   --color-hl-text: var(--color-text-base); /** Highlight text */
   --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
   --color-hovercard-border: var(--color-border-muted); /** HoverCard border */
+  --color-icon-default: var(--color-text-base); /** Default icon stroke color (currentColor) */
+  --color-icon-muted: var(--color-text-muted); /** Muted/secondary icon color */
   --color-img-bg: var(--color-bg-surface); /** Loading placeholder background */
   --color-img-fallback-bg: var(--color-bg-surface-hover); /** Error fallback background */
   --color-img-fallback-text: var(--color-text-muted); /** Error fallback icon/text */
@@ -967,7 +997,7 @@
   --radius-bq: var(--radius-component-sm); /** Corner radius */
   --radius-card: var(--radius-component-lg);
   --radius-chart-tooltip: var(--radius-component-md); /** Chart tooltip border radius */
-  --radius-checkbox: var(--radius-component-sm); /** 4px subtle rounding */
+  --radius-checkbox: var(--radius-component-sm); /** 2px subtle rounding */
   --radius-code: var(--radius-component-sm); /** Inline code border radius */
   --radius-code-block: var(--radius-component-lg); /** Code block border radius */
   --radius-cmb-trigger: var(--radius-component-md); /** Trigger border radius */
@@ -1045,6 +1075,9 @@
   --spacing-accordion-trigger-padding-y: var(--spacing-component-padding-sm); /** 12px trigger vertical padding */
   --spacing-accordion-content-padding-x: var(--spacing-component-padding-md); /** 16px content horizontal padding */
   --spacing-accordion-content-padding-y: var(--spacing-component-padding-sm); /** 12px content vertical padding */
+  --spacing-alert-padding: var(--spacing-component-padding-md); /** Alert padding all sides (16px) */
+  --spacing-alert-gap: var(--spacing-component-gap-md); /** Gap between icon and content (12px) */
+  --spacing-alert-content-gap: var(--spacing-component-gap-xs); /** Gap between title and description (4px) */
   --spacing-alertdlg-padding: var(--spacing-component-padding-lg); /** AlertDialog content padding */
   --spacing-alertdlg-gap: var(--spacing-component-gap-md); /** AlertDialog content gap */
   --spacing-banner-padding-x: var(--spacing-component-padding-lg); /** Horizontal padding */
@@ -1060,6 +1093,8 @@
   --spacing-card-padding-normal: var(--spacing-component-padding-md);
   --spacing-card-padding-spacious: var(--spacing-component-padding-lg);
   --spacing-card-gap: var(--spacing-component-gap-md);
+  --spacing-checkbox-field-gap: var(--spacing-component-gap-sm); /** 8px — Gap between checkbox and content */
+  --spacing-checkbox-content-gap: var(--spacing-component-gap-2xs); /** 2px — Gap between label and description */
   --spacing-cmb-content-padding: var(--spacing-component-padding-xs); /** Dropdown inner padding */
   --spacing-cmb-item-padding-x: var(--spacing-component-padding-md); /** Item horizontal padding */
   --spacing-cmb-item-padding-y: var(--spacing-component-padding-sm); /** Item vertical padding */
@@ -1128,6 +1163,13 @@
   --spacing-toolbar-btn-padding-y: var(--spacing-component-padding-xs); /** Button vertical padding */
   --spacing-tooltip-padding-x: var(--spacing-component-padding-sm); /** 12px horizontal padding */
   --spacing-tooltip-padding-y: var(--spacing-component-padding-xs); /** 8px vertical padding */
+  --font-checkbox-label-size: var(--font-component-size-sm); /** Label font size 14px (text-sm) */
+  --font-checkbox-desc-size: var(--font-caption-size); /** Description font size 12px (text-xs) */
+  --font-checkbox-label-line-height: var(--font-component-line-height-sm); /** 20px */
+  --font-checkbox-desc-line-height: var(--font-component-line-height-xs); /** 18px */
+  --sizing-alert-border-width: var(--sizing-component-track-sm); /** Left accent border width (4px) */
+  --sizing-alert-font-size: var(--font-component-size-sm); /** Text font size (14px) */
+  --sizing-alert-line-height: var(--font-component-line-height-sm); /** Text line height (21px) */
   --sizing-avatar-sm: var(--sizing-component-height-sm); /** Avatar size sm (h-9 = 36px) */
   --sizing-avatar-md: var(--sizing-component-height-md); /** Avatar size md (h-10 = 40px) */
   --sizing-avatar-lg: var(--sizing-component-height-lg); /** Avatar size lg (h-11 = 44px) */
@@ -1135,40 +1177,56 @@
   --sizing-badge-sm-padding-x: var(--sizing-component-padding-x-sm);
   --sizing-badge-sm-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-badge-sm-font-size: var(--font-component-size-sm);
+  --sizing-badge-sm-line-height: var(--font-component-line-height-sm); /** 21px */
   --sizing-badge-md-padding-x: var(--sizing-component-padding-x-md);
   --sizing-badge-md-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-badge-md-font-size: var(--font-component-size-sm);
+  --sizing-badge-md-line-height: var(--font-component-line-height-sm); /** 21px */
   --sizing-badge-lg-padding-x: var(--sizing-component-padding-x-md);
   --sizing-badge-lg-padding-y: var(--sizing-component-padding-y-md);
   --sizing-badge-lg-font-size: var(--font-component-size-md);
+  --sizing-badge-lg-line-height: var(--font-component-line-height-md); /** 24px */
   --sizing-btn-sm-height: var(--sizing-component-height-sm);
   --sizing-btn-sm-padding-x: var(--sizing-component-padding-x-sm);
   --sizing-btn-sm-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-btn-sm-gap: var(--sizing-component-gap-sm);
   --sizing-btn-sm-font-size: var(--font-component-size-sm);
+  --sizing-btn-sm-line-height: var(--font-component-line-height-sm);
   --sizing-btn-sm-radius: var(--radius-component-md);
   --sizing-btn-md-height: var(--sizing-component-height-md);
   --sizing-btn-md-padding-x: var(--sizing-component-padding-x-md);
   --sizing-btn-md-padding-y: var(--sizing-component-padding-y-md);
   --sizing-btn-md-gap: var(--sizing-component-gap-md);
   --sizing-btn-md-font-size: var(--font-component-size-md);
+  --sizing-btn-md-line-height: var(--font-component-line-height-md);
   --sizing-btn-md-radius: var(--radius-component-md);
   --sizing-btn-lg-height: var(--sizing-component-height-lg);
   --sizing-btn-lg-padding-x: var(--sizing-component-padding-x-lg);
   --sizing-btn-lg-padding-y: var(--sizing-component-padding-y-lg);
   --sizing-btn-lg-gap: var(--sizing-component-gap-lg);
   --sizing-btn-lg-font-size: var(--font-component-size-lg);
+  --sizing-btn-lg-line-height: var(--font-component-line-height-lg);
   --sizing-btn-lg-radius: var(--radius-component-md);
+  --sizing-btn-border-width: var(--sizing-component-border-width-default);
   --sizing-checkbox-box-size: var(--sizing-component-icon-control); /** Checkbox box size (20px) */
   --sizing-checkbox-icon-size: var(--sizing-component-icon-sm); /** Check icon size inside checkbox (16px) */
+  --sizing-checkbox-border-width: var(--sizing-component-border-width-thick); /** 2px */
+  --sizing-icon-sm: var(--sizing-component-icon-sm); /** Small icon (16x16) */
+  --sizing-icon-md: var(--sizing-component-icon-control); /** Medium icon (20x20) — default */
+  --sizing-icon-lg: var(--sizing-component-icon-md); /** Large icon (24x24) */
+  --sizing-icon-xl: var(--sizing-component-icon-lg); /** Extra large icon (32x32) */
+  --sizing-input-border-width: var(--sizing-component-border-width-default); /** 1px */
   --sizing-input-sm-height: var(--sizing-component-height-sm); /** 36px – matches Button sm */
   --sizing-input-sm-font-size: var(--font-component-size-sm); /** 0.875rem */
+  --sizing-input-sm-line-height: var(--font-component-line-height-sm); /** 21px */
   --sizing-input-sm-radius: var(--radius-component-md); /** 6px */
   --sizing-input-md-height: var(--sizing-component-height-md); /** 40px – matches Button md */
   --sizing-input-md-font-size: var(--font-component-size-md); /** 1rem */
+  --sizing-input-md-line-height: var(--font-component-line-height-md); /** 24px */
   --sizing-input-md-radius: var(--radius-component-md); /** 6px */
   --sizing-input-lg-height: var(--sizing-component-height-lg); /** 44px – matches Button lg */
   --sizing-input-lg-font-size: var(--font-component-size-lg); /** 1.125rem */
+  --sizing-input-lg-line-height: var(--font-component-line-height-lg); /** 27px */
   --sizing-input-lg-radius: var(--radius-component-md); /** 6px */
   --sizing-inputotp-slot-size: var(--sizing-component-height-md); /** Slot width and height (40px) */
   --sizing-pagination-item-size: var(--sizing-component-height-sm); /** Page button width & height (36px square) */

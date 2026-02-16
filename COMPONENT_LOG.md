@@ -4092,5 +4092,45 @@ Markiert Teile eines Textes visuell hervor (z.B. Suchtreffer). Suchbegriff(e) al
 
 ---
 
-**Last Updated:** 2026-02-15
-**Design System Status:** ✅ Complete (78 Components, alle Essential Components fertig)
+## [Icon] - 2026-02-16
+
+**Status:** ✅ Complete
+**Developer:** Claude Code
+**Level:** Atom
+
+### Description
+Universeller Wrapper fuer lucide-react Icons. Bietet token-basierte Groessen (sm/md/lg/xl), konsistente Accessibility-Defaults (aria-hidden fuer dekorative Icons, aria-label + role="img" fuer informative) und ein einheitliches API fuer das gesamte Design System.
+
+### Tokens Created
+- **Level 4 (Semantic) – Sizing:**
+  - `sizing-icon-sm` → L3 `sizing.component.icon.sm` (16px)
+  - `sizing-icon-md` → L3 `sizing.component.icon.control` (20px)
+  - `sizing-icon-lg` → L3 `sizing.component.icon.md` (24px)
+  - `sizing-icon-xl` → L3 `sizing.component.icon.lg` (32px)
+- **4 neue Sizing-Tokens insgesamt**
+- Keine eigenen Color-Tokens (Farben werden vom Eltern-Kontext per className gesteuert)
+
+### Files
+- `packages/components/src/atoms/Icon/Icon.tsx`
+- `packages/components/src/atoms/Icon/Icon.test.tsx`
+- `packages/components/src/atoms/Icon/Icon.stories.tsx`
+- `packages/components/src/atoms/Icon/index.ts`
+- `packages/tokens/src/semantic/icon.json`
+
+### Props
+- **icon:** LucideIcon (Pflicht — die lucide-react Icon-Komponente)
+- **size:** 'sm' | 'md' | 'lg' | 'xl' | number (Default: 'md')
+- **label:** string (opt. — setzt aria-label und entfernt aria-hidden)
+- Plus alle SVG-Attribute
+
+### Accessibility
+- ✅ aria-hidden="true" per Default (dekorative Icons)
+- ✅ aria-label + role="img" bei label-Prop (informative Icons)
+- ✅ shrink-0 verhindert Icon-Quetschung in Flex-Layouts
+
+**Tests:** 16 | **Stories:** 6
+
+---
+
+**Last Updated:** 2026-02-16
+**Design System Status:** ✅ Complete (79 Components, alle Essential Components fertig)

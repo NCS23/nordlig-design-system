@@ -1,0 +1,1223 @@
+{
+  "name": "Alert",
+  "category": "atoms",
+  "extractedAt": "2026-02-16T19:44:10.042Z",
+  "variants": {
+    "variant": [
+      "info",
+      "success",
+      "warning",
+      "error"
+    ],
+    "closeable": [
+      "false",
+      "true"
+    ]
+  },
+  "defaultVariant": {
+    "variant": "info",
+    "closeable": "false"
+  },
+  "combinations": [
+    {
+      "props": {
+        "variant": "info",
+        "closeable": "false"
+      },
+      "label": "Info",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-info-bg",
+          "value": "#eff6ff"
+        },
+        "strokes": {
+          "token": "--color-alert-info-border",
+          "value": "#3b82f6"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Information",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "Info",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-info-icon",
+              "value": "#1d4ed8"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Information",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Dies ist ein informativer Hinweis für den Benutzer.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    },
+    {
+      "props": {
+        "variant": "success",
+        "closeable": "false"
+      },
+      "label": "Success",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-success-bg",
+          "value": "#ecfdf5"
+        },
+        "strokes": {
+          "token": "--color-alert-success-border",
+          "value": "#10b981"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Erfolg",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "CheckCircle",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-success-icon",
+              "value": "#047857"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Erfolg",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Die Aktion wurde erfolgreich abgeschlossen.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    },
+    {
+      "props": {
+        "variant": "warning",
+        "closeable": "false"
+      },
+      "label": "Warning",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-warning-bg",
+          "value": "#fffbeb"
+        },
+        "strokes": {
+          "token": "--color-alert-warning-border",
+          "value": "#f59e0b"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Warnung",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "AlertTriangle",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-warning-icon",
+              "value": "#b45309"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Warnung",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Bitte überprüfen Sie die Eingabe vor dem Fortfahren.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    },
+    {
+      "props": {
+        "variant": "error",
+        "closeable": "false"
+      },
+      "label": "Error",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-error-bg",
+          "value": "#fef2f2"
+        },
+        "strokes": {
+          "token": "--color-alert-error-border",
+          "value": "#ef4444"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Fehler",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "XCircle",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-error-icon",
+              "value": "#b91c1c"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Fehler",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    },
+    {
+      "props": {
+        "variant": "info",
+        "closeable": "true"
+      },
+      "label": "Info",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-info-bg",
+          "value": "#eff6ff"
+        },
+        "strokes": {
+          "token": "--color-alert-info-border",
+          "value": "#3b82f6"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Information",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "Info",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-info-icon",
+              "value": "#1d4ed8"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Information",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Dies ist ein informativer Hinweis für den Benutzer.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        },
+        {
+          "type": "close-button",
+          "name": "Close",
+          "iconSize": 16,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "X",
+              "size": "sm"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-base-black",
+              "value": "#000000"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    },
+    {
+      "props": {
+        "variant": "success",
+        "closeable": "true"
+      },
+      "label": "Success",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-success-bg",
+          "value": "#ecfdf5"
+        },
+        "strokes": {
+          "token": "--color-alert-success-border",
+          "value": "#10b981"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Erfolg",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "CheckCircle",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-success-icon",
+              "value": "#047857"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Erfolg",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Die Aktion wurde erfolgreich abgeschlossen.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        },
+        {
+          "type": "close-button",
+          "name": "Close",
+          "iconSize": 16,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "X",
+              "size": "sm"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-base-black",
+              "value": "#000000"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    },
+    {
+      "props": {
+        "variant": "warning",
+        "closeable": "true"
+      },
+      "label": "Warning",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-warning-bg",
+          "value": "#fffbeb"
+        },
+        "strokes": {
+          "token": "--color-alert-warning-border",
+          "value": "#f59e0b"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Warnung",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "AlertTriangle",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-warning-icon",
+              "value": "#b45309"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Warnung",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Bitte überprüfen Sie die Eingabe vor dem Fortfahren.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        },
+        {
+          "type": "close-button",
+          "name": "Close",
+          "iconSize": 16,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "X",
+              "size": "sm"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-base-black",
+              "value": "#000000"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    },
+    {
+      "props": {
+        "variant": "error",
+        "closeable": "true"
+      },
+      "label": "Error",
+      "layout": {
+        "width": 512,
+        "height": 76,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "paddingBottom": 16,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-alert-error-bg",
+          "value": "#fef2f2"
+        },
+        "strokes": {
+          "token": "--color-alert-error-border",
+          "value": "#ef4444"
+        },
+        "strokeWeight": 4,
+        "strokeSides": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 4
+        },
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Fehler",
+        "fills": {
+          "token": "--color-alert-title",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 600,
+        "fontFamily": "Inter",
+        "lineHeight": 20,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Icon",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "XCircle",
+              "size": "md"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-alert-error-icon",
+              "value": "#b91c1c"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 4,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Title",
+              "text": {
+                "content": "Fehler",
+                "fills": {
+                  "token": "--color-alert-title",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 600,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-title-weight"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+                "fills": {
+                  "token": "--color-alert-description",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--sizing-alert-font-size",
+                "lineHeight": "--sizing-alert-line-height",
+                "fontWeight": "--sizing-alert-desc-weight"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-alert-content-gap"
+          }
+        },
+        {
+          "type": "close-button",
+          "name": "Close",
+          "iconSize": 16,
+          "iconRef": {
+            "component": "Icon",
+            "variant": {
+              "icon": "X",
+              "size": "sm"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-base-black",
+              "value": "#000000"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "cornerRadius": "--radius-alert",
+        "paddingLeft": "--spacing-alert-padding",
+        "paddingRight": "--spacing-alert-padding",
+        "paddingTop": "--spacing-alert-padding",
+        "paddingBottom": "--spacing-alert-padding",
+        "itemSpacing": "--spacing-alert-gap",
+        "strokeWeight": "--sizing-alert-border-width"
+      }
+    }
+  ]
+}

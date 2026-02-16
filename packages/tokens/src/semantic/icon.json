@@ -1,0 +1,18 @@
+{
+  "color": {
+    "$description": "Level 4: Icon component color tokens",
+    "icon": {
+      "default": { "$type": "color", "$value": "{color.text.base}", "$description": "Default icon stroke color (currentColor)" },
+      "muted":   { "$type": "color", "$value": "{color.text.muted}", "$description": "Muted/secondary icon color" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: Icon component sizing tokens",
+    "icon": {
+      "sm":  { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Small icon (16x16)" },
+      "md":  { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Medium icon (20x20) — default" },
+      "lg":  { "$type": "dimension", "$value": "{sizing.component.icon.md}", "$description": "Large icon (24x24)" },
+      "xl":  { "$type": "dimension", "$value": "{sizing.component.icon.lg}", "$description": "Extra large icon (32x32)" }
+    }
+  }
+}

@@ -35,21 +35,30 @@
       "sm": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" }
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" },
+        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "21px" }
       },
       "md": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" }
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" },
+        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "21px" }
       },
       "lg": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.md}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}" }
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}" },
+        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.md}", "$description": "24px" }
       }
     }
   },
   "radius": {
     "badge": { "$type": "dimension", "$value": "{radius.component.full}" }
+  },
+  "font": {
+    "$description": "Level 4: Badge typography tokens",
+    "badge": {
+      "weight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$description": "Font weight 500 (medium)" }
+    }
   }
 }

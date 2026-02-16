@@ -6,6 +6,12 @@
         "sm":   { "$type": "dimension", "$value": "{font.size.sm}" },
         "md":   { "$type": "dimension", "$value": "{font.size.base}" },
         "lg":   { "$type": "dimension", "$value": "{font.size.lg}" }
+      },
+      "line-height": {
+        "xs":   { "$type": "dimension", "$value": "{font.line-height.xs}" },
+        "sm":   { "$type": "dimension", "$value": "{font.line-height.sm}" },
+        "md":   { "$type": "dimension", "$value": "{font.line-height.base}" },
+        "lg":   { "$type": "dimension", "$value": "{font.line-height.lg}" }
       }
     },
     "heading": {

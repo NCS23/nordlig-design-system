@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      color: #1e293b;
+      padding: 16px;
+      background: #fff;
+    }
+    h1 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      color: #64748b;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+    .section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section h2 .badge {
+      font-size: 10px;
+      font-weight: 500;
+      background: #e0f2fe;
+      color: #0284c7;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px;
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 11px;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    textarea:focus { border-color: #0ea5e9; }
+    .file-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .file-row input[type="file"] {
+      flex: 1;
+      font-size: 12px;
+    }
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+      width: 100%;
+    }
+    button.primary {
+      background: #0ea5e9;
+      color: #fff;
+    }
+    button.primary:hover { background: #0284c7; }
+    button.primary:disabled {
+      background: #cbd5e1;
+      color: #94a3b8;
+      cursor: not-allowed;
+    }
+    button.secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    button.secondary:hover { background: #e2e8f0; }
+    .status {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      display: none;
+    }
+    .status.success {
+      display: block;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .status.error {
+      display: block;
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .status.info {
+      display: block;
+      background: #f0f9ff;
+      color: #075985;
+      border: 1px solid #bae6fd;
+    }
+    .divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 16px 0;
+    }
+    .steps {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .steps ol { padding-left: 16px; }
+    .steps li { margin-bottom: 2px; }
+  </style>
+</head>
+<body>
+  <h1>Nordlig DS Import</h1>
+  <p class="subtitle">Tokens &amp; Komponenten aus dem Design System importieren</p>
+
+  <!-- Step 1: Tokens -->
+  <div class="section">
+    <h2>
+      <span>1. Tokens importieren</span>
+      <span class="badge">Zuerst</span>
+    </h2>
+    <label for="tokenFile">tokens.json hochladen oder einfuegen:</label>
+    <div class="file-row">
+      <input type="file" id="tokenFile" accept=".json" />
+    </div>
+    <textarea id="tokenInput" placeholder='{ "collections": { ... } }'></textarea>
+    <br/><br/>
+    <button class="primary" id="importTokensBtn" onclick="importTokens()">
+      Tokens importieren
+    </button>
+  </div>
+
+  <!-- Step 2: Components -->
+  <div class="section">
+    <h2>
+      <span>2. Komponente importieren</span>
+      <span class="badge">Danach</span>
+    </h2>
+    <label for="componentFile">button.json (oder andere) hochladen oder einfuegen:</label>
+    <div class="file-row">
+      <input type="file" id="componentFile" accept=".json" />
+    </div>
+    <textarea id="componentInput" placeholder='{ "name": "Button", ... }'></textarea>
+    <br/><br/>
+    <button class="primary" id="importComponentBtn" onclick="importComponent()">
+      Komponente importieren
+    </button>
+  </div>
+
+  <!-- Step 3: Documentation -->
+  <div class="section">
+    <h2>
+      <span>3. Dokumentation generieren</span>
+      <span class="badge">Optional</span>
+    </h2>
+    <p style="font-size: 11px; color: #64748b; margin-bottom: 8px;">
+      Erstellt 9 Seiten mit Cover, Prinzipien, Farben, Typografie, Spacing, Radius und Komponentenuebersicht.
+      Nutzt die Token-Daten aus Schritt 1.
+    </p>
+    <button class="primary" onclick="generateDocs()">
+      Dokumentation generieren
+    </button>
+  </div>
+
+  <div id="statusContainer" class="status"></div>
+
+  <div class="divider"></div>
+
+  <div class="steps">
+    <strong>Ablauf:</strong>
+    <ol>
+      <li>Extractor lokal ausfuehren: <code>pnpm extract</code></li>
+      <li>tokens.json hier hochladen → "Tokens importieren"</li>
+      <li>button.json hochladen → "Komponente importieren"</li>
+      <li>Optional: "Dokumentation generieren" fuer DS-Seiten</li>
+      <li>Figma Variables Panel pruefen (Light/Dark Modes)</li>
+    </ol>
+  </div>
+
+  <script>
+    // File upload → textarea
+    document.getElementById('tokenFile').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (ev) => { document.getElementById('tokenInput').value = ev.target.result; };
+        reader.readAsText(file);
+      }
+    });
+
+    document.getElementById('componentFile').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (ev) => { document.getElementById('componentInput').value = ev.target.result; };
+        reader.readAsText(file);
+      }
+    });
+
+    function showStatus(text, type) {
+      const el = document.getElementById('statusContainer');
+      el.textContent = text;
+      el.className = 'status ' + type;
+    }
+
+    function importTokens() {
+      const json = document.getElementById('tokenInput').value.trim();
+      if (!json) {
+        showStatus('Bitte tokens.json einfuegen oder hochladen.', 'error');
+        return;
+      }
+      try {
+        JSON.parse(json); // Validate
+      } catch (e) {
+        showStatus('Ungueltiges JSON: ' + e.message, 'error');
+        return;
+      }
+      showStatus('Importiere Tokens...', 'info');
+      parent.postMessage({ pluginMessage: { type: 'import-tokens', tokens: json } }, '*');
+    }
+
+    function importComponent() {
+      const json = document.getElementById('componentInput').value.trim();
+      if (!json) {
+        showStatus('Bitte component JSON einfuegen oder hochladen.', 'error');
+        return;
+      }
+      try {
+        JSON.parse(json);
+      } catch (e) {
+        showStatus('Ungueltiges JSON: ' + e.message, 'error');
+        return;
+      }
+      showStatus('Importiere Komponente...', 'info');
+      parent.postMessage({ pluginMessage: { type: 'import-component', component: json } }, '*');
+    }
+
+    function generateDocs() {
+      const json = document.getElementById('tokenInput').value.trim();
+      if (!json) {
+        showStatus('Bitte zuerst tokens.json in Schritt 1 einfuegen oder hochladen.', 'error');
+        return;
+      }
+      try {
+        JSON.parse(json);
+      } catch (e) {
+        showStatus('Ungueltiges JSON: ' + e.message, 'error');
+        return;
+      }
+      showStatus('Generiere Dokumentation...', 'info');
+      parent.postMessage({ pluginMessage: { type: 'generate-docs', tokensForDocs: json } }, '*');
+    }
+
+    // Receive status from plugin
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      if (msg && msg.type === 'status') {
+        showStatus(msg.text, msg.success ? 'success' : 'error');
+      }
+      if (msg && msg.type === 'progress') {
+        showStatus(msg.text, 'info');
+      }
+    };
+  </script>
+</body>
+</html>

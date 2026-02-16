@@ -9,6 +9,7 @@ export {
 
 // Atoms
 export { ThemeToggle, type ThemeToggleProps } from './atoms/ThemeToggle';
+export { Icon, type IconProps, type IconSize } from './atoms/Icon';
 export { Button, buttonVariants, type ButtonProps } from './atoms/Button';
 export { Text, textVariants, type TextProps } from './atoms/Text';
 export { Heading, headingVariants, type HeadingProps } from './atoms/Heading';

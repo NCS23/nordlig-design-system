@@ -1,0 +1,2052 @@
+{
+  "name": "Button",
+  "category": "atoms",
+  "extractedAt": "2026-02-16T17:31:11.893Z",
+  "variants": {
+    "variant": [
+      "primary",
+      "secondary",
+      "ghost"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "hover",
+      "active",
+      "disabled"
+    ]
+  },
+  "defaultVariant": {
+    "variant": "primary",
+    "size": "md",
+    "state": "default"
+  },
+  "combinations": [
+    {
+      "props": {
+        "variant": "primary",
+        "size": "sm",
+        "state": "default"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 125,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "sm",
+        "state": "hover"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 125,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg-hover",
+          "value": "#0284c7"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "sm",
+        "state": "active"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 125,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg-active",
+          "value": "#0369a1"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "sm",
+        "state": "disabled"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 125,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "md",
+        "state": "default"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 145,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "md",
+        "state": "hover"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 145,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg-hover",
+          "value": "#0284c7"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "md",
+        "state": "active"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 145,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg-active",
+          "value": "#0369a1"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "md",
+        "state": "disabled"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 145,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "lg",
+        "state": "default"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 189,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "lg",
+        "state": "hover"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 189,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg-hover",
+          "value": "#0284c7"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "lg",
+        "state": "active"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 189,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-primary-bg-active",
+          "value": "#0369a1"
+        },
+        "strokes": {
+          "token": "--color-btn-primary-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-primary-text",
+          "value": "#f8fafc"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "primary",
+        "size": "lg",
+        "state": "disabled"
+      },
+      "label": "Primary Button",
+      "layout": {
+        "width": 189,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Primary Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "sm",
+        "state": "default"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 145,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "sm",
+        "state": "hover"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 145,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg-hover",
+          "value": "#e2e8f0"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "sm",
+        "state": "active"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 145,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg-active",
+          "value": "#cbd5e1"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "sm",
+        "state": "disabled"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 145,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "md",
+        "state": "default"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 167,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "md",
+        "state": "hover"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 167,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg-hover",
+          "value": "#e2e8f0"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "md",
+        "state": "active"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 167,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg-active",
+          "value": "#cbd5e1"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "md",
+        "state": "disabled"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 167,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "lg",
+        "state": "default"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 214,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "lg",
+        "state": "hover"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 214,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg-hover",
+          "value": "#e2e8f0"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "lg",
+        "state": "active"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 214,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-secondary-bg-active",
+          "value": "#cbd5e1"
+        },
+        "strokes": {
+          "token": "--color-btn-secondary-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-secondary-text",
+          "value": "#0f172a"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "secondary",
+        "size": "lg",
+        "state": "disabled"
+      },
+      "label": "Secondary Button",
+      "layout": {
+        "width": 214,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 1,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Secondary Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "strokeWeight": "--sizing-btn-border-width",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "sm",
+        "state": "default"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 111,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "rgba(0, 0, 0, 0)"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "sm",
+        "state": "hover"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 111,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-ghost-bg-hover",
+          "value": "#f1f5f9"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "sm",
+        "state": "active"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 111,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-ghost-bg-active",
+          "value": "#e2e8f0"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "sm",
+        "state": "disabled"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 111,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "paddingTop": 6,
+        "paddingBottom": 6,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-sm-padding-x",
+        "paddingRight": "--sizing-btn-sm-padding-x",
+        "paddingTop": "--sizing-btn-sm-padding-y",
+        "paddingBottom": "--sizing-btn-sm-padding-y",
+        "itemSpacing": "--sizing-btn-sm-gap",
+        "cornerRadius": "--sizing-btn-sm-radius",
+        "minHeight": "--sizing-btn-sm-height",
+        "fontSize": "--sizing-btn-sm-font-size",
+        "lineHeight": "--sizing-btn-sm-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "md",
+        "state": "default"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 130,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "rgba(0, 0, 0, 0)"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "md",
+        "state": "hover"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 130,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-ghost-bg-hover",
+          "value": "#f1f5f9"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "md",
+        "state": "active"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 130,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-ghost-bg-active",
+          "value": "#e2e8f0"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "md",
+        "state": "disabled"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 130,
+        "height": 40,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-md-padding-x",
+        "paddingRight": "--sizing-btn-md-padding-x",
+        "paddingTop": "--sizing-btn-md-padding-y",
+        "paddingBottom": "--sizing-btn-md-padding-y",
+        "itemSpacing": "--sizing-btn-md-gap",
+        "cornerRadius": "--sizing-btn-md-radius",
+        "minHeight": "--sizing-btn-md-height",
+        "fontSize": "--sizing-btn-md-font-size",
+        "lineHeight": "--sizing-btn-md-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "lg",
+        "state": "default"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 173,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "rgba(0, 0, 0, 0)"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "lg",
+        "state": "hover"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 173,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-ghost-bg-hover",
+          "value": "#f1f5f9"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "lg",
+        "state": "active"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 173,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-ghost-bg-active",
+          "value": "#e2e8f0"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-ghost-text",
+          "value": "#0284c7"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    },
+    {
+      "props": {
+        "variant": "ghost",
+        "size": "lg",
+        "state": "disabled"
+      },
+      "label": "Ghost Button",
+      "layout": {
+        "width": 173,
+        "height": 44,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 32,
+        "paddingRight": 32,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 10,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-btn-disabled-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Ghost Button",
+        "fills": {
+          "token": "--color-btn-disabled-text",
+          "value": "#94a3b8"
+        },
+        "fontSize": 18,
+        "fontWeight": 500,
+        "fontFamily": "Inter",
+        "lineHeight": 27,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "paddingLeft": "--sizing-btn-lg-padding-x",
+        "paddingRight": "--sizing-btn-lg-padding-x",
+        "paddingTop": "--sizing-btn-lg-padding-y",
+        "paddingBottom": "--sizing-btn-lg-padding-y",
+        "itemSpacing": "--sizing-btn-lg-gap",
+        "cornerRadius": "--sizing-btn-lg-radius",
+        "minHeight": "--sizing-btn-lg-height",
+        "fontSize": "--sizing-btn-lg-font-size",
+        "lineHeight": "--sizing-btn-lg-line-height",
+        "letterSpacing": "--font-base-letter-spacing-normal",
+        "fontWeight": "--font-base-weight-medium"
+      }
+    }
+  ]
+}

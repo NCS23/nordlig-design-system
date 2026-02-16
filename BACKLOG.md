@@ -35,6 +35,33 @@ Eine Story ist **Done**, wenn alle folgenden Punkte erfuellt sind:
 
 ---
 
+## Definition of Ready — Figma Export (DoR-FE)
+
+Eine Figma-Export-Story ist **Ready**, wenn alle folgenden Punkte erfuellt sind:
+
+- [ ] Komponente ist in Storybook implementiert und hat Stories
+- [ ] L4-Token-Datei vollstaendig: **Color, Spacing, Sizing, Radius, Typography inkl. line-height, border-width**
+- [ ] ComponentConfig in `extract-component.ts` definiert (name, selector, variants, combinations)
+- [ ] Extraction-Funktion geschrieben (oder generische `extractElementData` passend)
+- [ ] `FIGMA_EXPORT_RULES.md` gelesen und verstanden
+
+---
+
+## Definition of Done — Figma Export (DoD-FE)
+
+Eine Figma-Export-Story ist **Done**, wenn alle folgenden Punkte erfuellt sind:
+
+- [ ] **Alle Kombinationen extrahiert** (count pruefen, 0 FAILED)
+- [ ] **ALLE tokenBindings vorhanden** (gegen Button-Referenz pruefen: 12 Binding-Typen)
+- [ ] **Pflicht-Bindings gecheckt:** paddingL/R/T/B, cornerRadius, strokeWeight, fontSize, lineHeight, letterSpacing, fontWeight, minHeight/width/height
+- [ ] **SVG-Icons (falls vorhanden):** hex-Farben (kein rgb()), kein width/height (nur viewBox)
+- [ ] **Color-Tokens:** L4-spezifisch (kein L1/L2/L3 Fallback)
+- [ ] **Disabled-States:** `combo.styles.opacity` statt `_disabled` Hack
+- [ ] **Plugin baut fehlerfrei:** `pnpm build:plugin`
+- [ ] **Figma-Import getestet:** Component Set korrekt, Variables Panel vollstaendig
+
+---
+
 ## Story-Format
 
 ```
@@ -884,11 +911,243 @@ Fuer Beschreibungen, Kommentare, Produktbeschreibungen.
 
 ---
 
+### [NDS-019] Token-Refactoring: Hardcoded Werte durch Tokens ersetzen (Infrastructure) — P1
+
+**Status:** Ready
+**Prioritaet:** P1 (kritisch) — Hardcoded Tailwind-Utilities statt Tokens in ~70 Komponenten
+**Prefix:** — | **Blueprint:** `atoms/Button/Button.tsx` (Referenz-Implementierung)
+**Dependencies:** keine
+
+**Beschreibung:**
+Audit (2026-02-16) hat massive Nutzung von hardcoded Tailwind-Utilities anstelle von
+Design-Tokens in fast allen Komponenten aufgedeckt. Das widerspricht dem Token-First-Prinzip
+des Design Systems. Alle hardcoded Werte muessen durch `var(--*)` CSS Custom Properties
+ersetzt werden. Button.tsx wurde bereits als Referenz refactored (border-width).
+
+**Audit-Ergebnis (2026-02-16):**
+| Kategorie | Hardcoded Pattern | Betroffene Dateien |
+|-----------|-------------------|--------------------|
+| Font Weight | `font-medium`, `font-bold`, `font-semibold` | ~50 |
+| Font Size | `text-xs`, `text-sm`, `text-base`, `text-lg` | ~59 |
+| Border Radius | `rounded-md`, `rounded-lg`, `rounded-full`, `rounded-sm` | ~12 |
+| Border Width | `border` (1px hardcoded) | ~13 |
+| Padding | `px-*`, `py-*`, `p-*` | ~66 |
+| Gap | `gap-*` | ~36 |
+| Ring Width | `ring-*` | ~42 |
+
+**Akzeptanzkriterien:**
+- [ ] Alle `font-medium`/`font-bold`/`font-semibold` → `[font-weight:var(--font-*)]`
+- [ ] Alle `text-xs`/`text-sm`/`text-base`/`text-lg` → `text-[length:var(--font-*)]` oder `[font-size:var(--*)]`
+- [ ] Alle `rounded-*` → `[border-radius:var(--radius-*)]`
+- [ ] Alle `border` (1px) → `[border-width:var(--sizing-*-border-width)]`
+- [ ] Alle `px-*`/`py-*`/`p-*` → `[padding:var(--sizing-*-padding-*)]` oder `[padding-left:var(...)]`
+- [ ] Alle `gap-*` → `[gap:var(--sizing-*-gap)]`
+- [ ] Alle `ring-*` → `[--tw-ring-offset-width:var(--*)]` oder Equivalent
+- [ ] L4-Token-Dateien fuer jede Komponente um fehlende Tokens ergaenzt
+- [ ] Token Build erfolgreich nach jeder Batch-Aenderung
+- [ ] Alle Unit Tests bestehen weiterhin
+- [ ] Storybook Build erfolgreich (0 Fehler)
+- [ ] Kein visueller Unterschied (Visual Regression Tests)
+
+**Referenz-Pattern (Button.tsx):**
+- Vorher: `border border-[var(--color-btn-primary-border)]`
+- Nachher: `[border-width:var(--sizing-btn-border-width)] border-[var(--color-btn-primary-border)]`
+- Token-Kette: L1 `spacing.base.px` → L2 `sizing.border-width.default` → L3 `sizing.component.border-width.default` → L4 `sizing.btn.border-width`
+
+**Task Breakdown (in Batches zu je ~15 Komponenten):**
+- [ ] 1. **Batch 1 — Atoms A-I** (~15): Alert, AspectRatio, Avatar, Badge, Blockquote, Button(done), Checkbox, Code, CopyButton, Heading, HoverCard, Image, Input, InputOTP
+- [ ] 2. **Batch 2 — Atoms K-Z** (~18): Kbd, Label, Link, NumberInput, Popover, Progress, ScrollArea, Separator, Skeleton, Slider, Spinner, Switch, Tag, Text, ThemeToggle, Toggle, ToggleGroup, Tooltip, VisuallyHidden
+- [ ] 3. **Batch 3 — Molecules A-F** (~12): Accordion, AlertDialog, Banner, Breadcrumbs, Collapsible, Combobox, ContextMenu, DatePicker, Dialog, Drawer, DropdownMenu, EmptyState
+- [ ] 4. **Batch 4 — Molecules F-T** (~13): FileUpload, Form, InputField, Menubar, NavigationMenu, Pagination, PasswordInput, RadioGroup, Resizable, SearchInput, Select, Sheet, Stepper
+- [ ] 5. **Batch 5 — Molecules + Organisms** (~20): Tabs, Textarea, Toast, Toolbar, Card, Carousel, Chart, Command, DataTable, LoadingOverlay, Modal, Rating, SessionCard, Sidebar, StatCard, Table, Timeline, Tree, Highlight
+- [ ] 6. **Verifikation:** Alle Unit Tests laufen, Storybook Build, Visual Regression Baseline-Vergleich
+- [ ] 7. **Doku:** COMPONENT_LOG.md und tokens-annotated.css aktualisieren
+
+**Notizen:**
+- GROSS-Scope Story. Kann ueber mehrere Sessions verteilt werden.
+- Pro Komponente: (a) fehlende L4-Tokens in semantic/*.json ergaenzen, (b) Component TSX refactoren, (c) Token Build, (d) Tests laufen lassen.
+- Tailwind v3 Gotchas beachten: `text-[length:var(...)]` statt `text-[var(...)]`, `[border-width:var(...)]` statt `border-[var(...)]` fuer Breiten.
+- Underscore-Konvention: Keine Underscores nach `--` in Tailwind Arbitrary Values (→ Space-Konvertierung).
+- `ring-*` ist komplex: Tailwind ring nutzt `--tw-ring-offset-width` intern. Moeglicherweise eigenes Utility-Pattern noetig.
+- Referenz: Button.tsx ist das Muster fuer alle anderen Komponenten.
+
+---
+
+### [NDS-020] Icon-Migration: Alle Komponenten auf Icon-Atom umstellen (Infrastructure) — P2
+
+**Status:** Ready
+**Prioritaet:** P2 (wichtig) — Konsistentes Icon-API, Voraussetzung fuer Figma-Import
+**Prefix:** — | **Blueprint:** `atoms/Icon/Icon.tsx`
+**Dependencies:** Icon-Atom (bereits erstellt)
+
+**Beschreibung:**
+51+ Dateien im Design System verwenden lucide-react Icons direkt (z.B. `<Info size={20} />`).
+Diese muessen auf das neue Icon-Atom umgestellt werden (`<Icon icon={Info} size="md" />`),
+damit token-basierte Groessen und einheitliche Accessibility-Defaults greifen.
+Dies ist auch Voraussetzung fuer korrekte Figma-Komponentenstruktur (Icon-Instanzen).
+
+**Akzeptanzkriterien:**
+- [ ] Alle Komponenten nutzen `<Icon>` statt direkter lucide-react Aufrufe
+- [ ] Sizing nutzt benannte Groessen (sm/md/lg/xl) statt Pixel-Werte
+- [ ] Accessibility-Defaults (aria-hidden fuer dekorative Icons) konsistent
+- [ ] Alle Unit Tests bestehen weiterhin
+- [ ] Storybook Build erfolgreich (0 Fehler)
+
+**Betroffene Komponenten (Auswahl):**
+- Alert (Info, CheckCircle, AlertTriangle, XCircle, X)
+- Banner (Info, CheckCircle, AlertTriangle, XCircle, X)
+- CopyButton (Copy, Check)
+- SearchInput (Search, X)
+- PasswordInput (Eye, EyeOff)
+- Combobox (Search, Check, ChevronDown)
+- DatePicker, FileUpload, Pagination, NavigationMenu, etc.
+
+**Task Breakdown:**
+- [ ] 1. Batch 1 — Atoms: Alert, CopyButton, SearchInput, PasswordInput, NumberInput, ThemeToggle
+- [ ] 2. Batch 2 — Molecules: Banner, Combobox, DatePicker, FileUpload, Breadcrumbs, Pagination
+- [ ] 3. Batch 3 — Restliche Molecules + Organisms: Select, DropdownMenu, Menubar, Sidebar, etc.
+- [ ] 4. Alle Unit Tests laufen lassen — 0 Failures
+- [ ] 5. Storybook Build verifizieren
+
+**Notizen:**
+- Icon-Atom ist fertig: 16 Tests, 6 Stories, token-basierte Groessen.
+- Groessen-Mapping: `size={20}` → `size="md"` (20px), `size={16}` → `size="sm"` (16px), `size={24}` → `size="lg"` (24px).
+- Nur `size`-Prop und `icon`-Prop aendern, Farben bleiben via className.
+
+---
+
+### [NDS-021] Figma Icon Component Set + Alert-Instanzen (Figma Plugin) — P1
+
+**Status:** Done
+**Prioritaet:** P1 (kritisch) — Figma-Komponentenhierarchie muss DS-Struktur widerspiegeln
+**Prefix:** — | **Blueprint:** Figma Plugin Extractor + Plugin
+**Dependencies:** Icon-Atom (erstellt), Alert-Extraction (funktioniert)
+
+**Beschreibung:**
+Die Icon-Komponente soll als eigenstaendiges Figma Component Set importiert werden,
+damit Alert (und spaeter alle Komponenten) Icon-Instanzen statt eingebetteter SVGs nutzen.
+Dies ist kritisch fuer MCP-basierte Design-to-Code Workflows, bei denen ein LLM die
+Komponentenstruktur aus dem Figma-Design lesen und korrekt als React-Code generieren muss.
+
+**Akzeptanzkriterien:**
+- [x] Icon Component Set in Figma mit Varianten pro Icon-Name × Groesse (72 Kombinationen)
+- [x] SVG-Vektoren als echte Figma-Vektoren (nicht Placeholder)
+- [x] Groessen gebunden an L4-Tokens --sizing-icon-{sm|md|lg|xl} Variables
+- [x] Alert nutzt Icon-Instanzen statt eingebetteter SVGs (via iconRef)
+- [x] Close-Button in Alert nutzt Icon-Instanz (X, size=sm)
+- [ ] Light/Dark Mode: Farben aendern sich korrekt bei Mode-Wechsel (muss in Figma getestet werden)
+
+**Task Breakdown:**
+- [x] 1. Icon Extraction: Config + Funktion fuer Icon-Extraktion aus Storybook Gallery
+- [x] 2. Alert Extraction: `iconRef` statt `svgData` in ChildNode
+- [x] 3. Figma Plugin: Icon ComponentSet erstellen + Alert nutzt Instanzen
+
+**Notizen:**
+- Icon Gallery Story hat 18 Icons: Info, CheckCircle, AlertTriangle, XCircle, X, Search, Star, Copy, Check, Eye, EyeOff, Sun, Moon, ChevronLeft, ChevronRight, UploadCloud, File, Heart.
+- Groessen: sm=16px, md=20px, lg=24px, xl=32px (aus --sizing-icon-* Tokens).
+- Alert Icons: Info (info), CheckCircle (success), AlertTriangle (warning), XCircle (error) bei size=md, X (close) bei size=sm.
+- Stroke-Farbe im Icon-Component: --color-text-base als Default, wird per Instance-Override in Alert ueberschrieben.
+
+---
+
+### [NDS-022] Badge Figma Export Fix (Figma Plugin) — P3
+
+**Status:** Done
+**Prioritaet:** P3 (nice-to-have) — Fehlendes lineHeight Binding
+**Prefix:** `badge` | **DoR/DoD:** DoR-FE / DoD-FE
+**Dependencies:** Badge-Atom (vorhanden), Figma Plugin (vorhanden)
+
+**Beschreibung:**
+Badge-Export hatte 10/12 Bindings — lineHeight fehlte. L4-Tokens fuer line-height
+pro Size-Variante erstellt und Extraction verifiziert.
+
+**Task Breakdown:**
+- [x] 1. L4-Tokens: `sizing.badge.{sm|md|lg}.line-height` → `{font.component.line-height.sm|md}` erstellt
+- [x] 2. Token Build + Verifikation in tokens.css
+- [x] 3. Re-Extraction: 15/15 OK, 11 Bindings (paddingL/R/T/B, itemSpacing, cornerRadius, strokeWeight, fontSize, lineHeight, letterSpacing, fontWeight)
+
+---
+
+### [NDS-023] Input Figma Export Fix (Figma Plugin) — P1
+
+**Status:** Done
+**Prioritaet:** P1 (kritisch) — 3 Bindings fehlten (lineHeight, letterSpacing, strokeWeight)
+**Prefix:** `input` | **DoR/DoD:** DoR-FE / DoD-FE
+**Dependencies:** Input-Atom (vorhanden), Figma Plugin (vorhanden)
+
+**Beschreibung:**
+Input-Export hatte 6/9 Bindings. Fehlende L4-Tokens (border-width, line-height per Size)
+erstellt und Extractor um lineHeight + letterSpacing Binding-Logik erweitert.
+
+**Task Breakdown:**
+- [x] 1. L4-Tokens: `sizing.input.border-width` (1px) + `sizing.input.{sm|md|lg}.line-height` erstellt
+- [x] 2. Extractor: lineHeight via `findL4Token()` + letterSpacing (0 → `--font-base-letter-spacing-normal`) hinzugefuegt
+- [x] 3. Token Build + Verifikation
+- [x] 4. Re-Extraction: 12/12 OK, 9 Bindings (minHeight, paddingL/R, cornerRadius, strokeWeight, fontSize, fontWeight, lineHeight, letterSpacing)
+
+---
+
+### [NDS-024] Checkbox Figma Export Fix (Figma Plugin) — P1
+
+**Status:** Done
+**Prioritaet:** P1 (kritisch) — SVG-Import brach ab, border-width fehlte
+**Prefix:** `checkbox` | **DoR/DoD:** DoR-FE / DoD-FE
+**Dependencies:** Checkbox-Atom (vorhanden), Figma Plugin (vorhanden)
+
+**Beschreibung:**
+Checkbox-Export war komplett kaputt: SVG stroke-Farbe als rgb() (Figma kann kein rgb()),
+SVG width/height konfligierten mit viewBox, border-width Token fehlte.
+Alle drei Issues gefixt.
+
+**Task Breakdown:**
+- [x] 1. L4-Token: `sizing.checkbox.border-width` (2px, thick) erstellt
+- [x] 2. Extractor: rgb()→hex Konvertierung inline (kein `function` in page.evaluate — esbuild __name Bug)
+- [x] 3. Extractor: `clone.removeAttribute('width'); clone.removeAttribute('height')` hinzugefuegt
+- [x] 4. Token Build + Verifikation
+- [x] 5. Re-Extraction: 6/6 OK, 4 Bindings (width, height, cornerRadius, strokeWeight), SVG hex + viewBox-only
+- [x] 6. Hover-Varianten: `interaction: 'default' | 'hover'` Achse, 9 Kombinationen (3 states × 2 disabled + 3 hover)
+- [x] 7. Corner Radius Fix: `clipsContent=true` fuer SVG-Varianten, Token Description korrigiert (4px→2px)
+- [x] 8. Plugin: fontSize-Guard (`combo.text.fontSize > 0 && combo.text.content`)
+
+**Learnings:**
+- `function` oder Arrow-Funktionen mit `.map()` in `page.evaluate()` → esbuild fuegt `__name` ein → `ReferenceError` im Browser
+- Inline Logik statt Funktions-Deklaration innerhalb von `page.evaluate()`
+- SVG-Nodes fuellen das Component-Frame: ohne `clipsContent` ueberdecken sie die Eckenrundung
+- Hover-Varianten ableiten analog `deriveStateVariant()`: Disabled hat KEIN Hover
+
+---
+
+### [NDS-025] CheckboxField Figma Export Fix (Figma Plugin) — P1
+
+**Status:** Done
+**Prioritaet:** P1 (kritisch) — Gap-Bindings, lineHeight, _disabled Hack
+**Prefix:** `checkbox` | **DoR/DoD:** DoR-FE / DoD-FE
+**Dependencies:** CheckboxField (vorhanden), Checkbox-Export (NDS-024)
+
+**Beschreibung:**
+CheckboxField-Export hatte keine Container/Content-Gap Bindings, keine lineHeight
+Bindings fuer Label/Description, und nutzte einen `_disabled` Hack der in Figma
+keinen Effekt hat. Neue L4-Tokens fuer spacing und lineHeight erstellt,
+Extractor erweitert, `_disabled` Hack durch `opacity: 0.5` ersetzt.
+
+**Task Breakdown:**
+- [x] 1. L3-Tokens: `spacing.component.gap.2xs` (2px) + `font.component.line-height.xs` (18px) erstellt
+- [x] 2. L2-Token: `spacing.3xs` (2px) erstellt
+- [x] 3. L4-Tokens: `spacing.checkbox.field-gap` (8px), `spacing.checkbox.content-gap` (2px), `font.checkbox.label-line-height`, `font.checkbox.desc-line-height` erstellt
+- [x] 4. Extractor: Container tokenBindings mit field-gap, Content frame tokenBindings mit content-gap
+- [x] 5. Extractor: Label/Description tokenBindings um lineHeight erweitert
+- [x] 6. Extractor: `_disabled` Hack → `contentFrame.styles.opacity = 0.5` ersetzt
+- [x] 7. Token Build + Verifikation (12 neue CSS Custom Properties)
+- [x] 8. Re-Extraction: 12/12 OK, Container: 1 Binding (itemSpacing), Content: 1 (itemSpacing), Label: 3 (fontSize, fontWeight, lineHeight), Desc: 3 (fontSize, fontWeight, lineHeight)
+- [x] 9. TextStyle-Fix: `hasChildren` vor `hasTextContent` pruefen (Label + Description TextStyles werden jetzt korrekt erstellt)
+
+---
+
 ## In Progress
 
 > Stories die aktuell in Bearbeitung sind. Maximal 5 gleichzeitig (1 Batch).
 
-_(leer — naechster Batch kann gestartet werden)_
+### [NDS-021] Figma Icon Component Set + Alert-Instanzen — Done
 
 
 
@@ -938,3 +1197,9 @@ Table, Timeline, Tree
 | 2026-02-15 | 9 neue Stories: SearchInput (NDS-010), TimePicker (NDS-011), PasswordInput (NDS-012), ColorPicker (NDS-013), Generator CLI (NDS-014), Changelog (NDS-015), a11y CI (NDS-016), Highlight (NDS-017), Spoiler (NDS-018). |
 | 2026-02-15 | **P1 Batch Done:** NDS-001 (Toggle), NDS-002 (Combobox), NDS-003 (Banner), NDS-010 (SearchInput). 54 Tests, 30 Stories, 37 neue Tokens. UX Review mit 3 Critical + 6 Major Issues — alle gefixt. Komponentenstand: 74. |
 | 2026-02-15 | **P2 Batch Done:** NDS-012 (PasswordInput), NDS-006 (LoadingOverlay), NDS-005 (Rating), NDS-017 (Highlight). 46 Tests, 21 Stories, 21 neue Tokens. UX Review mit 5 Critical + 8 Major Issues — alle gefixt. Komponentenstand: 78. |
+| 2026-02-16 | **NDS-019 erstellt:** Token-Refactoring fuer ~70 Komponenten. Audit: ~50 font-weight, ~59 font-size, ~66 padding, ~36 gap, ~42 ring, ~13 border, ~12 radius hardcoded. Button.tsx als Referenz refactored (border-width Token durch alle 4 Layer). Figma-Plugin Extractor + Plugin aktualisiert (strokeWeight, letterSpacing, fontWeight, Text Styles). |
+| 2026-02-16 | **Icon-Atom erstellt:** Icon.tsx Komponente (#79) mit token-basierten Groessen (sm/md/lg/xl), forwardRef, Accessibility-Defaults. 16 Tests, 6 Stories. L4-Tokens in icon.json. Figma Plugin: SVG-Vektor-Import fuer Alert-Icons. |
+| 2026-02-16 | **NDS-020 erstellt:** Icon-Migration fuer 51+ Dateien (P2). **NDS-021 erstellt + gestartet:** Figma Icon Component Set + Alert-Instanzen (P1) — Komponentenhierarchie muss DS-Struktur widerspiegeln fuer MCP-Workflows. |
+| 2026-02-16 | **Figma Export DoR/DoD eingefuehrt.** Neuer Story-Typ fuer Figma-Export-Aufgaben mit spezialisierter Checkliste (Token-Vollstaendigkeit, Binding-Verifikation gegen Button-Referenz, SVG-Regeln). |
+| 2026-02-16 | **Figma Export Batch Done:** NDS-022 (Badge lineHeight), NDS-023 (Input border-width + lineHeight + letterSpacing), NDS-024 (Checkbox SVG hex + width/height + border-width), NDS-025 (CheckboxField gaps + lineHeights + disabled fix). 12 neue L4-Tokens, 3 neue L3/L2-Tokens, 6 Extractor-Fixes. FIGMA_EXPORT_RULES.md um 4 neue Regeln + 7 Anti-Patterns erweitert. |
+| 2026-02-16 | **Figma Post-Import Fixes:** (1) CheckboxField TextStyles: `hasChildren` vor `hasTextContent` Bedingung gefixt → Label/Description TextStyles werden jetzt erstellt. (2) Checkbox: Hover-Varianten (`interaction: default\|hover`) hinzugefuegt → 9 Kombinationen statt 6. Corner Radius: `clipsContent=true` fuer SVG-Varianten. (3) Variable-Hierarchie: `classifyTokenLevel()` in extract-tokens.ts, Level-Prefix (L1 Base/L2 Global/L3 Role/L4 Component) auf allen Figma-Variablen. Reverse-Lookup in code.ts angepasst. FIGMA_EXPORT_RULES.md um 4 neue Regeln + 4 Anti-Patterns erweitert. |

@@ -1,0 +1,23 @@
+{
+  "name": "@nordlig/figma-plugin",
+  "version": "1.0.0-alpha",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "extract:tokens": "tsx extractor/extract-tokens.ts",
+    "extract:button": "tsx extractor/extract-component.ts -- button",
+    "extract:alert": "tsx extractor/extract-component.ts -- alert",
+    "extract:icon": "tsx extractor/extract-component.ts -- icon",
+    "extract:component": "tsx extractor/extract-component.ts --",
+    "extract": "pnpm extract:tokens && pnpm extract:icon && pnpm extract:button && pnpm extract:alert",
+    "build:plugin": "node build.mjs",
+    "build": "pnpm extract && pnpm build:plugin"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.100.0",
+    "esbuild": "^0.24.0",
+    "playwright": "^1.49.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

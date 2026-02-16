@@ -31,29 +31,33 @@
     "$description": "Level 4: Button size tokens — References Level 3 only",
     "btn": {
       "sm": {
-        "height":    { "$type": "dimension", "$value": "{sizing.component.height.sm}" },
-        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}" },
-        "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
-        "gap":       { "$type": "dimension", "$value": "{sizing.component.gap.sm}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" },
-        "radius":    { "$type": "dimension", "$value": "{radius.component.md}" }
+        "height":      { "$type": "dimension", "$value": "{sizing.component.height.sm}" },
+        "padding-x":   { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}" },
+        "padding-y":   { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
+        "gap":         { "$type": "dimension", "$value": "{sizing.component.gap.sm}" },
+        "font-size":   { "$type": "dimension", "$value": "{font.component.size.sm}" },
+        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}" },
+        "radius":      { "$type": "dimension", "$value": "{radius.component.md}" }
       },
       "md": {
-        "height":    { "$type": "dimension", "$value": "{sizing.component.height.md}" },
-        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
-        "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.md}" },
-        "gap":       { "$type": "dimension", "$value": "{sizing.component.gap.md}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}" },
-        "radius":    { "$type": "dimension", "$value": "{radius.component.md}" }
+        "height":      { "$type": "dimension", "$value": "{sizing.component.height.md}" },
+        "padding-x":   { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
+        "padding-y":   { "$type": "dimension", "$value": "{sizing.component.padding-y.md}" },
+        "gap":         { "$type": "dimension", "$value": "{sizing.component.gap.md}" },
+        "font-size":   { "$type": "dimension", "$value": "{font.component.size.md}" },
+        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.md}" },
+        "radius":      { "$type": "dimension", "$value": "{radius.component.md}" }
       },
       "lg": {
-        "height":    { "$type": "dimension", "$value": "{sizing.component.height.lg}" },
-        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.lg}" },
-        "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.lg}" },
-        "gap":       { "$type": "dimension", "$value": "{sizing.component.gap.lg}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.lg}" },
-        "radius":    { "$type": "dimension", "$value": "{radius.component.md}" }
-      }
+        "height":      { "$type": "dimension", "$value": "{sizing.component.height.lg}" },
+        "padding-x":   { "$type": "dimension", "$value": "{sizing.component.padding-x.lg}" },
+        "padding-y":   { "$type": "dimension", "$value": "{sizing.component.padding-y.lg}" },
+        "gap":         { "$type": "dimension", "$value": "{sizing.component.gap.lg}" },
+        "font-size":   { "$type": "dimension", "$value": "{font.component.size.lg}" },
+        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.lg}" },
+        "radius":      { "$type": "dimension", "$value": "{radius.component.md}" }
+      },
+      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}" }
     }
   },
   "spacing": {

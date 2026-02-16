@@ -1,0 +1,1455 @@
+{
+  "name": "CheckboxField",
+  "category": "atoms",
+  "extractedAt": "2026-02-16T21:48:16.312Z",
+  "variants": {
+    "state": [
+      "unchecked",
+      "checked",
+      "indeterminate"
+    ],
+    "disabled": [
+      "false",
+      "true"
+    ],
+    "hasDescription": [
+      "false",
+      "true"
+    ]
+  },
+  "defaultVariant": {
+    "state": "unchecked",
+    "disabled": "false",
+    "hasDescription": "false"
+  },
+  "combinations": [
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "false",
+        "hasDescription": "false"
+      },
+      "label": "unchecked",
+      "layout": {
+        "width": 1248,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "unchecked",
+              "disabled": "false",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "Ich stimme den Nutzungsbedingungen zu",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "false",
+        "hasDescription": "true"
+      },
+      "label": "unchecked desc",
+      "layout": {
+        "width": 1248,
+        "height": 38,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "unchecked",
+              "disabled": "false",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "E-Mail-Benachrichtigungen",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Erhalte Updates zu deinen Trainingsfortschritten per E-Mail.",
+                "fills": {
+                  "token": "--color-checkbox-description",
+                  "value": "#475569"
+                },
+                "fontSize": 12,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 16,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-desc-size",
+                "fontWeight": "--font-checkbox-desc-weight",
+                "lineHeight": "--font-checkbox-desc-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "true",
+        "hasDescription": "false"
+      },
+      "label": "unchecked disabled",
+      "layout": {
+        "width": 1248,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "unchecked",
+              "disabled": "true",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "Ich stimme den Nutzungsbedingungen zu",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          },
+          "styles": {
+            "opacity": 0.5
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "true",
+        "hasDescription": "true"
+      },
+      "label": "unchecked disabled desc",
+      "layout": {
+        "width": 1248,
+        "height": 38,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "unchecked",
+              "disabled": "true",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "E-Mail-Benachrichtigungen",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Erhalte Updates zu deinen Trainingsfortschritten per E-Mail.",
+                "fills": {
+                  "token": "--color-checkbox-description",
+                  "value": "#475569"
+                },
+                "fontSize": 12,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 16,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-desc-size",
+                "fontWeight": "--font-checkbox-desc-weight",
+                "lineHeight": "--font-checkbox-desc-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          },
+          "styles": {
+            "opacity": 0.5
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "false",
+        "hasDescription": "false"
+      },
+      "label": "checked",
+      "layout": {
+        "width": 1248,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "checked",
+              "disabled": "false",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "Ich stimme den Nutzungsbedingungen zu",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "false",
+        "hasDescription": "true"
+      },
+      "label": "checked desc",
+      "layout": {
+        "width": 1248,
+        "height": 38,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "checked",
+              "disabled": "false",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "E-Mail-Benachrichtigungen",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Erhalte Updates zu deinen Trainingsfortschritten per E-Mail.",
+                "fills": {
+                  "token": "--color-checkbox-description",
+                  "value": "#475569"
+                },
+                "fontSize": 12,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 16,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-desc-size",
+                "fontWeight": "--font-checkbox-desc-weight",
+                "lineHeight": "--font-checkbox-desc-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "true",
+        "hasDescription": "false"
+      },
+      "label": "checked disabled",
+      "layout": {
+        "width": 1248,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "checked",
+              "disabled": "true",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "Ich stimme den Nutzungsbedingungen zu",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          },
+          "styles": {
+            "opacity": 0.5
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "true",
+        "hasDescription": "true"
+      },
+      "label": "checked disabled desc",
+      "layout": {
+        "width": 1248,
+        "height": 38,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "checked",
+              "disabled": "true",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "E-Mail-Benachrichtigungen",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Erhalte Updates zu deinen Trainingsfortschritten per E-Mail.",
+                "fills": {
+                  "token": "--color-checkbox-description",
+                  "value": "#475569"
+                },
+                "fontSize": 12,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 16,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-desc-size",
+                "fontWeight": "--font-checkbox-desc-weight",
+                "lineHeight": "--font-checkbox-desc-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          },
+          "styles": {
+            "opacity": 0.5
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "indeterminate",
+        "disabled": "false",
+        "hasDescription": "false"
+      },
+      "label": "indeterminate",
+      "layout": {
+        "width": 1248,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "indeterminate",
+              "disabled": "false",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "Ich stimme den Nutzungsbedingungen zu",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "indeterminate",
+        "disabled": "false",
+        "hasDescription": "true"
+      },
+      "label": "indeterminate desc",
+      "layout": {
+        "width": 1248,
+        "height": 38,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "indeterminate",
+              "disabled": "false",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "E-Mail-Benachrichtigungen",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Erhalte Updates zu deinen Trainingsfortschritten per E-Mail.",
+                "fills": {
+                  "token": "--color-checkbox-description",
+                  "value": "#475569"
+                },
+                "fontSize": 12,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 16,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-desc-size",
+                "fontWeight": "--font-checkbox-desc-weight",
+                "lineHeight": "--font-checkbox-desc-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "indeterminate",
+        "disabled": "true",
+        "hasDescription": "false"
+      },
+      "label": "indeterminate disabled",
+      "layout": {
+        "width": 1248,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "indeterminate",
+              "disabled": "true",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "Ich stimme den Nutzungsbedingungen zu",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          },
+          "styles": {
+            "opacity": 0.5
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    },
+    {
+      "props": {
+        "state": "indeterminate",
+        "disabled": "true",
+        "hasDescription": "true"
+      },
+      "label": "indeterminate disabled desc",
+      "layout": {
+        "width": 1248,
+        "height": 38,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Checkbox",
+          "iconSize": 20,
+          "iconRef": {
+            "component": "Checkbox",
+            "variant": {
+              "state": "indeterminate",
+              "disabled": "true",
+              "interaction": "default"
+            }
+          },
+          "styles": {
+            "fills": {
+              "token": null,
+              "value": "transparent"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "name": "Content",
+          "layout": {
+            "width": 0,
+            "height": 0,
+            "direction": "VERTICAL",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 2,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "MIN"
+          },
+          "children": [
+            {
+              "type": "text",
+              "name": "Label",
+              "text": {
+                "content": "E-Mail-Benachrichtigungen",
+                "fills": {
+                  "token": "--color-checkbox-label",
+                  "value": "#0f172a"
+                },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 20,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-label-size",
+                "fontWeight": "--font-checkbox-label-weight",
+                "lineHeight": "--font-checkbox-label-line-height"
+              }
+            },
+            {
+              "type": "text",
+              "name": "Description",
+              "text": {
+                "content": "Erhalte Updates zu deinen Trainingsfortschritten per E-Mail.",
+                "fills": {
+                  "token": "--color-checkbox-description",
+                  "value": "#475569"
+                },
+                "fontSize": 12,
+                "fontWeight": 400,
+                "fontFamily": "Inter",
+                "lineHeight": 16,
+                "letterSpacing": 0
+              },
+              "tokenBindings": {
+                "fontSize": "--font-checkbox-desc-size",
+                "fontWeight": "--font-checkbox-desc-weight",
+                "lineHeight": "--font-checkbox-desc-line-height"
+              }
+            }
+          ],
+          "tokenBindings": {
+            "itemSpacing": "--spacing-checkbox-content-gap"
+          },
+          "styles": {
+            "opacity": 0.5
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-checkbox-field-gap"
+      }
+    }
+  ]
+}

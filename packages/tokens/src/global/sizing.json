@@ -21,6 +21,10 @@
       "sm": { "$type": "dimension", "$value": "{spacing.base.1-5}" },
       "md": { "$type": "dimension", "$value": "{spacing.base.2}" },
       "lg": { "$type": "dimension", "$value": "{spacing.base.2-5}" }
+    },
+    "border-width": {
+      "default": { "$type": "dimension", "$value": "{spacing.base.px}" },
+      "thick":   { "$type": "dimension", "$value": "{spacing.base.0-5}" }
     }
   }
 }

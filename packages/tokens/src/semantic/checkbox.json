@@ -18,10 +18,28 @@
     "$description": "Level 4: Checkbox size tokens — References Level 3 only",
     "checkbox": {
       "box-size": { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Checkbox box size (20px)" },
-      "icon-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Check icon size inside checkbox (16px)" }
+      "icon-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Check icon size inside checkbox (16px)" },
+      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.thick}", "$description": "2px" }
+    }
+  },
+  "spacing": {
+    "checkbox": {
+      "field-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px — Gap between checkbox and content" },
+      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px — Gap between label and description" }
     }
   },
   "radius": {
-    "checkbox": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "4px subtle rounding" }
+    "checkbox": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "2px subtle rounding" }
+  },
+  "font": {
+    "$description": "Level 4: CheckboxField typography tokens",
+    "checkbox": {
+      "label-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Label font size 14px (text-sm)" },
+      "label-weight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$description": "Label font weight 500 (font-medium)" },
+      "desc-size":    { "$type": "dimension", "$value": "{font.caption.size}", "$description": "Description font size 12px (text-xs)" },
+      "desc-weight":  { "$type": "fontWeight", "$value": "{font.weight.normal}", "$description": "Description font weight 400" },
+      "label-line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "20px" },
+      "desc-line-height":  { "$type": "dimension", "$value": "{font.component.line-height.xs}", "$description": "18px" }
+    }
   }
 }

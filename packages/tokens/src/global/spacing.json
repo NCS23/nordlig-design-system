@@ -1,6 +1,7 @@
 {
   "spacing": {
     "$description": "Level 2: Global semantic spacing sizes",
+    "3xs": { "$type": "dimension", "$value": "{spacing.base.0-5}", "$description": "2px" },
     "2xs": { "$type": "dimension", "$value": "{spacing.base.1}" },
     "xs":  { "$type": "dimension", "$value": "{spacing.base.2}" },
     "sm":  { "$type": "dimension", "$value": "{spacing.base.3}" },
