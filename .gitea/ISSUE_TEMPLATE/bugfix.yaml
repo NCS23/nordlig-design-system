@@ -1,0 +1,67 @@
+name: Bugfix
+about: Bug melden oder Fix dokumentieren
+title: "[BUG] Kurzbeschreibung"
+labels:
+  - type/bugfix
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        Bitte so detailliert wie moeglich beschreiben.
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioritaet
+      options:
+        - P1 (kritisch — blockiert Entwicklung)
+        - P2 (wichtig — Workaround moeglich)
+        - P3 (nice-to-have — kosmetisch)
+    validations:
+      required: true
+
+  - type: input
+    id: component
+    attributes:
+      label: Betroffene Komponente(n)
+      placeholder: "Button, Alert, ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung
+      description: "Was passiert? Was sollte passieren?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduktionsschritte
+      placeholder: |
+        1. Oeffne Storybook
+        2. Navigiere zu ...
+        3. Klicke auf ...
+        4. Erwartetes Verhalten: ...
+        5. Tatsaechliches Verhalten: ...
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Loesung (optional)
+      description: "Falls der Fix bekannt ist"
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Bereich
+      options:
+        - Komponente (TSX)
+        - Tokens (JSON/CSS)
+        - Tests
+        - Stories
+        - Figma Plugin
+        - Build/Infrastructure
