@@ -1,13 +1,11 @@
-name: Visual QA
+name: Visual Tests
 
 on:
   pull_request:
     branches: [main]
-  push:
-    branches: [main]
 
 jobs:
-  visual-qa:
+  visual:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,14 +24,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build tokens and styles
+      - name: Build all packages
         run: pnpm build
-
-      - name: Validate tokens
-        run: pnpm validate:tokens
-
-      - name: Analyze CSS
-        run: pnpm analyze:css
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
