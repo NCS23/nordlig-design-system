@@ -1,0 +1,63 @@
+name: Bundle Size
+
+on:
+  pull_request:
+
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build all packages
+        run: pnpm build
+
+      - name: Check component bundle size
+        run: |
+          SIZE=$(du -sk packages/components/dist/ 2>/dev/null | cut -f1)
+          echo "## Bundle Size Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Components bundle: **${SIZE}KB**" >> $GITHUB_STEP_SUMMARY
+          if [ "$SIZE" -gt 512 ]; then
+            echo "::error::Component bundle exceeds 512KB limit (${SIZE}KB)"
+            exit 1
+          fi
+          echo "Components: ${SIZE}KB (limit: 512KB) ✓"
+
+      - name: Check Figma plugin bundle size
+        run: |
+          if [ -f packages/figma-plugin/plugin/dist/code.js ]; then
+            SIZE=$(wc -c < packages/figma-plugin/plugin/dist/code.js)
+            SIZE_KB=$((SIZE / 1024))
+            echo "Figma plugin: **${SIZE_KB}KB**" >> $GITHUB_STEP_SUMMARY
+            if [ "$SIZE_KB" -gt 150 ]; then
+              echo "::error::Figma plugin exceeds 150KB limit (${SIZE_KB}KB)"
+              exit 1
+            fi
+            echo "Figma plugin: ${SIZE_KB}KB (limit: 150KB) ✓"
+          else
+            echo "Figma plugin not built (skipped)"
+          fi
+
+      - name: Check tokens CSS size
+        run: |
+          if [ -f packages/styles/dist/tokens.css ]; then
+            SIZE=$(wc -c < packages/styles/dist/tokens.css)
+            SIZE_KB=$((SIZE / 1024))
+            echo "Tokens CSS: **${SIZE_KB}KB**" >> $GITHUB_STEP_SUMMARY
+            echo "Tokens CSS: ${SIZE_KB}KB"
+          fi
