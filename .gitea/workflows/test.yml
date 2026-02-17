@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Tests & Lint
 
 on:
   push:
@@ -27,6 +27,9 @@ jobs:
 
       - name: Build tokens
         run: pnpm build:tokens
+
+      - name: Lint (ESLint + jsx-a11y)
+        run: npx eslint packages/components/src/ --max-warnings 50
 
       - name: Run unit tests
         run: pnpm test
