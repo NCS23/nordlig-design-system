@@ -1,0 +1,44 @@
+name: Publish Packages
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build tokens
+        run: pnpm build:tokens
+
+      - name: Build components
+        run: pnpm --filter @nordlig/components build
+
+      - name: Configure npm registry
+        run: |
+          echo "@nordlig:registry=http://100.94.133.78:3001/api/packages/NCSNASadmin/npm/" > ~/.npmrc
+          echo "//100.94.133.78:3001/api/packages/NCSNASadmin/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
+      - name: Publish @nordlig/tokens
+        run: pnpm --filter @nordlig/tokens publish --no-git-checks --access public
+        continue-on-error: true
+
+      - name: Publish @nordlig/styles
+        run: pnpm --filter @nordlig/styles publish --no-git-checks --access public
+        continue-on-error: true
+
+      - name: Publish @nordlig/components
+        run: pnpm --filter @nordlig/components publish --no-git-checks --access public
+        continue-on-error: true
