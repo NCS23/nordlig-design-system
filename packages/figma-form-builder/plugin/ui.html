@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      color: #0f172a;
+      background: #f8fafc;
+      padding: 16px;
+      overflow-y: auto;
+    }
+
+    h1 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: #475569;
+      margin-bottom: 16px;
+    }
+
+    .section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #0ea5e9;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .step-badge.done { background: #10b981; }
+    .step-badge.inactive { background: #cbd5e1; }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      resize: vertical;
+      color: #0f172a;
+      background: #f8fafc;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.15);
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #0f172a;
+    }
+
+    input[type="text"]:focus, input[type="number"]:focus {
+      outline: none;
+      border-color: #0ea5e9;
+    }
+
+    input[type="file"] {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      padding: 8px 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #ffffff;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    button:hover { background: #f1f5f9; }
+
+    button.primary {
+      background: #0ea5e9;
+      color: #ffffff;
+      border-color: #0ea5e9;
+    }
+
+    button.primary:hover { background: #0284c7; }
+
+    button.primary:disabled {
+      background: #94a3b8;
+      border-color: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    button.ghost {
+      background: transparent;
+      border: none;
+      color: #0ea5e9;
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+
+    button.ghost:hover {
+      background: #f0f9ff;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    /* Component info bar */
+    .component-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+
+    .component-info.found {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .component-info.empty {
+      background: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .component-count {
+      font-weight: 600;
+    }
+
+    /* Field mapping table */
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .field-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      color: #475569;
+      padding: 6px 8px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .field-table td {
+      padding: 8px;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    .field-table select {
+      width: 100%;
+      padding: 4px 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .field-table select option.real {
+      font-weight: 500;
+    }
+
+    .field-table select option.fallback {
+      color: #94a3b8;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .badge-required { background: #fef2f2; color: #b91c1c; }
+    .badge-optional { background: #f0fdf4; color: #15803d; }
+    .badge-type { background: #f0f9ff; color: #0369a1; }
+    .badge-real { background: #f0fdf4; color: #15803d; }
+    .badge-fallback { background: #f1f5f9; color: #64748b; }
+
+    /* Variant selector */
+    .variant-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .variant-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .variant-item label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0;
+    }
+
+    .variant-item select {
+      padding: 3px 5px;
+      font-size: 11px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      background: #f8fafc;
+      min-width: 70px;
+    }
+
+    .variant-item select:focus {
+      outline: none;
+      border-color: #0ea5e9;
+    }
+
+    /* Config row */
+    .config-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .config-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* Status */
+    .status {
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .status.success {
+      display: block;
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .status.error {
+      display: block;
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+
+    .status.info {
+      display: block;
+      background: #f0f9ff;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .hidden { display: none !important; }
+
+    .log {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Nordlig Form Builder</h1>
+  <p class="subtitle">Formulare aus Markdown-Tabellen generieren</p>
+
+  <!-- Component Info -->
+  <div id="componentInfo" class="component-info empty">
+    <span>Suche Komponenten...</span>
+  </div>
+
+  <!-- Step 1: Markdown Input -->
+  <div class="section" id="step1">
+    <h2><span class="step-badge" id="badge1">1</span> Markdown hochladen</h2>
+
+    <input type="file" id="mdFile" accept=".md,.markdown,.txt" />
+
+    <label for="mdInput">Oder Markdown-Tabelle einfuegen:</label>
+    <textarea id="mdInput" placeholder="| Feld | Typ | Pflicht | Hinweis |
+|------|-----|---------|---------|
+| Vorname | text | ja | Min. 2 Zeichen |
+| E-Mail | email | ja | |
+| Abteilung | select | ja | HR, IT, Marketing |
+| Kommentar | textarea | nein | |
+| AGB akzeptiert | checkbox | ja | |"></textarea>
+
+    <div class="btn-row">
+      <button class="primary" onclick="parseMarkdown()">Analysieren</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Field Mapping -->
+  <div class="section hidden" id="step2">
+    <h2><span class="step-badge" id="badge2">2</span> Feld-Zuordnung</h2>
+    <p style="font-size:11px;color:#475569;margin-bottom:8px;">Pruefe die automatische Zuordnung und passe sie bei Bedarf an. Gruene Eintraege nutzen echte DS-Komponenten.</p>
+
+    <table class="field-table">
+      <thead>
+        <tr>
+          <th>Feld</th>
+          <th>Typ</th>
+          <th>Komponente</th>
+          <th>Quelle</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="fieldTableBody"></tbody>
+    </table>
+
+    <div class="btn-row">
+      <button onclick="goToStep(1)">Zurueck</button>
+      <button class="primary" onclick="goToStep(3)">Weiter</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Configuration + Generate -->
+  <div class="section hidden" id="step3">
+    <h2><span class="step-badge" id="badge3">3</span> Konfiguration</h2>
+
+    <div class="config-row">
+      <div class="config-field">
+        <label for="formTitle">Formular-Titel</label>
+        <input type="text" id="formTitle" value="Formular" />
+      </div>
+      <div class="config-field">
+        <label for="formWidth">Breite (px)</label>
+        <input type="number" id="formWidth" value="480" min="280" max="1200" />
+      </div>
+    </div>
+
+    <div class="config-row">
+      <div class="config-field">
+        <label for="submitLabel">Button-Text</label>
+        <input type="text" id="submitLabel" value="Absenden" />
+      </div>
+      <div class="config-field"></div>
+    </div>
+
+    <div class="btn-row">
+      <button onclick="goToStep(2)">Zurueck</button>
+      <button class="primary" id="generateBtn" onclick="generateForm()">Formular generieren</button>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div id="statusBox" class="status"></div>
+  <div id="logBox" class="log"></div>
+
+<script>
+  // --- State ---
+  var parsedFields = [];
+  var currentStep = 1;
+  var availableComponents = []; // From plugin scan
+  var availableComponentNames = new Set(); // Quick lookup
+
+  // --- Type Mapping ---
+  // Maps user-typed values to internal component keys
+  var TYPE_MAP = {
+    'text': 'input', 'string': 'input', 'email': 'input', 'password': 'input',
+    'url': 'input', 'tel': 'input', 'phone': 'input',
+    'textarea': 'textarea', 'multiline': 'textarea', 'comment': 'textarea', 'text-long': 'textarea',
+    'select': 'select', 'dropdown': 'select', 'combobox': 'select', 'auswahl': 'select',
+    'checkbox': 'checkbox', 'bool': 'checkbox', 'boolean': 'checkbox', 'check': 'checkbox',
+    'radio': 'radio', 'radiogroup': 'radio', 'option': 'radio', 'optionen': 'radio',
+    'switch': 'switch', 'toggle': 'switch', 'schalter': 'switch',
+    'number': 'number-input', 'integer': 'number-input', 'float': 'number-input', 'zahl': 'number-input',
+    'date': 'date-picker', 'datetime': 'date-picker', 'datum': 'date-picker',
+    'file': 'file-upload', 'upload': 'file-upload', 'datei': 'file-upload',
+    'slider': 'slider', 'range': 'slider', 'bereich': 'slider',
+  };
+
+  // Maps internal component key → DS ComponentSet name (for checking availability)
+  var COMPONENT_SET_NAMES = {
+    'input': 'Input',
+    'textarea': 'Textarea',
+    'select': 'Select',
+    'checkbox': 'Checkbox',
+    'radio': 'RadioGroup',
+    'switch': 'Switch',
+    'label': 'Label',
+    'button': 'Button',
+    'number-input': 'NumberInput',
+    'date-picker': 'DatePicker',
+    'file-upload': 'FileUpload',
+    'slider': 'Slider',
+  };
+
+  // Field wrapper names — if present, the plugin uses composed Field components
+  var FIELD_SET_NAMES = {
+    'input': 'InputField',
+    'textarea': 'TextareaField',
+    'select': 'SelectField',
+    'switch': 'SwitchField',
+  };
+
+  // Human-readable labels
+  var COMPONENT_LABELS = {
+    'input': 'Text Input',
+    'textarea': 'Textarea',
+    'select': 'Select',
+    'checkbox': 'Checkbox',
+    'radio': 'Radio Group',
+    'switch': 'Switch',
+    'number-input': 'Number Input',
+    'date-picker': 'Date Picker',
+    'file-upload': 'File Upload',
+    'slider': 'Slider',
+  };
+
+  function autoMapType(typeValue) {
+    return TYPE_MAP[typeValue.toLowerCase().trim()] || 'input';
+  }
+
+  function isRealComponent(componentKey) {
+    // Check field wrapper first (InputField > Input)
+    var fieldName = FIELD_SET_NAMES[componentKey];
+    if (fieldName && availableComponentNames.has(fieldName)) return true;
+    var setName = COMPONENT_SET_NAMES[componentKey];
+    return setName && availableComponentNames.has(setName);
+  }
+
+  function getComponentSource(componentKey) {
+    var fieldName = FIELD_SET_NAMES[componentKey];
+    if (fieldName && availableComponentNames.has(fieldName)) return 'field';
+    var setName = COMPONENT_SET_NAMES[componentKey];
+    if (setName && availableComponentNames.has(setName)) return 'atom';
+    return 'fallback';
+  }
+
+  // --- Markdown Parser ---
+  function parseCells(line) {
+    return line.split('|').map(function(c) { return c.trim(); }).filter(function(c, i, arr) {
+      return !(i === 0 && c === '') && !(i === arr.length - 1 && c === '');
+    });
+  }
+
+  function findColumnIndex(headers, candidates) {
+    for (var i = 0; i < headers.length; i++) {
+      var h = headers[i].toLowerCase().trim();
+      for (var j = 0; j < candidates.length; j++) {
+        if (h === candidates[j] || h.indexOf(candidates[j]) !== -1) return i;
+      }
+    }
+    return -1;
+  }
+
+  function isRequired(value) {
+    if (!value) return false;
+    var v = value.toLowerCase().trim();
+    return v === 'ja' || v === 'yes' || v === 'true' || v === 'x' || v === '*' || v === '1';
+  }
+
+  function isSeparatorRow(line) {
+    return /^\|[\s\-:|]+\|$/.test(line.trim());
+  }
+
+  function parseMarkdownTable(markdown) {
+    var lines = markdown.trim().split('\n').map(function(l) { return l.trim(); });
+    var tableLines = lines.filter(function(l) {
+      return l.startsWith('|') && l.endsWith('|');
+    });
+
+    if (tableLines.length < 3) return [];
+
+    var headerLine = tableLines[0];
+    var dataStart = 2;
+    for (var k = 1; k < tableLines.length; k++) {
+      if (isSeparatorRow(tableLines[k])) {
+        dataStart = k + 1;
+        break;
+      }
+    }
+    var dataLines = tableLines.slice(dataStart);
+
+    var headers = parseCells(headerLine);
+    var fieldIdx = findColumnIndex(headers, ['feld', 'field', 'name', 'label', 'bezeichnung']);
+    var typeIdx = findColumnIndex(headers, ['typ', 'type', 'art']);
+    var requiredIdx = findColumnIndex(headers, ['pflicht', 'required', 'mandatory', 'pflichtfeld']);
+    var hintIdx = findColumnIndex(headers, ['hinweis', 'hint', 'note', 'options', 'beschreibung', 'description', 'optionen']);
+
+    if (fieldIdx === -1) fieldIdx = 0;
+    if (typeIdx === -1) typeIdx = 1;
+
+    return dataLines.map(function(line) {
+      var cells = parseCells(line);
+      var name = cells[fieldIdx] || 'Unbenannt';
+      var typeRaw = typeIdx >= 0 && cells[typeIdx] ? cells[typeIdx].toLowerCase().trim() : 'text';
+      var required = requiredIdx >= 0 ? isRequired(cells[requiredIdx]) : false;
+      var hint = hintIdx >= 0 && cells[hintIdx] ? cells[hintIdx] : '';
+
+      return {
+        name: name,
+        type: typeRaw,
+        required: required,
+        hint: hint,
+        component: autoMapType(typeRaw),
+        variantOverrides: {},
+      };
+    });
+  }
+
+  // --- UI Logic ---
+  function goToStep(step) {
+    currentStep = step;
+    document.getElementById('step1').classList.toggle('hidden', step !== 1);
+    document.getElementById('step2').classList.toggle('hidden', step !== 2);
+    document.getElementById('step3').classList.toggle('hidden', step !== 3);
+
+    for (var i = 1; i <= 3; i++) {
+      var badge = document.getElementById('badge' + i);
+      badge.className = 'step-badge';
+      if (i < step) badge.classList.add('done');
+      if (i > step) badge.classList.add('inactive');
+    }
+
+    hideStatus();
+  }
+
+  function showStatus(text, type) {
+    var box = document.getElementById('statusBox');
+    box.textContent = text;
+    box.className = 'status ' + type;
+  }
+
+  function hideStatus() {
+    document.getElementById('statusBox').className = 'status';
+    document.getElementById('logBox').textContent = '';
+  }
+
+  function updateComponentInfo() {
+    var infoEl = document.getElementById('componentInfo');
+    var count = availableComponents.length;
+    var names = availableComponents.map(function(c) { return c.name; });
+
+    if (count > 0) {
+      infoEl.className = 'component-info found';
+      infoEl.innerHTML = '<span class="component-count">' + count + ' DS-Komponenten</span> gefunden: ' + names.join(', ') +
+        ' <button class="ghost" onclick="rescanComponents()">Neu scannen</button>';
+    } else {
+      infoEl.className = 'component-info empty';
+      infoEl.innerHTML = 'Keine DS-Komponenten gefunden. Formular wird aus Primitiven gebaut.' +
+        ' <button class="ghost" onclick="rescanComponents()">Neu scannen</button>';
+    }
+  }
+
+  function rescanComponents() {
+    parent.postMessage({ pluginMessage: { type: 'rescan-components' } }, '*');
+  }
+
+  // File upload
+  document.getElementById('mdFile').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      document.getElementById('mdInput').value = ev.target.result;
+    };
+    reader.readAsText(file);
+  });
+
+  // Step 1 → 2: Parse
+  function parseMarkdown() {
+    var markdown = document.getElementById('mdInput').value.trim();
+    if (!markdown) {
+      showStatus('Bitte Markdown-Tabelle einfuegen oder Datei hochladen.', 'error');
+      return;
+    }
+
+    parsedFields = parseMarkdownTable(markdown);
+    if (parsedFields.length === 0) {
+      showStatus('Keine Felder gefunden. Bitte Tabellenformat pruefen (Spalten: Feld, Typ, Pflicht, Hinweis).', 'error');
+      return;
+    }
+
+    renderFieldTable();
+    goToStep(2);
+    showStatus(parsedFields.length + ' Felder erkannt.', 'success');
+  }
+
+  // Find the AvailableComponent info for a given component key
+  function getComponentInfo(componentKey) {
+    // Try field wrapper first, then atom
+    var fieldName = FIELD_SET_NAMES[componentKey];
+    if (fieldName) {
+      for (var i = 0; i < availableComponents.length; i++) {
+        if (availableComponents[i].name === fieldName) return availableComponents[i];
+      }
+    }
+    var setName = COMPONENT_SET_NAMES[componentKey];
+    if (setName) {
+      for (var i = 0; i < availableComponents.length; i++) {
+        if (availableComponents[i].name === setName) return availableComponents[i];
+      }
+    }
+    return null;
+  }
+
+  function renderVariantSelectors(container, fieldIdx, componentKey) {
+    container.innerHTML = '';
+    var info = getComponentInfo(componentKey);
+    if (!info || !info.variants) return;
+
+    var variantKeys = Object.keys(info.variants);
+    if (variantKeys.length === 0) return;
+
+    var row = document.createElement('div');
+    row.className = 'variant-row';
+
+    for (var vi = 0; vi < variantKeys.length; vi++) {
+      (function(vk) {
+        var values = info.variants[vk];
+        if (!values || values.length <= 1) return; // Skip single-value variants
+
+        var item = document.createElement('div');
+        item.className = 'variant-item';
+
+        var lbl = document.createElement('label');
+        lbl.textContent = vk;
+        item.appendChild(lbl);
+
+        var sel = document.createElement('select');
+        sel.dataset.variantKey = vk;
+
+        for (var j = 0; j < values.length; j++) {
+          var opt = document.createElement('option');
+          opt.value = values[j];
+          opt.textContent = values[j];
+          // Select current override, or default
+          var currentOverride = parsedFields[fieldIdx].variantOverrides[vk];
+          var defaultVal = info.defaultVariant[vk];
+          if (currentOverride && currentOverride === values[j]) {
+            opt.selected = true;
+          } else if (!currentOverride && defaultVal === values[j]) {
+            opt.selected = true;
+          }
+          sel.appendChild(opt);
+        }
+
+        sel.addEventListener('change', function() {
+          if (!parsedFields[fieldIdx].variantOverrides) {
+            parsedFields[fieldIdx].variantOverrides = {};
+          }
+          parsedFields[fieldIdx].variantOverrides[vk] = this.value;
+        });
+
+        item.appendChild(sel);
+        row.appendChild(item);
+      })(variantKeys[vi]);
+    }
+
+    if (row.children.length > 0) {
+      container.appendChild(row);
+    }
+  }
+
+  function renderFieldTable() {
+    var tbody = document.getElementById('fieldTableBody');
+    tbody.innerHTML = '';
+
+    var componentKeys = Object.keys(COMPONENT_LABELS);
+
+    parsedFields.forEach(function(field, idx) {
+      var tr = document.createElement('tr');
+
+      // Name
+      var tdName = document.createElement('td');
+      tdName.style.fontWeight = '500';
+      tdName.textContent = field.name;
+      tr.appendChild(tdName);
+
+      // Type badge
+      var tdType = document.createElement('td');
+      tdType.innerHTML = '<span class="badge badge-type">' + field.type + '</span>';
+      tr.appendChild(tdType);
+
+      // Component dropdown — sorted: real components first, then fallbacks
+      var tdComp = document.createElement('td');
+      var select = document.createElement('select');
+      select.id = 'comp-' + idx;
+
+      // Group: available DS components
+      var realKeys = componentKeys.filter(function(k) { return isRealComponent(k); });
+      var fallbackKeys = componentKeys.filter(function(k) { return !isRealComponent(k); });
+
+      if (realKeys.length > 0) {
+        var optgroupReal = document.createElement('optgroup');
+        optgroupReal.label = 'DS-Komponenten';
+        realKeys.forEach(function(key) {
+          var opt = document.createElement('option');
+          opt.value = key;
+          opt.textContent = COMPONENT_LABELS[key];
+          opt.className = 'real';
+          if (key === field.component) opt.selected = true;
+          optgroupReal.appendChild(opt);
+        });
+        select.appendChild(optgroupReal);
+      }
+
+      if (fallbackKeys.length > 0) {
+        var optgroupFallback = document.createElement('optgroup');
+        optgroupFallback.label = 'Fallback (Primitiven)';
+        fallbackKeys.forEach(function(key) {
+          var opt = document.createElement('option');
+          opt.value = key;
+          opt.textContent = COMPONENT_LABELS[key];
+          opt.className = 'fallback';
+          if (key === field.component) opt.selected = true;
+          optgroupFallback.appendChild(opt);
+        });
+        select.appendChild(optgroupFallback);
+      }
+
+      // Variant selector container (below the component dropdown)
+      var variantContainer = document.createElement('div');
+      variantContainer.id = 'variants-' + idx;
+
+      select.addEventListener('change', function() {
+        parsedFields[idx].component = this.value;
+        // Reset variant overrides when component changes
+        parsedFields[idx].variantOverrides = {};
+        updateSourceBadge(idx);
+        renderVariantSelectors(variantContainer, idx, this.value);
+      });
+      tdComp.appendChild(select);
+      tdComp.appendChild(variantContainer);
+      tr.appendChild(tdComp);
+
+      // Render initial variant selectors if this is a real component
+      if (isRealComponent(field.component)) {
+        renderVariantSelectors(variantContainer, idx, field.component);
+      }
+
+      // Source badge (real vs fallback)
+      var tdSource = document.createElement('td');
+      tdSource.id = 'source-' + idx;
+      tr.appendChild(tdSource);
+      updateSourceBadgeElement(tdSource, field.component);
+
+      // Required badge
+      var tdReq = document.createElement('td');
+      if (field.required) {
+        tdReq.innerHTML = '<span class="badge badge-required">Pflicht</span>';
+      } else {
+        tdReq.innerHTML = '<span class="badge badge-optional">Optional</span>';
+      }
+      tr.appendChild(tdReq);
+
+      tbody.appendChild(tr);
+    });
+  }
+
+  function updateSourceBadge(idx) {
+    var td = document.getElementById('source-' + idx);
+    if (td) {
+      updateSourceBadgeElement(td, parsedFields[idx].component);
+    }
+  }
+
+  function updateSourceBadgeElement(td, componentKey) {
+    var source = getComponentSource(componentKey);
+    if (source === 'field') {
+      td.innerHTML = '<span class="badge badge-real">Field</span>';
+    } else if (source === 'atom') {
+      td.innerHTML = '<span class="badge badge-real">DS</span>';
+    } else {
+      td.innerHTML = '<span class="badge badge-fallback">Fallback</span>';
+    }
+  }
+
+  // Step 3: Generate
+  function generateForm() {
+    var btn = document.getElementById('generateBtn');
+    btn.disabled = true;
+    btn.textContent = 'Generiere...';
+
+    parsedFields.forEach(function(field, idx) {
+      var sel = document.getElementById('comp-' + idx);
+      if (sel) field.component = sel.value;
+    });
+
+    var form = {
+      title: document.getElementById('formTitle').value || 'Formular',
+      fields: parsedFields,
+      submitLabel: document.getElementById('submitLabel').value || 'Absenden',
+      formWidth: parseInt(document.getElementById('formWidth').value) || 480,
+    };
+
+    parent.postMessage({
+      pluginMessage: {
+        type: 'generate-form',
+        form: form,
+      }
+    }, '*');
+  }
+
+  // Listen for plugin messages
+  window.onmessage = function(event) {
+    var msg = event.data.pluginMessage;
+    if (!msg) return;
+
+    if (msg.type === 'available-components') {
+      availableComponents = msg.components || [];
+      availableComponentNames = new Set(availableComponents.map(function(c) { return c.name; }));
+      updateComponentInfo();
+      // Re-render table if currently on step 2
+      if (currentStep === 2 && parsedFields.length > 0) {
+        renderFieldTable();
+      }
+    }
+
+    if (msg.type === 'status') {
+      showStatus(msg.text, msg.success ? 'success' : 'error');
+      var btn = document.getElementById('generateBtn');
+      btn.disabled = false;
+      btn.textContent = 'Formular generieren';
+    }
+
+    if (msg.type === 'log') {
+      document.getElementById('logBox').textContent = msg.text;
+    }
+  };
+</script>
+</body>
+</html>

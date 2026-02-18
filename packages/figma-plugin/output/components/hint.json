@@ -1,0 +1,107 @@
+{
+  "name": "Hint",
+  "category": "atoms",
+  "extractedAt": "2026-02-17T14:00:00.000Z",
+  "variants": {
+    "variant": ["default", "error"],
+    "disabled": ["false", "true"]
+  },
+  "defaultVariant": {
+    "variant": "default",
+    "disabled": "false"
+  },
+  "combinations": [
+    {
+      "props": { "variant": "default", "disabled": "false" },
+      "label": "Hint default",
+      "layout": {
+        "width": 360, "height": 18, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 0, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": null, "value": "transparent" },
+        "strokes": null, "strokeWeight": 0, "cornerRadius": 0
+      },
+      "text": {
+        "content": "Hilfetext",
+        "fills": { "token": "--color-text-muted", "value": "#475569" },
+        "fontSize": 12, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 18, "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "fontSize": "--font-base-size-xs",
+        "lineHeight": "--font-line-height-xs",
+        "fills": "--color-text-muted"
+      }
+    },
+    {
+      "props": { "variant": "error", "disabled": "false" },
+      "label": "Hint error",
+      "layout": {
+        "width": 360, "height": 18, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 0, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": null, "value": "transparent" },
+        "strokes": null, "strokeWeight": 0, "cornerRadius": 0
+      },
+      "text": {
+        "content": "Fehlermeldung",
+        "fills": { "token": "--color-text-error", "value": "#ef4444" },
+        "fontSize": 12, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 18, "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "fontSize": "--font-base-size-xs",
+        "lineHeight": "--font-line-height-xs",
+        "fills": "--color-text-error"
+      }
+    },
+    {
+      "props": { "variant": "default", "disabled": "true" },
+      "label": "Hint disabled",
+      "layout": {
+        "width": 360, "height": 18, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 0, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": null, "value": "transparent" },
+        "strokes": null, "strokeWeight": 0, "cornerRadius": 0
+      },
+      "text": {
+        "content": "Hilfetext",
+        "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+        "fontSize": 12, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 18, "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "fontSize": "--font-base-size-xs",
+        "lineHeight": "--font-line-height-xs",
+        "fills": "--color-text-disabled"
+      }
+    },
+    {
+      "props": { "variant": "error", "disabled": "true" },
+      "label": "Hint error disabled",
+      "layout": {
+        "width": 360, "height": 18, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 0, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": null, "value": "transparent" },
+        "strokes": null, "strokeWeight": 0, "cornerRadius": 0
+      },
+      "text": {
+        "content": "Fehlermeldung",
+        "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+        "fontSize": 12, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 18, "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "fontSize": "--font-base-size-xs",
+        "lineHeight": "--font-line-height-xs",
+        "fills": "--color-text-disabled"
+      }
+    }
+  ]
+}

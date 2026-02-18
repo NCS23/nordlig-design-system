@@ -1,0 +1,690 @@
+{
+  "name": "RadioGroup",
+  "category": "molecules",
+  "extractedAt": "2026-02-17T14:00:00.000Z",
+  "variants": {
+    "orientation": [
+      "vertical",
+      "horizontal"
+    ],
+    "disabled": [
+      "false",
+      "true"
+    ]
+  },
+  "defaultVariant": {
+    "orientation": "vertical",
+    "disabled": "false"
+  },
+  "combinations": [
+    {
+      "props": { "orientation": "vertical", "disabled": "false" },
+      "label": "RadioGroup vertical",
+      "layout": {
+        "width": 280,
+        "height": 132,
+        "direction": "VERTICAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 4,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": { "token": null, "value": "transparent" },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": { "token": null, "value": "" },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "frame",
+          "name": "RadioItem-1-selected",
+          "layout": {
+            "width": 280,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-bg", "value": "#ffffff" },
+                "strokes": { "token": "--color-radio-selected-border", "value": "#0ea5e9" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Dot",
+                  "layout": {
+                    "width": 10,
+                    "height": 10,
+                    "direction": "NONE",
+                    "paddingLeft": 0,
+                    "paddingRight": 0,
+                    "paddingTop": 0,
+                    "paddingBottom": 0,
+                    "itemSpacing": 0,
+                    "primaryAxisAlign": "CENTER",
+                    "counterAxisAlign": "CENTER"
+                  },
+                  "styles": {
+                    "fills": { "token": "--color-radio-selected-dot", "value": "#0ea5e9" },
+                    "cornerRadius": 9999
+                  }
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option A",
+                "fills": { "token": "--color-radio-label", "value": "#0f172a" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "RadioItem-2",
+          "layout": {
+            "width": 280,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-bg", "value": "#ffffff" },
+                "strokes": { "token": "--color-radio-border", "value": "#cbd5e1" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              }
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option B",
+                "fills": { "token": "--color-radio-label", "value": "#0f172a" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "RadioItem-3",
+          "layout": {
+            "width": 280,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-bg", "value": "#ffffff" },
+                "strokes": { "token": "--color-radio-border", "value": "#cbd5e1" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              }
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option C",
+                "fills": { "token": "--color-radio-label", "value": "#0f172a" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        }
+      ],
+      "tokenBindings": {}
+    },
+    {
+      "props": { "orientation": "horizontal", "disabled": "false" },
+      "label": "RadioGroup horizontal",
+      "layout": {
+        "width": 480,
+        "height": 36,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 8,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": null, "value": "transparent" },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": { "token": null, "value": "" },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "frame",
+          "name": "RadioItem-1-selected",
+          "layout": {
+            "width": 140,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-bg", "value": "#ffffff" },
+                "strokes": { "token": "--color-radio-selected-border", "value": "#0ea5e9" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Dot",
+                  "layout": {
+                    "width": 10,
+                    "height": 10,
+                    "direction": "NONE",
+                    "paddingLeft": 0,
+                    "paddingRight": 0,
+                    "paddingTop": 0,
+                    "paddingBottom": 0,
+                    "itemSpacing": 0,
+                    "primaryAxisAlign": "CENTER",
+                    "counterAxisAlign": "CENTER"
+                  },
+                  "styles": {
+                    "fills": { "token": "--color-radio-selected-dot", "value": "#0ea5e9" },
+                    "cornerRadius": 9999
+                  }
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option A",
+                "fills": { "token": "--color-radio-label", "value": "#0f172a" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "RadioItem-2",
+          "layout": {
+            "width": 140,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-bg", "value": "#ffffff" },
+                "strokes": { "token": "--color-radio-border", "value": "#cbd5e1" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              }
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option B",
+                "fills": { "token": "--color-radio-label", "value": "#0f172a" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "RadioItem-3",
+          "layout": {
+            "width": 140,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-bg", "value": "#ffffff" },
+                "strokes": { "token": "--color-radio-border", "value": "#cbd5e1" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              }
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option C",
+                "fills": { "token": "--color-radio-label", "value": "#0f172a" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        }
+      ],
+      "tokenBindings": {}
+    },
+    {
+      "props": { "orientation": "vertical", "disabled": "true" },
+      "label": "RadioGroup vertical disabled",
+      "layout": {
+        "width": 280,
+        "height": 132,
+        "direction": "VERTICAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 4,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": { "token": null, "value": "transparent" },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0,
+        "opacity": 0.5
+      },
+      "text": {
+        "content": "",
+        "fills": { "token": null, "value": "" },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "frame",
+          "name": "RadioItem-1",
+          "layout": {
+            "width": 280,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-disabled-bg", "value": "#f1f5f9" },
+                "strokes": { "token": "--color-radio-border", "value": "#cbd5e1" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              }
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option A",
+                "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "RadioItem-2",
+          "layout": {
+            "width": 280,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-disabled-bg", "value": "#f1f5f9" },
+                "strokes": { "token": "--color-radio-border", "value": "#cbd5e1" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              }
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option B",
+                "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "RadioItem-3",
+          "layout": {
+            "width": 280,
+            "height": 36,
+            "direction": "HORIZONTAL",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "paddingBottom": 8,
+            "itemSpacing": 10,
+            "primaryAxisAlign": "MIN",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": { "token": null, "value": "transparent" },
+            "cornerRadius": 6
+          },
+          "children": [
+            {
+              "type": "frame",
+              "name": "RadioCircle",
+              "layout": {
+                "width": 20,
+                "height": 20,
+                "direction": "HORIZONTAL",
+                "sizing": "fixed",
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "itemSpacing": 0,
+                "primaryAxisAlign": "CENTER",
+                "counterAxisAlign": "CENTER"
+              },
+              "styles": {
+                "fills": { "token": "--color-radio-disabled-bg", "value": "#f1f5f9" },
+                "strokes": { "token": "--color-radio-border", "value": "#cbd5e1" },
+                "strokeWeight": 2,
+                "cornerRadius": 9999
+              }
+            },
+            {
+              "type": "text",
+              "name": "RadioLabel",
+              "text": {
+                "content": "Option C",
+                "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+                "fontSize": 14,
+                "fontWeight": 500,
+                "fontFamily": "Inter",
+                "lineHeight": 21,
+                "letterSpacing": 0
+              }
+            }
+          ]
+        }
+      ],
+      "tokenBindings": {}
+    }
+  ]
+}

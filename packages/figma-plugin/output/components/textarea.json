@@ -1,7 +1,7 @@
 {
-  "name": "Input",
-  "category": "atoms",
-  "extractedAt": "2026-02-16T20:46:17.313Z",
+  "name": "Textarea",
+  "category": "molecules",
+  "extractedAt": "2026-02-17T10:00:00.000Z",
   "variants": {
     "inputSize": [
       "sm",
@@ -25,18 +25,18 @@
         "inputSize": "sm",
         "state": "default"
       },
-      "label": "Input sm",
+      "label": "Textarea sm",
       "layout": {
         "width": 360,
-        "height": 36,
-        "direction": "HORIZONTAL",
+        "height": 100,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 8,
+        "paddingBottom": 8,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -53,8 +53,8 @@
       "text": {
         "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
         },
         "fontSize": 14,
         "fontWeight": 400,
@@ -63,15 +63,69 @@
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-sm-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-sm",
+        "paddingBottom": "--spacing-textarea-padding-y-sm",
         "cornerRadius": "--sizing-input-sm-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-sm-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-sm-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-sm-line-height"
+      }
+    },
+    {
+      "props": {
+        "inputSize": "sm",
+        "state": "focus"
+      },
+      "label": "Textarea sm focus",
+      "layout": {
+        "width": 360,
+        "height": 100,
+        "direction": "VERTICAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+        "paddingBottom": 8,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-input-bg",
+          "value": "#ffffff"
+        },
+        "strokes": {
+          "token": "--color-input-border-focus",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Enter text...",
+        "fills": {
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
+        },
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 21,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "minHeight": "--sizing-textarea-min-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-sm",
+        "paddingBottom": "--spacing-textarea-padding-y-sm",
+        "cornerRadius": "--sizing-input-sm-radius",
+        "strokeWeight": "--sizing-input-border-width-focus",
+        "fontSize": "--sizing-input-sm-font-size",
+        "lineHeight": "--sizing-input-sm-line-height"
       }
     },
     {
@@ -79,18 +133,18 @@
         "inputSize": "sm",
         "state": "disabled"
       },
-      "label": "Input sm",
+      "label": "Textarea sm disabled",
       "layout": {
         "width": 360,
-        "height": 36,
-        "direction": "HORIZONTAL",
+        "height": 100,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 8,
+        "paddingBottom": 8,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -105,9 +159,9 @@
         "cornerRadius": 6
       },
       "text": {
-        "content": "Disabled",
+        "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-placeholder",
+          "token": "--color-text-disabled",
           "value": "#94a3b8"
         },
         "fontSize": 14,
@@ -117,15 +171,15 @@
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-sm-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-sm",
+        "paddingBottom": "--spacing-textarea-padding-y-sm",
         "cornerRadius": "--sizing-input-sm-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-sm-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-sm-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-sm-line-height"
       }
     },
     {
@@ -133,18 +187,18 @@
         "inputSize": "sm",
         "state": "error"
       },
-      "label": "Input sm",
+      "label": "Textarea sm error",
       "layout": {
         "width": 360,
-        "height": 36,
-        "direction": "HORIZONTAL",
+        "height": 100,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 8,
+        "paddingBottom": 8,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -159,64 +213,10 @@
         "cornerRadius": 6
       },
       "text": {
-        "content": "Invalid input",
-        "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
-        },
-        "fontSize": 14,
-        "fontWeight": 400,
-        "fontFamily": "Inter",
-        "lineHeight": 21,
-        "letterSpacing": 0
-      },
-      "tokenBindings": {
-        "minHeight": "--sizing-input-sm-height",
-        "paddingLeft": "--spacing-input-padding-x",
-        "paddingRight": "--spacing-input-padding-x",
-        "cornerRadius": "--sizing-input-sm-radius",
-        "strokeWeight": "--sizing-input-border-width",
-        "fontSize": "--sizing-input-sm-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-sm-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
-      }
-    },
-    {
-      "props": {
-        "inputSize": "sm",
-        "state": "focus"
-      },
-      "label": "Input sm",
-      "layout": {
-        "width": 360,
-        "height": 36,
-        "direction": "HORIZONTAL",
-        "paddingLeft": 16,
-        "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
-        "itemSpacing": 0,
-        "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
-      },
-      "styles": {
-        "fills": {
-          "token": "--color-input-bg",
-          "value": "#ffffff"
-        },
-        "strokes": {
-          "token": "--color-input-border-focus",
-          "value": "#0ea5e9"
-        },
-        "strokeWeight": 1,
-        "cornerRadius": 6
-      },
-      "text": {
         "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
         },
         "fontSize": 14,
         "fontWeight": 400,
@@ -225,15 +225,15 @@
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-sm-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-sm",
+        "paddingBottom": "--spacing-textarea-padding-y-sm",
         "cornerRadius": "--sizing-input-sm-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-sm-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-sm-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-sm-line-height"
       }
     },
     {
@@ -241,18 +241,18 @@
         "inputSize": "md",
         "state": "default"
       },
-      "label": "Input md",
+      "label": "Textarea md",
       "layout": {
         "width": 360,
-        "height": 40,
-        "direction": "HORIZONTAL",
+        "height": 100,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 10,
+        "paddingBottom": 10,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -269,8 +269,8 @@
       "text": {
         "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
         },
         "fontSize": 16,
         "fontWeight": 400,
@@ -279,15 +279,69 @@
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-md-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-md",
+        "paddingBottom": "--spacing-textarea-padding-y-md",
         "cornerRadius": "--sizing-input-md-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-md-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-md-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-md-line-height"
+      }
+    },
+    {
+      "props": {
+        "inputSize": "md",
+        "state": "focus"
+      },
+      "label": "Textarea md focus",
+      "layout": {
+        "width": 360,
+        "height": 100,
+        "direction": "VERTICAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-input-bg",
+          "value": "#ffffff"
+        },
+        "strokes": {
+          "token": "--color-input-border-focus",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Enter text...",
+        "fills": {
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
+        },
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "minHeight": "--sizing-textarea-min-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-md",
+        "paddingBottom": "--spacing-textarea-padding-y-md",
+        "cornerRadius": "--sizing-input-md-radius",
+        "strokeWeight": "--sizing-input-border-width-focus",
+        "fontSize": "--sizing-input-md-font-size",
+        "lineHeight": "--sizing-input-md-line-height"
       }
     },
     {
@@ -295,18 +349,18 @@
         "inputSize": "md",
         "state": "disabled"
       },
-      "label": "Input md",
+      "label": "Textarea md disabled",
       "layout": {
         "width": 360,
-        "height": 40,
-        "direction": "HORIZONTAL",
+        "height": 100,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 10,
+        "paddingBottom": 10,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -321,9 +375,9 @@
         "cornerRadius": 6
       },
       "text": {
-        "content": "Disabled",
+        "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-placeholder",
+          "token": "--color-text-disabled",
           "value": "#94a3b8"
         },
         "fontSize": 16,
@@ -333,15 +387,15 @@
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-md-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-md",
+        "paddingBottom": "--spacing-textarea-padding-y-md",
         "cornerRadius": "--sizing-input-md-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-md-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-md-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-md-line-height"
       }
     },
     {
@@ -349,18 +403,18 @@
         "inputSize": "md",
         "state": "error"
       },
-      "label": "Input md",
+      "label": "Textarea md error",
       "layout": {
         "width": 360,
-        "height": 40,
-        "direction": "HORIZONTAL",
+        "height": 100,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 10,
+        "paddingBottom": 10,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -375,64 +429,10 @@
         "cornerRadius": 6
       },
       "text": {
-        "content": "Invalid input",
-        "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
-        },
-        "fontSize": 16,
-        "fontWeight": 400,
-        "fontFamily": "Inter",
-        "lineHeight": 24,
-        "letterSpacing": 0
-      },
-      "tokenBindings": {
-        "minHeight": "--sizing-input-md-height",
-        "paddingLeft": "--spacing-input-padding-x",
-        "paddingRight": "--spacing-input-padding-x",
-        "cornerRadius": "--sizing-input-md-radius",
-        "strokeWeight": "--sizing-input-border-width",
-        "fontSize": "--sizing-input-md-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-md-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
-      }
-    },
-    {
-      "props": {
-        "inputSize": "md",
-        "state": "focus"
-      },
-      "label": "Input md",
-      "layout": {
-        "width": 360,
-        "height": 40,
-        "direction": "HORIZONTAL",
-        "paddingLeft": 16,
-        "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
-        "itemSpacing": 0,
-        "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
-      },
-      "styles": {
-        "fills": {
-          "token": "--color-input-bg",
-          "value": "#ffffff"
-        },
-        "strokes": {
-          "token": "--color-input-border-focus",
-          "value": "#0ea5e9"
-        },
-        "strokeWeight": 1,
-        "cornerRadius": 6
-      },
-      "text": {
         "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
         },
         "fontSize": 16,
         "fontWeight": 400,
@@ -441,15 +441,15 @@
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-md-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-md",
+        "paddingBottom": "--spacing-textarea-padding-y-md",
         "cornerRadius": "--sizing-input-md-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-md-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-md-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-md-line-height"
       }
     },
     {
@@ -457,18 +457,18 @@
         "inputSize": "lg",
         "state": "default"
       },
-      "label": "Input lg",
+      "label": "Textarea lg",
       "layout": {
         "width": 360,
-        "height": 44,
-        "direction": "HORIZONTAL",
+        "height": 120,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 12,
+        "paddingBottom": 12,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -485,25 +485,79 @@
       "text": {
         "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
         },
         "fontSize": 18,
         "fontWeight": 400,
         "fontFamily": "Inter",
-        "lineHeight": 27,
+        "lineHeight": 28,
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-lg-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-lg",
+        "paddingBottom": "--spacing-textarea-padding-y-lg",
         "cornerRadius": "--sizing-input-lg-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-lg-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-lg-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-lg-line-height"
+      }
+    },
+    {
+      "props": {
+        "inputSize": "lg",
+        "state": "focus"
+      },
+      "label": "Textarea lg focus",
+      "layout": {
+        "width": 360,
+        "height": 120,
+        "direction": "VERTICAL",
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "paddingBottom": 12,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-input-bg",
+          "value": "#ffffff"
+        },
+        "strokes": {
+          "token": "--color-input-border-focus",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 6
+      },
+      "text": {
+        "content": "Enter text...",
+        "fills": {
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
+        },
+        "fontSize": 18,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 28,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "minHeight": "--sizing-textarea-min-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-lg",
+        "paddingBottom": "--spacing-textarea-padding-y-lg",
+        "cornerRadius": "--sizing-input-lg-radius",
+        "strokeWeight": "--sizing-input-border-width-focus",
+        "fontSize": "--sizing-input-lg-font-size",
+        "lineHeight": "--sizing-input-lg-line-height"
       }
     },
     {
@@ -511,18 +565,18 @@
         "inputSize": "lg",
         "state": "disabled"
       },
-      "label": "Input lg",
+      "label": "Textarea lg disabled",
       "layout": {
         "width": 360,
-        "height": 44,
-        "direction": "HORIZONTAL",
+        "height": 120,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 12,
+        "paddingBottom": 12,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -537,27 +591,27 @@
         "cornerRadius": 6
       },
       "text": {
-        "content": "Disabled",
+        "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-placeholder",
+          "token": "--color-text-disabled",
           "value": "#94a3b8"
         },
         "fontSize": 18,
         "fontWeight": 400,
         "fontFamily": "Inter",
-        "lineHeight": 27,
+        "lineHeight": 28,
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-lg-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-lg",
+        "paddingBottom": "--spacing-textarea-padding-y-lg",
         "cornerRadius": "--sizing-input-lg-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-lg-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-lg-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-lg-line-height"
       }
     },
     {
@@ -565,18 +619,18 @@
         "inputSize": "lg",
         "state": "error"
       },
-      "label": "Input lg",
+      "label": "Textarea lg error",
       "layout": {
         "width": 360,
-        "height": 44,
-        "direction": "HORIZONTAL",
+        "height": 120,
+        "direction": "VERTICAL",
         "paddingLeft": 16,
         "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
+        "paddingTop": 12,
+        "paddingBottom": 12,
         "itemSpacing": 0,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
+        "counterAxisAlign": "MIN"
       },
       "styles": {
         "fills": {
@@ -591,81 +645,27 @@
         "cornerRadius": 6
       },
       "text": {
-        "content": "Invalid input",
-        "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
-        },
-        "fontSize": 18,
-        "fontWeight": 400,
-        "fontFamily": "Inter",
-        "lineHeight": 27,
-        "letterSpacing": 0
-      },
-      "tokenBindings": {
-        "minHeight": "--sizing-input-lg-height",
-        "paddingLeft": "--spacing-input-padding-x",
-        "paddingRight": "--spacing-input-padding-x",
-        "cornerRadius": "--sizing-input-lg-radius",
-        "strokeWeight": "--sizing-input-border-width",
-        "fontSize": "--sizing-input-lg-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-lg-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
-      }
-    },
-    {
-      "props": {
-        "inputSize": "lg",
-        "state": "focus"
-      },
-      "label": "Input lg",
-      "layout": {
-        "width": 360,
-        "height": 44,
-        "direction": "HORIZONTAL",
-        "paddingLeft": 16,
-        "paddingRight": 16,
-        "paddingTop": 0,
-        "paddingBottom": 0,
-        "itemSpacing": 0,
-        "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "CENTER"
-      },
-      "styles": {
-        "fills": {
-          "token": "--color-input-bg",
-          "value": "#ffffff"
-        },
-        "strokes": {
-          "token": "--color-input-border-focus",
-          "value": "#0ea5e9"
-        },
-        "strokeWeight": 1,
-        "cornerRadius": 6
-      },
-      "text": {
         "content": "Enter text...",
         "fills": {
-          "token": "--color-command-input-text",
-          "value": "#0f172a"
+          "token": "--color-input-text-placeholder",
+          "value": "#475569"
         },
         "fontSize": 18,
         "fontWeight": 400,
         "fontFamily": "Inter",
-        "lineHeight": 27,
+        "lineHeight": 28,
         "letterSpacing": 0
       },
       "tokenBindings": {
-        "minHeight": "--sizing-input-lg-height",
+        "minHeight": "--sizing-textarea-min-height",
         "paddingLeft": "--spacing-input-padding-x",
         "paddingRight": "--spacing-input-padding-x",
+        "paddingTop": "--spacing-textarea-padding-y-lg",
+        "paddingBottom": "--spacing-textarea-padding-y-lg",
         "cornerRadius": "--sizing-input-lg-radius",
         "strokeWeight": "--sizing-input-border-width",
         "fontSize": "--sizing-input-lg-font-size",
-        "fontWeight": "--font-input-weight",
-        "lineHeight": "--sizing-input-lg-line-height",
-        "letterSpacing": "--font-base-letter-spacing-normal"
+        "lineHeight": "--sizing-input-lg-line-height"
       }
     }
   ]

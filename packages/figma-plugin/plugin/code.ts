@@ -28,7 +28,7 @@ interface TokenData {
 interface ExtractedLayout {
   width: number;
   height: number;
-  direction: 'HORIZONTAL' | 'VERTICAL';
+  direction: 'HORIZONTAL' | 'VERTICAL' | 'NONE';
   paddingLeft: number;
   paddingRight: number;
   paddingTop: number;
@@ -36,6 +36,7 @@ interface ExtractedLayout {
   itemSpacing: number;
   primaryAxisAlign: string;
   counterAxisAlign: string;
+  sizing?: 'fixed' | 'fill' | 'hug';
 }
 
 interface ExtractedStyles {
@@ -58,7 +59,7 @@ interface ExtractedText {
 }
 
 interface ChildNode {
-  type: 'icon' | 'text' | 'frame' | 'close-button';
+  type: 'icon' | 'text' | 'frame' | 'close-button' | 'componentRef';
   name: string;
   layout?: ExtractedLayout;
   styles?: Partial<ExtractedStyles>;
@@ -66,6 +67,8 @@ interface ChildNode {
   iconSize?: number;
   svgData?: string;
   iconRef?: { component: string; variant: Record<string, string> };
+  componentRef?: { component: string; variant: Record<string, string> };
+  sizing?: 'fixed' | 'fill' | 'hug';
   children?: ChildNode[];
   tokenBindings?: Record<string, string>;
 }
@@ -475,28 +478,101 @@ async function createChildNodes(
 
       textNode.textAutoResize = 'WIDTH_AND_HEIGHT';
       parent.appendChild(textNode);
-      // FILL can only be set after appending to an auto-layout parent
-      textNode.layoutSizingHorizontal = 'FILL';
+      // FILL only in VERTICAL parents (text spans full width).
+      // In HORIZONTAL parents, keep HUG so text uses its natural width.
+      if (parent.layoutMode === 'VERTICAL') {
+        textNode.layoutSizingHorizontal = 'FILL';
+      }
 
     } else if (child.type === 'frame') {
-      // Nested frame with auto-layout
+      // Nested frame — auto-layout container, fixed-size element, or both
       var nestedFrame = figma.createFrame();
       nestedFrame.name = child.name;
       nestedFrame.fills = [];
 
+      // Sizing modes:
+      // direction=NONE → plain fixed-size frame (no auto-layout)
+      // direction=H/V + sizing=fixed → auto-layout with fixed dimensions (e.g. RadioButton with centered dot)
+      // direction=H/V + sizing=fill → auto-layout that fills parent width (default)
+      // direction=H/V + sizing=hug → auto-layout that hugs content
+      var isNoLayout = child.layout && child.layout.direction === 'NONE';
+      var explicitSizing = child.layout && child.layout.sizing;
+      var isFixedChild = isNoLayout || explicitSizing === 'fixed';
+
       if (child.layout) {
-        nestedFrame.layoutMode = child.layout.direction;
-        nestedFrame.primaryAxisSizingMode = 'AUTO';
-        nestedFrame.counterAxisSizingMode = 'AUTO';
-        nestedFrame.paddingLeft = child.layout.paddingLeft;
-        nestedFrame.paddingRight = child.layout.paddingRight;
-        nestedFrame.paddingTop = child.layout.paddingTop;
-        nestedFrame.paddingBottom = child.layout.paddingBottom;
-        nestedFrame.itemSpacing = child.layout.itemSpacing;
-        nestedFrame.primaryAxisAlignItems = (child.layout.primaryAxisAlign || 'MIN') as
-          'MIN' | 'CENTER' | 'MAX' | 'SPACE_BETWEEN';
-        nestedFrame.counterAxisAlignItems = (child.layout.counterAxisAlign || 'MIN') as
-          'MIN' | 'CENTER' | 'MAX';
+        if (child.layout.direction !== 'NONE') {
+          // Set auto-layout (works for both fixed and fill sizing)
+          nestedFrame.layoutMode = child.layout.direction;
+          nestedFrame.paddingLeft = child.layout.paddingLeft;
+          nestedFrame.paddingRight = child.layout.paddingRight;
+          nestedFrame.paddingTop = child.layout.paddingTop;
+          nestedFrame.paddingBottom = child.layout.paddingBottom;
+          nestedFrame.itemSpacing = child.layout.itemSpacing;
+          nestedFrame.primaryAxisAlignItems = (child.layout.primaryAxisAlign || 'MIN') as
+            'MIN' | 'CENTER' | 'MAX' | 'SPACE_BETWEEN';
+          nestedFrame.counterAxisAlignItems = (child.layout.counterAxisAlign || 'MIN') as
+            'MIN' | 'CENTER' | 'MAX';
+
+          if (explicitSizing === 'fixed') {
+            // Auto-layout + fixed size (e.g. RadioButton: centers dot but stays 20x20)
+            nestedFrame.resize(child.layout.width, child.layout.height);
+            nestedFrame.primaryAxisSizingMode = 'FIXED';
+            nestedFrame.counterAxisSizingMode = 'FIXED';
+          } else {
+            nestedFrame.primaryAxisSizingMode = 'AUTO';
+            nestedFrame.counterAxisSizingMode = 'AUTO';
+          }
+        } else {
+          // Plain fixed-size frame (no auto-layout at all)
+          nestedFrame.resize(child.layout.width, child.layout.height);
+        }
+      }
+
+      // Apply fills with optional variable binding
+      if (child.styles && child.styles.fills) {
+        var childFillHex = child.styles.fills.value;
+        if (childFillHex && childFillHex !== 'transparent') {
+          var childFillPaint = hexToSolidPaint(childFillHex);
+          if (childFillPaint) {
+            nestedFrame.fills = [childFillPaint];
+            if (child.styles.fills.token) {
+              var childFillVar = variableMap.get(child.styles.fills.token);
+              if (childFillVar) {
+                var boundChildFill = figma.variables.setBoundVariableForPaint(
+                  childFillPaint, 'color', childFillVar
+                );
+                nestedFrame.fills = [boundChildFill];
+              }
+            }
+          }
+        }
+      }
+
+      // Apply strokes with optional variable binding
+      if (child.styles && child.styles.strokes) {
+        var childStrokeHex = child.styles.strokes.value;
+        var childStrokePaint = hexToSolidPaint(childStrokeHex);
+        if (childStrokePaint) {
+          nestedFrame.strokes = [childStrokePaint];
+          nestedFrame.strokeAlign = 'INSIDE';
+          if (child.styles.strokeWeight) {
+            nestedFrame.strokeWeight = child.styles.strokeWeight;
+          }
+          if (child.styles.strokes.token) {
+            var childStrokeVar = variableMap.get(child.styles.strokes.token);
+            if (childStrokeVar) {
+              var boundChildStroke = figma.variables.setBoundVariableForPaint(
+                childStrokePaint, 'color', childStrokeVar
+              );
+              nestedFrame.strokes = [boundChildStroke];
+            }
+          }
+        }
+      }
+
+      // Apply corner radius
+      if (child.styles && child.styles.cornerRadius) {
+        nestedFrame.cornerRadius = child.styles.cornerRadius;
       }
 
       // Bind child frame numeric properties to variables
@@ -505,6 +581,8 @@ async function createChildNodes(
           ['paddingLeft', 'paddingLeft'], ['paddingRight', 'paddingRight'],
           ['paddingTop', 'paddingTop'], ['paddingBottom', 'paddingBottom'],
           ['itemSpacing', 'itemSpacing'],
+          ['width', 'width'], ['height', 'height'],
+          ['minHeight', 'minHeight'],
         ];
         for (var cbi = 0; cbi < childNumBindings.length; cbi++) {
           var cbKey = childNumBindings[cbi][0];
@@ -517,6 +595,17 @@ async function createChildNodes(
             }
           }
         }
+        // Corner radius binding (all 4 corners)
+        var childRadiusToken = child.tokenBindings['cornerRadius'];
+        if (childRadiusToken) {
+          var childRadiusVar = variableMap.get(childRadiusToken);
+          if (childRadiusVar) {
+            nestedFrame.setBoundVariable('topLeftRadius' as VariableBindableNodeField, childRadiusVar);
+            nestedFrame.setBoundVariable('topRightRadius' as VariableBindableNodeField, childRadiusVar);
+            nestedFrame.setBoundVariable('bottomLeftRadius' as VariableBindableNodeField, childRadiusVar);
+            nestedFrame.setBoundVariable('bottomRightRadius' as VariableBindableNodeField, childRadiusVar);
+          }
+        }
       }
 
       // Recursively create children
@@ -525,8 +614,13 @@ async function createChildNodes(
       }
 
       parent.appendChild(nestedFrame);
-      // FILL can only be set after appending to an auto-layout parent
-      nestedFrame.layoutSizingHorizontal = 'FILL';
+      // Sizing after appending to auto-layout parent
+      if (isFixedChild) {
+        nestedFrame.layoutSizingHorizontal = 'FIXED';
+        nestedFrame.layoutSizingVertical = 'FIXED';
+      } else {
+        nestedFrame.layoutSizingHorizontal = 'FILL';
+      }
 
     } else if (child.type === 'close-button') {
       // Close button: frame containing Icon instance (X) or fallback
@@ -637,6 +731,25 @@ async function createChildNodes(
       }
 
       parent.appendChild(closeFrame);
+
+    } else if (child.type === 'componentRef' && child.componentRef) {
+      // Create an instance of another ComponentSet
+      var refInstance = findAndCreateInstance(
+        child.componentRef.component,
+        child.componentRef.variant
+      );
+      if (refInstance) {
+        refInstance.name = child.name;
+        parent.appendChild(refInstance);
+        // Sizing: default to FILL, unless explicitly fixed or hug
+        var refSizing = child.sizing || 'fill';
+        if (refSizing === 'fill') {
+          refInstance.layoutSizingHorizontal = 'FILL';
+        } else if (refSizing === 'hug') {
+          refInstance.layoutSizingHorizontal = 'HUG';
+        }
+        // else 'fixed' — keep instance's intrinsic size
+      }
     }
   }
 }
@@ -924,10 +1037,11 @@ async function importComponent(
     component.name = variantName;
 
     // Configure auto-layout
-    var isFixedSizeComponent = data.name === 'Icon' || data.name === 'Checkbox';
+    var isFixedSizeComponent = data.name === 'Icon' || data.name === 'Checkbox'
+      || data.name === 'Switch';
     component.layoutMode = combo.layout.direction;
     if (isFixedSizeComponent) {
-      // Fixed-size: Icon (SVG vector), Checkbox (20×20 box)
+      // Fixed-size: Icon (SVG vector), Checkbox (20×20 box), Switch (44×24 track)
       component.primaryAxisSizingMode = 'FIXED';
       component.counterAxisSizingMode = 'FIXED';
       component.resize(combo.layout.width, combo.layout.height);
@@ -936,6 +1050,10 @@ async function importComponent(
       component.counterAxisSizingMode = 'AUTO';
       // Set min height from extracted data
       component.minHeight = combo.layout.height;
+      // Set min width for horizontal components so they look like proper form elements
+      if (combo.layout.direction === 'HORIZONTAL' && combo.layout.width > 0) {
+        component.minWidth = combo.layout.width;
+      }
     }
     component.paddingLeft = combo.layout.paddingLeft;
     component.paddingRight = combo.layout.paddingRight;

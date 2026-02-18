@@ -1,0 +1,323 @@
+{
+  "name": "Switch",
+  "category": "atoms",
+  "extractedAt": "2026-02-17T12:00:00.000Z",
+  "variants": {
+    "state": [
+      "unchecked",
+      "checked"
+    ],
+    "disabled": [
+      "false",
+      "true"
+    ]
+  },
+  "defaultVariant": {
+    "state": "unchecked",
+    "disabled": "false"
+  },
+  "combinations": [
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "false"
+      },
+      "label": "unchecked",
+      "layout": {
+        "width": 44,
+        "height": 24,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 2,
+        "paddingRight": 22,
+        "paddingTop": 2,
+        "paddingBottom": 2,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-switch-track-bg",
+          "value": "#cbd5e1"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "",
+        "fills": { "token": null, "value": "" },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "frame",
+          "name": "Thumb",
+          "layout": {
+            "width": 20,
+            "height": 20,
+            "direction": "NONE",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 0,
+            "primaryAxisAlign": "CENTER",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-switch-thumb-bg",
+              "value": "#ffffff"
+            },
+            "strokes": null,
+            "strokeWeight": 0,
+            "cornerRadius": 9999
+          },
+          "tokenBindings": {
+            "width": "--sizing-switch-thumb-size",
+            "height": "--sizing-switch-thumb-size",
+            "cornerRadius": "--radius-component-full"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-switch-track-width",
+        "height": "--sizing-switch-track-height",
+        "cornerRadius": "--radius-component-full",
+        "fills": "--color-switch-track-bg"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "false"
+      },
+      "label": "checked",
+      "layout": {
+        "width": 44,
+        "height": 24,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 22,
+        "paddingRight": 2,
+        "paddingTop": 2,
+        "paddingBottom": 2,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "MAX",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-switch-track-bg-checked",
+          "value": "#0ea5e9"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 9999
+      },
+      "text": {
+        "content": "",
+        "fills": { "token": null, "value": "" },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "frame",
+          "name": "Thumb",
+          "layout": {
+            "width": 20,
+            "height": 20,
+            "direction": "NONE",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 0,
+            "primaryAxisAlign": "CENTER",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-switch-thumb-bg",
+              "value": "#ffffff"
+            },
+            "strokes": null,
+            "strokeWeight": 0,
+            "cornerRadius": 9999
+          },
+          "tokenBindings": {
+            "width": "--sizing-switch-thumb-size",
+            "height": "--sizing-switch-thumb-size",
+            "cornerRadius": "--radius-component-full"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-switch-track-width",
+        "height": "--sizing-switch-track-height",
+        "cornerRadius": "--radius-component-full",
+        "fills": "--color-switch-track-bg-checked"
+      }
+    },
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "true"
+      },
+      "label": "unchecked disabled",
+      "layout": {
+        "width": 44,
+        "height": 24,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 2,
+        "paddingRight": 22,
+        "paddingTop": 2,
+        "paddingBottom": 2,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-switch-disabled-track-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 9999,
+        "opacity": 0.5
+      },
+      "text": {
+        "content": "",
+        "fills": { "token": null, "value": "" },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "frame",
+          "name": "Thumb",
+          "layout": {
+            "width": 20,
+            "height": 20,
+            "direction": "NONE",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 0,
+            "primaryAxisAlign": "CENTER",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-switch-thumb-bg",
+              "value": "#ffffff"
+            },
+            "strokes": null,
+            "strokeWeight": 0,
+            "cornerRadius": 9999
+          },
+          "tokenBindings": {
+            "width": "--sizing-switch-thumb-size",
+            "height": "--sizing-switch-thumb-size",
+            "cornerRadius": "--radius-component-full"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-switch-track-width",
+        "height": "--sizing-switch-track-height",
+        "cornerRadius": "--radius-component-full",
+        "fills": "--color-switch-disabled-track-bg"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "true"
+      },
+      "label": "checked disabled",
+      "layout": {
+        "width": 44,
+        "height": 24,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 22,
+        "paddingRight": 2,
+        "paddingTop": 2,
+        "paddingBottom": 2,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "MAX",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-switch-disabled-track-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 9999,
+        "opacity": 0.5
+      },
+      "text": {
+        "content": "",
+        "fills": { "token": null, "value": "" },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "frame",
+          "name": "Thumb",
+          "layout": {
+            "width": 20,
+            "height": 20,
+            "direction": "NONE",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "itemSpacing": 0,
+            "primaryAxisAlign": "CENTER",
+            "counterAxisAlign": "CENTER"
+          },
+          "styles": {
+            "fills": {
+              "token": "--color-switch-thumb-bg",
+              "value": "#ffffff"
+            },
+            "strokes": null,
+            "strokeWeight": 0,
+            "cornerRadius": 9999
+          },
+          "tokenBindings": {
+            "width": "--sizing-switch-thumb-size",
+            "height": "--sizing-switch-thumb-size",
+            "cornerRadius": "--radius-component-full"
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-switch-track-width",
+        "height": "--sizing-switch-track-height",
+        "cornerRadius": "--radius-component-full",
+        "fills": "--color-switch-disabled-track-bg"
+      }
+    }
+  ]
+}

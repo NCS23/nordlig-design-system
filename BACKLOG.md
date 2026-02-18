@@ -100,9 +100,47 @@ Kontext, Entscheidungen, Blocker, offene Fragen.
 
 ---
 
+## Epic-Uebersicht
+
+> 8 Epics strukturieren die gesamte Roadmap. Gitea-Labels: `epic/0` bis `epic/7`.
+> Gitea-Issues: #26-#33 (Epic-Overviews), #34-#70 (Stories).
+
+| Epic | Titel | Stories | Gitea |
+|------|-------|---------|-------|
+| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-030, NDS-031, NDS-032 | `epic/0-architecture` |
+| **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-046 | `epic/1-components` |
+| **2** | Templates & Page Layouts | NDS-050–NDS-057 | `epic/2-templates` |
+| **3** | Patterns & Recipes | NDS-060–NDS-065 | `epic/3-patterns` |
+| **4** | Figma Pipeline & Form Builder | NDS-070–NDS-074 | `epic/4-figma` |
+| **5** | Testing & QA | NDS-008, NDS-009, NDS-016, NDS-080 | `epic/5-testing` |
+| **6** | DX & Infrastruktur | NDS-014, NDS-015, NDS-090–NDS-092 | `epic/6-dx-infra` |
+| **7** | Dokumentation & Onboarding | NDS-100–NDS-103 | `epic/7-docs` |
+
+### Atomaritaets-Violations (Epic 0 Scope)
+
+Folgende Komponenten sind falsch klassifiziert und muessen verschoben werden:
+
+| Komponente | Aktuell | Korrekt | Grund |
+|------------|---------|---------|-------|
+| LoadingOverlay | atom | molecule | Importiert Spinner (Atom) |
+| SearchInput | atom | molecule | Importiert Input + Icon (Atoms) |
+| PasswordInput | atom | molecule | Importiert Input + Button (Atoms) |
+| CheckboxField | atom | molecule | Importiert Checkbox + Label (Atoms) |
+| SwitchField | atom | molecule | Importiert Switch + Label (Atoms) |
+| ProgressField | atom | molecule | Importiert Progress + Label (Atoms) |
+
+### Fehlende Layer (Epic 2 + 3)
+
+| Layer | Beschreibung | Beispiele |
+|-------|-------------|-----------|
+| **Template** | Page-Level Layouts, definieren Slot-Positionen | PageShell, AuthLayout, DashboardLayout |
+| **Pattern** | Wiederverwendbare Interaktionsmuster aus mehreren Komponenten | SearchFilter, DataTable, FormWizard |
+
+---
+
 ## Backlog
 
-> Stories die noch nicht begonnen wurden, absteigend nach Prioritaet sortiert.
+> Stories die noch nicht begonnen wurden, gegliedert nach Epics.
 
 ### [NDS-001] Toggle (Atom) — P1
 
@@ -1143,6 +1181,224 @@ Extractor erweitert, `_disabled` Hack durch `opacity: 0.5` ersetzt.
 
 ---
 
+### Epic 0 — Architektur-Bereinigung (neue Stories)
+
+#### [NDS-030] Atomaritaets-Refactoring — Atoms zu Molecules verschieben (#34)
+
+**Status:** Backlog | **Size:** M | **Epic:** 0
+LoadingOverlay, SearchInput, PasswordInput von `atoms/` nach `molecules/` verschieben.
+Alle Imports, Barrel-Exports, Tests und Stories anpassen.
+
+#### [NDS-031] Field-Komponenten als Molecules klassifizieren (#35)
+
+**Status:** Backlog | **Size:** M | **Epic:** 0
+CheckboxField, SwitchField, ProgressField von `atoms/` nach `molecules/` verschieben.
+
+#### [NDS-032] Token-Audit — hardcoded Werte durch Tokens ersetzen (#36)
+
+**Status:** Backlog | **Size:** L | **Epic:** 0
+Ergaenzt NDS-019. Alle verbleibenden hardcoded Farben/Abstande/Schriftgroessen durch `var(--*)` ersetzen.
+
+---
+
+### Epic 1 — Fehlende Kern-Komponenten (neue Stories)
+
+#### [NDS-040] Accordion (Atom) (#37)
+
+**Status:** Backlog | **Size:** M | **Epic:** 1
+Aufklappbare Inhaltsabschnitte. Single-/Multi-Expand, Keyboard-Navigation, ARIA.
+
+#### [NDS-041] Tabs (Molecule) (#38)
+
+**Status:** Backlog | **Size:** M | **Epic:** 1
+Tab-Panels. Horizontal/Vertical, Keyboard-Navigation, Varianten: line/enclosed/soft-rounded.
+
+#### [NDS-042] Stepper/Wizard (Molecule) (#39)
+
+**Status:** Backlog | **Size:** M | **Epic:** 1
+Mehrstufige Prozesse. States: completed/active/upcoming/error, Connector-Linien.
+
+#### [NDS-043] Toast/Snackbar (Atom) (#40)
+
+**Status:** Backlog | **Size:** L | **Epic:** 1
+Temporaere Benachrichtigungen. Auto-dismiss, Stacking, `useToast()` Hook.
+
+#### [NDS-044] Popover (Atom) (#41)
+
+**Status:** Backlog | **Size:** M | **Epic:** 1
+Kontextuelle schwebende Panels. Click/Hover Trigger, Focus-Trap, Placement.
+
+#### [NDS-045] Drawer/Sheet (Molecule) (#42)
+
+**Status:** Backlog | **Size:** M | **Epic:** 1
+Seitliche Panels. Positionen: left/right/top/bottom, Groessen: sm/md/lg/full.
+
+#### [NDS-046] DropdownMenu (Molecule) (#43)
+
+**Status:** Backlog | **Size:** M | **Epic:** 1
+Kontextuelle Aktionsmenues. Sub-Menus, Icons, Shortcuts, Keyboard-Navigation.
+
+---
+
+### Epic 2 — Templates & Page Layouts
+
+#### [NDS-050] PageShell Template (#44)
+
+**Status:** Backlog | **Size:** L | **Epic:** 2
+Header + Sidebar + Content + Footer. Responsive, Sticky Header, konfigurierbare Sidebar-Breite.
+
+#### [NDS-051] AuthLayout Template (#45)
+
+**Status:** Backlog | **Size:** M | **Epic:** 2
+Zentriertes Login/Register. Logo-Slot, Form-Bereich, Footer-Links.
+
+#### [NDS-052] DashboardLayout Template (#46)
+
+**Status:** Backlog | **Size:** L | **Epic:** 2
+Sidebar-Navigation + Content. Collapsible Sidebar, Active-State, Breadcrumb.
+
+#### [NDS-053] FormPage Template (#47)
+
+**Status:** Backlog | **Size:** M | **Epic:** 2
+Formular-Seite mit Titel, Stepper, Action-Bar. Sticky Actions, Unsaved-Changes-Warning.
+
+#### [NDS-054] DetailPage Template (#48)
+
+**Status:** Backlog | **Size:** M | **Epic:** 2
+Header + Content + Sidebar. Badges, Action-Buttons, Breadcrumb.
+
+#### [NDS-055] ListPage Template (#49)
+
+**Status:** Backlog | **Size:** M | **Epic:** 2
+Filter + Tabelle + Pagination. Empty-State, Bulk-Actions.
+
+#### [NDS-056] ErrorPage Template (#50)
+
+**Status:** Backlog | **Size:** S | **Epic:** 2
+404, 500, Maintenance. Illustration + Fehlercode + CTA.
+
+#### [NDS-057] EmptyState Template (#51)
+
+**Status:** Backlog | **Size:** S | **Epic:** 2
+Illustration + Text + CTA. Varianten: no-data, no-results, error, first-use.
+
+---
+
+### Epic 3 — Patterns & Recipes
+
+#### [NDS-060] SearchFilter Pattern (#52)
+
+**Status:** Backlog | **Size:** M | **Epic:** 3
+SearchInput + Filter-Chips + Reset. Active-Filter-Count Badge.
+
+#### [NDS-061] DataTable Pattern (#53)
+
+**Status:** Backlog | **Size:** L | **Epic:** 3
+Table + Sort + Pagination + BulkActions. Loading-State, Empty-State.
+
+#### [NDS-062] FormWizard Pattern (#54)
+
+**Status:** Backlog | **Size:** L | **Epic:** 3
+Stepper + Forms + Validation + Submit. Step-Validierung, Summary-Step.
+
+#### [NDS-063] ConfirmDialog Pattern (#55)
+
+**Status:** Backlog | **Size:** S | **Epic:** 3
+Modal + Warnung + Actions. `useConfirm()` Hook, Varianten: warning/danger/info.
+
+#### [NDS-064] FileUploadZone Pattern (#56)
+
+**Status:** Backlog | **Size:** M | **Epic:** 3
+Drag&Drop + Preview + Progress. Datei-Validierung, Remove/Delete.
+
+#### [NDS-065] NotificationCenter Pattern (#57)
+
+**Status:** Backlog | **Size:** L | **Epic:** 3
+Toast-Stack + History. Read/Unread States, Badge Counter.
+
+---
+
+### Epic 4 — Figma Pipeline & Form Builder
+
+#### [NDS-070] Figma Export — alle neuen Komponenten (#58)
+
+**Status:** Backlog | **Size:** L | **Epic:** 4
+Alle neuen Komponenten als JSON-Exports fuer Figma DS Import Plugin.
+
+#### [NDS-071] Form Builder — RadioGroup/FileUpload/Slider (#59)
+
+**Status:** Backlog | **Size:** M | **Epic:** 4
+Fehlende Feldtypen im Form Builder ergaenzen.
+
+#### [NDS-072] Form Builder — Conditional Fields (#60)
+
+**Status:** Backlog | **Size:** M | **Epic:** 4
+Show/Hide-Logik fuer bedingte Felder.
+
+#### [NDS-073] Form Builder — Multi-Step Forms (#61)
+
+**Status:** Backlog | **Size:** L | **Epic:** 4
+Wizard-Flows mit Stepper, Step-Frames, Weiter/Zurueck.
+
+#### [NDS-074] Figma Plugin — Auto-Update bei Token-Aenderungen (#62)
+
+**Status:** Backlog | **Size:** XL | **Epic:** 4
+Token-Diff-Erkennung, Batch-Update, Preview, Rollback.
+
+---
+
+### Epic 5 — Testing & QA
+
+#### [NDS-080] Visual Regression Tests fuer alle Komponenten (#63)
+
+**Status:** Backlog | **Size:** XL | **Epic:** 5
+Playwright-Tests fuer alle Stories inkl. Dark-Mode. CI-Integration.
+
+---
+
+### Epic 6 — DX & Infrastruktur
+
+#### [NDS-090] Monorepo Build-Optimierung (#64)
+
+**Status:** Backlog | **Size:** L | **Epic:** 6
+Turborepo/Nx evaluieren, Caching, inkrementelle Builds.
+
+#### [NDS-091] Changeset-basiertes Versioning (#65)
+
+**Status:** Backlog | **Size:** M | **Epic:** 6
+@changesets/cli, automatische CHANGELOG.md, Semver.
+
+#### [NDS-092] CI/CD Pipeline (#66)
+
+**Status:** Backlog | **Size:** L | **Epic:** 6
+Gitea Actions: Lint + Test + Build + Publish. Storybook PR-Preview.
+
+---
+
+### Epic 7 — Dokumentation & Onboarding
+
+#### [NDS-100] Storybook Docs — Usage Guidelines (#67)
+
+**Status:** Backlog | **Size:** XL | **Epic:** 7
+MDX-Docs pro Komponente: Wann verwenden, Do/Don't, Code-Beispiele, a11y-Hinweise.
+
+#### [NDS-101] Contribution Guide (#68)
+
+**Status:** Backlog | **Size:** M | **Epic:** 7
+CONTRIBUTING.md: Setup, 7-Schritt-Workflow, Code-Style, PR-Prozess.
+
+#### [NDS-102] Token-Dokumentation (#69)
+
+**Status:** Backlog | **Size:** M | **Epic:** 7
+4-Layer-Architektur, Naming-Konventionen, Mapping-Tabelle, Dark-Mode-Strategie.
+
+#### [NDS-103] Migration Guide v0 → v1 (#70)
+
+**Status:** Backlog | **Size:** M | **Epic:** 7
+Breaking Changes, Schritt-fuer-Schritt-Anleitung, Codemods.
+
+---
+
 ## In Progress
 
 > Stories die aktuell in Bearbeitung sind. Maximal 5 gleichzeitig (1 Batch).
@@ -1203,3 +1459,4 @@ Table, Timeline, Tree
 | 2026-02-16 | **Figma Export DoR/DoD eingefuehrt.** Neuer Story-Typ fuer Figma-Export-Aufgaben mit spezialisierter Checkliste (Token-Vollstaendigkeit, Binding-Verifikation gegen Button-Referenz, SVG-Regeln). |
 | 2026-02-16 | **Figma Export Batch Done:** NDS-022 (Badge lineHeight), NDS-023 (Input border-width + lineHeight + letterSpacing), NDS-024 (Checkbox SVG hex + width/height + border-width), NDS-025 (CheckboxField gaps + lineHeights + disabled fix). 12 neue L4-Tokens, 3 neue L3/L2-Tokens, 6 Extractor-Fixes. FIGMA_EXPORT_RULES.md um 4 neue Regeln + 7 Anti-Patterns erweitert. |
 | 2026-02-16 | **Figma Post-Import Fixes:** (1) CheckboxField TextStyles: `hasChildren` vor `hasTextContent` Bedingung gefixt → Label/Description TextStyles werden jetzt erstellt. (2) Checkbox: Hover-Varianten (`interaction: default\|hover`) hinzugefuegt → 9 Kombinationen statt 6. Corner Radius: `clipsContent=true` fuer SVG-Varianten. (3) Variable-Hierarchie: `classifyTokenLevel()` in extract-tokens.ts, Level-Prefix (L1 Base/L2 Global/L3 Role/L4 Component) auf allen Figma-Variablen. Reverse-Lookup in code.ts angepasst. FIGMA_EXPORT_RULES.md um 4 neue Regeln + 4 Anti-Patterns erweitert. |
+| 2026-02-17 | **Epic-Struktur eingefuehrt:** 8 Epics (0-7) mit 37 neuen Stories (NDS-030 bis NDS-103). Neue Layer: Templates (Epic 2, 8 Stories) und Patterns (Epic 3, 6 Stories). Atomaritaets-Audit: 6 Violations identifiziert (NDS-030, NDS-031). Gitea: 15 neue Labels (epic/*, layer/template, layer/pattern, size/*), 8 Epic-Overview-Issues (#26-#33), 37 Story-Issues (#34-#70), alle bestehenden Issues mit Epic-Labels getaggt. |

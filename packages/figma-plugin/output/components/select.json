@@ -1,0 +1,444 @@
+{
+  "name": "Select",
+  "category": "molecules",
+  "extractedAt": "2026-02-17T12:00:00.000Z",
+  "variants": {
+    "inputSize": ["sm", "md", "lg"],
+    "state": ["default", "focus", "disabled", "error"]
+  },
+  "defaultVariant": {
+    "inputSize": "md",
+    "state": "default"
+  },
+  "combinations": [
+    {
+      "props": { "inputSize": "sm", "state": "default" },
+      "label": "Select sm",
+      "layout": {
+        "width": 360, "height": 36, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border", "value": "#cbd5e1" },
+        "strokeWeight": 1, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 14, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-sm-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-sm-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "sm", "state": "focus" },
+      "label": "Select sm focus",
+      "layout": {
+        "width": 360, "height": 36, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border-focus", "value": "#0ea5e9" },
+        "strokeWeight": 2, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 14, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-sm-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-sm-radius"
+      }
+    },
+    {
+      "props": { "inputSize": "sm", "state": "disabled" },
+      "label": "Select sm disabled",
+      "layout": {
+        "width": 360, "height": 36, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-disabled-bg", "value": "#f1f5f9" },
+        "strokes": { "token": "--color-input-border", "value": "#cbd5e1" },
+        "strokeWeight": 1, "cornerRadius": 6, "opacity": 0.5
+      },
+      "text": { "content": "", "fills": { "value": "#94a3b8" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+            "fontSize": 14, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-text-disabled", "value": "#94a3b8" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-sm-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-sm-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "sm", "state": "error" },
+      "label": "Select sm error",
+      "layout": {
+        "width": 360, "height": 36, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border-error", "value": "#ef4444" },
+        "strokeWeight": 1, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 14, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-sm-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-sm-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "md", "state": "default" },
+      "label": "Select md",
+      "layout": {
+        "width": 360, "height": 40, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border", "value": "#cbd5e1" },
+        "strokeWeight": 1, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 16, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 24, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-md-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-md-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "md", "state": "focus" },
+      "label": "Select md focus",
+      "layout": {
+        "width": 360, "height": 40, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border-focus", "value": "#0ea5e9" },
+        "strokeWeight": 2, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 16, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 24, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-md-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-md-radius"
+      }
+    },
+    {
+      "props": { "inputSize": "md", "state": "disabled" },
+      "label": "Select md disabled",
+      "layout": {
+        "width": 360, "height": 40, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-disabled-bg", "value": "#f1f5f9" },
+        "strokes": { "token": "--color-input-border", "value": "#cbd5e1" },
+        "strokeWeight": 1, "cornerRadius": 6, "opacity": 0.5
+      },
+      "text": { "content": "", "fills": { "value": "#94a3b8" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+            "fontSize": 16, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 24, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-text-disabled", "value": "#94a3b8" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-md-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-md-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "md", "state": "error" },
+      "label": "Select md error",
+      "layout": {
+        "width": 360, "height": 40, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border-error", "value": "#ef4444" },
+        "strokeWeight": 1, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 16, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 24, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 16,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-md-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-md-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "lg", "state": "default" },
+      "label": "Select lg",
+      "layout": {
+        "width": 360, "height": 44, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border", "value": "#cbd5e1" },
+        "strokeWeight": 1, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 18, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 28, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 20,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-lg-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-lg-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "lg", "state": "focus" },
+      "label": "Select lg focus",
+      "layout": {
+        "width": 360, "height": 44, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border-focus", "value": "#0ea5e9" },
+        "strokeWeight": 2, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 18, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 28, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 20,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-lg-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-lg-radius"
+      }
+    },
+    {
+      "props": { "inputSize": "lg", "state": "disabled" },
+      "label": "Select lg disabled",
+      "layout": {
+        "width": 360, "height": 44, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-disabled-bg", "value": "#f1f5f9" },
+        "strokes": { "token": "--color-input-border", "value": "#cbd5e1" },
+        "strokeWeight": 1, "cornerRadius": 6, "opacity": 0.5
+      },
+      "text": { "content": "", "fills": { "value": "#94a3b8" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+            "fontSize": 18, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 28, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 20,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-text-disabled", "value": "#94a3b8" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-lg-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-lg-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    },
+    {
+      "props": { "inputSize": "lg", "state": "error" },
+      "label": "Select lg error",
+      "layout": {
+        "width": 360, "height": 44, "direction": "HORIZONTAL",
+        "paddingLeft": 16, "paddingRight": 12, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 8, "primaryAxisAlign": "SPACE_BETWEEN", "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": { "token": "--color-select-trigger-bg", "value": "#ffffff" },
+        "strokes": { "token": "--color-input-border-error", "value": "#ef4444" },
+        "strokeWeight": 1, "cornerRadius": 6
+      },
+      "text": { "content": "", "fills": { "value": "#475569" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "Placeholder",
+          "text": {
+            "content": "Option waehlen...",
+            "fills": { "token": "--color-select-trigger-placeholder", "value": "#475569" },
+            "fontSize": 18, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 28, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "icon", "name": "ChevronDown", "iconSize": 20,
+          "svgData": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+          "styles": { "fills": { "token": "--color-select-icon", "value": "#475569" } }
+        }
+      ],
+      "tokenBindings": {
+        "minHeight": "--sizing-input-lg-height",
+        "paddingLeft": "--spacing-input-padding-x",
+        "cornerRadius": "--sizing-input-lg-radius",
+        "strokeWeight": "--sizing-input-border-width"
+      }
+    }
+  ]
+}
