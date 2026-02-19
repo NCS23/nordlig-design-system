@@ -773,7 +773,7 @@ optionalem Alpha-Slider. Unterstuetzt Hex, RGB, HSL Formate.
 
 ### [NDS-014] Component Generator CLI (Infrastructure) — P1
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P1 (kritisch) — Spart bei jeder neuen Komponente 15-20 Min Setup
 **Prefix:** — | **Blueprint:** keiner
 **Dependencies:** keine neuen (Node.js Scripts)
@@ -783,22 +783,23 @@ CLI-Tool zum Scaffolding neuer Komponenten. Generiert alle Dateien des 7-Schritt
 aus Templates: Token-JSON, TSX, Test, Stories, Index.
 
 **Akzeptanzkriterien:**
-- [ ] `pnpm generate:component` interaktiv (Name, Level, Prefix)
-- [ ] Generiert: Token-JSON, Component.tsx, Component.test.tsx, Component.stories.tsx, index.ts
-- [ ] Templates folgen allen Projektkonventionen (forwardRef, displayName, cn/cva, var(--*))
-- [ ] Test-Template mit Standard-Tests (Rendering, ref, className, displayName, Token-Klassen)
+- [x] `pnpm generate:component` interaktiv (Name, Level, Prefix)
+- [x] Generiert: Token-JSON, Component.tsx, Component.test.tsx, Component.stories.tsx, index.ts
+- [x] Templates folgen allen Projektkonventionen (forwardRef, displayName, cn/cva, var(--*))
+- [x] Test-Template mit Standard-Tests (Rendering, ref, className, displayName, Token-Klassen)
 
 **Task Breakdown:**
-- [ ] 1. Script `scripts/generate-component.mjs` erstellen
-- [ ] 2. Templates fuer alle 5 Dateitypen definieren
-- [ ] 3. `pnpm generate:component` Script in root package.json eintragen
-- [ ] 4. Testen: Dummy-Komponente generieren, pruefen, loeschen
-- [ ] 5. README-Abschnitt zum Generator schreiben
+- [x] 1. Script `scripts/generate-component.mjs` erstellen
+- [x] 2. Templates fuer alle 5 Dateitypen definieren
+- [x] 3. `pnpm generate:component` Script in root package.json eintragen
+- [x] 4. Testen: Dummy-Komponente generieren, pruefen, loeschen
+- [ ] 5. README-Abschnitt zum Generator schreiben (uebersprungen — kein separates README noetig)
 
 **Notizen:**
-- Reines Node.js Script mit `readline` fuer Prompts — kein externes Framework noetig.
+- Reines Node.js Script mit `readline` fuer Prompts + CLI-Argumente (`--name=X --level=Y`).
 - Templates als Template-Literals im Script, nicht als separate Dateien.
-- Sollte auch in MEMORY.md dokumentiert werden.
+- Unterstuetzt 9 HTML-Elemente: div, span, button, section, nav, aside, article, ul, ol.
+- Validierung: PascalCase (Name), kebab-case (Prefix), Level, Element-Typ, Duplikat-Erkennung.
 
 ---
 
@@ -1514,3 +1515,4 @@ Table, Timeline, Tree
 | 2026-02-19 | **NDS-019 Batch 1 Done:** Phase 0: 5 neue L3-Tokens (font-weight x4, font-size xs) + 2 heading-size L3-Tokens. 9 Atoms refactored (Alert, Badge, Blockquote, Code, Checkbox, Heading, Label, Kbd, Tag), Link skipped (nichts im Scope). 7 L4-Token-Dateien, 8 TSX, 5 Test-Dateien (16 Assertions). Scope: font-weight, font-size, border-width (NICHT padding/gap/ring). 1466/1466 Tests, Storybook OK. |
 | 2026-02-19 | **NDS-019 Batch 2 Done:** 12 weitere Atoms refactored (Avatar, Banner, Text, Spinner, NumberInput, Switch, Progress, Toggle, Slider, ToggleGroup, InputOTP, Button). 12 L4-Token-Dateien aktualisiert/erstellt (text.json neu), 12 TSX, 2 Test-Dateien (4+5 Assertions). Alle Atoms jetzt 100% tokenisiert (font-weight, font-size, border-width, border-radius). 1466/1466 Tests, Storybook OK. |
 | 2026-02-19 | **NDS-019 Done:** Scan von Molecules + Organisms ergab 0 verbleibende hardcoded Werte im Scope (font-weight, font-size, border-width, border-radius). Gesamtbilanz: 7 neue L3-Tokens, 21 Atoms refactored, 19 L4-Token-Dateien aktualisiert/erstellt (heading.json + text.json neu), 20 TSX-Dateien, 7 Test-Dateien (20 Assertions). Token-Collisions: 91. |
+| 2026-02-19 | **NDS-014 Done:** Component Generator CLI (`scripts/generate-component.mjs`). Interaktiv (readline) + CLI-Argumente (`--name=X --level=Y --prefix=Z --element=W`). Generiert 5 Dateien: Token-JSON, TSX, Test, Stories, index.ts. 9 HTML-Elemente, Validierung (PascalCase, kebab-case, Duplikat-Erkennung). `pnpm generate:component`. |

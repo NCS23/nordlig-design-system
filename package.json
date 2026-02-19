@@ -19,7 +19,8 @@
     "agents:install": "pnpm --filter './packages/mcp-agents/*' install",
     "agents:build": "pnpm --filter './packages/mcp-agents/*' build",
     "agents:dev": "pnpm --filter './packages/mcp-agents/*' run dev",
-    "orchestrate": "node packages/mcp-agents/cli/build/index.js"
+    "orchestrate": "node packages/mcp-agents/cli/build/index.js",
+    "generate:component": "node scripts/generate-component.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.1",
