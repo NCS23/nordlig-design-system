@@ -37,3 +37,8 @@ jobs:
 
       - name: Analyze CSS
         run: pnpm analyze:css
+
+      - name: Deploy Storybook
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker exec nordlig-storybook sh -c "cd /app && git pull origin main"
