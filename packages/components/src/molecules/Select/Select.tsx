@@ -73,6 +73,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const [focusedIndex, setFocusedIndex] = React.useState(-1);
     const listRef = React.useRef<HTMLDivElement>(null);
     const triggerRef = React.useRef<HTMLButtonElement>(null);
+    const listboxId = React.useId();
 
     const flat = React.useMemo(() => flattenOptions(options), [options]);
     const enabledOptions = React.useMemo(
@@ -221,6 +222,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           aria-disabled={opt.disabled || undefined}
           tabIndex={-1}
           onClick={() => !opt.disabled && handleSelect(opt)}
+          onKeyDown={handleKeyDown}
           onMouseEnter={() => !opt.disabled && setFocusedIndex(idx)}
           className={cn(
             'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-sm transition-colors',
@@ -260,6 +262,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
               disabled={disabled}
               role="combobox"
               aria-expanded={open}
+              aria-controls={listboxId}
               aria-haspopup="listbox"
               aria-label={ariaLabel || 'Auswählen'}
               onKeyDown={handleKeyDown}
@@ -301,7 +304,9 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
             >
               <div
                 ref={listRef}
+                id={listboxId}
                 role="listbox"
+                tabIndex={-1}
                 aria-label={ariaLabel || 'Optionen'}
                 onKeyDown={handleKeyDown}
                 className="max-h-[240px] overflow-y-auto p-[var(--spacing-select-popover-padding)]"

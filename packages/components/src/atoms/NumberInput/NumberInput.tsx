@@ -215,6 +215,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         <input
           ref={ref}
           type="number"
+          role="spinbutton"
           inputMode={hasDecimalStep ? 'decimal' : 'numeric'}
           value={displayValue}
           onChange={handleInputChange}

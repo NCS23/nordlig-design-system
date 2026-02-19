@@ -12,7 +12,6 @@ import {
   addMonths,
   subMonths,
   isAfter,
-  isBefore,
 } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -184,7 +183,9 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
           className
         )}
         role="grid"
+        tabIndex={0}
         aria-label={format(month, 'MMMM yyyy', { locale: de })}
+        onKeyDown={handleKeyDown}
       >
         {/* Header: Month/Year + Nav */}
         <div className="flex items-center justify-between mb-2">
@@ -242,7 +243,6 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
         <div
           className="grid grid-cols-7 gap-[var(--spacing-datepicker-grid-gap)]"
           role="rowgroup"
-          onKeyDown={handleKeyDown}
         >
           {days.map((day) => {
             const inMonth = isSameMonth(day, month);

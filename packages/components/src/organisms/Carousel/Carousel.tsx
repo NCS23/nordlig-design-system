@@ -106,6 +106,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
     const canGoPrev = loop || currentIndex > 0;
     const canGoNext = loop || currentIndex < slideCount - 1;
 
+    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     return (
       <div
         ref={ref}

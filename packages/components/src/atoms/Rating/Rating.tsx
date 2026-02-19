@@ -110,10 +110,19 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
           tabIndex={useRadioGroupRole ? (index === activeStarIndex ? 0 : -1) : -1}
           onClick={() => {
             if (precision === 0.5) {
-              // Klick auf bereits vollen Stern → halber Stern
               handleClick(value === starNumber ? starNumber - 0.5 : starNumber);
             } else {
               handleClick(starNumber);
+            }
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              if (precision === 0.5) {
+                handleClick(value === starNumber ? starNumber - 0.5 : starNumber);
+              } else {
+                handleClick(starNumber);
+              }
             }
           }}
           onMouseEnter={() => handleMouseEnter(starNumber)}

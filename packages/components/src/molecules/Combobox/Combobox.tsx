@@ -80,6 +80,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
   ) => {
     const [open, setOpen] = React.useState(false);
     const triggerRef = React.useRef<HTMLButtonElement>(null);
+    const listboxId = React.useId();
 
     const flat = React.useMemo(() => flattenOptions(options), [options]);
     const selectedOption = flat.find((o) => o.value === value);
@@ -154,6 +155,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               disabled={disabled}
               role="combobox"
               aria-expanded={open}
+              aria-controls={listboxId}
               aria-haspopup="listbox"
               aria-label={ariaLabel || 'Suchen und auswählen'}
               onClick={() => !disabled && setOpen((prev) => !prev)}
@@ -216,6 +218,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
 
                 {/* Options List */}
                 <CommandPrimitive.List
+                  id={listboxId}
                   className={cn(
                     'max-h-[240px] overflow-y-auto',
                     'p-[var(--spacing-cmb-content-padding)]'

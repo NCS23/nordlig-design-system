@@ -75,12 +75,14 @@ Alert.displayName = 'Alert';
 export interface AlertTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
 
 const AlertTitle = React.forwardRef<HTMLHeadingElement, AlertTitleProps>(
-  ({ className, ...props }, ref) => (
+  ({ className, children, ...props }, ref) => (
     <h5
       ref={ref}
       className={cn('text-[length:var(--sizing-alert-font-size)] [font-weight:var(--sizing-alert-title-weight)] text-[var(--color-alert-title)] mb-1', className)}
       {...props}
-    />
+    >
+      {children}
+    </h5>
   )
 );
 AlertTitle.displayName = 'AlertTitle';

@@ -196,7 +196,7 @@ function collectVisibleIds(nodes: TreeNode[], expanded: Set<string>): string[] {
 
 // ─── Helper: Find node by id ─────────────────────────────────────────────────
 
-function findNodeById(nodes: TreeNode[], id: string): TreeNode | undefined {
+function _findNodeById(nodes: TreeNode[], id: string): TreeNode | undefined {
   for (const node of nodes) {
     if (node.id === id) return node;
     if (node.children) {

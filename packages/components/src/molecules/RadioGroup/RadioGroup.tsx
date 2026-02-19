@@ -49,6 +49,7 @@ const RadioGroupItem = React.forwardRef<
 
   return (
     <div
+      role="presentation"
       className={cn(
         'flex items-start gap-[var(--spacing-radio-item-gap)] p-2 rounded-[var(--radius-radio-item)] transition-colors',
         !props.disabled && 'hover:bg-[var(--color-radio-item-hover-bg)] cursor-pointer',

@@ -79,6 +79,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
     const listRef = React.useRef<HTMLDivElement>(null);
     const searchRef = React.useRef<HTMLInputElement>(null);
     const triggerRef = React.useRef<HTMLButtonElement>(null);
+    const listboxId = React.useId();
 
     const flat = React.useMemo(() => flattenOptions(options), [options]);
     const enabledOptions = React.useMemo(
@@ -283,6 +284,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
           aria-disabled={opt.disabled || undefined}
           tabIndex={-1}
           onClick={() => !opt.disabled && toggleValue(opt.value)}
+          onKeyDown={handleKeyDown}
           onMouseEnter={() => !opt.disabled && setFocusedIndex(idx)}
           className={cn(
             'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-sm transition-colors',
@@ -327,6 +329,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
               disabled={disabled}
               role="combobox"
               aria-expanded={open}
+              aria-controls={listboxId}
               aria-haspopup="listbox"
               aria-label={ariaLabel || 'Mehrfachauswahl'}
               onClick={() => !disabled && setOpen((prev) => !prev)}
@@ -414,6 +417,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
               {/* Options List */}
               <div
                 ref={listRef}
+                id={listboxId}
                 role="listbox"
                 aria-multiselectable
                 aria-label={ariaLabel || 'Optionen'}
