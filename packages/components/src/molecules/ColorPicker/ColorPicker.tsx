@@ -95,9 +95,12 @@ const SaturationField = React.forwardRef<HTMLDivElement, SaturationFieldProps>(
     return (
       <div
         ref={mergedRef}
-        role="group"
+        role="slider"
         aria-roledescription="2D color field"
         aria-label="Saturation and brightness"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(hsv.s)}
         aria-valuetext={`Saturation ${Math.round(hsv.s)}%, Brightness ${Math.round(hsv.v)}%`}
         tabIndex={disabled ? -1 : 0}
         aria-disabled={disabled || undefined}

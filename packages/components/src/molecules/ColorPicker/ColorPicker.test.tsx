@@ -231,7 +231,7 @@ describe('ColorPicker', () => {
   it('saturation field uses aria-roledescription for 2D control', () => {
     render(<ColorPicker />);
     const field = screen.getByLabelText('Saturation and brightness');
-    expect(field).toHaveAttribute('role', 'group');
+    expect(field).toHaveAttribute('role', 'slider');
     expect(field).toHaveAttribute('aria-roledescription', '2D color field');
     expect(field).toHaveAttribute('tabindex', '0');
   });
