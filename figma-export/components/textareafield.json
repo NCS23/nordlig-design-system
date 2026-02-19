@@ -102,7 +102,7 @@
           "sizing": "fill"
         }
       ],
-      "tokenBindings": {}
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
     },
     {
       "props": {
@@ -181,7 +181,7 @@
           "sizing": "fill"
         }
       ],
-      "tokenBindings": {}
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
     },
     {
       "props": {
@@ -260,7 +260,7 @@
           "sizing": "fill"
         }
       ],
-      "tokenBindings": {}
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
     },
     {
       "props": {
@@ -339,7 +339,7 @@
           "sizing": "fill"
         }
       ],
-      "tokenBindings": {}
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
     }
   ],
   "widthMode": "fixed"

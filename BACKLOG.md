@@ -107,7 +107,7 @@ Kontext, Entscheidungen, Blocker, offene Fragen.
 
 | Epic | Titel | Stories | Gitea |
 |------|-------|---------|-------|
-| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-030, NDS-031, NDS-032 | `epic/0-architecture` |
+| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-026, NDS-030, NDS-031, NDS-032 | `epic/0-architecture` |
 | **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-046 | `epic/1-components` |
 | **2** | Templates & Page Layouts | NDS-050–NDS-057 | `epic/2-templates` |
 | **3** | Patterns & Recipes | NDS-060–NDS-065 | `epic/3-patterns` |
@@ -1181,6 +1181,41 @@ Extractor erweitert, `_disabled` Hack durch `opacity: 0.5` ersetzt.
 
 ---
 
+### [NDS-026] Hardcoded gap-* durch Token-basierte Gaps ersetzen (Infrastructure) — P2
+
+**Status:** Backlog
+**Prioritaet:** P2 (wichtig) — ~15 Komponenten verletzen Token-First-Prinzip bei Gap
+**Prefix:** — | **Blueprint:** `molecules/Toast/Toast.tsx` (korrekte Referenz)
+**Dependencies:** keine
+**Gitea:** #71
+
+**Beschreibung:**
+~15 Komponenten verwenden hardcoded Tailwind `gap-*` Utilities statt `gap-[var(--*)]` Token-Referenzen. Einige Dateien haben sogar gemischte Nutzung (manche Gaps mit Token, andere hardcoded). Fehlende L4-Tokens muessen ergaenzt und alle `gap-*` durch Token ersetzt werden.
+
+**Betroffene Komponenten:**
+InputField, Form, Textarea, FileUpload, AlertDialog, Dialog, Sheet, Drawer, RadioGroup, Toast (Viewport), Menubar, Pagination, Stepper, NavigationMenu, Toolbar
+
+**Akzeptanzkriterien:**
+- [ ] Alle `gap-*` in Komponenten-TSX durch `gap-[var(--*)]` ersetzt
+- [ ] Fehlende L4-Tokens in `packages/tokens/src/semantic/*.json` ergaenzt
+- [ ] Token Build erfolgreich
+- [ ] Alle Unit Tests bestehen
+- [ ] Storybook Build erfolgreich (0 Fehler)
+
+**Task Breakdown:**
+- [ ] 1. Fehlende L4-Tokens fuer jede Komponente erstellen + Token Build
+- [ ] 2. Batch 1 — Field-Wrapper: InputField, Form, Textarea, FileUpload
+- [ ] 3. Batch 2 — Dialoge: AlertDialog, Dialog, Sheet, Drawer
+- [ ] 4. Batch 3 — Restliche: RadioGroup, Toast, Menubar, Pagination, Stepper, NavigationMenu, Toolbar
+- [ ] 5. Verifikation: Unit Tests + Storybook Build
+
+**Notizen:**
+- Sub-Story von NDS-019 / NDS-032 (fokussiert nur auf Gap).
+- Figma-Export-JSONs fuer Field-Komponenten bereits korrigiert (`tokenBindings: { "itemSpacing": "--sizing-component-gap-sm" }`).
+- Viele Komponenten haben bereits teilweise Token-Gaps — nur Sub-Elemente (Header, Footer) fehlen.
+
+---
+
 ### Epic 0 — Architektur-Bereinigung (neue Stories)
 
 #### [NDS-030] Atomaritaets-Refactoring — Atoms zu Molecules verschieben (#34)
@@ -1459,4 +1494,5 @@ Table, Timeline, Tree
 | 2026-02-16 | **Figma Export DoR/DoD eingefuehrt.** Neuer Story-Typ fuer Figma-Export-Aufgaben mit spezialisierter Checkliste (Token-Vollstaendigkeit, Binding-Verifikation gegen Button-Referenz, SVG-Regeln). |
 | 2026-02-16 | **Figma Export Batch Done:** NDS-022 (Badge lineHeight), NDS-023 (Input border-width + lineHeight + letterSpacing), NDS-024 (Checkbox SVG hex + width/height + border-width), NDS-025 (CheckboxField gaps + lineHeights + disabled fix). 12 neue L4-Tokens, 3 neue L3/L2-Tokens, 6 Extractor-Fixes. FIGMA_EXPORT_RULES.md um 4 neue Regeln + 7 Anti-Patterns erweitert. |
 | 2026-02-16 | **Figma Post-Import Fixes:** (1) CheckboxField TextStyles: `hasChildren` vor `hasTextContent` Bedingung gefixt → Label/Description TextStyles werden jetzt erstellt. (2) Checkbox: Hover-Varianten (`interaction: default\|hover`) hinzugefuegt → 9 Kombinationen statt 6. Corner Radius: `clipsContent=true` fuer SVG-Varianten. (3) Variable-Hierarchie: `classifyTokenLevel()` in extract-tokens.ts, Level-Prefix (L1 Base/L2 Global/L3 Role/L4 Component) auf allen Figma-Variablen. Reverse-Lookup in code.ts angepasst. FIGMA_EXPORT_RULES.md um 4 neue Regeln + 4 Anti-Patterns erweitert. |
+| 2026-02-18 | **NDS-026 erstellt:** Hardcoded gap-* durch Token-basierte Gaps ersetzen (#71). ~15 Komponenten betroffen. Figma-Export-JSONs fuer Field-Komponenten bereits korrigiert (tokenBindings fuer itemSpacing). |
 | 2026-02-17 | **Epic-Struktur eingefuehrt:** 8 Epics (0-7) mit 37 neuen Stories (NDS-030 bis NDS-103). Neue Layer: Templates (Epic 2, 8 Stories) und Patterns (Epic 3, 6 Stories). Atomaritaets-Audit: 6 Violations identifiziert (NDS-030, NDS-031). Gitea: 15 neue Labels (epic/*, layer/template, layer/pattern, size/*), 8 Epic-Overview-Issues (#26-#33), 37 Story-Issues (#34-#70), alle bestehenden Issues mit Epic-Labels getaggt. |

@@ -1,48 +1,39 @@
 {
-  "name": "TextareaField",
+  "name": "SwitchField",
   "category": "molecules",
   "extractedAt": "2026-02-17T14:00:00.000Z",
   "variants": {
-    "inputSize": [
-      "sm",
-      "md",
-      "lg"
-    ],
     "state": [
-      "default",
-      "focus",
-      "disabled",
-      "error"
+      "unchecked",
+      "checked"
     ],
-    "required": [
+    "disabled": [
       "false",
       "true"
     ]
   },
   "defaultVariant": {
-    "inputSize": "md",
-    "state": "default",
-    "required": "false"
+    "state": "unchecked",
+    "disabled": "false"
   },
   "combinations": [
     {
       "props": {
-        "inputSize": "md",
-        "state": "default",
-        "required": "false"
+        "state": "unchecked",
+        "disabled": "false"
       },
-      "label": "TextareaField md default",
+      "label": "SwitchField unchecked",
       "layout": {
         "width": 360,
-        "height": 130,
-        "direction": "VERTICAL",
+        "height": 24,
+        "direction": "HORIZONTAL",
         "paddingLeft": 0,
         "paddingRight": 0,
         "paddingTop": 0,
         "paddingBottom": 0,
-        "itemSpacing": 6,
+        "itemSpacing": 12,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "MIN"
+        "counterAxisAlign": "CENTER"
       },
       "styles": {
         "fills": {
@@ -65,6 +56,18 @@
         "letterSpacing": 0
       },
       "children": [
+        {
+          "type": "componentRef",
+          "name": "Switch",
+          "componentRef": {
+            "component": "Switch",
+            "variant": {
+              "state": "unchecked",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fixed"
+        },
         {
           "type": "componentRef",
           "name": "Label",
@@ -76,52 +79,27 @@
             }
           },
           "sizing": "fill"
-        },
-        {
-          "type": "componentRef",
-          "name": "Textarea",
-          "componentRef": {
-            "component": "Textarea",
-            "variant": {
-              "inputSize": "md",
-              "state": "default"
-            }
-          },
-          "sizing": "fill"
-        },
-        {
-          "type": "componentRef",
-          "name": "Hint",
-          "componentRef": {
-            "component": "Hint",
-            "variant": {
-              "variant": "default",
-              "disabled": "false"
-            }
-          },
-          "sizing": "fill"
         }
       ],
-      "tokenBindings": {}
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
     },
     {
       "props": {
-        "inputSize": "md",
-        "state": "default",
-        "required": "true"
+        "state": "checked",
+        "disabled": "false"
       },
-      "label": "TextareaField md default required",
+      "label": "SwitchField checked",
       "layout": {
         "width": 360,
-        "height": 130,
-        "direction": "VERTICAL",
+        "height": 24,
+        "direction": "HORIZONTAL",
         "paddingLeft": 0,
         "paddingRight": 0,
         "paddingTop": 0,
         "paddingBottom": 0,
-        "itemSpacing": 6,
+        "itemSpacing": 12,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "MIN"
+        "counterAxisAlign": "CENTER"
       },
       "styles": {
         "fills": {
@@ -146,83 +124,16 @@
       "children": [
         {
           "type": "componentRef",
-          "name": "Label",
+          "name": "Switch",
           "componentRef": {
-            "component": "Label",
+            "component": "Switch",
             "variant": {
-              "required": "true",
+              "state": "checked",
               "disabled": "false"
             }
           },
-          "sizing": "fill"
+          "sizing": "fixed"
         },
-        {
-          "type": "componentRef",
-          "name": "Textarea",
-          "componentRef": {
-            "component": "Textarea",
-            "variant": {
-              "inputSize": "md",
-              "state": "default"
-            }
-          },
-          "sizing": "fill"
-        },
-        {
-          "type": "componentRef",
-          "name": "Hint",
-          "componentRef": {
-            "component": "Hint",
-            "variant": {
-              "variant": "default",
-              "disabled": "false"
-            }
-          },
-          "sizing": "fill"
-        }
-      ],
-      "tokenBindings": {}
-    },
-    {
-      "props": {
-        "inputSize": "md",
-        "state": "error",
-        "required": "false"
-      },
-      "label": "TextareaField md error",
-      "layout": {
-        "width": 360,
-        "height": 130,
-        "direction": "VERTICAL",
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 0,
-        "paddingBottom": 0,
-        "itemSpacing": 6,
-        "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "MIN"
-      },
-      "styles": {
-        "fills": {
-          "token": null,
-          "value": "transparent"
-        },
-        "strokes": null,
-        "strokeWeight": 0,
-        "cornerRadius": 0
-      },
-      "text": {
-        "content": "",
-        "fills": {
-          "value": "#0f172a"
-        },
-        "fontSize": 0,
-        "fontWeight": 400,
-        "fontFamily": "Inter",
-        "lineHeight": 0,
-        "letterSpacing": 0
-      },
-      "children": [
         {
           "type": "componentRef",
           "name": "Label",
@@ -234,52 +145,27 @@
             }
           },
           "sizing": "fill"
-        },
-        {
-          "type": "componentRef",
-          "name": "Textarea",
-          "componentRef": {
-            "component": "Textarea",
-            "variant": {
-              "inputSize": "md",
-              "state": "error"
-            }
-          },
-          "sizing": "fill"
-        },
-        {
-          "type": "componentRef",
-          "name": "Hint",
-          "componentRef": {
-            "component": "Hint",
-            "variant": {
-              "variant": "error",
-              "disabled": "false"
-            }
-          },
-          "sizing": "fill"
         }
       ],
-      "tokenBindings": {}
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
     },
     {
       "props": {
-        "inputSize": "md",
-        "state": "disabled",
-        "required": "false"
+        "state": "unchecked",
+        "disabled": "true"
       },
-      "label": "TextareaField md disabled",
+      "label": "SwitchField unchecked disabled",
       "layout": {
         "width": 360,
-        "height": 130,
-        "direction": "VERTICAL",
+        "height": 24,
+        "direction": "HORIZONTAL",
         "paddingLeft": 0,
         "paddingRight": 0,
         "paddingTop": 0,
         "paddingBottom": 0,
-        "itemSpacing": 6,
+        "itemSpacing": 12,
         "primaryAxisAlign": "MIN",
-        "counterAxisAlign": "MIN"
+        "counterAxisAlign": "CENTER"
       },
       "styles": {
         "fills": {
@@ -304,6 +190,18 @@
       "children": [
         {
           "type": "componentRef",
+          "name": "Switch",
+          "componentRef": {
+            "component": "Switch",
+            "variant": {
+              "state": "unchecked",
+              "disabled": "true"
+            }
+          },
+          "sizing": "fixed"
+        },
+        {
+          "type": "componentRef",
           "name": "Label",
           "componentRef": {
             "component": "Label",
@@ -313,33 +211,75 @@
             }
           },
           "sizing": "fill"
+        }
+      ],
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "true"
+      },
+      "label": "SwitchField checked disabled",
+      "layout": {
+        "width": 360,
+        "height": 24,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 12,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
         },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "value": "#94a3b8"
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
         {
           "type": "componentRef",
-          "name": "Textarea",
+          "name": "Switch",
           "componentRef": {
-            "component": "Textarea",
+            "component": "Switch",
             "variant": {
-              "inputSize": "md",
-              "state": "disabled"
+              "state": "checked",
+              "disabled": "true"
             }
           },
-          "sizing": "fill"
+          "sizing": "fixed"
         },
         {
           "type": "componentRef",
-          "name": "Hint",
+          "name": "Label",
           "componentRef": {
-            "component": "Hint",
+            "component": "Label",
             "variant": {
-              "variant": "default",
+              "required": "false",
               "disabled": "true"
             }
           },
           "sizing": "fill"
         }
       ],
-      "tokenBindings": {}
+      "tokenBindings": { "itemSpacing": "--spacing-input-field-gap" }
     }
   ],
   "widthMode": "fixed"

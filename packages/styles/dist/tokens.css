@@ -1118,8 +1118,10 @@
   --spacing-input-padding-y: var(--spacing-component-padding-sm); /** 12px */
   --spacing-input-icon-inset: var(--sizing-component-height-md); /** 40px – right padding when icon present */
   --spacing-input-icon-padding: var(--spacing-component-padding-sm); /** 12px – icon button internal padding */
+  --spacing-input-field-gap: var(--sizing-component-gap-sm); /** 6px — Gap between Label, Input/Select/Textarea, and Hint in Field wrappers */
   --spacing-inputotp-gap: var(--spacing-component-gap-sm); /** Gap between slots */
   --spacing-inputotp-group-gap: var(--spacing-component-gap-md); /** Gap between groups */
+  --spacing-label-indicator-gap: var(--spacing-component-gap-2xs); /** 2px — Gap between label text and required indicator (*) */
   --spacing-ldovl-gap: var(--spacing-component-gap-md); /** Gap between spinner and text */
   --spacing-menubar-padding: var(--spacing-component-padding-xs); /** Menubar inner padding */
   --spacing-menubar-trigger-padding-x: var(--spacing-component-padding-md); /** Trigger horizontal padding */

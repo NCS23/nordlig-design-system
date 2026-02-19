@@ -1,0 +1,564 @@
+{
+  "name": "Checkbox",
+  "category": "atoms",
+  "extractedAt": "2026-02-16T21:48:12.476Z",
+  "variants": {
+    "state": [
+      "unchecked",
+      "checked",
+      "indeterminate"
+    ],
+    "disabled": [
+      "false",
+      "true"
+    ],
+    "interaction": [
+      "default",
+      "hover"
+    ]
+  },
+  "defaultVariant": {
+    "state": "unchecked",
+    "disabled": "false",
+    "interaction": "default"
+  },
+  "combinations": [
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "false",
+        "interaction": "default"
+      },
+      "label": "Unchecked",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-bg",
+          "value": "#ffffff"
+        },
+        "strokes": {
+          "token": "--color-checkbox-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "false",
+        "interaction": "default"
+      },
+      "label": "Checked",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-checked-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-checkbox-checked-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Check",
+          "iconSize": 14,
+          "svgData": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>",
+          "styles": {
+            "fills": {
+              "token": "--color-checkbox-checked-icon",
+              "value": "#ffffff"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "indeterminate",
+        "disabled": "false",
+        "interaction": "default"
+      },
+      "label": "Indeterminate",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-checked-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-checkbox-checked-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Minus",
+          "iconSize": 14,
+          "svgData": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path></svg>",
+          "styles": {
+            "fills": {
+              "token": "--color-checkbox-checked-icon",
+              "value": "#ffffff"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "true",
+        "interaction": "default"
+      },
+      "label": "Unchecked",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-disabled-bg",
+          "value": "#f1f5f9"
+        },
+        "strokes": {
+          "token": "--color-checkbox-border",
+          "value": "#cbd5e1"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2,
+        "opacity": 0.5
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "true",
+        "interaction": "default"
+      },
+      "label": "Checked",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-checked-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-checkbox-checked-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2,
+        "opacity": 0.5
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Check",
+          "iconSize": 14,
+          "svgData": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>",
+          "styles": {
+            "fills": {
+              "token": "--color-checkbox-checked-icon",
+              "value": "#ffffff"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "indeterminate",
+        "disabled": "true",
+        "interaction": "default"
+      },
+      "label": "Indeterminate",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-checked-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-checkbox-checked-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2,
+        "opacity": 0.5
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Minus",
+          "iconSize": 14,
+          "svgData": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path></svg>",
+          "styles": {
+            "fills": {
+              "token": "--color-checkbox-checked-icon",
+              "value": "#ffffff"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "unchecked",
+        "disabled": "false",
+        "interaction": "hover"
+      },
+      "label": "Unchecked",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-bg",
+          "value": "#ffffff"
+        },
+        "strokes": {
+          "token": "--color-checkbox-border-hover",
+          "value": "#94a3b8"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "checked",
+        "disabled": "false",
+        "interaction": "hover"
+      },
+      "label": "Checked",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-checked-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-checkbox-checked-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Check",
+          "iconSize": 14,
+          "svgData": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>",
+          "styles": {
+            "fills": {
+              "token": "--color-checkbox-checked-icon",
+              "value": "#ffffff"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    },
+    {
+      "props": {
+        "state": "indeterminate",
+        "disabled": "false",
+        "interaction": "hover"
+      },
+      "label": "Indeterminate",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "direction": "HORIZONTAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 0,
+        "primaryAxisAlign": "CENTER",
+        "counterAxisAlign": "CENTER"
+      },
+      "styles": {
+        "fills": {
+          "token": "--color-checkbox-checked-bg",
+          "value": "#0ea5e9"
+        },
+        "strokes": {
+          "token": "--color-checkbox-checked-border",
+          "value": "#0ea5e9"
+        },
+        "strokeWeight": 2,
+        "cornerRadius": 2
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "token": null,
+          "value": ""
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
+      "children": [
+        {
+          "type": "icon",
+          "name": "Minus",
+          "iconSize": 14,
+          "svgData": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path></svg>",
+          "styles": {
+            "fills": {
+              "token": "--color-checkbox-checked-icon",
+              "value": "#ffffff"
+            }
+          }
+        }
+      ],
+      "tokenBindings": {
+        "width": "--sizing-checkbox-box-size",
+        "height": "--sizing-checkbox-box-size",
+        "cornerRadius": "--radius-checkbox",
+        "strokeWeight": "--sizing-checkbox-border-width"
+      }
+    }
+  ]
+}

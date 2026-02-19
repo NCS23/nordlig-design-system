@@ -1,0 +1,7 @@
+{
+  "spacing": {
+    "label": {
+      "indicator-gap": { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px — Gap between label text and required indicator (*)" }
+    }
+  }
+}

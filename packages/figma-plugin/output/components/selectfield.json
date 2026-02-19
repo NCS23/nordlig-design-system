@@ -3,9 +3,21 @@
   "category": "molecules",
   "extractedAt": "2026-02-17T14:00:00.000Z",
   "variants": {
-    "inputSize": ["sm", "md", "lg"],
-    "state": ["default", "focus", "disabled", "error"],
-    "required": ["false", "true"]
+    "inputSize": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "focus",
+      "disabled",
+      "error"
+    ],
+    "required": [
+      "false",
+      "true"
+    ]
   },
   "defaultVariant": {
     "inputSize": "md",
@@ -14,89 +26,400 @@
   },
   "combinations": [
     {
-      "props": { "inputSize": "md", "state": "default", "required": "false" },
+      "props": {
+        "inputSize": "md",
+        "state": "default",
+        "required": "false"
+      },
       "label": "SelectField md default",
       "layout": {
-        "width": 360, "height": 70, "direction": "VERTICAL",
-        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
-        "itemSpacing": 6, "primaryAxisAlign": "MIN", "counterAxisAlign": "MIN"
+        "width": 360,
+        "height": 70,
+        "direction": "VERTICAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
       },
-      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
-      "text": { "content": "", "fills": { "value": "#0f172a" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "value": "#0f172a"
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
       "children": [
-        { "type": "componentRef", "name": "Label", "componentRef": { "component": "Label", "variant": { "required": "false", "disabled": "false" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Select", "componentRef": { "component": "Select", "variant": { "inputSize": "md", "state": "default" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Hint", "componentRef": { "component": "Hint", "variant": { "variant": "default", "disabled": "false" } }, "sizing": "fill" }
+        {
+          "type": "componentRef",
+          "name": "Label",
+          "componentRef": {
+            "component": "Label",
+            "variant": {
+              "required": "false",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Select",
+          "componentRef": {
+            "component": "Select",
+            "variant": {
+              "inputSize": "md",
+              "state": "default"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Hint",
+          "componentRef": {
+            "component": "Hint",
+            "variant": {
+              "variant": "default",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        }
       ],
       "tokenBindings": {}
     },
     {
-      "props": { "inputSize": "md", "state": "default", "required": "true" },
+      "props": {
+        "inputSize": "md",
+        "state": "default",
+        "required": "true"
+      },
       "label": "SelectField md default required",
       "layout": {
-        "width": 360, "height": 70, "direction": "VERTICAL",
-        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
-        "itemSpacing": 6, "primaryAxisAlign": "MIN", "counterAxisAlign": "MIN"
+        "width": 360,
+        "height": 70,
+        "direction": "VERTICAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
       },
-      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
-      "text": { "content": "", "fills": { "value": "#0f172a" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "value": "#0f172a"
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
       "children": [
-        { "type": "componentRef", "name": "Label", "componentRef": { "component": "Label", "variant": { "required": "true", "disabled": "false" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Select", "componentRef": { "component": "Select", "variant": { "inputSize": "md", "state": "default" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Hint", "componentRef": { "component": "Hint", "variant": { "variant": "default", "disabled": "false" } }, "sizing": "fill" }
+        {
+          "type": "componentRef",
+          "name": "Label",
+          "componentRef": {
+            "component": "Label",
+            "variant": {
+              "required": "true",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Select",
+          "componentRef": {
+            "component": "Select",
+            "variant": {
+              "inputSize": "md",
+              "state": "default"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Hint",
+          "componentRef": {
+            "component": "Hint",
+            "variant": {
+              "variant": "default",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        }
       ],
       "tokenBindings": {}
     },
     {
-      "props": { "inputSize": "md", "state": "focus", "required": "false" },
+      "props": {
+        "inputSize": "md",
+        "state": "focus",
+        "required": "false"
+      },
       "label": "SelectField md focus",
       "layout": {
-        "width": 360, "height": 70, "direction": "VERTICAL",
-        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
-        "itemSpacing": 6, "primaryAxisAlign": "MIN", "counterAxisAlign": "MIN"
+        "width": 360,
+        "height": 70,
+        "direction": "VERTICAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
       },
-      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
-      "text": { "content": "", "fills": { "value": "#0f172a" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "value": "#0f172a"
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
       "children": [
-        { "type": "componentRef", "name": "Label", "componentRef": { "component": "Label", "variant": { "required": "false", "disabled": "false" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Select", "componentRef": { "component": "Select", "variant": { "inputSize": "md", "state": "focus" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Hint", "componentRef": { "component": "Hint", "variant": { "variant": "default", "disabled": "false" } }, "sizing": "fill" }
+        {
+          "type": "componentRef",
+          "name": "Label",
+          "componentRef": {
+            "component": "Label",
+            "variant": {
+              "required": "false",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Select",
+          "componentRef": {
+            "component": "Select",
+            "variant": {
+              "inputSize": "md",
+              "state": "focus"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Hint",
+          "componentRef": {
+            "component": "Hint",
+            "variant": {
+              "variant": "default",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        }
       ],
       "tokenBindings": {}
     },
     {
-      "props": { "inputSize": "md", "state": "error", "required": "false" },
+      "props": {
+        "inputSize": "md",
+        "state": "error",
+        "required": "false"
+      },
       "label": "SelectField md error",
       "layout": {
-        "width": 360, "height": 70, "direction": "VERTICAL",
-        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
-        "itemSpacing": 6, "primaryAxisAlign": "MIN", "counterAxisAlign": "MIN"
+        "width": 360,
+        "height": 70,
+        "direction": "VERTICAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
       },
-      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
-      "text": { "content": "", "fills": { "value": "#0f172a" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "value": "#0f172a"
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
       "children": [
-        { "type": "componentRef", "name": "Label", "componentRef": { "component": "Label", "variant": { "required": "false", "disabled": "false" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Select", "componentRef": { "component": "Select", "variant": { "inputSize": "md", "state": "error" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Hint", "componentRef": { "component": "Hint", "variant": { "variant": "error", "disabled": "false" } }, "sizing": "fill" }
+        {
+          "type": "componentRef",
+          "name": "Label",
+          "componentRef": {
+            "component": "Label",
+            "variant": {
+              "required": "false",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Select",
+          "componentRef": {
+            "component": "Select",
+            "variant": {
+              "inputSize": "md",
+              "state": "error"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Hint",
+          "componentRef": {
+            "component": "Hint",
+            "variant": {
+              "variant": "error",
+              "disabled": "false"
+            }
+          },
+          "sizing": "fill"
+        }
       ],
       "tokenBindings": {}
     },
     {
-      "props": { "inputSize": "md", "state": "disabled", "required": "false" },
+      "props": {
+        "inputSize": "md",
+        "state": "disabled",
+        "required": "false"
+      },
       "label": "SelectField md disabled",
       "layout": {
-        "width": 360, "height": 70, "direction": "VERTICAL",
-        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
-        "itemSpacing": 6, "primaryAxisAlign": "MIN", "counterAxisAlign": "MIN"
+        "width": 360,
+        "height": 70,
+        "direction": "VERTICAL",
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "itemSpacing": 6,
+        "primaryAxisAlign": "MIN",
+        "counterAxisAlign": "MIN"
       },
-      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
-      "text": { "content": "", "fills": { "value": "#94a3b8" }, "fontSize": 0, "fontWeight": 400, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "styles": {
+        "fills": {
+          "token": null,
+          "value": "transparent"
+        },
+        "strokes": null,
+        "strokeWeight": 0,
+        "cornerRadius": 0
+      },
+      "text": {
+        "content": "",
+        "fills": {
+          "value": "#94a3b8"
+        },
+        "fontSize": 0,
+        "fontWeight": 400,
+        "fontFamily": "Inter",
+        "lineHeight": 0,
+        "letterSpacing": 0
+      },
       "children": [
-        { "type": "componentRef", "name": "Label", "componentRef": { "component": "Label", "variant": { "required": "false", "disabled": "true" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Select", "componentRef": { "component": "Select", "variant": { "inputSize": "md", "state": "disabled" } }, "sizing": "fill" },
-        { "type": "componentRef", "name": "Hint", "componentRef": { "component": "Hint", "variant": { "variant": "default", "disabled": "true" } }, "sizing": "fill" }
+        {
+          "type": "componentRef",
+          "name": "Label",
+          "componentRef": {
+            "component": "Label",
+            "variant": {
+              "required": "false",
+              "disabled": "true"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Select",
+          "componentRef": {
+            "component": "Select",
+            "variant": {
+              "inputSize": "md",
+              "state": "disabled"
+            }
+          },
+          "sizing": "fill"
+        },
+        {
+          "type": "componentRef",
+          "name": "Hint",
+          "componentRef": {
+            "component": "Hint",
+            "variant": {
+              "variant": "default",
+              "disabled": "true"
+            }
+          },
+          "sizing": "fill"
+        }
       ],
       "tokenBindings": {}
     }
-  ]
+  ],
+  "widthMode": "fixed"
 }

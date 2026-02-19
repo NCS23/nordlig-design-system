@@ -41,7 +41,8 @@
       "padding-x":    { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px" },
       "padding-y":    { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px" },
       "icon-inset":   { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "40px – right padding when icon present" },
-      "icon-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px – icon button internal padding" }
+      "icon-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px – icon button internal padding" },
+      "field-gap":    { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "6px — Gap between Label, Input/Select/Textarea, and Hint in Field wrappers" }
     }
   },
   "font": {

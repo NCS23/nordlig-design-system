@@ -1,0 +1,131 @@
+{
+  "name": "Label",
+  "category": "atoms",
+  "extractedAt": "2026-02-17T10:00:00.000Z",
+  "variants": {
+    "required": ["false", "true"],
+    "disabled": ["false", "true"]
+  },
+  "defaultVariant": {
+    "required": "false",
+    "disabled": "false"
+  },
+  "combinations": [
+    {
+      "props": { "required": "false", "disabled": "false" },
+      "label": "Label default",
+      "layout": {
+        "width": 200, "height": 21, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 2, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
+      "text": {
+        "content": "Label",
+        "fills": { "token": "--color-text-base", "value": "#0f172a" },
+        "fontSize": 14, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "itemSpacing": "--spacing-label-indicator-gap",
+        "fontSize": "--font-base-size-sm",
+        "fontWeight": "--font-weight-medium",
+        "lineHeight": "--font-line-height-sm",
+        "fills": "--color-text-base"
+      }
+    },
+    {
+      "props": { "required": "true", "disabled": "false" },
+      "label": "Label required",
+      "layout": {
+        "width": 200, "height": 21, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 2, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
+      "text": { "content": "", "fills": { "value": "#0f172a" }, "fontSize": 0, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "LabelText",
+          "text": {
+            "content": "Label",
+            "fills": { "token": "--color-text-base", "value": "#0f172a" },
+            "fontSize": 14, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "text", "name": "RequiredIndicator",
+          "text": {
+            "content": "*",
+            "fills": { "token": "--color-text-error", "value": "#ef4444" },
+            "fontSize": 14, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-label-indicator-gap",
+        "fontSize": "--font-base-size-sm",
+        "fontWeight": "--font-weight-medium",
+        "lineHeight": "--font-line-height-sm",
+        "fills": "--color-text-base"
+      }
+    },
+    {
+      "props": { "required": "false", "disabled": "true" },
+      "label": "Label disabled",
+      "layout": {
+        "width": 200, "height": 21, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 2, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
+      "text": {
+        "content": "Label",
+        "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+        "fontSize": 14, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+      },
+      "tokenBindings": {
+        "itemSpacing": "--spacing-label-indicator-gap",
+        "fontSize": "--font-base-size-sm",
+        "fontWeight": "--font-weight-medium",
+        "lineHeight": "--font-line-height-sm",
+        "fills": "--color-text-disabled"
+      }
+    },
+    {
+      "props": { "required": "true", "disabled": "true" },
+      "label": "Label required disabled",
+      "layout": {
+        "width": 200, "height": 21, "direction": "HORIZONTAL",
+        "paddingLeft": 0, "paddingRight": 0, "paddingTop": 0, "paddingBottom": 0,
+        "itemSpacing": 2, "primaryAxisAlign": "MIN", "counterAxisAlign": "CENTER"
+      },
+      "styles": { "fills": { "token": null, "value": "transparent" }, "strokes": null, "strokeWeight": 0, "cornerRadius": 0 },
+      "text": { "content": "", "fills": { "value": "#94a3b8" }, "fontSize": 0, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 0, "letterSpacing": 0 },
+      "children": [
+        {
+          "type": "text", "name": "LabelText",
+          "text": {
+            "content": "Label",
+            "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+            "fontSize": 14, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        },
+        {
+          "type": "text", "name": "RequiredIndicator",
+          "text": {
+            "content": "*",
+            "fills": { "token": "--color-text-disabled", "value": "#94a3b8" },
+            "fontSize": 14, "fontWeight": 500, "fontFamily": "Inter", "lineHeight": 21, "letterSpacing": 0
+          }
+        }
+      ],
+      "tokenBindings": {
+        "itemSpacing": "--spacing-label-indicator-gap",
+        "fontSize": "--font-base-size-sm",
+        "fontWeight": "--font-weight-medium",
+        "lineHeight": "--font-line-height-sm",
+        "fills": "--color-text-disabled"
+      }
+    }
+  ]
+}
