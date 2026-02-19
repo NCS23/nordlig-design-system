@@ -4132,5 +4132,71 @@ Universeller Wrapper fuer lucide-react Icons. Bietet token-basierte Groessen (sm
 
 ---
 
-**Last Updated:** 2026-02-16
-**Design System Status:** ✅ Complete (79 Components, alle Essential Components fertig)
+---
+
+## ColorPicker (Molecule) — NDS-013
+
+**Created:** 2026-02-19
+**Category:** Molecules
+**Status:** ✅ Complete (inkl. UX Review)
+
+### Description
+Vollstaendiger Color-Picker mit 2D-Saturation/Brightness-Feld, Hue-Slider, optionalem Alpha-Slider, Hex-Eingabefeld und Preset-Swatch-Auswahl. Unterstuetzt kontrollierte und unkontrollierte Nutzung. Keine externe Abhaengigkeit — vollstaendig mit CSS-Gradienten, Pointer Events und nativen Inputs implementiert.
+
+### Tokens Created
+- **Level 4 (Semantic) – Color:**
+  - `color-cpick-bg`, `color-cpick-border`, `color-cpick-slider-track`, `color-cpick-slider-thumb-border`
+  - `color-cpick-input-bg`, `color-cpick-input-border`, `color-cpick-input-text`, `color-cpick-input-border-focus`
+  - `color-cpick-swatch-border`, `color-cpick-swatch-border-active`, `color-cpick-label-text`
+- **Level 4 (Semantic) – Radius:**
+  - `radius-cpick-container`, `radius-cpick-swatch`, `radius-cpick-field`, `radius-cpick-slider`, `radius-cpick-thumb`
+- **Level 4 (Semantic) – Spacing:**
+  - `spacing-cpick-padding`, `spacing-cpick-gap`, `spacing-cpick-swatch-gap`
+- **Level 4 (Semantic) – Sizing:**
+  - `sizing-cpick-field-height`, `sizing-cpick-slider-height`, `sizing-cpick-thumb-size`, `sizing-cpick-swatch-size`
+- **27 neue Tokens insgesamt** (Token-Datei: `packages/tokens/src/semantic/colorpicker.json`)
+
+### Sub-Components
+- **SaturationField** — 2D HSV-Feld mit CSS-Gradienten + Pointer Capture + Keyboard (Arrow/Home/End)
+- **ColorSlider** — Wiederverwendbar fuer Hue (0-360) und Alpha (0-100), thumbColor-Prop
+- **HexInput** — Validierendes Input mit #-Prefix, Enter-Key Submit, Blur-Revert
+- **Swatches** — Preset-Farben als Buttons mit aria-pressed
+
+### Utilities Created
+- `packages/components/src/utils/color.ts` — HSL/RGB/HSV Konvertierungen, hexToHsv, hsvToHex, isValidHex, normalizeHex, clamp
+
+### Files
+- `packages/components/src/molecules/ColorPicker/ColorPicker.tsx`
+- `packages/components/src/molecules/ColorPicker/ColorPicker.test.tsx`
+- `packages/components/src/molecules/ColorPicker/ColorPicker.stories.tsx`
+- `packages/components/src/molecules/ColorPicker/index.ts`
+- `packages/components/src/utils/color.ts`
+- `packages/tokens/src/semantic/colorpicker.json`
+
+### Props
+- **value:** string (Hex, kontrolliert)
+- **defaultValue:** string (Hex, unkontrolliert)
+- **onChange:** (hex: string) => void
+- **onAlphaChange:** (alpha: number) => void (0-1)
+- **showAlpha:** boolean (Default: false)
+- **swatches:** string[] (Preset-Farben)
+- **disabled:** boolean
+- **aria-label:** string (Default: 'Color picker')
+
+### Accessibility
+- ✅ SaturationField: role="group" + aria-roledescription="2D color field" + aria-valuetext
+- ✅ ColorSlider: role="slider" + aria-valuemin/max/now + Home/End Keys
+- ✅ HexInput: aria-label + Enter-Key Commit + Blur Revert
+- ✅ Swatches: role="group" + aria-pressed Buttons
+- ✅ Disabled: aria-disabled + tabIndex=-1 + pointer-events-none + opacity-50
+- ✅ Focus-Ring: focus-visible:outline-none + ring-2 + ring-offset-1 (System-Pattern)
+
+### UX Review
+5 Critical + 7 Major Findings — alle behoben. Siehe DESIGN_UX_REVIEW.md Abschnitt 10.3.
+
+**Tests:** 27 | **Stories:** 7
+
+---
+
+**Last Updated:** 2026-02-19
+**Design System Status:** ✅ Complete (80+ Components, Welle 2 abgeschlossen)

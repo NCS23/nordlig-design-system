@@ -457,4 +457,126 @@ Diese Aspekte sind vorbildlich und sollten beibehalten werden:
 
 ---
 
-*Dieses Review basiert auf der Analyse aller 71 Komponenten-Quelldateien, 42 Screenshots (22 Storybook + 20 Visual Regression), 36 Semantic Token Files und der Projekt-Dokumentation (README.md, PROJEKT_REGELN.md, COMPONENT_LOG.md, ARCHITECTURE.md).*
+## 10. Review: Welle 2 — Radio Atom + ConfirmDialog (19.02.2026)
+
+### Scope
+2 Komponenten: Radio Atom (Extraktion aus RadioGroup), ConfirmDialog Pattern (useConfirm Hook)
+
+### 10.1 Radio Atom (NDS-047)
+
+**Ergebnis: Gut (nach Fixes)**
+
+| Schweregrad | Anzahl | Behoben |
+|-------------|--------|---------|
+| Kritisch | 5 | 5/5 |
+| Major | 4 | 4/4 |
+| Minor | 5 | Deferred |
+
+#### Kritische Findings (alle behoben)
+
+| # | Finding | Beschreibung | Status |
+|---|---------|-------------|--------|
+| R-C1 | Outer div statt label | Click auf div + htmlFor = Doppel-Klick-Bug | ✅ Behoben: Outer element ist jetzt `<label>` |
+| R-C2 | Fehlende aria-describedby | Description nicht mit Input verknuepft | ✅ Behoben: aria-describedby bei description |
+| R-C3 | Doppelte Opacity bei disabled | Outer div + Circle beide opacity-50 = 25% | ✅ Behoben: peer-disabled:opacity-50 vom Circle entfernt |
+| R-C4 | RadioGroup ohne aria-orientation | Screenreader kennt Layout-Richtung nicht | ✅ Behoben: aria-orientation={orientation} |
+| R-C5 | Arrow-Key Navigation fehlerhaft | Keine Pfeilnavigation zwischen Radios | ✅ Behoben: handleKeyDown mit ArrowUp/Down/Left/Right |
+
+#### Major Findings (alle behoben)
+
+| # | Finding | Beschreibung | Status |
+|---|---------|-------------|--------|
+| R-M1 | tabIndex auf RadioGroup | ESLint interactive-supports-focus | ✅ Behoben: tabIndex={-1} |
+| R-M2 | Story ohne aria-label | Default Story braucht Gruppen-Label | ✅ Behoben |
+| R-M3 | Radio checked nicht fuer defaultChecked | Initial-Zustand in unkontrolliertem Modus | ✅ Behoben |
+| R-M4 | Keine Roving tabIndex | Nur aktives Radio sollte tabbable sein | ✅ Behoben via Arrow-Key + click() Pattern |
+
+#### Minor Findings (deferred — kein Blocker)
+
+- Transition auf Focus-Ring (duration-200) wuerde Konsistenz erhoehen
+- Touch-Target koennte bei sm-Variante < 44px sein
+- Optionale error/success States fuer Form-Integration
+- RadioGroup gap-Token fuer horizontale Variante separat
+- Fehlende RTL-Unterstuetzung (ArrowLeft/Right)
+
+---
+
+### 10.2 ConfirmDialog Pattern (NDS-063)
+
+**Ergebnis: Gut (nach Fixes)**
+
+| Schweregrad | Anzahl | Behoben |
+|-------------|--------|---------|
+| Kritisch | 2 | 2/2 |
+| Major | 3 | 3/3 |
+| Minor | 4 | Deferred |
+
+#### Kritische Findings (alle behoben)
+
+| # | Finding | Beschreibung | Status |
+|---|---------|-------------|--------|
+| CD-C1 | Danger-Button Kontrast | bg-error (#fee2e2) + weisser Text = 1.05:1 Kontrast | ✅ Behoben: bg-[var(--color-bg-error-solid)] |
+| CD-C2 | Warning-Button Kontrast | Amber-500 + weisser Text = ~2.0:1 Kontrast | ✅ Behoben: text-[var(--color-text-base)] (dunkler Text) |
+
+#### Major Findings (alle behoben)
+
+| # | Finding | Beschreibung | Status |
+|---|---------|-------------|--------|
+| CD-M1 | Promise-Leak bei Unmount | Pending Promise wird nie resolved | ✅ Behoben: useEffect Cleanup resolved false |
+| CD-M2 | Concurrent Calls Guard | Zweiter confirm() ueberschreibt resolveRef | ✅ Behoben: resolveRef.current?.(false) vor Overwrite |
+| CD-M3 | Umlaut in Default-Label | "Bestaetigen" statt "Bestätigen" | ✅ Behoben |
+
+#### Minor Findings (deferred — kein Blocker)
+
+- Loading-State waehrend async Action (Spinner im Button)
+- Schliessen mit Escape koennte Konfigurations-Option sein
+- Custom Icon-Support pro Variante
+- Auto-Focus auf Cancel statt Confirm bei danger-Variante (Schutz vor versehentlicher Bestaetigung)
+
+---
+
+### 10.3 ColorPicker Molecule (NDS-013)
+
+**Ergebnis: Gut (nach Fixes)**
+
+| Schweregrad | Anzahl | Behoben |
+|-------------|--------|---------|
+| Kritisch | 5 | 5/5 |
+| Major | 7 | 7/7 |
+| Minor | 7 | Deferred |
+
+#### Kritische Findings (alle behoben)
+
+| # | Finding | Beschreibung | Status |
+|---|---------|-------------|--------|
+| CP-C1 | SaturationField role="slider" falsch | 2D-Control braucht anderes ARIA-Pattern | ✅ Behoben: role="group" + aria-roledescription="2D color field" |
+| CP-C2 | Fehlende aria-value* Attribute | role="slider" ohne required ARIA-Props | ✅ Behoben: Rolle gewechselt, aria-valuetext beibehalten |
+| CP-C3 | outline-none statt focus-visible:outline-none | Unconditional outline removal | ✅ Behoben: focus-visible:outline-none in allen Sub-Components |
+| CP-C4 | Alpha-Slider propagiert nicht an onChange | onAlphaChange fehlte komplett | ✅ Behoben: onAlphaChange Callback-Prop hinzugefuegt |
+| CP-C5 | Kein disabled Prop | Form-Integration unvollstaendig | ✅ Behoben: disabled Prop mit korrektem a11y-Pattern (aria-disabled, tabIndex, opacity) |
+
+#### Major Findings (alle behoben)
+
+| # | Finding | Beschreibung | Status |
+|---|---------|-------------|--------|
+| CP-M1 | Focus-Ring Token Inkonsistenz | Sliders/Swatches nutzten input-spezifischen Token | ✅ Behoben: var(--color-border-focus) fuer Sliders/Swatches |
+| CP-M2 | Swatches role="listbox" invalid | button + role="option" ist ARIA-Konflikt | ✅ Behoben: role="group" + aria-pressed statt listbox/selected |
+| CP-M3 | Swatch-Navigation keine Roving TabIndex | Zu viele Tab-Stops bei 10+ Swatches | Deferred (akzeptabel bei < 10 Swatches) |
+| CP-M4 | HexInput ohne Enter-Key Submit | Wert wird erst bei Blur committed | ✅ Behoben: handleKeyDown mit Enter |
+| CP-M5 | Keine Home/End Keys auf Sliders | WAI-ARIA Slider Pattern unvollstaendig | ✅ Behoben: Home/End in SaturationField + ColorSlider |
+| CP-M6 | Preview-Swatch hardcoded h-8 w-8 | Token-Violation | ✅ Behoben: var(--sizing-cpick-swatch-size) |
+| CP-M7 | ColorSlider Thumb background: inherit | Zeigt Gradient statt Position-Farbe | ✅ Behoben: thumbColor Prop mit berechneter Farbe |
+
+#### Minor Findings (deferred — kein Blocker)
+
+- Keine RTL-Unterstuetzung (ArrowLeft/Right)
+- Kein id-Prop fuer Form-Label-Association
+- #-Prefix nicht via aria-describedby verknuepft
+- Thumb-Border hardcoded white (bewusst — braucht Kontrast auf jedem Hue)
+- Kein Loading/Skeleton State
+- Stories: Dark Mode + Boundary Colors fehlen
+- Swatch Roving TabIndex bei > 10 Swatches
+
+---
+
+*Dieses Review basiert auf der Analyse aller Komponenten-Quelldateien, Screenshots, Semantic Token Files und der Projekt-Dokumentation (README.md, PROJEKT_REGELN.md, COMPONENT_LOG.md, ARCHITECTURE.md). Letztes Update: 19.02.2026 (Welle 2 Radio + ConfirmDialog + ColorPicker).*

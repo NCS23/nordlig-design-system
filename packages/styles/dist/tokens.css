@@ -220,6 +220,10 @@
   --font-base-letter-spacing-normal: 0em;
   --font-base-letter-spacing-wide: 0.025em;
   --font-kbd-sm-size: 11px; /** Kbd sm font size (11px, no L3 equivalent) */
+  --sizing-cpick-field-height: 160px; /** Saturation field height */
+  --sizing-cpick-slider-height: 12px; /** Hue/alpha slider track height */
+  --sizing-cpick-thumb-size: 16px; /** Slider/field thumb size */
+  --sizing-cpick-swatch-size: 24px; /** Color swatch size */
   --sizing-cpybtn-sm: 28px; /** CopyButton size sm (compact icon-only) */
   --sizing-cpybtn-md: 32px; /** CopyButton size md */
   --sizing-cpybtn-lg: 36px; /** CopyButton size lg */
@@ -656,6 +660,17 @@
   --color-code-block-text: var(--color-text-inverse); /** Code block text on dark bg */
   --color-code-copy-hover-bg: var(--color-bg-inverse-hover); /** Copy button hover on dark bg */
   --color-code-line-number: var(--color-text-muted); /** Line number text color */
+  --color-cpick-bg: var(--color-bg-paper); /** Container background */
+  --color-cpick-border: var(--color-border-default); /** Container border */
+  --color-cpick-slider-track: var(--color-bg-surface); /** Slider track background */
+  --color-cpick-slider-thumb-border: var(--color-border-strong); /** Slider thumb border */
+  --color-cpick-input-bg: var(--color-bg-paper); /** Hex input background */
+  --color-cpick-input-border: var(--color-border-default); /** Hex input border */
+  --color-cpick-input-text: var(--color-text-base); /** Hex input text */
+  --color-cpick-input-border-focus: var(--color-border-focus); /** Hex input focus border */
+  --color-cpick-swatch-border: var(--color-border-muted); /** Swatch border */
+  --color-cpick-swatch-border-active: var(--color-border-focus); /** Active swatch border */
+  --color-cpick-label-text: var(--color-text-muted); /** Label text color */
   --color-cmb-trigger-bg: var(--color-bg-paper); /** Trigger background (matches Input) */
   --color-cmb-trigger-border: var(--color-border-default); /** Trigger border */
   --color-cmb-trigger-text: var(--color-text-base); /** Trigger text */
@@ -1003,6 +1018,11 @@
   --radius-checkbox: var(--radius-component-sm); /** 2px subtle rounding */
   --radius-code: var(--radius-component-sm); /** Inline code border radius */
   --radius-code-block: var(--radius-component-lg); /** Code block border radius */
+  --radius-cpick-container: var(--radius-component-lg); /** 8px container radius */
+  --radius-cpick-swatch: var(--radius-component-sm); /** 4px swatch radius */
+  --radius-cpick-field: var(--radius-component-md); /** 6px saturation field radius */
+  --radius-cpick-slider: var(--radius-component-full); /** Pill slider track */
+  --radius-cpick-thumb: var(--radius-component-full); /** Circular thumb */
   --radius-cmb-trigger: var(--radius-component-md); /** Trigger border radius */
   --radius-cmb-content: var(--radius-component-lg); /** Dropdown border radius */
   --radius-command: var(--radius-component-lg); /** Command palette border radius */
@@ -1102,6 +1122,9 @@
   --spacing-chart-legend-item-gap: var(--sizing-component-gap-sm); /** Gap within legend item (6px) */
   --spacing-checkbox-field-gap: var(--spacing-component-gap-sm); /** 8px — Gap between checkbox and content */
   --spacing-checkbox-content-gap: var(--spacing-component-gap-2xs); /** 2px — Gap between label and description */
+  --spacing-cpick-padding: var(--spacing-component-padding-md); /** 12px container padding */
+  --spacing-cpick-gap: var(--spacing-component-gap-sm); /** 8px gap between sections */
+  --spacing-cpick-swatch-gap: var(--spacing-component-gap-xs); /** 4px gap between swatches */
   --spacing-cmb-content-padding: var(--spacing-component-padding-xs); /** Dropdown inner padding */
   --spacing-cmb-item-padding-x: var(--spacing-component-padding-md); /** Item horizontal padding */
   --spacing-cmb-item-padding-y: var(--spacing-component-padding-sm); /** Item vertical padding */

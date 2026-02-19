@@ -1,0 +1,45 @@
+{
+  "color": {
+    "$description": "Level 4: ColorPicker component tokens",
+    "cpick": {
+      "bg": { "$type": "color", "$value": "{color.bg.paper}", "$description": "Container background" },
+      "border": { "$type": "color", "$value": "{color.border.default}", "$description": "Container border" },
+      "slider-track": { "$type": "color", "$value": "{color.bg.surface}", "$description": "Slider track background" },
+      "slider-thumb-border": { "$type": "color", "$value": "{color.border.strong}", "$description": "Slider thumb border" },
+      "input-bg": { "$type": "color", "$value": "{color.bg.paper}", "$description": "Hex input background" },
+      "input-border": { "$type": "color", "$value": "{color.border.default}", "$description": "Hex input border" },
+      "input-text": { "$type": "color", "$value": "{color.text.base}", "$description": "Hex input text" },
+      "input-border-focus": { "$type": "color", "$value": "{color.border.focus}", "$description": "Hex input focus border" },
+      "swatch-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Swatch border" },
+      "swatch-border-active": { "$type": "color", "$value": "{color.border.focus}", "$description": "Active swatch border" },
+      "label-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Label text color" }
+    }
+  },
+  "radius": {
+    "$description": "Level 4: ColorPicker radii",
+    "cpick": {
+      "container": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px container radius" },
+      "swatch": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "4px swatch radius" },
+      "field": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px saturation field radius" },
+      "slider": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Pill slider track" },
+      "thumb": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circular thumb" }
+    }
+  },
+  "spacing": {
+    "$description": "Level 4: ColorPicker spacing",
+    "cpick": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "12px container padding" },
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px gap between sections" },
+      "swatch-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px gap between swatches" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: ColorPicker sizing",
+    "cpick": {
+      "field-height": { "$type": "dimension", "$value": "160px", "$description": "Saturation field height" },
+      "slider-height": { "$type": "dimension", "$value": "12px", "$description": "Hue/alpha slider track height" },
+      "thumb-size": { "$type": "dimension", "$value": "16px", "$description": "Slider/field thumb size" },
+      "swatch-size": { "$type": "dimension", "$value": "24px", "$description": "Color swatch size" }
+    }
+  }
+}

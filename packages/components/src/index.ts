@@ -173,6 +173,10 @@ export {
   type ComboboxOptions,
 } from './molecules/Combobox';
 export {
+  ColorPicker,
+  type ColorPickerProps,
+} from './molecules/ColorPicker';
+export {
   Textarea,
   textareaVariants,
   type TextareaProps,
