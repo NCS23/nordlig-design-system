@@ -56,10 +56,10 @@ const InputOTPSlot = React.forwardRef<HTMLDivElement, InputOTPSlotProps>(
         className={cn(
           'relative flex items-center justify-center',
           'h-[var(--sizing-inputotp-slot-size)] w-[var(--sizing-inputotp-slot-size)]',
-          'border border-[var(--color-inputotp-border)]',
+          '[border-width:var(--sizing-inputotp-border-width)] border-[var(--color-inputotp-border)]',
           'bg-[var(--color-inputotp-bg)]',
           'rounded-[var(--radius-inputotp)]',
-          'text-sm font-medium text-[var(--color-inputotp-text)]',
+          'text-[length:var(--font-inputotp-size)] [font-weight:var(--font-inputotp-weight)] text-[var(--color-inputotp-text)]',
           'transition-colors',
           slot?.isActive && 'z-10 ring-2 ring-[var(--color-inputotp-border-focus)]',
           // Fehlerzustand vom Eltern-Element via .has-error Klasse

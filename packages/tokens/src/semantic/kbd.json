@@ -12,5 +12,17 @@
   },
   "radius": {
     "kbd": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Key border radius" }
+  },
+  "sizing": {
+    "kbd": {
+      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "Key border width (1px)" }
+    }
+  },
+  "font": {
+    "kbd": {
+      "sm-size": { "$type": "dimension", "$value": "11px", "$description": "Kbd sm font size (11px, no L3 equivalent)" },
+      "md-size": { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Kbd md font size (12px)" },
+      "lg-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Kbd lg font size (14px)" }
+    }
   }
 }

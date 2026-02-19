@@ -105,11 +105,11 @@ const ProgressField = React.forwardRef<
   return (
     <div className={cn('w-full', className)}>
       <div className="flex items-center justify-between mb-[var(--spacing-progress-label-gap)]">
-        <span className="text-sm font-medium text-[var(--color-progress-label)]">
+        <span className="text-[length:var(--font-progress-label-size)] [font-weight:var(--font-progress-label-weight)] text-[var(--color-progress-label)]">
           {label}
         </span>
         {showValue && (
-          <span className="text-sm text-[var(--color-progress-value)]">
+          <span className="text-[length:var(--font-progress-value-size)] text-[var(--color-progress-value)]">
             {displayValue}
           </span>
         )}

@@ -186,9 +186,9 @@ describe('Button', () => {
     expect(screen.getByTestId('btn').className).toContain('transition-colors');
   });
 
-  it('hat font-medium Klasse', () => {
+  it('hat font-weight Token-Klasse', () => {
     render(<Button data-testid="btn">OK</Button>);
-    expect(screen.getByTestId('btn').className).toContain('font-medium');
+    expect(screen.getByTestId('btn').className).toContain('[font-weight:var(--font-btn-weight)]');
   });
 
   // --- HTML-Attribute durchreichen ---

@@ -121,7 +121,7 @@ function FormField({ name, label, description, children, className }: FormFieldP
         <p
           id={errorId}
           role="alert"
-          className="text-sm text-[var(--color-error-text)]"
+          className="text-sm text-[var(--color-text-error)]"
         >
           {errorMessage}
         </p>
@@ -153,7 +153,7 @@ function FormMessage({ message, className }: FormMessageProps) {
   if (!message) return null;
 
   return (
-    <p role="alert" className={cn('text-sm text-[var(--color-error-text)]', className)}>
+    <p role="alert" className={cn('text-sm text-[var(--color-text-error)]', className)}>
       {message}
     </p>
   );

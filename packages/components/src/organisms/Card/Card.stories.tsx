@@ -187,17 +187,17 @@ export const WeeklySummaryCard: Story = {
       </CardHeader>
       <CardBody>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-          <div style={{ padding: '12px', backgroundColor: 'var(--color-success-bg-subtle)', borderRadius: '8px' }}>
-            <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-success-text)' }}>4</div>
-            <div style={{ fontSize: '13px', color: 'var(--color-success-text)' }}>Einheiten</div>
+          <div style={{ padding: '12px', backgroundColor: 'var(--color-bg-success-subtle)', borderRadius: '8px' }}>
+            <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-success)' }}>4</div>
+            <div style={{ fontSize: '13px', color: 'var(--color-text-success)' }}>Einheiten</div>
           </div>
-          <div style={{ padding: '12px', backgroundColor: 'var(--color-info-bg-subtle)', borderRadius: '8px' }}>
-            <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-info-text)' }}>3:24h</div>
-            <div style={{ fontSize: '13px', color: 'var(--color-info-text)' }}>Trainingszeit</div>
+          <div style={{ padding: '12px', backgroundColor: 'var(--color-bg-info-subtle)', borderRadius: '8px' }}>
+            <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-info)' }}>3:24h</div>
+            <div style={{ fontSize: '13px', color: 'var(--color-text-info)' }}>Trainingszeit</div>
           </div>
-          <div style={{ padding: '12px', backgroundColor: 'var(--color-warning-bg-subtle)', borderRadius: '8px' }}>
-            <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-warning-text)' }}>12.4t</div>
-            <div style={{ fontSize: '13px', color: 'var(--color-warning-text)' }}>Volumen</div>
+          <div style={{ padding: '12px', backgroundColor: 'var(--color-bg-warning-subtle)', borderRadius: '8px' }}>
+            <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-warning)' }}>12.4t</div>
+            <div style={{ fontSize: '13px', color: 'var(--color-text-warning)' }}>Volumen</div>
           </div>
           <div style={{ padding: '12px', backgroundColor: 'var(--color-bg-surface)', borderRadius: '8px' }}>
             <div style={{ fontSize: '28px', fontWeight: 700 }}>96</div>
@@ -217,14 +217,14 @@ export const MetricDisplayCard: Story = {
         <CardBody>
           <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '4px' }}>1RM Bankdrücken</div>
           <div style={{ fontSize: '28px', fontWeight: 700 }}>95kg</div>
-          <div style={{ fontSize: '12px', color: 'var(--color-success-text)' }}>+2.5kg</div>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-success)' }}>+2.5kg</div>
         </CardBody>
       </Card>
       <Card elevation="flat" padding="compact">
         <CardBody>
           <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '4px' }}>1RM Kniebeuge</div>
           <div style={{ fontSize: '28px', fontWeight: 700 }}>120kg</div>
-          <div style={{ fontSize: '12px', color: 'var(--color-success-text)' }}>+5kg</div>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-success)' }}>+5kg</div>
         </CardBody>
       </Card>
       <Card elevation="flat" padding="compact">

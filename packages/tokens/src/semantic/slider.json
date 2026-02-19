@@ -9,10 +9,17 @@
       "thumb-hover":  { "$type": "color", "$value": "{color.bg.primary-hover}", "$description": "Slider thumb hover border" }
     }
   },
+  "font": {
+    "slider": {
+      "value-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Slider value display font size (text-sm)" },
+      "value-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Slider value display font weight (500)" }
+    }
+  },
   "sizing": {
     "slider": {
-      "track-height": { "$type": "dimension", "$value": "{sizing.component.track.md}", "$description": "Slider track height (8px)" },
-      "thumb-size":   { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Slider thumb size (20px)" }
+      "track-height":       { "$type": "dimension", "$value": "{sizing.component.track.md}", "$description": "Slider track height (8px)" },
+      "thumb-size":         { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Slider thumb size (20px)" },
+      "thumb-border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.thick}", "$description": "Slider thumb border width (2px)" }
     }
   },
   "radius": {

@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
 const avatarVariants = cva(
-  'relative inline-flex items-center justify-center overflow-hidden rounded-[var(--radius-avatar)] bg-[var(--color-avatar-bg)] border border-[var(--color-avatar-border)]',
+  'relative inline-flex items-center justify-center overflow-hidden rounded-[var(--radius-avatar)] bg-[var(--color-avatar-bg)] [border-width:var(--sizing-avatar-border-width)] border-[var(--color-avatar-border)]',
   {
     variants: {
       size: {
@@ -49,10 +49,10 @@ const AvatarImage = React.forwardRef<
 AvatarImage.displayName = 'AvatarImage';
 
 const fallbackSizeMap: Record<string, string> = {
-  sm: 'text-xs',
-  md: 'text-sm',
-  lg: 'text-base',
-  xl: 'text-lg',
+  sm: 'text-[length:var(--font-avatar-sm-size)]',
+  md: 'text-[length:var(--font-avatar-md-size)]',
+  lg: 'text-[length:var(--font-avatar-lg-size)]',
+  xl: 'text-[length:var(--font-avatar-xl-size)]',
 };
 
 export interface AvatarFallbackProps
@@ -67,7 +67,7 @@ const AvatarFallback = React.forwardRef<
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(
-      'flex h-full w-full items-center justify-center text-[var(--color-avatar-text)] font-medium',
+      'flex h-full w-full items-center justify-center text-[var(--color-avatar-text)] [font-weight:var(--font-avatar-fallback-weight)]',
       fallbackSizeMap[size],
       className
     )}

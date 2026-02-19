@@ -219,6 +219,7 @@
   --font-base-letter-spacing-tight: -0.025em;
   --font-base-letter-spacing-normal: 0em;
   --font-base-letter-spacing-wide: 0.025em;
+  --font-kbd-sm-size: 11px; /** Kbd sm font size (11px, no L3 equivalent) */
   --sizing-cpybtn-sm: 28px; /** CopyButton size sm (compact icon-only) */
   --sizing-cpybtn-md: 32px; /** CopyButton size md */
   --sizing-cpybtn-lg: 36px; /** CopyButton size lg */
@@ -429,12 +430,20 @@
   --color-bg-primary-muted: var(--color-primary-1-100);
   --color-bg-surface-hover: var(--color-neutral-1-200);
   --color-bg-surface-active: var(--color-neutral-1-300);
-  --color-bg-secondary: var(--color-secondary-1-500);
-  --color-bg-secondary-hover: var(--color-secondary-1-600);
-  --color-bg-success: var(--color-accent-1-500);
-  --color-bg-warning: var(--color-accent-2-500);
-  --color-bg-error: var(--color-accent-3-500);
-  --color-bg-info: var(--color-accent-4-500);
+  --color-bg-secondary: var(--color-neutral-1-500); /** Secondary bg (consolidated from secondary.1 = neutral.1) */
+  --color-bg-secondary-hover: var(--color-neutral-1-600);
+  --color-bg-success-subtle: var(--color-accent-1-50); /** Subtle success bg (alerts, toasts) */
+  --color-bg-success: var(--color-accent-1-100); /** Default success bg (badges, banners) */
+  --color-bg-success-solid: var(--color-accent-1-500); /** Solid success bg (filled indicators) */
+  --color-bg-warning-subtle: var(--color-accent-2-50);
+  --color-bg-warning: var(--color-accent-2-100);
+  --color-bg-warning-solid: var(--color-accent-2-500);
+  --color-bg-error-subtle: var(--color-accent-3-50);
+  --color-bg-error: var(--color-accent-3-100);
+  --color-bg-error-solid: var(--color-accent-3-500);
+  --color-bg-info-subtle: var(--color-accent-4-50);
+  --color-bg-info: var(--color-accent-4-100);
+  --color-bg-info-solid: var(--color-accent-4-500);
   --color-bg-overlay: var(--color-neutral-overlay); /** Modal/dialog backdrop */
   --color-bg-inverse: var(--color-neutral-1-900); /** Dark/inverted background (code blocks) */
   --color-bg-inverse-hover: var(--color-neutral-1-700); /** Hover on inverted background */
@@ -453,31 +462,17 @@
   --color-border-muted: var(--color-neutral-1-200);
   --color-border-strong: var(--color-neutral-1-400);
   --color-border-focus: var(--color-primary-1-500);
-  --color-border-error: var(--color-accent-3-500);
   --color-border-success: var(--color-accent-1-500);
+  --color-border-warning: var(--color-accent-2-500);
+  --color-border-error: var(--color-accent-3-500);
+  --color-border-info: var(--color-accent-4-500);
   --color-interactive-primary: var(--color-primary-1-500);
   --color-interactive-primary-hover: var(--color-primary-1-600);
   --color-interactive-primary-active: var(--color-primary-1-700);
   --color-interactive-primary-disabled: var(--color-neutral-1-300);
-  --color-interactive-secondary: var(--color-secondary-1-500);
-  --color-interactive-secondary-hover: var(--color-secondary-1-600);
-  --color-interactive-secondary-active: var(--color-secondary-1-700);
-  --color-success-bg-subtle: var(--color-accent-1-50);
-  --color-success-bg: var(--color-accent-1-100);
-  --color-success-border: var(--color-accent-1-500);
-  --color-success-text: var(--color-accent-1-700);
-  --color-warning-bg-subtle: var(--color-accent-2-50);
-  --color-warning-bg: var(--color-accent-2-100);
-  --color-warning-border: var(--color-accent-2-500);
-  --color-warning-text: var(--color-accent-2-700);
-  --color-error-bg-subtle: var(--color-accent-3-50);
-  --color-error-bg: var(--color-accent-3-100);
-  --color-error-border: var(--color-accent-3-500);
-  --color-error-text: var(--color-accent-3-700);
-  --color-info-bg-subtle: var(--color-accent-4-50);
-  --color-info-bg: var(--color-accent-4-100);
-  --color-info-border: var(--color-accent-4-500);
-  --color-info-text: var(--color-accent-4-700);
+  --color-interactive-secondary: var(--color-neutral-1-500); /** Consolidated from secondary.1 = neutral.1 */
+  --color-interactive-secondary-hover: var(--color-neutral-1-600);
+  --color-interactive-secondary-active: var(--color-neutral-1-700);
   --radius-component-sm: var(--radius-sm);
   --radius-component-md: var(--radius-md);
   --radius-component-lg: var(--radius-lg);
@@ -499,17 +494,24 @@
   --spacing-component-gap-lg: var(--spacing-md);
   --spacing-layout-gutter: var(--spacing-lg);
   --spacing-layout-section: var(--spacing-2xl);
+  --font-component-size-xs: var(--font-size-xs);
   --font-component-size-sm: var(--font-size-sm);
   --font-component-size-md: var(--font-size-base);
   --font-component-size-lg: var(--font-size-lg);
+  --font-component-weight-normal: var(--font-weight-normal);
+  --font-component-weight-medium: var(--font-weight-medium);
+  --font-component-weight-semibold: var(--font-weight-semibold);
+  --font-component-weight-bold: var(--font-weight-bold);
   --font-component-line-height-xs: var(--font-line-height-xs);
   --font-component-line-height-sm: var(--font-line-height-sm);
   --font-component-line-height-md: var(--font-line-height-base);
   --font-component-line-height-lg: var(--font-line-height-lg);
+  --font-heading-size-xs: var(--font-size-base);
   --font-heading-size-sm: var(--font-size-lg);
   --font-heading-size-md: var(--font-size-xl);
   --font-heading-size-lg: var(--font-size-2xl);
   --font-heading-size-xl: var(--font-size-3xl);
+  --font-heading-size-2xl: var(--font-size-4xl);
   --font-body-size: var(--font-size-base);
   --font-caption-size: var(--font-size-xs);
   --font-badge-weight: var(--font-weight-medium); /** Font weight 500 (medium) */
@@ -549,59 +551,59 @@
   --color-accordion-icon: var(--color-text-muted); /** Chevron icon color */
   --color-alert-title: var(--color-text-base); /** Alert title text */
   --color-alert-description: var(--color-text-base); /** Alert description text */
-  --color-alert-info-bg: var(--color-info-bg-subtle); /** Info variant background */
-  --color-alert-info-border: var(--color-info-border); /** Info left accent border */
-  --color-alert-info-icon: var(--color-info-text); /** Info icon color */
-  --color-alert-success-bg: var(--color-success-bg-subtle); /** Success variant background */
-  --color-alert-success-border: var(--color-success-border); /** Success left accent border */
-  --color-alert-success-icon: var(--color-success-text); /** Success icon color */
-  --color-alert-warning-bg: var(--color-warning-bg-subtle); /** Warning variant background */
-  --color-alert-warning-border: var(--color-warning-border); /** Warning left accent border */
-  --color-alert-warning-icon: var(--color-warning-text); /** Warning icon color */
-  --color-alert-error-bg: var(--color-error-bg-subtle); /** Error variant background */
-  --color-alert-error-border: var(--color-error-border); /** Error left accent border */
-  --color-alert-error-icon: var(--color-error-text); /** Error icon color */
+  --color-alert-info-bg: var(--color-bg-info-subtle); /** Info variant background */
+  --color-alert-info-border: var(--color-border-info); /** Info left accent border */
+  --color-alert-info-icon: var(--color-text-info); /** Info icon color */
+  --color-alert-success-bg: var(--color-bg-success-subtle); /** Success variant background */
+  --color-alert-success-border: var(--color-border-success); /** Success left accent border */
+  --color-alert-success-icon: var(--color-text-success); /** Success icon color */
+  --color-alert-warning-bg: var(--color-bg-warning-subtle); /** Warning variant background */
+  --color-alert-warning-border: var(--color-border-warning); /** Warning left accent border */
+  --color-alert-warning-icon: var(--color-text-warning); /** Warning icon color */
+  --color-alert-error-bg: var(--color-bg-error-subtle); /** Error variant background */
+  --color-alert-error-border: var(--color-border-error); /** Error left accent border */
+  --color-alert-error-icon: var(--color-text-error); /** Error icon color */
   --color-alertdlg-overlay: var(--color-bg-overlay); /** AlertDialog backdrop overlay */
   --color-alertdlg-bg: var(--color-bg-paper); /** AlertDialog content background */
   --color-alertdlg-title: var(--color-text-base); /** AlertDialog title text */
   --color-alertdlg-description: var(--color-text-muted); /** AlertDialog description text */
   --color-alertdlg-border: var(--color-border-muted); /** AlertDialog border */
-  --color-alertdlg-action-bg: var(--color-error-bg); /** Destructive action button background */
+  --color-alertdlg-action-bg: var(--color-bg-error); /** Destructive action button background */
   --color-alertdlg-action-text: var(--color-text-inverse); /** Destructive action button text */
-  --color-alertdlg-action-hover-bg: var(--color-error-text); /** Destructive action button hover */
+  --color-alertdlg-action-hover-bg: var(--color-text-error); /** Destructive action button hover */
   --color-alertdlg-cancel-bg: var(--color-bg-surface); /** Cancel button background */
   --color-alertdlg-cancel-text: var(--color-text-base); /** Cancel button text */
   --color-alertdlg-cancel-hover-bg: var(--color-bg-surface-hover); /** Cancel button hover */
   --color-avatar-bg: var(--color-bg-surface); /** Avatar fallback background */
   --color-avatar-text: var(--color-text-muted); /** Avatar fallback text */
   --color-avatar-border: var(--color-border-default); /** Avatar border */
-  --color-badge-success-bg: var(--color-success-bg);
-  --color-badge-success-text: var(--color-success-text);
-  --color-badge-success-border: var(--color-success-border);
-  --color-badge-warning-bg: var(--color-warning-bg);
-  --color-badge-warning-text: var(--color-warning-text);
-  --color-badge-warning-border: var(--color-warning-border);
-  --color-badge-error-bg: var(--color-error-bg);
-  --color-badge-error-text: var(--color-error-text);
-  --color-badge-error-border: var(--color-error-border);
-  --color-badge-info-bg: var(--color-info-bg);
-  --color-badge-info-text: var(--color-info-text);
-  --color-badge-info-border: var(--color-info-border);
+  --color-badge-success-bg: var(--color-bg-success);
+  --color-badge-success-text: var(--color-text-success);
+  --color-badge-success-border: var(--color-border-success);
+  --color-badge-warning-bg: var(--color-bg-warning);
+  --color-badge-warning-text: var(--color-text-warning);
+  --color-badge-warning-border: var(--color-border-warning);
+  --color-badge-error-bg: var(--color-bg-error);
+  --color-badge-error-text: var(--color-text-error);
+  --color-badge-error-border: var(--color-border-error);
+  --color-badge-info-bg: var(--color-bg-info);
+  --color-badge-info-text: var(--color-text-info);
+  --color-badge-info-border: var(--color-border-info);
   --color-badge-neutral-bg: var(--color-bg-surface);
   --color-badge-neutral-text: var(--color-text-muted);
   --color-badge-neutral-border: var(--color-border-muted);
-  --color-banner-info-bg: var(--color-info-bg); /** Info background */
-  --color-banner-info-text: var(--color-info-text); /** Info text */
-  --color-banner-info-border: var(--color-info-border); /** Info border */
-  --color-banner-success-bg: var(--color-success-bg); /** Success background */
-  --color-banner-success-text: var(--color-success-text); /** Success text */
-  --color-banner-success-border: var(--color-success-border); /** Success border */
-  --color-banner-warning-bg: var(--color-warning-bg); /** Warning background */
-  --color-banner-warning-text: var(--color-warning-text); /** Warning text */
-  --color-banner-warning-border: var(--color-warning-border); /** Warning border */
-  --color-banner-error-bg: var(--color-error-bg); /** Error background */
-  --color-banner-error-text: var(--color-error-text); /** Error text */
-  --color-banner-error-border: var(--color-error-border); /** Error border */
+  --color-banner-info-bg: var(--color-bg-info); /** Info background */
+  --color-banner-info-text: var(--color-text-info); /** Info text */
+  --color-banner-info-border: var(--color-border-info); /** Info border */
+  --color-banner-success-bg: var(--color-bg-success); /** Success background */
+  --color-banner-success-text: var(--color-text-success); /** Success text */
+  --color-banner-success-border: var(--color-border-success); /** Success border */
+  --color-banner-warning-bg: var(--color-bg-warning); /** Warning background */
+  --color-banner-warning-text: var(--color-text-warning); /** Warning text */
+  --color-banner-warning-border: var(--color-border-warning); /** Warning border */
+  --color-banner-error-bg: var(--color-bg-error); /** Error background */
+  --color-banner-error-text: var(--color-text-error); /** Error text */
+  --color-banner-error-border: var(--color-border-error); /** Error border */
   --color-banner-dismiss: var(--color-text-muted); /** Dismiss icon color */
   --color-bq-border: var(--color-border-strong); /** Left accent border */
   --color-bq-bg: var(--color-bg-surface); /** Background */
@@ -629,10 +631,10 @@
   --color-card-bg: var(--color-bg-paper); /** White paper background */
   --color-card-border: var(--color-border-muted);
   --color-chart-1: var(--color-bg-primary); /** Chart color 1 (primary blue) */
-  --color-chart-2: var(--color-success-text); /** Chart color 2 (green) */
-  --color-chart-3: var(--color-warning-text); /** Chart color 3 (amber) */
-  --color-chart-4: var(--color-error-text); /** Chart color 4 (red) */
-  --color-chart-5: var(--color-info-text); /** Chart color 5 (info blue) */
+  --color-chart-2: var(--color-text-success); /** Chart color 2 (green) */
+  --color-chart-3: var(--color-text-warning); /** Chart color 3 (amber) */
+  --color-chart-4: var(--color-text-error); /** Chart color 4 (red) */
+  --color-chart-5: var(--color-text-info); /** Chart color 5 (info blue) */
   --color-chart-grid: var(--color-border-muted); /** Chart grid line color */
   --color-chart-axis: var(--color-text-muted); /** Chart axis text color */
   --color-chart-tooltip-bg: var(--color-bg-paper); /** Chart tooltip background */
@@ -677,7 +679,7 @@
   --color-cpybtn-bg: var(--color-bg-surface); /** Default background */
   --color-cpybtn-bg-hover: var(--color-bg-surface-hover); /** Hover background */
   --color-cpybtn-icon: var(--color-text-muted); /** Copy icon color */
-  --color-cpybtn-icon-copied: var(--color-success-text); /** Check icon after copy */
+  --color-cpybtn-icon-copied: var(--color-text-success); /** Check icon after copy */
   --color-cpybtn-border: var(--color-border-default); /** Button border */
   --color-datatable-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
   --color-datatable-row-selected-bg: var(--color-bg-surface); /** Selected row background */
@@ -713,13 +715,13 @@
   --color-dropdown-item-hover-bg: var(--color-bg-surface); /** Item hover/focus background */
   --color-dropdown-item-disabled-text: var(--color-text-disabled); /** Disabled item text */
   --color-dropdown-item-icon: var(--color-text-muted); /** Item icon color */
-  --color-dropdown-destructive-text: var(--color-error-text); /** Destructive item text (red) */
-  --color-dropdown-destructive-hover-bg: var(--color-error-bg-subtle); /** Destructive item hover bg */
+  --color-dropdown-destructive-text: var(--color-text-error); /** Destructive item text (red) */
+  --color-dropdown-destructive-hover-bg: var(--color-bg-error-subtle); /** Destructive item hover bg */
   --color-dropdown-separator: var(--color-border-muted); /** Separator line */
   --color-dropdown-label-text: var(--color-text-muted); /** Group label text */
   --color-emptystate-icon: var(--color-text-muted); /** Default icon color (muted) */
-  --color-emptystate-icon-error: var(--color-error-text); /** Error variant icon color */
-  --color-emptystate-icon-success: var(--color-success-text); /** Success variant icon color */
+  --color-emptystate-icon-error: var(--color-text-error); /** Error variant icon color */
+  --color-emptystate-icon-success: var(--color-text-success); /** Success variant icon color */
   --color-emptystate-title: var(--color-text-base); /** Title text color */
   --color-emptystate-description: var(--color-text-muted); /** Description text color (muted) */
   --color-fileupload-zone-bg: var(--color-bg-surface); /** Upload zone background (slate-100) – visible against white page */
@@ -742,7 +744,7 @@
   --color-fileupload-progress-fill: var(--color-bg-primary); /** Sky-500 progress bar */
   --color-fileupload-error-text: var(--color-text-error); /** Error message */
   --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
-  --color-hl-bg: var(--color-warning-bg); /** Highlight background (yellow) */
+  --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
   --color-hl-text: var(--color-text-base); /** Highlight text */
   --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
   --color-hovercard-border: var(--color-border-muted); /** HoverCard border */
@@ -800,7 +802,7 @@
   --color-numberinput-border: var(--color-border-default); /** Default border */
   --color-numberinput-border-hover: var(--color-border-strong); /** Hover border */
   --color-numberinput-border-focus: var(--color-border-focus); /** Focus ring color */
-  --color-numberinput-border-error: var(--color-error-border); /** Error border */
+  --color-numberinput-border-error: var(--color-border-error); /** Error border */
   --color-numberinput-stepper-text: var(--color-text-muted); /** Stepper button icon color */
   --color-numberinput-stepper-text-hover: var(--color-text-base); /** Stepper button icon hover color */
   --color-numberinput-stepper-bg-hover: var(--color-bg-surface); /** Stepper button hover background */
@@ -813,16 +815,16 @@
   --color-pagination-item-active-border: var(--color-bg-primary); /** Active page border (Sky Blue) */
   --color-pwinput-toggle: var(--color-text-muted); /** Toggle icon color */
   --color-pwinput-toggle-hover: var(--color-text-base); /** Toggle icon hover */
-  --color-pwinput-strength-weak: var(--color-error-text); /** Strength: weak */
-  --color-pwinput-strength-medium: var(--color-warning-text); /** Strength: medium */
-  --color-pwinput-strength-strong: var(--color-success-text); /** Strength: strong */
+  --color-pwinput-strength-weak: var(--color-text-error); /** Strength: weak */
+  --color-pwinput-strength-medium: var(--color-text-warning); /** Strength: medium */
+  --color-pwinput-strength-strong: var(--color-text-success); /** Strength: strong */
   --color-popover-bg: var(--color-bg-paper); /** White popover background */
   --color-popover-border: var(--color-border-muted); /** Subtle outer border */
   --color-progress-track: var(--color-bg-surface);
   --color-progress-fill: var(--color-interactive-primary);
-  --color-progress-fill-success: var(--color-bg-success);
-  --color-progress-fill-warning: var(--color-bg-warning);
-  --color-progress-fill-error: var(--color-bg-error);
+  --color-progress-fill-success: var(--color-bg-success-solid);
+  --color-progress-fill-warning: var(--color-bg-warning-solid);
+  --color-progress-fill-error: var(--color-bg-error-solid);
   --color-progress-label: var(--color-text-base);
   --color-progress-value: var(--color-text-muted);
   --color-radio-bg: var(--color-bg-paper); /** Unchecked background (white) */
@@ -835,9 +837,9 @@
   --color-radio-item-hover-bg: var(--color-bg-surface); /** Row hover background */
   --color-radio-label: var(--color-text-base); /** Label text color */
   --color-radio-description: var(--color-text-muted); /** Description text color */
-  --color-rtg-filled: var(--color-warning-text); /** Filled star (gold/amber) */
+  --color-rtg-filled: var(--color-text-warning); /** Filled star (gold/amber) */
   --color-rtg-empty: var(--color-text-disabled); /** Empty star */
-  --color-rtg-hover: var(--color-warning-border); /** Hover color */
+  --color-rtg-hover: var(--color-border-warning); /** Hover color */
   --color-rtg-text: var(--color-text-muted); /** Optional rating text */
   --color-rsz-handle-bg: var(--color-border-muted); /** Handle default background */
   --color-rsz-handle-hover-bg: var(--color-interactive-primary); /** Handle hover/active */
@@ -878,19 +880,19 @@
   --color-session-card-border: var(--color-border-muted); /** Default border */
   --color-session-card-border-hover: var(--color-border-default); /** Hover border */
   --color-session-card-bg-hover: var(--color-bg-surface); /** Hover background */
-  --color-session-card-bg-error: var(--color-error-bg-subtle); /** Error state background */
-  --color-session-card-border-error: var(--color-error-border); /** Error state border */
+  --color-session-card-bg-error: var(--color-bg-error-subtle); /** Error state background */
+  --color-session-card-border-error: var(--color-border-error); /** Error state border */
   --color-session-card-text-primary: var(--color-text-base); /** Title and value text */
   --color-session-card-text-secondary: var(--color-text-muted); /** Date, labels, description */
   --color-session-card-text-tertiary: var(--color-text-disabled); /** Zone labels (Z1-Z5) */
-  --color-session-card-text-error: var(--color-error-text); /** Error message text */
+  --color-session-card-text-error: var(--color-text-error); /** Error message text */
   --color-session-card-skeleton: var(--color-bg-surface); /** Skeleton placeholder */
   --color-session-card-zone-bg: var(--color-bg-surface); /** Zone bar background */
   --color-session-card-zone-1: var(--color-border-strong); /** HR Zone 1 Recovery */
-  --color-session-card-zone-2: var(--color-success-border); /** HR Zone 2 Aerobic */
-  --color-session-card-zone-3: var(--color-warning-border); /** HR Zone 3 Tempo */
-  --color-session-card-zone-4: var(--color-warning-text); /** HR Zone 4 Threshold */
-  --color-session-card-zone-5: var(--color-error-border); /** HR Zone 5 Maximum */
+  --color-session-card-zone-2: var(--color-border-success); /** HR Zone 2 Aerobic */
+  --color-session-card-zone-3: var(--color-border-warning); /** HR Zone 3 Tempo */
+  --color-session-card-zone-4: var(--color-text-warning); /** HR Zone 4 Threshold */
+  --color-session-card-zone-5: var(--color-border-error); /** HR Zone 5 Maximum */
   --color-session-card-focus-ring: var(--color-border-focus); /** Focus ring for interactive state */
   --color-sheet-overlay: var(--color-bg-overlay); /** Sheet backdrop overlay */
   --color-sheet-bg: var(--color-bg-paper); /** Sheet panel background */
@@ -911,11 +913,11 @@
   --color-stat-card-border: var(--color-border-muted); /** Default border */
   --color-stat-card-text-primary: var(--color-text-base); /** Main value text */
   --color-stat-card-text-secondary: var(--color-text-muted); /** Title, unit, description */
-  --color-stat-card-border-success: var(--color-success-border); /** Success variant left accent */
-  --color-stat-card-border-warning: var(--color-warning-border); /** Warning variant left accent */
-  --color-stat-card-border-error: var(--color-error-border); /** Error variant left accent */
-  --color-stat-card-trend-up: var(--color-success-text); /** Positive trend indicator */
-  --color-stat-card-trend-down: var(--color-error-text); /** Negative trend indicator */
+  --color-stat-card-border-success: var(--color-border-success); /** Success variant left accent */
+  --color-stat-card-border-warning: var(--color-border-warning); /** Warning variant left accent */
+  --color-stat-card-border-error: var(--color-border-error); /** Error variant left accent */
+  --color-stat-card-trend-up: var(--color-text-success); /** Positive trend indicator */
+  --color-stat-card-trend-down: var(--color-text-error); /** Negative trend indicator */
   --color-stat-card-trend-neutral: var(--color-text-muted); /** Neutral trend indicator */
   --color-switch-track-bg: var(--color-border-default); /** Unchecked track (gray-300) */
   --color-switch-track-bg-checked: var(--color-interactive-primary); /** Checked track (sky blue) */
@@ -939,20 +941,20 @@
   --color-tabs-border: var(--color-border-muted); /** Underline variant bottom border */
   --color-tabs-content-text: var(--color-text-base); /** Tab content text */
   --color-tag-bg-default: var(--color-bg-surface); /** Default tag background */
-  --color-tag-bg-success: var(--color-success-bg-subtle); /** Success variant background */
-  --color-tag-bg-warning: var(--color-warning-bg-subtle); /** Warning variant background */
-  --color-tag-bg-error: var(--color-error-bg-subtle); /** Error variant background */
-  --color-tag-bg-info: var(--color-info-bg-subtle); /** Info variant background */
+  --color-tag-bg-success: var(--color-bg-success-subtle); /** Success variant background */
+  --color-tag-bg-warning: var(--color-bg-warning-subtle); /** Warning variant background */
+  --color-tag-bg-error: var(--color-bg-error-subtle); /** Error variant background */
+  --color-tag-bg-info: var(--color-bg-info-subtle); /** Info variant background */
   --color-tag-text-default: var(--color-text-base); /** Default tag text color */
-  --color-tag-text-success: var(--color-success-text); /** Success variant text color */
-  --color-tag-text-warning: var(--color-warning-text); /** Warning variant text color */
-  --color-tag-text-error: var(--color-error-text); /** Error variant text color */
-  --color-tag-text-info: var(--color-info-text); /** Info variant text color */
+  --color-tag-text-success: var(--color-text-success); /** Success variant text color */
+  --color-tag-text-warning: var(--color-text-warning); /** Warning variant text color */
+  --color-tag-text-error: var(--color-text-error); /** Error variant text color */
+  --color-tag-text-info: var(--color-text-info); /** Info variant text color */
   --color-tag-border-default: var(--color-border-muted); /** Default tag border */
-  --color-tag-border-success: var(--color-success-border); /** Success variant border */
-  --color-tag-border-warning: var(--color-warning-border); /** Warning variant border */
-  --color-tag-border-error: var(--color-error-border); /** Error variant border */
-  --color-tag-border-info: var(--color-info-border); /** Info variant border */
+  --color-tag-border-success: var(--color-border-success); /** Success variant border */
+  --color-tag-border-warning: var(--color-border-warning); /** Warning variant border */
+  --color-tag-border-error: var(--color-border-error); /** Error variant border */
+  --color-tag-border-info: var(--color-border-info); /** Info variant border */
   --color-tag-border-focus: var(--color-border-focus); /** Focus ring color */
   --color-textarea-counter-text: var(--color-text-muted); /** Character counter default */
   --color-textarea-counter-text-over: var(--color-text-error); /** Counter when over limit */
@@ -961,14 +963,14 @@
   --color-toast-title: var(--color-text-base); /** Toast title text */
   --color-toast-description: var(--color-text-muted); /** Toast description text */
   --color-toast-close-hover-bg: var(--color-bg-surface); /** Close button hover bg */
-  --color-toast-success-border: var(--color-success-border); /** Green left accent border */
-  --color-toast-success-icon: var(--color-success-text); /** Green icon color */
-  --color-toast-error-border: var(--color-error-border); /** Red left accent border */
-  --color-toast-error-icon: var(--color-error-text); /** Red icon color */
-  --color-toast-warning-border: var(--color-warning-border); /** Amber left accent border */
-  --color-toast-warning-icon: var(--color-warning-text); /** Amber icon color */
-  --color-toast-info-border: var(--color-info-border); /** Sky blue left accent border */
-  --color-toast-info-icon: var(--color-info-text); /** Sky blue icon color */
+  --color-toast-success-border: var(--color-border-success); /** Green left accent border */
+  --color-toast-success-icon: var(--color-text-success); /** Green icon color */
+  --color-toast-error-border: var(--color-border-error); /** Red left accent border */
+  --color-toast-error-icon: var(--color-text-error); /** Red icon color */
+  --color-toast-warning-border: var(--color-border-warning); /** Amber left accent border */
+  --color-toast-warning-icon: var(--color-text-warning); /** Amber icon color */
+  --color-toast-info-border: var(--color-border-info); /** Sky blue left accent border */
+  --color-toast-info-icon: var(--color-text-info); /** Sky blue icon color */
   --color-toggle-bg: var(--color-bg-surface); /** Toggle button default background */
   --color-toggle-border: var(--color-border-default); /** Toggle button border */
   --color-toggle-text: var(--color-text-base); /** Toggle button text */
@@ -994,6 +996,7 @@
   --radius-alertdlg: var(--radius-component-lg); /** AlertDialog border radius */
   --radius-avatar: var(--radius-component-full); /** Avatar border radius (circle) */
   --radius-badge: var(--radius-component-full);
+  --radius-banner-dismiss: var(--radius-component-sm); /** Dismiss button border radius (rounded-sm) */
   --radius-bq: var(--radius-component-sm); /** Corner radius */
   --radius-card: var(--radius-component-lg);
   --radius-chart-tooltip: var(--radius-component-md); /** Chart tooltip border radius */
@@ -1165,10 +1168,56 @@
   --spacing-toolbar-btn-padding-y: var(--spacing-component-padding-xs); /** Button vertical padding */
   --spacing-tooltip-padding-x: var(--spacing-component-padding-sm); /** 12px horizontal padding */
   --spacing-tooltip-padding-y: var(--spacing-component-padding-xs); /** 8px vertical padding */
+  --font-heading-h1-size: var(--font-heading-size-2xl); /** h1 font size (2.25rem / text-4xl) */
+  --font-heading-h1-weight: var(--font-component-weight-bold); /** h1 font weight (700) */
+  --font-heading-h2-size: var(--font-heading-size-xl); /** h2 font size (1.875rem / text-3xl) */
+  --font-heading-h2-weight: var(--font-component-weight-bold); /** h2 font weight (700) */
+  --font-heading-h3-size: var(--font-heading-size-lg); /** h3 font size (1.5rem / text-2xl) */
+  --font-heading-h3-weight: var(--font-component-weight-semibold); /** h3 font weight (600) */
+  --font-heading-h4-size: var(--font-heading-size-md); /** h4 font size (1.25rem / text-xl) */
+  --font-heading-h4-weight: var(--font-component-weight-semibold); /** h4 font weight (600) */
+  --font-heading-h5-size: var(--font-heading-size-sm); /** h5 font size (1.125rem / text-lg) */
+  --font-heading-h5-weight: var(--font-component-weight-medium); /** h5 font weight (500) */
+  --font-heading-h6-size: var(--font-heading-size-xs); /** h6 font size (1rem / text-base) */
+  --font-heading-h6-weight: var(--font-component-weight-medium); /** h6 font weight (500) */
+  --font-avatar-fallback-weight: var(--font-component-weight-medium); /** Fallback initials font weight (500) */
+  --font-avatar-sm-size: var(--font-component-size-xs); /** Fallback text size sm (text-xs) */
+  --font-avatar-md-size: var(--font-component-size-sm); /** Fallback text size md (text-sm) */
+  --font-avatar-lg-size: var(--font-component-size-md); /** Fallback text size lg (text-base) */
+  --font-avatar-xl-size: var(--font-component-size-lg); /** Fallback text size xl (text-lg) */
+  --font-banner-size: var(--font-component-size-sm); /** Banner content font size (text-sm) */
+  --font-bq-cite-size: var(--font-component-size-sm); /** Citation font size (14px) */
+  --font-bq-cite-weight: var(--font-component-weight-medium); /** Citation author font weight (500) */
+  --font-btn-weight: var(--font-component-weight-medium); /** Button font weight (500) */
   --font-checkbox-label-size: var(--font-component-size-sm); /** Label font size 14px (text-sm) */
   --font-checkbox-desc-size: var(--font-caption-size); /** Description font size 12px (text-xs) */
   --font-checkbox-label-line-height: var(--font-component-line-height-sm); /** 20px */
   --font-checkbox-desc-line-height: var(--font-component-line-height-xs); /** 18px */
+  --font-code-size: var(--font-component-size-sm); /** Code font size (14px) */
+  --font-inputotp-size: var(--font-component-size-sm); /** OTP digit font size (text-sm) */
+  --font-inputotp-weight: var(--font-component-weight-medium); /** OTP digit font weight (500) */
+  --font-kbd-md-size: var(--font-component-size-xs); /** Kbd md font size (12px) */
+  --font-kbd-lg-size: var(--font-component-size-sm); /** Kbd lg font size (14px) */
+  --font-label-size: var(--font-component-size-sm); /** Label font size (14px) */
+  --font-label-weight: var(--font-component-weight-medium); /** Label font weight (500) */
+  --font-numberinput-weight: var(--font-component-weight-medium); /** Input value font weight (500) */
+  --font-progress-label-size: var(--font-component-size-sm); /** ProgressField label font size (text-sm) */
+  --font-progress-label-weight: var(--font-component-weight-medium); /** ProgressField label font weight (500) */
+  --font-progress-value-size: var(--font-component-size-sm); /** ProgressField value font size (text-sm) */
+  --font-slider-value-size: var(--font-component-size-sm); /** Slider value display font size (text-sm) */
+  --font-slider-value-weight: var(--font-component-weight-medium); /** Slider value display font weight (500) */
+  --font-spinner-label-size: var(--font-component-size-sm); /** Spinner label font size (text-sm) */
+  --font-switch-label-size: var(--font-component-size-sm); /** SwitchField label font size (text-sm) */
+  --font-switch-label-weight: var(--font-component-weight-medium); /** SwitchField label font weight (500) */
+  --font-switch-desc-size: var(--font-component-size-xs); /** SwitchField description font size (text-xs) */
+  --font-tag-weight: var(--font-component-weight-medium); /** Tag font weight (500) */
+  --font-tag-sm-size: var(--font-component-size-xs); /** Tag sm font size (12px) */
+  --font-tag-md-size: var(--font-component-size-sm); /** Tag md font size (14px) */
+  --font-text-body-size: var(--font-component-size-md); /** Body variant font size (text-base) */
+  --font-text-caption-size: var(--font-component-size-sm); /** Caption variant font size (text-sm) */
+  --font-text-small-size: var(--font-component-size-xs); /** Small variant font size (text-xs) */
+  --font-text-muted-size: var(--font-component-size-sm); /** Muted variant font size (text-sm) */
+  --font-toggle-weight: var(--font-component-weight-medium); /** Toggle/ToggleGroup font weight (500) */
   --sizing-alert-border-width: var(--sizing-component-track-sm); /** Left accent border width (4px) */
   --sizing-alert-font-size: var(--font-component-size-sm); /** Text font size (14px) */
   --sizing-alert-line-height: var(--font-component-line-height-sm); /** Text line height (21px) */
@@ -1176,6 +1225,8 @@
   --sizing-avatar-md: var(--sizing-component-height-md); /** Avatar size md (h-10 = 40px) */
   --sizing-avatar-lg: var(--sizing-component-height-lg); /** Avatar size lg (h-11 = 44px) */
   --sizing-avatar-xl: var(--sizing-component-icon-xl); /** Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16) */
+  --sizing-avatar-border-width: var(--sizing-component-border-width-default); /** Avatar border width (1px) */
+  --sizing-badge-border-width: var(--sizing-component-border-width-default); /** Badge border width (1px) */
   --sizing-badge-sm-padding-x: var(--sizing-component-padding-x-sm);
   --sizing-badge-sm-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-badge-sm-font-size: var(--font-component-size-sm);
@@ -1231,6 +1282,9 @@
   --sizing-input-lg-line-height: var(--font-component-line-height-lg); /** 27px */
   --sizing-input-lg-radius: var(--radius-component-md); /** 6px */
   --sizing-inputotp-slot-size: var(--sizing-component-height-md); /** Slot width and height (40px) */
+  --sizing-inputotp-border-width: var(--sizing-component-border-width-default); /** Slot border width (1px) */
+  --sizing-kbd-border-width: var(--sizing-component-border-width-default); /** Key border width (1px) */
+  --sizing-numberinput-border-width: var(--sizing-component-border-width-default); /** NumberInput border width (1px) */
   --sizing-pagination-item-size: var(--sizing-component-height-sm); /** Page button width & height (36px square) */
   --sizing-pagination-font-size: var(--font-component-size-sm); /** Page button font size */
   --sizing-progress-sm-height: var(--sizing-component-track-sm);
@@ -1246,6 +1300,7 @@
   --sizing-skeleton-circle-lg: var(--sizing-component-height-lg); /** Skeleton circle lg (44px) */
   --sizing-slider-track-height: var(--sizing-component-track-md); /** Slider track height (8px) */
   --sizing-slider-thumb-size: var(--sizing-component-icon-control); /** Slider thumb size (20px) */
+  --sizing-slider-thumb-border-width: var(--sizing-component-border-width-thick); /** Slider thumb border width (2px) */
   --sizing-spinner-sm: var(--sizing-component-icon-sm);
   --sizing-spinner-md: var(--sizing-component-icon-md);
   --sizing-spinner-lg: var(--sizing-component-icon-lg);
@@ -1253,6 +1308,7 @@
   --sizing-switch-track-height: var(--sizing-component-icon-md); /** Switch track height (24px = h-6) */
   --sizing-switch-track-width: var(--sizing-component-height-lg); /** Switch track width (44px = w-11) */
   --sizing-switch-thumb-size: var(--sizing-component-icon-control); /** Switch thumb size (20px) */
+  --sizing-tag-border-width: var(--sizing-component-border-width-default); /** Tag border width (1px) */
   --sizing-toggle-sm-height: var(--sizing-component-height-sm); /** Toggle item height sm */
   --sizing-toggle-sm-padding-x: var(--sizing-component-padding-x-sm); /** Toggle item horizontal padding sm */
   --sizing-toggle-sm-font-size: var(--font-component-size-sm); /** Toggle item font size sm */

@@ -226,10 +226,18 @@ const roleBgColors: ColorToken[] = [
   { name: 'bg-primary-active', value: '#0369a1', cssVar: '--color-bg-primary-active', chain: '← primary-1.700 ← base.sky.700' },
   { name: 'bg-secondary', value: '#64748b', cssVar: '--color-bg-secondary', chain: '← secondary-1.500 ← base.slate.500' },
   { name: 'bg-secondary-hover', value: '#475569', cssVar: '--color-bg-secondary-hover', chain: '← secondary-1.600 ← base.slate.600' },
-  { name: 'bg-success', value: '#10b981', cssVar: '--color-bg-success', chain: '← accent-1.500 ← base.emerald.500' },
-  { name: 'bg-warning', value: '#f59e0b', cssVar: '--color-bg-warning', chain: '← accent-2.500 ← base.amber.500' },
-  { name: 'bg-error', value: '#ef4444', cssVar: '--color-bg-error', chain: '← accent-3.500 ← base.red.500' },
-  { name: 'bg-info', value: '#3b82f6', cssVar: '--color-bg-info', chain: '← accent-4.500 ← base.blue.500' },
+  { name: 'bg-success-subtle', value: '#ecfdf5', cssVar: '--color-bg-success-subtle', chain: '← accent-1.50 ← base.emerald.50' },
+  { name: 'bg-success', value: '#d1fae5', cssVar: '--color-bg-success', chain: '← accent-1.100 ← base.emerald.100' },
+  { name: 'bg-success-solid', value: '#10b981', cssVar: '--color-bg-success-solid', chain: '← accent-1.500 ← base.emerald.500' },
+  { name: 'bg-warning-subtle', value: '#fffbeb', cssVar: '--color-bg-warning-subtle', chain: '← accent-2.50 ← base.amber.50' },
+  { name: 'bg-warning', value: '#fef3c7', cssVar: '--color-bg-warning', chain: '← accent-2.100 ← base.amber.100' },
+  { name: 'bg-warning-solid', value: '#f59e0b', cssVar: '--color-bg-warning-solid', chain: '← accent-2.500 ← base.amber.500' },
+  { name: 'bg-error-subtle', value: '#fef2f2', cssVar: '--color-bg-error-subtle', chain: '← accent-3.50 ← base.red.50' },
+  { name: 'bg-error', value: '#fee2e2', cssVar: '--color-bg-error', chain: '← accent-3.100 ← base.red.100' },
+  { name: 'bg-error-solid', value: '#ef4444', cssVar: '--color-bg-error-solid', chain: '← accent-3.500 ← base.red.500' },
+  { name: 'bg-info-subtle', value: '#eff6ff', cssVar: '--color-bg-info-subtle', chain: '← accent-4.50 ← base.blue.50' },
+  { name: 'bg-info', value: '#dbeafe', cssVar: '--color-bg-info', chain: '← accent-4.100 ← base.blue.100' },
+  { name: 'bg-info-solid', value: '#3b82f6', cssVar: '--color-bg-info-solid', chain: '← accent-4.500 ← base.blue.500' },
   { name: 'bg-overlay', value: 'rgba(0,0,0,0.5)', cssVar: '--color-bg-overlay', chain: '← neutral.overlay' },
 ];
 
@@ -251,8 +259,10 @@ const roleBorderColors: ColorToken[] = [
   { name: 'border-muted', value: '#e2e8f0', cssVar: '--color-border-muted', chain: '← neutral-1.200 ← base.slate.200' },
   { name: 'border-strong', value: '#94a3b8', cssVar: '--color-border-strong', chain: '← neutral-1.400 ← base.slate.400' },
   { name: 'border-focus', value: '#0ea5e9', cssVar: '--color-border-focus', chain: '← primary-1.500 ← base.sky.500' },
-  { name: 'border-error', value: '#ef4444', cssVar: '--color-border-error', chain: '← accent-3.500 ← base.red.500' },
   { name: 'border-success', value: '#10b981', cssVar: '--color-border-success', chain: '← accent-1.500 ← base.emerald.500' },
+  { name: 'border-warning', value: '#f59e0b', cssVar: '--color-border-warning', chain: '← accent-2.500 ← base.amber.500' },
+  { name: 'border-error', value: '#ef4444', cssVar: '--color-border-error', chain: '← accent-3.500 ← base.red.500' },
+  { name: 'border-info', value: '#3b82f6', cssVar: '--color-border-info', chain: '← accent-4.500 ← base.blue.500' },
 ];
 
 const roleInteractiveColors: ColorToken[] = [
@@ -265,24 +275,7 @@ const roleInteractiveColors: ColorToken[] = [
   { name: 'interactive-secondary-active', value: '#334155', cssVar: '--color-interactive-secondary-active', chain: '← secondary-1.700 ← base.slate.700' },
 ];
 
-const roleStatusColors: ColorToken[] = [
-  { name: 'success-bg-subtle', value: '#ecfdf5', cssVar: '--color-success-bg-subtle', chain: '← accent-1.50 ← base.emerald.50' },
-  { name: 'success-bg', value: '#d1fae5', cssVar: '--color-success-bg', chain: '← accent-1.100 ← base.emerald.100' },
-  { name: 'success-border', value: '#10b981', cssVar: '--color-success-border', chain: '← accent-1.500 ← base.emerald.500' },
-  { name: 'success-text', value: '#047857', cssVar: '--color-success-text', chain: '← accent-1.700 ← base.emerald.700' },
-  { name: 'warning-bg-subtle', value: '#fffbeb', cssVar: '--color-warning-bg-subtle', chain: '← accent-2.50 ← base.amber.50' },
-  { name: 'warning-bg', value: '#fef3c7', cssVar: '--color-warning-bg', chain: '← accent-2.100 ← base.amber.100' },
-  { name: 'warning-border', value: '#f59e0b', cssVar: '--color-warning-border', chain: '← accent-2.500 ← base.amber.500' },
-  { name: 'warning-text', value: '#b45309', cssVar: '--color-warning-text', chain: '← accent-2.700 ← base.amber.700' },
-  { name: 'error-bg-subtle', value: '#fef2f2', cssVar: '--color-error-bg-subtle', chain: '← accent-3.50 ← base.red.50' },
-  { name: 'error-bg', value: '#fee2e2', cssVar: '--color-error-bg', chain: '← accent-3.100 ← base.red.100' },
-  { name: 'error-border', value: '#ef4444', cssVar: '--color-error-border', chain: '← accent-3.500 ← base.red.500' },
-  { name: 'error-text', value: '#b91c1c', cssVar: '--color-error-text', chain: '← accent-3.700 ← base.red.700' },
-  { name: 'info-bg-subtle', value: '#eff6ff', cssVar: '--color-info-bg-subtle', chain: '← accent-4.50 ← base.blue.50' },
-  { name: 'info-bg', value: '#dbeafe', cssVar: '--color-info-bg', chain: '← accent-4.100 ← base.blue.100' },
-  { name: 'info-border', value: '#3b82f6', cssVar: '--color-info-border', chain: '← accent-4.500 ← base.blue.500' },
-  { name: 'info-text', value: '#1d4ed8', cssVar: '--color-info-text', chain: '← accent-4.700 ← base.blue.700' },
-];
+/* Semantic Status Colors — consolidated into bg/text/border groups (NDS-033) */
 
 /* ═══════════════════════════════════════════════════════════════════════════
    LEVEL 4: COMPONENT TOKENS (komplett mit Referenzketten)
@@ -307,18 +300,18 @@ const buttonColors: ColorToken[] = [
 ];
 
 const badgeColors: ColorToken[] = [
-  { name: 'badge-success-bg', value: '#d1fae5', cssVar: '--color-badge-success-bg', chain: '← success.bg ← accent-1.100' },
-  { name: 'badge-success-text', value: '#047857', cssVar: '--color-badge-success-text', chain: '← success.text ← accent-1.700' },
-  { name: 'badge-success-border', value: '#10b981', cssVar: '--color-badge-success-border', chain: '← success.border ← accent-1.500' },
-  { name: 'badge-warning-bg', value: '#fef3c7', cssVar: '--color-badge-warning-bg', chain: '← warning.bg ← accent-2.100' },
-  { name: 'badge-warning-text', value: '#b45309', cssVar: '--color-badge-warning-text', chain: '← warning.text ← accent-2.700' },
-  { name: 'badge-warning-border', value: '#f59e0b', cssVar: '--color-badge-warning-border', chain: '← warning.border ← accent-2.500' },
-  { name: 'badge-error-bg', value: '#fee2e2', cssVar: '--color-badge-error-bg', chain: '← error.bg ← accent-3.100' },
-  { name: 'badge-error-text', value: '#b91c1c', cssVar: '--color-badge-error-text', chain: '← error.text ← accent-3.700' },
-  { name: 'badge-error-border', value: '#ef4444', cssVar: '--color-badge-error-border', chain: '← error.border ← accent-3.500' },
-  { name: 'badge-info-bg', value: '#dbeafe', cssVar: '--color-badge-info-bg', chain: '← info.bg ← accent-4.100' },
-  { name: 'badge-info-text', value: '#1d4ed8', cssVar: '--color-badge-info-text', chain: '← info.text ← accent-4.700' },
-  { name: 'badge-info-border', value: '#3b82f6', cssVar: '--color-badge-info-border', chain: '← info.border ← accent-4.500' },
+  { name: 'badge-success-bg', value: '#d1fae5', cssVar: '--color-badge-success-bg', chain: '← bg.success ← accent-1.100' },
+  { name: 'badge-success-text', value: '#047857', cssVar: '--color-badge-success-text', chain: '← text.success ← accent-1.700' },
+  { name: 'badge-success-border', value: '#10b981', cssVar: '--color-badge-success-border', chain: '← border.success ← accent-1.500' },
+  { name: 'badge-warning-bg', value: '#fef3c7', cssVar: '--color-badge-warning-bg', chain: '← bg.warning ← accent-2.100' },
+  { name: 'badge-warning-text', value: '#b45309', cssVar: '--color-badge-warning-text', chain: '← text.warning ← accent-2.700' },
+  { name: 'badge-warning-border', value: '#f59e0b', cssVar: '--color-badge-warning-border', chain: '← border.warning ← accent-2.500' },
+  { name: 'badge-error-bg', value: '#fee2e2', cssVar: '--color-badge-error-bg', chain: '← bg.error ← accent-3.100' },
+  { name: 'badge-error-text', value: '#b91c1c', cssVar: '--color-badge-error-text', chain: '← text.error ← accent-3.700' },
+  { name: 'badge-error-border', value: '#ef4444', cssVar: '--color-badge-error-border', chain: '← border.error ← accent-3.500' },
+  { name: 'badge-info-bg', value: '#dbeafe', cssVar: '--color-badge-info-bg', chain: '← bg.info ← accent-4.100' },
+  { name: 'badge-info-text', value: '#1d4ed8', cssVar: '--color-badge-info-text', chain: '← text.info ← accent-4.700' },
+  { name: 'badge-info-border', value: '#3b82f6', cssVar: '--color-badge-info-border', chain: '← border.info ← accent-4.500' },
   { name: 'badge-neutral-bg', value: '#f1f5f9', cssVar: '--color-badge-neutral-bg', chain: '← neutral-1.100 ← base.slate.100' },
   { name: 'badge-neutral-text', value: '#475569', cssVar: '--color-badge-neutral-text', chain: '← text.muted ← neutral-1.600' },
   { name: 'badge-neutral-border', value: '#e2e8f0', cssVar: '--color-badge-neutral-border', chain: '← border.muted ← neutral-1.200' },
@@ -334,19 +327,19 @@ const sessionCardColors: ColorToken[] = [
   { name: 'session-card-border', value: '#e2e8f0', cssVar: '--color-session-card-border', chain: '← border.muted ← neutral-1.200' },
   { name: 'session-card-border-hover', value: '#cbd5e1', cssVar: '--color-session-card-border-hover', chain: '← border.default ← neutral-1.300' },
   { name: 'session-card-bg-hover', value: '#f1f5f9', cssVar: '--color-session-card-bg-hover', chain: '← bg.surface ← neutral-1.100' },
-  { name: 'session-card-bg-error', value: '#fef2f2', cssVar: '--color-session-card-bg-error', chain: '← error.bg-subtle ← accent-3.50' },
-  { name: 'session-card-border-error', value: '#ef4444', cssVar: '--color-session-card-border-error', chain: '← error.border ← accent-3.500' },
+  { name: 'session-card-bg-error', value: '#fef2f2', cssVar: '--color-session-card-bg-error', chain: '← bg.error-subtle ← accent-3.50' },
+  { name: 'session-card-border-error', value: '#ef4444', cssVar: '--color-session-card-border-error', chain: '← border.error ← accent-3.500' },
   { name: 'session-card-text-primary', value: '#0f172a', cssVar: '--color-session-card-text-primary', chain: '← text.base ← neutral-1.900' },
   { name: 'session-card-text-secondary', value: '#475569', cssVar: '--color-session-card-text-secondary', chain: '← text.muted ← neutral-1.600' },
   { name: 'session-card-text-tertiary', value: '#94a3b8', cssVar: '--color-session-card-text-tertiary', chain: '← text.disabled ← neutral-1.400' },
-  { name: 'session-card-text-error', value: '#b91c1c', cssVar: '--color-session-card-text-error', chain: '← error.text ← accent-3.700' },
+  { name: 'session-card-text-error', value: '#b91c1c', cssVar: '--color-session-card-text-error', chain: '← text.error ← accent-3.700' },
   { name: 'session-card-skeleton', value: '#f1f5f9', cssVar: '--color-session-card-skeleton', chain: '← bg.surface ← neutral-1.100' },
   { name: 'session-card-zone-bg', value: '#f1f5f9', cssVar: '--color-session-card-zone-bg', chain: '← bg.surface ← neutral-1.100' },
   { name: 'session-card-zone-1', value: '#94a3b8', cssVar: '--color-session-card-zone-1', chain: '← border.strong ← neutral-1.400' },
-  { name: 'session-card-zone-2', value: '#10b981', cssVar: '--color-session-card-zone-2', chain: '← success.border ← accent-1.500' },
-  { name: 'session-card-zone-3', value: '#f59e0b', cssVar: '--color-session-card-zone-3', chain: '← warning.border ← accent-2.500' },
-  { name: 'session-card-zone-4', value: '#b45309', cssVar: '--color-session-card-zone-4', chain: '← warning.text ← accent-2.700' },
-  { name: 'session-card-zone-5', value: '#ef4444', cssVar: '--color-session-card-zone-5', chain: '← error.border ← accent-3.500' },
+  { name: 'session-card-zone-2', value: '#10b981', cssVar: '--color-session-card-zone-2', chain: '← border.success ← accent-1.500' },
+  { name: 'session-card-zone-3', value: '#f59e0b', cssVar: '--color-session-card-zone-3', chain: '← border.warning ← accent-2.500' },
+  { name: 'session-card-zone-4', value: '#b45309', cssVar: '--color-session-card-zone-4', chain: '← text.warning ← accent-2.700' },
+  { name: 'session-card-zone-5', value: '#ef4444', cssVar: '--color-session-card-zone-5', chain: '← border.error ← accent-3.500' },
 ];
 
 const statCardColors: ColorToken[] = [
@@ -354,30 +347,30 @@ const statCardColors: ColorToken[] = [
   { name: 'stat-card-border', value: '#e2e8f0', cssVar: '--color-stat-card-border', chain: '← border.muted ← neutral-1.200' },
   { name: 'stat-card-text-primary', value: '#0f172a', cssVar: '--color-stat-card-text-primary', chain: '← text.base ← neutral-1.900' },
   { name: 'stat-card-text-secondary', value: '#475569', cssVar: '--color-stat-card-text-secondary', chain: '← text.muted ← neutral-1.600' },
-  { name: 'stat-card-border-success', value: '#10b981', cssVar: '--color-stat-card-border-success', chain: '← success.border ← accent-1.500' },
-  { name: 'stat-card-border-warning', value: '#f59e0b', cssVar: '--color-stat-card-border-warning', chain: '← warning.border ← accent-2.500' },
-  { name: 'stat-card-border-error', value: '#ef4444', cssVar: '--color-stat-card-border-error', chain: '← error.border ← accent-3.500' },
-  { name: 'stat-card-trend-up', value: '#047857', cssVar: '--color-stat-card-trend-up', chain: '← success.text ← accent-1.700' },
-  { name: 'stat-card-trend-down', value: '#b91c1c', cssVar: '--color-stat-card-trend-down', chain: '← error.text ← accent-3.700' },
+  { name: 'stat-card-border-success', value: '#10b981', cssVar: '--color-stat-card-border-success', chain: '← border.success ← accent-1.500' },
+  { name: 'stat-card-border-warning', value: '#f59e0b', cssVar: '--color-stat-card-border-warning', chain: '← border.warning ← accent-2.500' },
+  { name: 'stat-card-border-error', value: '#ef4444', cssVar: '--color-stat-card-border-error', chain: '← border.error ← accent-3.500' },
+  { name: 'stat-card-trend-up', value: '#047857', cssVar: '--color-stat-card-trend-up', chain: '← text.success ← accent-1.700' },
+  { name: 'stat-card-trend-down', value: '#b91c1c', cssVar: '--color-stat-card-trend-down', chain: '← text.error ← accent-3.700' },
   { name: 'stat-card-trend-neutral', value: '#475569', cssVar: '--color-stat-card-trend-neutral', chain: '← text.muted ← neutral-1.600' },
 ];
 
 const tagColors: ColorToken[] = [
   { name: 'tag-bg-default', value: '#f1f5f9', cssVar: '--color-tag-bg-default', chain: '← bg.surface ← neutral-1.100' },
-  { name: 'tag-bg-success', value: '#ecfdf5', cssVar: '--color-tag-bg-success', chain: '← success.bg-subtle ← accent-1.50' },
-  { name: 'tag-bg-warning', value: '#fffbeb', cssVar: '--color-tag-bg-warning', chain: '← warning.bg-subtle ← accent-2.50' },
-  { name: 'tag-bg-error', value: '#fef2f2', cssVar: '--color-tag-bg-error', chain: '← error.bg-subtle ← accent-3.50' },
-  { name: 'tag-bg-info', value: '#eff6ff', cssVar: '--color-tag-bg-info', chain: '← info.bg-subtle ← accent-4.50' },
+  { name: 'tag-bg-success', value: '#ecfdf5', cssVar: '--color-tag-bg-success', chain: '← bg.success-subtle ← accent-1.50' },
+  { name: 'tag-bg-warning', value: '#fffbeb', cssVar: '--color-tag-bg-warning', chain: '← bg.warning-subtle ← accent-2.50' },
+  { name: 'tag-bg-error', value: '#fef2f2', cssVar: '--color-tag-bg-error', chain: '← bg.error-subtle ← accent-3.50' },
+  { name: 'tag-bg-info', value: '#eff6ff', cssVar: '--color-tag-bg-info', chain: '← bg.info-subtle ← accent-4.50' },
   { name: 'tag-text-default', value: '#0f172a', cssVar: '--color-tag-text-default', chain: '← text.base ← neutral-1.900' },
-  { name: 'tag-text-success', value: '#047857', cssVar: '--color-tag-text-success', chain: '← success.text ← accent-1.700' },
-  { name: 'tag-text-warning', value: '#b45309', cssVar: '--color-tag-text-warning', chain: '← warning.text ← accent-2.700' },
-  { name: 'tag-text-error', value: '#b91c1c', cssVar: '--color-tag-text-error', chain: '← error.text ← accent-3.700' },
-  { name: 'tag-text-info', value: '#1d4ed8', cssVar: '--color-tag-text-info', chain: '← info.text ← accent-4.700' },
+  { name: 'tag-text-success', value: '#047857', cssVar: '--color-tag-text-success', chain: '← text.success ← accent-1.700' },
+  { name: 'tag-text-warning', value: '#b45309', cssVar: '--color-tag-text-warning', chain: '← text.warning ← accent-2.700' },
+  { name: 'tag-text-error', value: '#b91c1c', cssVar: '--color-tag-text-error', chain: '← text.error ← accent-3.700' },
+  { name: 'tag-text-info', value: '#1d4ed8', cssVar: '--color-tag-text-info', chain: '← text.info ← accent-4.700' },
   { name: 'tag-border-default', value: '#e2e8f0', cssVar: '--color-tag-border-default', chain: '← border.muted ← neutral-1.200' },
-  { name: 'tag-border-success', value: '#10b981', cssVar: '--color-tag-border-success', chain: '← success.border ← accent-1.500' },
-  { name: 'tag-border-warning', value: '#f59e0b', cssVar: '--color-tag-border-warning', chain: '← warning.border ← accent-2.500' },
-  { name: 'tag-border-error', value: '#ef4444', cssVar: '--color-tag-border-error', chain: '← error.border ← accent-3.500' },
-  { name: 'tag-border-info', value: '#3b82f6', cssVar: '--color-tag-border-info', chain: '← info.border ← accent-4.500' },
+  { name: 'tag-border-success', value: '#10b981', cssVar: '--color-tag-border-success', chain: '← border.success ← accent-1.500' },
+  { name: 'tag-border-warning', value: '#f59e0b', cssVar: '--color-tag-border-warning', chain: '← border.warning ← accent-2.500' },
+  { name: 'tag-border-error', value: '#ef4444', cssVar: '--color-tag-border-error', chain: '← border.error ← accent-3.500' },
+  { name: 'tag-border-info', value: '#3b82f6', cssVar: '--color-tag-border-info', chain: '← border.info ← accent-4.500' },
   { name: 'tag-border-focus', value: '#0ea5e9', cssVar: '--color-tag-border-focus', chain: '← border.focus ← primary-1.500' },
 ];
 
@@ -388,7 +381,7 @@ const numberInputColors: ColorToken[] = [
   { name: 'numberinput-border', value: '#cbd5e1', cssVar: '--color-numberinput-border', chain: '← border.default ← neutral-1.300' },
   { name: 'numberinput-border-hover', value: '#94a3b8', cssVar: '--color-numberinput-border-hover', chain: '← border.strong ← neutral-1.400' },
   { name: 'numberinput-border-focus', value: '#0ea5e9', cssVar: '--color-numberinput-border-focus', chain: '← border.focus ← primary-1.500' },
-  { name: 'numberinput-border-error', value: '#ef4444', cssVar: '--color-numberinput-border-error', chain: '← error.border ← accent-3.500' },
+  { name: 'numberinput-border-error', value: '#ef4444', cssVar: '--color-numberinput-border-error', chain: '← border.error ← accent-3.500' },
   { name: 'numberinput-stepper-text', value: '#475569', cssVar: '--color-numberinput-stepper-text', chain: '← text.muted ← neutral-1.600' },
   { name: 'numberinput-stepper-text-hover', value: '#0f172a', cssVar: '--color-numberinput-stepper-text-hover', chain: '← text.base ← neutral-1.900' },
   { name: 'numberinput-stepper-bg-hover', value: '#f1f5f9', cssVar: '--color-numberinput-stepper-bg-hover', chain: '← bg.surface ← neutral-1.100' },
@@ -535,22 +528,22 @@ const toastColors: ColorToken[] = [
   { name: 'toast-title', value: '#0f172a', cssVar: '--color-toast-title', chain: '← text.base ← neutral-1.900' },
   { name: 'toast-description', value: '#475569', cssVar: '--color-toast-description', chain: '← text.muted ← neutral-1.600' },
   { name: 'toast-close-hover-bg', value: '#f1f5f9', cssVar: '--color-toast-close-hover-bg', chain: '← bg.surface ← neutral-1.100' },
-  { name: 'toast-success-border', value: '#10b981', cssVar: '--color-toast-success-border', chain: '← success.border ← accent-1.500' },
-  { name: 'toast-success-icon', value: '#047857', cssVar: '--color-toast-success-icon', chain: '← success.text ← accent-1.700' },
-  { name: 'toast-error-border', value: '#ef4444', cssVar: '--color-toast-error-border', chain: '← error.border ← accent-3.500' },
-  { name: 'toast-error-icon', value: '#b91c1c', cssVar: '--color-toast-error-icon', chain: '← error.text ← accent-3.700' },
-  { name: 'toast-warning-border', value: '#f59e0b', cssVar: '--color-toast-warning-border', chain: '← warning.border ← accent-2.500' },
-  { name: 'toast-warning-icon', value: '#b45309', cssVar: '--color-toast-warning-icon', chain: '← warning.text ← accent-2.700' },
-  { name: 'toast-info-border', value: '#3b82f6', cssVar: '--color-toast-info-border', chain: '← info.border ← accent-4.500' },
-  { name: 'toast-info-icon', value: '#1d4ed8', cssVar: '--color-toast-info-icon', chain: '← info.text ← accent-4.700' },
+  { name: 'toast-success-border', value: '#10b981', cssVar: '--color-toast-success-border', chain: '← border.success ← accent-1.500' },
+  { name: 'toast-success-icon', value: '#047857', cssVar: '--color-toast-success-icon', chain: '← text.success ← accent-1.700' },
+  { name: 'toast-error-border', value: '#ef4444', cssVar: '--color-toast-error-border', chain: '← border.error ← accent-3.500' },
+  { name: 'toast-error-icon', value: '#b91c1c', cssVar: '--color-toast-error-icon', chain: '← text.error ← accent-3.700' },
+  { name: 'toast-warning-border', value: '#f59e0b', cssVar: '--color-toast-warning-border', chain: '← border.warning ← accent-2.500' },
+  { name: 'toast-warning-icon', value: '#b45309', cssVar: '--color-toast-warning-icon', chain: '← text.warning ← accent-2.700' },
+  { name: 'toast-info-border', value: '#3b82f6', cssVar: '--color-toast-info-border', chain: '← border.info ← accent-4.500' },
+  { name: 'toast-info-icon', value: '#1d4ed8', cssVar: '--color-toast-info-icon', chain: '← text.info ← accent-4.700' },
 ];
 
 const progressColors: ColorToken[] = [
   { name: 'progress-track', value: '#f1f5f9', cssVar: '--color-progress-track', chain: '← bg.surface ← neutral-1.100' },
   { name: 'progress-fill', value: '#0ea5e9', cssVar: '--color-progress-fill', chain: '← interactive.primary ← primary-1.500' },
-  { name: 'progress-fill-success', value: '#10b981', cssVar: '--color-progress-fill-success', chain: '← bg.success ← accent-1.500' },
-  { name: 'progress-fill-warning', value: '#f59e0b', cssVar: '--color-progress-fill-warning', chain: '← bg.warning ← accent-2.500' },
-  { name: 'progress-fill-error', value: '#ef4444', cssVar: '--color-progress-fill-error', chain: '← bg.error ← accent-3.500' },
+  { name: 'progress-fill-success', value: '#10b981', cssVar: '--color-progress-fill-success', chain: '← bg.success-solid ← accent-1.500' },
+  { name: 'progress-fill-warning', value: '#f59e0b', cssVar: '--color-progress-fill-warning', chain: '← bg.warning-solid ← accent-2.500' },
+  { name: 'progress-fill-error', value: '#ef4444', cssVar: '--color-progress-fill-error', chain: '← bg.error-solid ← accent-3.500' },
   { name: 'progress-label', value: '#0f172a', cssVar: '--color-progress-label', chain: '← text.base ← neutral-1.900' },
   { name: 'progress-value', value: '#475569', cssVar: '--color-progress-value', chain: '← text.muted ← neutral-1.600' },
 ];
@@ -658,9 +651,7 @@ function ColorsPage() {
         <SubSection title="Interactive">
           <TokenGrid tokens={roleInteractiveColors} />
         </SubSection>
-        <SubSection title="Semantic Status">
-          <TokenGrid tokens={roleStatusColors} />
-        </SubSection>
+        {/* Semantic Status Colors consolidated into bg/text/border (NDS-033) */}
       </Section>
 
       {/* ── L4 ───────────────────────────────────────────── */}

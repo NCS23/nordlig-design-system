@@ -4,7 +4,7 @@ import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 const tagVariants = cva(
-  'inline-flex items-center gap-1 rounded-[var(--radius-tag)] border font-medium transition-colors duration-200',
+  'inline-flex items-center gap-1 rounded-[var(--radius-tag)] [border-width:var(--sizing-tag-border-width)] [font-weight:var(--font-tag-weight)] transition-colors duration-200',
   {
     variants: {
       variant: {
@@ -20,8 +20,8 @@ const tagVariants = cva(
           'bg-[var(--color-tag-bg-info)] text-[var(--color-tag-text-info)] border-[var(--color-tag-border-info)]',
       },
       size: {
-        sm: 'px-2 py-0.5 text-xs',
-        md: 'px-3 py-1 text-sm',
+        sm: 'px-2 py-0.5 text-[length:var(--font-tag-sm-size)]',
+        md: 'px-3 py-1 text-[length:var(--font-tag-md-size)]',
       },
     },
     defaultVariants: {

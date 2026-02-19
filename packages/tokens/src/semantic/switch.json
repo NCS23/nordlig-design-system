@@ -11,6 +11,13 @@
       "description":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
     }
   },
+  "font": {
+    "switch": {
+      "label-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "SwitchField label font size (text-sm)" },
+      "label-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "SwitchField label font weight (500)" },
+      "desc-size":    { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "SwitchField description font size (text-xs)" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Switch size tokens — References Level 3 only",
     "switch": {

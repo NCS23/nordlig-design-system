@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: Highlight component tokens",
     "hl": {
-      "bg":   { "$type": "color", "$value": "{color.warning.bg}",  "$description": "Highlight background (yellow)" },
+      "bg":   { "$type": "color", "$value": "{color.bg.warning}",  "$description": "Highlight background (yellow)" },
       "text": { "$type": "color", "$value": "{color.text.base}",   "$description": "Highlight text" }
     }
   },

@@ -66,7 +66,7 @@ const Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(
       return (
         <span className="inline-flex items-center gap-2">
           {spinnerElement}
-          <span className="text-sm text-[var(--color-spinner-label)]">{label}</span>
+          <span className="text-[length:var(--font-spinner-label-size)] text-[var(--color-spinner-label)]">{label}</span>
         </span>
       );
     }

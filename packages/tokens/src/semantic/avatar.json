@@ -7,13 +7,23 @@
       "border": { "$type": "color", "$value": "{color.border.default}", "$description": "Avatar border" }
     }
   },
+  "font": {
+    "avatar": {
+      "fallback-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Fallback initials font weight (500)" },
+      "sm-size":         { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Fallback text size sm (text-xs)" },
+      "md-size":         { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Fallback text size md (text-sm)" },
+      "lg-size":         { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Fallback text size lg (text-base)" },
+      "xl-size":         { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Fallback text size xl (text-lg)" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Avatar size tokens — References Level 3 only",
     "avatar": {
       "sm": { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Avatar size sm (h-9 = 36px)" },
       "md": { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Avatar size md (h-10 = 40px)" },
       "lg": { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "Avatar size lg (h-11 = 44px)" },
-      "xl": { "$type": "dimension", "$value": "{sizing.component.icon.xl}", "$description": "Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16)" }
+      "xl": { "$type": "dimension", "$value": "{sizing.component.icon.xl}", "$description": "Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16)" },
+      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "Avatar border width (1px)" }
     }
   },
   "radius": {

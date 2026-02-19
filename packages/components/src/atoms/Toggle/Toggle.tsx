@@ -8,7 +8,7 @@ import { cn } from '../../utils/cn';
 const toggleVariants = cva(
   [
     'inline-flex items-center justify-center whitespace-nowrap',
-    'font-medium transition-colors',
+    '[font-weight:var(--font-toggle-weight)] transition-colors',
     'rounded-[var(--radius-toggle)]',
     'text-[var(--color-toggle-text)]',
     'hover:bg-[var(--color-toggle-hover-bg)]',

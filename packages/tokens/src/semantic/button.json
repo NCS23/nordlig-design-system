@@ -27,6 +27,11 @@
       }
     }
   },
+  "font": {
+    "btn": {
+      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Button font weight (500)" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Button size tokens — References Level 3 only",
     "btn": {

@@ -1,0 +1,31 @@
+{
+  "font": {
+    "$description": "Level 4: Heading component tokens",
+    "heading": {
+      "h1": {
+        "size":   { "$type": "dimension", "$value": "{font.heading.size.2xl}", "$description": "h1 font size (2.25rem / text-4xl)" },
+        "weight": { "$type": "fontWeight", "$value": "{font.component.weight.bold}", "$description": "h1 font weight (700)" }
+      },
+      "h2": {
+        "size":   { "$type": "dimension", "$value": "{font.heading.size.xl}", "$description": "h2 font size (1.875rem / text-3xl)" },
+        "weight": { "$type": "fontWeight", "$value": "{font.component.weight.bold}", "$description": "h2 font weight (700)" }
+      },
+      "h3": {
+        "size":   { "$type": "dimension", "$value": "{font.heading.size.lg}", "$description": "h3 font size (1.5rem / text-2xl)" },
+        "weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "h3 font weight (600)" }
+      },
+      "h4": {
+        "size":   { "$type": "dimension", "$value": "{font.heading.size.md}", "$description": "h4 font size (1.25rem / text-xl)" },
+        "weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "h4 font weight (600)" }
+      },
+      "h5": {
+        "size":   { "$type": "dimension", "$value": "{font.heading.size.sm}", "$description": "h5 font size (1.125rem / text-lg)" },
+        "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "h5 font weight (500)" }
+      },
+      "h6": {
+        "size":   { "$type": "dimension", "$value": "{font.heading.size.xs}", "$description": "h6 font size (1rem / text-base)" },
+        "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "h6 font weight (500)" }
+      }
+    }
+  }
+}

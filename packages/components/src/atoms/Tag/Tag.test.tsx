@@ -52,12 +52,12 @@ describe('Tag', () => {
   describe('Sizes', () => {
     it('rendert sm Size', () => {
       render(<Tag size="sm" data-testid="tag">Klein</Tag>);
-      expect(screen.getByTestId('tag')).toHaveClass('text-xs');
+      expect(screen.getByTestId('tag').className).toContain('text-[length:var(--font-tag-sm-size)]');
     });
 
     it('rendert md Size (default)', () => {
       render(<Tag data-testid="tag">Normal</Tag>);
-      expect(screen.getByTestId('tag')).toHaveClass('text-sm');
+      expect(screen.getByTestId('tag').className).toContain('text-[length:var(--font-tag-md-size)]');
     });
   });
 

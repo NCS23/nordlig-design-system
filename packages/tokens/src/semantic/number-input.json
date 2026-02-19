@@ -34,7 +34,7 @@
       },
       "border-error": {
         "$type": "color",
-        "$value": "{color.error.border}",
+        "$value": "{color.border.error}",
         "$description": "Error border"
       },
       "stepper-text": {
@@ -52,6 +52,16 @@
         "$value": "{color.bg.surface}",
         "$description": "Stepper button hover background"
       }
+    }
+  },
+  "font": {
+    "numberinput": {
+      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Input value font weight (500)" }
+    }
+  },
+  "sizing": {
+    "numberinput": {
+      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "NumberInput border width (1px)" }
     }
   },
   "radius": {

@@ -162,7 +162,7 @@ export const LapAnalysis: Story = {
               <TableCell numeric>{lap.hrAvg}</TableCell>
               <TableCell
                 numeric
-                className={lap.hrMax > 180 ? 'text-[var(--color-error-text)] font-semibold' : ''}
+                className={lap.hrMax > 180 ? 'text-[var(--color-text-error)] font-semibold' : ''}
               >
                 {lap.hrMax}
               </TableCell>

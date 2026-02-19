@@ -111,10 +111,13 @@ describe('SessionCard', () => {
   });
 
   it('zeigt Loading-State an', () => {
-    render(<SessionCard sessionData={mockSessionData} loading={true} />);
-    
-    const loadingCard = screen.getByRole('generic');
-    expect(loadingCard).toHaveClass('animate-pulse');
+    const { container } = render(<SessionCard sessionData={mockSessionData} loading={true} />);
+
+    const loadingCard = container.firstElementChild as HTMLElement;
+    expect(loadingCard).toBeTruthy();
+    // Skeleton-Elemente werden angezeigt (aria-hidden shimmer divs)
+    const skeletons = loadingCard.querySelectorAll('[aria-hidden="true"]');
+    expect(skeletons.length).toBeGreaterThan(0);
   });
 
   it('zeigt Error-State an', () => {
@@ -126,9 +129,9 @@ describe('SessionCard', () => {
   });
 
   it('wendet Compact-Variante an', () => {
-    render(<SessionCard sessionData={mockSessionData} size="compact" />);
+    const { container } = render(<SessionCard sessionData={mockSessionData} size="compact" />);
 
-    const card = screen.getByRole('generic');
+    const card = container.firstElementChild as HTMLElement;
     expect(card).toHaveClass('p-6');
   });
 
@@ -173,9 +176,9 @@ describe('SessionCard', () => {
   });
 
   it('unterstützt Custom className', () => {
-    render(<SessionCard sessionData={mockSessionData} className="custom-class" />);
-    
-    const card = screen.getByRole('generic');
+    const { container } = render(<SessionCard sessionData={mockSessionData} className="custom-class" />);
+
+    const card = container.firstElementChild as HTMLElement;
     expect(card).toHaveClass('custom-class');
   });
 

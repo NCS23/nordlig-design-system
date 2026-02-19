@@ -64,19 +64,19 @@ export const AllSizes: Story = {
   render: () => (
     <div className="flex items-end gap-6">
       <div className="flex flex-col items-center gap-2">
-        <Icon icon={Info} size="sm" className="text-[var(--color-info-text)]" />
+        <Icon icon={Info} size="sm" className="text-[var(--color-text-info)]" />
         <span className="text-xs text-[var(--color-text-muted)]">sm (16px)</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <Icon icon={Info} size="md" className="text-[var(--color-info-text)]" />
+        <Icon icon={Info} size="md" className="text-[var(--color-text-info)]" />
         <span className="text-xs text-[var(--color-text-muted)]">md (20px)</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <Icon icon={Info} size="lg" className="text-[var(--color-info-text)]" />
+        <Icon icon={Info} size="lg" className="text-[var(--color-text-info)]" />
         <span className="text-xs text-[var(--color-text-muted)]">lg (24px)</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <Icon icon={Info} size="xl" className="text-[var(--color-info-text)]" />
+        <Icon icon={Info} size="xl" className="text-[var(--color-text-info)]" />
         <span className="text-xs text-[var(--color-text-muted)]">xl (32px)</span>
       </div>
     </div>
@@ -90,15 +90,15 @@ export const CustomPixelSize: Story = {
   render: () => (
     <div className="flex items-end gap-6">
       <div className="flex flex-col items-center gap-2">
-        <Icon icon={Star} size={14} className="text-[var(--color-warning-text)]" />
+        <Icon icon={Star} size={14} className="text-[var(--color-text-warning)]" />
         <span className="text-xs text-[var(--color-text-muted)]">14px</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <Icon icon={Star} size={18} className="text-[var(--color-warning-text)]" />
+        <Icon icon={Star} size={18} className="text-[var(--color-text-warning)]" />
         <span className="text-xs text-[var(--color-text-muted)]">18px</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <Icon icon={Star} size={28} className="text-[var(--color-warning-text)]" />
+        <Icon icon={Star} size={28} className="text-[var(--color-text-warning)]" />
         <span className="text-xs text-[var(--color-text-muted)]">28px</span>
       </div>
     </div>
@@ -162,7 +162,7 @@ export const AccessibleIcon: Story = {
         icon={AlertTriangle}
         size="lg"
         label="Warnung"
-        className="text-[var(--color-warning-text)]"
+        className="text-[var(--color-text-warning)]"
       />
       <span className="text-sm text-[var(--color-text-muted)]">
         Dieses Icon hat role=&quot;img&quot; und aria-label=&quot;Warnung&quot;
@@ -177,10 +177,10 @@ export const ColorVariants: Story = {
   name: 'Color Variants',
   render: () => (
     <div className="flex items-center gap-4">
-      <Icon icon={Info} size="lg" className="text-[var(--color-info-text)]" />
-      <Icon icon={CheckCircle} size="lg" className="text-[var(--color-success-text)]" />
-      <Icon icon={AlertTriangle} size="lg" className="text-[var(--color-warning-text)]" />
-      <Icon icon={XCircle} size="lg" className="text-[var(--color-error-text)]" />
+      <Icon icon={Info} size="lg" className="text-[var(--color-text-info)]" />
+      <Icon icon={CheckCircle} size="lg" className="text-[var(--color-text-success)]" />
+      <Icon icon={AlertTriangle} size="lg" className="text-[var(--color-text-warning)]" />
+      <Icon icon={XCircle} size="lg" className="text-[var(--color-text-error)]" />
       <Icon icon={Heart} size="lg" className="text-[var(--color-text-muted)]" />
     </div>
   ),

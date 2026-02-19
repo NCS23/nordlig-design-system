@@ -94,12 +94,12 @@ const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
             )}
           />
         )}
-        <div className="flex-1 min-w-0 text-sm">{children}</div>
+        <div className="flex-1 min-w-0 text-[length:var(--font-banner-size)]">{children}</div>
         {action && <div className="shrink-0">{action}</div>}
         {dismissible && (
           <button
             onClick={onDismiss}
-            className="shrink-0 p-1 rounded-sm text-[var(--color-banner-dismiss)] hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
+            className="shrink-0 p-1 rounded-[var(--radius-banner-dismiss)] text-[var(--color-banner-dismiss)] hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
             aria-label="Schließen"
           >
             <X size={16} />

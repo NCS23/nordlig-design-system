@@ -17,7 +17,7 @@ describe('Code (inline)', () => {
     render(<Code data-testid="code">text</Code>);
     const code = screen.getByTestId('code');
     expect(code.className).toContain('font-mono');
-    expect(code.className).toContain('text-sm');
+    expect(code.className).toContain('text-[length:var(--font-code-size)]');
     expect(code.className).toContain('bg-[var(--color-code-bg)]');
     expect(code.className).toContain('text-[var(--color-code-text)]');
     expect(code.className).toContain('px-1.5');
@@ -70,7 +70,7 @@ describe('CodeBlock', () => {
     expect(pre.className).toContain('rounded-[var(--radius-code-block)]');
     expect(pre.className).toContain('overflow-x-auto');
     expect(pre.className).toContain('font-mono');
-    expect(pre.className).toContain('text-sm');
+    expect(pre.className).toContain('text-[length:var(--font-code-size)]');
   });
 
   it('shows copy button when copyable', () => {
@@ -123,7 +123,7 @@ describe('CodeBlock', () => {
     );
     const lineNumber = screen.getByText('1');
     expect(lineNumber.className).toContain('select-none');
-    expect(lineNumber.className).toContain('text-[var(--color-text-muted)]');
+    expect(lineNumber.className).toContain('text-[var(--color-code-line-number)]');
     expect(lineNumber.className).toContain('text-right');
   });
 

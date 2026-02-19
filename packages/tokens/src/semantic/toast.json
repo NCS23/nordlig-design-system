@@ -7,14 +7,14 @@
       "title":           { "$type": "color", "$value": "{color.text.base}", "$description": "Toast title text" },
       "description":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Toast description text" },
       "close-hover-bg":  { "$type": "color", "$value": "{color.bg.surface}", "$description": "Close button hover bg" },
-      "success-border":  { "$type": "color", "$value": "{color.success.border}", "$description": "Green left accent border" },
-      "success-icon":    { "$type": "color", "$value": "{color.success.text}", "$description": "Green icon color" },
-      "error-border":    { "$type": "color", "$value": "{color.error.border}", "$description": "Red left accent border" },
-      "error-icon":      { "$type": "color", "$value": "{color.error.text}", "$description": "Red icon color" },
-      "warning-border":  { "$type": "color", "$value": "{color.warning.border}", "$description": "Amber left accent border" },
-      "warning-icon":    { "$type": "color", "$value": "{color.warning.text}", "$description": "Amber icon color" },
-      "info-border":     { "$type": "color", "$value": "{color.info.border}", "$description": "Sky blue left accent border" },
-      "info-icon":       { "$type": "color", "$value": "{color.info.text}", "$description": "Sky blue icon color" }
+      "success-border":  { "$type": "color", "$value": "{color.border.success}", "$description": "Green left accent border" },
+      "success-icon":    { "$type": "color", "$value": "{color.text.success}", "$description": "Green icon color" },
+      "error-border":    { "$type": "color", "$value": "{color.border.error}", "$description": "Red left accent border" },
+      "error-icon":      { "$type": "color", "$value": "{color.text.error}", "$description": "Red icon color" },
+      "warning-border":  { "$type": "color", "$value": "{color.border.warning}", "$description": "Amber left accent border" },
+      "warning-icon":    { "$type": "color", "$value": "{color.text.warning}", "$description": "Amber icon color" },
+      "info-border":     { "$type": "color", "$value": "{color.border.info}", "$description": "Sky blue left accent border" },
+      "info-icon":       { "$type": "color", "$value": "{color.text.info}", "$description": "Sky blue icon color" }
     }
   },
   "shadow": {

@@ -108,7 +108,7 @@ describe('NavigationMenu', () => {
       </NavigationMenu>
     );
     const link = screen.getByText('Dashboard');
-    expect(link.className).toContain('bg-[var(--color-bg-muted)]');
+    expect(link.className).toContain('bg-[var(--color-nav-active-bg)]');
     expect(link.className).toContain('font-medium');
   });
 
@@ -117,14 +117,14 @@ describe('NavigationMenu', () => {
   it('applies token-based classes to trigger', () => {
     renderNavWithDropdown();
     const trigger = screen.getByRole('button', { name: /sessions/i });
-    expect(trigger.className).toContain('text-[var(--color-text-base)]');
+    expect(trigger.className).toContain('text-[var(--color-nav-text)]');
     expect(trigger.className).toContain('rounded-[var(--radius-nav)]');
   });
 
   it('applies token-based classes to links', () => {
     renderSimpleNav();
     const link = screen.getByText('Dashboard');
-    expect(link.className).toContain('text-[var(--color-text-base)]');
+    expect(link.className).toContain('text-[var(--color-nav-text)]');
     expect(link.className).toContain('rounded-[var(--radius-nav)]');
   });
 

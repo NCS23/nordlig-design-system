@@ -3,5 +3,11 @@
     "label": {
       "indicator-gap": { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px — Gap between label text and required indicator (*)" }
     }
+  },
+  "font": {
+    "label": {
+      "size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Label font size (14px)" },
+      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Label font weight (500)" }
+    }
   }
 }

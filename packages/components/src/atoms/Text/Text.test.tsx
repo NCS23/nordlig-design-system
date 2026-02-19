@@ -26,35 +26,35 @@ describe('Text', () => {
   it('applies default variant (body)', () => {
     render(<Text data-testid="text">Default</Text>);
     const el = screen.getByTestId('text');
-    expect(el.className).toContain('text-base');
+    expect(el.className).toContain('text-[length:var(--font-text-body-size)]');
     expect(el.className).toContain('text-[var(--color-text-base)]');
   });
 
   it('applies variant=body', () => {
     render(<Text data-testid="text" variant="body">Body text</Text>);
     const el = screen.getByTestId('text');
-    expect(el.className).toContain('text-base');
+    expect(el.className).toContain('text-[length:var(--font-text-body-size)]');
     expect(el.className).toContain('text-[var(--color-text-base)]');
   });
 
   it('applies variant=caption', () => {
     render(<Text data-testid="text" variant="caption">Caption text</Text>);
     const el = screen.getByTestId('text');
-    expect(el.className).toContain('text-sm');
+    expect(el.className).toContain('text-[length:var(--font-text-caption-size)]');
     expect(el.className).toContain('text-[var(--color-text-base)]');
   });
 
   it('applies variant=small', () => {
     render(<Text data-testid="text" variant="small">Small text</Text>);
     const el = screen.getByTestId('text');
-    expect(el.className).toContain('text-xs');
+    expect(el.className).toContain('text-[length:var(--font-text-small-size)]');
     expect(el.className).toContain('text-[var(--color-text-base)]');
   });
 
   it('applies variant=muted', () => {
     render(<Text data-testid="text" variant="muted">Muted text</Text>);
     const el = screen.getByTestId('text');
-    expect(el.className).toContain('text-sm');
+    expect(el.className).toContain('text-[length:var(--font-text-muted-size)]');
     expect(el.className).toContain('text-[var(--color-text-muted)]');
   });
 

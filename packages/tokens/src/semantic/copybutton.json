@@ -5,7 +5,7 @@
       "bg":          { "$type": "color", "$value": "{color.bg.surface}", "$description": "Default background" },
       "bg-hover":    { "$type": "color", "$value": "{color.bg.surface-hover}", "$description": "Hover background" },
       "icon":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Copy icon color" },
-      "icon-copied": { "$type": "color", "$value": "{color.success.text}", "$description": "Check icon after copy" },
+      "icon-copied": { "$type": "color", "$value": "{color.text.success}", "$description": "Check icon after copy" },
       "border":      { "$type": "color", "$value": "{color.border.default}", "$description": "Button border" }
     }
   },

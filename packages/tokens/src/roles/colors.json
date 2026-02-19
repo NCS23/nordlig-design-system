@@ -13,12 +13,20 @@
       "primary-muted":   { "$type": "color", "$value": "{color.primary.1.100}" },
       "surface-hover":   { "$type": "color", "$value": "{color.neutral.1.200}" },
       "surface-active":  { "$type": "color", "$value": "{color.neutral.1.300}" },
-      "secondary":       { "$type": "color", "$value": "{color.secondary.1.500}" },
-      "secondary-hover": { "$type": "color", "$value": "{color.secondary.1.600}" },
-      "success": { "$type": "color", "$value": "{color.accent.1.500}" },
-      "warning": { "$type": "color", "$value": "{color.accent.2.500}" },
-      "error":   { "$type": "color", "$value": "{color.accent.3.500}" },
-      "info":    { "$type": "color", "$value": "{color.accent.4.500}" },
+      "secondary":       { "$type": "color", "$value": "{color.neutral.1.500}", "$description": "Secondary bg (consolidated from secondary.1 = neutral.1)" },
+      "secondary-hover": { "$type": "color", "$value": "{color.neutral.1.600}" },
+      "success-subtle":  { "$type": "color", "$value": "{color.accent.1.50}", "$description": "Subtle success bg (alerts, toasts)" },
+      "success":         { "$type": "color", "$value": "{color.accent.1.100}", "$description": "Default success bg (badges, banners)" },
+      "success-solid":   { "$type": "color", "$value": "{color.accent.1.500}", "$description": "Solid success bg (filled indicators)" },
+      "warning-subtle":  { "$type": "color", "$value": "{color.accent.2.50}" },
+      "warning":         { "$type": "color", "$value": "{color.accent.2.100}" },
+      "warning-solid":   { "$type": "color", "$value": "{color.accent.2.500}" },
+      "error-subtle":    { "$type": "color", "$value": "{color.accent.3.50}" },
+      "error":           { "$type": "color", "$value": "{color.accent.3.100}" },
+      "error-solid":     { "$type": "color", "$value": "{color.accent.3.500}" },
+      "info-subtle":     { "$type": "color", "$value": "{color.accent.4.50}" },
+      "info":            { "$type": "color", "$value": "{color.accent.4.100}" },
+      "info-solid":      { "$type": "color", "$value": "{color.accent.4.500}" },
       "overlay": { "$type": "color", "$value": "{color.neutral.overlay}", "$description": "Modal/dialog backdrop" },
       "inverse": { "$type": "color", "$value": "{color.neutral.1.900}", "$description": "Dark/inverted background (code blocks)" },
       "inverse-hover": { "$type": "color", "$value": "{color.neutral.1.700}", "$description": "Hover on inverted background" }
@@ -41,41 +49,19 @@
       "muted":   { "$type": "color", "$value": "{color.neutral.1.200}" },
       "strong":  { "$type": "color", "$value": "{color.neutral.1.400}" },
       "focus":   { "$type": "color", "$value": "{color.primary.1.500}" },
+      "success": { "$type": "color", "$value": "{color.accent.1.500}" },
+      "warning": { "$type": "color", "$value": "{color.accent.2.500}" },
       "error":   { "$type": "color", "$value": "{color.accent.3.500}" },
-      "success": { "$type": "color", "$value": "{color.accent.1.500}" }
+      "info":    { "$type": "color", "$value": "{color.accent.4.500}" }
     },
     "interactive": {
       "primary":          { "$type": "color", "$value": "{color.primary.1.500}" },
       "primary-hover":    { "$type": "color", "$value": "{color.primary.1.600}" },
       "primary-active":   { "$type": "color", "$value": "{color.primary.1.700}" },
       "primary-disabled": { "$type": "color", "$value": "{color.neutral.1.300}" },
-      "secondary":        { "$type": "color", "$value": "{color.secondary.1.500}" },
-      "secondary-hover":  { "$type": "color", "$value": "{color.secondary.1.600}" },
-      "secondary-active": { "$type": "color", "$value": "{color.secondary.1.700}" }
-    },
-    "success": {
-      "bg-subtle": { "$type": "color", "$value": "{color.accent.1.50}" },
-      "bg":        { "$type": "color", "$value": "{color.accent.1.100}" },
-      "border":    { "$type": "color", "$value": "{color.accent.1.500}" },
-      "text":      { "$type": "color", "$value": "{color.accent.1.700}" }
-    },
-    "warning": {
-      "bg-subtle": { "$type": "color", "$value": "{color.accent.2.50}" },
-      "bg":        { "$type": "color", "$value": "{color.accent.2.100}" },
-      "border":    { "$type": "color", "$value": "{color.accent.2.500}" },
-      "text":      { "$type": "color", "$value": "{color.accent.2.700}" }
-    },
-    "error": {
-      "bg-subtle": { "$type": "color", "$value": "{color.accent.3.50}" },
-      "bg":        { "$type": "color", "$value": "{color.accent.3.100}" },
-      "border":    { "$type": "color", "$value": "{color.accent.3.500}" },
-      "text":      { "$type": "color", "$value": "{color.accent.3.700}" }
-    },
-    "info": {
-      "bg-subtle": { "$type": "color", "$value": "{color.accent.4.50}" },
-      "bg":        { "$type": "color", "$value": "{color.accent.4.100}" },
-      "border":    { "$type": "color", "$value": "{color.accent.4.500}" },
-      "text":      { "$type": "color", "$value": "{color.accent.4.700}" }
+      "secondary":        { "$type": "color", "$value": "{color.neutral.1.500}", "$description": "Consolidated from secondary.1 = neutral.1" },
+      "secondary-hover":  { "$type": "color", "$value": "{color.neutral.1.600}" },
+      "secondary-active": { "$type": "color", "$value": "{color.neutral.1.700}" }
     }
   }
 }

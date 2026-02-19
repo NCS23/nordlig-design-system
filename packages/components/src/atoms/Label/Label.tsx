@@ -14,7 +14,7 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
       <label
         ref={ref}
         className={cn(
-          'text-sm font-medium text-[var(--color-text-base)]',
+          'text-[length:var(--font-label-size)] [font-weight:var(--font-label-weight)] text-[var(--color-text-base)]',
           disabled && 'opacity-50 cursor-not-allowed',
           className
         )}

@@ -50,14 +50,14 @@ const BlockquoteCitation = React.forwardRef<HTMLElement, BlockquoteCitationProps
     <footer
       ref={ref}
       className={cn(
-        'mt-[var(--spacing-bq-cite-gap)] text-sm not-italic text-[color:var(--color-bq-cite-text)]',
+        'mt-[var(--spacing-bq-cite-gap)] text-[length:var(--font-bq-cite-size)] not-italic text-[color:var(--color-bq-cite-text)]',
         className
       )}
       {...props}
     >
       {children ?? (
         <>
-          {author && <span className="font-medium">{author}</span>}
+          {author && <span className="[font-weight:var(--font-bq-cite-weight)]">{author}</span>}
           {author && source && ' — '}
           {source && <cite>{source}</cite>}
         </>

@@ -10,7 +10,7 @@ const Code = React.forwardRef<HTMLElement, CodeProps>(
       <code
         ref={ref}
         className={cn(
-          'font-mono text-sm bg-[var(--color-code-bg)] text-[var(--color-code-text)] px-1.5 py-0.5 rounded-[var(--radius-code)]',
+          'font-mono text-[length:var(--font-code-size)] bg-[var(--color-code-bg)] text-[var(--color-code-text)] px-1.5 py-0.5 rounded-[var(--radius-code)]',
           className
         )}
         {...props}
@@ -70,7 +70,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
         <pre
           ref={ref}
           className={cn(
-            'bg-[var(--color-code-block-bg)] text-[var(--color-code-block-text)] p-4 rounded-[var(--radius-code-block)] overflow-x-auto font-mono text-sm',
+            'bg-[var(--color-code-block-bg)] text-[var(--color-code-block-text)] p-4 rounded-[var(--radius-code-block)] overflow-x-auto font-mono text-[length:var(--font-code-size)]',
             className
           )}
           {...props}

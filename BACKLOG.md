@@ -107,8 +107,8 @@ Kontext, Entscheidungen, Blocker, offene Fragen.
 
 | Epic | Titel | Stories | Gitea |
 |------|-------|---------|-------|
-| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-026, NDS-030, NDS-031, NDS-032 | `epic/0-architecture` |
-| **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-046 | `epic/1-components` |
+| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-026, NDS-030–NDS-033 | `epic/0-architecture` |
+| **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-047 | `epic/1-components` |
 | **2** | Templates & Page Layouts | NDS-050–NDS-057 | `epic/2-templates` |
 | **3** | Patterns & Recipes | NDS-060–NDS-065 | `epic/3-patterns` |
 | **4** | Figma Pipeline & Form Builder | NDS-070–NDS-074 | `epic/4-figma` |
@@ -951,7 +951,7 @@ Fuer Beschreibungen, Kommentare, Produktbeschreibungen.
 
 ### [NDS-019] Token-Refactoring: Hardcoded Werte durch Tokens ersetzen (Infrastructure) — P1
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P1 (kritisch) — Hardcoded Tailwind-Utilities statt Tokens in ~70 Komponenten
 **Prefix:** — | **Blueprint:** `atoms/Button/Button.tsx` (Referenz-Implementierung)
 **Dependencies:** keine
@@ -1008,6 +1008,7 @@ ersetzt werden. Button.tsx wurde bereits als Referenz refactored (border-width).
 - Underscore-Konvention: Keine Underscores nach `--` in Tailwind Arbitrary Values (→ Space-Konvertierung).
 - `ring-*` ist komplex: Tailwind ring nutzt `--tw-ring-offset-width` intern. Moeglicherweise eigenes Utility-Pattern noetig.
 - Referenz: Button.tsx ist das Muster fuer alle anderen Komponenten.
+- **Batch 1 Done (2026-02-19):** Phase 0 (5 neue L3-Tokens: font-weight x4, font-size xs x1, plus 2 heading-size L3-Tokens). 9 Atoms refactored (Alert, Badge, Blockquote, Code, Checkbox, Heading, Label, Kbd, Tag), 1 skipped (Link — nichts im Scope). 7 L4-Token-Dateien aktualisiert/erstellt, 8 TSX-Dateien, 5 Test-Dateien (16 Assertions). 1466/1466 Tests, Storybook Build OK.
 
 ---
 
@@ -1234,6 +1235,12 @@ CheckboxField, SwitchField, ProgressField von `atoms/` nach `molecules/` verschi
 **Status:** Backlog | **Size:** L | **Epic:** 0
 Ergaenzt NDS-019. Alle verbleibenden hardcoded Farben/Abstande/Schriftgroessen durch `var(--*)` ersetzen.
 
+#### [NDS-033] L3 Token-Konsolidierung — Doppelstrukturen bereinigen (#73)
+
+**Status:** Done | **Size:** L | **Epic:** 0
+Phase 1 (Color-Konsolidierung) abgeschlossen: (1) 4 Status-Gruppen entfernt, 12 neue bg-Varianten (subtle/default/solid), border.warning + border.info ergaenzt. (4) secondary→neutral konsolidiert. (5) Border-Symmetrie hergestellt. 16 L4-Dateien migriert (~86 Referenzen). 5 Komponenten-Dateien mit direkten L3-Refs gefixt. 16 vorbestehende Test-Mismatches behoben. 1466/1466 Tests bestanden, Storybook Build erfolgreich.
+**Offen (separate Story):** Probleme 2+3 (Spacing/Sizing-Konsolidierung) → eigene Story erforderlich.
+
 ---
 
 ### Epic 1 — Fehlende Kern-Komponenten (neue Stories)
@@ -1272,6 +1279,11 @@ Seitliche Panels. Positionen: left/right/top/bottom, Groessen: sm/md/lg/full.
 
 **Status:** Backlog | **Size:** M | **Epic:** 1
 Kontextuelle Aktionsmenues. Sub-Menus, Icons, Shortcuts, Keyboard-Navigation.
+
+#### [NDS-047] Radio Atom extrahieren (#72)
+
+**Status:** Backlog | **Size:** M | **Epic:** 1
+Eigenstaendiges `Radio` Atom (`atoms/Radio/`) analog zu Checkbox und Switch. Basiert auf nativem `<input type="radio">` statt Radix-Context, damit standalone-faehig. RadioGroup wird refactored um Radio-Atoms zu compositen. Figma-Komponente fuer Radio einzeln. Breaking Change: `RadioGroupItem` → `Radio`.
 
 ---
 
@@ -1496,3 +1508,9 @@ Table, Timeline, Tree
 | 2026-02-16 | **Figma Post-Import Fixes:** (1) CheckboxField TextStyles: `hasChildren` vor `hasTextContent` Bedingung gefixt → Label/Description TextStyles werden jetzt erstellt. (2) Checkbox: Hover-Varianten (`interaction: default\|hover`) hinzugefuegt → 9 Kombinationen statt 6. Corner Radius: `clipsContent=true` fuer SVG-Varianten. (3) Variable-Hierarchie: `classifyTokenLevel()` in extract-tokens.ts, Level-Prefix (L1 Base/L2 Global/L3 Role/L4 Component) auf allen Figma-Variablen. Reverse-Lookup in code.ts angepasst. FIGMA_EXPORT_RULES.md um 4 neue Regeln + 4 Anti-Patterns erweitert. |
 | 2026-02-18 | **NDS-026 erstellt:** Hardcoded gap-* durch Token-basierte Gaps ersetzen (#71). ~15 Komponenten betroffen. Figma-Export-JSONs fuer Field-Komponenten bereits korrigiert (tokenBindings fuer itemSpacing). |
 | 2026-02-17 | **Epic-Struktur eingefuehrt:** 8 Epics (0-7) mit 37 neuen Stories (NDS-030 bis NDS-103). Neue Layer: Templates (Epic 2, 8 Stories) und Patterns (Epic 3, 6 Stories). Atomaritaets-Audit: 6 Violations identifiziert (NDS-030, NDS-031). Gitea: 15 neue Labels (epic/*, layer/template, layer/pattern, size/*), 8 Epic-Overview-Issues (#26-#33), 37 Story-Issues (#34-#70), alle bestehenden Issues mit Epic-Labels getaggt. |
+| 2026-02-19 | **NDS-047 erstellt:** Radio Atom extrahieren (Epic 1). Gitea #72. |
+| 2026-02-19 | **NDS-033 erstellt:** L3 Token-Konsolidierung (Epic 0). Audit aller L3-Tokens: 5 Probleme gefunden — Semantic Status Doppelstruktur (bg.success vs success.bg mit widersprüchlichen Werten), spacing/sizing Dopplung, Layer-Verletzungen, secondary.1==neutral.1 Duplikation, fehlende border-Symmetrie. ~15 L4-Dateien betroffen. Gitea #73. |
+| 2026-02-19 | **NDS-033 Done:** Phase 1 (Color-Konsolidierung) abgeschlossen. L3 `roles/colors.json` umstrukturiert: 4 Status-Gruppen entfernt, 12 bg-Varianten (subtle/default/solid) + border.warning/info ergaenzt, secondary→neutral konsolidiert. 16 L4-Dateien migriert (~86 Refs). 5 Komponenten mit direkten L3-Refs gefixt. tokens-annotated.css + Colors.stories.tsx aktualisiert. 16 vorbestehende Test-Mismatches behoben. 1466/1466 Tests, Storybook Build OK. Offen: Spacing/Sizing (Probleme 2+3) → separate Story. |
+| 2026-02-19 | **NDS-019 Batch 1 Done:** Phase 0: 5 neue L3-Tokens (font-weight x4, font-size xs) + 2 heading-size L3-Tokens. 9 Atoms refactored (Alert, Badge, Blockquote, Code, Checkbox, Heading, Label, Kbd, Tag), Link skipped (nichts im Scope). 7 L4-Token-Dateien, 8 TSX, 5 Test-Dateien (16 Assertions). Scope: font-weight, font-size, border-width (NICHT padding/gap/ring). 1466/1466 Tests, Storybook OK. |
+| 2026-02-19 | **NDS-019 Batch 2 Done:** 12 weitere Atoms refactored (Avatar, Banner, Text, Spinner, NumberInput, Switch, Progress, Toggle, Slider, ToggleGroup, InputOTP, Button). 12 L4-Token-Dateien aktualisiert/erstellt (text.json neu), 12 TSX, 2 Test-Dateien (4+5 Assertions). Alle Atoms jetzt 100% tokenisiert (font-weight, font-size, border-width, border-radius). 1466/1466 Tests, Storybook OK. |
+| 2026-02-19 | **NDS-019 Done:** Scan von Molecules + Organisms ergab 0 verbleibende hardcoded Werte im Scope (font-weight, font-size, border-width, border-radius). Gesamtbilanz: 7 neue L3-Tokens, 21 Atoms refactored, 19 L4-Token-Dateien aktualisiert/erstellt (heading.json + text.json neu), 20 TSX-Dateien, 7 Test-Dateien (20 Assertions). Token-Collisions: 91. |

@@ -44,7 +44,7 @@ describe('Kbd', () => {
     render(<Kbd data-testid="kbd">K</Kbd>);
     const kbd = screen.getByTestId('kbd');
     expect(kbd.className).toContain('px-1.5');
-    expect(kbd.className).toContain('text-xs');
+    expect(kbd.className).toContain('text-[length:var(--font-kbd-md-size)]');
   });
 
   it('applies size=sm', () => {
@@ -52,7 +52,7 @@ describe('Kbd', () => {
     const kbd = screen.getByTestId('kbd');
     expect(kbd.className).toContain('px-1');
     expect(kbd.className).toContain('py-0.5');
-    expect(kbd.className).toContain('text-[11px]');
+    expect(kbd.className).toContain('text-[length:var(--font-kbd-sm-size)]');
   });
 
   it('applies size=md', () => {
@@ -60,7 +60,7 @@ describe('Kbd', () => {
     const kbd = screen.getByTestId('kbd');
     expect(kbd.className).toContain('px-1.5');
     expect(kbd.className).toContain('py-0.5');
-    expect(kbd.className).toContain('text-xs');
+    expect(kbd.className).toContain('text-[length:var(--font-kbd-md-size)]');
   });
 
   it('applies size=lg', () => {
@@ -68,7 +68,7 @@ describe('Kbd', () => {
     const kbd = screen.getByTestId('kbd');
     expect(kbd.className).toContain('px-2');
     expect(kbd.className).toContain('py-1');
-    expect(kbd.className).toContain('text-sm');
+    expect(kbd.className).toContain('text-[length:var(--font-kbd-lg-size)]');
   });
 
   // --- Custom className --------------------------------------------------------

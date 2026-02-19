@@ -18,8 +18,8 @@ describe('Label', () => {
   it('applies base text styling', () => {
     render(<Label data-testid="label">Text</Label>);
     const label = screen.getByTestId('label');
-    expect(label.className).toContain('text-sm');
-    expect(label.className).toContain('font-medium');
+    expect(label.className).toContain('text-[length:var(--font-label-size)]');
+    expect(label.className).toContain('[font-weight:var(--font-label-weight)]');
     expect(label.className).toContain('text-[var(--color-text-base)]');
   });
 

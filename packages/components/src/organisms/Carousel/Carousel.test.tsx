@@ -306,10 +306,10 @@ describe('Carousel', () => {
       expect(nextBtn).toHaveClass('bg-[var(--color-bg-paper)]/80');
     });
 
-    it('active dot uses primary background token', () => {
+    it('active dot uses white background', () => {
       renderCarousel({ showDots: true });
       const activeDot = screen.getByLabelText('Gehe zu Slide 1');
-      expect(activeDot).toHaveClass('bg-[var(--color-bg-primary)]');
+      expect(activeDot).toHaveClass('bg-white');
     });
   });
 });

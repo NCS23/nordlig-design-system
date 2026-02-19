@@ -22,7 +22,7 @@ const Checkbox = React.forwardRef<
     aria-invalid={error || undefined}
     className={cn(
       'peer inline-flex h-[var(--sizing-checkbox-box-size)] w-[var(--sizing-checkbox-box-size)] shrink-0 items-center justify-center',
-      'rounded-[var(--radius-checkbox)] border-2 transition-all duration-200',
+      'rounded-[var(--radius-checkbox)] [border-width:var(--sizing-checkbox-border-width)] transition-all duration-200',
       'border-[var(--color-checkbox-border)] bg-[var(--color-checkbox-bg)]',
       'hover:border-[var(--color-checkbox-border-hover)]',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-checkbox-focus-ring)] focus-visible:ring-offset-1',
@@ -69,14 +69,14 @@ const CheckboxField = React.forwardRef<
         <label
           htmlFor={checkboxId}
           className={cn(
-            'text-sm font-medium cursor-pointer text-[var(--color-checkbox-label)]',
+            'text-[length:var(--font-checkbox-label-size)] [font-weight:var(--font-checkbox-label-weight)] cursor-pointer text-[var(--color-checkbox-label)]',
             props.disabled && 'cursor-not-allowed opacity-50'
           )}
         >
           {label}
         </label>
         {description && (
-          <p className="text-xs text-[var(--color-checkbox-description)]">
+          <p className="text-[length:var(--font-checkbox-desc-size)] text-[var(--color-checkbox-description)]">
             {description}
           </p>
         )}

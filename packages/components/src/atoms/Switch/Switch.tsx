@@ -64,14 +64,14 @@ const SwitchField = React.forwardRef<
         <label
           htmlFor={switchId}
           className={cn(
-            'text-sm font-medium cursor-pointer text-[var(--color-switch-label)]',
+            'text-[length:var(--font-switch-label-size)] [font-weight:var(--font-switch-label-weight)] cursor-pointer text-[var(--color-switch-label)]',
             props.disabled && 'cursor-not-allowed opacity-50'
           )}
         >
           {label}
         </label>
         {description && (
-          <p className="text-xs text-[var(--color-switch-description)]">
+          <p className="text-[length:var(--font-switch-desc-size)] text-[var(--color-switch-description)]">
             {description}
           </p>
         )}

@@ -1,0 +1,11 @@
+{
+  "font": {
+    "$description": "Level 4: Text component tokens",
+    "text": {
+      "body-size":    { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Body variant font size (text-base)" },
+      "caption-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Caption variant font size (text-sm)" },
+      "small-size":   { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Small variant font size (text-xs)" },
+      "muted-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Muted variant font size (text-sm)" }
+    }
+  }
+}

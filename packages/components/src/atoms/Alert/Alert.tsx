@@ -4,7 +4,7 @@ import { Info, CheckCircle, AlertTriangle, XCircle, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 const alertVariants = cva(
-  'relative flex items-start gap-3 p-4 border-l-4 rounded-[var(--radius-alert)]',
+  'relative flex items-start gap-3 p-4 [border-left-width:var(--sizing-alert-border-width)] rounded-[var(--radius-alert)]',
   {
     variants: {
       variant: {
@@ -77,7 +77,7 @@ const AlertTitle = React.forwardRef<HTMLHeadingElement, AlertTitleProps>(
   ({ className, ...props }, ref) => (
     <h5
       ref={ref}
-      className={cn('text-sm font-semibold text-[var(--color-alert-title)] mb-1', className)}
+      className={cn('text-[length:var(--sizing-alert-font-size)] [font-weight:var(--sizing-alert-title-weight)] text-[var(--color-alert-title)] mb-1', className)}
       {...props}
     />
   )
@@ -90,7 +90,7 @@ const AlertDescription = React.forwardRef<HTMLDivElement, AlertDescriptionProps>
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('text-sm text-[var(--color-alert-description)]', className)}
+      className={cn('text-[length:var(--sizing-alert-font-size)] text-[var(--color-alert-description)]', className)}
       {...props}
     />
   )

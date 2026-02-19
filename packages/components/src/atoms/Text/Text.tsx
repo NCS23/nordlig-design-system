@@ -5,10 +5,10 @@ import { cn } from '../../utils/cn';
 const textVariants = cva('', {
   variants: {
     variant: {
-      body: 'text-base text-[var(--color-text-base)]',
-      caption: 'text-sm text-[var(--color-text-base)]',
-      small: 'text-xs text-[var(--color-text-base)]',
-      muted: 'text-sm text-[var(--color-text-muted)]',
+      body: 'text-[length:var(--font-text-body-size)] text-[var(--color-text-base)]',
+      caption: 'text-[length:var(--font-text-caption-size)] text-[var(--color-text-base)]',
+      small: 'text-[length:var(--font-text-small-size)] text-[var(--color-text-base)]',
+      muted: 'text-[length:var(--font-text-muted-size)] text-[var(--color-text-muted)]',
     },
   },
   defaultVariants: {

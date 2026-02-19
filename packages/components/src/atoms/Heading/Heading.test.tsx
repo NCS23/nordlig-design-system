@@ -41,8 +41,8 @@ describe('Heading', () => {
   it('applies level=1 styles', () => {
     render(<Heading data-testid="heading" level={1}>H1</Heading>);
     const el = screen.getByTestId('heading');
-    expect(el.className).toContain('text-4xl');
-    expect(el.className).toContain('font-bold');
+    expect(el.className).toContain('text-[length:var(--font-heading-h1-size)]');
+    expect(el.className).toContain('[font-weight:var(--font-heading-h1-weight)]');
     expect(el.className).toContain('tracking-tight');
     expect(el.className).toContain('text-[var(--color-text-heading)]');
   });
@@ -50,45 +50,45 @@ describe('Heading', () => {
   it('applies level=2 styles', () => {
     render(<Heading data-testid="heading" level={2}>H2</Heading>);
     const el = screen.getByTestId('heading');
-    expect(el.className).toContain('text-3xl');
-    expect(el.className).toContain('font-bold');
+    expect(el.className).toContain('text-[length:var(--font-heading-h2-size)]');
+    expect(el.className).toContain('[font-weight:var(--font-heading-h2-weight)]');
     expect(el.className).toContain('tracking-tight');
   });
 
   it('applies level=3 styles', () => {
     render(<Heading data-testid="heading" level={3}>H3</Heading>);
     const el = screen.getByTestId('heading');
-    expect(el.className).toContain('text-2xl');
-    expect(el.className).toContain('font-semibold');
+    expect(el.className).toContain('text-[length:var(--font-heading-h3-size)]');
+    expect(el.className).toContain('[font-weight:var(--font-heading-h3-weight)]');
   });
 
   it('applies level=4 styles', () => {
     render(<Heading data-testid="heading" level={4}>H4</Heading>);
     const el = screen.getByTestId('heading');
-    expect(el.className).toContain('text-xl');
-    expect(el.className).toContain('font-semibold');
+    expect(el.className).toContain('text-[length:var(--font-heading-h4-size)]');
+    expect(el.className).toContain('[font-weight:var(--font-heading-h4-weight)]');
   });
 
   it('applies level=5 styles', () => {
     render(<Heading data-testid="heading" level={5}>H5</Heading>);
     const el = screen.getByTestId('heading');
-    expect(el.className).toContain('text-lg');
-    expect(el.className).toContain('font-medium');
+    expect(el.className).toContain('text-[length:var(--font-heading-h5-size)]');
+    expect(el.className).toContain('[font-weight:var(--font-heading-h5-weight)]');
   });
 
   it('applies level=6 styles', () => {
     render(<Heading data-testid="heading" level={6}>H6</Heading>);
     const el = screen.getByTestId('heading');
-    expect(el.className).toContain('text-base');
-    expect(el.className).toContain('font-medium');
+    expect(el.className).toContain('text-[length:var(--font-heading-h6-size)]');
+    expect(el.className).toContain('[font-weight:var(--font-heading-h6-weight)]');
   });
 
   it('overrides tag with as prop', () => {
     render(<Heading data-testid="heading" level={1} as="h3">Visual H1, Semantic H3</Heading>);
     const el = screen.getByTestId('heading');
     expect(el.tagName).toBe('H3');
-    expect(el.className).toContain('text-4xl');
-    expect(el.className).toContain('font-bold');
+    expect(el.className).toContain('text-[length:var(--font-heading-h1-size)]');
+    expect(el.className).toContain('[font-weight:var(--font-heading-h1-weight)]');
   });
 
   it('applies custom className', () => {

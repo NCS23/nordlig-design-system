@@ -364,7 +364,7 @@ export const DesignTokens: StoryObj = {
         usage: 'Label-Textfarbe',
       },
       {
-        token: '--color-error-text',
+        token: '--color-text-error',
         resolved: '#dc2626 (Red 600)',
         usage: 'Fehlermeldung-Textfarbe (FormField + FormMessage)',
       },

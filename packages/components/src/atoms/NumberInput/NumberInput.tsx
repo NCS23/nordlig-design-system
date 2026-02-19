@@ -19,7 +19,7 @@ function preciseAdd(a: number, b: number): number {
 
 const numberInputVariants = cva(
   [
-    'flex items-center border rounded-[var(--radius-numberinput)] bg-[var(--color-numberinput-bg)]',
+    'flex items-center [border-width:var(--sizing-numberinput-border-width)] rounded-[var(--radius-numberinput)] bg-[var(--color-numberinput-bg)]',
     'transition-colors',
     'focus-within:ring-2 focus-within:ring-[var(--color-numberinput-border-focus)] focus-within:ring-offset-1 focus-within:border-[var(--color-numberinput-border-focus)]',
   ].join(' '),
@@ -228,7 +228,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
           aria-valuemax={max}
           aria-valuenow={currentValue}
           className={cn(
-            'w-full text-center bg-transparent border-none outline-none text-[var(--color-numberinput-text)] font-medium',
+            'w-full text-center bg-transparent border-none outline-none text-[var(--color-numberinput-text)] [font-weight:var(--font-numberinput-weight)]',
             '[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none',
             inputSize === 'sm'
               ? 'text-[length:var(--sizing-input-sm-font-size)]'

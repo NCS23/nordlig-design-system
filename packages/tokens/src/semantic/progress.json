@@ -4,11 +4,18 @@
     "progress": {
       "track":        { "$type": "color", "$value": "{color.bg.surface}" },
       "fill":         { "$type": "color", "$value": "{color.interactive.primary}" },
-      "fill-success": { "$type": "color", "$value": "{color.bg.success}" },
-      "fill-warning": { "$type": "color", "$value": "{color.bg.warning}" },
-      "fill-error":   { "$type": "color", "$value": "{color.bg.error}" },
+      "fill-success": { "$type": "color", "$value": "{color.bg.success-solid}" },
+      "fill-warning": { "$type": "color", "$value": "{color.bg.warning-solid}" },
+      "fill-error":   { "$type": "color", "$value": "{color.bg.error-solid}" },
       "label":        { "$type": "color", "$value": "{color.text.base}" },
       "value":        { "$type": "color", "$value": "{color.text.muted}" }
+    }
+  },
+  "font": {
+    "progress": {
+      "label-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "ProgressField label font size (text-sm)" },
+      "label-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "ProgressField label font weight (500)" },
+      "value-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "ProgressField value font size (text-sm)" }
     }
   },
   "sizing": {

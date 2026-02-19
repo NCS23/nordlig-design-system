@@ -12,9 +12,16 @@
       "separator":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Group separator color" }
     }
   },
+  "font": {
+    "inputotp": {
+      "size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "OTP digit font size (text-sm)" },
+      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "OTP digit font weight (500)" }
+    }
+  },
   "sizing": {
     "inputotp": {
-      "slot-size": { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Slot width and height (40px)" }
+      "slot-size":    { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Slot width and height (40px)" },
+      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "Slot border width (1px)" }
     }
   },
   "radius": {

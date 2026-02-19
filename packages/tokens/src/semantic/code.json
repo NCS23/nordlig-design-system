@@ -13,5 +13,10 @@
   "radius": {
     "code":       { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Inline code border radius" },
     "code-block": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Code block border radius" }
+  },
+  "font": {
+    "code": {
+      "size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Code font size (14px)" }
+    }
   }
 }

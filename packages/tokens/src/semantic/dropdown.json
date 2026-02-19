@@ -8,8 +8,8 @@
       "item-hover-bg":          { "$type": "color", "$value": "{color.bg.surface}", "$description": "Item hover/focus background" },
       "item-disabled-text":     { "$type": "color", "$value": "{color.text.disabled}", "$description": "Disabled item text" },
       "item-icon":              { "$type": "color", "$value": "{color.text.muted}", "$description": "Item icon color" },
-      "destructive-text":       { "$type": "color", "$value": "{color.error.text}", "$description": "Destructive item text (red)" },
-      "destructive-hover-bg":   { "$type": "color", "$value": "{color.error.bg-subtle}", "$description": "Destructive item hover bg" },
+      "destructive-text":       { "$type": "color", "$value": "{color.text.error}", "$description": "Destructive item text (red)" },
+      "destructive-hover-bg":   { "$type": "color", "$value": "{color.bg.error-subtle}", "$description": "Destructive item hover bg" },
       "separator":              { "$type": "color", "$value": "{color.border.muted}", "$description": "Separator line" },
       "label-text":             { "$type": "color", "$value": "{color.text.muted}", "$description": "Group label text" }
     }

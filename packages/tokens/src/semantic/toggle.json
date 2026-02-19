@@ -11,6 +11,11 @@
       "active-border": { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active toggle border" }
     }
   },
+  "font": {
+    "toggle": {
+      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Toggle/ToggleGroup font weight (500)" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Toggle size tokens — References Level 3 only",
     "toggle": {

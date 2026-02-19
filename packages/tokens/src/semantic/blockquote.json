@@ -17,5 +17,11 @@
   },
   "radius": {
     "bq": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Corner radius" }
+  },
+  "font": {
+    "bq": {
+      "cite-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Citation font size (14px)" },
+      "cite-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Citation author font weight (500)" }
+    }
   }
 }

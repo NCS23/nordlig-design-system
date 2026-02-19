@@ -9,22 +9,22 @@
       },
       "bg-success": {
         "$type": "color",
-        "$value": "{color.success.bg-subtle}",
+        "$value": "{color.bg.success-subtle}",
         "$description": "Success variant background"
       },
       "bg-warning": {
         "$type": "color",
-        "$value": "{color.warning.bg-subtle}",
+        "$value": "{color.bg.warning-subtle}",
         "$description": "Warning variant background"
       },
       "bg-error": {
         "$type": "color",
-        "$value": "{color.error.bg-subtle}",
+        "$value": "{color.bg.error-subtle}",
         "$description": "Error variant background"
       },
       "bg-info": {
         "$type": "color",
-        "$value": "{color.info.bg-subtle}",
+        "$value": "{color.bg.info-subtle}",
         "$description": "Info variant background"
       },
       "text-default": {
@@ -34,22 +34,22 @@
       },
       "text-success": {
         "$type": "color",
-        "$value": "{color.success.text}",
+        "$value": "{color.text.success}",
         "$description": "Success variant text color"
       },
       "text-warning": {
         "$type": "color",
-        "$value": "{color.warning.text}",
+        "$value": "{color.text.warning}",
         "$description": "Warning variant text color"
       },
       "text-error": {
         "$type": "color",
-        "$value": "{color.error.text}",
+        "$value": "{color.text.error}",
         "$description": "Error variant text color"
       },
       "text-info": {
         "$type": "color",
-        "$value": "{color.info.text}",
+        "$value": "{color.text.info}",
         "$description": "Info variant text color"
       },
       "border-default": {
@@ -59,22 +59,22 @@
       },
       "border-success": {
         "$type": "color",
-        "$value": "{color.success.border}",
+        "$value": "{color.border.success}",
         "$description": "Success variant border"
       },
       "border-warning": {
         "$type": "color",
-        "$value": "{color.warning.border}",
+        "$value": "{color.border.warning}",
         "$description": "Warning variant border"
       },
       "border-error": {
         "$type": "color",
-        "$value": "{color.error.border}",
+        "$value": "{color.border.error}",
         "$description": "Error variant border"
       },
       "border-info": {
         "$type": "color",
-        "$value": "{color.info.border}",
+        "$value": "{color.border.info}",
         "$description": "Info variant border"
       },
       "border-focus": {
@@ -89,6 +89,18 @@
       "$type": "dimension",
       "$value": "{radius.component.md}",
       "$description": "Tag border radius"
+    }
+  },
+  "sizing": {
+    "tag": {
+      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "Tag border width (1px)" }
+    }
+  },
+  "font": {
+    "tag": {
+      "weight":  { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Tag font weight (500)" },
+      "sm-size": { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Tag sm font size (12px)" },
+      "md-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Tag md font size (14px)" }
     }
   }
 }

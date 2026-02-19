@@ -602,10 +602,18 @@
   --color-bg-primary-active: #0369a1;
   --color-bg-secondary: #64748b;
   --color-bg-secondary-hover: #475569;
-  --color-bg-success: #10b981;
-  --color-bg-warning: #f59e0b;
-  --color-bg-error: #ef4444;
-  --color-bg-info: #3b82f6;
+  --color-bg-success-subtle: #ecfdf5;
+  --color-bg-success: #d1fae5;
+  --color-bg-success-solid: #10b981;
+  --color-bg-warning-subtle: #fffbeb;
+  --color-bg-warning: #fef3c7;
+  --color-bg-warning-solid: #f59e0b;
+  --color-bg-error-subtle: #fef2f2;
+  --color-bg-error: #fee2e2;
+  --color-bg-error-solid: #ef4444;
+  --color-bg-info-subtle: #eff6ff;
+  --color-bg-info: #dbeafe;
+  --color-bg-info-solid: #3b82f6;
   --color-bg-overlay: rgba(0, 0, 0, 0.5);
   --color-bg-inverse: #0f172a;
   --color-bg-inverse-hover: #334155;
@@ -632,8 +640,10 @@
   --color-border-muted: #e2e8f0;
   --color-border-strong: #94a3b8;
   --color-border-focus: #0ea5e9;
-  --color-border-error: #ef4444;
   --color-border-success: #10b981;
+  --color-border-warning: #f59e0b;
+  --color-border-error: #ef4444;
+  --color-border-info: #3b82f6;
   /* @end */
 
   /* @tokens L3 Role: Interactive Colors */
@@ -647,25 +657,7 @@
   --color-interactive-secondary-active: #334155;
   /* @end */
 
-  /* @tokens L3 Role: Semantic Status Colors */
-  /* @presenter Color */
-  --color-success-bg-subtle: #ecfdf5;
-  --color-success-bg: #d1fae5;
-  --color-success-border: #10b981;
-  --color-success-text: #047857;
-  --color-warning-bg-subtle: #fffbeb;
-  --color-warning-bg: #fef3c7;
-  --color-warning-border: #f59e0b;
-  --color-warning-text: #b45309;
-  --color-error-bg-subtle: #fef2f2;
-  --color-error-bg: #fee2e2;
-  --color-error-border: #ef4444;
-  --color-error-text: #b91c1c;
-  --color-info-bg-subtle: #eff6ff;
-  --color-info-bg: #dbeafe;
-  --color-info-border: #3b82f6;
-  --color-info-text: #1d4ed8;
-  /* @end */
+  /* Semantic Status Colors consolidated into bg/text/border groups above (NDS-033) */
 
   /* @tokens L3 Role: Component Radius */
   /* @presenter BorderRadius */
