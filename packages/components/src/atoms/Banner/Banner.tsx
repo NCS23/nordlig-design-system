@@ -2,6 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Info, CheckCircle, AlertTriangle, XCircle, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 
 const bannerVariants = cva(
   'flex items-center w-full px-[var(--spacing-banner-padding-x)] py-[var(--spacing-banner-padding-y)] gap-[var(--spacing-banner-gap)] border-b',
@@ -85,13 +86,10 @@ const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
         {icon !== undefined ? (
           icon
         ) : (
-          <IconComponent
-            size={20}
-            aria-hidden="true"
-            className={cn(
-              'shrink-0',
-              variantIconClassMap[resolvedVariant]
-            )}
+          <Icon
+            icon={IconComponent}
+            size="md"
+            className={variantIconClassMap[resolvedVariant]}
           />
         )}
         <div className="flex-1 min-w-0 text-[length:var(--font-banner-size)]">{children}</div>
@@ -102,7 +100,7 @@ const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
             className="shrink-0 p-1 rounded-[var(--radius-banner-dismiss)] text-[var(--color-banner-dismiss)] hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
             aria-label="Schließen"
           >
-            <X size={16} />
+            <Icon icon={X} size="sm" />
           </button>
         )}
       </div>

@@ -3,6 +3,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Sheet Root ─────────────────────────────────────────────────────────────
 
@@ -114,7 +115,7 @@ const SheetContent = React.forwardRef<
         )}
         aria-label="Schliessen"
       >
-        <X size={16} />
+        <Icon icon={X} size="sm" />
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPrimitive.Portal>

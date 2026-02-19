@@ -13,6 +13,7 @@ import {
 } from '@tanstack/react-table';
 import { ArrowUpDown, ArrowUp, ArrowDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '../Table';
 import { Input } from '../../atoms/Input';
 import { Button } from '../../atoms/Button';
@@ -232,17 +233,20 @@ function DataTableColumnHeader<TData, TValue>({
     >
       {children}
       {sorted === 'asc' ? (
-        <ArrowUp
+        <Icon
+          icon={ArrowUp}
           size={14}
           className="text-[var(--color-datatable-sort-icon-active)]"
         />
       ) : sorted === 'desc' ? (
-        <ArrowDown
+        <Icon
+          icon={ArrowDown}
           size={14}
           className="text-[var(--color-datatable-sort-icon-active)]"
         />
       ) : (
-        <ArrowUpDown
+        <Icon
+          icon={ArrowUpDown}
           size={14}
           className="text-[var(--color-datatable-sort-icon)]"
         />
@@ -274,7 +278,7 @@ function DataTablePagination<TData>({
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          <ChevronLeft size={16} />
+          <Icon icon={ChevronLeft} size="sm" />
           Zurueck
         </Button>
         <Button
@@ -284,7 +288,7 @@ function DataTablePagination<TData>({
           disabled={!table.getCanNextPage()}
         >
           Weiter
-          <ChevronRight size={16} />
+          <Icon icon={ChevronRight} size="sm" />
         </Button>
       </div>
     </div>

@@ -3,6 +3,7 @@ import * as Popover from '@radix-ui/react-popover';
 import { ChevronDown, Check } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -239,9 +240,10 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         >
           <span className="flex-1">{opt.label}</span>
           {isSelected && (
-            <Check
+            <Icon
+              icon={Check}
               size={14}
-              className="shrink-0 text-[var(--color-select-check-icon)]"
+              className="text-[var(--color-select-check-icon)]"
             />
           )}
         </div>
@@ -272,10 +274,11 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
               <span className="truncate">
                 {selectedOption ? selectedOption.label : placeholder}
               </span>
-              <ChevronDown
-                size={16}
+              <Icon
+                icon={ChevronDown}
+                size="sm"
                 className={cn(
-                  'shrink-0 transition-transform text-[var(--color-select-icon)]',
+                  'transition-transform text-[var(--color-select-icon)]',
                   open && 'rotate-180'
                 )}
               />

@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { User, Settings, Dumbbell, ClipboardCheck } from 'lucide-react';
 import { Stepper } from './Stepper';
+import { Icon } from '../../atoms/Icon';
 
 const meta: Meta<typeof Stepper> = {
   title: 'Molecules/Stepper',
@@ -106,22 +107,22 @@ export const TrainingOnboardingWizard: Story = {
       {
         label: 'Profil',
         description: 'Alter, Gewicht, Geschlecht',
-        icon: <User size={16} />,
+        icon: <Icon icon={User} size="sm" />,
       },
       {
         label: 'Trainingsziel',
         description: '5K, 10K, Halbmarathon, Marathon',
-        icon: <Dumbbell size={16} />,
+        icon: <Icon icon={Dumbbell} size="sm" />,
       },
       {
         label: 'Einstellungen',
         description: 'HR-Zonen, Pace-Zonen',
-        icon: <Settings size={16} />,
+        icon: <Icon icon={Settings} size="sm" />,
       },
       {
         label: 'Bestaetigung',
         description: 'Plan pruefen und starten',
-        icon: <ClipboardCheck size={16} />,
+        icon: <Icon icon={ClipboardCheck} size="sm" />,
       },
     ];
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -115,7 +116,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
             onClick={() => onPageChange(currentPage - 1)}
             className={cn(normalButtonClasses, isFirstPage && disabledClasses)}
           >
-            <ChevronLeft className="h-4 w-4" />
+            <Icon icon={ChevronLeft} size="sm" />
           </button>
           <span className="text-sm text-[var(--color-pagination-item-text)] px-2">
             Seite {currentPage} von {totalPages}
@@ -127,7 +128,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
             onClick={() => onPageChange(currentPage + 1)}
             className={cn(normalButtonClasses, isLastPage && disabledClasses)}
           >
-            <ChevronRight className="h-4 w-4" />
+            <Icon icon={ChevronRight} size="sm" />
           </button>
         </nav>
       );
@@ -152,7 +153,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
           onClick={() => onPageChange(currentPage - 1)}
           className={cn(normalButtonClasses, isFirstPage && disabledClasses)}
         >
-          <ChevronLeft className="h-4 w-4" />
+          <Icon icon={ChevronLeft} size="sm" />
         </button>
 
         {/* Seitennummern */}
@@ -194,7 +195,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
           onClick={() => onPageChange(currentPage + 1)}
           className={cn(normalButtonClasses, isLastPage && disabledClasses)}
         >
-          <ChevronRight className="h-4 w-4" />
+          <Icon icon={ChevronRight} size="sm" />
         </button>
       </nav>
     );

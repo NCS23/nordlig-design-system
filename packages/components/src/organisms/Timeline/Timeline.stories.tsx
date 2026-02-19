@@ -12,6 +12,7 @@ import {
   Footprints,
 } from 'lucide-react';
 import { Timeline, TimelineItem } from './Timeline';
+import { Icon } from '../../atoms/Icon';
 
 const meta: Meta<typeof Timeline> = {
   title: 'Organisms/Timeline',
@@ -67,20 +68,20 @@ export const WithIcons: Story = {
           title="Aktivitaet gestartet"
           description="GPS-Signal gefunden, Aufzeichnung laeuft."
           timestamp="08:00"
-          icon={<Activity size={16} />}
+          icon={<Icon icon={Activity} size="sm" />}
           variant="success"
         />
         <TimelineItem
           title="Termin geplant"
           description="Naechstes Training am Donnerstag."
           timestamp="10:30"
-          icon={<Calendar size={16} />}
+          icon={<Icon icon={Calendar} size="sm" />}
         />
         <TimelineItem
           title="Neuer Rekord"
           description="Persoenliche Bestleistung auf 5K erreicht!"
           timestamp="12:45"
-          icon={<TrendingUp size={16} />}
+          icon={<Icon icon={TrendingUp} size="sm" />}
           variant="success"
         />
       </Timeline>
@@ -103,21 +104,21 @@ export const AllVariants: Story = {
           description="Training erfolgreich abgeschlossen."
           timestamp="10:00"
           variant="success"
-          icon={<CheckCircle size={16} />}
+          icon={<Icon icon={CheckCircle} size="sm" />}
         />
         <TimelineItem
           title="Warnung"
           description="Herzfrequenz ueber dem empfohlenen Bereich."
           timestamp="11:00"
           variant="warning"
-          icon={<AlertTriangle size={16} />}
+          icon={<Icon icon={AlertTriangle} size="sm" />}
         />
         <TimelineItem
           title="Fehler"
           description="GPS-Verbindung waehrend des Trainings verloren."
           timestamp="12:00"
           variant="error"
-          icon={<XCircle size={16} />}
+          icon={<Icon icon={XCircle} size="sm" />}
         />
       </Timeline>
     </div>
@@ -137,7 +138,7 @@ export const TrainingActivityFeed: Story = {
           description="10.2 km in 51:30 min | Oe Pace: 5:03 /km | Oe HR: 152 bpm"
           timestamp="Heute, 07:15"
           variant="success"
-          icon={<Footprints size={16} />}
+          icon={<Icon icon={Footprints} size="sm" />}
         >
           <div className="mt-1 flex gap-3 text-xs">
             <span className="rounded bg-[var(--color-bg-surface)] px-2 py-0.5">
@@ -156,21 +157,21 @@ export const TrainingActivityFeed: Story = {
           description="Oberkörper + Core | 45 min | RPE 7/10"
           timestamp="Gestern, 17:30"
           variant="success"
-          icon={<Dumbbell size={16} />}
+          icon={<Icon icon={Dumbbell} size="sm" />}
         />
         <TimelineItem
           title="Hohe Ruheherzfrequenz"
           description="Ruhe-HR 68 bpm (Durchschnitt: 55 bpm). Moeglicherweise nicht ausreichend erholt."
           timestamp="Gestern, 06:00"
           variant="warning"
-          icon={<Heart size={16} />}
+          icon={<Icon icon={Heart} size="sm" />}
         />
         <TimelineItem
           title="Intervalltraining"
           description="6x 1000m @ 4:15 /km | Pause: 90s | Gesamt: 52 min"
           timestamp="12. Feb, 07:00"
           variant="success"
-          icon={<Timer size={16} />}
+          icon={<Icon icon={Timer} size="sm" />}
         >
           <div className="mt-1 flex gap-3 text-xs">
             <span className="rounded bg-[var(--color-bg-surface)] px-2 py-0.5">
@@ -183,7 +184,7 @@ export const TrainingActivityFeed: Story = {
           description="GPS-Signal waehrend Km 4-6 verloren. Distanz manuell korrigiert."
           timestamp="11. Feb, 07:30"
           variant="error"
-          icon={<XCircle size={16} />}
+          icon={<Icon icon={XCircle} size="sm" />}
         />
       </Timeline>
     </div>
@@ -206,47 +207,47 @@ export const TrainingWeeklyLog: Story = {
           description="Leichter Lauf 6 km @ 5:45 /km | HR Zone 1-2"
           timestamp="Mo, 10. Feb"
           variant="success"
-          icon={<Footprints size={16} />}
+          icon={<Icon icon={Footprints} size="sm" />}
         />
         <TimelineItem
           title="Dienstag: Krafttraining"
           description="Beine + Core | 50 min | RPE 6/10"
           timestamp="Di, 11. Feb"
           variant="success"
-          icon={<Dumbbell size={16} />}
+          icon={<Icon icon={Dumbbell} size="sm" />}
         />
         <TimelineItem
           title="Mittwoch: Intervalle"
           description="8x 400m @ 3:50 /km | Pause: 60s | Gesamt: 45 min"
           timestamp="Mi, 12. Feb"
           variant="success"
-          icon={<Timer size={16} />}
+          icon={<Icon icon={Timer} size="sm" />}
         />
         <TimelineItem
           title="Donnerstag: Ruhetag"
           description="Aktive Erholung: Yoga 30 min"
           timestamp="Do, 13. Feb"
-          icon={<Heart size={16} />}
+          icon={<Icon icon={Heart} size="sm" />}
         />
         <TimelineItem
           title="Freitag: Tempodauerlauf"
           description="12 km @ 4:30 /km | HR Zone 3 | Kalorienverbrauch: 820 kcal"
           timestamp="Fr, 14. Feb"
           variant="success"
-          icon={<Activity size={16} />}
+          icon={<Icon icon={Activity} size="sm" />}
         />
         <TimelineItem
           title="Samstag: Long Run"
           description="22 km @ 5:15 /km | HR Zone 2 | Ernaehrung: 2 Gels"
           timestamp="Sa, 15. Feb"
           variant="success"
-          icon={<TrendingUp size={16} />}
+          icon={<Icon icon={TrendingUp} size="sm" />}
         />
         <TimelineItem
           title="Sonntag: Ruhetag"
           description="Kompletter Ruhetag. HRV: 62ms (gut)."
           timestamp="So, 16. Feb"
-          icon={<Heart size={16} />}
+          icon={<Icon icon={Heart} size="sm" />}
         />
       </Timeline>
     </div>

@@ -11,6 +11,7 @@ import {
   MapPin,
 } from 'lucide-react';
 import { Tree, type TreeNode } from './Tree';
+import { Icon } from '../../atoms/Icon';
 
 const meta: Meta<typeof Tree> = {
   title: 'Organisms/Tree',
@@ -117,32 +118,32 @@ const iconData: TreeNode[] = [
   {
     id: 'docs',
     label: 'Documents',
-    icon: <Folder size={16} />,
+    icon: <Icon icon={Folder} size="sm" />,
     children: [
       {
         id: 'readme',
         label: 'README.md',
-        icon: <FileText size={16} />,
+        icon: <Icon icon={FileText} size="sm" />,
       },
       {
         id: 'license',
         label: 'LICENSE',
-        icon: <File size={16} />,
+        icon: <Icon icon={File} size="sm" />,
       },
       {
         id: 'src',
         label: 'src',
-        icon: <Folder size={16} />,
+        icon: <Icon icon={Folder} size="sm" />,
         children: [
           {
             id: 'index',
             label: 'index.ts',
-            icon: <File size={16} />,
+            icon: <Icon icon={File} size="sm" />,
           },
           {
             id: 'utils',
             label: 'utils.ts',
-            icon: <File size={16} />,
+            icon: <Icon icon={File} size="sm" />,
           },
         ],
       },
@@ -151,17 +152,17 @@ const iconData: TreeNode[] = [
   {
     id: 'config',
     label: 'Config',
-    icon: <Folder size={16} />,
+    icon: <Icon icon={Folder} size="sm" />,
     children: [
       {
         id: 'tsconfig',
         label: 'tsconfig.json',
-        icon: <FileText size={16} />,
+        icon: <Icon icon={FileText} size="sm" />,
       },
       {
         id: 'package',
         label: 'package.json',
-        icon: <FileText size={16} />,
+        icon: <Icon icon={FileText} size="sm" />,
       },
     ],
   },
@@ -210,31 +211,31 @@ const trainingPlanData: TreeNode[] = [
   {
     id: 'season-2026',
     label: 'Saison 2026',
-    icon: <Trophy size={16} />,
+    icon: <Icon icon={Trophy} size="sm" />,
     children: [
       {
         id: 'jan',
         label: 'Januar',
-        icon: <Calendar size={16} />,
+        icon: <Icon icon={Calendar} size="sm" />,
         children: [
           {
             id: 'kw01',
             label: 'KW 01',
-            icon: <Clock size={16} />,
+            icon: <Icon icon={Clock} size="sm" />,
             children: [
-              { id: 'kw01-mo', label: 'Mo: Regeneration 5km', icon: <MapPin size={16} /> },
-              { id: 'kw01-mi', label: 'Mi: Intervalle 8km', icon: <Dumbbell size={16} /> },
-              { id: 'kw01-so', label: 'So: Longrun 16km', icon: <MapPin size={16} /> },
+              { id: 'kw01-mo', label: 'Mo: Regeneration 5km', icon: <Icon icon={MapPin} size="sm" /> },
+              { id: 'kw01-mi', label: 'Mi: Intervalle 8km', icon: <Icon icon={Dumbbell} size="sm" /> },
+              { id: 'kw01-so', label: 'So: Longrun 16km', icon: <Icon icon={MapPin} size="sm" /> },
             ],
           },
           {
             id: 'kw02',
             label: 'KW 02',
-            icon: <Clock size={16} />,
+            icon: <Icon icon={Clock} size="sm" />,
             children: [
-              { id: 'kw02-di', label: 'Di: Tempo 10km', icon: <Dumbbell size={16} /> },
-              { id: 'kw02-do', label: 'Do: Fahrtspiel 8km', icon: <MapPin size={16} /> },
-              { id: 'kw02-so', label: 'So: Longrun 18km', icon: <MapPin size={16} /> },
+              { id: 'kw02-di', label: 'Di: Tempo 10km', icon: <Icon icon={Dumbbell} size="sm" /> },
+              { id: 'kw02-do', label: 'Do: Fahrtspiel 8km', icon: <Icon icon={MapPin} size="sm" /> },
+              { id: 'kw02-so', label: 'So: Longrun 18km', icon: <Icon icon={MapPin} size="sm" /> },
             ],
           },
         ],
@@ -242,16 +243,16 @@ const trainingPlanData: TreeNode[] = [
       {
         id: 'feb',
         label: 'Februar',
-        icon: <Calendar size={16} />,
+        icon: <Icon icon={Calendar} size="sm" />,
         children: [
           {
             id: 'kw05',
             label: 'KW 05',
-            icon: <Clock size={16} />,
+            icon: <Icon icon={Clock} size="sm" />,
             children: [
-              { id: 'kw05-mo', label: 'Mo: Regeneration 6km', icon: <MapPin size={16} /> },
-              { id: 'kw05-mi', label: 'Mi: Intervalle 10km', icon: <Dumbbell size={16} /> },
-              { id: 'kw05-sa', label: 'Sa: Longrun 20km', icon: <MapPin size={16} /> },
+              { id: 'kw05-mo', label: 'Mo: Regeneration 6km', icon: <Icon icon={MapPin} size="sm" /> },
+              { id: 'kw05-mi', label: 'Mi: Intervalle 10km', icon: <Icon icon={Dumbbell} size="sm" /> },
+              { id: 'kw05-sa', label: 'Sa: Longrun 20km', icon: <Icon icon={MapPin} size="sm" /> },
             ],
           },
         ],
@@ -277,36 +278,36 @@ const fileExplorerData: TreeNode[] = [
   {
     id: 'project',
     label: 'nordlig-design-system',
-    icon: <Folder size={16} />,
+    icon: <Icon icon={Folder} size="sm" />,
     children: [
       {
         id: 'packages',
         label: 'packages',
-        icon: <Folder size={16} />,
+        icon: <Icon icon={Folder} size="sm" />,
         children: [
           {
             id: 'components',
             label: 'components',
-            icon: <Folder size={16} />,
+            icon: <Icon icon={Folder} size="sm" />,
             children: [
               {
                 id: 'atoms',
                 label: 'atoms',
-                icon: <Folder size={16} />,
+                icon: <Icon icon={Folder} size="sm" />,
                 children: [
-                  { id: 'button', label: 'Button.tsx', icon: <File size={16} /> },
-                  { id: 'input', label: 'Input.tsx', icon: <File size={16} /> },
-                  { id: 'badge', label: 'Badge.tsx', icon: <File size={16} /> },
+                  { id: 'button', label: 'Button.tsx', icon: <Icon icon={File} size="sm" /> },
+                  { id: 'input', label: 'Input.tsx', icon: <Icon icon={File} size="sm" /> },
+                  { id: 'badge', label: 'Badge.tsx', icon: <Icon icon={File} size="sm" /> },
                 ],
               },
               {
                 id: 'organisms',
                 label: 'organisms',
-                icon: <Folder size={16} />,
+                icon: <Icon icon={Folder} size="sm" />,
                 children: [
-                  { id: 'card', label: 'Card.tsx', icon: <File size={16} /> },
-                  { id: 'table', label: 'Table.tsx', icon: <File size={16} /> },
-                  { id: 'modal', label: 'Modal.tsx', icon: <File size={16} /> },
+                  { id: 'card', label: 'Card.tsx', icon: <Icon icon={File} size="sm" /> },
+                  { id: 'table', label: 'Table.tsx', icon: <Icon icon={File} size="sm" /> },
+                  { id: 'modal', label: 'Modal.tsx', icon: <Icon icon={File} size="sm" /> },
                 ],
               },
             ],
@@ -314,17 +315,17 @@ const fileExplorerData: TreeNode[] = [
           {
             id: 'tokens',
             label: 'tokens',
-            icon: <Folder size={16} />,
+            icon: <Icon icon={Folder} size="sm" />,
             children: [
-              { id: 'base', label: 'base.json', icon: <FileText size={16} /> },
-              { id: 'semantic', label: 'semantic.json', icon: <FileText size={16} /> },
+              { id: 'base', label: 'base.json', icon: <Icon icon={FileText} size="sm" /> },
+              { id: 'semantic', label: 'semantic.json', icon: <Icon icon={FileText} size="sm" /> },
             ],
           },
         ],
       },
-      { id: 'package-json', label: 'package.json', icon: <FileText size={16} /> },
-      { id: 'readme-file', label: 'README.md', icon: <FileText size={16} /> },
-      { id: 'tsconfig-file', label: 'tsconfig.json', icon: <FileText size={16} /> },
+      { id: 'package-json', label: 'package.json', icon: <Icon icon={FileText} size="sm" /> },
+      { id: 'readme-file', label: 'README.md', icon: <Icon icon={FileText} size="sm" /> },
+      { id: 'tsconfig-file', label: 'tsconfig.json', icon: <Icon icon={FileText} size="sm" /> },
     ],
   },
 ];

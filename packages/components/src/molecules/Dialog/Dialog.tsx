@@ -2,6 +2,7 @@ import React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Dialog Root ────────────────────────────────────────────────────────────
 
@@ -82,7 +83,7 @@ const DialogContent = React.forwardRef<
         )}
         aria-label="Schliessen"
       >
-        <X size={16} />
+        <Icon icon={X} size="sm" />
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPrimitive.Portal>

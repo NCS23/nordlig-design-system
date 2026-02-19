@@ -1,6 +1,7 @@
 import React from 'react';
 import { UploadCloud, File, FileText, Image, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon as IconAtom } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -281,7 +282,8 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
           {/* Empty State / Drop Target */}
           {!hasFiles && (
             <div className="flex flex-col items-center gap-3 p-[var(--spacing-fileupload-zone-padding)]">
-              <UploadCloud
+              <IconAtom
+                icon={UploadCloud}
                 size={48}
                 strokeWidth={1.5}
                 className={cn(
@@ -316,7 +318,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
             <div className="p-3">
               <div className="flex flex-col gap-[var(--spacing-fileupload-file-gap)]">
                 {files.map((uploadedFile, idx) => {
-                  const Icon = getFileIcon(uploadedFile.file);
+                  const FileIcon = getFileIcon(uploadedFile.file);
                   return (
                     <div
                       key={uploadedFile.id}
@@ -330,9 +332,10 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                           className="h-10 w-10 rounded object-cover shrink-0"
                         />
                       ) : (
-                        <Icon
-                          size={20}
-                          className="shrink-0 text-[var(--color-fileupload-file-icon)]"
+                        <IconAtom
+                          icon={FileIcon}
+                          size="md"
+                          className="text-[var(--color-fileupload-file-icon)]"
                         />
                       )}
                       {/* Name & Size */}
@@ -354,7 +357,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                         aria-label={`${uploadedFile.file.name} entfernen`}
                         className="shrink-0 p-1 rounded text-[var(--color-fileupload-file-remove)] hover:text-[var(--color-fileupload-file-remove-hover)] hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200"
                       >
-                        <X size={14} />
+                        <IconAtom icon={X} size={14} />
                       </button>
                     </div>
                   );

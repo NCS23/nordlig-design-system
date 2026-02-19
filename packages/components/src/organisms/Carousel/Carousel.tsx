@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -153,7 +154,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
             onClick={goToPrev}
             aria-label="Vorheriger Slide"
           >
-            <ChevronLeft size={16} />
+            <Icon icon={ChevronLeft} size="sm" />
           </button>
         )}
 
@@ -172,7 +173,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
             onClick={goToNext}
             aria-label="Naechster Slide"
           >
-            <ChevronRight size={16} />
+            <Icon icon={ChevronRight} size="sm" />
           </button>
         )}
 

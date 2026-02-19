@@ -2,6 +2,7 @@ import React from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
+import { Icon } from '../Icon';
 
 export interface PasswordInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
@@ -101,7 +102,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
             'disabled:pointer-events-none disabled:opacity-50'
           )}
         >
-          {visible ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
+          {visible ? <Icon icon={EyeOff} size="sm" /> : <Icon icon={Eye} size="sm" />}
         </button>
 
         {computedStrength && currentValue.length > 0 && (

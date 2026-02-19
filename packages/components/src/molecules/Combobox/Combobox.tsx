@@ -4,6 +4,7 @@ import { Command as CommandPrimitive } from 'cmdk';
 import { ChevronsUpDown, Check, Search } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -130,11 +131,11 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               'bg-[var(--color-cmb-item-selected-bg)] text-[var(--color-cmb-item-selected-text)]'
           )}
         >
-          <Check
+          <Icon
+            icon={Check}
             size={14}
-            aria-hidden="true"
             className={cn(
-              'mr-2 shrink-0',
+              'mr-2',
               isSelected ? 'opacity-100' : 'opacity-0'
             )}
           />
@@ -171,10 +172,10 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                   </span>
                 )}
               </span>
-              <ChevronsUpDown
-                size={16}
-                aria-hidden="true"
-                className="shrink-0 opacity-50"
+              <Icon
+                icon={ChevronsUpDown}
+                size="sm"
+                className="opacity-50"
               />
             </button>
           </Popover.Anchor>
@@ -197,10 +198,10 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               <CommandPrimitive className="w-full">
                 {/* Search Input */}
                 <div className="flex items-center border-b border-[var(--color-cmb-content-border)] px-3">
-                  <Search
+                  <Icon
+                    icon={Search}
                     size={14}
-                    className="mr-2 shrink-0 opacity-50"
-                    aria-hidden="true"
+                    className="mr-2 opacity-50"
                   />
                   <CommandPrimitive.Input
                     placeholder={searchPlaceholder}

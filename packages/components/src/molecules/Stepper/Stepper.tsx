@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -39,7 +40,7 @@ const StepIndicator: React.FC<{
       )}
     >
       {isCompleted ? (
-        step.icon || <Check size={16} aria-hidden="true" />
+        step.icon || <Icon icon={Check} size="sm" />
       ) : (
         step.icon || <span>{stepIndex + 1}</span>
       )}

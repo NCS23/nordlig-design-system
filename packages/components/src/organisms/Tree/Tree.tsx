@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -138,7 +139,7 @@ function TreeNodeItem({
             )}
             aria-hidden="true"
           >
-            <ChevronRight size={16} />
+            <Icon icon={ChevronRight} size="sm" />
           </span>
         ) : (
           <span className="w-4" aria-hidden="true" />

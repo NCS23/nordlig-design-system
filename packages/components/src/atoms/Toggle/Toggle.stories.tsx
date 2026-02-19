@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Toggle } from './Toggle';
 import { Bold, Italic, Underline } from 'lucide-react';
+import { Icon } from '../Icon';
 
 const meta: Meta<typeof Toggle> = {
   title: 'Atoms/Toggle',
@@ -31,21 +32,21 @@ export const Default: Story = {
 export const Outline: Story = {
   args: {
     variant: 'outline',
-    children: <Bold size={16} />,
+    children: <Icon icon={Bold} size="sm" />,
   },
 };
 
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
-    children: <Italic size={16} />,
+    children: <Icon icon={Italic} size="sm" />,
   },
 };
 
 export const WithIcon: Story = {
   render: () => (
     <Toggle>
-      <Bold size={16} />
+      <Icon icon={Bold} size="sm" />
       Fett
     </Toggle>
   ),
@@ -55,15 +56,15 @@ export const AllSizes: Story = {
   render: () => (
     <div className="flex gap-4 items-center">
       <Toggle size="sm">
-        <Bold size={14} />
+        <Icon icon={Bold} size={14} />
         Klein
       </Toggle>
       <Toggle size="md">
-        <Bold size={16} />
+        <Icon icon={Bold} size="sm" />
         Mittel
       </Toggle>
       <Toggle size="lg">
-        <Bold size={18} />
+        <Icon icon={Bold} size={18} />
         Groß
       </Toggle>
     </div>
@@ -87,6 +88,6 @@ export const Disabled: Story = {
 export const IconOnly: Story = {
   args: {
     'aria-label': 'Unterstreichen',
-    children: <Underline size={16} />,
+    children: <Icon icon={Underline} size="sm" />,
   },
 };

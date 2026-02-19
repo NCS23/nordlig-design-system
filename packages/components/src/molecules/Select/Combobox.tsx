@@ -3,6 +3,7 @@ import * as Popover from '@radix-ui/react-popover';
 import { ChevronDown, Check, Search } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
+import { Icon } from '../../atoms/Icon';
 import type { SelectOption, SelectGroup, SelectOptions } from './Select';
 
 function isGrouped(options: SelectOptions): options is SelectGroup[] {
@@ -237,10 +238,10 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
         >
           <span className="flex-1">{opt.label}</span>
           {isSelected && (
-            <Check
+            <Icon
+              icon={Check}
               size={14}
-              aria-hidden="true"
-              className="shrink-0 text-[var(--color-select-check-icon)]"
+              className="text-[var(--color-select-check-icon)]"
             />
           )}
         </div>
@@ -270,11 +271,11 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               <span className="truncate">
                 {selectedOption ? selectedOption.label : placeholder}
               </span>
-              <ChevronDown
-                size={16}
-                aria-hidden="true"
+              <Icon
+                icon={ChevronDown}
+                size="sm"
                 className={cn(
-                  'shrink-0 transition-transform text-[var(--color-select-icon)]',
+                  'transition-transform text-[var(--color-select-icon)]',
                   open && 'rotate-180'
                 )}
               />
@@ -298,9 +299,9 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               {/* Search Input */}
               <div className="p-2 border-b border-[var(--color-select-separator)]">
                 <div className="relative">
-                  <Search
+                  <Icon
+                    icon={Search}
                     size={14}
-                    aria-hidden="true"
                     className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--color-select-icon)]"
                   />
                   <input

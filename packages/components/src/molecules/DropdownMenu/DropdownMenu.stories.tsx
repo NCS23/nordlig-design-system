@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Edit, Copy, Trash2, Share, Settings, Download, MoreVertical } from 'lucide-react';
+import { Icon } from '../../atoms/Icon';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -48,10 +49,10 @@ export const WithIcons: Story = {
         <Button variant="secondary">Aktionen</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem icon={<Edit />}>Bearbeiten</DropdownMenuItem>
-        <DropdownMenuItem icon={<Copy />}>Duplizieren</DropdownMenuItem>
-        <DropdownMenuItem icon={<Share />}>Teilen</DropdownMenuItem>
-        <DropdownMenuItem icon={<Download />}>Exportieren</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Edit} />}>Bearbeiten</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Copy} />}>Duplizieren</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Share} />}>Teilen</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Download} />}>Exportieren</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   ),
@@ -65,11 +66,11 @@ export const WithSeparatorAndLabel: Story = {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Aktionen</DropdownMenuLabel>
-        <DropdownMenuItem icon={<Edit />}>Bearbeiten</DropdownMenuItem>
-        <DropdownMenuItem icon={<Copy />}>Duplizieren</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Edit} />}>Bearbeiten</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Copy} />}>Duplizieren</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuLabel>Gefahrenzone</DropdownMenuLabel>
-        <DropdownMenuItem destructive icon={<Trash2 />}>
+        <DropdownMenuItem destructive icon={<Icon icon={Trash2} />}>
           Löschen
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -84,10 +85,10 @@ export const DestructiveItem: Story = {
         <Button variant="secondary">Optionen</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem icon={<Edit />}>Bearbeiten</DropdownMenuItem>
-        <DropdownMenuItem icon={<Share />}>Teilen</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Edit} />}>Bearbeiten</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Share} />}>Teilen</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem destructive icon={<Trash2 />}>
+        <DropdownMenuItem destructive icon={<Icon icon={Trash2} />}>
           Endgültig löschen
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -118,19 +119,19 @@ export const TrainingActions: Story = {
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Button variant="ghost" className="h-8 w-8 p-0">
-          <MoreVertical size={16} />
+          <Icon icon={MoreVertical} size="sm" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Training: Lauf 10.2 km</DropdownMenuLabel>
-        <DropdownMenuItem icon={<Edit />}>Notizen bearbeiten</DropdownMenuItem>
-        <DropdownMenuItem icon={<Copy />}>Training duplizieren</DropdownMenuItem>
-        <DropdownMenuItem icon={<Share />}>Als GPX exportieren</DropdownMenuItem>
-        <DropdownMenuItem icon={<Download />}>CSV herunterladen</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Edit} />}>Notizen bearbeiten</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Copy} />}>Training duplizieren</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Share} />}>Als GPX exportieren</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Download} />}>CSV herunterladen</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem icon={<Settings />}>Einstellungen</DropdownMenuItem>
+        <DropdownMenuItem icon={<Icon icon={Settings} />}>Einstellungen</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem destructive icon={<Trash2 />}>
+        <DropdownMenuItem destructive icon={<Icon icon={Trash2} />}>
           Training löschen
         </DropdownMenuItem>
       </DropdownMenuContent>

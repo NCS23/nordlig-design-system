@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ChevronRight, Home } from 'lucide-react';
 import { Breadcrumbs, BreadcrumbItem } from './Breadcrumbs';
+import { Icon } from '../../atoms/Icon';
 
 const meta: Meta = {
   title: 'Molecules/Breadcrumbs',
@@ -29,7 +30,7 @@ export const Default: Story = {
 export const CustomSeparator: Story = {
   name: 'Benutzerdefinierter Trenner',
   render: () => (
-    <Breadcrumbs separator={<ChevronRight size={14} />}>
+    <Breadcrumbs separator={<Icon icon={ChevronRight} size={14} />}>
       <BreadcrumbItem href="/">Home</BreadcrumbItem>
       <BreadcrumbItem href="/einstellungen">Einstellungen</BreadcrumbItem>
       <BreadcrumbItem isCurrent>Profil</BreadcrumbItem>
@@ -42,7 +43,7 @@ export const CustomSeparator: Story = {
 export const ManyLevels: Story = {
   name: 'Viele Ebenen',
   render: () => (
-    <Breadcrumbs separator={<ChevronRight size={14} />}>
+    <Breadcrumbs separator={<Icon icon={ChevronRight} size={14} />}>
       <BreadcrumbItem href="/">Home</BreadcrumbItem>
       <BreadcrumbItem href="/training">Training</BreadcrumbItem>
       <BreadcrumbItem href="/training/2026">2026</BreadcrumbItem>
@@ -58,7 +59,7 @@ export const ManyLevels: Story = {
 export const TrainingNavigationPath: Story = {
   name: 'Use Case: Trainingspfad',
   render: () => (
-    <Breadcrumbs separator={<ChevronRight size={14} />}>
+    <Breadcrumbs separator={<Icon icon={ChevronRight} size={14} />}>
       <BreadcrumbItem href="/dashboard">Dashboard</BreadcrumbItem>
       <BreadcrumbItem href="/historie">Trainingshistorie</BreadcrumbItem>
       <BreadcrumbItem isCurrent>Lauf 12.01.2025</BreadcrumbItem>
@@ -71,10 +72,10 @@ export const TrainingNavigationPath: Story = {
 export const WithIcons: Story = {
   name: 'Mit Icons',
   render: () => (
-    <Breadcrumbs separator={<ChevronRight size={14} />}>
+    <Breadcrumbs separator={<Icon icon={ChevronRight} size={14} />}>
       <BreadcrumbItem href="/">
         <span className="flex items-center gap-1.5">
-          <Home size={14} />
+          <Icon icon={Home} size={14} />
           Home
         </span>
       </BreadcrumbItem>

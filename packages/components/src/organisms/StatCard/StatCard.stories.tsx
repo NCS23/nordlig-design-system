@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Activity, Timer, Heart, Route, TrendingUp } from 'lucide-react';
 import { StatCard } from './StatCard';
+import { Icon } from '../../atoms/Icon';
 
 const meta: Meta<typeof StatCard> = {
   title: 'Organisms/StatCard',
@@ -71,7 +72,7 @@ export const WithIcon: Story = {
     title: 'Herzfrequenz',
     value: 142,
     unit: 'bpm',
-    icon: <Heart size={18} />,
+    icon: <Icon icon={Heart} size={18} />,
     trend: {
       value: 3,
       direction: 'down',
@@ -138,7 +139,7 @@ export const TrainingDashboard: Story = {
         title="Pace"
         value="5:41"
         unit="min/km"
-        icon={<Activity size={18} />}
+        icon={<Icon icon={Activity} size={18} />}
         trend={{ value: 3, direction: 'up', label: 'Verbesserung' }}
         variant="success"
       />
@@ -146,14 +147,14 @@ export const TrainingDashboard: Story = {
         title="Distanz"
         value="8.4"
         unit="km"
-        icon={<Route size={18} />}
+        icon={<Icon icon={Route} size={18} />}
         trend={{ value: 12, direction: 'up', label: 'vs Durchschnitt' }}
       />
       <StatCard
         title="Herzfrequenz"
         value="148"
         unit="bpm"
-        icon={<Heart size={18} />}
+        icon={<Icon icon={Heart} size={18} />}
         trend={{ value: -2, direction: 'down', label: 'vs letzter Lauf' }}
         description="Zone 3 - Aerob"
       />
@@ -161,7 +162,7 @@ export const TrainingDashboard: Story = {
         title="Dauer"
         value="47:32"
         unit="min"
-        icon={<Timer size={18} />}
+        icon={<Icon icon={Timer} size={18} />}
         trend={{ value: 0, direction: 'neutral', label: 'wie letzte Woche' }}
       />
     </div>
@@ -185,21 +186,21 @@ export const TrainingWeeklyComparison: Story = {
           title="Wochenkilometer"
           value="38.6"
           unit="km"
-          icon={<Route size={18} />}
+          icon={<Icon icon={Route} size={18} />}
           trend={{ value: 15, direction: 'up', label: 'vs KW 6: 33.5 km' }}
           variant="success"
         />
         <StatCard
           title="Trainingseinheiten"
           value={4}
-          icon={<Activity size={18} />}
+          icon={<Icon icon={Activity} size={18} />}
           trend={{ value: 0, direction: 'neutral', label: 'vs KW 6: 4' }}
         />
         <StatCard
           title="Avg. Pace"
           value="5:28"
           unit="min/km"
-          icon={<TrendingUp size={18} />}
+          icon={<Icon icon={TrendingUp} size={18} />}
           trend={{ value: 4, direction: 'up', label: 'vs KW 6: 5:41' }}
           variant="success"
           description="Schnellster Lauf: 4:52 min/km"
@@ -208,7 +209,7 @@ export const TrainingWeeklyComparison: Story = {
           title="Avg. Herzfrequenz"
           value="152"
           unit="bpm"
-          icon={<Heart size={18} />}
+          icon={<Icon icon={Heart} size={18} />}
           trend={{ value: 3, direction: 'up', label: 'vs KW 6: 148 bpm' }}
           variant="warning"
           description="Etwas hoeher als gewoehnlich"

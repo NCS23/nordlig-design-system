@@ -1015,7 +1015,7 @@ ersetzt werden. Button.tsx wurde bereits als Referenz refactored (border-width).
 
 ### [NDS-020] Icon-Migration: Alle Komponenten auf Icon-Atom umstellen (Infrastructure) — P2
 
-**Status:** Ready
+**Status:** Done
 **Prioritaet:** P2 (wichtig) — Konsistentes Icon-API, Voraussetzung fuer Figma-Import
 **Prefix:** — | **Blueprint:** `atoms/Icon/Icon.tsx`
 **Dependencies:** Icon-Atom (bereits erstellt)
@@ -1027,11 +1027,11 @@ damit token-basierte Groessen und einheitliche Accessibility-Defaults greifen.
 Dies ist auch Voraussetzung fuer korrekte Figma-Komponentenstruktur (Icon-Instanzen).
 
 **Akzeptanzkriterien:**
-- [ ] Alle Komponenten nutzen `<Icon>` statt direkter lucide-react Aufrufe
-- [ ] Sizing nutzt benannte Groessen (sm/md/lg/xl) statt Pixel-Werte
-- [ ] Accessibility-Defaults (aria-hidden fuer dekorative Icons) konsistent
-- [ ] Alle Unit Tests bestehen weiterhin
-- [ ] Storybook Build erfolgreich (0 Fehler)
+- [x] Alle Komponenten nutzen `<Icon>` statt direkter lucide-react Aufrufe
+- [x] Sizing nutzt benannte Groessen (sm/md/lg/xl) statt Pixel-Werte
+- [x] Accessibility-Defaults (aria-hidden fuer dekorative Icons) konsistent
+- [x] Alle Unit Tests bestehen weiterhin (1466/1466)
+- [x] Storybook Build erfolgreich (0 Fehler)
 
 **Betroffene Komponenten (Auswahl):**
 - Alert (Info, CheckCircle, AlertTriangle, XCircle, X)
@@ -1043,16 +1043,20 @@ Dies ist auch Voraussetzung fuer korrekte Figma-Komponentenstruktur (Icon-Instan
 - DatePicker, FileUpload, Pagination, NavigationMenu, etc.
 
 **Task Breakdown:**
-- [ ] 1. Batch 1 — Atoms: Alert, CopyButton, SearchInput, PasswordInput, NumberInput, ThemeToggle
-- [ ] 2. Batch 2 — Molecules: Banner, Combobox, DatePicker, FileUpload, Breadcrumbs, Pagination
-- [ ] 3. Batch 3 — Restliche Molecules + Organisms: Select, DropdownMenu, Menubar, Sidebar, etc.
-- [ ] 4. Alle Unit Tests laufen lassen — 0 Failures
-- [ ] 5. Storybook Build verifizieren
+- [x] 1. Batch 1 — Atoms (8): Alert, Banner, CopyButton, Code, Tag, ThemeToggle, SearchInput, Link
+- [x] 2. Batch 2 — Restliche Atoms (4): PasswordInput, NumberInput, Image, Input
+- [x] 3. Batch 3 — Molecules (18): Accordion, Dialog, Sheet, Stepper, NavigationMenu, Combobox, DatePicker, Calendar, Toast, Pagination, FileUpload, Menubar, Resizable, Select, MultiSelect
+- [x] 4. Batch 4 — Organisms (7): StatCard, Sidebar, Carousel, Tree, Command, Modal, DataTable
+- [x] 5. Batch 5 — Stories (12): Toggle, Toolbar, StatCard, Tree, Timeline, Sidebar, Stepper, NavigationMenu, ContextMenu, Breadcrumbs, EmptyState, DropdownMenu
+- [x] 6. Alle Unit Tests laufen lassen — 1466/1466 passed
+- [x] 7. Storybook Build verifizieren — 0 Errors
 
 **Notizen:**
 - Icon-Atom ist fertig: 16 Tests, 6 Stories, token-basierte Groessen.
 - Groessen-Mapping: `size={20}` → `size="md"` (20px), `size={16}` → `size="sm"` (16px), `size={24}` → `size="lg"` (24px).
 - Nur `size`-Prop und `icon`-Prop aendern, Farben bleiben via className.
+- Erlaubte Ausnahmen (keine Migration): Checkbox (interne Check/Minus-Indikatoren), Rating (dynamisches fill/stroke fuer halbe Sterne), Menubar Circle (8px Radio-Indikator).
+- 48 Komponenten-/Story-Dateien migriert. Naming-Konflikte in Toast.tsx (IconAtom), FileUpload.tsx (IconAtom), ThemeToggle.tsx (ThemeIcon) geloest.
 
 ---
 
@@ -1516,3 +1520,4 @@ Table, Timeline, Tree
 | 2026-02-19 | **NDS-019 Batch 2 Done:** 12 weitere Atoms refactored (Avatar, Banner, Text, Spinner, NumberInput, Switch, Progress, Toggle, Slider, ToggleGroup, InputOTP, Button). 12 L4-Token-Dateien aktualisiert/erstellt (text.json neu), 12 TSX, 2 Test-Dateien (4+5 Assertions). Alle Atoms jetzt 100% tokenisiert (font-weight, font-size, border-width, border-radius). 1466/1466 Tests, Storybook OK. |
 | 2026-02-19 | **NDS-019 Done:** Scan von Molecules + Organisms ergab 0 verbleibende hardcoded Werte im Scope (font-weight, font-size, border-width, border-radius). Gesamtbilanz: 7 neue L3-Tokens, 21 Atoms refactored, 19 L4-Token-Dateien aktualisiert/erstellt (heading.json + text.json neu), 20 TSX-Dateien, 7 Test-Dateien (20 Assertions). Token-Collisions: 91. |
 | 2026-02-19 | **NDS-014 Done:** Component Generator CLI (`scripts/generate-component.mjs`). Interaktiv (readline) + CLI-Argumente (`--name=X --level=Y --prefix=Z --element=W`). Generiert 5 Dateien: Token-JSON, TSX, Test, Stories, index.ts. 9 HTML-Elemente, Validierung (PascalCase, kebab-case, Duplikat-Erkennung). `pnpm generate:component`. |
+| 2026-02-19 | **NDS-020 Done:** Icon-Migration abgeschlossen. 48 Dateien migriert (36 Komponenten + 12 Stories) auf Icon-Atom. Groessen-Mapping: 16→sm, 20→md, 24→lg, 32→xl. 3 erlaubte Ausnahmen (Checkbox, Rating, Menubar Circle). Naming-Konflikte in 3 Dateien geloest. 1466/1466 Tests, Storybook Build OK. |

@@ -3,6 +3,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Overlay ─────────────────────────────────────────────────────────────────
 
@@ -116,7 +117,7 @@ const ModalContent = React.forwardRef<
           )}
           aria-label="Schließen"
         >
-          <X size={16} />
+          <Icon icon={X} size="sm" />
         </Dialog.Close>
       )}
     </Dialog.Content>

@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { EmptyState } from './EmptyState';
 import { Button } from '../../atoms/Button';
+import { Icon } from '../../atoms/Icon';
 
 const meta: Meta<typeof EmptyState> = {
   title: 'Molecules/EmptyState',
@@ -37,7 +38,7 @@ type Story = StoryObj<typeof EmptyState>;
 
 export const Default: Story = {
   args: {
-    icon: <FileQuestion size={48} strokeWidth={1.5} />,
+    icon: <Icon icon={FileQuestion} size={48} strokeWidth={1.5} />,
     title: 'Keine Daten vorhanden',
     description:
       'Es sind noch keine Einträge vorhanden. Beginnen Sie, indem Sie Daten hinzufügen.',
@@ -50,7 +51,7 @@ export const WithAction: Story = {
   name: 'With Action',
   render: () => (
     <EmptyState
-      icon={<FileQuestion size={48} strokeWidth={1.5} />}
+      icon={<Icon icon={FileQuestion} size={48} strokeWidth={1.5} />}
       title="Keine Einträge"
       description="Erstellen Sie Ihren ersten Eintrag, um loszulegen."
       action={
@@ -68,7 +69,7 @@ export const NoResults: Story = {
   name: 'No Results',
   render: () => (
     <EmptyState
-      icon={<Search size={48} strokeWidth={1.5} />}
+      icon={<Icon icon={Search} size={48} strokeWidth={1.5} />}
       title="Keine Ergebnisse"
       description="Ihre Suche hat keine Treffer ergeben. Versuchen Sie andere Suchbegriffe."
     />
@@ -82,7 +83,7 @@ export const ErrorState: Story = {
   render: () => (
     <EmptyState
       variant="error"
-      icon={<AlertCircle size={48} strokeWidth={1.5} />}
+      icon={<Icon icon={AlertCircle} size={48} strokeWidth={1.5} />}
       title="Fehler beim Laden"
       description="Die Daten konnten nicht geladen werden. Bitte versuchen Sie es erneut."
       action={
@@ -101,7 +102,7 @@ export const SuccessState: Story = {
   render: () => (
     <EmptyState
       variant="success"
-      icon={<CheckCircle size={48} strokeWidth={1.5} />}
+      icon={<Icon icon={CheckCircle} size={48} strokeWidth={1.5} />}
       title="Alles erledigt!"
       description="Sie haben alle Aufgaben abgeschlossen. Genießen Sie Ihren Erfolg."
     />
@@ -114,7 +115,7 @@ export const NoSessions: Story = {
   name: 'Training: Keine Einheiten',
   render: () => (
     <EmptyState
-      icon={<Upload size={48} strokeWidth={1.5} />}
+      icon={<Icon icon={Upload} size={48} strokeWidth={1.5} />}
       title="Keine Trainingseinheiten"
       description="Laden Sie eine CSV-Datei hoch, um Ihre Trainingsdaten zu importieren."
       action={
@@ -130,7 +131,7 @@ export const NoSearchResults: Story = {
   name: 'Training: Keine Suchergebnisse',
   render: () => (
     <EmptyState
-      icon={<Search size={48} strokeWidth={1.5} />}
+      icon={<Icon icon={Search} size={48} strokeWidth={1.5} />}
       title="Keine Ergebnisse gefunden"
       description="Für Ihre Filterkriterien wurden keine Trainingseinheiten gefunden."
       action={

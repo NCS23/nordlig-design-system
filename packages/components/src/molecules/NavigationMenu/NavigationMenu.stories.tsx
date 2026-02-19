@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { BarChart3, Dumbbell, Calendar, TrendingUp, Settings, User, Timer, Activity } from 'lucide-react';
+import { Icon } from '../../atoms/Icon';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -110,7 +111,7 @@ export const TrainingNavigation: Story = {
         <NavigationMenuItem>
           <NavigationMenuLink href="/dashboard" active>
             <span className="inline-flex items-center gap-2">
-              <BarChart3 size={16} />
+              <Icon icon={BarChart3} size="sm" />
               Dashboard
             </span>
           </NavigationMenuLink>
@@ -118,26 +119,26 @@ export const TrainingNavigation: Story = {
 
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <Activity size={16} />
+            <Icon icon={Activity} size="sm" />
             Training
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="flex flex-col gap-1 min-w-[240px]">
               <NavigationMenuLink href="/training/sessions">
                 <span className="inline-flex items-center gap-2">
-                  <Timer size={14} />
+                  <Icon icon={Timer} size={14} />
                   Sessions
                 </span>
               </NavigationMenuLink>
               <NavigationMenuLink href="/training/plans">
                 <span className="inline-flex items-center gap-2">
-                  <Calendar size={14} />
+                  <Icon icon={Calendar} size={14} />
                   Trainingsplaene
                 </span>
               </NavigationMenuLink>
               <NavigationMenuLink href="/training/exercises">
                 <span className="inline-flex items-center gap-2">
-                  <Dumbbell size={14} />
+                  <Icon icon={Dumbbell} size={14} />
                   Uebungen
                 </span>
               </NavigationMenuLink>
@@ -147,20 +148,20 @@ export const TrainingNavigation: Story = {
 
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <TrendingUp size={16} />
+            <Icon icon={TrendingUp} size="sm" />
             Analyse
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="flex flex-col gap-1 min-w-[240px]">
               <NavigationMenuLink href="/analytics/progress">
                 <span className="inline-flex items-center gap-2">
-                  <TrendingUp size={14} />
+                  <Icon icon={TrendingUp} size={14} />
                   Fortschritt
                 </span>
               </NavigationMenuLink>
               <NavigationMenuLink href="/analytics/statistics">
                 <span className="inline-flex items-center gap-2">
-                  <BarChart3 size={14} />
+                  <Icon icon={BarChart3} size={14} />
                   Statistiken
                 </span>
               </NavigationMenuLink>
@@ -170,20 +171,20 @@ export const TrainingNavigation: Story = {
 
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <User size={16} />
+            <Icon icon={User} size="sm" />
             Profil
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="flex flex-col gap-1 min-w-[200px]">
               <NavigationMenuLink href="/profile">
                 <span className="inline-flex items-center gap-2">
-                  <User size={14} />
+                  <Icon icon={User} size={14} />
                   Mein Profil
                 </span>
               </NavigationMenuLink>
               <NavigationMenuLink href="/settings">
                 <span className="inline-flex items-center gap-2">
-                  <Settings size={14} />
+                  <Icon icon={Settings} size={14} />
                   Einstellungen
                 </span>
               </NavigationMenuLink>

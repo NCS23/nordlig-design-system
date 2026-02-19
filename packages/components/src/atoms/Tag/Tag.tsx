@@ -2,6 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 
 const tagVariants = cva(
   'inline-flex items-center gap-1 rounded-[var(--radius-tag)] [border-width:var(--sizing-tag-border-width)] [font-weight:var(--font-tag-weight)] transition-colors duration-200',
@@ -97,7 +98,7 @@ const Tag = React.forwardRef<HTMLSpanElement, TagProps>(
             onKeyDown={handleRemoveKeyDown}
             aria-label="Tag entfernen"
           >
-            <X size={size === 'sm' ? 10 : 12} />
+            <Icon icon={X} size={size === 'sm' ? 10 : 12} />
           </button>
         )}
       </span>

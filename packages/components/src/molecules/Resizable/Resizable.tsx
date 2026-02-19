@@ -9,6 +9,7 @@ import {
 } from 'react-resizable-panels';
 import { GripVertical } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -74,7 +75,7 @@ const ResizableHandle = React.forwardRef<
           'bg-[var(--color-rsz-handle-bg)]',
         )}
       >
-        <GripVertical size={10} className="text-[var(--color-rsz-handle-border)]" />
+        <Icon icon={GripVertical} size={10} className="text-[var(--color-rsz-handle-border)]" />
       </div>
     )}
   </PanelSeparator>

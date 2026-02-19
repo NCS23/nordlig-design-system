@@ -14,6 +14,7 @@ import {
   Search,
   Calendar,
 } from 'lucide-react';
+import { Icon } from '../../atoms/Icon';
 import {
   Sidebar,
   SidebarHeader,
@@ -94,17 +95,17 @@ export const Default: Story = {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup label="Main">
-          <SidebarItem icon={<Home size={18} />} label="Home" active />
-          <SidebarItem icon={<Activity size={18} />} label="Activity" />
-          <SidebarItem icon={<TrendingUp size={18} />} label="Trends" />
+          <SidebarItem icon={<Icon icon={Home} size={18} />} label="Home" active />
+          <SidebarItem icon={<Icon icon={Activity} size={18} />} label="Activity" />
+          <SidebarItem icon={<Icon icon={TrendingUp} size={18} />} label="Trends" />
         </SidebarGroup>
         <SidebarGroup label="Account">
-          <SidebarItem icon={<Settings size={18} />} label="Settings" />
-          <SidebarItem icon={<User size={18} />} label="Profile" />
+          <SidebarItem icon={<Icon icon={Settings} size={18} />} label="Settings" />
+          <SidebarItem icon={<Icon icon={User} size={18} />} label="Profile" />
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SidebarItem icon={<HelpCircle size={18} />} label="Help" />
+        <SidebarItem icon={<Icon icon={HelpCircle} size={18} />} label="Help" />
       </SidebarFooter>
     </Sidebar>
   ),
@@ -135,11 +136,11 @@ export const Collapsed: Story = {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarItem icon={<Home size={18} />} label="Home" active />
-          <SidebarItem icon={<Activity size={18} />} label="Activity" />
-          <SidebarItem icon={<TrendingUp size={18} />} label="Trends" />
-          <SidebarItem icon={<Settings size={18} />} label="Settings" />
-          <SidebarItem icon={<User size={18} />} label="Profile" />
+          <SidebarItem icon={<Icon icon={Home} size={18} />} label="Home" active />
+          <SidebarItem icon={<Icon icon={Activity} size={18} />} label="Activity" />
+          <SidebarItem icon={<Icon icon={TrendingUp} size={18} />} label="Trends" />
+          <SidebarItem icon={<Icon icon={Settings} size={18} />} label="Settings" />
+          <SidebarItem icon={<Icon icon={User} size={18} />} label="Profile" />
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
@@ -178,26 +179,26 @@ export const WithBadges: Story = {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup label="Navigation">
-          <SidebarItem icon={<Home size={18} />} label="Dashboard" active />
+          <SidebarItem icon={<Icon icon={Home} size={18} />} label="Dashboard" active />
           <SidebarItem
-            icon={<Bell size={18} />}
+            icon={<Icon icon={Bell} size={18} />}
             label="Notifications"
             badge={12}
           />
           <SidebarItem
-            icon={<Activity size={18} />}
+            icon={<Icon icon={Activity} size={18} />}
             label="Activity"
             badge="new"
           />
-          <SidebarItem icon={<TrendingUp size={18} />} label="Analytics" />
+          <SidebarItem icon={<Icon icon={TrendingUp} size={18} />} label="Analytics" />
         </SidebarGroup>
         <SidebarGroup label="Account">
-          <SidebarItem icon={<Settings size={18} />} label="Settings" badge={2} />
-          <SidebarItem icon={<User size={18} />} label="Profile" />
+          <SidebarItem icon={<Icon icon={Settings} size={18} />} label="Settings" badge={2} />
+          <SidebarItem icon={<Icon icon={User} size={18} />} label="Profile" />
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SidebarItem icon={<LogOut size={18} />} label="Logout" />
+        <SidebarItem icon={<Icon icon={LogOut} size={18} />} label="Logout" />
       </SidebarFooter>
     </Sidebar>
   ),
@@ -246,48 +247,48 @@ export const TrainingAppSidebar: Story = {
       <SidebarContent>
         <SidebarGroup label="Uebersicht">
           <SidebarItem
-            icon={<Home size={18} />}
+            icon={<Icon icon={Home} size={18} />}
             label="Dashboard"
             href="/dashboard"
             active
           />
           <SidebarItem
-            icon={<Calendar size={18} />}
+            icon={<Icon icon={Calendar} size={18} />}
             label="Sessions"
             href="/sessions"
             badge={3}
           />
           <SidebarItem
-            icon={<BarChart3 size={18} />}
+            icon={<Icon icon={BarChart3} size={18} />}
             label="Analytics"
             href="/analytics"
           />
         </SidebarGroup>
         <SidebarGroup label="Planung">
           <SidebarItem
-            icon={<Target size={18} />}
+            icon={<Icon icon={Target} size={18} />}
             label="Goals"
             href="/goals"
           />
           <SidebarItem
-            icon={<TrendingUp size={18} />}
+            icon={<Icon icon={TrendingUp} size={18} />}
             label="Trends"
             href="/trends"
           />
           <SidebarItem
-            icon={<Search size={18} />}
+            icon={<Icon icon={Search} size={18} />}
             label="Suche"
             href="/search"
           />
         </SidebarGroup>
         <SidebarGroup label="Verwaltung">
           <SidebarItem
-            icon={<Upload size={18} />}
+            icon={<Icon icon={Upload} size={18} />}
             label="Import"
             href="/import"
           />
           <SidebarItem
-            icon={<Settings size={18} />}
+            icon={<Icon icon={Settings} size={18} />}
             label="Settings"
             href="/settings"
           />
@@ -295,7 +296,7 @@ export const TrainingAppSidebar: Story = {
       </SidebarContent>
       <SidebarFooter>
         <SidebarItem
-          icon={<User size={18} />}
+          icon={<Icon icon={User} size={18} />}
           label="Nils Bergmann"
           href="/profile"
         />

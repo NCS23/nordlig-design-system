@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { Copy, Check } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 
 /** Groessen-Konfiguration fuer die drei Button-Varianten (token-basiert) */
 const sizeMap = {
@@ -84,9 +85,9 @@ const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
         onClick={handleClick}
       >
         {copied ? (
-          <Check size={iconSize} className="text-[var(--color-cpybtn-icon-copied)]" />
+          <Icon icon={Check} size={iconSize} className="text-[var(--color-cpybtn-icon-copied)]" />
         ) : (
-          <Copy size={iconSize} className="text-[var(--color-cpybtn-icon)]" />
+          <Icon icon={Copy} size={iconSize} className="text-[var(--color-cpybtn-icon)]" />
         )}
       </button>
     );

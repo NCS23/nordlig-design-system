@@ -2,6 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 const statCardVariants = cva(
   'rounded-[var(--radius-stat-card)] border border-[var(--color-stat-card-border)] bg-[var(--color-stat-card-bg)] p-6',
@@ -47,9 +48,9 @@ const TrendIndicator: React.FC<{
   label?: string;
 }> = ({ value, direction, label }) => {
   const trendIcon = {
-    up: <TrendingUp size={16} aria-hidden="true" />,
-    down: <TrendingDown size={16} aria-hidden="true" />,
-    neutral: <Minus size={16} aria-hidden="true" />,
+    up: <Icon icon={TrendingUp} size="sm" />,
+    down: <Icon icon={TrendingDown} size="sm" />,
+    neutral: <Icon icon={Minus} size="sm" />,
   };
 
   const trendLabel = {

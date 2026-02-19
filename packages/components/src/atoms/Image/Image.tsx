@@ -2,6 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ImageOff } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 
 // CVA-Varianten fuer Rundung und Objektanpassung
 const imageVariants = cva(
@@ -93,7 +94,7 @@ const Image = React.forwardRef<HTMLDivElement, ImageProps>(
               className="flex h-full w-full items-center justify-center bg-[var(--color-img-fallback-bg)]"
               data-testid="image-fallback"
             >
-              <ImageOff className="text-[color:var(--color-img-fallback-text)]" />
+              <Icon icon={ImageOff} className="text-[color:var(--color-img-fallback-text)]" />
             </div>
           )
         ) : (

@@ -5,6 +5,7 @@ import { Calendar as CalendarIcon } from 'lucide-react';
 import { Input, type InputProps } from '../../atoms/Input';
 import { cn } from '../../utils/cn';
 import { Calendar } from './Calendar';
+import { Icon } from '../../atoms/Icon';
 
 const DATE_FORMAT = 'dd.MM.yyyy';
 
@@ -139,7 +140,7 @@ const DatePicker = React.forwardRef<HTMLInputElement, DatePickerProps>(
                 aria-label="Kalender öffnen"
                 className="absolute right-0 top-0 flex h-full items-center px-[var(--spacing-input-icon-padding)] text-[var(--color-datepicker-weekday-text)] hover:text-[var(--color-datepicker-header-text)] transition-colors disabled:pointer-events-none disabled:opacity-50"
               >
-                <CalendarIcon size={16} />
+                <Icon icon={CalendarIcon} size="sm" />
               </button>
             </div>
           </Popover.Anchor>

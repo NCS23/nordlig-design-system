@@ -1,6 +1,7 @@
 import React from 'react';
 import { Copy, Check } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 
 export interface CodeProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -84,7 +85,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
             className="absolute top-3 right-3 p-1.5 rounded-[var(--radius-code)] bg-[var(--color-code-block-bg)] hover:bg-[var(--color-code-copy-hover-bg)] text-[var(--color-code-block-text)] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
             aria-label={copied ? 'Kopiert' : 'Code kopieren'}
           >
-            {copied ? <Check size={16} /> : <Copy size={16} />}
+            {copied ? <Icon icon={Check} size="sm" /> : <Icon icon={Copy} size="sm" />}
           </button>
         )}
       </div>

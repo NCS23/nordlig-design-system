@@ -17,6 +17,7 @@ import {
 import { de } from 'date-fns/locale';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 const WEEKDAYS = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'] as const;
 
@@ -199,7 +200,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
               'transition-colors'
             )}
           >
-            <ChevronLeft size={16} />
+            <Icon icon={ChevronLeft} size="sm" />
           </button>
           <span
             className="text-sm font-semibold text-[var(--color-datepicker-header-text)]"
@@ -219,7 +220,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
               'transition-colors'
             )}
           >
-            <ChevronRight size={16} />
+            <Icon icon={ChevronRight} size="sm" />
           </button>
         </div>
 

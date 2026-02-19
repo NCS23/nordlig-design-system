@@ -5,6 +5,7 @@ import { ChevronDown, Check, Search, X } from 'lucide-react';
 import { Badge } from '../../atoms/Badge';
 import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
+import { Icon } from '../../atoms/Icon';
 import type { SelectOption, SelectGroup, SelectOptions } from './Select';
 
 function isGrouped(options: SelectOptions): options is SelectGroup[] {
@@ -213,7 +214,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
                   aria-label={`${opt.label} entfernen`}
                   className="shrink-0 hover:opacity-70 transition-opacity"
                 >
-                  <X size={10} />
+                  <Icon icon={X} size={10} />
                 </button>
               )}
             </Badge>
@@ -308,7 +309,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
             aria-hidden
           >
             <Checkbox.Indicator>
-              <Check size={12} strokeWidth={3} />
+              <Icon icon={Check} size={12} strokeWidth={3} />
             </Checkbox.Indicator>
           </Checkbox.Root>
           <span className="flex-1">{opt.label}</span>
@@ -339,10 +340,11 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
               )}
             >
               {renderTriggerContent()}
-              <ChevronDown
-                size={16}
+              <Icon
+                icon={ChevronDown}
+                size="sm"
                 className={cn(
-                  'shrink-0 transition-transform text-[var(--color-select-icon)]',
+                  'transition-transform text-[var(--color-select-icon)]',
                   open && 'rotate-180'
                 )}
               />
@@ -366,7 +368,8 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
               {/* Search Input */}
               <div className="p-2 border-b border-[var(--color-select-separator)]">
                 <div className="relative">
-                  <Search
+                  <Icon
+                    icon={Search}
                     size={14}
                     className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--color-select-icon)]"
                   />

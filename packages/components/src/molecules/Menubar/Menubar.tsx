@@ -2,6 +2,7 @@ import React from 'react';
 import * as MenubarPrimitive from '@radix-ui/react-menubar';
 import { Check, Circle } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -247,7 +248,7 @@ const MenubarCheckboxItem = React.forwardRef<
   >
     <span className="absolute left-2 flex items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
-        <Check size={14} />
+        <Icon icon={Check} size={14} />
       </MenubarPrimitive.ItemIndicator>
     </span>
     {children}

@@ -2,6 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Info, CheckCircle, AlertTriangle, XCircle, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 
 const alertVariants = cva(
   'relative flex items-start gap-3 p-4 [border-left-width:var(--sizing-alert-border-width)] rounded-[var(--radius-alert)]',
@@ -53,7 +54,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         className={cn(alertVariants({ variant, className }))}
         {...props}
       >
-        <IconComponent size={20} className={cn('shrink-0 mt-0.5', iconClass)} />
+        <Icon icon={IconComponent} size="md" className={cn('mt-0.5', iconClass)} />
         <div className="flex-1 min-w-0">{children}</div>
         {closeable && (
           <button
@@ -61,7 +62,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             className="shrink-0 p-1 rounded-[var(--radius-alert)] hover:bg-black/5 transition-colors"
             aria-label="Schließen"
           >
-            <X size={16} className="text-[var(--color-alert-title)] opacity-50" />
+            <Icon icon={X} size="sm" className="text-[var(--color-alert-title)] opacity-50" />
           </button>
         )}
       </div>
@@ -111,7 +112,7 @@ const AlertClose = React.forwardRef<
     aria-label="Schließen"
     {...props}
   >
-    <X size={16} className="text-[var(--color-alert-title)] opacity-50" />
+    <Icon icon={X} size="sm" className="text-[var(--color-alert-title)] opacity-50" />
   </button>
 ));
 AlertClose.displayName = 'AlertClose';

@@ -2,6 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Eye, EyeOff } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 
 const inputVariants = cva(
   [
@@ -75,7 +76,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             aria-label={showPassword ? 'Hide password' : 'Show password'}
             className="absolute right-0 top-0 flex h-full items-center px-[var(--spacing-input-icon-padding)] text-[var(--color-input-text-placeholder)] hover:text-[var(--color-input-text)] transition-colors"
           >
-            {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+            {showPassword ? <Icon icon={EyeOff} size="sm" /> : <Icon icon={Eye} size="sm" />}
           </button>
         </div>
       );

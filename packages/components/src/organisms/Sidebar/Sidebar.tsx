@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 /* ─── Context ──────────────────────────────────────────────────────────────── */
 
@@ -293,7 +294,7 @@ const SidebarCollapseButton = React.forwardRef<
       )}
       {...props}
     >
-      {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+      {collapsed ? <Icon icon={ChevronRight} size={18} /> : <Icon icon={ChevronLeft} size={18} />}
     </button>
   );
 });

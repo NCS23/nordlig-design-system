@@ -2,6 +2,7 @@ import React from 'react';
 import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../../atoms/Icon';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -35,7 +36,7 @@ const CommandInput = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
   <div className="flex items-center border-b border-[var(--color-command-border)] px-3" cmdk-input-wrapper="" role="search">
-    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" aria-hidden="true" />
+    <Icon icon={Search} size="sm" className="mr-2 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       role="combobox"

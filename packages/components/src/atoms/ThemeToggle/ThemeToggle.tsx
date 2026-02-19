@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sun, Moon, Monitor } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 import { useTheme, type Theme } from '../../system/ThemeProvider';
 
 export interface ThemeToggleProps {
@@ -25,7 +26,7 @@ const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>(
       setTheme(themeOrder[nextIndex]);
     };
 
-    const Icon = theme === 'light' ? Sun : theme === 'dark' ? Moon : Monitor;
+    const ThemeIcon = theme === 'light' ? Sun : theme === 'dark' ? Moon : Monitor;
 
     return (
       <button
@@ -43,7 +44,7 @@ const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>(
           className
         )}
       >
-        <Icon className="h-4 w-4 text-[var(--color-toggle-text)]" />
+        <Icon icon={ThemeIcon} size="sm" className="text-[var(--color-toggle-text)]" />
       </button>
     );
   }

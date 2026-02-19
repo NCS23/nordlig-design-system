@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon } from '../Icon';
 import { inputVariants } from '../../atoms/Input';
 
 export interface SearchInputProps
@@ -101,9 +102,9 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
 
     return (
       <div role="search" className={cn('group relative w-full', className)}>
-        <Search
-          size={16}
-          aria-hidden="true"
+        <Icon
+          icon={Search}
+          size="sm"
           className={cn(
             'pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 transition-colors',
             'text-[var(--color-sinput-icon)]',
@@ -141,7 +142,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
               'disabled:pointer-events-none disabled:opacity-50'
             )}
           >
-            <X size={16} aria-hidden="true" />
+            <Icon icon={X} size="sm" />
           </button>
         )}
       </div>

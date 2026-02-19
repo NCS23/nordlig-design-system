@@ -3,6 +3,7 @@ import * as ToastPrimitive from '@radix-ui/react-toast';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { X, CheckCircle, XCircle, AlertTriangle, Info, type LucideIcon } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { Icon as IconAtom } from '../../atoms/Icon';
 
 // ─── Toast Variant Styles ────────────────────────────────────────────────────
 
@@ -117,7 +118,7 @@ const Toast = React.forwardRef<
   React.ComponentRef<typeof ToastPrimitive.Root>,
   ToastProps
 >(({ className, variant = 'info', title, description, onClose, ...props }, ref) => {
-  const Icon = VARIANT_ICONS[variant!];
+  const VariantIcon = VARIANT_ICONS[variant!];
   const iconClass = VARIANT_ICON_CLASSES[variant!];
 
   return (
@@ -127,7 +128,7 @@ const Toast = React.forwardRef<
       {...props}
     >
       <div className="flex-shrink-0 pt-0.5">
-        <Icon size={20} className={iconClass} />
+        <IconAtom icon={VariantIcon} size="md" className={iconClass} />
       </div>
       <div className="flex-1 min-w-0">
         <ToastPrimitive.Title className="text-sm font-semibold text-[var(--color-toast-title)]">
@@ -150,7 +151,7 @@ const Toast = React.forwardRef<
         aria-label="Schließen"
         onClick={onClose}
       >
-        <X size={14} />
+        <IconAtom icon={X} size={14} />
       </ToastPrimitive.Close>
     </ToastPrimitive.Root>
   );

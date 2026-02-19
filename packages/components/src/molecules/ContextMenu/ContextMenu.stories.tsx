@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Edit, Copy, Clipboard, Trash2, Share, Download, RefreshCw } from 'lucide-react';
+import { Icon } from '../../atoms/Icon';
 import {
   ContextMenu,
   ContextMenuTrigger,
@@ -54,10 +55,10 @@ export const WithIcons: Story = {
         <TriggerArea>Rechtsklick fuer Menue mit Icons</TriggerArea>
       </ContextMenuTrigger>
       <ContextMenuContent>
-        <ContextMenuItem icon={<Edit />}>Bearbeiten</ContextMenuItem>
-        <ContextMenuItem icon={<Copy />}>Kopieren</ContextMenuItem>
-        <ContextMenuItem icon={<Clipboard />}>Einfuegen</ContextMenuItem>
-        <ContextMenuItem icon={<Download />}>Herunterladen</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Edit} />}>Bearbeiten</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Copy} />}>Kopieren</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Clipboard} />}>Einfuegen</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Download} />}>Herunterladen</ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>
   ),
@@ -71,21 +72,21 @@ export const WithSeparatorAndLabel: Story = {
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuLabel>Bearbeitung</ContextMenuLabel>
-        <ContextMenuItem icon={<Edit />}>
+        <ContextMenuItem icon={<Icon icon={Edit} />}>
           Bearbeiten
           <ContextMenuShortcut>Ctrl+E</ContextMenuShortcut>
         </ContextMenuItem>
-        <ContextMenuItem icon={<Copy />}>
+        <ContextMenuItem icon={<Icon icon={Copy} />}>
           Kopieren
           <ContextMenuShortcut>Ctrl+C</ContextMenuShortcut>
         </ContextMenuItem>
-        <ContextMenuItem icon={<Clipboard />}>
+        <ContextMenuItem icon={<Icon icon={Clipboard} />}>
           Einfuegen
           <ContextMenuShortcut>Ctrl+V</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuLabel>Gefahrenzone</ContextMenuLabel>
-        <ContextMenuItem destructive icon={<Trash2 />}>
+        <ContextMenuItem destructive icon={<Icon icon={Trash2} />}>
           Loeschen
         </ContextMenuItem>
       </ContextMenuContent>
@@ -100,10 +101,10 @@ export const DestructiveItem: Story = {
         <TriggerArea>Rechtsklick fuer Loeschoption</TriggerArea>
       </ContextMenuTrigger>
       <ContextMenuContent>
-        <ContextMenuItem icon={<Edit />}>Bearbeiten</ContextMenuItem>
-        <ContextMenuItem icon={<Share />}>Teilen</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Edit} />}>Bearbeiten</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Share} />}>Teilen</ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuItem destructive icon={<Trash2 />}>
+        <ContextMenuItem destructive icon={<Icon icon={Trash2} />}>
           Endgueltig loeschen
         </ContextMenuItem>
       </ContextMenuContent>
@@ -142,18 +143,18 @@ export const TrainingActions: Story = {
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuLabel>Training: Lauf 10.2 km</ContextMenuLabel>
-        <ContextMenuItem icon={<Edit />}>
+        <ContextMenuItem icon={<Icon icon={Edit} />}>
           Notizen bearbeiten
           <ContextMenuShortcut>Ctrl+E</ContextMenuShortcut>
         </ContextMenuItem>
-        <ContextMenuItem icon={<RefreshCw />}>
+        <ContextMenuItem icon={<Icon icon={RefreshCw} />}>
           Training duplizieren
           <ContextMenuShortcut>Ctrl+D</ContextMenuShortcut>
         </ContextMenuItem>
-        <ContextMenuItem icon={<Share />}>Als GPX exportieren</ContextMenuItem>
-        <ContextMenuItem icon={<Download />}>CSV herunterladen</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Share} />}>Als GPX exportieren</ContextMenuItem>
+        <ContextMenuItem icon={<Icon icon={Download} />}>CSV herunterladen</ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuItem destructive icon={<Trash2 />}>
+        <ContextMenuItem destructive icon={<Icon icon={Trash2} />}>
           Training loeschen
           <ContextMenuShortcut>Del</ContextMenuShortcut>
         </ContextMenuItem>
