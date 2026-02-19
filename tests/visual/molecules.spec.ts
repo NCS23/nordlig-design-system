@@ -27,6 +27,10 @@ const moleculeStories: StoryConfig[] = [
   { component: 'NavigationMenu',  stories: ['default', 'with-active-state', 'with-dropdown'] },
   // Tier-2 Batch
   { component: 'Combobox',        stories: ['default', 'with-groups', 'all-sizes', 'disabled'] },
+  // Moved from atoms (composite components)
+  { component: 'SearchInput',     stories: ['default', 'with-value', 'all-sizes', 'error', 'disabled'] },
+  { component: 'PasswordInput',   stories: ['default', 'with-strength', 'all-sizes', 'disabled'] },
+  { component: 'LoadingOverlay',  stories: ['default', 'with-text', 'with-blur'] },
 ];
 
 for (const { component, stories } of moleculeStories) {

@@ -6,7 +6,7 @@ import { LoadingOverlay } from './LoadingOverlay';
  * Zeigt einen Spinner und optionalen Text, waehrend Inhalte geladen werden.
  */
 const meta: Meta<typeof LoadingOverlay> = {
-  title: 'Atoms/LoadingOverlay',
+  title: 'Molecules/LoadingOverlay',
   component: LoadingOverlay,
   tags: ['autodocs'],
   parameters: {

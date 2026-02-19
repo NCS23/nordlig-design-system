@@ -2,7 +2,7 @@ import React from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
-import { Icon } from '../Icon';
+import { Icon } from '../../atoms/Icon';
 
 export interface PasswordInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {

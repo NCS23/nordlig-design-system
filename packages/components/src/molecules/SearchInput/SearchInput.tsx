@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
-import { Icon } from '../Icon';
+import { Icon } from '../../atoms/Icon';
 import { inputVariants } from '../../atoms/Input';
 
 export interface SearchInputProps

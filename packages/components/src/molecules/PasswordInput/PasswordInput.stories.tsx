@@ -7,7 +7,7 @@ import { PasswordInput } from './PasswordInput';
  * Staerke-Anzeige. Basiert auf der Input-Varianten-API.
  */
 const meta: Meta<typeof PasswordInput> = {
-  title: 'Atoms/PasswordInput',
+  title: 'Molecules/PasswordInput',
   component: PasswordInput,
   tags: ['autodocs'],
   argTypes: {

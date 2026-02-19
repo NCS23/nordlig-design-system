@@ -37,15 +37,15 @@ const a11yStories: A11yStoryConfig[] = [
   { level: 'atoms', component: 'Kbd', stories: ['default'] },
   { level: 'atoms', component: 'Code', stories: ['default'] },
   { level: 'atoms', component: 'CopyButton', stories: ['default'] },
-  { level: 'atoms', component: 'SearchInput', stories: ['default'] },
   { level: 'atoms', component: 'NumberInput', stories: ['default'] },
-  { level: 'atoms', component: 'PasswordInput', stories: ['default'] },
   { level: 'atoms', component: 'Rating', stories: ['default', 'read-only'] },
   { level: 'atoms', component: 'Highlight', stories: ['default'] },
-  { level: 'atoms', component: 'LoadingOverlay', stories: ['default'] },
   { level: 'atoms', component: 'Banner', stories: ['info', 'success', 'warning', 'error'] },
 
   // ─── Molecules ────────────────────────────────────────────────────────────
+  { level: 'molecules', component: 'SearchInput', stories: ['default'] },
+  { level: 'molecules', component: 'PasswordInput', stories: ['default'] },
+  { level: 'molecules', component: 'LoadingOverlay', stories: ['default'] },
   { level: 'molecules', component: 'Accordion', stories: ['default'] },
   { level: 'molecules', component: 'Breadcrumbs', stories: ['default'] },
   { level: 'molecules', component: 'Combobox', stories: ['default'] },

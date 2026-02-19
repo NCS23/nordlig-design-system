@@ -42,15 +42,11 @@ export { Input, inputVariants, type InputProps } from './atoms/Input';
 export { Link, linkVariants, type LinkProps } from './atoms/Link';
 export {
   Checkbox,
-  CheckboxField,
   type CheckboxProps,
-  type CheckboxFieldProps,
 } from './atoms/Checkbox';
 export {
   Switch,
-  SwitchField,
   type SwitchProps,
-  type SwitchFieldProps,
 } from './atoms/Switch';
 export { Tooltip, type TooltipProps } from './atoms/Tooltip';
 export { Separator, type SeparatorProps } from './atoms/Separator';
@@ -75,11 +71,9 @@ export {
 } from './atoms/Popover';
 export {
   Progress,
-  ProgressField,
   progressTrackVariants,
   progressIndicatorVariants,
   type ProgressProps,
-  type ProgressFieldProps,
 } from './atoms/Progress';
 export {
   Spinner,
@@ -138,14 +132,17 @@ export {
   type BannerProps,
   type BannerContentProps,
 } from './atoms/Banner';
-export { SearchInput, type SearchInputProps } from './atoms/SearchInput';
-export { PasswordInput, type PasswordInputProps } from './atoms/PasswordInput';
-export { LoadingOverlay, type LoadingOverlayProps } from './atoms/LoadingOverlay';
 export { Rating, type RatingProps } from './atoms/Rating';
 export { Highlight, type HighlightProps } from './atoms/Highlight';
 
 // Molecules
+export { SearchInput, type SearchInputProps } from './molecules/SearchInput';
+export { PasswordInput, type PasswordInputProps } from './molecules/PasswordInput';
+export { LoadingOverlay, type LoadingOverlayProps } from './molecules/LoadingOverlay';
 export { InputField, type InputFieldProps } from './molecules/InputField';
+export { CheckboxField, type CheckboxFieldProps } from './molecules/CheckboxField';
+export { SwitchField, type SwitchFieldProps } from './molecules/SwitchField';
+export { ProgressField, type ProgressFieldProps } from './molecules/ProgressField';
 export {
   DatePicker,
   DateRangePicker,

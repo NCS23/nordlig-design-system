@@ -3,7 +3,7 @@ import React from 'react';
 import { SearchInput } from './SearchInput';
 
 const meta: Meta<typeof SearchInput> = {
-  title: 'Atoms/SearchInput',
+  title: 'Molecules/SearchInput',
   component: SearchInput,
   tags: ['autodocs'],
   argTypes: {
