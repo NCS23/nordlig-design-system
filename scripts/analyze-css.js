@@ -15,6 +15,13 @@ const { globSync } = require('glob');
 
 const COMPONENTS_DIR = path.resolve(__dirname, '../packages/components/src');
 
+// ─── Ausnahmen ───────────────────────────────────────────────────────────────
+// Dateien die funktional bedingt hartcodierte Farbwerte benoetigen
+const EXCLUDED_FILES = [
+  'molecules/ColorPicker/ColorPicker.tsx', // Hue-Gradient, Saturation-Overlay, Checkerboard
+  'utils/color.ts',                        // Farb-Konvertierungs-Utilities
+];
+
 // ─── Pattern-Definitionen ────────────────────────────────────────────────────
 
 // Hartcodierte Hex-Farben in Tailwind-Arbitrary-Values oder Inline-Styles
@@ -140,12 +147,17 @@ function main() {
   let totalColorTokens = 0;
   let totalSpacingTokens = 0;
 
+  const excludedFindings = [];
   for (const file of componentFiles) {
     const filePath = path.join(COMPONENTS_DIR, file);
     const { findings, colorTokens, spacingTokens } = analyzeFile(filePath, file);
-    totalFindings.push(...findings);
     totalColorTokens += colorTokens;
     totalSpacingTokens += spacingTokens;
+    if (EXCLUDED_FILES.includes(file)) {
+      excludedFindings.push(...findings);
+    } else {
+      totalFindings.push(...findings);
+    }
   }
 
   // Nach Typ gruppieren
@@ -183,6 +195,16 @@ function main() {
     console.log();
   } else {
     console.log('HARTCODIERTE SPACING-WERTE: Keine gefunden ✓\n');
+  }
+
+  // Ausnahmen melden
+  if (excludedFindings.length > 0) {
+    console.log(`AUSGENOMMENE DATEIEN (funktional bedingte Farben): ${EXCLUDED_FILES.length}`);
+    for (const f of EXCLUDED_FILES) {
+      const count = excludedFindings.filter(e => e.file === f).length;
+      if (count > 0) console.log(`  ${f}: ${count} hartcodierte Werte (begruendet)`);
+    }
+    console.log();
   }
 
   // Statistiken
