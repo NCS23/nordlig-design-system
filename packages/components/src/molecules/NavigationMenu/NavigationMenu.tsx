@@ -54,7 +54,7 @@ const NavigationMenuList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
     ref={ref}
-    className={cn('flex items-center gap-1', className)}
+    className={cn('flex items-center gap-[var(--spacing-navmenu-gap)]', className)}
     {...props}
   />
 ));
@@ -74,7 +74,7 @@ const NavigationMenuTrigger = React.forwardRef<
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(
-      'group inline-flex items-center gap-1 px-3 py-2 text-sm font-medium',
+      'group inline-flex items-center gap-[var(--spacing-navmenu-gap)] px-3 py-2 text-sm font-medium',
       'rounded-[var(--radius-nav)]',
       'text-[var(--color-nav-text)]',
       'hover:bg-[var(--color-nav-hover-bg)]',

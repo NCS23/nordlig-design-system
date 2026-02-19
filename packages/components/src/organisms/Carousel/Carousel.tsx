@@ -179,7 +179,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 
         {/* Dot Indicators */}
         {showDots && slideCount > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 bg-black/30 backdrop-blur-sm rounded-full px-2 py-1.5">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-[var(--spacing-carousel-dot-gap)] z-10 bg-black/30 backdrop-blur-sm rounded-full px-2 py-1.5">
             {slides.map((_, index) => (
               <button
                 key={index}

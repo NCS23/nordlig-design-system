@@ -16,5 +16,11 @@
   },
   "radius": {
     "stat-card": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
+  },
+  "spacing": {
+    "stat-card": {
+      "trend-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap in trend indicator (4px)" },
+      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and title (8px)" }
+    }
   }
 }

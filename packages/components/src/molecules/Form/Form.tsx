@@ -107,7 +107,7 @@ function FormField({ name, label, description, children, className }: FormFieldP
   });
 
   return (
-    <div className={cn('flex flex-col gap-1.5', className)}>
+    <div className={cn('flex flex-col gap-[var(--spacing-form-field-gap)]', className)}>
       {label && (
         <label
           htmlFor={fieldId}

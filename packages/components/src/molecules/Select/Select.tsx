@@ -266,7 +266,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
               onClick={() => !disabled && setOpen((prev) => !prev)}
               className={cn(
                 inputVariants({ inputSize, error }),
-                'flex items-center justify-between gap-2 text-left',
+                'flex items-center justify-between gap-[var(--spacing-select-trigger-gap)] text-left',
                 !selectedOption && 'text-[var(--color-select-trigger-placeholder)]',
                 'disabled:cursor-not-allowed disabled:bg-[var(--color-select-trigger-disabled-bg)] disabled:opacity-50'
               )}

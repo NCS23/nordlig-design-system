@@ -1,0 +1,8 @@
+{
+  "spacing": {
+    "$description": "Level 4: Tree component tokens",
+    "tree": {
+      "item-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between icon and label in tree item (4px)" }
+    }
+  }
+}

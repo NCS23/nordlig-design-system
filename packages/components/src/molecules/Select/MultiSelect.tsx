@@ -197,13 +197,13 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
       const remaining = selectedOptions.length - maxBadges;
 
       return (
-        <div className="flex flex-wrap gap-1 items-center min-w-0">
+        <div className="flex flex-wrap gap-[var(--spacing-multiselect-tag-gap)] items-center min-w-0">
           {visible.map((opt) => (
             <Badge
               key={opt.value}
               variant="info"
               size="sm"
-              className="max-w-[120px] gap-1"
+              className="max-w-[120px] gap-[var(--spacing-multiselect-tag-gap)]"
             >
               <span className="truncate">{opt.label}</span>
               {!disabled && (
@@ -332,7 +332,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
               onClick={() => !disabled && setOpen((prev) => !prev)}
               className={cn(
                 inputVariants({ inputSize, error }),
-                'flex items-center justify-between gap-2 text-left min-h-[var(--sizing-input-md-height)]',
+                'flex items-center justify-between gap-[var(--spacing-multiselect-trigger-gap)] text-left min-h-[var(--sizing-input-md-height)]',
                 inputSize === 'sm' && 'min-h-[var(--sizing-input-sm-height)]',
                 inputSize === 'lg' && 'min-h-[var(--sizing-input-lg-height)]',
                 'h-auto py-1.5',
@@ -395,7 +395,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
 
               {/* Select All / Deselect All */}
               {showSelectAll && filtered.length > 0 && (
-                <div className="flex items-center gap-2 px-3 py-1.5 border-b border-[var(--color-select-separator)]">
+                <div className="flex items-center gap-[var(--spacing-multiselect-item-gap)] px-3 py-1.5 border-b border-[var(--color-select-separator)]">
                   <button
                     type="button"
                     onClick={allSelected ? handleDeselectAll : handleSelectAll}

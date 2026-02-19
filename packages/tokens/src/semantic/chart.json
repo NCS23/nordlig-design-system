@@ -23,5 +23,12 @@
     "chart": {
       "tooltip": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Chart tooltip border radius" }
     }
+  },
+  "spacing": {
+    "chart": {
+      "tooltip-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap in tooltip items (4px)" },
+      "legend-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between legend items (16px)" },
+      "legend-item-gap":  { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap within legend item (6px)" }
+    }
   }
 }

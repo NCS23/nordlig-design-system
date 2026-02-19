@@ -68,7 +68,7 @@ const ToggleGroup = React.forwardRef<HTMLDivElement, ToggleGroupProps>(
     <ToggleGroupContext.Provider value={{ variant, size }}>
       <ToggleGroupPrimitive.Root
         ref={ref}
-        className={cn('flex items-center gap-1', className)}
+        className={cn('flex items-center gap-[var(--spacing-togglegroup-gap)]', className)}
         {...(props as React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root>)}
       />
     </ToggleGroupContext.Provider>

@@ -34,7 +34,8 @@
   "spacing": {
     "fileupload": {
       "zone-padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "32px zone inner padding" },
-      "file-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between file items" }
+      "file-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between file items" },
+      "file-item-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap inside file item row (12px)" }
     }
   }
 }

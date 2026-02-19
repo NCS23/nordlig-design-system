@@ -1,0 +1,10 @@
+{
+  "spacing": {
+    "$description": "Level 4: MultiSelect component tokens",
+    "multiselect": {
+      "tag-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between tags in trigger (4px)" },
+      "item-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between check and label in item (8px)" },
+      "trigger-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap in trigger between content and chevron (8px)" }
+    }
+  }
+}

@@ -138,7 +138,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       .join(' ') || undefined;
 
     return (
-      <div className="flex w-full flex-col gap-1.5">
+      <div className="flex w-full flex-col gap-[var(--spacing-textarea-field-gap)]">
         {label && (
           <label
             htmlFor={textareaId}
@@ -167,7 +167,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             {...props}
           />
         </div>
-        <div className="flex items-start justify-between gap-2">
+        <div className="flex items-start justify-between gap-[var(--spacing-textarea-footer-gap)]">
           <div className="flex-1">
             {hasError && errorMessage && (
               <p

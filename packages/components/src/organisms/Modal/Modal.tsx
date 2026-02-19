@@ -132,7 +132,7 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
     <div
       ref={ref}
       className={cn(
-        'flex flex-col gap-1',
+        'flex flex-col gap-[var(--spacing-modal-gap)]',
         'px-[var(--spacing-modal-padding-x)] py-[var(--spacing-modal-padding-y)]',
         'border-b border-[var(--color-modal-divider)]',
         className

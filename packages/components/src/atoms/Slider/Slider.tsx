@@ -25,7 +25,7 @@ const Slider = React.forwardRef<
   };
 
   return (
-    <div className="flex w-full items-center gap-3">
+    <div className="flex w-full items-center gap-[var(--spacing-slider-gap)]">
       <SliderPrimitive.Root
         ref={ref}
         value={value}

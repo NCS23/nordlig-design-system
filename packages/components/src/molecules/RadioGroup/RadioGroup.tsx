@@ -18,7 +18,7 @@ const RadioGroup = React.forwardRef<
     ref={ref}
     className={cn(
       'flex',
-      orientation === 'vertical' ? 'flex-col gap-3' : 'flex-row gap-4',
+      orientation === 'vertical' ? 'flex-col gap-[var(--spacing-radio-group-gap-v)]' : 'flex-row gap-[var(--spacing-radio-group-gap-h)]',
       className
     )}
     orientation={orientation}
@@ -50,7 +50,7 @@ const RadioGroupItem = React.forwardRef<
   return (
     <div
       className={cn(
-        'flex items-start gap-2 p-2 rounded-[var(--radius-radio-item)] transition-colors',
+        'flex items-start gap-[var(--spacing-radio-item-gap)] p-2 rounded-[var(--radius-radio-item)] transition-colors',
         !props.disabled && 'hover:bg-[var(--color-radio-item-hover-bg)] cursor-pointer',
         props.disabled && 'cursor-not-allowed opacity-50',
         className
@@ -80,7 +80,7 @@ const RadioGroupItem = React.forwardRef<
         </RadioGroupPrimitive.Indicator>
       </RadioGroupPrimitive.Item>
       {(label || children) && (
-        <div className="flex flex-col gap-0.5">
+        <div className="flex flex-col gap-[var(--spacing-radio-content-gap)]">
           <label
             htmlFor={itemId}
             className={cn(

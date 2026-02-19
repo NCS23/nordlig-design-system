@@ -1,0 +1,9 @@
+{
+  "spacing": {
+    "$description": "Level 4: Stepper component tokens",
+    "stepper": {
+      "step-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between step indicator and content (12px)" },
+      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap within step content (8px)" }
+    }
+  }
+}

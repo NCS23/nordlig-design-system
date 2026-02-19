@@ -106,7 +106,7 @@ const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
       <div
         ref={ref}
         className={cn(
-          'p-4 flex items-center gap-3',
+          'p-4 flex items-center gap-[var(--spacing-sidebar-header-gap)]',
           collapsed && 'justify-center',
           className
         )}
@@ -215,7 +215,7 @@ const SidebarItem = React.forwardRef<HTMLElement, SidebarItemProps>(
     const { collapsed } = useSidebar();
 
     const baseClasses = cn(
-      'flex items-center gap-3 px-3 py-2 rounded-[var(--radius-md)] text-sm transition-colors w-full',
+      'flex items-center gap-[var(--spacing-sidebar-item-gap)] px-3 py-2 rounded-[var(--radius-md)] text-sm transition-colors w-full',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
       active
         ? 'bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)] font-medium'

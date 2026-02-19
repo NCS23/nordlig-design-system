@@ -17,7 +17,9 @@
     "textarea": {
       "padding-y-sm": { "$type": "dimension", "$value": "{sizing.component.padding-y.md}", "$description": "8px – sm size vertical padding" },
       "padding-y-md": { "$type": "dimension", "$value": "{sizing.component.padding-y.lg}", "$description": "10px – md size vertical padding" },
-      "padding-y-lg": { "$type": "dimension", "$value": "{sizing.component.padding-y.xl}", "$description": "12px – lg size vertical padding" }
+      "padding-y-lg": { "$type": "dimension", "$value": "{sizing.component.padding-y.xl}", "$description": "12px – lg size vertical padding" },
+      "field-gap":    { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between label, textarea, and hint (6px)" },
+      "footer-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between hint and character count (8px)" }
     }
   }
 }

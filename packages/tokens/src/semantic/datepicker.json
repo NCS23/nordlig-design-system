@@ -36,7 +36,8 @@
   "spacing": {
     "datepicker": {
       "popover-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px popover inner padding" },
-      "grid-gap":        { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "2px gap between day cells" }
+      "grid-gap":        { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "2px gap between day cells" },
+      "range-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between date inputs in range picker (8px)" }
     }
   }
 }

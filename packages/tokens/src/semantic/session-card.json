@@ -24,5 +24,10 @@
   },
   "radius": {
     "session-card": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
+  },
+  "spacing": {
+    "session-card": {
+      "grid-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between grid items (16px)" }
+    }
   }
 }

@@ -159,7 +159,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               onClick={() => !disabled && setOpen((prev) => !prev)}
               className={cn(
                 inputVariants({ inputSize, error }),
-                'flex items-center justify-between gap-2 text-left',
+                'flex items-center justify-between gap-[var(--spacing-cmb-trigger-gap)] text-left',
                 !selectedOption &&
                   'text-[var(--color-cmb-trigger-placeholder)]',
                 'disabled:cursor-not-allowed disabled:opacity-50'

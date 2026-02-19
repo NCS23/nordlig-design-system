@@ -224,7 +224,7 @@ function DataTableColumnHeader<TData, TValue>({
   return (
     <button
       className={cn(
-        'inline-flex items-center gap-1 -ml-2 px-2 py-1 rounded transition-colors',
+        'inline-flex items-center gap-[var(--spacing-datatable-toolbar-gap)] -ml-2 px-2 py-1 rounded transition-colors',
         'hover:bg-[var(--color-datatable-toolbar-bg)]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
         className
@@ -271,7 +271,7 @@ function DataTablePagination<TData>({
         Seite {table.getState().pagination.pageIndex + 1} von{' '}
         {table.getPageCount()}
       </span>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-[var(--spacing-datatable-toolbar-gap)]">
         <Button
           variant="secondary"
           size="sm"

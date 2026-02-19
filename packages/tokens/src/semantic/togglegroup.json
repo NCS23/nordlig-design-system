@@ -1,0 +1,8 @@
+{
+  "spacing": {
+    "$description": "Level 4: ToggleGroup component tokens",
+    "togglegroup": {
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between toggle items (4px)" }
+    }
+  }
+}

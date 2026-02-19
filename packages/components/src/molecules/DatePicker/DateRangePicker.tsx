@@ -132,7 +132,7 @@ const DateRangePicker = React.forwardRef<HTMLDivElement, DateRangePickerProps>(
       <Popover.Root open={open} onOpenChange={setOpen}>
         <div ref={ref} className={cn('relative w-full', className)}>
           <Popover.Anchor asChild>
-            <div className="flex w-full items-center gap-2">
+            <div className="flex w-full items-center gap-[var(--spacing-datepicker-range-gap)]">
               <div className="relative flex-1">
                 <Input
                   type="text"

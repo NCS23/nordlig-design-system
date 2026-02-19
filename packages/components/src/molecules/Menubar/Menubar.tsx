@@ -53,7 +53,7 @@ const Menubar = React.forwardRef<
   <MenubarPrimitive.Root
     ref={ref}
     className={cn(
-      'flex h-10 items-center gap-1',
+      'flex h-10 items-center gap-[var(--spacing-menubar-gap)]',
       'bg-[var(--color-menubar-bg)]',
       'border border-[var(--color-menubar-border)]',
       'rounded-[var(--radius-menubar-bar)]',

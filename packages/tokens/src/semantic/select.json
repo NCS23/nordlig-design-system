@@ -44,7 +44,8 @@
       "popover-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "4px inner padding for item list" },
       "item-padding-x":   { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px item horizontal padding" },
       "item-padding-y":   { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "8px item vertical padding" },
-      "item-gap":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and text in item" }
+      "item-gap":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and text in item" },
+      "trigger-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap in trigger between content and chevron (8px)" }
     }
   }
 }

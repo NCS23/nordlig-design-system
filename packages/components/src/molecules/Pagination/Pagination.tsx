@@ -106,7 +106,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
         <nav
           ref={ref}
           aria-label="Seitennavigation"
-          className={cn('flex items-center gap-2', className)}
+          className={cn('flex items-center gap-[var(--spacing-pagination-nav-gap)]', className)}
           {...props}
         >
           <button
@@ -142,7 +142,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
       <nav
         ref={ref}
         aria-label="Seitennavigation"
-        className={cn('flex items-center gap-1', className)}
+        className={cn('flex items-center gap-[var(--spacing-pagination-item-gap)]', className)}
         {...props}
       >
         {/* Vorherige Seite */}

@@ -18,6 +18,12 @@
       "desc-size":    { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "SwitchField description font size (text-xs)" }
     }
   },
+  "spacing": {
+    "switch": {
+      "field-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between switch and label area (16px)" },
+      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "Gap between label and description (2px)" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Switch size tokens — References Level 3 only",
     "switch": {

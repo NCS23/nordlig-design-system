@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
 const linkVariants = cva(
-  'inline-flex items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
+  'inline-flex items-center gap-[var(--spacing-link-gap)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
   {
     variants: {
       variant: {

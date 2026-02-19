@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
 const tagVariants = cva(
-  'inline-flex items-center gap-1 rounded-[var(--radius-tag)] [border-width:var(--sizing-tag-border-width)] [font-weight:var(--font-tag-weight)] transition-colors duration-200',
+  'inline-flex items-center gap-[var(--spacing-tag-gap)] rounded-[var(--radius-tag)] [border-width:var(--sizing-tag-border-width)] [font-weight:var(--font-tag-weight)] transition-colors duration-200',
   {
     variants: {
       variant: {

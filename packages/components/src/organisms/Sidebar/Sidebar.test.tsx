@@ -160,7 +160,7 @@ describe('SidebarHeader', () => {
     expect(header.className).toContain('p-4');
     expect(header.className).toContain('flex');
     expect(header.className).toContain('items-center');
-    expect(header.className).toContain('gap-3');
+    expect(header.className).toContain('gap-[var(--spacing-sidebar-header-gap)]');
   });
 
   it('centers content when collapsed', () => {

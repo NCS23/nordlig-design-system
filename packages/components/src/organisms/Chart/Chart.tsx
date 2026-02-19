@@ -142,7 +142,7 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
             {formattedLabel}
           </div>
         )}
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-[var(--spacing-chart-tooltip-gap)]">
           {payload.map((entry, index) => {
             const dataKey = entry.dataKey || entry.name;
             const configEntry = config[dataKey];
@@ -153,7 +153,7 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
             return (
               <div
                 key={`${dataKey}-${index}`}
-                className="flex items-center gap-2"
+                className="flex items-center gap-[var(--spacing-chart-tooltip-gap)]"
                 data-testid="chart-tooltip-item"
               >
                 {!hideIndicator && (
@@ -204,7 +204,7 @@ const ChartLegendContent = React.forwardRef<HTMLDivElement, ChartLegendContentPr
     return (
       <div
         ref={ref}
-        className={cn('flex items-center justify-center gap-4 pt-3', className)}
+        className={cn('flex items-center justify-center gap-[var(--spacing-chart-legend-gap)] pt-3', className)}
         data-testid="chart-legend"
       >
         {payload.map((entry, index) => {
@@ -216,7 +216,7 @@ const ChartLegendContent = React.forwardRef<HTMLDivElement, ChartLegendContentPr
           return (
             <div
               key={`${dataKey}-${index}`}
-              className="flex items-center gap-1.5 text-sm"
+              className="flex items-center gap-[var(--spacing-chart-legend-item-gap)] text-sm"
               data-testid="chart-legend-item"
             >
               <span

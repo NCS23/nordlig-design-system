@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
 const alertVariants = cva(
-  'relative flex items-start gap-3 p-4 [border-left-width:var(--sizing-alert-border-width)] rounded-[var(--radius-alert)]',
+  'relative flex items-start gap-[var(--spacing-alert-gap)] p-4 [border-left-width:var(--sizing-alert-border-width)] rounded-[var(--radius-alert)]',
   {
     variants: {
       variant: {

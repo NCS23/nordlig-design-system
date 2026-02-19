@@ -24,5 +24,11 @@
     "pagination": {
       "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px rounded corners" }
     }
+  },
+  "spacing": {
+    "pagination": {
+      "nav-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between pagination nav elements (8px)" },
+      "item-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between page buttons (4px)" }
+    }
   }
 }

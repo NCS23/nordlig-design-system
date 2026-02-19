@@ -85,7 +85,7 @@ const AlertDialogHeader = React.forwardRef<HTMLDivElement, AlertDialogHeaderProp
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex flex-col gap-1.5', className)}
+      className={cn('flex flex-col gap-[var(--spacing-alertdlg-gap)]', className)}
       {...props}
     />
   )
@@ -132,7 +132,7 @@ const AlertDialogFooter = React.forwardRef<HTMLDivElement, AlertDialogFooterProp
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex justify-end gap-2', className)}
+      className={cn('flex justify-end gap-[var(--spacing-alertdlg-gap)]', className)}
       {...props}
     />
   )

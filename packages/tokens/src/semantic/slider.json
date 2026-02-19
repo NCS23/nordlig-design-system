@@ -22,6 +22,11 @@
       "thumb-border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.thick}", "$description": "Slider thumb border width (2px)" }
     }
   },
+  "spacing": {
+    "slider": {
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between slider and value display (12px)" }
+    }
+  },
   "radius": {
     "slider": {
       "track": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Slider track radius" },

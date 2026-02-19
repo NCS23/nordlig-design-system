@@ -18,5 +18,11 @@
   "radius": {
     "nav":          { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Navigation item radius" },
     "nav-dropdown": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Dropdown panel radius" }
+  },
+  "spacing": {
+    "navmenu": {
+      "gap":         { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between nav items (4px)" },
+      "trigger-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between trigger text and chevron (4px)" }
+    }
   }
 }

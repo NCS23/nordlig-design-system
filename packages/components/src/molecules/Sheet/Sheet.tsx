@@ -128,7 +128,7 @@ const SheetHeader = React.forwardRef<HTMLDivElement, SheetHeaderProps>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex flex-col gap-1.5 mb-4', className)}
+      className={cn('flex flex-col gap-[var(--spacing-sheet-header-gap)] mb-4', className)}
       {...props}
     />
   )
@@ -176,7 +176,7 @@ const SheetFooter = React.forwardRef<HTMLDivElement, SheetFooterProps>(
     <div
       ref={ref}
       className={cn(
-        'flex items-center justify-end gap-2 mt-auto pt-4',
+        'flex items-center justify-end gap-[var(--spacing-sheet-footer-gap)] mt-auto pt-4',
         className
       )}
       {...props}

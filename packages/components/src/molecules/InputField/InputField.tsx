@@ -20,7 +20,7 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
     ].filter(Boolean).join(' ') || undefined;
 
     return (
-      <div className={cn('flex flex-col gap-1.5', className)}>
+      <div className={cn('flex flex-col gap-[var(--spacing-input-field-gap)]', className)}>
         {label && (
           <label
             htmlFor={inputId}

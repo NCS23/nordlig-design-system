@@ -114,8 +114,8 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
                 className={cn(
                   'flex',
                   isHorizontal
-                    ? 'flex-col items-center gap-2'
-                    : 'flex-row items-start gap-3'
+                    ? 'flex-col items-center gap-[var(--spacing-stepper-content-gap)]'
+                    : 'flex-row items-start gap-[var(--spacing-stepper-step-gap)]'
                 )}
                 role="listitem"
                 aria-current={isCurrent ? 'step' : undefined}

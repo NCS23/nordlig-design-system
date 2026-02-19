@@ -59,7 +59,7 @@ const ToolbarButton = React.forwardRef<
   <ToolbarPrimitive.Button
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-center gap-1.5',
+      'inline-flex items-center justify-center gap-[var(--spacing-toolbar-gap)]',
       'px-[var(--spacing-toolbar-btn-padding-x)] py-[var(--spacing-toolbar-btn-padding-y)]',
       'rounded-[var(--radius-toolbar-item)]',
       'text-sm font-medium text-[var(--color-toolbar-btn-text)]',
@@ -109,7 +109,7 @@ const ToolbarToggleGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToolbarPrimitive.ToggleGroup
     ref={ref}
-    className={cn('flex items-center gap-0.5', className)}
+    className={cn('flex items-center gap-[var(--spacing-toolbar-gap)]', className)}
     {...props}
   />
 ));
@@ -124,7 +124,7 @@ const ToolbarToggleItem = React.forwardRef<
   <ToolbarPrimitive.ToggleItem
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-center gap-1.5',
+      'inline-flex items-center justify-center gap-[var(--spacing-toolbar-gap)]',
       'px-[var(--spacing-toolbar-btn-padding-x)] py-[var(--spacing-toolbar-btn-padding-y)]',
       'rounded-[var(--radius-toolbar-item)]',
       'text-sm text-[var(--color-toolbar-btn-text)]',

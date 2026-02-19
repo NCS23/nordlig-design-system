@@ -134,7 +134,7 @@ const MetricsGrid: React.FC<{ metrics?: SessionData['metrics']; distance?: numbe
   if (metricItems.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-2 gap-4 mt-4">
+    <div className="grid grid-cols-2 gap-[var(--spacing-session-card-grid-gap)] mt-4">
       {metricItems.slice(0, 4).map((item) => (
         <div key={item.label}>
           <div className="text-sm font-medium text-[var(--color-session-card-text-primary)]">{item.value}</div>
@@ -159,7 +159,7 @@ const SessionCardSkeleton: React.FC = () => (
       <Skeleton className="h-4 w-16" />
     </div>
     <Skeleton className="h-2 rounded-[var(--radius-full)] mb-4" />
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-[var(--spacing-session-card-grid-gap)]">
       <Skeleton className="h-10" />
       <Skeleton className="h-10" />
     </div>

@@ -1,0 +1,8 @@
+{
+  "spacing": {
+    "$description": "Level 4: Form component tokens",
+    "form": {
+      "field-gap": { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between label, input, and hint in FormItem (6px)" }
+    }
+  }
+}

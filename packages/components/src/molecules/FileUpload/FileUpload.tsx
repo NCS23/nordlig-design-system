@@ -222,7 +222,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
     const hasFiles = files.length > 0;
 
     return (
-      <div ref={ref} className={cn('flex w-full flex-col gap-1.5', className)}>
+      <div ref={ref} className={cn('flex w-full flex-col gap-[var(--spacing-fileupload-file-gap)]', className)}>
         {label && (
           <label className="text-[length:var(--sizing-input-sm-font-size)] font-medium text-[var(--color-input-text)]">
             {label}
@@ -281,7 +281,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
         >
           {/* Empty State / Drop Target */}
           {!hasFiles && (
-            <div className="flex flex-col items-center gap-3 p-[var(--spacing-fileupload-zone-padding)]">
+            <div className="flex flex-col items-center gap-[var(--spacing-fileupload-file-gap)] p-[var(--spacing-fileupload-zone-padding)]">
               <IconAtom
                 icon={UploadCloud}
                 size={48}
@@ -322,7 +322,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                   return (
                     <div
                       key={uploadedFile.id}
-                      className="flex items-center gap-3 rounded-[var(--radius-fileupload-item)] p-2 hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200"
+                      className="flex items-center gap-[var(--spacing-fileupload-file-item-gap)] rounded-[var(--radius-fileupload-item)] p-2 hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200"
                     >
                       {/* Preview or Icon */}
                       {uploadedFile.preview ? (

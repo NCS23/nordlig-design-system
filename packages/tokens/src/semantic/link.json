@@ -5,5 +5,10 @@
       "text":       { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Default link text color" },
       "text-hover": { "$type": "color", "$value": "{color.interactive.primary-hover}", "$description": "Link hover text color" }
     }
+  },
+  "spacing": {
+    "link": {
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between text and external icon (4px)" }
+    }
   }
 }

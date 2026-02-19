@@ -1,0 +1,8 @@
+{
+  "spacing": {
+    "$description": "Level 4: Carousel component tokens",
+    "carousel": {
+      "dot-gap": { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between pagination dots (6px)" }
+    }
+  }
+}

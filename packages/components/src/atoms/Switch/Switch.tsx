@@ -59,8 +59,8 @@ const SwitchField = React.forwardRef<
   const switchId = id || autoId;
 
   return (
-    <div className={cn('flex items-center justify-between gap-4', className)}>
-      <div className="flex flex-col gap-0.5">
+    <div className={cn('flex items-center justify-between gap-[var(--spacing-switch-field-gap)]', className)}>
+      <div className="flex flex-col gap-[var(--spacing-switch-content-gap)]">
         <label
           htmlFor={switchId}
           className={cn(

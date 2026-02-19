@@ -12,6 +12,11 @@
       "label-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Spinner label font size (text-sm)" }
     }
   },
+  "spacing": {
+    "spinner": {
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between spinner and label (8px)" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Spinner size tokens — icon-sized dimensions",
     "spinner": {

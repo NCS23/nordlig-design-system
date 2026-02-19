@@ -199,7 +199,7 @@ const ToastProvider: React.FC<ToastProviderProps> = ({
         ))}
         <ToastPrimitive.Viewport
           className={cn(
-            'fixed z-[100] flex flex-col gap-2',
+            'fixed z-[100] flex flex-col gap-[var(--spacing-toast-gap)]',
             'p-[var(--spacing-toast-viewport-padding)]',
             'max-w-md w-full',
             VIEWPORT_POSITIONS[position]

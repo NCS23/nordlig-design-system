@@ -75,7 +75,7 @@ const TrendIndicator: React.FC<{
     <div className="flex flex-col items-end">
       <span
         className={cn(
-          'inline-flex items-center gap-1 text-sm font-medium',
+          'inline-flex items-center gap-[var(--spacing-stat-card-trend-gap)] text-sm font-medium',
           trendColor[direction]
         )}
         aria-label={`${trendLabel[direction]}: ${formattedValue}`}
@@ -113,7 +113,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
       >
         {/* Title row */}
         <div className="flex items-start justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-[var(--spacing-stat-card-header-gap)]">
             {icon && (
               <span className="text-[var(--color-stat-card-text-secondary)]">{icon}</span>
             )}

@@ -90,7 +90,7 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, DrawerHeaderProps>(
     <div
       ref={ref}
       className={cn(
-        'flex flex-col gap-1.5 p-[var(--spacing-drawer-padding)]',
+        'flex flex-col gap-[var(--spacing-drawer-gap)] p-[var(--spacing-drawer-padding)]',
         className
       )}
       {...props}
@@ -134,7 +134,7 @@ const DrawerFooter = React.forwardRef<HTMLDivElement, DrawerFooterProps>(
     <div
       ref={ref}
       className={cn(
-        'flex items-center justify-end gap-2 p-[var(--spacing-drawer-padding)] pt-2',
+        'flex items-center justify-end gap-[var(--spacing-drawer-gap)] p-[var(--spacing-drawer-padding)] pt-2',
         className
       )}
       {...props}

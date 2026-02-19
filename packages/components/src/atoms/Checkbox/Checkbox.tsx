@@ -63,9 +63,9 @@ const CheckboxField = React.forwardRef<
   const checkboxId = id || autoId;
 
   return (
-    <div className={cn('flex items-start gap-2', className)}>
+    <div className={cn('flex items-start gap-[var(--spacing-checkbox-field-gap)]', className)}>
       <Checkbox ref={ref} id={checkboxId} {...props} />
-      <div className="flex flex-col gap-0.5">
+      <div className="flex flex-col gap-[var(--spacing-checkbox-content-gap)]">
         <label
           htmlFor={checkboxId}
           className={cn(

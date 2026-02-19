@@ -1,0 +1,9 @@
+{
+  "spacing": {
+    "$description": "Level 4: Sidebar component tokens",
+    "sidebar": {
+      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between items in sidebar header (12px)" },
+      "item-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between icon and label in sidebar item (12px)" }
+    }
+  }
+}

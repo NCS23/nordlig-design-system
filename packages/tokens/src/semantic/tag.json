@@ -96,6 +96,11 @@
       "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "Tag border width (1px)" }
     }
   },
+  "spacing": {
+    "tag": {
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between text and remove icon (4px)" }
+    }
+  },
   "font": {
     "tag": {
       "weight":  { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Tag font weight (500)" },

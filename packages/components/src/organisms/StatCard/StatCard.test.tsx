@@ -206,7 +206,7 @@ describe('StatCard', () => {
   it('does not render icon wrapper when icon not provided', () => {
     const { container } = render(<StatCard title="Pace" value="5:41" />);
     // Only the title text span should be in the title row, no icon wrapper
-    const titleRow = container.querySelector('.flex.items-center.gap-2');
+    const titleRow = container.querySelector('.flex.items-center.gap-\\[var\\(--spacing-stat-card-header-gap\\)\\]');
     expect(titleRow?.children.length).toBe(1);
   });
 });

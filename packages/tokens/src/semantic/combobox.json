@@ -25,7 +25,8 @@
     "cmb": {
       "content-padding": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Dropdown inner padding" },
       "item-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Item horizontal padding" },
-      "item-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Item vertical padding" }
+      "item-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Item vertical padding" },
+      "trigger-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between text and chevron in trigger (8px)" }
     }
   }
 }
