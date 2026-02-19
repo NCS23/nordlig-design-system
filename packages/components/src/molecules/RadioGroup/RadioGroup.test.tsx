@@ -1,10 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
-import { RadioGroup, RadioGroupItem } from './RadioGroup';
+import { RadioGroup } from './RadioGroup';
+import { Radio } from '../../atoms/Radio';
 
 function renderRadioGroup(props?: {
   value?: string;
+  defaultValue?: string;
   onValueChange?: (value: string) => void;
   orientation?: 'horizontal' | 'vertical';
   disabled?: boolean;
@@ -12,14 +14,16 @@ function renderRadioGroup(props?: {
   return render(
     <RadioGroup
       aria-label="Test Group"
+      name="test-group"
       value={props?.value}
+      defaultValue={props?.defaultValue}
       onValueChange={props?.onValueChange}
       orientation={props?.orientation}
       disabled={props?.disabled}
     >
-      <RadioGroupItem value="a" label="Option A" />
-      <RadioGroupItem value="b" label="Option B" />
-      <RadioGroupItem value="c" label="Option C" disabled />
+      <Radio value="a" label="Option A" />
+      <Radio value="b" label="Option B" />
+      <Radio value="c" label="Option C" disabled />
     </RadioGroup>
   );
 }
@@ -49,7 +53,17 @@ describe('RadioGroup', () => {
     expect(screen.getByRole('radiogroup')).toHaveAttribute('aria-label', 'Test Group');
   });
 
-  // ─── Selection ──────────────────────────────────────────────────────────
+  it('has aria-orientation defaulting to vertical', () => {
+    renderRadioGroup();
+    expect(screen.getByRole('radiogroup')).toHaveAttribute('aria-orientation', 'vertical');
+  });
+
+  it('has aria-orientation horizontal when set', () => {
+    renderRadioGroup({ orientation: 'horizontal' });
+    expect(screen.getByRole('radiogroup')).toHaveAttribute('aria-orientation', 'horizontal');
+  });
+
+  // ─── Selection (Controlled) ───────────────────────────────────────────
 
   it('selects on click', async () => {
     const user = userEvent.setup();
@@ -60,16 +74,34 @@ describe('RadioGroup', () => {
     expect(onValueChange).toHaveBeenCalledWith('a');
   });
 
-  it('shows selected state', () => {
+  it('shows selected state (controlled)', () => {
     renderRadioGroup({ value: 'b' });
     const radios = screen.getAllByRole('radio');
-    expect(radios[1]).toHaveAttribute('data-state', 'checked');
+    expect(radios[1]).toBeChecked();
   });
 
-  it('shows unselected state', () => {
+  it('shows unselected state (controlled)', () => {
     renderRadioGroup({ value: 'b' });
     const radios = screen.getAllByRole('radio');
-    expect(radios[0]).toHaveAttribute('data-state', 'unchecked');
+    expect(radios[0]).not.toBeChecked();
+  });
+
+  // ─── Selection (Uncontrolled) ─────────────────────────────────────────
+
+  it('supports defaultValue', () => {
+    renderRadioGroup({ defaultValue: 'a' });
+    const radios = screen.getAllByRole('radio');
+    expect(radios[0]).toBeChecked();
+  });
+
+  it('updates selection on click (uncontrolled)', async () => {
+    const user = userEvent.setup();
+    renderRadioGroup({ defaultValue: 'a' });
+
+    await user.click(screen.getByText('Option B'));
+    const radios = screen.getAllByRole('radio');
+    expect(radios[1]).toBeChecked();
+    expect(radios[0]).not.toBeChecked();
   });
 
   // ─── Keyboard Navigation ───────────────────────────────────────────────
@@ -79,6 +111,41 @@ describe('RadioGroup', () => {
     const firstRadio = screen.getAllByRole('radio')[0];
     firstRadio.focus();
     expect(document.activeElement).toBe(firstRadio);
+  });
+
+  it('moves focus to next radio on ArrowDown', async () => {
+    const user = userEvent.setup();
+    const onValueChange = vi.fn();
+    renderRadioGroup({ defaultValue: 'a', onValueChange });
+
+    const radios = screen.getAllByRole('radio');
+    radios[0].focus();
+    await user.keyboard('{ArrowDown}');
+    expect(onValueChange).toHaveBeenCalledWith('b');
+  });
+
+  it('moves focus to previous radio on ArrowUp', async () => {
+    const user = userEvent.setup();
+    const onValueChange = vi.fn();
+    renderRadioGroup({ defaultValue: 'b', onValueChange });
+
+    const radios = screen.getAllByRole('radio');
+    radios[1].focus();
+    await user.keyboard('{ArrowUp}');
+    expect(onValueChange).toHaveBeenCalledWith('a');
+  });
+
+  it('wraps around from last to first on ArrowDown', async () => {
+    const user = userEvent.setup();
+    const onValueChange = vi.fn();
+    // Option C is disabled, so enabled radios are a and b
+    renderRadioGroup({ defaultValue: 'b', onValueChange });
+
+    const radios = screen.getAllByRole('radio');
+    // Focus the last enabled radio (index 1 = Option B)
+    radios[1].focus();
+    await user.keyboard('{ArrowDown}');
+    expect(onValueChange).toHaveBeenCalledWith('a');
   });
 
   // ─── Disabled ───────────────────────────────────────────────────────────
@@ -98,6 +165,14 @@ describe('RadioGroup', () => {
     expect(onValueChange).not.toHaveBeenCalled();
   });
 
+  it('disables all items when group is disabled', () => {
+    renderRadioGroup({ disabled: true });
+    const radios = screen.getAllByRole('radio');
+    radios.forEach((radio) => {
+      expect(radio).toBeDisabled();
+    });
+  });
+
   // ─── Orientation ────────────────────────────────────────────────────────
 
   it('defaults to vertical layout', () => {
@@ -112,24 +187,6 @@ describe('RadioGroup', () => {
 
   // ─── Token classes ──────────────────────────────────────────────────────
 
-  it('uses token for radio border', () => {
-    renderRadioGroup();
-    const radio = screen.getAllByRole('radio')[0];
-    expect(radio).toHaveClass('border-[var(--color-radio-border)]');
-  });
-
-  it('uses token for radio bg', () => {
-    renderRadioGroup();
-    const radio = screen.getAllByRole('radio')[0];
-    expect(radio).toHaveClass('bg-[var(--color-radio-bg)]');
-  });
-
-  it('uses token for checked border', () => {
-    renderRadioGroup();
-    const radio = screen.getAllByRole('radio')[0];
-    expect(radio).toHaveClass('data-[state=checked]:border-[var(--color-radio-selected-border)]');
-  });
-
   it('uses token for label color', () => {
     renderRadioGroup();
     expect(screen.getByText('Option A')).toHaveClass('text-[var(--color-radio-label)]');
@@ -137,16 +194,26 @@ describe('RadioGroup', () => {
 
   it('uses token for item row rounding', () => {
     renderRadioGroup();
-    const itemRow = screen.getByText('Option A').closest('div[class*="rounded"]');
+    const itemRow = screen.getByText('Option A').closest('label[class*="rounded"]');
     expect(itemRow).toHaveClass('rounded-[var(--radius-radio-item)]');
+  });
+
+  // ─── Name Propagation ─────────────────────────────────────────────────
+
+  it('passes name to child radios', () => {
+    renderRadioGroup();
+    const radios = screen.getAllByRole('radio');
+    radios.forEach((radio) => {
+      expect(radio).toHaveAttribute('name', 'test-group');
+    });
   });
 });
 
-describe('RadioGroupItem', () => {
+describe('Radio inside RadioGroup', () => {
   it('renders with description', () => {
     render(
-      <RadioGroup aria-label="Test">
-        <RadioGroupItem value="a" label="Option" description="Some details" />
+      <RadioGroup aria-label="Test" name="test">
+        <Radio value="a" label="Option" description="Some details" />
       </RadioGroup>
     );
     expect(screen.getByText('Some details')).toBeInTheDocument();
@@ -154,19 +221,10 @@ describe('RadioGroupItem', () => {
 
   it('uses token for description color', () => {
     render(
-      <RadioGroup aria-label="Test">
-        <RadioGroupItem value="a" label="Option" description="Details" />
+      <RadioGroup aria-label="Test" name="test">
+        <Radio value="a" label="Option" description="Details" />
       </RadioGroup>
     );
     expect(screen.getByText('Details')).toHaveClass('text-[var(--color-radio-description)]');
-  });
-
-  it('renders children as label', () => {
-    render(
-      <RadioGroup aria-label="Test">
-        <RadioGroupItem value="a">Child Label</RadioGroupItem>
-      </RadioGroup>
-    );
-    expect(screen.getByText('Child Label')).toBeInTheDocument();
   });
 });
