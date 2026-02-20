@@ -46,6 +46,8 @@ export interface MultiSelectProps {
   emptyText?: string;
   /** Maximum number of badges to show before collapsing */
   maxBadges?: number;
+  /** Maximum number of items that can be selected (undefined = unlimited) */
+  maxItems?: number;
   /** Additional class name */
   className?: string;
   /** aria-label */
@@ -68,6 +70,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
       deselectAllLabel = 'Alle abwählen',
       emptyText = 'Keine Ergebnisse',
       maxBadges = 3,
+      maxItems,
       className,
       'aria-label': ariaLabel,
     },
@@ -96,6 +99,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
     const selectedSet = React.useMemo(() => new Set(value), [value]);
     const allSelected = enabledOptions.length > 0 && enabledOptions.every((o) => selectedSet.has(o.value));
     const someSelected = enabledOptions.some((o) => selectedSet.has(o.value));
+    const limitReached = maxItems !== undefined && value.length >= maxItems;
 
     // Reset search and focus when opening
     React.useEffect(() => {
@@ -122,15 +126,17 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
     }, [focusedIndex, open]);
 
     const toggleValue = (optValue: string) => {
-      const next = selectedSet.has(optValue)
-        ? value.filter((v) => v !== optValue)
-        : [...value, optValue];
-      onChange?.(next);
+      if (selectedSet.has(optValue)) {
+        onChange?.(value.filter((v) => v !== optValue));
+      } else {
+        if (limitReached) return;
+        onChange?.([...value, optValue]);
+      }
     };
 
     const handleSelectAll = () => {
       const allEnabledValues = enabledOptions.map((o) => o.value);
-      onChange?.(allEnabledValues);
+      onChange?.(maxItems !== undefined ? allEnabledValues.slice(0, maxItems) : allEnabledValues);
     };
 
     const handleDeselectAll = () => {
@@ -169,6 +175,12 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
           e.preventDefault();
           if (focusedIndex >= 0 && !filtered[focusedIndex].disabled) {
             toggleValue(filtered[focusedIndex].value);
+          }
+          break;
+        }
+        case 'Backspace': {
+          if (search === '' && value.length > 0) {
+            onChange?.(value.slice(0, -1));
           }
           break;
         }
@@ -274,6 +286,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
     const renderItem = (opt: SelectOption, idx: number) => {
       const isChecked = selectedSet.has(opt.value);
       const isFocused = idx === focusedIndex;
+      const isEffectivelyDisabled = opt.disabled || (limitReached && !isChecked);
 
       return (
         <div
@@ -281,18 +294,18 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
           role="option"
           data-index={idx}
           aria-selected={isChecked}
-          aria-disabled={opt.disabled || undefined}
+          aria-disabled={isEffectivelyDisabled || undefined}
           tabIndex={-1}
-          onClick={() => !opt.disabled && toggleValue(opt.value)}
+          onClick={() => !isEffectivelyDisabled && toggleValue(opt.value)}
           onKeyDown={handleKeyDown}
-          onMouseEnter={() => !opt.disabled && setFocusedIndex(idx)}
+          onMouseEnter={() => !isEffectivelyDisabled && setFocusedIndex(idx)}
           className={cn(
             'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-sm transition-colors',
             'text-[var(--color-select-item-text)]',
-            opt.disabled &&
-              'text-[var(--color-select-item-disabled-text)] cursor-not-allowed',
-            !opt.disabled && isFocused && 'bg-[var(--color-select-item-hover-bg)]',
-            !opt.disabled &&
+            isEffectivelyDisabled &&
+              'text-[var(--color-select-item-disabled-text)] cursor-not-allowed opacity-50',
+            !isEffectivelyDisabled && isFocused && 'bg-[var(--color-select-item-hover-bg)]',
+            !isEffectivelyDisabled &&
               isChecked &&
               !isFocused &&
               'bg-[var(--color-select-item-selected-bg)]'
@@ -300,7 +313,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
         >
           <Checkbox.Root
             checked={isChecked}
-            disabled={opt.disabled}
+            disabled={isEffectivelyDisabled}
             tabIndex={-1}
             className={cn(
               'flex h-4 w-4 shrink-0 items-center justify-center rounded border transition-colors',

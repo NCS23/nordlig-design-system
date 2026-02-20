@@ -97,15 +97,18 @@ Heading, HoverCard, Image, Input, InputOTP, Kbd, Label, Link, NumberInput, Popov
 Progress, ScrollArea, Separator, Skeleton, Slider, Spinner, Switch, Tag, Text,
 ThemeToggle, ToggleGroup, Tooltip, VisuallyHidden
 
-**Molecules (25):**
+**Molecules (26):**
 Accordion, AlertDialog, Breadcrumbs, Collapsible, ContextMenu, DatePicker, Dialog,
 Drawer, DropdownMenu, EmptyState, FileUpload, Form, InputField, Menubar,
 NavigationMenu, Pagination, RadioGroup, Resizable, Select, Sheet, Stepper, Tabs,
-Textarea, Toast, Toolbar
+Textarea, TimePicker, Toast, Toolbar
 
 **Organisms (12):**
 Card, Carousel, Chart, Command, DataTable, Modal, SessionCard, Sidebar, StatCard,
 Table, Timeline, Tree
+
+**Templates (1):**
+PageShell
 
 ---
 
@@ -133,3 +136,8 @@ Table, Timeline, Tree
 | 2026-02-19 | **NDS-014 Done:** Component Generator CLI (`pnpm generate:component`). |
 | 2026-02-19 | **NDS-020 Done:** Icon-Migration — 48 Dateien migriert auf Icon-Atom. |
 | 2026-02-19 | **Backlog-Migration:** Story-Details von BACKLOG.md nach Gitea-Issues migriert. 47 Issues aktualisiert mit vollem Template (Akzeptanzkriterien, Token-Mapping, Task Breakdown, DoR/DoD). BACKLOG.md auf Uebersicht + Changelog reduziert. Gitea ist jetzt Single Source of Truth. |
+| 2026-02-20 | **Welle 3 gestartet und abgeschlossen:** |
+| 2026-02-20 | **NDS-004 Done:** MultiSelect Enhancement — `maxItems` Prop + Backspace-Handler. 7 neue Tests (38 gesamt), 1 neue Story. |
+| 2026-02-20 | **NDS-011 Done:** TimePicker Molecule — Scroll-Column-Pattern, 19 L4-Tokens (`tpick`), 28 Tests, 10 Stories. |
+| 2026-02-20 | **NDS-050 Done:** PageShell Template — Erstes Template-Level-Component, Compound-Pattern, 13 L4-Tokens (`shell`), 22 Tests, 6 Stories. Neues `templates/` Verzeichnis. |
+| 2026-02-20 | **NDS-032 Teilweise Done:** Token-Audit Script erweitert mit `--strict` Flag fuer Typography/Spacing. Baseline: 344 Violations (124 font-size, 56 font-weight, 164 spacing). Datei-Migration in kuenftigen Sessions. |

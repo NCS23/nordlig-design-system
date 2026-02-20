@@ -308,4 +308,100 @@ describe('MultiSelect', () => {
     await user.click(screen.getByText('Alle auswählen'));
     expect(onChange).toHaveBeenCalledWith(['a', 'c']);
   });
+
+  // ─── maxItems ──────────────────────────────────────────────────────────────
+
+  it('does not exceed maxItems limit', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    render(
+      <MultiSelect
+        options={options}
+        value={['laufen', 'radfahren']}
+        onChange={onChange}
+        maxItems={2}
+      />
+    );
+    await user.click(screen.getByRole('combobox'));
+    const listbox = screen.getByRole('listbox');
+    await user.click(within(listbox).getByText('Schwimmen'));
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it('allows removing when at maxItems', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    render(
+      <MultiSelect
+        options={options}
+        value={['laufen', 'radfahren']}
+        onChange={onChange}
+        maxItems={2}
+      />
+    );
+    await user.click(screen.getByRole('combobox'));
+    const listbox = screen.getByRole('listbox');
+    await user.click(within(listbox).getByText('Laufen'));
+    expect(onChange).toHaveBeenCalledWith(['radfahren']);
+  });
+
+  it('select all respects maxItems', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    render(
+      <MultiSelect options={options} value={[]} onChange={onChange} maxItems={2} />
+    );
+    await user.click(screen.getByRole('combobox'));
+    await user.click(screen.getByText('Alle auswählen'));
+    expect(onChange).toHaveBeenCalledWith(['laufen', 'radfahren']);
+  });
+
+  it('dims non-selected items when maxItems reached', async () => {
+    const user = userEvent.setup();
+    render(
+      <MultiSelect
+        options={options}
+        value={['laufen', 'radfahren']}
+        maxItems={2}
+      />
+    );
+    await user.click(screen.getByRole('combobox'));
+    const schwimmen = screen.getAllByRole('option').find(
+      (el) => within(el).queryByText('Schwimmen') !== null
+    );
+    expect(schwimmen).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  // ─── Backspace ─────────────────────────────────────────────────────────────
+
+  it('removes last value on Backspace when search is empty', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    render(
+      <MultiSelect
+        options={options}
+        value={['laufen', 'radfahren']}
+        onChange={onChange}
+      />
+    );
+    await user.click(screen.getByRole('combobox'));
+    await user.keyboard('{Backspace}');
+    expect(onChange).toHaveBeenCalledWith(['laufen']);
+  });
+
+  it('does not remove on Backspace when search has text', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    render(
+      <MultiSelect
+        options={options}
+        value={['laufen']}
+        onChange={onChange}
+      />
+    );
+    await user.click(screen.getByRole('combobox'));
+    await user.type(screen.getByLabelText('Optionen durchsuchen'), 'abc');
+    await user.keyboard('{Backspace}');
+    expect(onChange).not.toHaveBeenCalled();
+  });
 });

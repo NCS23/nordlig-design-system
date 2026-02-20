@@ -4198,5 +4198,105 @@ Vollstaendiger Color-Picker mit 2D-Saturation/Brightness-Feld, Hue-Slider, optio
 
 ---
 
-**Last Updated:** 2026-02-19
-**Design System Status:** ✅ Complete (80+ Components, Welle 2 abgeschlossen)
+## [MultiSelect Enhancement] - 2026-02-20
+
+**Status:** ✅ Complete
+**Story:** NDS-004 (Gitea #1)
+**Type:** Enhancement
+
+### Changes
+- **`maxItems` Prop:** Begrenzt die maximale Anzahl auswahlbarer Optionen. Nicht-ausgewaehlte Items werden visuell gedimmt wenn Limit erreicht.
+- **Backspace-Handler:** Entfernt den letzten ausgewaehlten Wert wenn die Suche leer ist.
+- **Select All respektiert maxItems:** `Alle auswahlen` begrenzt auf `maxItems`.
+
+**Tests:** +7 (38 total) | **Stories:** +1 (7 total)
+
+---
+
+## [TimePicker] - 2026-02-20
+
+**Status:** ✅ Complete
+**Layer:** Molecule
+**Story:** NDS-011 (Gitea #3)
+**Path:** `molecules/TimePicker/`
+**Token-File:** `timepicker.json` (Prefix: `tpick`)
+
+### Architektur
+Scroll-Column-Pattern mit Radix Popover. Jede Zeiteinheit (Std/Min/Sek) als scrollbare Spalte.
+
+### Props
+- **value:** string ("HH:MM" oder "HH:MM:SS")
+- **onChange:** (time: string | undefined) => void
+- **format:** '24h' | '12h' (Default: '24h')
+- **showSeconds:** boolean (Default: false)
+- **min/max:** string (z.B. "08:00", "17:30")
+- **minuteStep:** number (Default: 1, z.B. 15 fuer Viertelstunden)
+- **inputSize:** 'sm' | 'md' | 'lg'
+- **error, disabled, className, name, id, aria-label**
+
+### L4-Tokens (19)
+color (9), shadow (1), radius (2), sizing (2), spacing (2), font (3)
+
+### Accessibility
+- aria-haspopup="dialog" + aria-expanded auf Input
+- role="listbox" + role="option" + aria-selected auf Spalten
+- Disabled Items via aria-disabled
+- Direkteingabe mit Validierung
+
+**Tests:** 28 | **Stories:** 10
+
+---
+
+## [PageShell] - 2026-02-20
+
+**Status:** ✅ Complete
+**Layer:** Template (neues Layer!)
+**Story:** NDS-050 (Gitea #44)
+**Path:** `templates/PageShell/`
+**Token-File:** `pageshell.json` (Prefix: `shell`)
+
+### Architektur
+Erstes Template-Level-Component. Compound-Component-Pattern:
+- `PageShell` — Root (flex column, h-screen)
+- `PageShell.Header` — Sticky Header (optional)
+- `PageShell.Body` — Sidebar + Content Container (flex row)
+- `PageShell.Sidebar` — Aside Slot
+- `PageShell.Content` — Scrollbarer Main-Bereich (overflow-y-auto)
+- `PageShell.Footer` — Bottom Bar (optional)
+
+### Props
+- **sidebarPosition:** 'left' | 'right' (Default: 'left')
+- **stickyHeader:** boolean (Default: true)
+- **Content.maxWidth:** string (z.B. "max-w-5xl")
+- **Content.noPadding:** boolean
+
+### L4-Tokens (13)
+color (5), sizing (2), spacing (4), shadow (1)
+
+### Accessibility
+- Semantisches HTML: header, aside, main, footer
+- ARIA Landmarks: banner, complementary, main, contentinfo
+
+**Tests:** 22 | **Stories:** 6
+
+---
+
+## [Token-Audit Script] - 2026-02-20
+
+**Status:** 🚧 In Progress
+**Story:** NDS-032 (Gitea #36)
+
+### Changes
+- `analyze-css.js` um `--strict` Modus erweitert
+- Erkennt jetzt auch Tailwind Typography (text-sm, font-medium) und Spacing (p-2, px-3, gap-2)
+- Default-Modus: 0 Blocking Issues (CI bleibt gruen)
+- Strict-Modus: 344 Violations identifiziert (124 Font-Size, 56 Font-Weight, 164 Spacing)
+- Top-Dateien: SessionCard (27), Sidebar (19), MultiSelect (18), FileUpload (18), Command (17)
+
+**Naechste Schritte:** P1-Dateien tokenisieren, dann P2/P3 inkrementell.
+
+---
+
+**Last Updated:** 2026-02-20
+**Design System Status:** ✅ Complete (83+ Components, Welle 3 in Arbeit)
+**Test Count:** 1587 Tests, 90 Test-Dateien

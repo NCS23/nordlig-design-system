@@ -372,6 +372,27 @@ export const MultiSelectDisabled: StoryObj<typeof MultiSelect> = {
   ),
 };
 
+export const MultiSelectMaxItems: StoryObj<typeof MultiSelect> = {
+  name: 'MultiSelect - Max Items',
+  render: () => {
+    const [value, setValue] = React.useState<string[]>(['laufen']);
+    return (
+      <div style={{ maxWidth: '360px' }}>
+        <MultiSelect
+          options={sportOptions}
+          value={value}
+          onChange={setValue}
+          maxItems={3}
+          placeholder="Max. 3 Sportarten"
+        />
+        <p style={{ marginTop: 8, fontSize: 14, color: 'var(--color-text-muted)' }}>
+          {value.length}/3 ausgewählt
+        </p>
+      </div>
+    );
+  },
+};
+
 // ─── Training Analyzer Use Cases ────────────────────────────────────────────
 
 export const TrainingSportart: Story = {

@@ -157,6 +157,10 @@ export {
   type DateRange,
 } from './molecules/DatePicker';
 export {
+  TimePicker,
+  type TimePickerProps,
+} from './molecules/TimePicker';
+export {
   Select,
   MultiSelect,
   type SelectProps,
@@ -542,6 +546,17 @@ export {
   type ResizablePanelProps,
   type ResizableHandleProps,
 } from './molecules/Resizable';
+
+// Templates
+export {
+  PageShell,
+  usePageShell,
+  type PageShellProps,
+  type PageShellHeaderProps,
+  type PageShellSidebarProps,
+  type PageShellContentProps,
+  type PageShellFooterProps,
+} from './templates/PageShell';
 
 // Utils
 export { cn } from './utils/cn';

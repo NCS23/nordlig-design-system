@@ -228,8 +228,12 @@
   --sizing-cpybtn-md: 32px; /** CopyButton size md */
   --sizing-cpybtn-lg: 36px; /** CopyButton size lg */
   --sizing-datepicker-day-size: 36px; /** Day cell width/height */
+  --sizing-shell-header-height: 56px; /** Fixed header height */
+  --sizing-shell-footer-height: 48px; /** Fixed footer height */
   --sizing-textarea-min-height: 100px; /** Default minimum height */
   --sizing-textarea-max-height: 400px; /** Auto-resize maximum */
+  --sizing-tpick-cell-height: 36px; /** Time cell height */
+  --sizing-tpick-column-width: 64px; /** Column width per unit */
   --color-primary-1-50: var(--color-base-sky-50);
   --color-primary-1-100: var(--color-base-sky-100);
   --color-primary-1-200: var(--color-base-sky-200);
@@ -821,6 +825,11 @@
   --color-numberinput-stepper-text: var(--color-text-muted); /** Stepper button icon color */
   --color-numberinput-stepper-text-hover: var(--color-text-base); /** Stepper button icon hover color */
   --color-numberinput-stepper-bg-hover: var(--color-bg-surface); /** Stepper button hover background */
+  --color-shell-bg: var(--color-bg-base); /** Page background */
+  --color-shell-header-bg: var(--color-bg-paper); /** Header background */
+  --color-shell-header-border: var(--color-border-muted); /** Header bottom border */
+  --color-shell-footer-bg: var(--color-bg-paper); /** Footer background */
+  --color-shell-footer-border: var(--color-border-muted); /** Footer top border */
   --color-pagination-item-bg: var(--color-bg-paper); /** Page button background */
   --color-pagination-item-border: var(--color-border-default); /** Page button border */
   --color-pagination-item-text: var(--color-text-base); /** Page button text */
@@ -973,6 +982,15 @@
   --color-tag-border-focus: var(--color-border-focus); /** Focus ring color */
   --color-textarea-counter-text: var(--color-text-muted); /** Character counter default */
   --color-textarea-counter-text-over: var(--color-text-error); /** Counter when over limit */
+  --color-tpick-popover-bg: var(--color-bg-paper); /** Popover background */
+  --color-tpick-popover-border: var(--color-border-muted); /** Popover border */
+  --color-tpick-column-text: var(--color-text-base); /** Time value text */
+  --color-tpick-column-hover-bg: var(--color-bg-surface); /** Hover background on time cell */
+  --color-tpick-column-selected-bg: var(--color-bg-primary); /** Selected time cell background */
+  --color-tpick-column-selected-text: var(--color-text-inverse); /** Selected time cell text */
+  --color-tpick-column-disabled-text: var(--color-text-disabled); /** Out-of-range time text */
+  --color-tpick-label-text: var(--color-text-muted); /** Column header label (Std/Min/Sek) */
+  --color-tpick-separator: var(--color-border-muted); /** Separator between columns */
   --color-toast-bg: var(--color-bg-paper); /** White toast background */
   --color-toast-border: var(--color-border-muted); /** Subtle outer border */
   --color-toast-title: var(--color-text-base); /** Toast title text */
@@ -1068,6 +1086,8 @@
   --radius-tabs-list: var(--radius-component-lg); /** 8px pills list radius */
   --radius-tabs-trigger: var(--radius-component-md); /** 6px pills trigger radius */
   --radius-tag: var(--radius-component-md); /** Tag border radius */
+  --radius-tpick-popover: var(--radius-component-lg); /** 8px popover radius */
+  --radius-tpick-cell: var(--radius-component-md); /** 6px time cell radius */
   --radius-toast: var(--radius-component-lg); /** 8px rounded corners */
   --radius-toggle: var(--radius-component-md); /** Toggle button border radius */
   --radius-toolbar-bar: var(--radius-component-md); /** Toolbar container radius */
@@ -1087,11 +1107,13 @@
   --shadow-kbd: var(--shadow-elevation-key); /** Key pressed effect shadow */
   --shadow-modal-content: var(--shadow-elevation-overlay); /** Prominent modal shadow */
   --shadow-nav-dropdown: var(--shadow-elevation-medium); /** Dropdown panel shadow */
+  --shadow-shell-header: var(--shadow-elevation-low); /** Header elevation shadow */
   --shadow-popover: var(--shadow-elevation-high); /** Elevated popover shadow */
   --shadow-select-popover: var(--shadow-elevation-medium); /** Dropdown elevation */
   --shadow-sheet: var(--shadow-elevation-overlay); /** Sheet panel shadow */
   --shadow-switch-thumb: var(--shadow-elevation-low); /** Thumb shadow */
   --shadow-tabs-trigger-active: var(--shadow-elevation-low); /** Pills active tab shadow */
+  --shadow-tpick-popover: var(--shadow-elevation-medium); /** Popover elevation */
   --shadow-toast: var(--shadow-elevation-medium); /** Medium elevation shadow */
   --shadow-tooltip: var(--shadow-elevation-medium); /** Tooltip elevation */
   --spacing-accordion-trigger-padding-x: var(--spacing-component-padding-md); /** 16px trigger horizontal padding */
@@ -1170,6 +1192,11 @@
   --spacing-multiselect-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
   --spacing-navmenu-gap: var(--spacing-component-gap-xs); /** Gap between nav items (4px) */
   --spacing-navmenu-trigger-gap: var(--spacing-component-gap-xs); /** Gap between trigger text and chevron (4px) */
+  --spacing-shell-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
+  --spacing-shell-header-py: var(--spacing-component-padding-sm); /** Header vertical padding (12px) */
+  --spacing-shell-content-p: var(--spacing-component-padding-lg); /** Content area padding (24px) */
+  --spacing-shell-footer-px: var(--spacing-component-padding-lg); /** Footer horizontal padding (24px) */
+  --spacing-shell-footer-py: var(--spacing-component-padding-sm); /** Footer vertical padding (12px) */
   --spacing-pagination-nav-gap: var(--spacing-component-gap-sm); /** Gap between pagination nav elements (8px) */
   --spacing-pagination-item-gap: var(--spacing-component-gap-xs); /** Gap between page buttons (4px) */
   --spacing-popover-padding: var(--spacing-component-padding-md); /** 16px internal padding */
@@ -1220,6 +1247,8 @@
   --spacing-textarea-padding-y-lg: var(--sizing-component-padding-y-xl); /** 12px – lg size vertical padding */
   --spacing-textarea-field-gap: var(--sizing-component-gap-sm); /** Gap between label, textarea, and hint (6px) */
   --spacing-textarea-footer-gap: var(--spacing-component-gap-sm); /** Gap between hint and character count (8px) */
+  --spacing-tpick-popover-padding: var(--spacing-component-padding-sm); /** 8px popover inner padding */
+  --spacing-tpick-column-gap: var(--spacing-component-gap-xs); /** 4px gap between cells */
   --spacing-toast-padding: var(--spacing-component-padding-md); /** 16px internal padding */
   --spacing-toast-gap: var(--spacing-component-gap-md); /** 8px gap between icon/content/close */
   --spacing-toast-viewport-padding: var(--spacing-component-padding-md); /** 16px distance from screen edges */
@@ -1280,6 +1309,9 @@
   --font-text-caption-size: var(--font-component-size-sm); /** Caption variant font size (text-sm) */
   --font-text-small-size: var(--font-component-size-xs); /** Small variant font size (text-xs) */
   --font-text-muted-size: var(--font-component-size-sm); /** Muted variant font size (text-sm) */
+  --font-tpick-cell-size: var(--font-component-size-sm); /** Time cell font size (14px) */
+  --font-tpick-label-size: var(--font-component-size-xs); /** Column label font size (12px) */
+  --font-tpick-label-weight: var(--font-component-weight-medium); /** Column label font weight (500) */
   --font-toggle-weight: var(--font-component-weight-medium); /** Toggle/ToggleGroup font weight (500) */
   --sizing-alert-border-width: var(--sizing-component-track-sm); /** Left accent border width (4px) */
   --sizing-alert-font-size: var(--font-component-size-sm); /** Text font size (14px) */

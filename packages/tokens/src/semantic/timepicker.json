@@ -1,0 +1,47 @@
+{
+  "color": {
+    "$description": "Level 4: TimePicker component tokens",
+    "tpick": {
+      "popover-bg":           { "$type": "color", "$value": "{color.bg.paper}", "$description": "Popover background" },
+      "popover-border":       { "$type": "color", "$value": "{color.border.muted}", "$description": "Popover border" },
+      "column-text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Time value text" },
+      "column-hover-bg":      { "$type": "color", "$value": "{color.bg.surface}", "$description": "Hover background on time cell" },
+      "column-selected-bg":   { "$type": "color", "$value": "{color.bg.primary}", "$description": "Selected time cell background" },
+      "column-selected-text": { "$type": "color", "$value": "{color.text.inverse}", "$description": "Selected time cell text" },
+      "column-disabled-text": { "$type": "color", "$value": "{color.text.disabled}", "$description": "Out-of-range time text" },
+      "label-text":           { "$type": "color", "$value": "{color.text.muted}", "$description": "Column header label (Std/Min/Sek)" },
+      "separator":            { "$type": "color", "$value": "{color.border.muted}", "$description": "Separator between columns" }
+    }
+  },
+  "shadow": {
+    "tpick": {
+      "popover": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Popover elevation" }
+    }
+  },
+  "radius": {
+    "tpick": {
+      "popover": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px popover radius" },
+      "cell":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px time cell radius" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: TimePicker sizing",
+    "tpick": {
+      "cell-height":  { "$type": "dimension", "$value": "36px", "$description": "Time cell height" },
+      "column-width": { "$type": "dimension", "$value": "64px", "$description": "Column width per unit" }
+    }
+  },
+  "spacing": {
+    "tpick": {
+      "popover-padding": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "8px popover inner padding" },
+      "column-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px gap between cells" }
+    }
+  },
+  "font": {
+    "tpick": {
+      "cell-size":    { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Time cell font size (14px)" },
+      "label-size":   { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Column label font size (12px)" },
+      "label-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Column label font weight (500)" }
+    }
+  }
+}

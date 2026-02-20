@@ -43,6 +43,19 @@ const HARDCODED_PX_PATTERN = /(?:^|[\s'"])(?:p|m|gap|space|w|h|top|right|bottom|
 const TOKEN_COLOR_PATTERN = /var\(--color-[^)]+\)/g;
 const TOKEN_SPACING_PATTERN = /var\(--(?:spacing|sizing)-[^)]+\)/g;
 
+// ─── Strict Mode Patterns ────────────────────────────────────────────────────
+// Semi-hardcoded Tailwind utilities that should use design tokens
+
+// Hardcoded Tailwind font-size classes (text-xs, text-sm, text-lg, etc.)
+// Excludes text-[...] arbitrary values (already token-based) and text-{color} classes
+const TAILWIND_FONT_SIZE_PATTERN = /\btext-(?:xs|sm|base|lg|xl|2xl|3xl|4xl)\b/g;
+
+// Hardcoded Tailwind font-weight classes
+const TAILWIND_FONT_WEIGHT_PATTERN = /\bfont-(?:normal|medium|semibold|bold)\b/g;
+
+// Hardcoded Tailwind spacing classes (padding, margin, gap)
+const TAILWIND_SPACING_PATTERN = /\b(?:p|px|py|pt|pr|pb|pl|m|mx|my|mt|mr|mb|ml|gap)-(?:\d+(?:\.\d+)?)\b/g;
+
 // ─── Dateien scannen ─────────────────────────────────────────────────────────
 
 function analyzeFile(filePath, relativePath) {
@@ -123,6 +136,42 @@ function analyzeFile(filePath, relativePath) {
         context: trimmed.substring(0, 80),
       });
     }
+
+    // ─── Strict Mode: Tailwind Typography + Spacing ──────────────────────────
+    const fontSizeMatches = line.matchAll(TAILWIND_FONT_SIZE_PATTERN);
+    for (const m of fontSizeMatches) {
+      findings.push({
+        type: 'TAILWIND_FONT_SIZE',
+        file: relativePath,
+        line: lineNum,
+        value: m[0],
+        context: trimmed.substring(0, 80),
+      });
+    }
+
+    const fontWeightMatches = line.matchAll(TAILWIND_FONT_WEIGHT_PATTERN);
+    for (const m of fontWeightMatches) {
+      // Skip font-mono (not a weight)
+      if (m[0] === 'font-mono') continue;
+      findings.push({
+        type: 'TAILWIND_FONT_WEIGHT',
+        file: relativePath,
+        line: lineNum,
+        value: m[0],
+        context: trimmed.substring(0, 80),
+      });
+    }
+
+    const spacingMatches = line.matchAll(TAILWIND_SPACING_PATTERN);
+    for (const m of spacingMatches) {
+      findings.push({
+        type: 'TAILWIND_SPACING',
+        file: relativePath,
+        line: lineNum,
+        value: m[0],
+        context: trimmed.substring(0, 80),
+      });
+    }
   }
 
   // Token-Nutzung zaehlen
@@ -135,7 +184,8 @@ function analyzeFile(filePath, relativePath) {
 // ─── Hauptanalyse ────────────────────────────────────────────────────────────
 
 function main() {
-  console.log('CSS Analysis Report - Nordlig Design System');
+  const strict = process.argv.includes('--strict');
+  console.log(`CSS Analysis Report - Nordlig Design System${strict ? ' (STRICT MODE)' : ''}`);
   console.log('============================================\n');
 
   const componentFiles = globSync('**/*.tsx', {
@@ -160,12 +210,18 @@ function main() {
     }
   }
 
-  // Nach Typ gruppieren
+  // Nach Typ gruppieren — Blocking (always enforced)
   const hardcodedColors = totalFindings.filter(f => f.type === 'HARDCODED_COLOR');
   const tailwindColors = totalFindings.filter(f => f.type === 'TAILWIND_COLOR');
   const hardcodedSpacing = totalFindings.filter(f => f.type === 'HARDCODED_SPACING');
 
-  // Report ausgeben
+  // Strict-only (reported but not blocking unless --strict)
+  const twFontSize = totalFindings.filter(f => f.type === 'TAILWIND_FONT_SIZE');
+  const twFontWeight = totalFindings.filter(f => f.type === 'TAILWIND_FONT_WEIGHT');
+  const twSpacing = totalFindings.filter(f => f.type === 'TAILWIND_SPACING');
+  const totalStrict = twFontSize.length + twFontWeight.length + twSpacing.length;
+
+  // Report ausgeben — Blocking issues
   if (hardcodedColors.length > 0) {
     console.log(`HARTCODIERTE FARBEN (sollten CSS Custom Properties verwenden): ${hardcodedColors.length}`);
     for (const f of hardcodedColors) {
@@ -197,6 +253,34 @@ function main() {
     console.log('HARTCODIERTE SPACING-WERTE: Keine gefunden ✓\n');
   }
 
+  // Report — Strict mode findings
+  if (strict || totalStrict > 0) {
+    console.log('─── TAILWIND-UTILITY AUDIT ────────────────');
+
+    // Group by file for compact output
+    const strictByFile = {};
+    for (const f of [...twFontSize, ...twFontWeight, ...twSpacing]) {
+      if (!strictByFile[f.file]) strictByFile[f.file] = [];
+      strictByFile[f.file].push(f);
+    }
+
+    console.log(`  Tailwind Font-Size Klassen:   ${twFontSize.length}`);
+    console.log(`  Tailwind Font-Weight Klassen: ${twFontWeight.length}`);
+    console.log(`  Tailwind Spacing Klassen:     ${twSpacing.length}`);
+    console.log(`  Gesamt:                       ${totalStrict}`);
+
+    if (strict && totalStrict > 0) {
+      console.log('\n  Top-Dateien:');
+      const sorted = Object.entries(strictByFile)
+        .sort(([,a], [,b]) => b.length - a.length)
+        .slice(0, 10);
+      for (const [file, findings] of sorted) {
+        console.log(`    ${file}: ${findings.length} Violations`);
+      }
+    }
+    console.log();
+  }
+
   // Ausnahmen melden
   if (excludedFindings.length > 0) {
     console.log(`AUSGENOMMENE DATEIEN (funktional bedingte Farben): ${EXCLUDED_FILES.length}`);
@@ -208,22 +292,27 @@ function main() {
   }
 
   // Statistiken
-  const totalIssues = totalFindings.length;
+  const blockingIssues = hardcodedColors.length + tailwindColors.length + hardcodedSpacing.length;
   const totalTokenUsage = totalColorTokens + totalSpacingTokens;
   const compliance = totalTokenUsage > 0
-    ? ((totalTokenUsage / (totalTokenUsage + totalIssues)) * 100).toFixed(1)
+    ? ((totalTokenUsage / (totalTokenUsage + blockingIssues)) * 100).toFixed(1)
     : '100.0';
 
   console.log('TOKEN-NUTZUNGSSTATISTIKEN');
   console.log('────────────────────────');
   console.log(`  Farb-Token-Referenzen:     ${totalColorTokens}`);
   console.log(`  Spacing-Token-Referenzen:  ${totalSpacingTokens}`);
-  console.log(`  Hartcodierte Werte:        ${totalIssues}`);
+  console.log(`  Blocking Issues:           ${blockingIssues}`);
+  if (totalStrict > 0) {
+    console.log(`  Tailwind-Utility Issues:   ${totalStrict}${strict ? ' (BLOCKING)' : ' (info only)'}`);
+  }
   console.log(`  Dateien analysiert:        ${componentFiles.length}`);
   console.log(`  Compliance:                ${compliance}%`);
 
-  if (totalIssues > 0) {
-    console.log(`\n⚠ ${totalIssues} Probleme gefunden`);
+  const failCount = strict ? blockingIssues + totalStrict : blockingIssues;
+
+  if (failCount > 0) {
+    console.log(`\n⚠ ${failCount} Probleme gefunden${strict ? ' (strict mode)' : ''}`);
     process.exit(1);
   } else {
     console.log('\n✓ Alle Komponenten verwenden das Token-System korrekt');
