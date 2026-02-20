@@ -75,11 +75,13 @@ const DateRangePicker = React.forwardRef<HTMLDivElement, DateRangePickerProps>(
     );
 
     // Sync external value changes
+    const fromTime = value?.from?.getTime();
+    const toTime = value?.to?.getTime();
     React.useEffect(() => {
       setFromInput(value?.from ? format(value.from, DATE_FORMAT) : '');
       setToInput(value?.to ? format(value.to, DATE_FORMAT) : '');
       if (value?.from) setMonth(startOfMonth(value.from));
-    }, [value?.from?.getTime(), value?.to?.getTime()]);
+    }, [fromTime, toTime]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleFromChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const raw = e.target.value;

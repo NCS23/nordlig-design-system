@@ -60,7 +60,7 @@ function DataTable<TData, TValue>({
   // Checkbox-Spalte voranstellen, wenn selectable
   const columns = React.useMemo(() => {
     if (!selectable) return userColumns;
-    const selectColumn: ColumnDef<TData, any> = {
+    const selectColumn: ColumnDef<TData, unknown> = {
       id: 'select',
       header: ({ table }) => (
         <Checkbox

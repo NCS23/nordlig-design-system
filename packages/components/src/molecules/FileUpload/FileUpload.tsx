@@ -169,13 +169,14 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
       setValidationError(null);
     };
 
-    // Clean up previews on unmount
+    // Clean up previews on unmount (not on every files change)
     React.useEffect(() => {
       return () => {
         files.forEach((f) => {
           if (f.preview) URL.revokeObjectURL(f.preview);
         });
       };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentionally unmount-only
     }, []);
 
     const handleClick = () => {

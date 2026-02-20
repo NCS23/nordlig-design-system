@@ -76,10 +76,6 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const listboxId = React.useId();
 
     const flat = React.useMemo(() => flattenOptions(options), [options]);
-    const enabledOptions = React.useMemo(
-      () => flat.filter((o) => !o.disabled),
-      [flat]
-    );
 
     const selectedOption = flat.find((o) => o.value === value);
 
@@ -91,7 +87,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           : -1;
         setFocusedIndex(idx);
       }
-    }, [open]);
+    }, [open, flat, value]);
 
     // Scroll focused item into view
     React.useEffect(() => {

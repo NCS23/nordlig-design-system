@@ -90,7 +90,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
     // Reset focused index when filter changes
     React.useEffect(() => {
       setFocusedIndex(filtered.length > 0 ? 0 : -1);
-    }, [search]);
+    }, [search, filtered.length]);
 
     // Scroll focused item into view
     React.useEffect(() => {
