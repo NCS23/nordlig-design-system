@@ -9,8 +9,6 @@ import {
   Calendar,
   Heart,
   Bell,
-  Timer,
-  Flame,
   Route,
 } from 'lucide-react';
 import { PageShell } from './PageShell';
@@ -91,99 +89,51 @@ const DashboardContent = () => (
     <Heading level={2} className="mb-6">
       Dashboard
     </Heading>
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-6">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mb-6">
       <StatCard
         title="Trainings"
         value={42}
-        trend={{ value: 12, direction: 'up', label: 'vs. Vormonat' }}
         icon={<Icon icon={Activity} size="sm" />}
       />
       <StatCard
         title="Distanz"
         value="287"
         unit="km"
-        trend={{ value: 8, direction: 'up', label: 'vs. Vormonat' }}
         icon={<Icon icon={Route} size="sm" />}
       />
-      <StatCard
-        title="Dauer"
-        value="32:15"
-        unit="Std"
-        trend={{ value: 3, direction: 'down', label: 'vs. Vormonat' }}
-        icon={<Icon icon={Timer} size="sm" />}
-        variant="warning"
-      />
-      <StatCard
-        title="Kalorien"
-        value="18.430"
-        unit="kcal"
-        trend={{ value: 5, direction: 'up', label: 'vs. Vormonat' }}
-        icon={<Icon icon={Flame} size="sm" />}
-      />
     </div>
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-      <Card>
-        <CardHeader>
-          <Heading level={3}>Letzte Aktivitaeten</Heading>
-        </CardHeader>
-        <CardBody>
-          <div className="space-y-3">
-            {[
-              { name: 'Morgenlauf', type: 'Laufen', dist: '8.2 km', date: 'Heute' },
-              { name: 'Intervall-Training', type: 'Laufen', dist: '6.1 km', date: 'Gestern' },
-              { name: 'Rennrad Tour', type: 'Radfahren', dist: '42.5 km', date: 'Mo, 17.02.' },
-            ].map((item) => (
-              <div
-                key={item.name}
-                className="flex items-center justify-between gap-3 rounded-lg border border-[var(--color-border-muted)] p-3"
-              >
-                <div className="min-w-0">
-                  <Text variant="body" as="span" className="font-medium">
-                    {item.name}
-                  </Text>
-                  <Text variant="muted" as="span" className="ml-2 hidden sm:inline">
-                    {item.type}
-                  </Text>
-                </div>
-                <div className="flex shrink-0 items-center gap-3">
-                  <Badge variant="neutral" size="sm">{item.dist}</Badge>
-                  <Text variant="muted" as="span" className="hidden sm:inline">{item.date}</Text>
-                </div>
+    <Card>
+      <CardHeader>
+        <Heading level={3}>Letzte Aktivitaeten</Heading>
+      </CardHeader>
+      <CardBody>
+        <div className="space-y-3">
+          {[
+            { name: 'Morgenlauf', type: 'Laufen', dist: '8.2 km', date: 'Heute' },
+            { name: 'Intervall-Training', type: 'Laufen', dist: '6.1 km', date: 'Gestern' },
+            { name: 'Rennrad Tour', type: 'Radfahren', dist: '42.5 km', date: 'Mo, 17.02.' },
+          ].map((item) => (
+            <div
+              key={item.name}
+              className="flex items-center justify-between gap-3 rounded-lg border border-[var(--color-border-muted)] p-3"
+            >
+              <div className="min-w-0">
+                <Text variant="body" as="span" className="font-medium">
+                  {item.name}
+                </Text>
+                <Text variant="muted" as="span" className="ml-2 hidden sm:inline">
+                  {item.type}
+                </Text>
               </div>
-            ))}
-          </div>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardHeader>
-          <Heading level={3}>Wochenziel</Heading>
-        </CardHeader>
-        <CardBody>
-          <div className="space-y-4">
-            {[
-              { label: 'Distanz', current: 28, goal: 40, unit: 'km' },
-              { label: 'Trainings', current: 4, goal: 5, unit: '' },
-              { label: 'Aktive Minuten', current: 180, goal: 300, unit: 'min' },
-            ].map((g) => (
-              <div key={g.label}>
-                <div className="flex justify-between mb-1">
-                  <Text variant="small" as="span">{g.label}</Text>
-                  <Text variant="muted" as="span">
-                    {g.current}{g.unit ? ` ${g.unit}` : ''} / {g.goal}{g.unit ? ` ${g.unit}` : ''}
-                  </Text>
-                </div>
-                <div className="h-2 w-full rounded-full bg-[var(--color-bg-surface-hover)]">
-                  <div
-                    className="h-2 rounded-full bg-[var(--color-bg-primary)]"
-                    style={{ width: `${Math.min((g.current / g.goal) * 100, 100)}%` }}
-                  />
-                </div>
+              <div className="flex shrink-0 items-center gap-3">
+                <Badge variant="neutral" size="sm">{item.dist}</Badge>
+                <Text variant="muted" as="span" className="hidden sm:inline">{item.date}</Text>
               </div>
-            ))}
-          </div>
-        </CardBody>
-      </Card>
-    </div>
+            </div>
+          ))}
+        </div>
+      </CardBody>
+    </Card>
   </>
 );
 
@@ -354,41 +304,17 @@ export const Mobile: Story = {
         <Heading level={2} className="mb-4">
           Dashboard
         </Heading>
-        <div className="space-y-4">
-          <StatCard
-            title="Trainings"
-            value={42}
-            trend={{ value: 12, direction: 'up', label: 'vs. Vormonat' }}
-            icon={<Icon icon={Activity} size="sm" />}
-          />
-          <StatCard
-            title="Distanz"
-            value="287"
-            unit="km"
-            trend={{ value: 8, direction: 'up', label: 'vs. Vormonat' }}
-            icon={<Icon icon={Route} size="sm" />}
-          />
-          <Card>
-            <CardHeader>
-              <Heading level={3}>Letzte Aktivitaeten</Heading>
-            </CardHeader>
-            <CardBody>
-              <div className="space-y-3">
-                {[
-                  { name: 'Morgenlauf', dist: '8.2 km' },
-                  { name: 'Intervall', dist: '6.1 km' },
-                ].map((item) => (
-                  <div
-                    key={item.name}
-                    className="flex items-center justify-between rounded-lg border border-[var(--color-border-muted)] p-3"
-                  >
-                    <Text variant="body" as="span" className="font-medium">{item.name}</Text>
-                    <Badge variant="neutral" size="sm">{item.dist}</Badge>
-                  </div>
-                ))}
-              </div>
-            </CardBody>
-          </Card>
+        <div className="space-y-3">
+          {[
+            { label: 'Trainings', value: '42' },
+            { label: 'Distanz', value: '287 km' },
+            { label: 'Dauer', value: '32:15 Std' },
+          ].map((item) => (
+            <div key={item.label} className="flex items-center justify-between rounded-[var(--radius-component-md)] border border-[var(--color-border-muted)] p-3">
+              <Text variant="body" as="span" className="font-medium">{item.label}</Text>
+              <Text variant="body" as="span" className="text-lg font-semibold">{item.value}</Text>
+            </div>
+          ))}
         </div>
       </PageShell.Content>
     </PageShell>

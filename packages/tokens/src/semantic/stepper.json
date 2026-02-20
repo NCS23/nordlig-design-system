@@ -1,9 +1,35 @@
 {
+  "color": {
+    "$description": "Level 4: Stepper component tokens",
+    "stepper": {
+      "completed-bg":     { "$type": "color", "$value": "{color.bg.success-subtle}", "$description": "Completed step bg — subtle, NOT solid" },
+      "completed-border": { "$type": "color", "$value": "{color.border.success}", "$description": "Completed step ring" },
+      "completed-text":   { "$type": "color", "$value": "{color.text.success}", "$description": "Completed step check icon" },
+      "current-bg":       { "$type": "color", "$value": "{color.bg.primary}", "$description": "Current step bg — solid primary focus" },
+      "current-text":     { "$type": "color", "$value": "{color.text.on-primary}", "$description": "Current step number/icon" },
+      "pending-bg":       { "$type": "color", "$value": "{color.bg.surface}", "$description": "Pending step bg" },
+      "pending-border":   { "$type": "color", "$value": "{color.border.muted}", "$description": "Pending step ring" },
+      "pending-text":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Pending step number" },
+      "line-completed":   { "$type": "color", "$value": "{color.border.success}", "$description": "Completed connecting line" },
+      "line-pending":     { "$type": "color", "$value": "{color.border.muted}", "$description": "Pending connecting line" },
+      "label-current":    { "$type": "color", "$value": "{color.text.base}", "$description": "Current step label" },
+      "label-default":    { "$type": "color", "$value": "{color.text.muted}", "$description": "Other step labels" }
+    }
+  },
+  "sizing": {
+    "stepper": {
+      "indicator":  { "$type": "dimension", "$value": "{spacing.xl}", "$description": "32px indicator diameter" },
+      "line-h":     { "$type": "dimension", "$value": "1px", "$description": "1px horizontal line height" },
+      "line-v-w":   { "$type": "dimension", "$value": "1px", "$description": "1px vertical line width" },
+      "line-v-min": { "$type": "dimension", "$value": "{spacing.lg}", "$description": "24px min vertical line height" }
+    }
+  },
   "spacing": {
     "$description": "Level 4: Stepper component tokens",
     "stepper": {
-      "step-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between step indicator and content (12px)" },
-      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap within step content (8px)" }
+      "step-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "12px gap between indicator and content" },
+      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px gap within step content" },
+      "line-offset": { "$type": "dimension", "$value": "{spacing.md}", "$description": "16px vertical line offset (half of 32px indicator)" }
     }
   }
 }

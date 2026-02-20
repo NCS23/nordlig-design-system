@@ -126,8 +126,8 @@ describe('Timeline', () => {
       </Timeline>
     );
     const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
-    expect(dot?.className).toContain('bg-[var(--color-bg-surface)]');
-    expect(dot?.className).toContain('text-[var(--color-text-muted)]');
+    expect(dot?.className).toContain('bg-[var(--color-timeline-dot-default-bg)]');
+    expect(dot?.className).toContain('text-[var(--color-timeline-dot-default-text)]');
   });
 
   it('applies success variant styles', () => {
@@ -137,8 +137,8 @@ describe('Timeline', () => {
       </Timeline>
     );
     const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
-    expect(dot?.className).toContain('bg-[var(--color-bg-success)]');
-    expect(dot?.className).toContain('text-[var(--color-text-inverse)]');
+    expect(dot?.className).toContain('bg-[var(--color-timeline-dot-success-bg)]');
+    expect(dot?.className).toContain('text-[var(--color-timeline-dot-success-text)]');
   });
 
   it('applies warning variant styles', () => {
@@ -148,8 +148,8 @@ describe('Timeline', () => {
       </Timeline>
     );
     const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
-    expect(dot?.className).toContain('bg-[var(--color-bg-warning)]');
-    expect(dot?.className).toContain('text-[var(--color-text-inverse)]');
+    expect(dot?.className).toContain('bg-[var(--color-timeline-dot-warning-bg)]');
+    expect(dot?.className).toContain('text-[var(--color-timeline-dot-warning-text)]');
   });
 
   it('applies error variant styles', () => {
@@ -159,8 +159,8 @@ describe('Timeline', () => {
       </Timeline>
     );
     const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
-    expect(dot?.className).toContain('bg-[var(--color-bg-error)]');
-    expect(dot?.className).toContain('text-[var(--color-text-inverse)]');
+    expect(dot?.className).toContain('bg-[var(--color-timeline-dot-error-bg)]');
+    expect(dot?.className).toContain('text-[var(--color-timeline-dot-error-text)]');
   });
 
   // ─── Icon ─────────────────────────────────────────────────────────────
@@ -200,7 +200,7 @@ describe('Timeline', () => {
     const lines = container.querySelectorAll('[data-timeline-line]');
     expect(lines.length).toBe(2);
     expect(lines[0].className).toContain(
-      'bg-[var(--color-border-default)]'
+      'bg-[var(--color-timeline-line)]'
     );
   });
 
@@ -264,7 +264,7 @@ describe('Timeline', () => {
       </Timeline>
     );
     const title = screen.getByText('Token Test');
-    expect(title.className).toContain('text-[var(--color-text-base)]');
+    expect(title.className).toContain('text-[var(--color-timeline-title)]');
   });
 
   it('applies text-muted token to description', () => {
@@ -274,7 +274,7 @@ describe('Timeline', () => {
       </Timeline>
     );
     const desc = screen.getByText('Beschreibung');
-    expect(desc.className).toContain('text-[var(--color-text-muted)]');
+    expect(desc.className).toContain('text-[var(--color-timeline-description)]');
   });
 
   it('applies text-muted token to timestamp', () => {
@@ -284,6 +284,6 @@ describe('Timeline', () => {
       </Timeline>
     );
     const ts = screen.getByText('Heute');
-    expect(ts.className).toContain('text-[var(--color-text-muted)]');
+    expect(ts.className).toContain('text-[var(--color-timeline-timestamp)]');
   });
 });

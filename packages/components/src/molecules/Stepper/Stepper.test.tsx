@@ -66,10 +66,10 @@ describe('Stepper', () => {
       <Stepper steps={defaultSteps} currentStep={1} />
     );
     const indicators = container.querySelectorAll(
-      '.w-10.h-10.rounded-full'
+      '[data-stepper-indicator]'
     );
     expect(indicators[1].className).toContain(
-      'bg-[var(--color-bg-primary)]'
+      'bg-[var(--color-stepper-current-bg)]'
     );
   });
 
@@ -81,7 +81,7 @@ describe('Stepper', () => {
     );
     // Completed steps (0, 1) should have SVG check icons
     const indicators = container.querySelectorAll(
-      '.w-10.h-10.rounded-full'
+      '[data-stepper-indicator]'
     );
     expect(indicators[0].querySelector('svg')).toBeInTheDocument();
     expect(indicators[1].querySelector('svg')).toBeInTheDocument();
@@ -89,33 +89,35 @@ describe('Stepper', () => {
     expect(indicators[2].querySelector('svg')).not.toBeInTheDocument();
   });
 
-  it('applies success bg to completed step indicators', () => {
+  it('applies completed bg to completed step indicators', () => {
     const { container } = render(
       <Stepper steps={defaultSteps} currentStep={2} />
     );
     const indicators = container.querySelectorAll(
-      '.w-10.h-10.rounded-full'
+      '[data-stepper-indicator]'
     );
     expect(indicators[0].className).toContain(
-      'bg-[var(--color-bg-success)]'
+      'bg-[var(--color-stepper-completed-bg)]'
     );
+    expect(indicators[0].className).toContain('border-2');
     expect(indicators[1].className).toContain(
-      'bg-[var(--color-bg-success)]'
+      'bg-[var(--color-stepper-completed-bg)]'
     );
+    expect(indicators[1].className).toContain('border-2');
   });
 
-  it('applies muted bg to upcoming step indicators', () => {
+  it('applies pending bg to upcoming step indicators', () => {
     const { container } = render(
       <Stepper steps={defaultSteps} currentStep={0} />
     );
     const indicators = container.querySelectorAll(
-      '.w-10.h-10.rounded-full'
+      '[data-stepper-indicator]'
     );
     expect(indicators[1].className).toContain(
-      'bg-[var(--color-bg-surface)]'
+      'bg-[var(--color-stepper-pending-bg)]'
     );
     expect(indicators[2].className).toContain(
-      'bg-[var(--color-bg-surface)]'
+      'bg-[var(--color-stepper-pending-bg)]'
     );
   });
 
@@ -130,22 +132,22 @@ describe('Stepper', () => {
     expect(lines.length).toBe(2);
   });
 
-  it('colors completed connecting lines with success bg', () => {
+  it('colors completed connecting lines with completed token', () => {
     const { container } = render(
       <Stepper steps={defaultSteps} currentStep={2} />
     );
     const lines = container.querySelectorAll('[data-stepper-line]');
-    expect(lines[0].className).toContain('bg-[var(--color-bg-success)]');
-    expect(lines[1].className).toContain('bg-[var(--color-bg-success)]');
+    expect(lines[0].className).toContain('bg-[var(--color-stepper-line-completed)]');
+    expect(lines[1].className).toContain('bg-[var(--color-stepper-line-completed)]');
   });
 
-  it('colors upcoming connecting lines with border-default', () => {
+  it('colors upcoming connecting lines with pending token', () => {
     const { container } = render(
       <Stepper steps={defaultSteps} currentStep={0} />
     );
     const lines = container.querySelectorAll('[data-stepper-line]');
     expect(lines[0].className).toContain(
-      'bg-[var(--color-border-default)]'
+      'bg-[var(--color-stepper-line-pending)]'
     );
   });
 
@@ -222,7 +224,7 @@ describe('Stepper', () => {
       <Stepper steps={defaultSteps} currentStep={0} />
     );
     const lines = container.querySelectorAll('[data-stepper-line]');
-    expect(lines[0].className).toContain('h-0.5');
+    expect(lines[0].className).toContain('h-[var(--sizing-stepper-line-h)]');
     expect(lines[0].className).toContain('flex-1');
   });
 
@@ -235,8 +237,9 @@ describe('Stepper', () => {
       />
     );
     const lines = container.querySelectorAll('[data-stepper-line]');
-    expect(lines[0].className).toContain('w-0.5');
-    expect(lines[0].className).toContain('min-h-[24px]');
+    expect(lines[0].className).toContain('w-[var(--sizing-stepper-line-v-w)]');
+    expect(lines[0].className).toContain('min-h-[var(--sizing-stepper-line-v-min)]');
+    expect(lines[0].className).toContain('ml-[var(--spacing-stepper-line-offset)]');
   });
 
   // ─── Custom Props ─────────────────────────────────────────────────────

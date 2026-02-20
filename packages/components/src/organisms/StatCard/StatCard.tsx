@@ -72,7 +72,7 @@ const TrendIndicator: React.FC<{
       : `${value}%`;
 
   return (
-    <div className="flex flex-col items-end">
+    <div className="flex items-center gap-1">
       <span
         className={cn(
           'inline-flex items-center gap-[var(--spacing-stat-card-trend-gap)] text-sm font-medium',
@@ -84,7 +84,7 @@ const TrendIndicator: React.FC<{
         {formattedValue}
       </span>
       {label && (
-        <span className="text-xs text-[var(--color-stat-card-text-secondary)]">{label}</span>
+        <span className="text-xs text-[var(--color-stat-card-text-secondary)] hidden sm:inline">{label}</span>
       )}
     </div>
   );

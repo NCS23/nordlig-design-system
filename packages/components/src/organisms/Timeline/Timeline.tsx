@@ -18,10 +18,10 @@ export interface TimelineProps extends React.HTMLAttributes<HTMLDivElement> {
 // ─── Variant Styles ─────────────────────────────────────────────────────────
 
 const variantDotStyles = {
-  default: 'bg-[var(--color-bg-surface)] text-[var(--color-text-muted)]',
-  success: 'bg-[var(--color-bg-success)] text-[var(--color-text-inverse)]',
-  warning: 'bg-[var(--color-bg-warning)] text-[var(--color-text-inverse)]',
-  error: 'bg-[var(--color-bg-error)] text-[var(--color-text-inverse)]',
+  default: 'bg-[var(--color-timeline-dot-default-bg)] text-[var(--color-timeline-dot-default-text)]',
+  success: 'bg-[var(--color-timeline-dot-success-bg)] text-[var(--color-timeline-dot-success-text)]',
+  warning: 'bg-[var(--color-timeline-dot-warning-bg)] text-[var(--color-timeline-dot-warning-text)]',
+  error:   'bg-[var(--color-timeline-dot-error-bg)] text-[var(--color-timeline-dot-error-text)]',
 };
 
 // ─── Timeline ───────────────────────────────────────────────────────────────
@@ -68,7 +68,7 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
       >
         {/* Vertical line (hidden for last item via CSS) */}
         <div
-          className="absolute left-[var(--spacing-timeline-line-left)] top-[var(--spacing-timeline-line-top)] bottom-0 w-[var(--sizing-timeline-line-w)] bg-[var(--color-border-default)] last-of-type:hidden"
+          className="absolute left-[var(--spacing-timeline-line-left)] top-[var(--spacing-timeline-line-top)] bottom-0 w-[var(--sizing-timeline-line-w)] bg-[var(--color-timeline-line)] last-of-type:hidden"
           aria-hidden="true"
           data-timeline-line=""
         />
@@ -87,8 +87,8 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
                 className={cn(
                   'h-[var(--sizing-timeline-inner-dot)] w-[var(--sizing-timeline-inner-dot)] rounded-full',
                   variant === 'default'
-                    ? 'bg-[var(--color-text-muted)]'
-                    : 'bg-[var(--color-bg-paper)]'
+                    ? 'bg-[var(--color-timeline-inner-dot-default)]'
+                    : 'bg-[var(--color-timeline-inner-dot-variant)]'
                 )}
               />
             )}
@@ -97,15 +97,15 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
           {/* Content */}
           <div className="ml-[var(--spacing-timeline-content-ml)] flex-1 min-w-0">
             {timestamp && (
-              <span className="text-xs text-[var(--color-text-muted)]">
+              <span className="text-xs text-[var(--color-timeline-timestamp)]">
                 {timestamp}
               </span>
             )}
-            <h4 className="text-sm font-medium text-[var(--color-text-base)]">
+            <h4 className="text-sm font-medium text-[var(--color-timeline-title)]">
               {title}
             </h4>
             {description && (
-              <p className="text-sm text-[var(--color-text-muted)] mt-0.5">
+              <p className="text-sm text-[var(--color-timeline-description)] mt-0.5">
                 {description}
               </p>
             )}

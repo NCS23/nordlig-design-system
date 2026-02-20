@@ -30,13 +30,14 @@ const StepIndicator: React.FC<{
 
   return (
     <div
+      data-stepper-indicator
       className={cn(
-        'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium',
+        'w-[var(--sizing-stepper-indicator)] h-[var(--sizing-stepper-indicator)] rounded-full flex items-center justify-center text-sm font-medium',
         'transition-colors duration-200',
-        isCompleted && 'bg-[var(--color-bg-success)] text-[var(--color-text-inverse)]',
-        isCurrent && 'bg-[var(--color-bg-primary)] text-[var(--color-text-inverse)]',
+        isCompleted && 'bg-[var(--color-stepper-completed-bg)] border-2 border-[var(--color-stepper-completed-border)] text-[var(--color-stepper-completed-text)]',
+        isCurrent && 'bg-[var(--color-stepper-current-bg)] text-[var(--color-stepper-current-text)]',
         !isCompleted && !isCurrent &&
-          'bg-[var(--color-bg-surface)] text-[var(--color-text-muted)]'
+          'bg-[var(--color-stepper-pending-bg)] border border-[var(--color-stepper-pending-border)] text-[var(--color-stepper-pending-text)]'
       )}
     >
       {isCompleted ? (
@@ -62,10 +63,10 @@ const ConnectingLine: React.FC<{
       className={cn(
         'transition-colors duration-200',
         isCompleted
-          ? 'bg-[var(--color-bg-success)]'
-          : 'bg-[var(--color-border-default)]',
-        orientation === 'horizontal' && 'h-0.5 flex-1',
-        orientation === 'vertical' && 'w-0.5 min-h-[24px] ml-5'
+          ? 'bg-[var(--color-stepper-line-completed)]'
+          : 'bg-[var(--color-stepper-line-pending)]',
+        orientation === 'horizontal' && 'h-[var(--sizing-stepper-line-h)] flex-1',
+        orientation === 'vertical' && 'w-[var(--sizing-stepper-line-v-w)] min-h-[var(--sizing-stepper-line-v-min)] ml-[var(--spacing-stepper-line-offset)]'
       )}
       aria-hidden="true"
       data-stepper-line=""
@@ -156,8 +157,8 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
                     className={cn(
                       'text-sm font-medium',
                       isCurrent
-                        ? 'text-[var(--color-text-base)]'
-                        : 'text-[var(--color-text-muted)]'
+                        ? 'text-[var(--color-stepper-label-current)]'
+                        : 'text-[var(--color-stepper-label-default)]'
                     )}
                   >
                     {step.label}

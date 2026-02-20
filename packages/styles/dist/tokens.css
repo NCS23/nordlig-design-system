@@ -245,10 +245,12 @@
   --sizing-datepicker-day-size: 36px; /** Day cell width/height */
   --sizing-shell-header-height: 56px; /** Fixed header height */
   --sizing-shell-footer-height: 48px; /** Fixed footer height */
+  --sizing-stepper-line-h: 1px; /** 1px horizontal line height */
+  --sizing-stepper-line-v-w: 1px; /** 1px vertical line width */
   --sizing-textarea-min-height: 100px; /** Default minimum height */
   --sizing-textarea-max-height: 400px; /** Auto-resize maximum */
-  --sizing-timeline-inner-dot: 10px; /** 10px inner dot (w-2.5 h-2.5) */
-  --sizing-timeline-line-w: 2px; /** 2px line width */
+  --sizing-timeline-inner-dot: 10px; /** 10px inner dot */
+  --sizing-timeline-line-w: 1px; /** 1px line width (reduced from 2px) */
   --sizing-tpick-cell-height: 36px; /** Time cell height */
   --sizing-tpick-column-width: 64px; /** Column width per unit */
   --color-primary-1-50: var(--color-base-sky-50);
@@ -523,6 +525,7 @@
   --spacing-layout-section: var(--spacing-2xl);
   --spacing-emptystate-padding-y: var(--spacing-2xl); /** 48px vertical padding */
   --spacing-pwinput-input-pr: var(--spacing-xl); /** 40px input right padding for toggle */
+  --spacing-stepper-line-offset: var(--spacing-md); /** 16px vertical line offset (half of 32px indicator) */
   --spacing-timeline-item-pb: var(--spacing-xl); /** 32px item bottom padding */
   --spacing-timeline-line-left: var(--spacing-md); /** 16px line left offset */
   --spacing-timeline-line-top: var(--spacing-xl); /** 32px line top offset */
@@ -581,7 +584,9 @@
   --sizing-component-border-width-thick: var(--sizing-border-width-thick);
   --sizing-alert-title-weight: var(--font-weight-semibold); /** Title font weight (600) */
   --sizing-alert-desc-weight: var(--font-weight-normal); /** Description font weight (400) */
-  --sizing-timeline-dot: var(--spacing-xl); /** 32px dot diameter (w-8 h-8) */
+  --sizing-stepper-indicator: var(--spacing-xl); /** 32px indicator diameter */
+  --sizing-stepper-line-v-min: var(--spacing-lg); /** 24px min vertical line height */
+  --sizing-timeline-dot: var(--spacing-xl); /** 32px dot diameter */
   --color-accordion-bg: var(--color-bg-paper); /** Item background */
   --color-accordion-border: var(--color-border-muted); /** Item border/divider */
   --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
@@ -983,6 +988,18 @@
   --color-stat-card-trend-up: var(--color-text-success); /** Positive trend indicator */
   --color-stat-card-trend-down: var(--color-text-error); /** Negative trend indicator */
   --color-stat-card-trend-neutral: var(--color-text-muted); /** Neutral trend indicator */
+  --color-stepper-completed-bg: var(--color-bg-success-subtle); /** Completed step bg — subtle, NOT solid */
+  --color-stepper-completed-border: var(--color-border-success); /** Completed step ring */
+  --color-stepper-completed-text: var(--color-text-success); /** Completed step check icon */
+  --color-stepper-current-bg: var(--color-bg-primary); /** Current step bg — solid primary focus */
+  --color-stepper-current-text: var(--color-text-on-primary); /** Current step number/icon */
+  --color-stepper-pending-bg: var(--color-bg-surface); /** Pending step bg */
+  --color-stepper-pending-border: var(--color-border-muted); /** Pending step ring */
+  --color-stepper-pending-text: var(--color-text-muted); /** Pending step number */
+  --color-stepper-line-completed: var(--color-border-success); /** Completed connecting line */
+  --color-stepper-line-pending: var(--color-border-muted); /** Pending connecting line */
+  --color-stepper-label-current: var(--color-text-base); /** Current step label */
+  --color-stepper-label-default: var(--color-text-muted); /** Other step labels */
   --color-switch-track-bg: var(--color-border-default); /** Unchecked track (gray-300) */
   --color-switch-track-bg-checked: var(--color-interactive-primary); /** Checked track (sky blue) */
   --color-switch-thumb-bg: var(--color-bg-paper); /** White thumb */
@@ -1022,6 +1039,20 @@
   --color-tag-border-focus: var(--color-border-focus); /** Focus ring color */
   --color-textarea-counter-text: var(--color-text-muted); /** Character counter default */
   --color-textarea-counter-text-over: var(--color-text-error); /** Counter when over limit */
+  --color-timeline-dot-default-bg: var(--color-bg-surface); /** Default dot background */
+  --color-timeline-dot-default-text: var(--color-text-muted); /** Default dot icon */
+  --color-timeline-dot-success-bg: var(--color-bg-success-subtle); /** Success dot — subtle green */
+  --color-timeline-dot-success-text: var(--color-text-success); /** Success dot icon (dark green) */
+  --color-timeline-dot-warning-bg: var(--color-bg-warning-subtle); /** Warning dot — subtle amber */
+  --color-timeline-dot-warning-text: var(--color-text-warning); /** Warning dot icon (dark amber) */
+  --color-timeline-dot-error-bg: var(--color-bg-error-subtle); /** Error dot — subtle red */
+  --color-timeline-dot-error-text: var(--color-text-error); /** Error dot icon (dark red) */
+  --color-timeline-inner-dot-default: var(--color-text-muted); /** Default inner dot */
+  --color-timeline-inner-dot-variant: var(--color-bg-paper); /** Variant inner dot */
+  --color-timeline-line: var(--color-border-muted); /** Connecting line — softer */
+  --color-timeline-title: var(--color-text-base); /** Item title */
+  --color-timeline-description: var(--color-text-muted); /** Item description */
+  --color-timeline-timestamp: var(--color-text-muted); /** Item timestamp */
   --color-tpick-popover-bg: var(--color-bg-paper); /** Popover background */
   --color-tpick-popover-border: var(--color-border-muted); /** Popover border */
   --color-tpick-column-text: var(--color-text-base); /** Time value text */
@@ -1319,8 +1350,8 @@
   --spacing-statcard-value-mt: var(--spacing-component-gap-sm); /** 8px above value */
   --spacing-statcard-trend-mt: var(--spacing-component-gap-xs); /** 4px above trend */
   --spacing-statcard-trend-gap: var(--spacing-component-gap-xs); /** 4px trend arrow-text gap */
-  --spacing-stepper-step-gap: var(--spacing-component-gap-md); /** Gap between step indicator and content (12px) */
-  --spacing-stepper-content-gap: var(--spacing-component-gap-sm); /** Gap within step content (8px) */
+  --spacing-stepper-step-gap: var(--spacing-component-gap-md); /** 12px gap between indicator and content */
+  --spacing-stepper-content-gap: var(--spacing-component-gap-sm); /** 8px gap within step content */
   --spacing-switch-field-gap: var(--spacing-component-gap-lg); /** Gap between switch and label area (16px) */
   --spacing-switch-content-gap: var(--spacing-component-gap-2xs); /** Gap between label and description (2px) */
   --spacing-table-cell-x-compact: var(--spacing-component-padding-md); /** 16px – airy even at compact */
