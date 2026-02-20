@@ -82,7 +82,7 @@ describe('DashboardLayout', () => {
       renderDashboard();
       const header = screen.getByText('Header').closest('header')!;
       expect(header.className).toContain('bg-[var(--color-dashboard-header-bg)]');
-      expect(header.className).toContain('h-[var(--sizing-dashboard-header-height)]');
+      expect(header.className).toContain('h-14');
       expect(header.className).toContain('[box-shadow:var(--shadow-dashboard-header)]');
     });
 

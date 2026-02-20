@@ -95,7 +95,7 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
       >
         <Icon icon={Menu} size="sm" />
       </Button>
-      <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
+      <img src="/bildmarke.svg" alt="" className="h-7 w-auto shrink-0" />
       <Text variant="body" as="span" className="truncate font-semibold">
         Training Analyzer
       </Text>
@@ -270,7 +270,7 @@ export const CollapsedSidebar: Story = {
             >
               <Icon icon={Menu} size="sm" />
             </Button>
-            <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
+            <img src="/bildmarke.svg" alt="" className="h-7 w-auto shrink-0" />
             <Text variant="body" as="span" className="truncate font-semibold">
               Training Analyzer
             </Text>
@@ -362,7 +362,7 @@ export const WithUserMenu: Story = {
             >
               <Icon icon={Menu} size="sm" />
             </Button>
-            <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
+            <img src="/bildmarke.svg" alt="" className="h-7 w-auto shrink-0" />
             <Text variant="body" as="span" className="truncate font-semibold">
               Training Analyzer
             </Text>
