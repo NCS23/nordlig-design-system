@@ -28,7 +28,6 @@ import {
 } from '../../atoms/Avatar';
 import {
   Sidebar,
-  SidebarHeader,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
@@ -61,14 +60,6 @@ const AppSidebar = () => {
       aria-label="Hauptnavigation"
       className="h-full"
     >
-      <SidebarHeader>
-        <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
-        {!sidebarCollapsed && (
-          <Text variant="body" as="span" className="font-semibold">
-            Nordlig
-          </Text>
-        )}
-      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup label="Training">
           <SidebarItem icon={<Icon icon={Home} size={18} />} label="Dashboard" active />
@@ -104,6 +95,7 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
       >
         <Icon icon={Menu} size="sm" />
       </Button>
+      <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
       <Text variant="body" as="span" className="truncate font-semibold">
         Training Analyzer
       </Text>
@@ -278,6 +270,7 @@ export const CollapsedSidebar: Story = {
             >
               <Icon icon={Menu} size="sm" />
             </Button>
+            <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
             <Text variant="body" as="span" className="truncate font-semibold">
               Training Analyzer
             </Text>
@@ -369,6 +362,7 @@ export const WithUserMenu: Story = {
             >
               <Icon icon={Menu} size="sm" />
             </Button>
+            <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
             <Text variant="body" as="span" className="truncate font-semibold">
               Training Analyzer
             </Text>
