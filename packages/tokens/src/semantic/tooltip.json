@@ -7,6 +7,11 @@
       "arrow": { "$type": "color", "$value": "{color.text.base}", "$description": "Arrow matches bg" }
     }
   },
+  "font": {
+    "tooltip": {
+      "content-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Tooltip content font size" }
+    }
+  },
   "shadow": {
     "tooltip": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Tooltip elevation" }
   },

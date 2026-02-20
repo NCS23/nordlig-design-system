@@ -204,7 +204,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
             <Icon icon={ChevronLeft} size="sm" />
           </button>
           <span
-            className="text-sm font-semibold text-[var(--color-datepicker-header-text)]"
+            className="text-[length:var(--font-datepicker-header-size)] [font-weight:var(--font-datepicker-header-weight)] text-[var(--color-datepicker-header-text)]"
             aria-live="polite"
           >
             {format(month, 'MMMM yyyy', { locale: de })}
@@ -232,7 +232,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
               key={day}
               role="columnheader"
               aria-label={day}
-              className="flex h-8 items-center justify-center text-xs font-medium text-[var(--color-datepicker-weekday-text)]"
+              className="flex h-8 items-center justify-center text-[length:var(--font-datepicker-weekday-size)] [font-weight:var(--font-datepicker-weekday-weight)] text-[var(--color-datepicker-weekday-text)]"
             >
               {day}
             </div>
@@ -282,15 +282,15 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
                   'inline-flex items-center justify-center',
                   'h-[var(--sizing-datepicker-day-size)] w-[var(--sizing-datepicker-day-size)]',
                   'rounded-[var(--radius-datepicker-day)]',
-                  'text-sm transition-colors',
+                  'text-[length:var(--font-datepicker-day-size)] transition-colors',
                   // Default state (in month, not selected, not in range)
                   !isSelected && !inRange && inMonth && 'text-[var(--color-datepicker-day-text)] hover:bg-[var(--color-datepicker-day-hover-bg)]',
                   // Selected (single or range endpoint)
-                  isSelected && 'bg-[var(--color-datepicker-day-selected-bg)] text-[var(--color-datepicker-day-selected-text)] font-semibold',
+                  isSelected && 'bg-[var(--color-datepicker-day-selected-bg)] text-[var(--color-datepicker-day-selected-text)] [font-weight:var(--font-datepicker-selected-weight)]',
                   // In range (between start and end)
                   inRange && !isSelected && inMonth && 'bg-[var(--color-datepicker-day-range-bg)] text-[var(--color-datepicker-day-text)]',
                   // Today (not selected, not in range)
-                  today && !isSelected && !inRange && 'border border-[var(--color-datepicker-day-today-border)] font-medium',
+                  today && !isSelected && !inRange && 'border border-[var(--color-datepicker-day-today-border)] [font-weight:var(--font-datepicker-today-weight)]',
                   // Outside month / disabled
                   disabled && 'text-[var(--color-datepicker-day-disabled-text)] cursor-default hover:bg-transparent',
                 )}

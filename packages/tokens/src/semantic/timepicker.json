@@ -27,7 +27,7 @@
   "sizing": {
     "$description": "Level 4: TimePicker sizing",
     "tpick": {
-      "cell-height":  { "$type": "dimension", "$value": "36px", "$description": "Time cell height" },
+      "cell-height":  { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Time cell height" },
       "column-width": { "$type": "dimension", "$value": "64px", "$description": "Column width per unit" }
     }
   },

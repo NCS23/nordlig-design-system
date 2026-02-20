@@ -103,8 +103,8 @@ describe('Drawer', () => {
   it('hat Text-Styling-Klassen auf Title', () => {
     renderDrawer({ defaultOpen: true });
     const title = screen.getByText('Test Titel');
-    expect(title).toHaveClass('text-lg');
-    expect(title).toHaveClass('font-semibold');
+    expect(title).toHaveClass('text-[length:var(--font-drawer-title-size)]');
+    expect(title).toHaveClass('[font-weight:var(--font-drawer-title-weight)]');
     expect(title).toHaveClass('text-[var(--color-drawer-title)]');
   });
 
@@ -113,7 +113,7 @@ describe('Drawer', () => {
   it('hat Text-Styling-Klassen auf Description', () => {
     renderDrawer({ defaultOpen: true });
     const description = screen.getByText('Test Beschreibung');
-    expect(description).toHaveClass('text-sm');
+    expect(description).toHaveClass('text-[length:var(--font-drawer-description-size)]');
     expect(description).toHaveClass('text-[var(--color-drawer-description)]');
   });
 

@@ -48,7 +48,7 @@ describe('Breadcrumbs', () => {
     renderBreadcrumbs();
     const current = screen.getByText('Laufschuhe');
     expect(current).toHaveClass('text-[var(--color-breadcrumbs-text-current)]');
-    expect(current).toHaveClass('font-medium');
+    expect(current).toHaveClass('[font-weight:var(--font-breadcrumbs-current-weight)]');
   });
 
   // ─── Link Items ───────────────────────────────────────────────────────

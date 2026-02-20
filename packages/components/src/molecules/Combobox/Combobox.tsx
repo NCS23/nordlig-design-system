@@ -101,7 +101,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
             heading={group.label}
             className={cn(
               'overflow-hidden p-[var(--spacing-cmb-content-padding)]',
-              '[&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
+              '[&_[cmdk-group-heading]]:text-[length:var(--font-cmb-heading-size)] [&_[cmdk-group-heading]]:[font-weight:var(--font-cmb-heading-weight)]',
               '[&_[cmdk-group-heading]]:text-[var(--color-cmb-empty-text)]',
               '[&_[cmdk-group-heading]]:px-[var(--spacing-cmb-item-padding-x)] [&_[cmdk-group-heading]]:py-1.5'
             )}
@@ -124,7 +124,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
           disabled={opt.disabled}
           onSelect={() => handleSelect(opt.value)}
           className={cn(
-            'relative flex cursor-pointer select-none items-center rounded-[var(--radius-cmb-content)] text-sm outline-none transition-colors',
+            'relative flex cursor-pointer select-none items-center rounded-[var(--radius-cmb-content)] text-[length:var(--font-cmb-item-size)] outline-none transition-colors',
             'px-[var(--spacing-cmb-item-padding-x)] py-[var(--spacing-cmb-item-padding-y)]',
             'data-[selected=true]:bg-[var(--color-cmb-item-hover-bg)]',
             'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
@@ -208,7 +208,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                   <CommandPrimitive.Input
                     placeholder={searchPlaceholder}
                     className={cn(
-                      'flex h-10 w-full bg-[var(--color-cmb-search-bg)] text-sm',
+                      'flex h-10 w-full bg-[var(--color-cmb-search-bg)] text-[length:var(--font-cmb-input-size)]',
                       'text-[var(--color-cmb-trigger-text)]',
                       'placeholder:text-[var(--color-cmb-trigger-placeholder)]',
                       'border-none outline-none'
@@ -226,7 +226,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                 >
                   <CommandPrimitive.Empty
                     className={cn(
-                      'py-[var(--spacing-cmb-empty-py)] text-center text-sm',
+                      'py-[var(--spacing-cmb-empty-py)] text-center text-[length:var(--font-cmb-item-size)]',
                       'text-[var(--color-cmb-empty-text)]'
                     )}
                   >

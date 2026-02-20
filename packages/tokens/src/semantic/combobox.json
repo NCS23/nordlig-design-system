@@ -27,9 +27,17 @@
       "item-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Item horizontal padding" },
       "item-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Item vertical padding" },
       "trigger-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between text and chevron in trigger (8px)" },
-      "search-py":       { "$type": "dimension", "$value": "6px", "$description": "6px search input vertical padding" },
+      "search-py":       { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "6px search input vertical padding" },
       "search-px":       { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px search input horizontal padding" },
       "empty-py":        { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px empty state vertical padding" }
+    }
+  },
+  "font": {
+    "cmb": {
+      "item-size":      { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Item text size (14px)" },
+      "input-size":     { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Search input text size (14px)" },
+      "heading-size":   { "$type": "dimension",   "$value": "{font.component.size.xs}",       "$description": "Group heading size (12px)" },
+      "heading-weight": { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",  "$description": "Group heading weight" }
     }
   }
 }

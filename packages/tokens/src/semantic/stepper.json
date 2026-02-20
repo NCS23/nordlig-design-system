@@ -19,8 +19,8 @@
   "sizing": {
     "stepper": {
       "indicator":  { "$type": "dimension", "$value": "{spacing.xl}", "$description": "32px indicator diameter" },
-      "line-h":     { "$type": "dimension", "$value": "1px", "$description": "1px horizontal line height" },
-      "line-v-w":   { "$type": "dimension", "$value": "1px", "$description": "1px vertical line width" },
+      "line-h":     { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "1px horizontal line height" },
+      "line-v-w":   { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "1px vertical line width" },
       "line-v-min": { "$type": "dimension", "$value": "{spacing.lg}", "$description": "24px min vertical line height" }
     }
   },
@@ -30,6 +30,15 @@
       "step-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "12px gap between indicator and content" },
       "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px gap within step content" },
       "line-offset": { "$type": "dimension", "$value": "{spacing.md}", "$description": "16px vertical line offset (half of 32px indicator)" }
+    }
+  },
+  "font": {
+    "stepper": {
+      "indicator-size":   { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Indicator number size (14px)" },
+      "indicator-weight": { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",  "$description": "Indicator number weight" },
+      "label-size":       { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Step label size (14px)" },
+      "label-weight":     { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",  "$description": "Step label weight" },
+      "desc-size":        { "$type": "dimension",   "$value": "{font.component.size.xs}",       "$description": "Step description size (12px)" }
     }
   }
 }

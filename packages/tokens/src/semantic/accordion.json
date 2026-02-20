@@ -20,5 +20,12 @@
       "content-padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px content horizontal padding" },
       "content-padding-y":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px content vertical padding" }
     }
+  },
+  "font": {
+    "accordion": {
+      "trigger-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Trigger text font size (text-sm equivalent)" },
+      "trigger-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Trigger text font weight (font-medium)" },
+      "content-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Content text font size (text-sm equivalent)" }
+    }
   }
 }

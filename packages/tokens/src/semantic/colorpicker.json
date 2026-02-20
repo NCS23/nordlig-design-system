@@ -15,6 +15,13 @@
       "label-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Label text color" }
     }
   },
+  "font": {
+    "$description": "Level 4: ColorPicker typography tokens",
+    "cpick": {
+      "label-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Label text font size" },
+      "input-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Hex input font size" }
+    }
+  },
   "radius": {
     "$description": "Level 4: ColorPicker radii",
     "cpick": {

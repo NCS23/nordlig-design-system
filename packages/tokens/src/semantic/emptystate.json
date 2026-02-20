@@ -9,6 +9,13 @@
       "description":  { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color (muted)" }
     }
   },
+  "font": {
+    "emptystate": {
+      "title-size":   { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Title font size (text-lg)" },
+      "title-weight": { "$type": "dimension", "$value": "{font.component.weight.semibold}", "$description": "Title font weight (semibold)" },
+      "desc-size":    { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Description font size (text-sm)" }
+    }
+  },
   "spacing": {
     "emptystate": {
       "padding-y":  { "$type": "dimension", "$value": "{spacing.2xl}", "$description": "48px vertical padding" },

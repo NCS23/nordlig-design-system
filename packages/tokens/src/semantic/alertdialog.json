@@ -26,5 +26,14 @@
       "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "AlertDialog content padding" },
       "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "AlertDialog content gap" }
     }
+  },
+  "font": {
+    "alertdlg": {
+      "title-size":   { "$type": "dimension",   "$value": "{font.component.size.lg}",        "$description": "Title text size (18px)" },
+      "title-weight": { "$type": "fontWeight",   "$value": "{font.component.weight.semibold}", "$description": "Title text weight" },
+      "desc-size":    { "$type": "dimension",   "$value": "{font.component.size.sm}",        "$description": "Description text size (14px)" },
+      "action-size":  { "$type": "dimension",   "$value": "{font.component.size.sm}",        "$description": "Button text size (14px)" },
+      "action-weight":{ "$type": "fontWeight",   "$value": "{font.component.weight.medium}",   "$description": "Button text weight" }
+    }
   }
 }

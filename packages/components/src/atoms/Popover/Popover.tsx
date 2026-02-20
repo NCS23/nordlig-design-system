@@ -26,7 +26,7 @@ const PopoverContent = React.forwardRef<
       sideOffset={sideOffset}
       className={cn(
         'z-50 w-auto',
-        'bg-[var(--color-popover-bg)] text-sm',
+        'bg-[var(--color-popover-bg)] text-[length:var(--font-popover-content-size)]',
         'border border-[var(--color-popover-border)]',
         'rounded-[var(--radius-popover)]',
         '[box-shadow:var(--shadow-popover)]',

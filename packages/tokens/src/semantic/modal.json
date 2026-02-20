@@ -25,5 +25,12 @@
       "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px vertical padding" },
       "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "8px footer button gap" }
     }
+  },
+  "font": {
+    "modal": {
+      "title-size":       { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Modal title font size (text-lg equivalent)" },
+      "title-weight":     { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Modal title font weight (font-semibold)" },
+      "description-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Modal description font size (text-sm equivalent)" }
+    }
   }
 }

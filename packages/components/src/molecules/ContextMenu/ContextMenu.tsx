@@ -87,7 +87,7 @@ const ContextMenuItem = React.forwardRef<
       'gap-[var(--spacing-dropdown-item-gap)]',
       'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-dropdown-item-padding-y)]',
       'rounded-[var(--radius-dropdown-item)]',
-      'text-sm outline-none cursor-pointer select-none',
+      'text-[length:var(--font-dropdown-item-size)] outline-none cursor-pointer select-none',
       'transition-colors',
       destructive
         ? [
@@ -146,7 +146,7 @@ const ContextMenuLabel = React.forwardRef<
     ref={ref}
     className={cn(
       'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-dropdown-item-padding-y)]',
-      'text-xs font-semibold text-[var(--color-dropdown-label-text)]',
+      'text-[length:var(--font-dropdown-label-size)] [font-weight:var(--font-dropdown-label-weight)] text-[var(--color-dropdown-label-text)]',
       className
     )}
     {...props}
@@ -163,7 +163,7 @@ const ContextMenuShortcut = React.forwardRef<
   <span
     ref={ref}
     className={cn(
-      'ml-auto text-xs text-[var(--color-dropdown-label-text)]',
+      'ml-auto text-[length:var(--font-dropdown-shortcut-size)] text-[var(--color-dropdown-label-text)]',
       className
     )}
     {...props}

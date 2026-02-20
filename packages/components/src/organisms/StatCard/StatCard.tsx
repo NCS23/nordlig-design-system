@@ -5,14 +5,14 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
 const statCardVariants = cva(
-  'rounded-[var(--radius-stat-card)] border border-[var(--color-stat-card-border)] bg-[var(--color-stat-card-bg)] p-[var(--spacing-statcard-padding)]',
+  'rounded-[var(--radius-statcard)] border border-[var(--color-statcard-border)] bg-[var(--color-statcard-bg)] p-[var(--spacing-statcard-padding)] [box-shadow:var(--shadow-statcard)]',
   {
     variants: {
       variant: {
         default: '',
-        success: 'border-l-4 border-l-[var(--color-stat-card-border-success)]',
-        warning: 'border-l-4 border-l-[var(--color-stat-card-border-warning)]',
-        error: 'border-l-4 border-l-[var(--color-stat-card-border-error)]',
+        success: 'border-l-4 border-l-[var(--color-statcard-border-success)]',
+        warning: 'border-l-4 border-l-[var(--color-statcard-border-warning)]',
+        error: 'border-l-4 border-l-[var(--color-statcard-border-error)]',
       },
     },
     defaultVariants: {
@@ -60,9 +60,9 @@ const TrendIndicator: React.FC<{
   };
 
   const trendColor = {
-    up: 'text-[var(--color-stat-card-trend-up)]',
-    down: 'text-[var(--color-stat-card-trend-down)]',
-    neutral: 'text-[var(--color-stat-card-text-secondary)]',
+    up: 'text-[var(--color-statcard-trend-up)]',
+    down: 'text-[var(--color-statcard-trend-down)]',
+    neutral: 'text-[var(--color-statcard-text-secondary)]',
   };
 
   const formattedValue = direction === 'up'
@@ -72,10 +72,10 @@ const TrendIndicator: React.FC<{
       : `${value}%`;
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-[var(--spacing-statcard-trend-inner-gap)]">
       <span
         className={cn(
-          'inline-flex items-center gap-[var(--spacing-stat-card-trend-gap)] text-sm font-medium',
+          'inline-flex items-center gap-[var(--spacing-statcard-trend-gap)] text-[length:var(--font-statcard-trend-size)] [font-weight:var(--font-statcard-trend-weight)]',
           trendColor[direction]
         )}
         aria-label={`${trendLabel[direction]}: ${formattedValue}`}
@@ -84,7 +84,7 @@ const TrendIndicator: React.FC<{
         {formattedValue}
       </span>
       {label && (
-        <span className="text-xs text-[var(--color-stat-card-text-secondary)] hidden sm:inline">{label}</span>
+        <span className="text-[length:var(--font-statcard-label-size)] text-[var(--color-statcard-text-secondary)] hidden sm:inline">{label}</span>
       )}
     </div>
   );
@@ -113,11 +113,11 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
       >
         {/* Title row */}
         <div className="flex items-start justify-between">
-          <div className="flex items-center gap-[var(--spacing-stat-card-header-gap)]">
+          <div className="flex items-center gap-[var(--spacing-statcard-header-gap)]">
             {icon && (
-              <span className="text-[var(--color-stat-card-text-secondary)]">{icon}</span>
+              <span className="text-[var(--color-statcard-text-secondary)]">{icon}</span>
             )}
-            <span className="text-sm font-medium text-[var(--color-stat-card-text-secondary)]">
+            <span className="text-[length:var(--font-statcard-title-size)] [font-weight:var(--font-statcard-title-weight)] text-[var(--color-statcard-text-secondary)]">
               {title}
             </span>
           </div>
@@ -132,11 +132,11 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
 
         {/* Value */}
         <div className="mt-[var(--spacing-statcard-value-mt)]">
-          <span className="text-3xl font-bold text-[var(--color-stat-card-text-primary)]">
+          <span className="text-[length:var(--font-statcard-value-size)] [font-weight:var(--font-statcard-value-weight)] text-[var(--color-statcard-text-primary)]">
             {value}
           </span>
           {unit && (
-            <span className="ml-[var(--spacing-statcard-trend-gap)] text-lg font-normal text-[var(--color-stat-card-text-secondary)]">
+            <span className="ml-[var(--spacing-statcard-trend-gap)] text-[length:var(--font-statcard-unit-size)] [font-weight:var(--font-statcard-unit-weight)] text-[var(--color-statcard-text-secondary)]">
               {unit}
             </span>
           )}
@@ -144,7 +144,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
 
         {/* Description */}
         {description && (
-          <p className="mt-[var(--spacing-statcard-trend-mt)] text-sm text-[var(--color-stat-card-text-secondary)]">
+          <p className="mt-[var(--spacing-statcard-trend-mt)] text-[length:var(--font-statcard-desc-size)] text-[var(--color-statcard-text-secondary)]">
             {description}
           </p>
         )}

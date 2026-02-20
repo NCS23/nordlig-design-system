@@ -1,4 +1,10 @@
 {
+  "font": {
+    "$description": "Level 4: Tree typography tokens",
+    "tree": {
+      "label-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Tree node label font size" }
+    }
+  },
   "spacing": {
     "$description": "Level 4: Tree component tokens",
     "tree": {

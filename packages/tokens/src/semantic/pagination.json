@@ -13,6 +13,12 @@
       }
     }
   },
+  "font": {
+    "pagination": {
+      "item-weight":  { "$type": "dimension", "$value": "{font.component.weight.medium}", "$description": "Page button font weight" },
+      "info-size":    { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Compact variant info text font size" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Pagination size tokens — References Level 3 only",
     "pagination": {

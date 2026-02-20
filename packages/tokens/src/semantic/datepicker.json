@@ -30,7 +30,7 @@
   "sizing": {
     "$description": "Level 4: DatePicker sizing",
     "datepicker": {
-      "day-size": { "$type": "dimension", "$value": "36px", "$description": "Day cell width/height" }
+      "day-size": { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Day cell width/height" }
     }
   },
   "spacing": {
@@ -38,6 +38,17 @@
       "popover-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px popover inner padding" },
       "grid-gap":        { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "2px gap between day cells" },
       "range-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between date inputs in range picker (8px)" }
+    }
+  },
+  "font": {
+    "datepicker": {
+      "header-size":    { "$type": "dimension",   "$value": "{font.component.size.sm}",        "$description": "Month/year header size (14px)" },
+      "header-weight":  { "$type": "fontWeight",   "$value": "{font.component.weight.semibold}", "$description": "Month/year header weight" },
+      "weekday-size":   { "$type": "dimension",   "$value": "{font.component.size.xs}",        "$description": "Weekday label size (12px)" },
+      "weekday-weight": { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",   "$description": "Weekday label weight" },
+      "day-size":       { "$type": "dimension",   "$value": "{font.component.size.sm}",        "$description": "Day number size (14px)" },
+      "selected-weight":{ "$type": "fontWeight",   "$value": "{font.component.weight.semibold}", "$description": "Selected day weight" },
+      "today-weight":   { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",   "$description": "Today day weight" }
     }
   }
 }

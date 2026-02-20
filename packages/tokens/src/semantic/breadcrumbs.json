@@ -7,5 +7,11 @@
       "separator":    { "$type": "color", "$value": "{color.text.disabled}", "$description": "Breadcrumb separator color" },
       "hover-text":   { "$type": "color", "$value": "{color.text.primary}", "$description": "Breadcrumb link hover text" }
     }
+  },
+  "font": {
+    "breadcrumbs": {
+      "item-size":    { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Breadcrumb item font size" },
+      "current-weight": { "$type": "dimension", "$value": "{font.component.weight.medium}", "$description": "Current breadcrumb font weight" }
+    }
   }
 }

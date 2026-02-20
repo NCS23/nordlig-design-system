@@ -72,7 +72,7 @@ const PageShellHeader = React.forwardRef<HTMLElement, PageShellHeaderProps>(
       <header
         ref={ref}
         className={cn(
-          'flex items-center shrink-0',
+          'flex items-center shrink-0 gap-[var(--spacing-shell-header-logo-gap)]',
           'h-14 md:h-[var(--sizing-shell-header-height)]',
           'px-[var(--spacing-shell-header-px)] py-[var(--spacing-shell-header-py)]',
           'bg-[var(--color-shell-header-bg)]',

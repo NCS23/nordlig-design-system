@@ -32,7 +32,7 @@ const StepIndicator: React.FC<{
     <div
       data-stepper-indicator
       className={cn(
-        'w-[var(--sizing-stepper-indicator)] h-[var(--sizing-stepper-indicator)] rounded-full flex items-center justify-center text-sm font-medium',
+        'w-[var(--sizing-stepper-indicator)] h-[var(--sizing-stepper-indicator)] rounded-full flex items-center justify-center text-[length:var(--font-stepper-indicator-size)] [font-weight:var(--font-stepper-indicator-weight)]',
         'transition-colors duration-200',
         isCompleted && 'bg-[var(--color-stepper-completed-bg)] border-2 border-[var(--color-stepper-completed-border)] text-[var(--color-stepper-completed-text)]',
         isCurrent && 'bg-[var(--color-stepper-current-bg)] text-[var(--color-stepper-current-text)]',
@@ -155,7 +155,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
                 >
                   <span
                     className={cn(
-                      'text-sm font-medium',
+                      'text-[length:var(--font-stepper-label-size)] [font-weight:var(--font-stepper-label-weight)]',
                       isCurrent
                         ? 'text-[var(--color-stepper-label-current)]'
                         : 'text-[var(--color-stepper-label-default)]'
@@ -164,7 +164,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
                     {step.label}
                   </span>
                   {step.description && (
-                    <span className="text-xs text-[var(--color-text-muted)]">
+                    <span className="text-[length:var(--font-stepper-desc-size)] text-[var(--color-text-muted)]">
                       {step.description}
                     </span>
                   )}

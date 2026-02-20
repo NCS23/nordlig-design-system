@@ -322,7 +322,7 @@ const HexInput: React.FC<HexInputProps> = ({ value, onChange, disabled }) => {
 
   return (
     <div className="flex items-center gap-[var(--spacing-cpick-swatch-gap)]">
-      <span className="text-sm text-[var(--color-cpick-label-text)] select-none">#</span>
+      <span className="text-[length:var(--font-cpick-label-size)] text-[var(--color-cpick-label-text)] select-none">#</span>
       <input
         type="text"
         value={inputValue}
@@ -333,7 +333,7 @@ const HexInput: React.FC<HexInputProps> = ({ value, onChange, disabled }) => {
         disabled={disabled}
         aria-label="Hex color value"
         className={cn(
-          'w-20 px-2 py-1 text-sm font-mono uppercase',
+          'w-20 px-2 py-1 text-[length:var(--font-cpick-input-size)] font-mono uppercase',
           'bg-[var(--color-cpick-input-bg)]',
           'text-[var(--color-cpick-input-text)]',
           'border border-[var(--color-cpick-input-border)]',

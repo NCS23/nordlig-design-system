@@ -54,7 +54,7 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
       <span
         className={cn(
           isCurrent
-            ? 'text-[var(--color-breadcrumbs-text-current)] font-medium pointer-events-none'
+            ? 'text-[var(--color-breadcrumbs-text-current)] [font-weight:var(--font-breadcrumbs-current-weight)] pointer-events-none'
             : 'text-[var(--color-breadcrumbs-text)]'
         )}
       >
@@ -65,7 +65,7 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
     return (
       <li
         ref={ref}
-        className={cn('inline-flex items-center text-sm', className)}
+        className={cn('inline-flex items-center text-[length:var(--font-breadcrumbs-item-size)]', className)}
         {...(isCurrent ? { 'aria-current': 'page' as const } : {})}
         {...props}
       >

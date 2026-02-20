@@ -107,7 +107,7 @@ const DrawerTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Title
     ref={ref}
-    className={cn('text-lg font-semibold text-[var(--color-drawer-title)]', className)}
+    className={cn('text-[length:var(--font-drawer-title-size)] [font-weight:var(--font-drawer-title-weight)] text-[var(--color-drawer-title)]', className)}
     {...props}
   />
 ));
@@ -121,7 +121,7 @@ const DrawerDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-[var(--color-drawer-description)]', className)}
+    className={cn('text-[length:var(--font-drawer-description-size)] text-[var(--color-drawer-description)]', className)}
     {...props}
   />
 ));

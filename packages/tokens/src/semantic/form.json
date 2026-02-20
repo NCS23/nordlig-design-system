@@ -4,5 +4,12 @@
     "form": {
       "field-gap": { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between label, input, and hint in FormItem (6px)" }
     }
+  },
+  "font": {
+    "form": {
+      "label-size":    { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Label text size (14px)" },
+      "label-weight":  { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",  "$description": "Label text weight" },
+      "message-size":  { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Error/description text size (14px)" }
+    }
   }
 }

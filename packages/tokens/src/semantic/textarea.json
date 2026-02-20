@@ -21,5 +21,14 @@
       "field-gap":    { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between label, textarea, and hint (6px)" },
       "footer-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between hint and character count (8px)" }
     }
+  },
+  "font": {
+    "textarea": {
+      "label-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Label font size (text-sm equivalent)" },
+      "label-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Label font weight (font-medium)" },
+      "hint-size":    { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Helper/error text font size (text-xs equivalent)" },
+      "counter-size": { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Character counter font size (text-xs equivalent)" },
+      "counter-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Counter over-limit font weight (font-medium)" }
+    }
   }
 }

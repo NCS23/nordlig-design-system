@@ -34,7 +34,7 @@ export interface SessionData {
  * Styling-Varianten für die SessionCard
  */
 const sessionCardVariants = cva(
-  'relative rounded-[var(--radius-session-card)] border border-[var(--color-session-card-border)] bg-[var(--color-session-card-bg)] transition-all duration-200',
+  'relative rounded-[var(--radius-session-card)] border border-[var(--color-session-card-border)] bg-[var(--color-session-card-bg)] [box-shadow:var(--shadow-session-card-default)] transition-all duration-200',
   {
     variants: {
       size: {
@@ -45,7 +45,7 @@ const sessionCardVariants = cva(
         default: '',
         loading: '',
         error: 'border-[var(--color-session-card-border-error)] bg-[var(--color-session-card-bg-error)]',
-        interactive: 'cursor-pointer hover:border-[var(--color-session-card-border-hover)] hover:bg-[var(--color-session-card-bg-hover)] hover:[box-shadow:var(--shadow-elevation-medium)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-session-card-focus-ring)] focus-visible:ring-offset-1'
+        interactive: 'cursor-pointer hover:border-[var(--color-session-card-border-hover)] hover:bg-[var(--color-session-card-bg-hover)] hover:[box-shadow:var(--shadow-session-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-session-card-focus-ring)] focus-visible:ring-offset-1'
       }
     },
     defaultVariants: {

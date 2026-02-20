@@ -21,5 +21,12 @@
       "header-gap": { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between title and description in header (6px)" },
       "footer-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between footer buttons (8px)" }
     }
+  },
+  "font": {
+    "sheet": {
+      "title-size":       { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Sheet title font size (text-lg equivalent)" },
+      "title-weight":     { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Sheet title font weight (font-semibold)" },
+      "description-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Sheet description font size (text-sm equivalent)" }
+    }
   }
 }

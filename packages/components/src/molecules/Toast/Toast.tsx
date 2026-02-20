@@ -131,11 +131,11 @@ const Toast = React.forwardRef<
         <IconAtom icon={VariantIcon} size="md" className={iconClass} />
       </div>
       <div className="flex-1 min-w-0">
-        <ToastPrimitive.Title className="text-sm font-semibold text-[var(--color-toast-title)]">
+        <ToastPrimitive.Title className="text-[length:var(--font-toast-title-size)] [font-weight:var(--font-toast-title-weight)] text-[var(--color-toast-title)]">
           {title}
         </ToastPrimitive.Title>
         {description && (
-          <ToastPrimitive.Description className="mt-1 text-sm text-[var(--color-toast-description)]">
+          <ToastPrimitive.Description className="mt-1 text-[length:var(--font-toast-description-size)] text-[var(--color-toast-description)]">
             {description}
           </ToastPrimitive.Description>
         )}

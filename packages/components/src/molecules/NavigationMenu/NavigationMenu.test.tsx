@@ -109,7 +109,7 @@ describe('NavigationMenu', () => {
     );
     const link = screen.getByText('Dashboard');
     expect(link.className).toContain('bg-[var(--color-nav-active-bg)]');
-    expect(link.className).toContain('font-medium');
+    expect(link.className).toContain('[font-weight:var(--font-nav-link-weight)]');
   });
 
   // ─── Token Classes ──────────────────────────────────────────────────────

@@ -190,7 +190,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
             )}
             <div
               id={`group-${gi}`}
-              className="px-[var(--spacing-select-item-padding-x)] py-1 text-xs font-medium text-[var(--color-select-group-label)] uppercase tracking-wider"
+              className="px-[var(--spacing-select-item-padding-x)] py-1 text-[length:var(--font-select-group-size)] [font-weight:var(--font-select-group-weight)] text-[var(--color-select-group-label)] uppercase tracking-wider"
             >
               {group.label}
             </div>
@@ -221,7 +221,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           onKeyDown={handleKeyDown}
           onMouseEnter={() => !opt.disabled && setFocusedIndex(idx)}
           className={cn(
-            'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-sm transition-colors',
+            'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-[length:var(--font-select-item-size)] transition-colors',
             'text-[var(--color-select-item-text)]',
             opt.disabled &&
               'text-[var(--color-select-item-disabled-text)] cursor-not-allowed',
@@ -308,7 +308,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
                 className="max-h-[240px] overflow-y-auto p-[var(--spacing-select-popover-padding)]"
               >
                 {flat.length === 0 ? (
-                  <div className="px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] text-sm text-[var(--color-select-empty-text)]">
+                  <div className="px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] text-[length:var(--font-select-item-size)] text-[var(--color-select-empty-text)]">
                     Keine Optionen
                   </div>
                 ) : (

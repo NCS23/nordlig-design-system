@@ -40,7 +40,7 @@ const Tooltip: React.FC<TooltipProps> = ({
               'px-[var(--spacing-tooltip-padding-x)] py-[var(--spacing-tooltip-padding-y)]',
               'rounded-[var(--radius-tooltip)]',
               '[box-shadow:var(--shadow-tooltip)]',
-              'text-sm leading-snug',
+              'text-[length:var(--font-tooltip-content-size)] leading-snug',
               'data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95',
               'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
               'data-[side=top]:slide-in-from-bottom-2',

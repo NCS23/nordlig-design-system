@@ -1,33 +1,5 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  Home,
-  Activity,
-  TrendingUp,
-  Settings,
-  BarChart3,
-  Calendar,
-  Heart,
-  Bell,
-  Route,
-} from 'lucide-react';
 import { PageShell } from './PageShell';
-import { Icon } from '../../atoms/Icon';
-import { Heading } from '../../atoms/Heading';
-import { Text } from '../../atoms/Text';
-import { Badge } from '../../atoms/Badge';
-import { Button } from '../../atoms/Button';
-import { Separator } from '../../atoms/Separator';
-import { Avatar, AvatarFallback } from '../../atoms/Avatar';
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarItem,
-} from '../../organisms/Sidebar';
-import { StatCard } from '../../organisms/StatCard';
-import { Card, CardHeader, CardBody } from '../../organisms/Card';
 
 const meta: Meta<typeof PageShell> = {
   title: 'Templates/PageShell',
@@ -40,104 +12,46 @@ const meta: Meta<typeof PageShell> = {
 export default meta;
 type Story = StoryObj<typeof PageShell>;
 
-/* ─── Reusable Sidebar ──────────────────────────────────────────────────────── */
+/* ─── Platzhalter-Bloecke ─────────────────────────────────────────────────── */
 
-const AppSidebar = () => (
-  <Sidebar aria-label="Hauptnavigation" className="h-full">
-    <SidebarContent>
-      <SidebarGroup label="Training">
-        <SidebarItem icon={<Icon icon={Home} size={18} />} label="Dashboard" active />
-        <SidebarItem icon={<Icon icon={Activity} size={18} />} label="Aktivitaeten" badge="12" />
-        <SidebarItem icon={<Icon icon={TrendingUp} size={18} />} label="Trends" />
-        <SidebarItem icon={<Icon icon={Calendar} size={18} />} label="Kalender" />
-      </SidebarGroup>
-      <SidebarGroup label="Analyse">
-        <SidebarItem icon={<Icon icon={BarChart3} size={18} />} label="Statistiken" />
-        <SidebarItem icon={<Icon icon={Heart} size={18} />} label="HR Zonen" />
-      </SidebarGroup>
-    </SidebarContent>
-    <SidebarFooter>
-      <SidebarItem icon={<Icon icon={Settings} size={18} />} label="Einstellungen" />
-    </SidebarFooter>
-  </Sidebar>
+const PlaceholderBlock = ({ label, className = '' }: { label: string; className?: string }) => (
+  <div
+    className={`rounded-[var(--radius-component-lg,8px)] border border-dashed border-[var(--color-border-muted)] bg-[var(--color-bg-surface)] p-6 text-center text-sm text-[var(--color-text-muted)] ${className}`}
+  >
+    {label}
+  </div>
 );
 
-/* ─── Reusable Header Content ───────────────────────────────────────────────── */
+/* ─── Header ──────────────────────────────────────────────────────────────── */
 
 const HeaderContent = () => (
   <>
-    <img src="/bildmarke.svg" alt="" className="h-7 w-auto shrink-0" />
-    <Text variant="body" as="span" className="truncate font-semibold">
-      Training Analyzer
-    </Text>
-    <div className="ml-auto flex shrink-0 items-center gap-1">
-      <Button variant="ghost" size="sm" aria-label="Benachrichtigungen">
-        <Icon icon={Bell} size="sm" />
-      </Button>
-      <Separator orientation="vertical" className="mx-1 h-6" />
-      <Avatar size="sm">
-        <AvatarFallback>NR</AvatarFallback>
-      </Avatar>
+    <div className="flex items-center gap-2">
+      <div className="h-7 w-7 rounded-[var(--radius-component-md,6px)] bg-[var(--color-bg-primary)]" />
+      <span className="text-sm font-semibold text-[var(--color-text-base)]">App Name</span>
+    </div>
+    <div className="ml-auto flex items-center gap-2">
+      <div className="h-8 w-8 rounded-full bg-[var(--color-bg-surface)]" />
     </div>
   </>
 );
 
-/* ─── Dashboard Content ─────────────────────────────────────────────────────── */
+/* ─── Sidebar ─────────────────────────────────────────────────────────────── */
 
-const DashboardContent = () => (
-  <>
-    <Heading level={2} className="mb-6">
-      Dashboard
-    </Heading>
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mb-6">
-      <StatCard
-        title="Trainings"
-        value={42}
-        icon={<Icon icon={Activity} size="sm" />}
-      />
-      <StatCard
-        title="Distanz"
-        value="287"
-        unit="km"
-        icon={<Icon icon={Route} size="sm" />}
-      />
-    </div>
-    <Card>
-      <CardHeader>
-        <Heading level={3}>Letzte Aktivitaeten</Heading>
-      </CardHeader>
-      <CardBody>
-        <div className="space-y-3">
-          {[
-            { name: 'Morgenlauf', type: 'Laufen', dist: '8.2 km', date: 'Heute' },
-            { name: 'Intervall-Training', type: 'Laufen', dist: '6.1 km', date: 'Gestern' },
-            { name: 'Rennrad Tour', type: 'Radfahren', dist: '42.5 km', date: 'Mo, 17.02.' },
-          ].map((item) => (
-            <div
-              key={item.name}
-              className="flex items-center justify-between gap-3 rounded-lg border border-[var(--color-border-muted)] p-3"
-            >
-              <div className="min-w-0">
-                <Text variant="body" as="span" className="font-medium">
-                  {item.name}
-                </Text>
-                <Text variant="muted" as="span" className="ml-2 hidden sm:inline">
-                  {item.type}
-                </Text>
-              </div>
-              <div className="flex shrink-0 items-center gap-3">
-                <Badge variant="neutral" size="sm">{item.dist}</Badge>
-                <Text variant="muted" as="span" className="hidden sm:inline">{item.date}</Text>
-              </div>
-            </div>
-          ))}
-        </div>
-      </CardBody>
-    </Card>
-  </>
+const SidebarContent = () => (
+  <nav className="flex flex-col gap-1 p-2">
+    {['Dashboard', 'Projekte', 'Einstellungen', 'Hilfe'].map((item) => (
+      <div
+        key={item}
+        className="rounded-[var(--radius-component-md,6px)] px-3 py-2 text-sm text-[var(--color-text-muted)]"
+      >
+        {item}
+      </div>
+    ))}
+  </nav>
 );
 
-/* ─── Stories ────────────────────────────────────────────────────────────────── */
+/* ─── Stories ─────────────────────────────────────────────────────────────── */
 
 export const Default: Story = {
   render: () => (
@@ -146,177 +60,60 @@ export const Default: Story = {
         <HeaderContent />
       </PageShell.Header>
       <PageShell.Body>
-        <PageShell.Sidebar>
-          <AppSidebar />
-        </PageShell.Sidebar>
         <PageShell.Content>
-          <DashboardContent />
-        </PageShell.Content>
-      </PageShell.Body>
-    </PageShell>
-  ),
-};
-
-export const WithFooter: Story = {
-  render: () => (
-    <PageShell>
-      <PageShell.Header>
-        <HeaderContent />
-      </PageShell.Header>
-      <PageShell.Body>
-        <PageShell.Sidebar>
-          <AppSidebar />
-        </PageShell.Sidebar>
-        <PageShell.Content>
-          <DashboardContent />
-        </PageShell.Content>
-      </PageShell.Body>
-      <PageShell.Footer>
-        <Text variant="muted" as="span">
-          Training Analyzer v1.0
-        </Text>
-        <Separator orientation="vertical" className="mx-3 h-4" />
-        <Text variant="muted" as="span">
-          &copy; 2026 Nordlig Design System
-        </Text>
-      </PageShell.Footer>
-    </PageShell>
-  ),
-};
-
-export const NoSidebar: Story = {
-  name: 'No Sidebar',
-  render: () => (
-    <PageShell>
-      <PageShell.Header>
-        <HeaderContent />
-      </PageShell.Header>
-      <PageShell.Content maxWidth="max-w-4xl">
-        <Heading level={2} className="mb-6">
-          Einstellungen
-        </Heading>
-        <Card>
-          <CardHeader>
-            <Heading level={3}>Profil</Heading>
-          </CardHeader>
-          <CardBody>
-            <Text variant="muted">
-              Zentrierter Inhalt ohne Sidebar — ideal fuer Einstellungen, Formulare oder
-              fokussierte Workflows.
-            </Text>
-          </CardBody>
-        </Card>
-      </PageShell.Content>
-      <PageShell.Footer>
-        <Text variant="muted" as="span">
-          &copy; 2026 Nordlig Design System
-        </Text>
-      </PageShell.Footer>
-    </PageShell>
-  ),
-};
-
-export const SidebarRight: Story = {
-  name: 'Sidebar Right',
-  render: () => (
-    <PageShell sidebarPosition="right">
-      <PageShell.Header>
-        <HeaderContent />
-      </PageShell.Header>
-      <PageShell.Body>
-        <PageShell.Sidebar>
-          <AppSidebar />
-        </PageShell.Sidebar>
-        <PageShell.Content>
-          <Heading level={2} className="mb-6">
-            Content (Sidebar rechts)
-          </Heading>
-          <Card>
-            <CardBody>
-              <Text variant="muted">
-                PageShell mit rechtsseitiger Sidebar — z.B. fuer Detail-Panels oder Filter.
-              </Text>
-            </CardBody>
-          </Card>
-        </PageShell.Content>
-      </PageShell.Body>
-    </PageShell>
-  ),
-};
-
-export const ContentMaxWidth: Story = {
-  name: 'Content Max Width',
-  render: () => (
-    <PageShell>
-      <PageShell.Header>
-        <HeaderContent />
-      </PageShell.Header>
-      <PageShell.Content maxWidth="max-w-4xl">
-        <DashboardContent />
-      </PageShell.Content>
-    </PageShell>
-  ),
-};
-
-export const NonStickyHeader: Story = {
-  name: 'Non-Sticky Header',
-  render: () => (
-    <PageShell stickyHeader={false}>
-      <PageShell.Header>
-        <HeaderContent />
-      </PageShell.Header>
-      <PageShell.Content>
-        <Heading level={2} className="mb-6">
-          Scrollbarer Header
-        </Heading>
-        <div className="space-y-4">
-          {Array.from({ length: 15 }, (_, i) => (
-            <Card key={i}>
-              <CardBody>
-                <Text variant="body">
-                  Block {i + 1} — Der Header scrollt mit dem Inhalt.
-                </Text>
-              </CardBody>
-            </Card>
-          ))}
-        </div>
-      </PageShell.Content>
-    </PageShell>
-  ),
-};
-
-export const Mobile: Story = {
-  parameters: { viewport: { defaultViewport: 'mobile1' } },
-  render: () => (
-    <PageShell>
-      <PageShell.Header>
-        <img src="/bildmarke.svg" alt="" className="h-6 w-auto shrink-0" />
-        <Text variant="body" as="span" className="truncate font-semibold">
-          Training Analyzer
-        </Text>
-        <div className="ml-auto">
-          <Avatar size="sm">
-            <AvatarFallback>NR</AvatarFallback>
-          </Avatar>
-        </div>
-      </PageShell.Header>
-      <PageShell.Content>
-        <Heading level={2} className="mb-4">
-          Dashboard
-        </Heading>
-        <div className="space-y-3">
-          {[
-            { label: 'Trainings', value: '42' },
-            { label: 'Distanz', value: '287 km' },
-            { label: 'Dauer', value: '32:15 Std' },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center justify-between rounded-[var(--radius-component-md)] border border-[var(--color-border-muted)] p-3">
-              <Text variant="body" as="span" className="font-medium">{item.label}</Text>
-              <Text variant="body" as="span" className="text-lg font-semibold">{item.value}</Text>
+          <div className="flex flex-col gap-4">
+            <PlaceholderBlock label="Hauptinhalt" className="min-h-[200px]" />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <PlaceholderBlock label="Bereich A" />
+              <PlaceholderBlock label="Bereich B" />
             </div>
-          ))}
-        </div>
-      </PageShell.Content>
+          </div>
+        </PageShell.Content>
+      </PageShell.Body>
+      <PageShell.Footer>
+        <span className="text-xs text-[var(--color-text-muted)]">Footer-Inhalt</span>
+      </PageShell.Footer>
+    </PageShell>
+  ),
+};
+
+export const MitSidebar: Story = {
+  name: 'Mit Sidebar',
+  render: () => (
+    <PageShell>
+      <PageShell.Header>
+        <HeaderContent />
+      </PageShell.Header>
+      <PageShell.Body>
+        <PageShell.Sidebar>
+          <SidebarContent />
+        </PageShell.Sidebar>
+        <PageShell.Content>
+          <div className="flex flex-col gap-4">
+            <PlaceholderBlock label="Hauptinhalt" className="min-h-[300px]" />
+            <PlaceholderBlock label="Weitere Inhalte" />
+          </div>
+        </PageShell.Content>
+      </PageShell.Body>
+      <PageShell.Footer>
+        <span className="text-xs text-[var(--color-text-muted)]">Footer-Inhalt</span>
+      </PageShell.Footer>
+    </PageShell>
+  ),
+};
+
+export const OhneFooter: Story = {
+  name: 'Ohne Footer',
+  render: () => (
+    <PageShell>
+      <PageShell.Header>
+        <HeaderContent />
+      </PageShell.Header>
+      <PageShell.Body>
+        <PageShell.Content>
+          <PlaceholderBlock label="Vollbreiter Inhalt" className="min-h-[400px]" />
+        </PageShell.Content>
+      </PageShell.Body>
     </PageShell>
   ),
 };

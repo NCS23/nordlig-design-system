@@ -7,6 +7,11 @@
       "spinner": { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Spinner color" }
     }
   },
+  "font": {
+    "ldovl": {
+      "text-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Loading text font size" }
+    }
+  },
   "spacing": {
     "ldovl": {
       "gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between spinner and text" }

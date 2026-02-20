@@ -22,6 +22,12 @@
       "focus-ring":     { "$type": "color", "$value": "{color.border.focus}", "$description": "Focus ring for interactive state" }
     }
   },
+  "shadow": {
+    "session-card": {
+      "default": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Default card shadow" },
+      "hover":   { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Hover card shadow" }
+    }
+  },
   "radius": {
     "session-card": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
   },

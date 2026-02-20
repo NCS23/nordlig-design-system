@@ -152,7 +152,7 @@ const ModalTitle = React.forwardRef<
   <Dialog.Title
     ref={ref}
     className={cn(
-      'text-lg font-semibold text-[var(--color-modal-title)]',
+      'text-[length:var(--font-modal-title-size)] [font-weight:var(--font-modal-title-weight)] text-[var(--color-modal-title)]',
       className
     )}
     {...props}
@@ -169,7 +169,7 @@ const ModalDescription = React.forwardRef<
   <Dialog.Description
     ref={ref}
     className={cn(
-      'text-sm text-[var(--color-modal-description)]',
+      'text-[length:var(--font-modal-description-size)] text-[var(--color-modal-description)]',
       className
     )}
     {...props}

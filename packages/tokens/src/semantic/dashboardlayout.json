@@ -11,7 +11,7 @@
   "sizing": {
     "$description": "Level 4: DashboardLayout sizing",
     "dashboard": {
-      "header-height":           { "$type": "dimension", "$value": "56px", "$description": "Fixed header height" },
+      "header-height":           { "$type": "dimension", "$value": "{sizing.layout.header-height}", "$description": "Fixed header height" },
       "sidebar-width":           { "$type": "dimension", "$value": "240px", "$description": "Sidebar expanded width" },
       "sidebar-collapsed-width": { "$type": "dimension", "$value": "64px", "$description": "Sidebar collapsed width" }
     }

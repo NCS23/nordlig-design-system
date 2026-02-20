@@ -124,7 +124,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
                 )}
               />
             </div>
-            <p aria-live="polite" className="mt-[var(--spacing-pwinput-hint-mt)] text-xs text-[color:var(--color-pwinput-toggle)]">
+            <p aria-live="polite" className="mt-[var(--spacing-pwinput-hint-mt)] text-[length:var(--font-pwinput-hint-size)] text-[color:var(--color-pwinput-toggle)]">
               {strengthLabelMap[computedStrength]}
             </p>
           </div>

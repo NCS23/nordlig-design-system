@@ -15,11 +15,11 @@ describe('InputField', () => {
     expect(input.tagName).toBe('INPUT');
   });
 
-  it('label has font-medium', () => {
+  it('label has token-based font weight', () => {
     render(<InputField label="Name" />);
     const label = screen.getByText('Name');
     expect(label.tagName).toBe('LABEL');
-    expect(label.className).toContain('font-medium');
+    expect(label.className).toContain('[font-weight:var(--font-inputfield-label-weight)]');
   });
 
   it('renders helper text', () => {

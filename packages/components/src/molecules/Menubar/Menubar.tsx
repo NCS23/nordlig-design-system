@@ -82,7 +82,7 @@ const MenubarTrigger = React.forwardRef<
       'inline-flex items-center justify-center',
       'px-[var(--spacing-menubar-trigger-padding-x)] py-[var(--spacing-menubar-trigger-padding-y)]',
       'rounded-[var(--radius-menubar-item)]',
-      'text-sm font-medium text-[var(--color-menubar-trigger-text)]',
+      'text-[length:var(--font-menubar-trigger-size)] [font-weight:var(--font-menubar-trigger-weight)] text-[var(--color-menubar-trigger-text)]',
       'transition-colors cursor-pointer select-none outline-none',
       'hover:bg-[var(--color-menubar-trigger-hover-bg)]',
       'data-[state=open]:bg-[var(--color-menubar-trigger-active-bg)]',
@@ -140,7 +140,7 @@ const MenubarItem = React.forwardRef<
       'gap-[var(--spacing-dropdown-item-gap)]',
       'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
       'rounded-[var(--radius-dropdown-item)]',
-      'text-sm outline-none cursor-pointer select-none',
+      'text-[length:var(--font-menubar-item-size)] outline-none cursor-pointer select-none',
       'transition-colors',
       destructive
         ? [
@@ -199,7 +199,7 @@ const MenubarLabel = React.forwardRef<
     ref={ref}
     className={cn(
       'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
-      'text-xs font-semibold text-[var(--color-dropdown-label-text)]',
+      'text-[length:var(--font-menubar-label-size)] [font-weight:var(--font-menubar-label-weight)] text-[var(--color-dropdown-label-text)]',
       className
     )}
     {...props}
@@ -216,7 +216,7 @@ const MenubarShortcut = React.forwardRef<
   <span
     ref={ref}
     className={cn(
-      'ml-auto text-xs tracking-widest text-[var(--color-dropdown-label-text)]',
+      'ml-auto text-[length:var(--font-menubar-shortcut-size)] tracking-widest text-[var(--color-dropdown-label-text)]',
       className
     )}
     {...props}
@@ -237,7 +237,7 @@ const MenubarCheckboxItem = React.forwardRef<
       'relative flex items-center pl-8',
       'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
       'rounded-[var(--radius-dropdown-item)]',
-      'text-sm outline-none cursor-pointer select-none',
+      'text-[length:var(--font-menubar-item-size)] outline-none cursor-pointer select-none',
       'transition-colors',
       'text-[var(--color-dropdown-item-text)]',
       'focus:bg-[var(--color-dropdown-item-hover-bg)]',
@@ -273,7 +273,7 @@ const MenubarRadioItem = React.forwardRef<
       'relative flex items-center pl-8',
       'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
       'rounded-[var(--radius-dropdown-item)]',
-      'text-sm outline-none cursor-pointer select-none',
+      'text-[length:var(--font-menubar-item-size)] outline-none cursor-pointer select-none',
       'transition-colors',
       'text-[var(--color-dropdown-item-text)]',
       'focus:bg-[var(--color-dropdown-item-hover-bg)]',

@@ -12,9 +12,9 @@
       "item-py":        { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Item vertical padding (8px)" },
       "label-px":       { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Label horizontal padding (12px)" },
       "label-mb":       { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Label bottom margin (4px)" },
-      "badge-px":       { "$type": "dimension", "$value": "6px", "$description": "Badge horizontal padding" },
+      "badge-px":       { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Badge horizontal padding" },
       "badge-py":       { "$type": "dimension", "$value": "2px", "$description": "Badge vertical padding" },
-      "collapse-padding": { "$type": "dimension", "$value": "6px", "$description": "Collapse button padding" }
+      "collapse-padding": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Collapse button padding" }
     }
   },
   "font": {

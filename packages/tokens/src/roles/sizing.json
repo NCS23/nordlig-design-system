@@ -39,6 +39,9 @@
         "default": { "$type": "dimension", "$value": "{sizing.border-width.default}" },
         "thick":   { "$type": "dimension", "$value": "{sizing.border-width.thick}" }
       }
+    },
+    "layout": {
+      "header-height": { "$type": "dimension", "$value": "{spacing.base.14}", "$description": "56px shared header height for templates" }
     }
   }
 }

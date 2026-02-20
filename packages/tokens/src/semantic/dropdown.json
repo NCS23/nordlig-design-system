@@ -32,5 +32,13 @@
       "item-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "8px item vertical padding" },
       "item-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px gap between icon and text" }
     }
+  },
+  "font": {
+    "dropdown": {
+      "item-size":      { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Menu item font size (text-sm equivalent)" },
+      "label-size":     { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Group label font size (text-xs equivalent)" },
+      "label-weight":   { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Group label font weight (font-semibold)" },
+      "shortcut-size":  { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Shortcut text font size (text-xs equivalent)" }
+    }
   }
 }

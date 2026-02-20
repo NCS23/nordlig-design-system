@@ -190,17 +190,7 @@
   --spacing-base-1-5: 6px;
   --spacing-base-2-5: 10px;
   --spacing-base-3-5: 14px;
-  --spacing-cmb-search-py: 6px; /** 6px search input vertical padding */
-  --spacing-command-group-heading-py: 6px; /** 6px group heading vertical padding */
-  --spacing-command-item-py: 6px; /** 6px item vertical padding */
-  --spacing-menubar-item-py: 6px; /** 6px dropdown item vertical padding */
-  --spacing-multiselect-trigger-py: 6px; /** Trigger vertical padding */
-  --spacing-multiselect-search-py: 6px; /** Search input vertical padding */
-  --spacing-multiselect-item-py: 6px; /** Item vertical padding */
-  --spacing-pwinput-strength-mt: 6px; /** 6px strength indicator margin top */
-  --spacing-sidebar-badge-px: 6px; /** Badge horizontal padding */
   --spacing-sidebar-badge-py: 2px; /** Badge vertical padding */
-  --spacing-sidebar-collapse-padding: 6px; /** Collapse button padding */
   --font-base-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-base-family-serif: 'Merriweather', Georgia, serif;
   --font-base-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -236,22 +226,12 @@
   --sizing-cpick-slider-height: 12px; /** Hue/alpha slider track height */
   --sizing-cpick-thumb-size: 16px; /** Slider/field thumb size */
   --sizing-cpick-swatch-size: 24px; /** Color swatch size */
-  --sizing-cpybtn-sm: 36px; /** CopyButton size sm (36px) */
-  --sizing-cpybtn-md: 40px; /** CopyButton size md (40px) */
-  --sizing-cpybtn-lg: 44px; /** CopyButton size lg (44px, touch-target safe) */
-  --sizing-dashboard-header-height: 56px; /** Fixed header height */
   --sizing-dashboard-sidebar-width: 240px; /** Sidebar expanded width */
   --sizing-dashboard-sidebar-collapsed-width: 64px; /** Sidebar collapsed width */
-  --sizing-datepicker-day-size: 36px; /** Day cell width/height */
-  --sizing-shell-header-height: 56px; /** Fixed header height */
   --sizing-shell-footer-height: 48px; /** Fixed footer height */
-  --sizing-stepper-line-h: 1px; /** 1px horizontal line height */
-  --sizing-stepper-line-v-w: 1px; /** 1px vertical line width */
   --sizing-textarea-min-height: 100px; /** Default minimum height */
   --sizing-textarea-max-height: 400px; /** Auto-resize maximum */
   --sizing-timeline-inner-dot: 10px; /** 10px inner dot */
-  --sizing-timeline-line-w: 1px; /** 1px line width (reduced from 2px) */
-  --sizing-tpick-cell-height: 36px; /** Time cell height */
   --sizing-tpick-column-width: 64px; /** Column width per unit */
   --color-primary-1-50: var(--color-base-sky-50);
   --color-primary-1-100: var(--color-base-sky-100);
@@ -446,6 +426,7 @@
   --sizing-gap-lg: var(--spacing-base-2-5);
   --sizing-border-width-default: var(--spacing-base-px);
   --sizing-border-width-thick: var(--spacing-base-0-5);
+  --sizing-layout-header-height: var(--spacing-base-14); /** 56px shared header height for templates */
   --color-bg-paper: var(--color-neutral-1-50); /** Warm white (not pure #fff) per design principles */
   --color-bg-base: var(--color-neutral-1-50);
   --color-bg-surface: var(--color-neutral-1-100);
@@ -584,6 +565,8 @@
   --sizing-component-border-width-thick: var(--sizing-border-width-thick);
   --sizing-alert-title-weight: var(--font-weight-semibold); /** Title font weight (600) */
   --sizing-alert-desc-weight: var(--font-weight-normal); /** Description font weight (400) */
+  --sizing-dashboard-header-height: var(--sizing-layout-header-height); /** Fixed header height */
+  --sizing-shell-header-height: var(--sizing-layout-header-height); /** Fixed header height */
   --sizing-stepper-indicator: var(--spacing-xl); /** 32px indicator diameter */
   --sizing-stepper-line-v-min: var(--spacing-lg); /** 24px min vertical line height */
   --sizing-timeline-dot: var(--spacing-xl); /** 32px dot diameter */
@@ -978,16 +961,16 @@
   --color-spinner-primary: var(--color-interactive-primary);
   --color-spinner-track: var(--color-border-muted);
   --color-spinner-label: var(--color-text-muted);
-  --color-stat-card-bg: var(--color-bg-paper); /** Card background */
-  --color-stat-card-border: var(--color-border-muted); /** Default border */
-  --color-stat-card-text-primary: var(--color-text-base); /** Main value text */
-  --color-stat-card-text-secondary: var(--color-text-muted); /** Title, unit, description */
-  --color-stat-card-border-success: var(--color-border-success); /** Success variant left accent */
-  --color-stat-card-border-warning: var(--color-border-warning); /** Warning variant left accent */
-  --color-stat-card-border-error: var(--color-border-error); /** Error variant left accent */
-  --color-stat-card-trend-up: var(--color-text-success); /** Positive trend indicator */
-  --color-stat-card-trend-down: var(--color-text-error); /** Negative trend indicator */
-  --color-stat-card-trend-neutral: var(--color-text-muted); /** Neutral trend indicator */
+  --color-statcard-bg: var(--color-bg-paper); /** Card background */
+  --color-statcard-border: var(--color-border-muted); /** Default border */
+  --color-statcard-text-primary: var(--color-text-base); /** Main value text */
+  --color-statcard-text-secondary: var(--color-text-muted); /** Title, unit, description */
+  --color-statcard-border-success: var(--color-border-success); /** Success variant left accent */
+  --color-statcard-border-warning: var(--color-border-warning); /** Warning variant left accent */
+  --color-statcard-border-error: var(--color-border-error); /** Error variant left accent */
+  --color-statcard-trend-up: var(--color-text-success); /** Positive trend indicator */
+  --color-statcard-trend-down: var(--color-text-error); /** Negative trend indicator */
+  --color-statcard-trend-neutral: var(--color-text-muted); /** Neutral trend indicator */
   --color-stepper-completed-bg: var(--color-bg-success-subtle); /** Completed step bg — subtle, NOT solid */
   --color-stepper-completed-border: var(--color-border-success); /** Completed step ring */
   --color-stepper-completed-text: var(--color-text-success); /** Completed step check icon */
@@ -1155,7 +1138,7 @@
   --radius-skeleton-circle: var(--radius-component-full);
   --radius-slider-track: var(--radius-component-full); /** Slider track radius */
   --radius-slider-thumb: var(--radius-component-full); /** Slider thumb radius */
-  --radius-stat-card: var(--radius-component-lg); /** Card border radius */
+  --radius-statcard: var(--radius-component-lg); /** Card border radius */
   --radius-tabs-list: var(--radius-component-lg); /** 8px pills list radius */
   --radius-tabs-trigger: var(--radius-component-md); /** 6px pills trigger radius */
   --radius-tag: var(--radius-component-md); /** Tag border radius */
@@ -1185,7 +1168,10 @@
   --shadow-shell-header: var(--shadow-elevation-low); /** Header elevation shadow */
   --shadow-popover: var(--shadow-elevation-high); /** Elevated popover shadow */
   --shadow-select-popover: var(--shadow-elevation-medium); /** Dropdown elevation */
+  --shadow-session-card-default: var(--shadow-elevation-low); /** Default card shadow */
+  --shadow-session-card-hover: var(--shadow-elevation-medium); /** Hover card shadow */
   --shadow-sheet: var(--shadow-elevation-overlay); /** Sheet panel shadow */
+  --shadow-statcard: var(--shadow-elevation-low); /** Default card shadow (matches Card.raised) */
   --shadow-switch-thumb: var(--shadow-elevation-low); /** Thumb shadow */
   --shadow-tabs-trigger-active: var(--shadow-elevation-low); /** Pills active tab shadow */
   --shadow-tpick-popover: var(--shadow-elevation-medium); /** Popover elevation */
@@ -1229,13 +1215,16 @@
   --spacing-cmb-item-padding-x: var(--spacing-component-padding-md); /** Item horizontal padding */
   --spacing-cmb-item-padding-y: var(--spacing-component-padding-sm); /** Item vertical padding */
   --spacing-cmb-trigger-gap: var(--spacing-component-gap-sm); /** Gap between text and chevron in trigger (8px) */
+  --spacing-cmb-search-py: var(--spacing-component-gap-xs); /** 6px search input vertical padding */
   --spacing-cmb-search-px: var(--spacing-component-padding-sm); /** 12px search input horizontal padding */
   --spacing-cmb-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
   --spacing-command-padding: var(--spacing-component-padding-sm); /** Command item padding */
   --spacing-command-input-px: var(--spacing-component-padding-sm); /** 12px input wrapper horizontal padding */
   --spacing-command-list-padding: var(--spacing-component-gap-xs); /** 4px list inner padding */
   --spacing-command-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
+  --spacing-command-group-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
   --spacing-command-item-px: var(--spacing-component-padding-xs); /** 8px item horizontal padding */
+  --spacing-command-item-py: var(--spacing-component-gap-xs); /** 6px item vertical padding */
   --spacing-command-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
   --spacing-dashboard-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
   --spacing-dashboard-content-p: var(--spacing-component-padding-lg); /** Content area padding (24px) */
@@ -1282,13 +1271,17 @@
   --spacing-menubar-trigger-padding-x: var(--spacing-component-padding-md); /** Trigger horizontal padding */
   --spacing-menubar-trigger-padding-y: var(--spacing-component-padding-xs); /** Trigger vertical padding */
   --spacing-menubar-gap: var(--spacing-component-gap-xs); /** Gap between menubar items (4px) */
+  --spacing-menubar-item-py: var(--spacing-component-gap-xs); /** 6px dropdown item vertical padding */
   --spacing-modal-padding-x: var(--spacing-component-padding-lg); /** 24px horizontal padding */
   --spacing-modal-padding-y: var(--spacing-component-padding-md); /** 16px vertical padding */
   --spacing-modal-gap: var(--spacing-component-gap-md); /** 8px footer button gap */
   --spacing-multiselect-tag-gap: var(--spacing-component-gap-xs); /** Gap between tags in trigger (4px) */
   --spacing-multiselect-item-gap: var(--spacing-component-gap-sm); /** Gap between check and label in item (8px) */
   --spacing-multiselect-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
+  --spacing-multiselect-trigger-py: var(--spacing-component-gap-xs); /** Trigger vertical padding */
+  --spacing-multiselect-search-py: var(--spacing-component-gap-xs); /** Search input vertical padding */
   --spacing-multiselect-item-px: var(--spacing-component-padding-md); /** Item horizontal padding (12px) */
+  --spacing-multiselect-item-py: var(--spacing-component-gap-xs); /** Item vertical padding */
   --spacing-multiselect-section-px: var(--spacing-component-padding-sm); /** Popover section padding (8px) */
   --spacing-multiselect-selectall-px: var(--spacing-component-padding-md); /** Select-all horizontal padding (12px) */
   --spacing-multiselect-selectall-py: var(--spacing-component-gap-xs); /** Select-all vertical padding (4px) */
@@ -1303,9 +1296,11 @@
   --spacing-shell-content-p: var(--spacing-component-padding-lg); /** Content area padding (24px) */
   --spacing-shell-footer-px: var(--spacing-component-padding-lg); /** Footer horizontal padding (24px) */
   --spacing-shell-footer-py: var(--spacing-component-padding-sm); /** Footer vertical padding (12px) */
+  --spacing-shell-header-logo-gap: var(--spacing-component-gap-sm); /** Gap between logo and wordmark in header (8px) */
   --spacing-pagination-nav-gap: var(--spacing-component-gap-sm); /** Gap between pagination nav elements (8px) */
   --spacing-pagination-item-gap: var(--spacing-component-gap-xs); /** Gap between page buttons (4px) */
   --spacing-pwinput-toggle-inset: var(--spacing-component-padding-sm); /** 12px toggle button right offset */
+  --spacing-pwinput-strength-mt: var(--spacing-component-gap-xs); /** 6px strength indicator margin top */
   --spacing-pwinput-hint-mt: var(--spacing-component-gap-2xs); /** 2px hint text margin top */
   --spacing-popover-padding: var(--spacing-component-padding-md); /** 16px internal padding */
   --spacing-progress-label-gap: var(--spacing-component-gap-lg);
@@ -1342,14 +1337,16 @@
   --spacing-sidebar-item-py: var(--spacing-component-gap-md); /** Item vertical padding (8px) */
   --spacing-sidebar-label-px: var(--spacing-component-padding-md); /** Label horizontal padding (12px) */
   --spacing-sidebar-label-mb: var(--spacing-component-gap-xs); /** Label bottom margin (4px) */
+  --spacing-sidebar-badge-px: var(--spacing-component-gap-xs); /** Badge horizontal padding */
+  --spacing-sidebar-collapse-padding: var(--spacing-component-gap-xs); /** Collapse button padding */
   --spacing-slider-gap: var(--spacing-component-gap-md); /** Gap between slider and value display (12px) */
   --spacing-spinner-gap: var(--spacing-component-gap-sm); /** Gap between spinner and label (8px) */
-  --spacing-stat-card-trend-gap: var(--spacing-component-gap-xs); /** Gap in trend indicator (4px) */
-  --spacing-stat-card-header-gap: var(--spacing-component-gap-sm); /** Gap between icon and title (8px) */
   --spacing-statcard-padding: var(--spacing-component-padding-lg); /** 24px card padding */
   --spacing-statcard-value-mt: var(--spacing-component-gap-sm); /** 8px above value */
   --spacing-statcard-trend-mt: var(--spacing-component-gap-xs); /** 4px above trend */
   --spacing-statcard-trend-gap: var(--spacing-component-gap-xs); /** 4px trend arrow-text gap */
+  --spacing-statcard-trend-inner-gap: var(--spacing-component-gap-2xs); /** 4px gap within trend indicator */
+  --spacing-statcard-header-gap: var(--spacing-component-gap-sm); /** Gap between icon and title (8px) */
   --spacing-stepper-step-gap: var(--spacing-component-gap-md); /** 12px gap between indicator and content */
   --spacing-stepper-content-gap: var(--spacing-component-gap-sm); /** 8px gap within step content */
   --spacing-switch-field-gap: var(--spacing-component-gap-lg); /** Gap between switch and label area (16px) */
@@ -1406,6 +1403,14 @@
   --font-heading-h6-size: var(--font-heading-size-xs); /** h6 font size (1rem / text-base) */
   --font-heading-h6-weight: var(--font-component-weight-medium); /** h6 font weight (500) */
   --font-heading-h6-line-height: var(--font-heading-line-height-xs); /** h6 line-height (24px / 1.5x) */
+  --font-accordion-trigger-size: var(--font-component-size-sm); /** Trigger text font size (text-sm equivalent) */
+  --font-accordion-trigger-weight: var(--font-component-weight-medium); /** Trigger text font weight (font-medium) */
+  --font-accordion-content-size: var(--font-component-size-sm); /** Content text font size (text-sm equivalent) */
+  --font-alertdlg-title-size: var(--font-component-size-lg); /** Title text size (18px) */
+  --font-alertdlg-title-weight: var(--font-component-weight-semibold); /** Title text weight */
+  --font-alertdlg-desc-size: var(--font-component-size-sm); /** Description text size (14px) */
+  --font-alertdlg-action-size: var(--font-component-size-sm); /** Button text size (14px) */
+  --font-alertdlg-action-weight: var(--font-component-weight-medium); /** Button text weight */
   --font-avatar-fallback-weight: var(--font-component-weight-medium); /** Fallback initials font weight (500) */
   --font-avatar-sm-size: var(--font-component-size-xs); /** Fallback text size sm (text-xs) */
   --font-avatar-md-size: var(--font-component-size-sm); /** Fallback text size md (text-sm) */
@@ -1414,38 +1419,104 @@
   --font-banner-size: var(--font-component-size-sm); /** Banner content font size (text-sm) */
   --font-bq-cite-size: var(--font-component-size-sm); /** Citation font size (14px) */
   --font-bq-cite-weight: var(--font-component-weight-medium); /** Citation author font weight (500) */
+  --font-breadcrumbs-item-size: var(--font-component-size-sm); /** Breadcrumb item font size */
+  --font-breadcrumbs-current-weight: var(--font-component-weight-medium); /** Current breadcrumb font weight */
   --font-btn-weight: var(--font-component-weight-medium); /** Button font weight (500) */
+  --font-chart-tooltip-size: var(--font-component-size-sm); /** Chart tooltip font size */
+  --font-chart-tooltip-weight: var(--font-component-weight-medium); /** Chart tooltip label/value font weight */
+  --font-chart-legend-size: var(--font-component-size-sm); /** Chart legend item font size */
   --font-checkbox-label-size: var(--font-component-size-sm); /** Label font size 14px (text-sm) */
   --font-checkbox-desc-size: var(--font-caption-size); /** Description font size 12px (text-xs) */
   --font-checkbox-label-line-height: var(--font-component-line-height-sm); /** 20px */
   --font-checkbox-desc-line-height: var(--font-component-line-height-xs); /** 18px */
   --font-code-size: var(--font-component-size-sm); /** Code font size (14px) */
+  --font-cpick-label-size: var(--font-component-size-sm); /** Label text font size */
+  --font-cpick-input-size: var(--font-component-size-sm); /** Hex input font size */
+  --font-cmb-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-cmb-input-size: var(--font-component-size-sm); /** Search input text size (14px) */
+  --font-cmb-heading-size: var(--font-component-size-xs); /** Group heading size (12px) */
+  --font-cmb-heading-weight: var(--font-component-weight-medium); /** Group heading weight */
+  --font-command-input-size: var(--font-component-size-sm); /** Input text size (14px) */
+  --font-command-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-command-heading-size: var(--font-component-size-xs); /** Group heading size (12px) */
+  --font-command-heading-weight: var(--font-component-weight-medium); /** Group heading weight */
+  --font-command-shortcut-size: var(--font-component-size-xs); /** Shortcut text size (12px) */
+  --font-datatable-pagination-size: var(--font-component-size-sm); /** Pagination info font size */
+  --font-datepicker-header-size: var(--font-component-size-sm); /** Month/year header size (14px) */
+  --font-datepicker-header-weight: var(--font-component-weight-semibold); /** Month/year header weight */
+  --font-datepicker-weekday-size: var(--font-component-size-xs); /** Weekday label size (12px) */
+  --font-datepicker-weekday-weight: var(--font-component-weight-medium); /** Weekday label weight */
+  --font-datepicker-day-size: var(--font-component-size-sm); /** Day number size (14px) */
+  --font-datepicker-selected-weight: var(--font-component-weight-semibold); /** Selected day weight */
+  --font-datepicker-today-weight: var(--font-component-weight-medium); /** Today day weight */
+  --font-dialog-title-size: var(--font-component-size-lg); /** Dialog title font size (text-lg equivalent) */
+  --font-dialog-title-weight: var(--font-component-weight-semibold); /** Dialog title font weight (font-semibold) */
+  --font-dialog-description-size: var(--font-component-size-sm); /** Dialog description font size (text-sm equivalent) */
+  --font-drawer-title-size: var(--font-component-size-lg); /** Drawer title font size (text-lg equivalent) */
+  --font-drawer-title-weight: var(--font-component-weight-semibold); /** Drawer title font weight (font-semibold) */
+  --font-drawer-description-size: var(--font-component-size-sm); /** Drawer description font size (text-sm equivalent) */
+  --font-dropdown-item-size: var(--font-component-size-sm); /** Menu item font size (text-sm equivalent) */
+  --font-dropdown-label-size: var(--font-component-size-xs); /** Group label font size (text-xs equivalent) */
+  --font-dropdown-label-weight: var(--font-component-weight-semibold); /** Group label font weight (font-semibold) */
+  --font-dropdown-shortcut-size: var(--font-component-size-xs); /** Shortcut text font size (text-xs equivalent) */
+  --font-emptystate-title-size: var(--font-component-size-lg); /** Title font size (text-lg) */
+  --font-emptystate-title-weight: var(--font-component-weight-semibold); /** Title font weight (semibold) */
+  --font-emptystate-desc-size: var(--font-component-size-sm); /** Description font size (text-sm) */
   --font-fileupload-instruction-size: var(--font-component-size-sm); /** Instruction text size (14px) */
   --font-fileupload-instruction-weight: var(--font-component-weight-medium); /** Instruction text weight */
   --font-fileupload-filename-size: var(--font-component-size-sm); /** File name size (14px) */
   --font-fileupload-hint-size: var(--font-component-size-xs); /** Hint/sub/size text (12px) */
+  --font-form-label-size: var(--font-component-size-sm); /** Label text size (14px) */
+  --font-form-label-weight: var(--font-component-weight-medium); /** Label text weight */
+  --font-form-message-size: var(--font-component-size-sm); /** Error/description text size (14px) */
+  --font-hovercard-content-size: var(--font-component-size-sm); /** HoverCard content font size */
+  --font-inputfield-label-weight: var(--font-component-weight-medium); /** Label font weight */
   --font-inputotp-size: var(--font-component-size-sm); /** OTP digit font size (text-sm) */
   --font-inputotp-weight: var(--font-component-weight-medium); /** OTP digit font weight (500) */
   --font-kbd-md-size: var(--font-component-size-xs); /** Kbd md font size (12px) */
   --font-kbd-lg-size: var(--font-component-size-sm); /** Kbd lg font size (14px) */
   --font-label-size: var(--font-component-size-sm); /** Label font size (14px) */
   --font-label-weight: var(--font-component-weight-medium); /** Label font weight (500) */
+  --font-ldovl-text-size: var(--font-component-size-sm); /** Loading text font size */
+  --font-menubar-trigger-size: var(--font-component-size-sm); /** Trigger text size (14px) */
+  --font-menubar-trigger-weight: var(--font-component-weight-medium); /** Trigger text weight */
+  --font-menubar-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-menubar-label-size: var(--font-component-size-xs); /** Label text size (12px) */
+  --font-menubar-label-weight: var(--font-component-weight-semibold); /** Label text weight */
+  --font-menubar-shortcut-size: var(--font-component-size-xs); /** Shortcut text size (12px) */
+  --font-modal-title-size: var(--font-component-size-lg); /** Modal title font size (text-lg equivalent) */
+  --font-modal-title-weight: var(--font-component-weight-semibold); /** Modal title font weight (font-semibold) */
+  --font-modal-description-size: var(--font-component-size-sm); /** Modal description font size (text-sm equivalent) */
   --font-multiselect-item-size: var(--font-component-size-sm); /** Item text size (14px) */
   --font-multiselect-selectall-size: var(--font-component-size-xs); /** Select-all text size (12px) */
   --font-multiselect-selectall-weight: var(--font-component-weight-medium); /** Select-all weight */
   --font-multiselect-group-label-size: var(--font-component-size-xs); /** Group label size (12px) */
   --font-multiselect-group-label-weight: var(--font-component-weight-medium); /** Group label weight */
+  --font-nav-trigger-size: var(--font-component-size-sm); /** Trigger text font size (text-sm equivalent) */
+  --font-nav-trigger-weight: var(--font-component-weight-medium); /** Trigger text font weight (font-medium) */
+  --font-nav-link-size: var(--font-component-size-sm); /** Link text font size (text-sm equivalent) */
+  --font-nav-link-weight: var(--font-component-weight-medium); /** Active link font weight (font-medium) */
   --font-numberinput-weight: var(--font-component-weight-medium); /** Input value font weight (500) */
+  --font-pagination-item-weight: var(--font-component-weight-medium); /** Page button font weight */
+  --font-pagination-info-size: var(--font-component-size-sm); /** Compact variant info text font size */
+  --font-pwinput-hint-size: var(--font-component-size-xs); /** Strength hint text font size */
+  --font-popover-content-size: var(--font-component-size-sm); /** Popover content font size */
   --font-progress-label-size: var(--font-component-size-sm); /** ProgressField label font size (text-sm) */
   --font-progress-label-weight: var(--font-component-weight-medium); /** ProgressField label font weight (500) */
   --font-progress-value-size: var(--font-component-size-sm); /** ProgressField value font size (text-sm) */
   --font-radio-label-size: var(--font-component-size-sm); /** 14px label text */
   --font-radio-label-weight: var(--font-component-weight-medium); /** 500 label weight */
   --font-radio-description-size: var(--font-component-size-xs); /** 12px description text */
+  --font-select-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-select-group-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-select-group-weight: var(--font-component-weight-medium); /** Group label weight */
   --font-session-card-title-weight: var(--font-component-weight-semibold); /** Title font weight */
   --font-session-card-value-weight: var(--font-component-weight-medium); /** Metric value/duration weight */
   --font-session-card-text-size: var(--font-component-size-sm); /** Body text size — 14px */
   --font-session-card-hint-size: var(--font-component-size-xs); /** Label/hint text size — 12px */
+  --font-sheet-title-size: var(--font-component-size-lg); /** Sheet title font size (text-lg equivalent) */
+  --font-sheet-title-weight: var(--font-component-weight-semibold); /** Sheet title font weight (font-semibold) */
+  --font-sheet-description-size: var(--font-component-size-sm); /** Sheet description font size (text-sm equivalent) */
   --font-sidebar-label-size: var(--font-component-size-xs); /** Group label size (12px) */
   --font-sidebar-label-weight: var(--font-component-weight-semibold); /** Group label weight */
   --font-sidebar-item-size: var(--font-component-size-sm); /** Item text size (14px) */
@@ -1454,9 +1525,26 @@
   --font-slider-value-size: var(--font-component-size-sm); /** Slider value display font size (text-sm) */
   --font-slider-value-weight: var(--font-component-weight-medium); /** Slider value display font weight (500) */
   --font-spinner-label-size: var(--font-component-size-sm); /** Spinner label font size (text-sm) */
+  --font-statcard-title-size: var(--font-component-size-sm); /** Title text size (14px) */
+  --font-statcard-title-weight: var(--font-component-weight-medium); /** Title font weight */
+  --font-statcard-value-size: var(--font-heading-size-lg); /** Main value size (30px) */
+  --font-statcard-value-weight: var(--font-component-weight-semibold); /** Main value weight */
+  --font-statcard-unit-size: var(--font-component-size-lg); /** Unit text size (18px) */
+  --font-statcard-unit-weight: var(--font-component-weight-normal); /** Unit font weight */
+  --font-statcard-desc-size: var(--font-component-size-sm); /** Description text size (14px) */
+  --font-statcard-trend-size: var(--font-component-size-sm); /** Trend value size (14px) */
+  --font-statcard-trend-weight: var(--font-component-weight-medium); /** Trend value weight */
+  --font-statcard-label-size: var(--font-component-size-xs); /** Trend label size (12px) */
+  --font-stepper-indicator-size: var(--font-component-size-sm); /** Indicator number size (14px) */
+  --font-stepper-indicator-weight: var(--font-component-weight-medium); /** Indicator number weight */
+  --font-stepper-label-size: var(--font-component-size-sm); /** Step label size (14px) */
+  --font-stepper-label-weight: var(--font-component-weight-medium); /** Step label weight */
+  --font-stepper-desc-size: var(--font-component-size-xs); /** Step description size (12px) */
   --font-switch-label-size: var(--font-component-size-sm); /** SwitchField label font size (text-sm) */
   --font-switch-label-weight: var(--font-component-weight-medium); /** SwitchField label font weight (500) */
   --font-switch-desc-size: var(--font-component-size-xs); /** SwitchField description font size (text-xs) */
+  --font-tabs-trigger-size: var(--font-component-size-sm); /** Tab trigger font size */
+  --font-tabs-trigger-weight: var(--font-component-weight-medium); /** Tab trigger font weight */
   --font-tag-weight: var(--font-component-weight-medium); /** Tag font weight (500) */
   --font-tag-sm-size: var(--font-component-size-xs); /** Tag sm font size (12px) */
   --font-tag-md-size: var(--font-component-size-sm); /** Tag md font size (14px) */
@@ -1464,10 +1552,27 @@
   --font-text-caption-size: var(--font-component-size-sm); /** Caption variant font size (text-sm) */
   --font-text-small-size: var(--font-component-size-xs); /** Small variant font size (text-xs) */
   --font-text-muted-size: var(--font-component-size-sm); /** Muted variant font size (text-sm) */
+  --font-textarea-label-size: var(--font-component-size-sm); /** Label font size (text-sm equivalent) */
+  --font-textarea-label-weight: var(--font-component-weight-medium); /** Label font weight (font-medium) */
+  --font-textarea-hint-size: var(--font-component-size-xs); /** Helper/error text font size (text-xs equivalent) */
+  --font-textarea-counter-size: var(--font-component-size-xs); /** Character counter font size (text-xs equivalent) */
+  --font-textarea-counter-weight: var(--font-component-weight-medium); /** Counter over-limit font weight (font-medium) */
+  --font-timeline-timestamp-size: var(--font-component-size-xs); /** Timestamp text size (12px) */
+  --font-timeline-title-size: var(--font-component-size-sm); /** Title text size (14px) */
+  --font-timeline-title-weight: var(--font-component-weight-medium); /** Title text weight */
+  --font-timeline-desc-size: var(--font-component-size-sm); /** Description text size (14px) */
   --font-tpick-cell-size: var(--font-component-size-sm); /** Time cell font size (14px) */
   --font-tpick-label-size: var(--font-component-size-xs); /** Column label font size (12px) */
   --font-tpick-label-weight: var(--font-component-weight-medium); /** Column label font weight (500) */
+  --font-toast-title-size: var(--font-component-size-sm); /** Toast title font size (text-sm equivalent) */
+  --font-toast-title-weight: var(--font-component-weight-semibold); /** Toast title font weight (font-semibold) */
+  --font-toast-description-size: var(--font-component-size-sm); /** Toast description font size (text-sm equivalent) */
   --font-toggle-weight: var(--font-component-weight-medium); /** Toggle/ToggleGroup font weight (500) */
+  --font-toolbar-btn-size: var(--font-component-size-sm); /** Button text size (14px) */
+  --font-toolbar-btn-weight: var(--font-component-weight-medium); /** Button text weight */
+  --font-toolbar-link-size: var(--font-component-size-sm); /** Link text size (14px) */
+  --font-tooltip-content-size: var(--font-component-size-sm); /** Tooltip content font size */
+  --font-tree-label-size: var(--font-component-size-sm); /** Tree node label font size */
   --sizing-alert-border-width: var(--sizing-component-track-sm); /** Left accent border width (4px) */
   --sizing-alert-font-size: var(--font-component-size-sm); /** Text font size (14px) */
   --sizing-alert-line-height: var(--font-component-line-height-sm); /** Text line height (21px) */
@@ -1514,6 +1619,10 @@
   --sizing-checkbox-box-size: var(--sizing-component-icon-control); /** Checkbox box size (20px) */
   --sizing-checkbox-icon-size: var(--sizing-component-icon-sm); /** Check icon size inside checkbox (16px) */
   --sizing-checkbox-border-width: var(--sizing-component-border-width-thick); /** 2px */
+  --sizing-cpybtn-sm: var(--sizing-component-height-sm); /** CopyButton size sm (36px) */
+  --sizing-cpybtn-md: var(--sizing-component-height-md); /** CopyButton size md (40px) */
+  --sizing-cpybtn-lg: var(--sizing-component-height-lg); /** CopyButton size lg (44px, touch-target safe) */
+  --sizing-datepicker-day-size: var(--sizing-component-height-sm); /** Day cell width/height */
   --sizing-icon-sm: var(--sizing-component-icon-sm); /** Small icon (16x16) */
   --sizing-icon-md: var(--sizing-component-icon-control); /** Medium icon (20x20) — default */
   --sizing-icon-lg: var(--sizing-component-icon-md); /** Large icon (24x24) */
@@ -1555,10 +1664,14 @@
   --sizing-spinner-md: var(--sizing-component-icon-md);
   --sizing-spinner-lg: var(--sizing-component-icon-lg);
   --sizing-spinner-xl: var(--sizing-component-icon-xl);
+  --sizing-stepper-line-h: var(--sizing-component-border-width-default); /** 1px horizontal line height */
+  --sizing-stepper-line-v-w: var(--sizing-component-border-width-default); /** 1px vertical line width */
   --sizing-switch-track-height: var(--sizing-component-icon-md); /** Switch track height (24px = h-6) */
   --sizing-switch-track-width: var(--sizing-component-height-lg); /** Switch track width (44px = w-11) */
   --sizing-switch-thumb-size: var(--sizing-component-icon-control); /** Switch thumb size (20px) */
   --sizing-tag-border-width: var(--sizing-component-border-width-default); /** Tag border width (1px) */
+  --sizing-timeline-line-w: var(--sizing-component-border-width-default); /** 1px line width (reduced from 2px) */
+  --sizing-tpick-cell-height: var(--sizing-component-height-sm); /** Time cell height */
   --sizing-toggle-sm-height: var(--sizing-component-height-sm); /** Toggle item height sm */
   --sizing-toggle-sm-padding-x: var(--sizing-component-padding-x-sm); /** Toggle item horizontal padding sm */
   --sizing-toggle-sm-font-size: var(--font-component-size-sm); /** Toggle item font size sm */

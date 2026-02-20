@@ -74,7 +74,7 @@ const NavigationMenuTrigger = React.forwardRef<
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(
-      'group inline-flex items-center gap-[var(--spacing-navmenu-gap)] px-[var(--spacing-navmenu-trigger-px)] py-[var(--spacing-navmenu-trigger-py)] text-sm font-medium',
+      'group inline-flex items-center gap-[var(--spacing-navmenu-gap)] px-[var(--spacing-navmenu-trigger-px)] py-[var(--spacing-navmenu-trigger-py)] text-[length:var(--font-nav-trigger-size)] [font-weight:var(--font-nav-trigger-weight)]',
       'rounded-[var(--radius-nav)]',
       'text-[var(--color-nav-text)]',
       'hover:bg-[var(--color-nav-hover-bg)]',
@@ -130,13 +130,13 @@ const NavigationMenuLink = React.forwardRef<
   <NavigationMenuPrimitive.Link
     ref={ref}
     className={cn(
-      'block px-[var(--spacing-navmenu-trigger-px)] py-[var(--spacing-navmenu-trigger-py)] text-sm',
+      'block px-[var(--spacing-navmenu-trigger-px)] py-[var(--spacing-navmenu-trigger-py)] text-[length:var(--font-nav-link-size)]',
       'rounded-[var(--radius-nav)]',
       'text-[var(--color-nav-text)]',
       'hover:bg-[var(--color-nav-hover-bg)]',
       'transition-colors',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-nav-focus-ring)] focus-visible:ring-offset-1',
-      active && 'bg-[var(--color-nav-active-bg)] font-medium',
+      active && 'bg-[var(--color-nav-active-bg)] [font-weight:var(--font-nav-link-weight)]',
       className
     )}
     active={active}

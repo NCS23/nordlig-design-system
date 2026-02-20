@@ -9,6 +9,11 @@
       "empty-text":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Empty state text" }
     }
   },
+  "font": {
+    "datatable": {
+      "pagination-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Pagination info font size" }
+    }
+  },
   "spacing": {
     "datatable": {
       "toolbar-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Toolbar padding" },

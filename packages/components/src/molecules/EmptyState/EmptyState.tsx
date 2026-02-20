@@ -31,11 +31,11 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
             {icon}
           </div>
         )}
-        <h3 className="text-lg font-semibold text-[var(--color-emptystate-title)] mb-[var(--spacing-emptystate-title-mb)]">
+        <h3 className="text-[length:var(--font-emptystate-title-size)] [font-weight:var(--font-emptystate-title-weight)] text-[var(--color-emptystate-title)] mb-[var(--spacing-emptystate-title-mb)]">
           {title}
         </h3>
         {description && (
-          <p className="text-sm text-[var(--color-emptystate-description)] max-w-sm mb-[var(--spacing-emptystate-desc-mb)]">
+          <p className="text-[length:var(--font-emptystate-desc-size)] text-[var(--color-emptystate-description)] max-w-sm mb-[var(--spacing-emptystate-desc-mb)]">
             {description}
           </p>
         )}

@@ -27,5 +27,12 @@
       "btn-padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Button horizontal padding" },
       "btn-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Button vertical padding" }
     }
+  },
+  "font": {
+    "toolbar": {
+      "btn-size":    { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Button text size (14px)" },
+      "btn-weight":  { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",  "$description": "Button text weight" },
+      "link-size":   { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Link text size (14px)" }
+    }
   }
 }

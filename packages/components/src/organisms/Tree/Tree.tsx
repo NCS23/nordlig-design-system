@@ -153,7 +153,7 @@ function TreeNodeItem({
         )}
 
         {/* Label */}
-        <span className="text-sm text-[var(--color-text-base)] select-none">
+        <span className="text-[length:var(--font-tree-label-size)] text-[var(--color-text-base)] select-none">
           {node.label}
         </span>
       </div>

@@ -25,7 +25,7 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="text-[length:var(--sizing-input-sm-font-size)] font-medium text-[var(--color-input-text)]"
+            className="text-[length:var(--sizing-input-sm-font-size)] [font-weight:var(--font-inputfield-label-weight)] text-[var(--color-input-text)]"
           >
             {label}
           </label>

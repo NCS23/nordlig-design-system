@@ -77,7 +77,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
     const isLastPage = currentPage >= totalPages;
 
     const baseButtonClasses = cn(
-      'w-[var(--sizing-pagination-item-size)] h-[var(--sizing-pagination-item-size)] flex items-center justify-center text-[length:var(--sizing-pagination-font-size)] font-medium',
+      'w-[var(--sizing-pagination-item-size)] h-[var(--sizing-pagination-item-size)] flex items-center justify-center text-[length:var(--sizing-pagination-font-size)] [font-weight:var(--font-pagination-item-weight)]',
       'rounded-[var(--radius-pagination-item)]',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
     );
@@ -118,7 +118,7 @@ const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
           >
             <Icon icon={ChevronLeft} size="sm" />
           </button>
-          <span className="text-sm text-[var(--color-pagination-item-text)] px-2">
+          <span className="text-[length:var(--font-pagination-info-size)] text-[var(--color-pagination-item-text)] px-2">
             Seite {currentPage} von {totalPages}
           </span>
           <button

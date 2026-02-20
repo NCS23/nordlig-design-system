@@ -13,6 +13,12 @@
       "content-text":         { "$type": "color", "$value": "{color.text.base}", "$description": "Tab content text" }
     }
   },
+  "font": {
+    "tabs": {
+      "trigger-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Tab trigger font size" },
+      "trigger-weight": { "$type": "dimension", "$value": "{font.component.weight.medium}", "$description": "Tab trigger font weight" }
+    }
+  },
   "shadow": {
     "tabs": {
       "trigger-active": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Pills active tab shadow" }

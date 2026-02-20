@@ -20,5 +20,12 @@
       "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Dialog content padding" },
       "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Dialog content gap" }
     }
+  },
+  "font": {
+    "dialog": {
+      "title-size":       { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Dialog title font size (text-lg equivalent)" },
+      "title-weight":     { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Dialog title font weight (font-semibold)" },
+      "description-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Dialog description font size (text-sm equivalent)" }
+    }
   }
 }

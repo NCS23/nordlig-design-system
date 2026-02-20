@@ -29,5 +29,12 @@
       "gap":              { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "8px gap between icon/content/close" },
       "viewport-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px distance from screen edges" }
     }
+  },
+  "font": {
+    "toast": {
+      "title-size":       { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Toast title font size (text-sm equivalent)" },
+      "title-weight":     { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Toast title font weight (font-semibold)" },
+      "description-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Toast description font size (text-sm equivalent)" }
+    }
   }
 }

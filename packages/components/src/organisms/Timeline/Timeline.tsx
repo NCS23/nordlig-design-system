@@ -97,15 +97,15 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
           {/* Content */}
           <div className="ml-[var(--spacing-timeline-content-ml)] flex-1 min-w-0">
             {timestamp && (
-              <span className="text-xs text-[var(--color-timeline-timestamp)]">
+              <span className="text-[length:var(--font-timeline-timestamp-size)] text-[var(--color-timeline-timestamp)]">
                 {timestamp}
               </span>
             )}
-            <h4 className="text-sm font-medium text-[var(--color-timeline-title)]">
+            <h4 className="text-[length:var(--font-timeline-title-size)] [font-weight:var(--font-timeline-title-weight)] text-[var(--color-timeline-title)]">
               {title}
             </h4>
             {description && (
-              <p className="text-sm text-[var(--color-timeline-description)] mt-0.5">
+              <p className="text-[length:var(--font-timeline-desc-size)] text-[var(--color-timeline-description)] mt-0.5">
                 {description}
               </p>
             )}

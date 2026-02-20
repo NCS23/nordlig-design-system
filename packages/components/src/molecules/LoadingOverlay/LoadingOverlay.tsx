@@ -47,7 +47,7 @@ const LoadingOverlay = React.forwardRef<HTMLDivElement, LoadingOverlayProps>(
           className="text-[color:var(--color-ldovl-spinner)]"
         />
         {text && (
-          <p className="mt-[var(--spacing-ldovl-gap)] text-sm text-[color:var(--color-ldovl-text)]">
+          <p className="mt-[var(--spacing-ldovl-gap)] text-[length:var(--font-ldovl-text-size)] text-[color:var(--color-ldovl-text)]">
             {text}
           </p>
         )}

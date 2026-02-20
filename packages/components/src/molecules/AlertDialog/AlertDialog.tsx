@@ -101,7 +101,7 @@ const AlertDialogTitle = React.forwardRef<
   <AlertDialogPrimitive.Title
     ref={ref}
     className={cn(
-      'text-lg font-semibold text-[var(--color-alertdlg-title)]',
+      'text-[length:var(--font-alertdlg-title-size)] [font-weight:var(--font-alertdlg-title-weight)] text-[var(--color-alertdlg-title)]',
       className
     )}
     {...props}
@@ -118,7 +118,7 @@ const AlertDialogDescription = React.forwardRef<
   <AlertDialogPrimitive.Description
     ref={ref}
     className={cn(
-      'text-sm text-[var(--color-alertdlg-description)]',
+      'text-[length:var(--font-alertdlg-desc-size)] text-[var(--color-alertdlg-description)]',
       className
     )}
     {...props}
@@ -150,7 +150,7 @@ const AlertDialogAction = React.forwardRef<
     className={cn(
       'inline-flex items-center justify-center',
       'rounded-[var(--radius-alertdlg)]',
-      'min-h-[44px] px-4 py-2 text-sm font-medium',
+      'min-h-[44px] px-4 py-2 text-[length:var(--font-alertdlg-action-size)] [font-weight:var(--font-alertdlg-action-weight)]',
       'transition-colors',
       'bg-[var(--color-alertdlg-action-bg)]',
       'text-[var(--color-alertdlg-action-text)]',
@@ -174,7 +174,7 @@ const AlertDialogCancel = React.forwardRef<
     className={cn(
       'inline-flex items-center justify-center',
       'rounded-[var(--radius-alertdlg)]',
-      'min-h-[44px] px-4 py-2 text-sm font-medium',
+      'min-h-[44px] px-4 py-2 text-[length:var(--font-alertdlg-action-size)] [font-weight:var(--font-alertdlg-action-weight)]',
       'transition-colors',
       'bg-[var(--color-alertdlg-cancel-bg)]',
       'text-[var(--color-alertdlg-cancel-text)]',

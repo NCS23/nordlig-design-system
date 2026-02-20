@@ -6,6 +6,11 @@
       "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "HoverCard border" }
     }
   },
+  "font": {
+    "hovercard": {
+      "content-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "HoverCard content font size" }
+    }
+  },
   "shadow": {
     "hovercard": { "$type": "shadow", "$value": "{shadow.elevation.high}", "$description": "HoverCard shadow" }
   },

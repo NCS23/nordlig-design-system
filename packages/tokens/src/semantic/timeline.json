@@ -32,7 +32,15 @@
     "timeline": {
       "dot":       { "$type": "dimension", "$value": "{spacing.xl}", "$description": "32px dot diameter" },
       "inner-dot": { "$type": "dimension", "$value": "10px", "$description": "10px inner dot" },
-      "line-w":    { "$type": "dimension", "$value": "1px", "$description": "1px line width (reduced from 2px)" }
+      "line-w":    { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "1px line width (reduced from 2px)" }
+    }
+  },
+  "font": {
+    "timeline": {
+      "timestamp-size": { "$type": "dimension",   "$value": "{font.component.size.xs}",       "$description": "Timestamp text size (12px)" },
+      "title-size":     { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Title text size (14px)" },
+      "title-weight":   { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",  "$description": "Title text weight" },
+      "desc-size":      { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Description text size (14px)" }
     }
   }
 }

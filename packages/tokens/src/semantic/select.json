@@ -47,5 +47,12 @@
       "item-gap":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and text in item" },
       "trigger-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap in trigger between content and chevron (8px)" }
     }
+  },
+  "font": {
+    "select": {
+      "item-size":    { "$type": "dimension",   "$value": "{font.component.size.sm}",       "$description": "Item text size (14px)" },
+      "group-size":   { "$type": "dimension",   "$value": "{font.component.size.xs}",       "$description": "Group label size (12px)" },
+      "group-weight": { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",  "$description": "Group label weight" }
+    }
   }
 }

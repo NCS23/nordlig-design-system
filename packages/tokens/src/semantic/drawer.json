@@ -21,5 +21,12 @@
       "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Drawer content padding" },
       "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Drawer section gap" }
     }
+  },
+  "font": {
+    "drawer": {
+      "title-size":       { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Drawer title font size (text-lg equivalent)" },
+      "title-weight":     { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Drawer title font weight (font-semibold)" },
+      "description-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Drawer description font size (text-sm equivalent)" }
+    }
   }
 }

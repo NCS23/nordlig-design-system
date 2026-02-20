@@ -267,7 +267,7 @@ function DataTablePagination<TData>({
 }: DataTablePaginationProps<TData>) {
   return (
     <div className="flex items-center justify-between px-[var(--spacing-datatable-toolbar-padding)]">
-      <span className="text-sm text-[var(--color-datatable-empty-text)]">
+      <span className="text-[length:var(--font-datatable-pagination-size)] text-[var(--color-datatable-empty-text)]">
         Seite {table.getState().pagination.pageIndex + 1} von{' '}
         {table.getPageCount()}
       </span>

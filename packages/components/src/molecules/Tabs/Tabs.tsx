@@ -34,7 +34,7 @@ const tabsTriggerVariants = cva(
   [
     'inline-flex items-center justify-center whitespace-nowrap',
     'px-[var(--spacing-tabs-trigger-padding-x)] py-[var(--spacing-tabs-trigger-padding-y)]',
-    'text-sm font-medium transition-all',
+    'text-[length:var(--font-tabs-trigger-size)] [font-weight:var(--font-tabs-trigger-weight)] transition-all',
     'text-[var(--color-tabs-trigger-text)]',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-tabs-underline)] focus-visible:ring-offset-1',
     'disabled:pointer-events-none disabled:opacity-50',

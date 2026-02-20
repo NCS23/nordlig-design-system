@@ -79,7 +79,7 @@ describe('StatCard', () => {
   it('applies default variant (no left border accent)', () => {
     render(<StatCard data-testid="stat" title="Pace" value="5:41" />);
     const card = screen.getByTestId('stat');
-    expect(card.className).toContain('bg-[var(--color-stat-card-bg)]');
+    expect(card.className).toContain('bg-[var(--color-statcard-bg)]');
     expect(card.className).toContain('border');
     expect(card.className).not.toContain('border-l-4');
   });
@@ -90,7 +90,7 @@ describe('StatCard', () => {
     );
     const card = screen.getByTestId('stat');
     expect(card.className).toContain('border-l-4');
-    expect(card.className).toContain('border-l-[var(--color-stat-card-border-success)]');
+    expect(card.className).toContain('border-l-[var(--color-statcard-border-success)]');
   });
 
   it('applies warning variant', () => {
@@ -99,7 +99,7 @@ describe('StatCard', () => {
     );
     const card = screen.getByTestId('stat');
     expect(card.className).toContain('border-l-4');
-    expect(card.className).toContain('border-l-[var(--color-stat-card-border-warning)]');
+    expect(card.className).toContain('border-l-[var(--color-statcard-border-warning)]');
   });
 
   it('applies error variant', () => {
@@ -108,7 +108,7 @@ describe('StatCard', () => {
     );
     const card = screen.getByTestId('stat');
     expect(card.className).toContain('border-l-4');
-    expect(card.className).toContain('border-l-[var(--color-stat-card-border-error)]');
+    expect(card.className).toContain('border-l-[var(--color-statcard-border-error)]');
   });
 
   it('applies custom className', () => {
@@ -149,9 +149,9 @@ describe('StatCard', () => {
   it('applies correct CSS custom properties', () => {
     render(<StatCard data-testid="stat" title="Pace" value="5:41" />);
     const card = screen.getByTestId('stat');
-    expect(card.className).toContain('rounded-[var(--radius-stat-card)]');
-    expect(card.className).toContain('border-[var(--color-stat-card-border)]');
-    expect(card.className).toContain('bg-[var(--color-stat-card-bg)]');
+    expect(card.className).toContain('rounded-[var(--radius-statcard)]');
+    expect(card.className).toContain('border-[var(--color-statcard-border)]');
+    expect(card.className).toContain('bg-[var(--color-statcard-bg)]');
   });
 
   it('renders trend direction up with correct styling class', () => {
@@ -164,7 +164,7 @@ describe('StatCard', () => {
       />
     );
     const trendEl = screen.getByText('+5%').closest('span');
-    expect(trendEl?.className).toContain('text-[var(--color-stat-card-trend-up)]');
+    expect(trendEl?.className).toContain('text-[var(--color-statcard-trend-up)]');
   });
 
   it('renders trend direction down with correct styling class', () => {
@@ -177,7 +177,7 @@ describe('StatCard', () => {
       />
     );
     const trendEl = screen.getByText('-3%').closest('span');
-    expect(trendEl?.className).toContain('text-[var(--color-stat-card-trend-down)]');
+    expect(trendEl?.className).toContain('text-[var(--color-statcard-trend-down)]');
   });
 
   it('renders trend direction neutral with correct styling class', () => {
@@ -190,7 +190,7 @@ describe('StatCard', () => {
       />
     );
     const trendEl = screen.getByText('0%').closest('span');
-    expect(trendEl?.className).toContain('text-[var(--color-stat-card-text-secondary)]');
+    expect(trendEl?.className).toContain('text-[var(--color-statcard-text-secondary)]');
   });
 
   it('does not render trend when not provided', () => {
@@ -206,7 +206,7 @@ describe('StatCard', () => {
   it('does not render icon wrapper when icon not provided', () => {
     const { container } = render(<StatCard title="Pace" value="5:41" />);
     // Only the title text span should be in the title row, no icon wrapper
-    const titleRow = container.querySelector('.flex.items-center.gap-\\[var\\(--spacing-stat-card-header-gap\\)\\]');
+    const titleRow = container.querySelector('.flex.items-center.gap-\\[var\\(--spacing-statcard-header-gap\\)\\]');
     expect(titleRow?.children.length).toBe(1);
   });
 });

@@ -21,8 +21,20 @@
   },
   "spacing": {
     "navmenu": {
-      "gap":         { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between nav items (4px)" },
-      "trigger-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between trigger text and chevron (4px)" }
+      "gap":          { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between nav items (4px)" },
+      "trigger-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between trigger text and chevron (4px)" },
+      "trigger-px":   { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px trigger horizontal padding" },
+      "trigger-py":   { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "8px trigger vertical padding" },
+      "content-p":    { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px content padding" },
+      "indicator-mt": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px indicator margin-top" }
+    }
+  },
+  "font": {
+    "nav": {
+      "trigger-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Trigger text font size (text-sm equivalent)" },
+      "trigger-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Trigger text font weight (font-medium)" },
+      "link-size":      { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Link text font size (text-sm equivalent)" },
+      "link-weight":    { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Active link font weight (font-medium)" }
     }
   }
 }

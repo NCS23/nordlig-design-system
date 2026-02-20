@@ -14,6 +14,13 @@
       "tooltip-text":   { "$type": "color", "$value": "{color.text.base}", "$description": "Chart tooltip text" }
     }
   },
+  "font": {
+    "chart": {
+      "tooltip-size":      { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Chart tooltip font size" },
+      "tooltip-weight":    { "$type": "dimension", "$value": "{font.component.weight.medium}", "$description": "Chart tooltip label/value font weight" },
+      "legend-size":       { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Chart legend item font size" }
+    }
+  },
   "shadow": {
     "chart": {
       "tooltip": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Chart tooltip shadow" }

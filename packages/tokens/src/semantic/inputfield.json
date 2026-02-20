@@ -1,0 +1,8 @@
+{
+  "font": {
+    "$description": "Level 4: InputField typography tokens",
+    "inputfield": {
+      "label-weight": { "$type": "dimension", "$value": "{font.component.weight.medium}", "$description": "Label font weight" }
+    }
+  }
+}

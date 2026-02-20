@@ -1,11 +1,48 @@
 {
+  "color": {
+    "$description": "Level 4: StatCard component tokens",
+    "statcard": {
+      "bg":             { "$type": "color", "$value": "{color.bg.paper}", "$description": "Card background" },
+      "border":         { "$type": "color", "$value": "{color.border.muted}", "$description": "Default border" },
+      "text-primary":   { "$type": "color", "$value": "{color.text.base}", "$description": "Main value text" },
+      "text-secondary": { "$type": "color", "$value": "{color.text.muted}", "$description": "Title, unit, description" },
+      "border-success": { "$type": "color", "$value": "{color.border.success}", "$description": "Success variant left accent" },
+      "border-warning": { "$type": "color", "$value": "{color.border.warning}", "$description": "Warning variant left accent" },
+      "border-error":   { "$type": "color", "$value": "{color.border.error}", "$description": "Error variant left accent" },
+      "trend-up":       { "$type": "color", "$value": "{color.text.success}", "$description": "Positive trend indicator" },
+      "trend-down":     { "$type": "color", "$value": "{color.text.error}", "$description": "Negative trend indicator" },
+      "trend-neutral":  { "$type": "color", "$value": "{color.text.muted}", "$description": "Neutral trend indicator" }
+    }
+  },
+  "shadow": {
+    "statcard": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Default card shadow (matches Card.raised)" }
+  },
+  "radius": {
+    "statcard": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
+  },
   "spacing": {
     "$description": "Level 4: StatCard component tokens",
     "statcard": {
-      "padding":   { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px card padding" },
-      "value-mt":  { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px above value" },
-      "trend-mt":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px above trend" },
-      "trend-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px trend arrow-text gap" }
+      "padding":          { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px card padding" },
+      "value-mt":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px above value" },
+      "trend-mt":         { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px above trend" },
+      "trend-gap":        { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px trend arrow-text gap" },
+      "trend-inner-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "4px gap within trend indicator" },
+      "header-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and title (8px)" }
+    }
+  },
+  "font": {
+    "statcard": {
+      "title-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Title text size (14px)" },
+      "title-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Title font weight" },
+      "value-size":   { "$type": "dimension", "$value": "{font.heading.size.lg}", "$description": "Main value size (30px)" },
+      "value-weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Main value weight" },
+      "unit-size":    { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Unit text size (18px)" },
+      "unit-weight":  { "$type": "fontWeight", "$value": "{font.component.weight.normal}", "$description": "Unit font weight" },
+      "desc-size":    { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Description text size (14px)" },
+      "trend-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Trend value size (14px)" },
+      "trend-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Trend value weight" },
+      "label-size":   { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Trend label size (12px)" }
     }
   }
 }

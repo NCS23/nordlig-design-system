@@ -143,7 +143,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={textareaId}
-            className="text-[length:var(--sizing-input-sm-font-size)] font-medium text-[var(--color-input-text)]"
+            className="text-[length:var(--sizing-input-sm-font-size)] [font-weight:var(--font-textarea-label-weight)] text-[var(--color-input-text)]"
           >
             {label}
           </label>
@@ -174,13 +174,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               <p
                 id={errorId}
                 role="alert"
-                className="text-xs text-[var(--color-text-error)]"
+                className="text-[length:var(--font-textarea-hint-size)] text-[var(--color-text-error)]"
               >
                 {errorMessage}
               </p>
             )}
             {!hasError && helperText && (
-              <p id={helperId} className="text-xs text-[var(--color-text-muted)]">
+              <p id={helperId} className="text-[length:var(--font-textarea-hint-size)] text-[var(--color-text-muted)]">
                 {helperText}
               </p>
             )}
@@ -190,9 +190,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               id={counterId}
               aria-live="polite"
               className={cn(
-                'text-xs tabular-nums shrink-0',
+                'text-[length:var(--font-textarea-counter-size)] tabular-nums shrink-0',
                 isOverLimit
-                  ? 'text-[var(--color-textarea-counter-text-over)] font-medium'
+                  ? 'text-[var(--color-textarea-counter-text-over)] [font-weight:var(--font-textarea-counter-weight)]'
                   : 'text-[var(--color-textarea-counter-text)]'
               )}
             >

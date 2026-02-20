@@ -6,6 +6,11 @@
       "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Subtle outer border" }
     }
   },
+  "font": {
+    "popover": {
+      "content-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Popover content font size" }
+    }
+  },
   "shadow": {
     "popover": { "$type": "shadow", "$value": "{shadow.elevation.high}", "$description": "Elevated popover shadow" }
   },

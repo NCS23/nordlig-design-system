@@ -133,12 +133,12 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
           'text-[var(--color-chart-tooltip-text)]',
           'rounded-[var(--radius-chart-tooltip)]',
           '[box-shadow:var(--shadow-chart-tooltip)]',
-          'px-3 py-2 text-sm'
+          'px-3 py-2 text-[length:var(--font-chart-tooltip-size)]'
         )}
         data-testid="chart-tooltip"
       >
         {!hideLabel && formattedLabel && (
-          <div className="mb-1 font-medium" data-testid="chart-tooltip-label">
+          <div className="mb-1 [font-weight:var(--font-chart-tooltip-weight)]" data-testid="chart-tooltip-label">
             {formattedLabel}
           </div>
         )}
@@ -177,7 +177,7 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
                 <span className="flex-1 text-[var(--color-chart-tooltip-text)] opacity-70">
                   {entryLabel}
                 </span>
-                <span className="font-mono font-medium tabular-nums">
+                <span className="font-mono [font-weight:var(--font-chart-tooltip-weight)] tabular-nums">
                   {formattedValue}
                 </span>
               </div>
@@ -216,7 +216,7 @@ const ChartLegendContent = React.forwardRef<HTMLDivElement, ChartLegendContentPr
           return (
             <div
               key={`${dataKey}-${index}`}
-              className="flex items-center gap-[var(--spacing-chart-legend-item-gap)] text-sm"
+              className="flex items-center gap-[var(--spacing-chart-legend-item-gap)] text-[length:var(--font-chart-legend-size)]"
               data-testid="chart-legend-item"
             >
               <span

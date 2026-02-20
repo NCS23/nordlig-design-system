@@ -41,7 +41,7 @@ const CommandInput = React.forwardRef<
       ref={ref}
       role="combobox"
       className={cn(
-        'flex h-[var(--sizing-input-md-height)] w-full bg-transparent text-sm',
+        'flex h-[var(--sizing-input-md-height)] w-full bg-transparent text-[length:var(--font-command-input-size)]',
         'text-[var(--color-command-input-text)]',
         'placeholder:text-[var(--color-command-input-placeholder)]',
         'outline-none',
@@ -81,7 +81,7 @@ const CommandEmpty = React.forwardRef<
   <CommandPrimitive.Empty
     ref={ref}
     className={cn(
-      'py-[var(--spacing-command-empty-py)] text-center text-sm text-[var(--color-command-empty-text)]',
+      'py-[var(--spacing-command-empty-py)] text-center text-[length:var(--font-command-item-size)] text-[var(--color-command-empty-text)]',
       className
     )}
     {...props}
@@ -99,7 +99,7 @@ const CommandGroup = React.forwardRef<
     ref={ref}
     className={cn(
       'overflow-hidden p-[var(--spacing-command-list-padding)]',
-      '[&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
+      '[&_[cmdk-group-heading]]:text-[length:var(--font-command-heading-size)] [&_[cmdk-group-heading]]:[font-weight:var(--font-command-heading-weight)]',
       '[&_[cmdk-group-heading]]:text-[var(--color-command-group-heading)]',
       '[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-[var(--spacing-command-group-heading-py)]',
       className
@@ -118,7 +118,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-pointer select-none items-center min-h-[44px] rounded-[var(--radius-component-md)] px-[var(--spacing-command-item-px)] py-[var(--spacing-command-item-py)] text-sm',
+      'relative flex cursor-pointer select-none items-center min-h-[44px] rounded-[var(--radius-component-md)] px-[var(--spacing-command-item-px)] py-[var(--spacing-command-item-py)] text-[length:var(--font-command-item-size)]',
       'text-[var(--color-command-item-text)]',
       'outline-none transition-colors',
       'data-[selected=true]:bg-[var(--color-command-item-hover-bg)]',
@@ -156,7 +156,7 @@ const CommandShortcut = React.forwardRef<
   <span
     ref={ref}
     className={cn(
-      'ml-auto text-xs tracking-widest opacity-60',
+      'ml-auto text-[length:var(--font-command-shortcut-size)] tracking-widest opacity-60',
       className
     )}
     {...props}

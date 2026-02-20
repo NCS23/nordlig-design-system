@@ -65,7 +65,7 @@ const AccordionTrigger = React.forwardRef<
       className={cn(
         'flex flex-1 items-center justify-between',
         'px-[var(--spacing-accordion-trigger-padding-x)] py-[var(--spacing-accordion-trigger-padding-y)]',
-        'text-sm font-medium text-[var(--color-accordion-trigger-text)]',
+        'text-[length:var(--font-accordion-trigger-size)] [font-weight:var(--font-accordion-trigger-weight)] text-[var(--color-accordion-trigger-text)]',
         'transition-all',
         'hover:bg-[var(--color-accordion-trigger-hover-bg)]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-tabs-underline)]',
@@ -95,7 +95,7 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={cn(
-      'overflow-hidden text-sm text-[var(--color-accordion-content-text)]',
+      'overflow-hidden text-[length:var(--font-accordion-content-size)] text-[var(--color-accordion-content-text)]',
       'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-top-1',
       'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-1',
       'transition-all duration-200',
