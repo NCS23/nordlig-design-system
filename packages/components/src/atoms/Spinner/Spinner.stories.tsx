@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Spinner } from './Spinner';
+import { Button } from '../Button';
 
 const meta: Meta<typeof Spinner> = {
   title: 'Atoms/Spinner',
@@ -53,43 +54,14 @@ export const InButton: Story = {
   name: 'In Button (Loading State)',
   render: () => (
     <div style={{ display: 'flex', gap: '12px' }}>
-      <button
-        disabled
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '8px 16px',
-          borderRadius: '6px',
-          border: '1px solid #e2e8f0',
-          background: '#f1f5f9',
-          color: '#94a3b8',
-          fontSize: '14px',
-          cursor: 'not-allowed',
-        }}
-      >
+      <Button variant="secondary" disabled>
         <Spinner size="sm" />
         Lädt...
-      </button>
-      <button
-        disabled
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '8px 16px',
-          borderRadius: '6px',
-          border: 'none',
-          background: '#0ea5e9',
-          color: '#ffffff',
-          fontSize: '14px',
-          cursor: 'not-allowed',
-          opacity: 0.7,
-        }}
-      >
+      </Button>
+      <Button disabled>
         <Spinner size="sm" />
         Hochladen...
-      </button>
+      </Button>
     </div>
   ),
 };

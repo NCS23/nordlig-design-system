@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { CheckboxField } from './CheckboxField';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta = {
   title: 'Molecules/CheckboxField',
@@ -79,9 +80,9 @@ export const SettingsCheckboxes: Story = {
   name: 'Use Case: Settings',
   render: () => (
     <div className="flex flex-col gap-4 max-w-sm">
-      <h3 className="text-sm font-medium text-[var(--color-text-base)]">
+      <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)]">
         Benachrichtigungen
-      </h3>
+      </Heading>
       <CheckboxField
         label="Trainingserinnerungen"
         description="Push-Benachrichtigung vor geplanten Trainings."
@@ -108,9 +109,9 @@ export const DataExportSelection: Story = {
   name: 'Use Case: Data Export',
   render: () => (
     <div className="flex flex-col gap-3 max-w-sm">
-      <h3 className="text-sm font-medium text-[var(--color-text-base)]">
+      <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)]">
         Daten exportieren
-      </h3>
+      </Heading>
       <CheckboxField label="Trainingseinheiten" defaultChecked />
       <CheckboxField label="Herzfrequenzdaten" defaultChecked />
       <CheckboxField label="Pace-Daten" defaultChecked />

@@ -10,6 +10,10 @@ import {
   DrawerFooter,
   DrawerClose,
 } from './Drawer';
+import { Button } from '../../atoms/Button';
+import { Label } from '../../atoms/Label';
+import { InputField } from '../InputField';
+import { Select } from '../Select';
 
 const meta: Meta = {
   title: 'Molecules/Drawer',
@@ -34,9 +38,9 @@ export const Default: Story = {
   render: () => (
     <Drawer>
       <DrawerTrigger asChild>
-        <button className="px-4 py-2 text-sm font-medium rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
+        <Button>
           Drawer oeffnen
-        </button>
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
@@ -50,9 +54,9 @@ export const Default: Story = {
         </div>
         <DrawerFooter>
           <DrawerClose asChild>
-            <button className="px-3 py-1.5 text-sm rounded border">
+            <Button variant="secondary">
               Schliessen
-            </button>
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
@@ -67,9 +71,9 @@ export const WithForm: Story = {
   render: () => (
     <Drawer>
       <DrawerTrigger asChild>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
+        <Button variant="secondary">
           Filter oeffnen
-        </button>
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
@@ -80,42 +84,45 @@ export const WithForm: Story = {
         </DrawerHeader>
         <form className="flex flex-col gap-4 px-6 pb-4 text-sm">
           <div className="flex flex-col gap-1">
-            <label className="font-medium">Trainingstyp</label>
-            <select className="border rounded px-2 py-1.5">
-              <option>Alle</option>
-              <option>Longrun</option>
-              <option>Intervalle</option>
-              <option>Tempo</option>
-              <option>Regeneration</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="font-medium">Zeitraum</label>
-            <select className="border rounded px-2 py-1.5">
-              <option>Letzte 7 Tage</option>
-              <option>Letzte 30 Tage</option>
-              <option>Letztes Quartal</option>
-              <option>Gesamter Zeitraum</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="font-medium">Mindestdistanz (km)</label>
-            <input
-              type="number"
-              className="border rounded px-2 py-1.5"
-              placeholder="0"
+            <Label>Trainingstyp</Label>
+            <Select
+              options={[
+                { value: 'alle', label: 'Alle' },
+                { value: 'longrun', label: 'Longrun' },
+                { value: 'intervalle', label: 'Intervalle' },
+                { value: 'tempo', label: 'Tempo' },
+                { value: 'regeneration', label: 'Regeneration' },
+              ]}
+              placeholder="Alle"
             />
           </div>
+          <div className="flex flex-col gap-1">
+            <Label>Zeitraum</Label>
+            <Select
+              options={[
+                { value: '7', label: 'Letzte 7 Tage' },
+                { value: '30', label: 'Letzte 30 Tage' },
+                { value: '90', label: 'Letztes Quartal' },
+                { value: 'all', label: 'Gesamter Zeitraum' },
+              ]}
+              placeholder="Letzte 7 Tage"
+            />
+          </div>
+          <InputField
+            label="Mindestdistanz (km)"
+            type="number"
+            placeholder="0"
+          />
         </form>
         <DrawerFooter>
           <DrawerClose asChild>
-            <button className="px-3 py-1.5 text-sm rounded border">
+            <Button variant="secondary">
               Abbrechen
-            </button>
+            </Button>
           </DrawerClose>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
+          <Button>
             Anwenden
-          </button>
+          </Button>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
@@ -145,9 +152,9 @@ export const LongContent: Story = {
     return (
       <Drawer>
         <DrawerTrigger asChild>
-          <button className="px-4 py-2 text-sm font-medium rounded border">
+          <Button variant="secondary">
             Trainingshistorie
-          </button>
+          </Button>
         </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
@@ -177,9 +184,9 @@ export const LongContent: Story = {
           </div>
           <DrawerFooter>
             <DrawerClose asChild>
-              <button className="px-3 py-1.5 text-sm rounded border">
+              <Button variant="secondary">
                 Schliessen
-              </button>
+              </Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
@@ -195,9 +202,9 @@ export const WithoutHandle: Story = {
   render: () => (
     <Drawer>
       <DrawerTrigger asChild>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
+        <Button variant="secondary">
           Drawer ohne Griff
-        </button>
+        </Button>
       </DrawerTrigger>
       <DrawerContent showHandle={false}>
         <DrawerHeader>
@@ -214,9 +221,9 @@ export const WithoutHandle: Story = {
         </div>
         <DrawerFooter>
           <DrawerClose asChild>
-            <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
+            <Button>
               Verstanden
-            </button>
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Carousel, CarouselItem } from './Carousel';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Carousel> = {
   title: 'Organisms/Carousel',
@@ -202,7 +203,7 @@ export const DesignTokens: Story = {
   name: 'Design Tokens',
   render: () => (
     <div className="flex flex-col gap-4">
-      <h3 className="text-sm font-semibold">Verwendete Design Tokens</h3>
+      <Heading level={3} className="text-sm font-semibold">Verwendete Design Tokens</Heading>
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="border-b">

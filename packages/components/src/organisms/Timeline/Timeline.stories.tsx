@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { Timeline, TimelineItem } from './Timeline';
 import { Icon } from '../../atoms/Icon';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Timeline> = {
   title: 'Organisms/Timeline',
@@ -129,9 +130,9 @@ export const TrainingActivityFeed: Story = {
   name: 'Training Analyzer: Activity Feed',
   render: () => (
     <div className="max-w-lg">
-      <h3 className="text-lg font-semibold text-[var(--color-text-base)] mb-4">
+      <Heading level={3} className="text-lg font-semibold text-[var(--color-text-base)] mb-4">
         Trainings-Aktivitaeten
-      </h3>
+      </Heading>
       <Timeline>
         <TimelineItem
           title="Morgenlauf abgeschlossen"
@@ -195,9 +196,9 @@ export const TrainingWeeklyLog: Story = {
   name: 'Training Analyzer: Weekly Log',
   render: () => (
     <div className="max-w-lg">
-      <h3 className="text-lg font-semibold text-[var(--color-text-base)] mb-1">
+      <Heading level={3} className="text-lg font-semibold text-[var(--color-text-base)] mb-1">
         Wochenprotokoll KW 7
-      </h3>
+      </Heading>
       <p className="text-sm text-[var(--color-text-muted)] mb-4">
         10. - 16. Februar 2026 | Gesamt: 48.5 km | 4:12 Std
       </p>
@@ -258,7 +259,7 @@ export const DesignTokens: Story = {
   name: 'Design Tokens',
   render: () => (
     <div className="flex flex-col gap-4">
-      <h3 className="text-sm font-semibold">Verwendete Design Tokens</h3>
+      <Heading level={3} className="text-sm font-semibold">Verwendete Design Tokens</Heading>
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="border-b">

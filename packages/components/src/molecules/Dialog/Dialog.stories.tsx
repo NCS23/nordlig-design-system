@@ -9,6 +9,11 @@ import {
   DialogDescription,
   DialogFooter,
 } from './Dialog';
+import { Button } from '../../atoms/Button';
+import { InputField } from '../InputField';
+import { Textarea } from '../Textarea';
+import { Radio } from '../../atoms/Radio';
+import { RadioGroup } from '../RadioGroup';
 
 const meta: Meta = {
   title: 'Molecules/Dialog',
@@ -24,10 +29,8 @@ export const Default: Story = {
   name: 'Standard',
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Dialog oeffnen
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Dialog oeffnen</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -38,10 +41,8 @@ export const Default: Story = {
         </DialogHeader>
         <p className="text-sm">Moechten Sie fortfahren?</p>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-            Bestaetigen
-          </button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Bestaetigen</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -54,10 +55,8 @@ export const Confirmation: Story = {
   name: 'Loeschbestätigung',
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border text-red-600">
-          Eintrag loeschen
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Eintrag loeschen</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -68,10 +67,8 @@ export const Confirmation: Story = {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-red-600 text-white">
-            Endgueltig loeschen
-          </button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Endgueltig loeschen</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -84,10 +81,8 @@ export const WithForm: Story = {
   name: 'Mit Formular',
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Feedback senden
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Feedback senden</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -97,20 +92,12 @@ export const WithForm: Story = {
           </DialogDescription>
         </DialogHeader>
         <form className="flex flex-col gap-3">
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium">Betreff</label>
-            <input className="border rounded px-2 py-1.5 text-sm" placeholder="Kurze Beschreibung" />
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium">Nachricht</label>
-            <textarea className="border rounded px-2 py-1.5 text-sm" rows={3} placeholder="Ihr Feedback..." />
-          </div>
+          <InputField label="Betreff" placeholder="Kurze Beschreibung" />
+          <Textarea label="Nachricht" rows={3} placeholder="Ihr Feedback..." />
         </form>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-            Senden
-          </button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Senden</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -123,10 +110,8 @@ export const TrainingDeleteSession: Story = {
   name: 'Use Case: Training loeschen',
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border text-red-600">
-          Training loeschen
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Training loeschen</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -140,8 +125,8 @@ export const TrainingDeleteSession: Story = {
           Herzfrequenz- und GPS-Daten werden ebenfalls entfernt.
         </p>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-red-600 text-white">Loeschen</button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Loeschen</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -154,10 +139,8 @@ export const TrainingExportData: Story = {
   name: 'Use Case: Daten exportieren',
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Daten exportieren
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Daten exportieren</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -166,22 +149,14 @@ export const TrainingExportData: Story = {
             Waehlen Sie das gewuenschte Format fuer den Export Ihrer Trainingsdaten.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex flex-col gap-2 text-sm">
-          <label className="flex items-center gap-2">
-            <input type="radio" name="format" defaultChecked /> CSV
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="radio" name="format" /> JSON
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="radio" name="format" /> GPX
-          </label>
-        </div>
+        <RadioGroup name="format" defaultValue="csv" aria-label="Exportformat">
+          <Radio label="CSV" value="csv" />
+          <Radio label="JSON" value="json" />
+          <Radio label="GPX" value="gpx" />
+        </RadioGroup>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-            Exportieren
-          </button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Exportieren</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -196,10 +171,8 @@ export const OpenState: Story = {
   name: 'Geoeffneter Zustand',
   render: () => (
     <Dialog defaultOpen>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Dialog oeffnen
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Dialog oeffnen</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -213,7 +186,7 @@ export const OpenState: Story = {
           Ideal fuer visuelle Regression-Tests und Design-Reviews.
         </p>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Schliessen</button>
+          <Button variant="secondary">Schliessen</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -226,10 +199,8 @@ export const OpenConfirmation: Story = {
   name: 'Geoeffnete Loeschbestätigung',
   render: () => (
     <Dialog defaultOpen>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border text-red-600">
-          Eintrag loeschen
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Eintrag loeschen</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -239,10 +210,8 @@ export const OpenConfirmation: Story = {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-red-600 text-white">
-            Endgueltig loeschen
-          </button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Endgueltig loeschen</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -255,10 +224,8 @@ export const LongContent: Story = {
   name: 'Langer Inhalt',
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Nutzungsbedingungen
-        </button>
+      <DialogTrigger asChild>
+        <Button variant="secondary">Nutzungsbedingungen</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -278,10 +245,8 @@ export const LongContent: Story = {
           ))}
         </div>
         <DialogFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Ablehnen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-            Akzeptieren
-          </button>
+          <Button variant="secondary">Ablehnen</Button>
+          <Button>Akzeptieren</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

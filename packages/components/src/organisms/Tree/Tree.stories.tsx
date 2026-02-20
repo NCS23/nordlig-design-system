@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { Tree, type TreeNode } from './Tree';
 import { Icon } from '../../atoms/Icon';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Tree> = {
   title: 'Organisms/Tree',
@@ -363,7 +364,7 @@ export const DesignTokens: Story = {
   name: 'Design Tokens',
   render: () => (
     <div className="flex flex-col gap-4">
-      <h3 className="text-sm font-semibold">Verwendete Design Tokens</h3>
+      <Heading level={3} className="text-sm font-semibold">Verwendete Design Tokens</Heading>
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="border-b">

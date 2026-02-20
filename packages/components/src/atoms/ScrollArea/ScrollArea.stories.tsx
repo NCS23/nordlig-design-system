@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ScrollArea } from './ScrollArea';
+import { Heading } from '../Heading';
 
 const meta: Meta<typeof ScrollArea> = {
   title: 'Atoms/ScrollArea',
@@ -29,7 +30,7 @@ export const Default: Story = {
   render: () => (
     <ScrollArea className="h-48 w-72 rounded border p-4">
       <div className="text-sm">
-        <h4 className="mb-2 font-semibold">Trainingsprotokoll</h4>
+        <Heading level={4}>Trainingsprotokoll</Heading>
         <p className="mb-2">
           Die heutige Einheit bestand aus einem 10-km-Tempolauf mit negativem Split.
           Die erste Haelfte wurde bewusst langsamer gelaufen, um Energie fuer die zweite
@@ -130,7 +131,7 @@ export const SessionList: Story = {
     return (
       <ScrollArea className="h-52 w-80 rounded border">
         <div className="p-3">
-          <h4 className="mb-2 text-sm font-semibold">Letzte Einheiten</h4>
+          <Heading level={4}>Letzte Einheiten</Heading>
           <div className="flex flex-col gap-2">
             {sessions.map((session, i) => (
               <div

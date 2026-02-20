@@ -11,6 +11,7 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
 } from './AlertDialog';
+import { Button } from '../../atoms/Button';
 
 const meta: Meta = {
   title: 'Molecules/AlertDialog',
@@ -27,9 +28,9 @@ export const Default: Story = {
   render: () => (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <button className="px-4 py-2 text-sm font-medium rounded border text-red-600">
+        <Button variant="secondary" className="text-red-600">
           Training loeschen
-        </button>
+        </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
@@ -55,9 +56,9 @@ export const NonDestructive: Story = {
   render: () => (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
+        <Button variant="secondary">
           Daten exportieren
-        </button>
+        </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
@@ -85,9 +86,9 @@ export const OpenState: Story = {
   render: () => (
     <AlertDialog defaultOpen>
       <AlertDialogTrigger asChild>
-        <button className="px-4 py-2 text-sm font-medium rounded border text-red-600">
+        <Button variant="secondary" className="text-red-600">
           Training loeschen
-        </button>
+        </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

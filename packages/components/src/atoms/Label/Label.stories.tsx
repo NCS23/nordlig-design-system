@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Label } from './Label';
+import { Input } from '../Input';
+import { Heading } from '../Heading';
 
 const meta: Meta<typeof Label> = {
   title: 'Atoms/Label',
@@ -54,11 +56,10 @@ export const WithHtmlFor: Story = {
   render: () => (
     <div className="flex flex-col gap-1.5">
       <Label htmlFor="example-input">E-Mail-Adresse</Label>
-      <input
+      <Input
         id="example-input"
         type="email"
         placeholder="name@example.de"
-        className="rounded border px-3 py-2 text-sm"
       />
     </div>
   ),
@@ -92,7 +93,7 @@ export const DesignTokens: Story = {
   name: 'Design Tokens',
   render: () => (
     <div className="flex flex-col gap-4">
-      <h3 className="text-sm font-semibold">Verwendete Design Tokens</h3>
+      <Heading level={3}>Verwendete Design Tokens</Heading>
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="border-b">

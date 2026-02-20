@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './Tabs';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Tabs> = {
   title: 'Molecules/Tabs',
@@ -76,7 +77,7 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-8">
       <div>
-        <h3 className="text-sm font-semibold mb-2">Underline Variant</h3>
+        <Heading level={3} className="text-sm font-semibold mb-2">Underline Variant</Heading>
         <Tabs defaultValue="a">
           <TabsList variant="underline">
             <TabsTrigger value="a">Tab A</TabsTrigger>
@@ -89,7 +90,7 @@ export const AllVariants: Story = {
         </Tabs>
       </div>
       <div>
-        <h3 className="text-sm font-semibold mb-2">Pills Variant</h3>
+        <Heading level={3} className="text-sm font-semibold mb-2">Pills Variant</Heading>
         <Tabs defaultValue="a">
           <TabsList variant="pills">
             <TabsTrigger value="a">Tab A</TabsTrigger>

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SwitchField } from './SwitchField';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta = {
   title: 'Molecules/SwitchField',
@@ -78,9 +79,9 @@ export const SettingsSwitches: Story = {
   name: 'Use Case: Settings',
   render: () => (
     <div className="flex flex-col gap-5 max-w-md">
-      <h3 className="text-sm font-medium text-[var(--color-text-base)]">
+      <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)]">
         Einstellungen
-      </h3>
+      </Heading>
       <SwitchField
         label="Auto-Sync"
         description="Trainings automatisch synchronisieren."
@@ -112,9 +113,9 @@ export const TrainingPrivacy: Story = {
   name: 'Use Case: Training Privacy',
   render: () => (
     <div className="flex flex-col gap-5 max-w-md">
-      <h3 className="text-sm font-medium text-[var(--color-text-base)]">
+      <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)]">
         Privatsphäre
-      </h3>
+      </Heading>
       <SwitchField
         label="Profil öffentlich"
         description="Andere Nutzer können dein Profil und deine Statistiken sehen."
@@ -140,9 +141,9 @@ export const NotificationToggles: Story = {
     const [sms, setSms] = React.useState(false);
     return (
       <div className="flex flex-col gap-5 max-w-md">
-        <h3 className="text-sm font-medium text-[var(--color-text-base)]">
+        <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)]">
           Benachrichtigungskanäle
-        </h3>
+        </Heading>
         <SwitchField
           label="Push-Benachrichtigungen"
           description="Direkt auf dem Gerät."

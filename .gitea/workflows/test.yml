@@ -27,7 +27,7 @@ jobs:
         run: pnpm build:tokens
 
       - name: Lint (ESLint + jsx-a11y)
-        run: npx eslint packages/components/src/ --max-warnings 250
+        run: npx eslint packages/components/src/ --max-warnings 10
 
       - name: Run unit tests
         run: pnpm test

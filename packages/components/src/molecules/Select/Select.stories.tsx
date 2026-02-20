@@ -3,6 +3,7 @@ import React from 'react';
 import { Select, type SelectOption, type SelectGroup } from './Select';
 import { Combobox } from './Combobox';
 import { MultiSelect } from './MultiSelect';
+import { Label } from '../../atoms/Label';
 
 // ─── Test Data ──────────────────────────────────────────────────────────────
 
@@ -401,11 +402,11 @@ export const TrainingSportart: Story = {
     const [value, setValue] = React.useState<string | undefined>();
     return (
       <div style={{ maxWidth: '320px' }}>
-        <label
+        <Label
           style={{ display: 'block', marginBottom: '4px', fontSize: '0.875rem', fontWeight: 500 }}
         >
           Sportart
-        </label>
+        </Label>
         <Select
           options={sportOptions}
           value={value}
@@ -424,11 +425,11 @@ export const TrainingHRZone: StoryObj<typeof Combobox> = {
     const [value, setValue] = React.useState<string | undefined>();
     return (
       <div style={{ maxWidth: '360px' }}>
-        <label
+        <Label
           style={{ display: 'block', marginBottom: '4px', fontSize: '0.875rem', fontWeight: 500 }}
         >
           Herzfrequenz-Zone
-        </label>
+        </Label>
         <Combobox
           options={hrZoneOptions}
           value={value}
@@ -448,11 +449,11 @@ export const TrainingSportFilter: StoryObj<typeof MultiSelect> = {
     const [value, setValue] = React.useState<string[]>([]);
     return (
       <div style={{ maxWidth: '360px' }}>
-        <label
+        <Label
           style={{ display: 'block', marginBottom: '4px', fontSize: '0.875rem', fontWeight: 500 }}
         >
           Sportarten filtern
-        </label>
+        </Label>
         <MultiSelect
           options={groupedSportOptions}
           value={value}
@@ -478,11 +479,11 @@ export const TrainingZoneFilter: StoryObj<typeof MultiSelect> = {
     const [value, setValue] = React.useState<string[]>(['zone2', 'zone3']);
     return (
       <div style={{ maxWidth: '360px' }}>
-        <label
+        <Label
           style={{ display: 'block', marginBottom: '4px', fontSize: '0.875rem', fontWeight: 500 }}
         >
           Trainingszonen
-        </label>
+        </Label>
         <MultiSelect
           options={hrZoneOptions}
           value={value}

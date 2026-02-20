@@ -3,6 +3,7 @@ import React from 'react';
 import { DatePicker } from './DatePicker';
 import { DateRangePicker } from './DateRangePicker';
 import { Calendar, type DateRange } from './Calendar';
+import { Label } from '../../atoms/Label';
 
 // ─── DatePicker Stories ─────────────────────────────────────────────────────
 
@@ -116,11 +117,11 @@ export const TrainingUseCase: Story = {
     const [date, setDate] = React.useState<Date | undefined>(new Date());
     return (
       <div style={{ maxWidth: '320px' }}>
-        <label
+        <Label
           style={{ display: 'block', marginBottom: '4px', fontSize: '0.875rem', fontWeight: 500 }}
         >
           Trainingsdatum
-        </label>
+        </Label>
         <DatePicker
           value={date}
           onChange={setDate}
@@ -314,11 +315,11 @@ export const RangeTrainingUseCase: StoryObj<typeof DateRangePicker> = {
     const [range, setRange] = React.useState<DateRange>({});
     return (
       <div style={{ maxWidth: '400px' }}>
-        <label
+        <Label
           style={{ display: 'block', marginBottom: '4px', fontSize: '0.875rem', fontWeight: 500 }}
         >
           Trainingszeitraum filtern
-        </label>
+        </Label>
         <DateRangePicker
           value={range}
           onChange={setRange}

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Pagination } from './Pagination';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Pagination> = {
   title: 'Molecules/Pagination',
@@ -88,9 +89,9 @@ export const SessionHistory: Story = {
 
     return (
       <div className="flex flex-col gap-4 max-w-md">
-        <h3 className="text-sm font-semibold text-[var(--color-text-base)]">
+        <Heading level={3} className="text-sm font-semibold text-[var(--color-text-base)]">
           Trainingshistorie
-        </h3>
+        </Heading>
         <div className="flex flex-col gap-2">
           {sessions.map((session) => (
             <div

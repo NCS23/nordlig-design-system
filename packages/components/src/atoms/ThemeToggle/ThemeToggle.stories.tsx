@@ -2,6 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ThemeProvider, useTheme } from '../../system/ThemeProvider';
 import { ThemeToggle } from './ThemeToggle';
+import { Button } from '../Button';
+import { Heading } from '../Heading';
+import { Link } from '../Link';
 
 function ThemeLabel() {
   const { theme, resolvedTheme } = useTheme();
@@ -45,12 +48,12 @@ export const InNavbar: Story = {
       <nav className="flex items-center justify-between px-6 py-3 border-b border-[var(--color-border-default)] bg-[var(--color-bg-paper)]">
         <span className="font-semibold text-[var(--color-text-base)]">Nordlig</span>
         <div className="flex items-center gap-4">
-          <a href="#" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-base)]">
+          <Link href="#" variant="muted" className="text-sm">
             Startseite
-          </a>
-          <a href="#" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-base)]">
+          </Link>
+          <Link href="#" variant="muted" className="text-sm">
             Komponenten
-          </a>
+          </Link>
           <ThemeToggle />
         </div>
       </nav>
@@ -77,9 +80,9 @@ function ThemeComparisonCard({ forcedTheme }: { forcedTheme: 'light' | 'dark' })
     <div className={forcedTheme === 'dark' ? 'dark' : ''}>
       <div className="rounded-lg border border-[var(--color-border-default)] bg-[var(--color-bg-paper)] p-4 space-y-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-[var(--color-text-base)]">
+          <Heading level={3}>
             {forcedTheme === 'light' ? 'Hell (Light)' : 'Dunkel (Dark)'}
-          </h3>
+          </Heading>
           <span className="inline-flex items-center rounded-full bg-[var(--color-badge-info-bg)] px-2 py-0.5 text-xs text-[var(--color-badge-info-text)]">
             {forcedTheme}
           </span>
@@ -99,12 +102,12 @@ function ThemeComparisonCard({ forcedTheme }: { forcedTheme: 'light' | 'dark' })
           <p className="text-sm text-[var(--color-text-disabled)]">Text Disabled</p>
         </div>
         <div className="flex gap-2">
-          <button className="rounded-md bg-[var(--color-toggle-active-bg)] px-3 py-1.5 text-sm text-[var(--color-toggle-active-text)]">
+          <Button size="sm">
             Primaer
-          </button>
-          <button className="rounded-md border border-[var(--color-border-default)] px-3 py-1.5 text-sm text-[var(--color-text-base)]">
+          </Button>
+          <Button variant="secondary" size="sm">
             Sekundaer
-          </button>
+          </Button>
         </div>
       </div>
     </div>

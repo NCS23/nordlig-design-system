@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card, CardHeader, CardBody, CardFooter } from './Card';
 import { Button } from '../../atoms/Button';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Card> = {
   title: 'Organisms/Card',
@@ -40,7 +41,7 @@ export const Flat: Story = {
   render: (args) => (
     <Card {...args}>
       <CardHeader>
-        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Flat Card</h3>
+        <Heading level={3}>Flat Card</Heading>
         <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>No border, no shadow – clean surface</p>
       </CardHeader>
       <CardBody>
@@ -58,7 +59,7 @@ export const Raised: Story = {
   render: (args) => (
     <Card {...args}>
       <CardHeader>
-        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Raised Card</h3>
+        <Heading level={3}>Raised Card</Heading>
         <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>Low elevation shadow</p>
       </CardHeader>
       <CardBody>
@@ -76,7 +77,7 @@ export const Elevated: Story = {
   render: (args) => (
     <Card {...args}>
       <CardHeader>
-        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Elevated Card</h3>
+        <Heading level={3}>Elevated Card</Heading>
         <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>Medium elevation shadow</p>
       </CardHeader>
       <CardBody>
@@ -92,7 +93,7 @@ export const AllElevations: Story = {
       {(['flat', 'raised', 'elevated'] as const).map((elev) => (
         <Card key={elev} elevation={elev} style={{ width: '280px' }}>
           <CardHeader>
-            <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600, textTransform: 'capitalize' }}>{elev}</h3>
+            <Heading level={3}>{elev}</Heading>
           </CardHeader>
           <CardBody>
             <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>elevation=&quot;{elev}&quot;</p>
@@ -109,7 +110,7 @@ export const AllPaddings: Story = {
       {(['compact', 'normal', 'spacious'] as const).map((pad) => (
         <Card key={pad} padding={pad} elevation="raised" style={{ width: '280px' }}>
           <CardHeader>
-            <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600, textTransform: 'capitalize' }}>{pad}</h3>
+            <Heading level={3}>{pad}</Heading>
           </CardHeader>
           <CardBody>
             <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>padding=&quot;{pad}&quot;</p>
@@ -124,7 +125,7 @@ export const WithFooter: Story = {
   render: () => (
     <Card elevation="raised" padding="normal" style={{ maxWidth: '400px' }}>
       <CardHeader>
-        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Card with Actions</h3>
+        <Heading level={3}>Card with Actions</Heading>
         <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>
           Compound component pattern with header, body, and footer.
         </p>
@@ -148,7 +149,7 @@ export const WorkoutSessionCard: Story = {
     <Card elevation="raised" padding="normal" role="article" aria-labelledby="workout-title" style={{ maxWidth: '400px' }}>
       <CardHeader>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h3 id="workout-title" style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Krafttraining</h3>
+          <Heading level={3} id="workout-title">Krafttraining</Heading>
           <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>12. Feb 2026</span>
         </div>
         <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>Oberkörper - Push</p>
@@ -182,7 +183,7 @@ export const WeeklySummaryCard: Story = {
   render: () => (
     <Card elevation="elevated" padding="spacious" role="region" aria-labelledby="weekly-title" style={{ maxWidth: '400px' }}>
       <CardHeader>
-        <h3 id="weekly-title" style={{ margin: 0, fontSize: '20px', fontWeight: 700 }}>Wochenübersicht</h3>
+        <Heading level={3} id="weekly-title">Wochenübersicht</Heading>
         <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>KW 7 · 10. - 16. Feb 2026</p>
       </CardHeader>
       <CardBody>
@@ -244,7 +245,7 @@ export const InteractiveCard: Story = {
     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
       <Card elevation="raised" hoverable style={{ width: '280px' }}>
         <CardHeader>
-          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Hoverable Raised</h3>
+          <Heading level={3}>Hoverable Raised</Heading>
         </CardHeader>
         <CardBody>
           <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>
@@ -254,7 +255,7 @@ export const InteractiveCard: Story = {
       </Card>
       <Card elevation="elevated" hoverable style={{ width: '280px' }}>
         <CardHeader>
-          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Hoverable Elevated</h3>
+          <Heading level={3}>Hoverable Elevated</Heading>
         </CardHeader>
         <CardBody>
           <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>
@@ -264,7 +265,7 @@ export const InteractiveCard: Story = {
       </Card>
       <Card elevation="flat" hoverable style={{ width: '280px' }}>
         <CardHeader>
-          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Hoverable Flat</h3>
+          <Heading level={3}>Hoverable Flat</Heading>
         </CardHeader>
         <CardBody>
           <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)' }}>
@@ -284,7 +285,7 @@ export const CombinedVariants: Story = {
         (['compact', 'normal', 'spacious'] as const).map((pad) => (
           <Card key={`${elev}-${pad}`} elevation={elev} padding={pad}>
             <CardHeader>
-              <h3 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>{elev} / {pad}</h3>
+              <Heading level={3}>{elev} / {pad}</Heading>
             </CardHeader>
             <CardBody>
               <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>

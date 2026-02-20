@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ThemeProvider, useTheme, type Theme } from './ThemeProvider';
 import { Button } from '../../atoms/Button';
+import { Heading } from '../../atoms/Heading';
 
 function ThemeDemo() {
   const { theme, resolvedTheme, setTheme } = useTheme();
@@ -13,9 +14,9 @@ function ThemeDemo() {
 
   return (
     <div className="p-6 rounded-lg border border-[var(--color-border-default)] bg-[var(--color-bg-paper)]">
-      <h3 className="text-lg font-semibold text-[var(--color-text-base)] mb-4">
+      <Heading level={3} className="text-lg font-semibold text-[var(--color-text-base)] mb-4">
         Theme-Steuerung
-      </h3>
+      </Heading>
       <p className="text-[var(--color-text-muted)] mb-4">
         Aktuelles Theme: <strong>{theme}</strong> (aufgeloest: <strong>{resolvedTheme}</strong>)
       </p>

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './Accordion';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Molecules/Accordion',
@@ -117,7 +118,7 @@ export const AccordionVsCollapsible: Story = {
   render: () => (
     <div className="max-w-2xl space-y-6">
       <div className="rounded-md border p-4 space-y-2">
-        <h3 className="text-sm font-semibold">Wann Accordion verwenden?</h3>
+        <Heading level={3} className="text-sm font-semibold">Wann Accordion verwenden?</Heading>
         <ul className="list-disc pl-5 text-sm space-y-1">
           <li>Mehrere verwandte Abschnitte, die als Gruppe zusammengehoeren</li>
           <li>Nur ein Abschnitt gleichzeitig soll geoeffnet sein (<code>type="single"</code>)</li>
@@ -126,7 +127,7 @@ export const AccordionVsCollapsible: Story = {
         </ul>
       </div>
       <div className="rounded-md border p-4 space-y-2">
-        <h3 className="text-sm font-semibold">Wann Collapsible verwenden?</h3>
+        <Heading level={3} className="text-sm font-semibold">Wann Collapsible verwenden?</Heading>
         <ul className="list-disc pl-5 text-sm space-y-1">
           <li>Einzelner ein-/ausklappbarer Bereich (kein Gruppen-Kontext)</li>
           <li>Eigener Trigger-Button mit individuellem Design</li>
@@ -135,7 +136,7 @@ export const AccordionVsCollapsible: Story = {
         </ul>
       </div>
       <div className="rounded-md border border-dashed p-4 space-y-3">
-        <h3 className="text-sm font-semibold">Vergleich</h3>
+        <Heading level={3} className="text-sm font-semibold">Vergleich</Heading>
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b text-left">

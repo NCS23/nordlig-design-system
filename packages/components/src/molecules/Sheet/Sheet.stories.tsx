@@ -9,6 +9,11 @@ import {
   SheetDescription,
   SheetFooter,
 } from './Sheet';
+import { Button } from '../../atoms/Button';
+import { Link } from '../../atoms/Link';
+import { Label } from '../../atoms/Label';
+import { InputField } from '../InputField';
+import { Select } from '../Select';
 
 const meta: Meta = {
   title: 'Molecules/Sheet',
@@ -24,10 +29,8 @@ export const Default: Story = {
   name: 'Standard (Rechts)',
   render: () => (
     <Sheet>
-      <SheetTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-          Sheet oeffnen
-        </button>
+      <SheetTrigger asChild>
+        <Button>Sheet oeffnen</Button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
@@ -38,10 +41,8 @@ export const Default: Story = {
           <p>Hier koennen Sie verschiedene Optionen konfigurieren.</p>
         </div>
         <SheetFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-            Speichern
-          </button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Speichern</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>
@@ -54,10 +55,8 @@ export const Left: Story = {
   name: 'Links',
   render: () => (
     <Sheet>
-      <SheetTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Navigation oeffnen
-        </button>
+      <SheetTrigger asChild>
+        <Button variant="secondary">Navigation oeffnen</Button>
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
@@ -65,10 +64,10 @@ export const Left: Story = {
           <SheetDescription>Hauptmenue der Anwendung</SheetDescription>
         </SheetHeader>
         <nav className="flex flex-col gap-2 text-sm">
-          <a href="#" className="py-2 hover:underline">Dashboard</a>
-          <a href="#" className="py-2 hover:underline">Trainingshistorie</a>
-          <a href="#" className="py-2 hover:underline">Statistiken</a>
-          <a href="#" className="py-2 hover:underline">Einstellungen</a>
+          <Link href="#">Dashboard</Link>
+          <Link href="#">Trainingshistorie</Link>
+          <Link href="#">Statistiken</Link>
+          <Link href="#">Einstellungen</Link>
         </nav>
       </SheetContent>
     </Sheet>
@@ -81,10 +80,8 @@ export const Bottom: Story = {
   name: 'Unten',
   render: () => (
     <Sheet>
-      <SheetTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Details anzeigen
-        </button>
+      <SheetTrigger asChild>
+        <Button variant="secondary">Details anzeigen</Button>
       </SheetTrigger>
       <SheetContent side="bottom">
         <SheetHeader>
@@ -116,10 +113,8 @@ export const WithForm: Story = {
   name: 'Mit Formular',
   render: () => (
     <Sheet>
-      <SheetTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Training hinzufuegen
-        </button>
+      <SheetTrigger asChild>
+        <Button variant="secondary">Training hinzufuegen</Button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
@@ -128,28 +123,23 @@ export const WithForm: Story = {
         </SheetHeader>
         <form className="flex flex-col gap-4 text-sm">
           <div className="flex flex-col gap-1">
-            <label className="font-medium">Trainingstyp</label>
-            <select className="border rounded px-2 py-1.5">
-              <option>Longrun</option>
-              <option>Intervalle</option>
-              <option>Tempo</option>
-              <option>Regeneration</option>
-            </select>
+            <Label>Trainingstyp</Label>
+            <Select
+              options={[
+                { value: 'longrun', label: 'Longrun' },
+                { value: 'intervalle', label: 'Intervalle' },
+                { value: 'tempo', label: 'Tempo' },
+                { value: 'regeneration', label: 'Regeneration' },
+              ]}
+              placeholder="Trainingstyp waehlen"
+            />
           </div>
-          <div className="flex flex-col gap-1">
-            <label className="font-medium">Distanz (km)</label>
-            <input type="number" className="border rounded px-2 py-1.5" placeholder="z.B. 10.5" />
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="font-medium">Dauer (min)</label>
-            <input type="number" className="border rounded px-2 py-1.5" placeholder="z.B. 55" />
-          </div>
+          <InputField label="Distanz (km)" type="number" placeholder="z.B. 10.5" />
+          <InputField label="Dauer (min)" type="number" placeholder="z.B. 55" />
         </form>
         <SheetFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-            Speichern
-          </button>
+          <Button variant="secondary">Abbrechen</Button>
+          <Button>Speichern</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>
@@ -162,10 +152,8 @@ export const TrainingSessionDetails: Story = {
   name: 'Use Case: Trainingsdetails',
   render: () => (
     <Sheet>
-      <SheetTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Details anzeigen
-        </button>
+      <SheetTrigger asChild>
+        <Button variant="secondary">Details anzeigen</Button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
@@ -205,10 +193,8 @@ export const TrainingFilterPanel: Story = {
   name: 'Use Case: Filterpanel',
   render: () => (
     <Sheet>
-      <SheetTrigger>
-        <button className="px-4 py-2 text-sm font-medium rounded border">
-          Filter
-        </button>
+      <SheetTrigger asChild>
+        <Button variant="secondary">Filter</Button>
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
@@ -217,34 +203,35 @@ export const TrainingFilterPanel: Story = {
         </SheetHeader>
         <div className="flex flex-col gap-4 text-sm">
           <div className="flex flex-col gap-1">
-            <label className="font-medium">Zeitraum</label>
-            <select className="border rounded px-2 py-1.5">
-              <option>Letzte 7 Tage</option>
-              <option>Letzte 30 Tage</option>
-              <option>Letztes Quartal</option>
-              <option>Gesamter Zeitraum</option>
-            </select>
+            <Label>Zeitraum</Label>
+            <Select
+              options={[
+                { value: '7d', label: 'Letzte 7 Tage' },
+                { value: '30d', label: 'Letzte 30 Tage' },
+                { value: 'quarter', label: 'Letztes Quartal' },
+                { value: 'all', label: 'Gesamter Zeitraum' },
+              ]}
+              placeholder="Zeitraum waehlen"
+            />
           </div>
           <div className="flex flex-col gap-1">
-            <label className="font-medium">Trainingstyp</label>
-            <select className="border rounded px-2 py-1.5">
-              <option>Alle</option>
-              <option>Longrun</option>
-              <option>Intervalle</option>
-              <option>Tempo</option>
-              <option>Regeneration</option>
-            </select>
+            <Label>Trainingstyp</Label>
+            <Select
+              options={[
+                { value: 'all', label: 'Alle' },
+                { value: 'longrun', label: 'Longrun' },
+                { value: 'intervalle', label: 'Intervalle' },
+                { value: 'tempo', label: 'Tempo' },
+                { value: 'regeneration', label: 'Regeneration' },
+              ]}
+              placeholder="Trainingstyp waehlen"
+            />
           </div>
-          <div className="flex flex-col gap-1">
-            <label className="font-medium">Mindestdistanz (km)</label>
-            <input type="number" className="border rounded px-2 py-1.5" placeholder="0" />
-          </div>
+          <InputField label="Mindestdistanz (km)" type="number" placeholder="0" />
         </div>
         <SheetFooter>
-          <button className="px-3 py-1.5 text-sm rounded border">Zuruecksetzen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-toggle-active-bg)] text-[var(--color-toggle-active-text)]">
-            Anwenden
-          </button>
+          <Button variant="secondary">Zuruecksetzen</Button>
+          <Button>Anwenden</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>

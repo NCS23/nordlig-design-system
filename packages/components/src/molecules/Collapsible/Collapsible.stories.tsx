@@ -1,6 +1,14 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './Collapsible';
+import { Button } from '../../atoms/Button';
+import { Heading } from '../../atoms/Heading';
+import { Label } from '../../atoms/Label';
+import { Input } from '../../atoms/Input';
+import { Icon } from '../../atoms/Icon';
+import { Select } from '../Select';
+import { SearchInput } from '../SearchInput';
+import { ChevronDown, Settings, MessageSquare } from 'lucide-react';
 
 const meta: Meta<typeof Collapsible> = {
   title: 'Molecules/Collapsible',
@@ -23,10 +31,10 @@ export const Default: Story = {
   render: () => (
     <Collapsible className="max-w-sm">
       <CollapsibleTrigger asChild>
-        <button className="flex w-full items-center justify-between rounded-md border px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">
+        <Button variant="secondary" className="flex w-full items-center justify-between">
           Mehr anzeigen
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
+          <Icon icon={ChevronDown} size={16} />
+        </Button>
       </CollapsibleTrigger>
       <CollapsibleContent>
         <div className="mt-2 rounded-md border p-4 text-sm">
@@ -42,10 +50,10 @@ export const DefaultOpen: Story = {
   render: () => (
     <Collapsible defaultOpen className="max-w-sm">
       <CollapsibleTrigger asChild>
-        <button className="flex w-full items-center justify-between rounded-md border px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">
+        <Button variant="secondary" className="flex w-full items-center justify-between">
           Details
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
+          <Icon icon={ChevronDown} size={16} />
+        </Button>
       </CollapsibleTrigger>
       <CollapsibleContent>
         <div className="mt-2 rounded-md border p-4 text-sm">
@@ -63,25 +71,27 @@ export const Controlled: Story = {
     return (
       <div className="max-w-sm space-y-2">
         <div className="flex gap-2">
-          <button
+          <Button
+            variant="secondary"
+            size="sm"
             onClick={() => setOpen(true)}
-            className="rounded-md border px-3 py-1 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             Oeffnen
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
             onClick={() => setOpen(false)}
-            className="rounded-md border px-3 py-1 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             Schliessen
-          </button>
+          </Button>
         </div>
         <Collapsible open={open} onOpenChange={setOpen}>
           <CollapsibleTrigger asChild>
-            <button className="flex w-full items-center justify-between rounded-md border px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">
+            <Button variant="secondary" className="flex w-full items-center justify-between">
               Kontrollierter Bereich
               <span className="text-xs opacity-60">{open ? 'Offen' : 'Geschlossen'}</span>
-            </button>
+            </Button>
           </CollapsibleTrigger>
           <CollapsibleContent>
             <div className="mt-2 rounded-md border p-4 text-sm">
@@ -101,48 +111,53 @@ export const TrainingAdvancedFilters: Story = {
     return (
       <div className="max-w-md space-y-3">
         <div className="flex items-center gap-2">
-          <input
-            type="text"
+          <SearchInput
             placeholder="Trainingseinheiten suchen..."
-            className="flex-1 rounded-md border px-3 py-2 text-sm"
+            className="flex-1"
           />
-          <button className="rounded-md border px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+          <Button variant="secondary">
             Suchen
-          </button>
+          </Button>
         </div>
         <Collapsible open={open} onOpenChange={setOpen}>
           <CollapsibleTrigger asChild>
-            <button className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            <Button variant="ghost" size="sm" className="flex items-center gap-1">
+              <Icon icon={Settings} size={14} />
               Erweiterte Filter {open ? 'ausblenden' : 'anzeigen'}
-            </button>
+            </Button>
           </CollapsibleTrigger>
           <CollapsibleContent>
             <div className="mt-2 grid grid-cols-2 gap-3 rounded-md border p-3">
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-medium text-slate-500">Sportart</label>
-                <select className="rounded-md border px-2 py-1 text-sm">
-                  <option>Alle</option>
-                  <option>Laufen</option>
-                  <option>Radfahren</option>
-                  <option>Schwimmen</option>
-                </select>
+                <Label>Sportart</Label>
+                <Select
+                  options={[
+                    { value: 'alle', label: 'Alle' },
+                    { value: 'laufen', label: 'Laufen' },
+                    { value: 'radfahren', label: 'Radfahren' },
+                    { value: 'schwimmen', label: 'Schwimmen' },
+                  ]}
+                  placeholder="Alle"
+                />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-medium text-slate-500">Zeitraum</label>
-                <select className="rounded-md border px-2 py-1 text-sm">
-                  <option>Letzte 7 Tage</option>
-                  <option>Letzte 30 Tage</option>
-                  <option>Letzte 90 Tage</option>
-                </select>
+                <Label>Zeitraum</Label>
+                <Select
+                  options={[
+                    { value: '7', label: 'Letzte 7 Tage' },
+                    { value: '30', label: 'Letzte 30 Tage' },
+                    { value: '90', label: 'Letzte 90 Tage' },
+                  ]}
+                  placeholder="Letzte 7 Tage"
+                />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-medium text-slate-500">Min. Distanz (km)</label>
-                <input type="number" placeholder="0" className="rounded-md border px-2 py-1 text-sm" />
+                <Label>Min. Distanz (km)</Label>
+                <Input type="number" placeholder="0" />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-medium text-slate-500">Max. HR (bpm)</label>
-                <input type="number" placeholder="200" className="rounded-md border px-2 py-1 text-sm" />
+                <Label>Max. HR (bpm)</Label>
+                <Input type="number" placeholder="200" />
               </div>
             </div>
           </CollapsibleContent>
@@ -158,7 +173,7 @@ export const TrainingSessionNotes: Story = {
     <div className="max-w-md rounded-md border p-4">
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold">Morgenlauf</h3>
+          <Heading level={3}>Morgenlauf</Heading>
           <span className="text-xs text-slate-500">14.02.2026</span>
         </div>
         <div className="flex gap-4 text-sm">
@@ -168,10 +183,10 @@ export const TrainingSessionNotes: Story = {
         </div>
         <Collapsible>
           <CollapsibleTrigger asChild>
-            <button className="mt-1 flex items-center gap-1 text-xs text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <Button variant="ghost" size="sm" className="mt-1 flex items-center gap-1">
+              <Icon icon={MessageSquare} size={12} />
               Notizen anzeigen
-            </button>
+            </Button>
           </CollapsibleTrigger>
           <CollapsibleContent>
             <div className="mt-2 rounded-md bg-slate-50 p-3 text-sm dark:bg-slate-900">

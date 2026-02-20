@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { RadioGroup } from './RadioGroup';
 import { Radio } from '../../atoms/Radio';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta = {
   title: 'Molecules/RadioGroup',
@@ -98,9 +99,9 @@ export const TrainingType: Story = {
     const [type, setType] = React.useState('longrun');
     return (
       <div className="max-w-sm">
-        <h3 className="text-sm font-medium text-[var(--color-text-base)] mb-3">
+        <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)] mb-3">
           Trainingstyp wählen
-        </h3>
+        </Heading>
         <RadioGroup aria-label="Trainingstyp" name="training-type" value={type} onValueChange={setType}>
           <Radio
             value="longrun"
@@ -139,9 +140,9 @@ export const ViewMode: Story = {
     const [view, setView] = React.useState('week');
     return (
       <div>
-        <h3 className="text-sm font-medium text-[var(--color-text-base)] mb-3">
+        <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)] mb-3">
           Ansicht
-        </h3>
+        </Heading>
         <RadioGroup
           aria-label="Ansicht"
           name="view-mode"
@@ -165,9 +166,9 @@ export const HRZoneTarget: Story = {
     const [zone, setZone] = React.useState('z2');
     return (
       <div className="max-w-sm">
-        <h3 className="text-sm font-medium text-[var(--color-text-base)] mb-3">
+        <Heading level={3} className="text-sm font-medium text-[var(--color-text-base)] mb-3">
           Ziel-Herzfrequenzzone
-        </h3>
+        </Heading>
         <RadioGroup aria-label="HF-Zone" name="hr-zone" value={zone} onValueChange={setZone}>
           <Radio value="z1" label="Zone 1" description="50–60% HFmax – Regeneration" />
           <Radio value="z2" label="Zone 2" description="60–70% HFmax – Grundlagenausdauer" />

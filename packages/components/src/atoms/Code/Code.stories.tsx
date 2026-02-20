@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Code, CodeBlock } from './Code';
+import { Heading } from '../Heading';
 
 const codeMeta: Meta<typeof Code> = {
   title: 'Atoms/Code',
@@ -96,27 +97,27 @@ export const AllVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       <div>
-        <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Inline Code</h3>
+        <Heading level={3}>Inline Code</Heading>
         <p style={{ fontSize: '16px', lineHeight: '1.6' }}>
           Die Funktion <Code>calculatePace()</Code> berechnet die Pace aus{' '}
           <Code>distance</Code> und <Code>time</Code>.
         </p>
       </div>
       <div>
-        <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Code Block (Standard)</h3>
+        <Heading level={3}>Code Block (Standard)</Heading>
         <CodeBlock>
           {`const pace = distance / time;
 console.log(\`Pace: \${pace} min/km\`);`}
         </CodeBlock>
       </div>
       <div>
-        <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Code Block (Kopierbar)</h3>
+        <Heading level={3}>Code Block (Kopierbar)</Heading>
         <CodeBlock copyable>
           {'npm install @nordlig/components'}
         </CodeBlock>
       </div>
       <div>
-        <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Code Block (Zeilennummern)</h3>
+        <Heading level={3}>Code Block (Zeilennummern)</Heading>
         <CodeBlock showLineNumbers>
           {`function greet(name: string) {
   return \`Hallo, \${name}!\`;
@@ -133,7 +134,7 @@ export const DesignTokens: Story = {
   name: 'Design Tokens',
   render: () => (
     <div style={{ fontFamily: 'monospace', fontSize: '13px' }}>
-      <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '12px' }}>Code Design Tokens</h3>
+      <Heading level={3}>Code Design Tokens</Heading>
       <table style={{ borderCollapse: 'collapse', width: '100%' }}>
         <thead>
           <tr style={{ borderBottom: '2px solid #e2e8f0' }}>

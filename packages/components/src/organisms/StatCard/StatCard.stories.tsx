@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Activity, Timer, Heart, Route, TrendingUp } from 'lucide-react';
 import { StatCard } from './StatCard';
 import { Icon } from '../../atoms/Icon';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof StatCard> = {
   title: 'Organisms/StatCard',
@@ -174,9 +175,9 @@ export const TrainingWeeklyComparison: Story = {
   render: () => (
     <div>
       <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600, color: 'var(--color-text-base)' }}>
+        <Heading level={3} style={{ margin: 0, fontSize: '18px', fontWeight: 600, color: 'var(--color-text-base)' }}>
           Wochenvergleich
-        </h3>
+        </Heading>
         <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--color-text-muted)' }}>
           KW 7 vs KW 6 - 10. - 16. Feb 2026
         </p>

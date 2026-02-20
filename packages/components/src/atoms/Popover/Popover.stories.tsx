@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Popover, PopoverTrigger, PopoverContent } from './Popover';
-import { Button } from '../../atoms/Button';
-import { Badge } from '../../atoms/Badge';
-import { Separator } from '../../atoms/Separator';
+import { Button } from '../Button';
+import { Badge } from '../Badge';
+import { Label } from '../Label';
+import { Checkbox } from '../Checkbox';
+import { Heading } from '../Heading';
+import { Separator } from '../Separator';
 
 const meta: Meta<typeof PopoverContent> = {
   title: 'Atoms/Popover',
@@ -120,7 +123,7 @@ export const RichContent: Story = {
       </PopoverTrigger>
       <PopoverContent className="w-72">
         <div className="flex flex-col gap-2">
-          <h4 className="text-sm font-semibold">Trainingsdetails</h4>
+          <Heading level={4} className="text-sm font-semibold">Trainingsdetails</Heading>
           <Separator />
           <p className="text-sm opacity-80">
             Hier können detaillierte Informationen zu einem Trainingselement angezeigt werden,
@@ -137,13 +140,13 @@ export const HRZoneInfo: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <button className="cursor-pointer">
+        <Button variant="ghost" className="cursor-pointer p-0">
           <Badge variant="warning">Z3 Tempo</Badge>
-        </button>
+        </Button>
       </PopoverTrigger>
       <PopoverContent className="w-64" showArrow>
         <div className="flex flex-col gap-2">
-          <h4 className="text-sm font-semibold">Zone 3 – Tempo</h4>
+          <Heading level={4} className="text-sm font-semibold">Zone 3 – Tempo</Heading>
           <Separator />
           <div className="flex flex-col gap-1 text-sm">
             <div className="flex justify-between">
@@ -176,16 +179,18 @@ export const MetricExplanation: Story = {
       <span className="text-sm font-medium">VO₂max: 52.3</span>
       <Popover>
         <PopoverTrigger asChild>
-          <button
-            className="inline-flex h-5 w-5 items-center justify-center rounded-full border text-xs opacity-60 hover:opacity-100 cursor-pointer"
+          <Button
+            variant="ghost"
+            size="sm"
+            className="inline-flex h-5 w-5 items-center justify-center rounded-full border p-0 text-xs opacity-60 hover:opacity-100 cursor-pointer"
             aria-label="Info zu VO₂max"
           >
             ?
-          </button>
+          </Button>
         </PopoverTrigger>
         <PopoverContent className="w-72" side="right" showArrow>
           <div className="flex flex-col gap-2">
-            <h4 className="text-sm font-semibold">VO₂max</h4>
+            <Heading level={4} className="text-sm font-semibold">VO₂max</Heading>
             <p className="text-sm opacity-80">
               Die maximale Sauerstoffaufnahme (ml/kg/min). Gilt als wichtigster
               Indikator für die aerobe Leistungsfähigkeit.
@@ -211,25 +216,25 @@ export const FilterMenu: Story = {
       </PopoverTrigger>
       <PopoverContent align="start">
         <div className="flex flex-col gap-3">
-          <h4 className="text-sm font-semibold">Filter</h4>
+          <Heading level={4} className="text-sm font-semibold">Filter</Heading>
           <Separator />
           <div className="flex flex-col gap-2">
-            <label className="flex items-center gap-2 text-sm cursor-pointer">
-              <input type="checkbox" className="rounded" defaultChecked />
+            <Label className="flex items-center gap-2 text-sm cursor-pointer">
+              <Checkbox defaultChecked />
               <span>Laufen</span>
-            </label>
-            <label className="flex items-center gap-2 text-sm cursor-pointer">
-              <input type="checkbox" className="rounded" defaultChecked />
+            </Label>
+            <Label className="flex items-center gap-2 text-sm cursor-pointer">
+              <Checkbox defaultChecked />
               <span>Radfahren</span>
-            </label>
-            <label className="flex items-center gap-2 text-sm cursor-pointer">
-              <input type="checkbox" className="rounded" />
+            </Label>
+            <Label className="flex items-center gap-2 text-sm cursor-pointer">
+              <Checkbox />
               <span>Schwimmen</span>
-            </label>
-            <label className="flex items-center gap-2 text-sm cursor-pointer">
-              <input type="checkbox" className="rounded" />
+            </Label>
+            <Label className="flex items-center gap-2 text-sm cursor-pointer">
+              <Checkbox />
               <span>Krafttraining</span>
-            </label>
+            </Label>
           </div>
           <Separator />
           <div className="flex justify-end gap-2">

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { User, Settings, Dumbbell, ClipboardCheck } from 'lucide-react';
 import { Stepper } from './Stepper';
 import { Icon } from '../../atoms/Icon';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Stepper> = {
   title: 'Molecules/Stepper',
@@ -128,14 +129,14 @@ export const TrainingOnboardingWizard: Story = {
 
     return (
       <div className="max-w-2xl">
-        <h3 className="text-lg font-semibold text-[var(--color-text-base)] mb-6">
+        <Heading level={3} className="text-lg font-semibold text-[var(--color-text-base)] mb-6">
           Training Analyzer Setup
-        </h3>
+        </Heading>
         <Stepper steps={steps} currentStep={1} />
         <div className="mt-8 rounded-lg border border-[var(--color-border-default)] p-6">
-          <h4 className="font-medium text-[var(--color-text-base)] mb-2">
+          <Heading level={4} className="font-medium text-[var(--color-text-base)] mb-2">
             Trainingsziel waehlen
-          </h4>
+          </Heading>
           <p className="text-sm text-[var(--color-text-muted)]">
             Waehle dein naechstes Wettkampfziel. Dein Trainingsplan wird basierend
             auf deinem Ziel, deiner aktuellen Fitness und deinem Zeitrahmen erstellt.
@@ -150,7 +151,7 @@ export const DesignTokens: Story = {
   name: 'Design Tokens',
   render: () => (
     <div className="flex flex-col gap-4">
-      <h3 className="text-sm font-semibold">Verwendete Design Tokens</h3>
+      <Heading level={3} className="text-sm font-semibold">Verwendete Design Tokens</Heading>
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="border-b">

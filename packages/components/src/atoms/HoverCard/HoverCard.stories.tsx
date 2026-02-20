@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from './HoverCard';
+import { Button } from '../Button';
+import { Heading } from '../Heading';
 
 const meta: Meta<typeof HoverCardContent> = {
   title: 'Atoms/HoverCard',
@@ -42,9 +44,9 @@ export const Default: Story = {
   render: () => (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <button className="cursor-pointer underline text-sm font-medium">
+        <Button variant="ghost" className="cursor-pointer underline text-sm font-medium">
           Hover fuer Details
-        </button>
+        </Button>
       </HoverCardTrigger>
       <HoverCardContent>
         <p className="text-sm">Dies ist ein einfacher HoverCard mit Textinhalt.</p>
@@ -58,9 +60,9 @@ export const WithArrow: Story = {
   render: () => (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <button className="cursor-pointer underline text-sm font-medium">
+        <Button variant="ghost" className="cursor-pointer underline text-sm font-medium">
           Mit Pfeil hovern
-        </button>
+        </Button>
       </HoverCardTrigger>
       <HoverCardContent showArrow>
         <p className="text-sm">HoverCard mit Pfeil-Indikator.</p>
@@ -76,7 +78,7 @@ export const AllSides: Story = {
       <div />
       <HoverCard>
         <HoverCardTrigger asChild>
-          <button className="cursor-pointer underline text-sm">Top</button>
+          <Button variant="ghost" className="cursor-pointer underline text-sm">Top</Button>
         </HoverCardTrigger>
         <HoverCardContent side="top" showArrow>
           <p className="text-sm">Oben platziert</p>
@@ -85,7 +87,7 @@ export const AllSides: Story = {
       <div />
       <HoverCard>
         <HoverCardTrigger asChild>
-          <button className="cursor-pointer underline text-sm">Left</button>
+          <Button variant="ghost" className="cursor-pointer underline text-sm">Left</Button>
         </HoverCardTrigger>
         <HoverCardContent side="left" showArrow>
           <p className="text-sm">Links platziert</p>
@@ -94,7 +96,7 @@ export const AllSides: Story = {
       <div />
       <HoverCard>
         <HoverCardTrigger asChild>
-          <button className="cursor-pointer underline text-sm">Right</button>
+          <Button variant="ghost" className="cursor-pointer underline text-sm">Right</Button>
         </HoverCardTrigger>
         <HoverCardContent side="right" showArrow>
           <p className="text-sm">Rechts platziert</p>
@@ -103,7 +105,7 @@ export const AllSides: Story = {
       <div />
       <HoverCard>
         <HoverCardTrigger asChild>
-          <button className="cursor-pointer underline text-sm">Bottom</button>
+          <Button variant="ghost" className="cursor-pointer underline text-sm">Bottom</Button>
         </HoverCardTrigger>
         <HoverCardContent side="bottom" showArrow>
           <p className="text-sm">Unten platziert</p>
@@ -121,13 +123,13 @@ export const AthleteProfile: Story = {
       Letzte Einheit von{' '}
       <HoverCard>
         <HoverCardTrigger asChild>
-          <button className="cursor-pointer underline font-medium">
+          <Button variant="ghost" className="cursor-pointer underline font-medium">
             Max Mueller
-          </button>
+          </Button>
         </HoverCardTrigger>
         <HoverCardContent className="w-64" showArrow>
           <div className="flex flex-col gap-2">
-            <h4 className="text-sm font-semibold">Max Mueller</h4>
+            <Heading level={4}>Max Mueller</Heading>
             <div className="flex flex-col gap-1 text-sm">
               <div className="flex justify-between">
                 <span className="opacity-70">Sportart</span>
@@ -162,13 +164,13 @@ export const MetricInfo: Story = {
         <span className="opacity-70">Pace:</span>
         <HoverCard>
           <HoverCardTrigger asChild>
-            <button className="cursor-pointer font-medium underline">
+            <Button variant="ghost" className="cursor-pointer font-medium underline">
               4:32/km
-            </button>
+            </Button>
           </HoverCardTrigger>
           <HoverCardContent className="w-56" showArrow>
             <div className="flex flex-col gap-1 text-sm">
-              <h4 className="font-semibold">Pace-Details</h4>
+              <Heading level={4}>Pace-Details</Heading>
               <div className="flex justify-between">
                 <span className="opacity-70">Durchschnitt</span>
                 <span className="font-medium">4:32/km</span>
@@ -189,13 +191,13 @@ export const MetricInfo: Story = {
         <span className="opacity-70">HF:</span>
         <HoverCard>
           <HoverCardTrigger asChild>
-            <button className="cursor-pointer font-medium underline">
+            <Button variant="ghost" className="cursor-pointer font-medium underline">
               158 bpm
-            </button>
+            </Button>
           </HoverCardTrigger>
           <HoverCardContent className="w-56" showArrow>
             <div className="flex flex-col gap-1 text-sm">
-              <h4 className="font-semibold">Herzfrequenz-Details</h4>
+              <Heading level={4}>Herzfrequenz-Details</Heading>
               <div className="flex justify-between">
                 <span className="opacity-70">Durchschnitt</span>
                 <span className="font-medium">158 bpm</span>

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from './Table';
 import { Badge } from '../../atoms/Badge';
+import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Table> = {
   title: 'Organisms/Table',
@@ -98,9 +99,9 @@ export const AllDensities: Story = {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       {(['compact', 'normal', 'spacious'] as const).map((d) => (
         <div key={d}>
-          <h3 style={{ margin: '0 0 8px', fontSize: '14px', fontWeight: 600, textTransform: 'capitalize' }}>
+          <Heading level={3} style={{ margin: '0 0 8px', fontSize: '14px', fontWeight: 600, textTransform: 'capitalize' }}>
             {d}
-          </h3>
+          </Heading>
           <Table density={d} striped>
             <TableHeader>
               <TableRow hoverable={false}>

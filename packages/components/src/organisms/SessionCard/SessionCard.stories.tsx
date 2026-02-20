@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import SessionCard, { type SessionData } from './SessionCard';
+import { Heading } from '../../atoms/Heading';
 
 // Mock session data
 const baseSessionData: SessionData = {
@@ -280,22 +281,22 @@ export const AllStates: Story = {
   render: () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
-        <h3 className="mb-4 font-semibold">Normal</h3>
+        <Heading level={3} className="mb-4 font-semibold">Normal</Heading>
         <SessionCard sessionData={baseSessionData} />
       </div>
       <div>
-        <h3 className="mb-4 font-semibold">Interactive</h3>
+        <Heading level={3} className="mb-4 font-semibold">Interactive</Heading>
         <SessionCard
           sessionData={baseSessionData}
           onClick={() => alert('Interaktiv!')}
         />
       </div>
       <div>
-        <h3 className="mb-4 font-semibold">Loading</h3>
+        <Heading level={3} className="mb-4 font-semibold">Loading</Heading>
         <SessionCard sessionData={baseSessionData} loading={true} />
       </div>
       <div>
-        <h3 className="mb-4 font-semibold">Error</h3>
+        <Heading level={3} className="mb-4 font-semibold">Error</Heading>
         <SessionCard
           sessionData={baseSessionData}
           error="Netzwerk Fehler"

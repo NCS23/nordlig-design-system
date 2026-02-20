@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Link } from './Link';
+import { Heading } from '../Heading';
 
 const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
@@ -132,7 +133,7 @@ export const DesignTokens: Story = {
   name: 'Design Tokens',
   render: () => (
     <div style={{ fontFamily: 'monospace', fontSize: '13px' }}>
-      <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '12px' }}>Link Design Tokens</h3>
+      <Heading level={3}>Link Design Tokens</Heading>
       <table style={{ borderCollapse: 'collapse', width: '100%' }}>
         <thead>
           <tr style={{ borderBottom: '2px solid #e2e8f0' }}>

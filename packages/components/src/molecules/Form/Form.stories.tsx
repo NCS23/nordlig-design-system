@@ -3,6 +3,9 @@ import { z } from 'zod';
 import { Form, FormField, FormMessage, useZodForm } from './Form';
 import { Input } from '../../atoms/Input';
 import { Button } from '../../atoms/Button';
+import { Heading } from '../../atoms/Heading';
+import { Label } from '../../atoms/Label';
+import { CheckboxField } from '../CheckboxField';
 
 // ---------------------------------------------------------------------------
 // Meta
@@ -333,12 +336,9 @@ export const LoginForm: StoryObj = {
           <FormField name="passwort" label="Passwort">
             <Input type="password" placeholder="Ihr Passwort" />
           </FormField>
-          <div className="flex items-center gap-2">
-            <input type="checkbox" id="remember" className="h-4 w-4" />
-            <label htmlFor="remember" className="text-sm text-[var(--color-text-muted)]">
-              Angemeldet bleiben
-            </label>
-          </div>
+          <CheckboxField
+            label="Angemeldet bleiben"
+          />
           <Button type="submit" className="w-full">
             Anmelden
           </Button>
@@ -377,9 +377,9 @@ export const DesignTokens: StoryObj = {
 
     return (
       <div style={{ maxWidth: 700 }}>
-        <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 12 }}>
+        <Heading level={3} style={{ fontSize: 16, fontWeight: 600, marginBottom: 12 }}>
           Form Design Tokens
-        </h3>
+        </Heading>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
           <thead>
             <tr style={{ borderBottom: '2px solid #e2e8f0' }}>

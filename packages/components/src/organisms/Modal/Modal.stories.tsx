@@ -11,7 +11,7 @@ import {
   ModalFooter,
 } from './Modal';
 import { Button } from '../../atoms/Button';
-import { Input } from '../../atoms/Input';
+import { InputField } from '../../molecules/InputField';
 
 const meta: Meta = {
   title: 'Organisms/Modal',
@@ -235,24 +235,9 @@ export const SettingsDialog: Story = {
         </ModalHeader>
         <ModalBody>
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium text-[var(--color-text-base)]">
-                Maximale Herzfrequenz
-              </label>
-              <Input type="number" placeholder="z.B. 190" inputSize="sm" />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium text-[var(--color-text-base)]">
-                Standard-Trainingstyp
-              </label>
-              <Input placeholder="z.B. Longrun" inputSize="sm" />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium text-[var(--color-text-base)]">
-                Wöchentliches Kilometerziel
-              </label>
-              <Input type="number" placeholder="z.B. 50" inputSize="sm" />
-            </div>
+            <InputField label="Maximale Herzfrequenz" type="number" placeholder="z.B. 190" inputSize="sm" />
+            <InputField label="Standard-Trainingstyp" placeholder="z.B. Longrun" inputSize="sm" />
+            <InputField label="Wöchentliches Kilometerziel" type="number" placeholder="z.B. 50" inputSize="sm" />
           </div>
         </ModalBody>
         <ModalFooter>

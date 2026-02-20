@@ -15,6 +15,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import { Icon } from '../../atoms/Icon';
+import { Heading } from '../../atoms/Heading';
 import {
   Sidebar,
   SidebarHeader,
@@ -316,7 +317,8 @@ export const DesignTokens: Story = {
   ],
   render: () => (
     <div style={{ fontFamily: 'monospace', fontSize: '13px', lineHeight: '1.8' }}>
-      <h3
+      <Heading
+        level={3}
         style={{
           fontFamily: 'sans-serif',
           fontSize: '16px',
@@ -325,7 +327,7 @@ export const DesignTokens: Story = {
         }}
       >
         Sidebar - Verwendete Design Tokens
-      </h3>
+      </Heading>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr
