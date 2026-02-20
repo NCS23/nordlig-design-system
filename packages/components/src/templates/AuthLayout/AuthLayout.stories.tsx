@@ -20,10 +20,10 @@ const meta: Meta<typeof AuthLayout> = {
 export default meta;
 type Story = StoryObj<typeof AuthLayout>;
 
-/* ─── Reusable Logo ────────────────────────────────────────────────────────── */
+/* ─── Reusable Logo (inside card) ──────────────────────────────────────────── */
 
-const Logo = () => (
-  <div className="flex items-center gap-3">
+const CardLogo = () => (
+  <div className="mb-6 flex items-center justify-center gap-3">
     <img src="/bildmarke.svg" alt="" className="h-8 w-auto" />
     <Text variant="body" as="span" className="text-xl font-bold">
       Nordlig
@@ -48,7 +48,6 @@ const FooterLinks = ({ links }: { links: { label: string; href: string }[] }) =>
 export const Login: Story = {
   render: () => (
     <AuthLayout
-      logo={<Logo />}
       footer={
         <FooterLinks
           links={[
@@ -58,6 +57,7 @@ export const Login: Story = {
         />
       }
     >
+      <CardLogo />
       <Heading level={2} className="mb-6">
         Anmelden
       </Heading>
@@ -77,11 +77,11 @@ export const Login: Story = {
 export const Register: Story = {
   render: () => (
     <AuthLayout
-      logo={<Logo />}
       footer={
         <FooterLinks links={[{ label: 'Bereits registriert? Anmelden', href: '/login' }]} />
       }
     >
+      <CardLogo />
       <Heading level={2} className="mb-6">
         Konto erstellen
       </Heading>
@@ -108,11 +108,11 @@ export const Register: Story = {
 export const ForgotPassword: Story = {
   render: () => (
     <AuthLayout
-      logo={<Logo />}
       footer={
         <FooterLinks links={[{ label: 'Zurueck zur Anmeldung', href: '/login' }]} />
       }
     >
+      <CardLogo />
       <Heading level={2} className="mb-2">
         Passwort zuruecksetzen
       </Heading>
@@ -130,7 +130,6 @@ export const ForgotPassword: Story = {
 export const WithBackground: Story = {
   render: () => (
     <AuthLayout
-      logo={<Logo />}
       background={
         <div
           className="absolute inset-0"
@@ -150,6 +149,7 @@ export const WithBackground: Story = {
         />
       }
     >
+      <CardLogo />
       <Heading level={2} className="mb-6">
         Anmelden
       </Heading>
@@ -169,7 +169,6 @@ export const MobileView: Story = {
   parameters: { viewport: { defaultViewport: 'mobile1' } },
   render: () => (
     <AuthLayout
-      logo={<Logo />}
       footer={
         <FooterLinks
           links={[
@@ -179,6 +178,7 @@ export const MobileView: Story = {
         />
       }
     >
+      <CardLogo />
       <Heading level={2} className="mb-6">
         Anmelden
       </Heading>
@@ -196,15 +196,12 @@ export const MobileView: Story = {
 
 export const WithLogo: Story = {
   render: () => (
-    <AuthLayout
-      logo={
-        <div className="flex flex-col items-center gap-2">
-          <img src="/bildmarke.svg" alt="" className="h-12 w-auto" />
-          <Heading level={3}>Nordlig</Heading>
-          <Text variant="muted">Training Analyzer</Text>
-        </div>
-      }
-    >
+    <AuthLayout>
+      <div className="mb-6 flex flex-col items-center gap-2">
+        <img src="/bildmarke.svg" alt="" className="h-12 w-auto" />
+        <Heading level={3}>Nordlig</Heading>
+        <Text variant="muted">Training Analyzer</Text>
+      </div>
       <Heading level={2} className="mb-6">
         Willkommen zurueck
       </Heading>
