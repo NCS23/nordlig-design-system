@@ -41,16 +41,24 @@ jobs:
       - name: Deploy Storybook
         if: ${{ github.event_name == 'push' }}
         run: |
-          echo "Deploying to nordlig-storybook container..."
-          RESPONSE=$(curl -s --unix-socket /var/run/docker.sock \
-            -H "Content-Type: application/json" \
-            -d '{"Cmd":["sh","-c","cd /app && git pull origin main 2>&1"],"AttachStdout":true,"AttachStderr":true}' \
-            http://localhost/containers/nordlig-storybook/exec)
-          echo "Exec create response: $RESPONSE"
-          EXEC_ID=$(echo "$RESPONSE" | python3 -c "import json,sys; print(json.load(sys.stdin)['Id'])")
-          echo "Exec ID: $EXEC_ID"
-          curl -v --unix-socket /var/run/docker.sock \
-            -H "Content-Type: application/json" \
-            -d '{"Detach":false}' \
-            "http://localhost/exec/$EXEC_ID/start" 2>&1
+          echo "Updating nordlig-storybook container..."
+
+          # Helper: exec a command in the storybook container and capture output
+          docker_exec() {
+            local CMD="$1"
+            local RESP=$(curl -s --unix-socket /var/run/docker.sock \
+              -H "Content-Type: application/json" \
+              -d "{\"Cmd\":[\"sh\",\"-c\",\"$CMD\"],\"AttachStdout\":true,\"AttachStderr\":true}" \
+              http://localhost/containers/nordlig-storybook/exec)
+            local EID=$(echo "$RESP" | python3 -c "import json,sys; print(json.load(sys.stdin)['Id'])")
+            curl -s --unix-socket /var/run/docker.sock \
+              -H "Content-Type: application/json" \
+              -d '{"Detach":false}' \
+              "http://localhost/exec/$EID/start" 2>&1
+          }
+
+          # Git pull to update source
+          echo "Running git pull..."
+          docker_exec "cd /app && git pull origin main 2>&1"
+
           echo "Deploy complete."
