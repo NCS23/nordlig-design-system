@@ -106,7 +106,7 @@ const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
       <div
         ref={ref}
         className={cn(
-          'p-4 flex items-center gap-[var(--spacing-sidebar-header-gap)]',
+          'p-[var(--spacing-sidebar-header-padding)] flex items-center gap-[var(--spacing-sidebar-header-gap)]',
           collapsed && 'justify-center',
           className
         )}
@@ -128,7 +128,7 @@ const SidebarContent = React.forwardRef<HTMLDivElement, SidebarContentProps>(
     return (
       <div
         ref={ref}
-        className={cn('flex-1 overflow-y-auto py-2', className)}
+        className={cn('flex-1 overflow-y-auto py-[var(--spacing-sidebar-content-py)]', className)}
         {...props}
       />
     );
@@ -146,7 +146,7 @@ const SidebarFooter = React.forwardRef<HTMLDivElement, SidebarFooterProps>(
       <div
         ref={ref}
         className={cn(
-          'p-4 border-t border-[var(--color-border-base)] mt-auto',
+          'p-[var(--spacing-sidebar-header-padding)] border-t border-[var(--color-border-base)] mt-auto',
           className
         )}
         {...props}
@@ -168,9 +168,9 @@ const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
     const { collapsed } = useSidebar();
 
     return (
-      <div ref={ref} className={cn('px-3 py-2', className)} {...props}>
+      <div ref={ref} className={cn('px-[var(--spacing-sidebar-group-px)] py-[var(--spacing-sidebar-group-py)]', className)} {...props}>
         {label && !collapsed && (
-          <div className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider px-3 mb-1">
+          <div className="text-[length:var(--font-sidebar-label-size)] [font-weight:var(--font-sidebar-label-weight)] text-[var(--color-text-muted)] uppercase tracking-wider px-[var(--spacing-sidebar-label-px)] mb-[var(--spacing-sidebar-label-mb)]">
             {label}
           </div>
         )}
@@ -215,10 +215,10 @@ const SidebarItem = React.forwardRef<HTMLElement, SidebarItemProps>(
     const { collapsed } = useSidebar();
 
     const baseClasses = cn(
-      'flex items-center gap-[var(--spacing-sidebar-item-gap)] px-3 py-2 rounded-[var(--radius-md)] text-sm transition-colors w-full',
+      'flex items-center gap-[var(--spacing-sidebar-item-gap)] px-[var(--spacing-sidebar-item-px)] py-[var(--spacing-sidebar-item-py)] rounded-[var(--radius-md)] text-[length:var(--font-sidebar-item-size)] transition-colors w-full',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
       active
-        ? 'bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)] font-medium'
+        ? 'bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)] [font-weight:var(--font-sidebar-badge-weight)]'
         : 'text-[var(--color-text-base)] hover:bg-[var(--color-bg-muted)]',
       disabled && 'opacity-50 pointer-events-none',
       collapsed && 'justify-center',
@@ -230,7 +230,7 @@ const SidebarItem = React.forwardRef<HTMLElement, SidebarItemProps>(
         {icon && <span className="shrink-0">{icon}</span>}
         {!collapsed && <span className="truncate">{label}</span>}
         {!collapsed && badge !== undefined && (
-          <span className="ml-auto text-xs font-medium bg-[var(--color-badge-error-bg)] text-[var(--color-badge-error-text)] px-1.5 py-0.5 rounded-full">
+          <span className="ml-auto text-[length:var(--font-sidebar-badge-size)] [font-weight:var(--font-sidebar-badge-weight)] bg-[var(--color-badge-error-bg)] text-[var(--color-badge-error-text)] px-[var(--spacing-sidebar-badge-px)] py-[var(--spacing-sidebar-badge-py)] rounded-full">
             {badge}
           </span>
         )}
@@ -288,7 +288,7 @@ const SidebarCollapseButton = React.forwardRef<
       onClick={toggle}
       aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       className={cn(
-        'p-1.5 rounded-[var(--radius-md)] text-[var(--color-text-muted)] hover:bg-[var(--color-bg-muted)] transition-colors',
+        'p-[var(--spacing-sidebar-collapse-padding)] rounded-[var(--radius-md)] text-[var(--color-text-muted)] hover:bg-[var(--color-bg-muted)] transition-colors',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
         className
       )}

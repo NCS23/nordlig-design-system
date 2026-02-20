@@ -244,7 +244,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
     const renderFilteredItems = () => {
       if (filtered.length === 0) {
         return (
-          <div className="px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] text-sm text-[var(--color-select-empty-text)]">
+          <div className="px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] text-[length:var(--font-multiselect-item-size)] text-[var(--color-select-empty-text)]">
             {emptyText}
           </div>
         );
@@ -271,7 +271,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
             )}
             <div
               id={`msel-group-${gi}`}
-              className="px-[var(--spacing-select-item-padding-x)] py-1 text-xs font-medium text-[var(--color-select-group-label)] uppercase tracking-wider"
+              className="px-[var(--spacing-select-item-padding-x)] py-1 text-[length:var(--font-multiselect-group-label-size)] [font-weight:var(--font-multiselect-group-label-weight)] text-[var(--color-select-group-label)] uppercase tracking-wider"
             >
               {group.label}
             </div>
@@ -300,7 +300,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
           onKeyDown={handleKeyDown}
           onMouseEnter={() => !isEffectivelyDisabled && setFocusedIndex(idx)}
           className={cn(
-            'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-sm transition-colors',
+            'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-[length:var(--font-multiselect-item-size)] transition-colors',
             'text-[var(--color-select-item-text)]',
             isEffectivelyDisabled &&
               'text-[var(--color-select-item-disabled-text)] cursor-not-allowed opacity-50',
@@ -351,7 +351,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
                 'flex items-center justify-between gap-[var(--spacing-multiselect-trigger-gap)] text-left min-h-[var(--sizing-input-md-height)]',
                 inputSize === 'sm' && 'min-h-[var(--sizing-input-sm-height)]',
                 inputSize === 'lg' && 'min-h-[var(--sizing-input-lg-height)]',
-                'h-auto py-1.5',
+                'h-auto py-[var(--spacing-multiselect-trigger-py)]',
                 'disabled:cursor-not-allowed disabled:bg-[var(--color-select-trigger-disabled-bg)]'
               )}
             >
@@ -382,7 +382,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
               )}
             >
               {/* Search Input */}
-              <div className="p-2 border-b border-[var(--color-select-separator)]">
+              <div className="p-[var(--spacing-multiselect-section-px)] border-b border-[var(--color-select-separator)]">
                 <div className="relative">
                   <Icon
                     icon={Search}
@@ -398,7 +398,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
                     placeholder={searchPlaceholder}
                     aria-label="Optionen durchsuchen"
                     className={cn(
-                      'w-full pl-8 pr-3 py-1.5 text-sm rounded-[var(--radius-select-item)]',
+                      'w-full pl-8 pr-[var(--spacing-multiselect-item-px)] py-[var(--spacing-multiselect-search-py)] text-[length:var(--font-multiselect-item-size)] rounded-[var(--radius-select-item)]',
                       'bg-[var(--color-select-search-bg)]',
                       'text-[var(--color-select-trigger-text)]',
                       'placeholder:text-[var(--color-select-trigger-placeholder)]',
@@ -411,16 +411,16 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
 
               {/* Select All / Deselect All */}
               {showSelectAll && filtered.length > 0 && (
-                <div className="flex items-center gap-[var(--spacing-multiselect-item-gap)] px-3 py-1.5 border-b border-[var(--color-select-separator)]">
+                <div className="flex items-center gap-[var(--spacing-multiselect-item-gap)] px-[var(--spacing-multiselect-selectall-px)] py-[var(--spacing-multiselect-selectall-py)] border-b border-[var(--color-select-separator)]">
                   <button
                     type="button"
                     onClick={allSelected ? handleDeselectAll : handleSelectAll}
-                    className="text-xs font-medium text-[var(--color-select-item-selected-text)] hover:underline"
+                    className="text-[length:var(--font-multiselect-selectall-size)] [font-weight:var(--font-multiselect-selectall-weight)] text-[var(--color-select-item-selected-text)] hover:underline"
                   >
                     {allSelected ? deselectAllLabel : selectAllLabel}
                   </button>
                   {someSelected && (
-                    <span className="text-xs text-[var(--color-select-group-label)]">
+                    <span className="text-[length:var(--font-multiselect-selectall-size)] text-[var(--color-select-group-label)]">
                       ({value.length}/{enabledOptions.length})
                     </span>
                   )}

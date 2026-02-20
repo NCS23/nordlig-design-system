@@ -157,7 +157,7 @@ describe('SidebarHeader', () => {
       </Sidebar>
     );
     const header = screen.getByTestId('header');
-    expect(header.className).toContain('p-4');
+    expect(header.className).toContain('p-[var(--spacing-sidebar-header-padding)]');
     expect(header.className).toContain('flex');
     expect(header.className).toContain('items-center');
     expect(header.className).toContain('gap-[var(--spacing-sidebar-header-gap)]');
@@ -308,8 +308,8 @@ describe('SidebarGroup', () => {
       </Sidebar>
     );
     const label = screen.getByText('Section');
-    expect(label.className).toContain('text-xs');
-    expect(label.className).toContain('font-semibold');
+    expect(label.className).toContain('text-[length:var(--font-sidebar-label-size)]');
+    expect(label.className).toContain('[font-weight:var(--font-sidebar-label-weight)]');
     expect(label.className).toContain('uppercase');
     expect(label.className).toContain('tracking-wider');
     expect(label.className).toContain('text-[var(--color-text-muted)]');
@@ -397,7 +397,7 @@ describe('SidebarItem', () => {
     const item = screen.getByTestId('item');
     expect(item.className).toContain('bg-[var(--color-bg-primary)]');
     expect(item.className).toContain('text-[var(--color-text-on-primary)]');
-    expect(item.className).toContain('font-medium');
+    expect(item.className).toContain('[font-weight:var(--font-sidebar-badge-weight)]');
   });
 
   it('applies aria-current=page when active', () => {

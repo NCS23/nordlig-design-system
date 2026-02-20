@@ -48,6 +48,22 @@ const darkModeStories = [
   { id: 'atoms-loadingoverlay--default',        name: 'loadingoverlay-default' },
   { id: 'atoms-rating--default',                name: 'rating-default' },
   { id: 'atoms-highlight--default',             name: 'highlight-default' },
+  // Visual Regression Baseline Expansion
+  { id: 'atoms-blockquote--default',            name: 'blockquote-default' },
+  { id: 'atoms-image--default',                 name: 'image-default' },
+  { id: 'atoms-inputotp--default',              name: 'inputotp-default' },
+  { id: 'atoms-radio--group',                   name: 'radio-group' },
+  { id: 'atoms-copybutton--default',            name: 'copybutton-default' },
+  { id: 'molecules-timepicker--default',         name: 'timepicker-default' },
+  { id: 'molecules-select--multi-select-default', name: 'multiselect-default' },
+  { id: 'molecules-checkboxfield--with-label',   name: 'checkboxfield-default' },
+  { id: 'molecules-switchfield--all-states',     name: 'switchfield-all-states' },
+  { id: 'molecules-toolbar--default',            name: 'toolbar-default' },
+  { id: 'organisms-sessioncard--all-states',     name: 'sessioncard-all-states' },
+  { id: 'organisms-datatable--basic',            name: 'datatable-basic' },
+  { id: 'templates-pageshell--default',          name: 'pageshell-default' },
+  { id: 'templates-dashboardlayout--default',    name: 'dashboardlayout-default' },
+  { id: 'templates-authlayout--login',           name: 'authlayout-login' },
 ];
 
 test.describe('Dark Mode', () => {

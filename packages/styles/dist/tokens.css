@@ -190,6 +190,12 @@
   --spacing-base-1-5: 6px;
   --spacing-base-2-5: 10px;
   --spacing-base-3-5: 14px;
+  --spacing-multiselect-trigger-py: 6px; /** Trigger vertical padding */
+  --spacing-multiselect-search-py: 6px; /** Search input vertical padding */
+  --spacing-multiselect-item-py: 6px; /** Item vertical padding */
+  --spacing-sidebar-badge-px: 6px; /** Badge horizontal padding */
+  --spacing-sidebar-badge-py: 2px; /** Badge vertical padding */
+  --spacing-sidebar-collapse-padding: 6px; /** Collapse button padding */
   --font-base-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-base-family-serif: 'Merriweather', Georgia, serif;
   --font-base-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -220,6 +226,7 @@
   --font-base-letter-spacing-normal: 0em;
   --font-base-letter-spacing-wide: 0.025em;
   --font-kbd-sm-size: 11px; /** Kbd sm font size (11px, no L3 equivalent) */
+  --sizing-auth-card-max-width: 420px; /** Card max width */
   --sizing-cpick-field-height: 160px; /** Saturation field height */
   --sizing-cpick-slider-height: 12px; /** Hue/alpha slider track height */
   --sizing-cpick-thumb-size: 16px; /** Slider/field thumb size */
@@ -227,6 +234,9 @@
   --sizing-cpybtn-sm: 28px; /** CopyButton size sm (compact icon-only) */
   --sizing-cpybtn-md: 32px; /** CopyButton size md */
   --sizing-cpybtn-lg: 36px; /** CopyButton size lg */
+  --sizing-dashboard-header-height: 56px; /** Fixed header height */
+  --sizing-dashboard-sidebar-width: 240px; /** Sidebar expanded width */
+  --sizing-dashboard-sidebar-collapsed-width: 64px; /** Sidebar collapsed width */
   --sizing-datepicker-day-size: 36px; /** Day cell width/height */
   --sizing-shell-header-height: 56px; /** Fixed header height */
   --sizing-shell-footer-height: 48px; /** Fixed footer height */
@@ -582,6 +592,11 @@
   --color-alertdlg-cancel-bg: var(--color-bg-surface); /** Cancel button background */
   --color-alertdlg-cancel-text: var(--color-text-base); /** Cancel button text */
   --color-alertdlg-cancel-hover-bg: var(--color-bg-surface-hover); /** Cancel button hover */
+  --color-auth-bg: var(--color-bg-base); /** Full-page background */
+  --color-auth-card-bg: var(--color-bg-paper); /** Form card background */
+  --color-auth-card-border: var(--color-border-muted); /** Card border */
+  --color-auth-footer-text: var(--color-text-muted); /** Footer text color */
+  --color-auth-footer-link: var(--color-text-primary); /** Footer link color */
   --color-avatar-bg: var(--color-bg-surface); /** Avatar fallback background */
   --color-avatar-text: var(--color-text-muted); /** Avatar fallback text */
   --color-avatar-border: var(--color-border-default); /** Avatar border */
@@ -700,6 +715,10 @@
   --color-cpybtn-icon: var(--color-text-muted); /** Copy icon color */
   --color-cpybtn-icon-copied: var(--color-text-success); /** Check icon after copy */
   --color-cpybtn-border: var(--color-border-default); /** Button border */
+  --color-dashboard-bg: var(--color-bg-base); /** Page background */
+  --color-dashboard-header-bg: var(--color-bg-paper); /** Header background */
+  --color-dashboard-header-border: var(--color-border-muted); /** Header bottom border */
+  --color-dashboard-overlay-bg: var(--color-bg-overlay); /** Mobile sidebar backdrop */
   --color-datatable-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
   --color-datatable-row-selected-bg: var(--color-bg-surface); /** Selected row background */
   --color-datatable-sort-icon: var(--color-text-muted); /** Sort icon inactive */
@@ -743,24 +762,24 @@
   --color-emptystate-icon-success: var(--color-text-success); /** Success variant icon color */
   --color-emptystate-title: var(--color-text-base); /** Title text color */
   --color-emptystate-description: var(--color-text-muted); /** Description text color (muted) */
-  --color-fileupload-zone-bg: var(--color-bg-surface); /** Upload zone background (slate-100) – visible against white page */
-  --color-fileupload-zone-border: var(--color-border-default); /** Dashed border – gray-300 for visibility */
+  --color-fileupload-zone-bg: var(--color-bg-surface); /** Upload zone background */
+  --color-fileupload-zone-border: var(--color-border-default); /** Dashed border */
   --color-fileupload-zone-text: var(--color-text-base); /** Zone primary instruction text */
   --color-fileupload-zone-text-sub: var(--color-text-muted); /** Zone secondary/sub text */
-  --color-fileupload-zone-icon: var(--color-interactive-primary); /** Upload cloud icon – sky-500 brand color */
-  --color-fileupload-hover-bg: var(--color-bg-primary-subtle); /** Sky-50 hover bg */
-  --color-fileupload-hover-border: var(--color-border-focus); /** Sky-500 solid hover border */
-  --color-fileupload-drag-bg: var(--color-bg-primary-subtle); /** Sky-50 drag-over bg */
-  --color-fileupload-drag-border: var(--color-border-focus); /** Sky-500 drag-over border */
-  --color-fileupload-drag-icon: var(--color-bg-primary); /** Sky-500 drag-over icon */
-  --color-fileupload-drag-text: var(--color-text-primary); /** Sky-600 drag-over text */
+  --color-fileupload-zone-icon: var(--color-interactive-primary); /** Upload cloud icon */
+  --color-fileupload-hover-bg: var(--color-bg-primary-subtle); /** Hover bg */
+  --color-fileupload-hover-border: var(--color-border-focus); /** Hover border */
+  --color-fileupload-drag-bg: var(--color-bg-primary-subtle); /** Drag-over bg */
+  --color-fileupload-drag-border: var(--color-border-focus); /** Drag-over border */
+  --color-fileupload-drag-icon: var(--color-bg-primary); /** Drag-over icon */
+  --color-fileupload-drag-text: var(--color-text-primary); /** Drag-over text */
   --color-fileupload-file-text: var(--color-text-base); /** File name text */
   --color-fileupload-file-size: var(--color-text-muted); /** File size text */
   --color-fileupload-file-icon: var(--color-text-muted); /** File type icon */
   --color-fileupload-file-remove: var(--color-text-muted); /** Remove button */
   --color-fileupload-file-remove-hover: var(--color-text-error); /** Remove hover */
   --color-fileupload-progress-bg: var(--color-bg-surface-hover); /** Progress track */
-  --color-fileupload-progress-fill: var(--color-bg-primary); /** Sky-500 progress bar */
+  --color-fileupload-progress-fill: var(--color-bg-primary); /** Progress bar */
   --color-fileupload-error-text: var(--color-text-error); /** Error message */
   --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
   --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
@@ -1027,6 +1046,7 @@
   --radius-accordion: var(--radius-component-lg); /** 8px item radius */
   --radius-alert: var(--radius-component-md); /** 6px rounded corners */
   --radius-alertdlg: var(--radius-component-lg); /** AlertDialog border radius */
+  --radius-auth-card: var(--radius-component-lg); /** Card border radius */
   --radius-avatar: var(--radius-component-full); /** Avatar border radius (circle) */
   --radius-badge: var(--radius-component-full);
   --radius-banner-dismiss: var(--radius-component-sm); /** Dismiss button border radius (rounded-sm) */
@@ -1051,8 +1071,8 @@
   --radius-drawer: var(--radius-component-lg); /** Drawer top corner radius */
   --radius-dropdown-menu: var(--radius-component-lg); /** 8px menu radius */
   --radius-dropdown-item: var(--radius-component-md); /** 6px item radius */
-  --radius-fileupload-zone: var(--radius-component-lg); /** 8px zone radius */
-  --radius-fileupload-item: var(--radius-component-md); /** 6px file item radius */
+  --radius-fileupload-zone: var(--radius-component-lg); /** Zone radius */
+  --radius-fileupload-item: var(--radius-component-md); /** File item radius */
   --radius-fileupload-progress: var(--radius-component-full); /** Pill progress bar */
   --radius-hl: var(--radius-component-sm); /** Highlight border radius */
   --radius-hovercard: var(--radius-component-lg); /** HoverCard border radius */
@@ -1094,11 +1114,13 @@
   --radius-toolbar-item: var(--radius-component-sm); /** Button/toggle item radius */
   --radius-tooltip: var(--radius-component-md); /** 6px rounded corners */
   --shadow-alertdlg: var(--shadow-elevation-overlay); /** AlertDialog panel shadow */
+  --shadow-auth-card: var(--shadow-elevation-medium); /** Card elevation shadow */
   --shadow-card-raised: var(--shadow-elevation-low);
   --shadow-card-elevated: var(--shadow-elevation-medium);
   --shadow-card-hover: var(--shadow-elevation-high);
   --shadow-chart-tooltip: var(--shadow-elevation-medium); /** Chart tooltip shadow */
   --shadow-command: var(--shadow-elevation-overlay); /** Command palette shadow */
+  --shadow-dashboard-header: var(--shadow-elevation-low); /** Header elevation shadow */
   --shadow-datepicker-popover: var(--shadow-elevation-medium); /** Popover elevation */
   --shadow-dialog: var(--shadow-elevation-overlay); /** Dialog panel shadow */
   --shadow-drawer: var(--shadow-elevation-overlay); /** Drawer elevation shadow */
@@ -1125,6 +1147,9 @@
   --spacing-alert-content-gap: var(--spacing-component-gap-xs); /** Gap between title and description (4px) */
   --spacing-alertdlg-padding: var(--spacing-component-padding-lg); /** AlertDialog content padding */
   --spacing-alertdlg-gap: var(--spacing-component-gap-md); /** AlertDialog content gap */
+  --spacing-auth-card-padding: var(--spacing-component-padding-xl); /** Card inner padding (32px) */
+  --spacing-auth-logo-gap: var(--spacing-component-gap-lg); /** Gap between logo and card (16px) */
+  --spacing-auth-footer-gap: var(--spacing-component-gap-md); /** Gap between card and footer (12px) */
   --spacing-banner-padding-x: var(--spacing-component-padding-lg); /** Horizontal padding */
   --spacing-banner-padding-y: var(--spacing-component-padding-md); /** Vertical padding */
   --spacing-banner-gap: var(--spacing-component-gap-md); /** Gap between elements */
@@ -1152,6 +1177,8 @@
   --spacing-cmb-item-padding-y: var(--spacing-component-padding-sm); /** Item vertical padding */
   --spacing-cmb-trigger-gap: var(--spacing-component-gap-sm); /** Gap between text and chevron in trigger (8px) */
   --spacing-command-padding: var(--spacing-component-padding-sm); /** Command item padding */
+  --spacing-dashboard-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
+  --spacing-dashboard-content-p: var(--spacing-component-padding-lg); /** Content area padding (24px) */
   --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
   --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
   --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
@@ -1165,9 +1192,16 @@
   --spacing-dropdown-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
   --spacing-dropdown-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
   --spacing-dropdown-item-gap: var(--spacing-component-gap-sm); /** 8px gap between icon and text */
-  --spacing-fileupload-zone-padding: var(--spacing-component-padding-lg); /** 32px zone inner padding */
+  --spacing-fileupload-zone-padding: var(--spacing-component-padding-lg); /** Zone inner padding */
   --spacing-fileupload-file-gap: var(--spacing-component-gap-sm); /** Gap between file items */
   --spacing-fileupload-file-item-gap: var(--spacing-component-gap-md); /** Gap inside file item row (12px) */
+  --spacing-fileupload-list-padding: var(--spacing-component-padding-md); /** File list container padding (12px) */
+  --spacing-fileupload-item-padding: var(--spacing-component-padding-sm); /** File item padding (8px) */
+  --spacing-fileupload-remove-padding: var(--spacing-component-padding-xs); /** Remove button padding (4px) */
+  --spacing-fileupload-progress-px: var(--spacing-component-padding-md); /** Progress bar horizontal padding */
+  --spacing-fileupload-progress-pb: var(--spacing-component-padding-md); /** Progress bar bottom padding */
+  --spacing-fileupload-subtext-mt: var(--spacing-component-gap-xs); /** Sub-text top margin (4px) */
+  --spacing-fileupload-addmore-mt: var(--spacing-component-gap-md); /** Add-more hint top margin (8px) */
   --spacing-form-field-gap: var(--sizing-component-gap-sm); /** Gap between label, input, and hint in FormItem (6px) */
   --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
   --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
@@ -1190,6 +1224,10 @@
   --spacing-multiselect-tag-gap: var(--spacing-component-gap-xs); /** Gap between tags in trigger (4px) */
   --spacing-multiselect-item-gap: var(--spacing-component-gap-sm); /** Gap between check and label in item (8px) */
   --spacing-multiselect-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
+  --spacing-multiselect-item-px: var(--spacing-component-padding-md); /** Item horizontal padding (12px) */
+  --spacing-multiselect-section-px: var(--spacing-component-padding-sm); /** Popover section padding (8px) */
+  --spacing-multiselect-selectall-px: var(--spacing-component-padding-md); /** Select-all horizontal padding (12px) */
+  --spacing-multiselect-selectall-py: var(--spacing-component-gap-xs); /** Select-all vertical padding (4px) */
   --spacing-navmenu-gap: var(--spacing-component-gap-xs); /** Gap between nav items (4px) */
   --spacing-navmenu-trigger-gap: var(--spacing-component-gap-xs); /** Gap between trigger text and chevron (4px) */
   --spacing-shell-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
@@ -1214,11 +1252,26 @@
   --spacing-select-item-gap: var(--spacing-component-gap-sm); /** Gap between icon and text in item */
   --spacing-select-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
   --spacing-session-card-grid-gap: var(--spacing-component-gap-lg); /** Gap between grid items (16px) */
+  --spacing-session-card-padding: var(--spacing-component-padding-xl); /** Card padding (24px) */
+  --spacing-session-card-section-gap: var(--spacing-component-gap-lg); /** Gap between sections — mt-4/mb-4 (16px) */
+  --spacing-session-card-zone-header-mb: var(--spacing-component-gap-md); /** Zone header bottom margin (8px) */
+  --spacing-session-card-zone-label-mt: var(--spacing-component-gap-xs); /** Zone label top margin (4px) */
+  --spacing-session-card-error-padding: var(--spacing-component-padding-xl); /** Error state padding (32px) */
+  --spacing-session-card-error-gap: var(--spacing-component-gap-xs); /** Error text gap (4px) */
+  --spacing-session-card-date-mt: var(--spacing-component-gap-xs); /** Date top margin (4px) */
   --spacing-sheet-padding: var(--spacing-component-padding-lg); /** Sheet content padding */
   --spacing-sheet-header-gap: var(--sizing-component-gap-sm); /** Gap between title and description in header (6px) */
   --spacing-sheet-footer-gap: var(--spacing-component-gap-sm); /** Gap between footer buttons (8px) */
   --spacing-sidebar-header-gap: var(--spacing-component-gap-md); /** Gap between items in sidebar header (12px) */
   --spacing-sidebar-item-gap: var(--spacing-component-gap-md); /** Gap between icon and label in sidebar item (12px) */
+  --spacing-sidebar-header-padding: var(--spacing-component-padding-lg); /** Header/footer padding (16px) */
+  --spacing-sidebar-content-py: var(--spacing-component-gap-md); /** Content vertical padding (8px) */
+  --spacing-sidebar-group-px: var(--spacing-component-padding-md); /** Group horizontal padding (12px) */
+  --spacing-sidebar-group-py: var(--spacing-component-gap-md); /** Group vertical padding (8px) */
+  --spacing-sidebar-item-px: var(--spacing-component-padding-md); /** Item horizontal padding (12px) */
+  --spacing-sidebar-item-py: var(--spacing-component-gap-md); /** Item vertical padding (8px) */
+  --spacing-sidebar-label-px: var(--spacing-component-padding-md); /** Label horizontal padding (12px) */
+  --spacing-sidebar-label-mb: var(--spacing-component-gap-xs); /** Label bottom margin (4px) */
   --spacing-slider-gap: var(--spacing-component-gap-md); /** Gap between slider and value display (12px) */
   --spacing-spinner-gap: var(--spacing-component-gap-sm); /** Gap between spinner and label (8px) */
   --spacing-stat-card-trend-gap: var(--spacing-component-gap-xs); /** Gap in trend indicator (4px) */
@@ -1286,16 +1339,34 @@
   --font-checkbox-label-line-height: var(--font-component-line-height-sm); /** 20px */
   --font-checkbox-desc-line-height: var(--font-component-line-height-xs); /** 18px */
   --font-code-size: var(--font-component-size-sm); /** Code font size (14px) */
+  --font-fileupload-instruction-size: var(--font-component-size-sm); /** Instruction text size (14px) */
+  --font-fileupload-instruction-weight: var(--font-component-weight-medium); /** Instruction text weight */
+  --font-fileupload-filename-size: var(--font-component-size-sm); /** File name size (14px) */
+  --font-fileupload-hint-size: var(--font-component-size-xs); /** Hint/sub/size text (12px) */
   --font-inputotp-size: var(--font-component-size-sm); /** OTP digit font size (text-sm) */
   --font-inputotp-weight: var(--font-component-weight-medium); /** OTP digit font weight (500) */
   --font-kbd-md-size: var(--font-component-size-xs); /** Kbd md font size (12px) */
   --font-kbd-lg-size: var(--font-component-size-sm); /** Kbd lg font size (14px) */
   --font-label-size: var(--font-component-size-sm); /** Label font size (14px) */
   --font-label-weight: var(--font-component-weight-medium); /** Label font weight (500) */
+  --font-multiselect-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-multiselect-selectall-size: var(--font-component-size-xs); /** Select-all text size (12px) */
+  --font-multiselect-selectall-weight: var(--font-component-weight-medium); /** Select-all weight */
+  --font-multiselect-group-label-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-multiselect-group-label-weight: var(--font-component-weight-medium); /** Group label weight */
   --font-numberinput-weight: var(--font-component-weight-medium); /** Input value font weight (500) */
   --font-progress-label-size: var(--font-component-size-sm); /** ProgressField label font size (text-sm) */
   --font-progress-label-weight: var(--font-component-weight-medium); /** ProgressField label font weight (500) */
   --font-progress-value-size: var(--font-component-size-sm); /** ProgressField value font size (text-sm) */
+  --font-session-card-title-weight: var(--font-component-weight-semibold); /** Title font weight */
+  --font-session-card-value-weight: var(--font-component-weight-medium); /** Metric value/duration weight */
+  --font-session-card-text-size: var(--font-component-size-sm); /** Body text size — 14px */
+  --font-session-card-hint-size: var(--font-component-size-xs); /** Label/hint text size — 12px */
+  --font-sidebar-label-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-sidebar-label-weight: var(--font-component-weight-semibold); /** Group label weight */
+  --font-sidebar-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-sidebar-badge-size: var(--font-component-size-xs); /** Badge text size (12px) */
+  --font-sidebar-badge-weight: var(--font-component-weight-medium); /** Badge weight */
   --font-slider-value-size: var(--font-component-size-sm); /** Slider value display font size (text-sm) */
   --font-slider-value-weight: var(--font-component-weight-medium); /** Slider value display font weight (500) */
   --font-spinner-label-size: var(--font-component-size-sm); /** Spinner label font size (text-sm) */

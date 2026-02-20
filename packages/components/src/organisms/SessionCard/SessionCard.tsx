@@ -38,8 +38,8 @@ const sessionCardVariants = cva(
   {
     variants: {
       size: {
-        default: 'p-6',
-        compact: 'p-6'
+        default: 'p-[var(--spacing-session-card-padding)]',
+        compact: 'p-[var(--spacing-session-card-padding)]'
       },
       state: {
         default: '',
@@ -78,9 +78,9 @@ const HrZoneBar: React.FC<{ zones?: SessionData['hrZones']; totalDuration: numbe
   ];
 
   return (
-    <div className="mt-4">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-medium text-[var(--color-session-card-text-secondary)]">Herzfrequenzzonen</span>
+    <div className="mt-[var(--spacing-session-card-section-gap)]">
+      <div className="flex items-center justify-between mb-[var(--spacing-session-card-zone-header-mb)]">
+        <span className="text-[length:var(--font-session-card-text-size)] [font-weight:var(--font-session-card-value-weight)] text-[var(--color-session-card-text-secondary)]">Herzfrequenzzonen</span>
       </div>
       <div className="h-2 rounded-[var(--radius-full)] bg-[var(--color-session-card-zone-bg)] overflow-hidden flex">
         {zoneData.map((zone, index) => {
@@ -98,7 +98,7 @@ const HrZoneBar: React.FC<{ zones?: SessionData['hrZones']; totalDuration: numbe
           );
         })}
       </div>
-      <div className="flex justify-between text-xs text-[var(--color-session-card-text-tertiary)] mt-1">
+      <div className="flex justify-between text-[length:var(--font-session-card-hint-size)] text-[var(--color-session-card-text-tertiary)] mt-[var(--spacing-session-card-zone-label-mt)]">
         <span>Z1</span>
         <span>Z2</span>
         <span>Z3</span>
@@ -134,11 +134,11 @@ const MetricsGrid: React.FC<{ metrics?: SessionData['metrics']; distance?: numbe
   if (metricItems.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-2 gap-[var(--spacing-session-card-grid-gap)] mt-4">
+    <div className="grid grid-cols-2 gap-[var(--spacing-session-card-grid-gap)] mt-[var(--spacing-session-card-section-gap)]">
       {metricItems.slice(0, 4).map((item) => (
         <div key={item.label}>
-          <div className="text-sm font-medium text-[var(--color-session-card-text-primary)]">{item.value}</div>
-          <div className="text-xs text-[var(--color-session-card-text-secondary)]">{item.label}</div>
+          <div className="text-[length:var(--font-session-card-text-size)] [font-weight:var(--font-session-card-value-weight)] text-[var(--color-session-card-text-primary)]">{item.value}</div>
+          <div className="text-[length:var(--font-session-card-hint-size)] text-[var(--color-session-card-text-secondary)]">{item.label}</div>
         </div>
       ))}
     </div>
@@ -151,14 +151,14 @@ const MetricsGrid: React.FC<{ metrics?: SessionData['metrics']; distance?: numbe
 const SessionCardSkeleton: React.FC = () => (
   <>
     <SkeletonKeyframes />
-    <div className="flex items-start justify-between mb-4">
+    <div className="flex items-start justify-between mb-[var(--spacing-session-card-section-gap)]">
       <div>
-        <Skeleton className="h-4 w-24 mb-2" />
+        <Skeleton className="h-4 w-24 mb-[var(--spacing-session-card-zone-header-mb)]" />
         <Skeleton className="h-3 w-16" />
       </div>
       <Skeleton className="h-4 w-16" />
     </div>
-    <Skeleton className="h-2 rounded-[var(--radius-full)] mb-4" />
+    <Skeleton className="h-2 rounded-[var(--radius-full)] mb-[var(--spacing-session-card-section-gap)]" />
     <div className="grid grid-cols-2 gap-[var(--spacing-session-card-grid-gap)]">
       <Skeleton className="h-10" />
       <Skeleton className="h-10" />
@@ -256,10 +256,10 @@ const SessionCard = React.forwardRef<HTMLDivElement, SessionCardProps>(
           className={cn(sessionCardVariants({ size, state: finalState }), className)}
           {...props}
         >
-          <div className="flex items-center justify-center p-8">
+          <div className="flex items-center justify-center p-[var(--spacing-session-card-error-padding)]">
             <div className="text-center">
-              <div className="text-sm font-medium text-[var(--color-session-card-text-error)] mb-1">Fehler beim Laden</div>
-              <div className="text-xs text-[var(--color-session-card-text-secondary)]">{error}</div>
+              <div className="text-[length:var(--font-session-card-text-size)] [font-weight:var(--font-session-card-value-weight)] text-[var(--color-session-card-text-error)] mb-[var(--spacing-session-card-error-gap)]">Fehler beim Laden</div>
+              <div className="text-[length:var(--font-session-card-hint-size)] text-[var(--color-session-card-text-secondary)]">{error}</div>
             </div>
           </div>
         </div>
@@ -291,17 +291,17 @@ const SessionCard = React.forwardRef<HTMLDivElement, SessionCardProps>(
         {...props}
       >
         {/* Header */}
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-[var(--spacing-session-card-section-gap)]">
           <div>
-            <h3 className="font-semibold text-[var(--color-session-card-text-primary)]">
+            <h3 className="[font-weight:var(--font-session-card-title-weight)] text-[var(--color-session-card-text-primary)]">
               {sessionData.title || getSessionLabel(sessionData.type)}
             </h3>
-            <div className="text-sm text-[var(--color-session-card-text-secondary)] mt-1">
+            <div className="text-[length:var(--font-session-card-text-size)] text-[var(--color-session-card-text-secondary)] mt-[var(--spacing-session-card-date-mt)]">
               {formatDate(sessionData.date)}
             </div>
           </div>
           <div className="text-right">
-            <div className="font-medium text-[var(--color-session-card-text-primary)]">
+            <div className="[font-weight:var(--font-session-card-value-weight)] text-[var(--color-session-card-text-primary)]">
               {formatDuration(sessionData.duration)}
             </div>
           </div>
@@ -309,7 +309,7 @@ const SessionCard = React.forwardRef<HTMLDivElement, SessionCardProps>(
 
         {/* Beschreibung */}
         {sessionData.description && (
-          <div className="text-sm text-[var(--color-session-card-text-secondary)] mb-4">
+          <div className="text-[length:var(--font-session-card-text-size)] text-[var(--color-session-card-text-secondary)] mb-[var(--spacing-session-card-section-gap)]">
             {sessionData.description}
           </div>
         )}

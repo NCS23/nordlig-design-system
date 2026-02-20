@@ -27,7 +27,22 @@
   },
   "spacing": {
     "session-card": {
-      "grid-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between grid items (16px)" }
+      "grid-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between grid items (16px)" },
+      "padding":    { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Card padding (24px)" },
+      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between sections — mt-4/mb-4 (16px)" },
+      "zone-header-mb": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Zone header bottom margin (8px)" },
+      "zone-label-mt":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Zone label top margin (4px)" },
+      "error-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Error state padding (32px)" },
+      "error-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Error text gap (4px)" },
+      "date-mt":        { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Date top margin (4px)" }
+    }
+  },
+  "font": {
+    "session-card": {
+      "title-weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Title font weight" },
+      "value-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Metric value/duration weight" },
+      "text-size":    { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Body text size — 14px" },
+      "hint-size":    { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Label/hint text size — 12px" }
     }
   }
 }

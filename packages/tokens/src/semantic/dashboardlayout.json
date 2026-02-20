@@ -1,0 +1,30 @@
+{
+  "color": {
+    "$description": "Level 4: DashboardLayout template tokens",
+    "dashboard": {
+      "bg":            { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" },
+      "header-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Header background" },
+      "header-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Header bottom border" },
+      "overlay-bg":    { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Mobile sidebar backdrop" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: DashboardLayout sizing",
+    "dashboard": {
+      "header-height":           { "$type": "dimension", "$value": "56px", "$description": "Fixed header height" },
+      "sidebar-width":           { "$type": "dimension", "$value": "240px", "$description": "Sidebar expanded width" },
+      "sidebar-collapsed-width": { "$type": "dimension", "$value": "64px", "$description": "Sidebar collapsed width" }
+    }
+  },
+  "spacing": {
+    "dashboard": {
+      "header-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Header horizontal padding (24px)" },
+      "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Content area padding (24px)" }
+    }
+  },
+  "shadow": {
+    "dashboard": {
+      "header": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Header elevation shadow" }
+    }
+  }
+}

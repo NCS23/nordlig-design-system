@@ -4297,6 +4297,89 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
+## [DashboardLayout] - 2026-02-20
+
+**Status:** ✅ Complete
+**Story:** NDS-052 (Gitea #46)
+**Level:** Template
+
+### Tokens Created
+- **Level 4 (Semantic):** 10 Tokens mit Prefix `dashboard`
+  - Color: `bg`, `header-bg`, `header-border`, `overlay-bg`
+  - Sizing: `header-height` (56px), `sidebar-width` (240px), `sidebar-collapsed-width` (64px)
+  - Spacing: `header-px`, `content-p`
+  - Shadow: `header`
+
+### Architecture
+- Compound Component mit Context (`useDashboardLayout`)
+- Sub-Components: Header, Sidebar, Body, Content, Footer
+- Controlled + Uncontrolled Pattern fuer sidebarOpen und sidebarCollapsed
+- Mobile Overlay: hidden md:flex Desktop + fixed Overlay mit Backdrop
+
+### Files
+- `packages/tokens/src/semantic/dashboardlayout.json`
+- `packages/components/src/templates/DashboardLayout/DashboardLayout.tsx`
+- `packages/components/src/templates/DashboardLayout/DashboardLayout.test.tsx` (23 Tests)
+- `packages/components/src/templates/DashboardLayout/DashboardLayout.stories.tsx` (8 Stories)
+- `packages/components/src/templates/DashboardLayout/index.ts`
+
+---
+
+## [AuthLayout] - 2026-02-20
+
+**Status:** ✅ Complete
+**Story:** NDS-051 (Gitea #45)
+**Level:** Template
+
+### Tokens Created
+- **Level 4 (Semantic):** 11 Tokens mit Prefix `auth`
+  - Color: `bg`, `card-bg`, `card-border`, `footer-text`, `footer-link`
+  - Sizing: `card-max-width` (420px)
+  - Spacing: `card-padding`, `logo-gap`, `footer-gap`
+  - Radius: `card`
+  - Shadow: `card`
+
+### Architecture
+- Einfache Slot-Komponente mit `logo`, `footer`, `background` Props
+- Zentriertes Layout: min-h-screen flex items-center justify-center
+- Background: absolute positioned, aria-hidden
+
+### Files
+- `packages/tokens/src/semantic/authlayout.json`
+- `packages/components/src/templates/AuthLayout/AuthLayout.tsx`
+- `packages/components/src/templates/AuthLayout/AuthLayout.test.tsx` (18 Tests)
+- `packages/components/src/templates/AuthLayout/AuthLayout.stories.tsx` (6 Stories)
+- `packages/components/src/templates/AuthLayout/index.ts`
+
+---
+
+## [Token-Audit P1 Batch] - 2026-02-20
+
+**Status:** ✅ Complete
+**Story:** NDS-032 (Gitea #36)
+
+### Changes
+- 4 Top-Violator-Dateien tokenisiert: SessionCard, Sidebar, MultiSelect, FileUpload
+- Token-Dateien erweitert: +8 spacing/+4 font (SessionCard), +11/+5 (Sidebar), +7/+5 (MultiSelect), +7/+4 (FileUpload)
+- Strict Violations: 344 → 269 (75 weniger, ~22% Reduktion)
+- Alle Tailwind-Utilities durch Token-Referenzen ersetzt (`text-[length:var(--font-*)]`, `[font-weight:var(--font-*)]`, `p-[var(--spacing-*)]`)
+
+---
+
+## [Visual Regression Baseline Expansion] - 2026-02-20
+
+**Status:** ✅ Complete
+**Story:** NDS-009 (Gitea #7)
+
+### Changes
+- atoms.spec.ts: +6 Komponenten (Blockquote, Icon, Image, InputOTP, Radio, CopyButton)
+- molecules.spec.ts: +7 einfache + 3 Portal-Komponenten (CheckboxField, ColorPicker, Menubar, ProgressField, SwitchField, TimePicker, Toolbar + AlertDialog, Drawer, MultiSelect)
+- organisms.spec.ts: +2 Komponenten (SessionCard, DataTable)
+- templates.spec.ts: NEU erstellt (PageShell, DashboardLayout, AuthLayout)
+- dark-mode.spec.ts: +16 Komponenten
+
+---
+
 **Last Updated:** 2026-02-20
-**Design System Status:** ✅ Complete (83+ Components, Welle 3 in Arbeit)
-**Test Count:** 1587 Tests, 90 Test-Dateien
+**Design System Status:** ✅ Complete (85 Components + 3 Templates, Welle 4 abgeschlossen)
+**Test Count:** 1628 Tests, 92 Test-Dateien

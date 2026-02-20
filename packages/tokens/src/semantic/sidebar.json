@@ -2,8 +2,28 @@
   "spacing": {
     "$description": "Level 4: Sidebar component tokens",
     "sidebar": {
-      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between items in sidebar header (12px)" },
-      "item-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between icon and label in sidebar item (12px)" }
+      "header-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between items in sidebar header (12px)" },
+      "item-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between icon and label in sidebar item (12px)" },
+      "header-padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Header/footer padding (16px)" },
+      "content-py":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Content vertical padding (8px)" },
+      "group-px":       { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Group horizontal padding (12px)" },
+      "group-py":       { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Group vertical padding (8px)" },
+      "item-px":        { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Item horizontal padding (12px)" },
+      "item-py":        { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Item vertical padding (8px)" },
+      "label-px":       { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Label horizontal padding (12px)" },
+      "label-mb":       { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Label bottom margin (4px)" },
+      "badge-px":       { "$type": "dimension", "$value": "6px", "$description": "Badge horizontal padding" },
+      "badge-py":       { "$type": "dimension", "$value": "2px", "$description": "Badge vertical padding" },
+      "collapse-padding": { "$type": "dimension", "$value": "6px", "$description": "Collapse button padding" }
+    }
+  },
+  "font": {
+    "sidebar": {
+      "label-size":   { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Group label size (12px)" },
+      "label-weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Group label weight" },
+      "item-size":    { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Item text size (14px)" },
+      "badge-size":   { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Badge text size (12px)" },
+      "badge-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Badge weight" }
     }
   }
 }

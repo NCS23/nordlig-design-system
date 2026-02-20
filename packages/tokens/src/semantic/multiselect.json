@@ -2,9 +2,25 @@
   "spacing": {
     "$description": "Level 4: MultiSelect component tokens",
     "multiselect": {
-      "tag-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between tags in trigger (4px)" },
-      "item-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between check and label in item (8px)" },
-      "trigger-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap in trigger between content and chevron (8px)" }
+      "tag-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between tags in trigger (4px)" },
+      "item-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between check and label in item (8px)" },
+      "trigger-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap in trigger between content and chevron (8px)" },
+      "trigger-py":   { "$type": "dimension", "$value": "6px", "$description": "Trigger vertical padding" },
+      "search-py":    { "$type": "dimension", "$value": "6px", "$description": "Search input vertical padding" },
+      "item-px":      { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Item horizontal padding (12px)" },
+      "item-py":      { "$type": "dimension", "$value": "6px", "$description": "Item vertical padding" },
+      "section-px":   { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Popover section padding (8px)" },
+      "selectall-px": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Select-all horizontal padding (12px)" },
+      "selectall-py": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Select-all vertical padding (4px)" }
+    }
+  },
+  "font": {
+    "multiselect": {
+      "item-size":        { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Item text size (14px)" },
+      "selectall-size":   { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Select-all text size (12px)" },
+      "selectall-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Select-all weight" },
+      "group-label-size": { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Group label size (12px)" },
+      "group-label-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Group label weight" }
     }
   }
 }

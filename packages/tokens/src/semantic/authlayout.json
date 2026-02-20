@@ -1,0 +1,34 @@
+{
+  "color": {
+    "$description": "Level 4: AuthLayout template tokens",
+    "auth": {
+      "bg":          { "$type": "color", "$value": "{color.bg.base}", "$description": "Full-page background" },
+      "card-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Form card background" },
+      "card-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Card border" },
+      "footer-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Footer text color" },
+      "footer-link": { "$type": "color", "$value": "{color.text.primary}", "$description": "Footer link color" }
+    }
+  },
+  "sizing": {
+    "auth": {
+      "card-max-width": { "$type": "dimension", "$value": "420px", "$description": "Card max width" }
+    }
+  },
+  "spacing": {
+    "auth": {
+      "card-padding": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Card inner padding (32px)" },
+      "logo-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between logo and card (16px)" },
+      "footer-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between card and footer (12px)" }
+    }
+  },
+  "radius": {
+    "auth": {
+      "card": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
+    }
+  },
+  "shadow": {
+    "auth": {
+      "card": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Card elevation shadow" }
+    }
+  }
+}

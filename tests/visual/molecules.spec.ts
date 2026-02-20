@@ -31,6 +31,14 @@ const moleculeStories: StoryConfig[] = [
   { component: 'SearchInput',     stories: ['default', 'with-value', 'all-sizes', 'error', 'disabled'] },
   { component: 'PasswordInput',   stories: ['default', 'with-strength', 'all-sizes', 'disabled'] },
   { component: 'LoadingOverlay',  stories: ['default', 'with-text', 'with-blur'] },
+  // Visual Regression Baseline Expansion
+  { component: 'CheckboxField',   stories: ['with-label', 'with-description', 'checked-field', 'disabled-field'] },
+  { component: 'ColorPicker',     stories: ['default', 'with-alpha', 'with-swatches', 'disabled'] },
+  { component: 'Menubar',         stories: ['default', 'with-shortcuts'] },
+  { component: 'ProgressField',   stories: ['with-label', 'training-goal-progress'] },
+  { component: 'SwitchField',     stories: ['with-label', 'with-description', 'all-states'] },
+  { component: 'TimePicker',      stories: ['default', 'with-value', 'with-seconds', 'twelve-hour', 'all-sizes', 'error', 'disabled'] },
+  { component: 'Toolbar',         stories: ['default', 'with-toggle-group', 'with-separators', 'vertical'] },
 ];
 
 for (const { component, stories } of moleculeStories) {
@@ -108,6 +116,60 @@ test.describe('ContextMenu', () => {
     await page.locator('#storybook-root').first().click({ button: 'right' });
     await page.waitForTimeout(500);
     await screenshotFullPage(page, 'molecules-contextmenu-with-separator-and-label');
+  });
+});
+
+test.describe('AlertDialog', () => {
+  test('default', async ({ page }) => {
+    await gotoStory(page, 'molecules-alertdialog--default');
+    await page.locator('#storybook-root button').first().click();
+    await page.waitForTimeout(500);
+    await screenshotFullPage(page, 'molecules-alertdialog-default');
+  });
+
+  test('non-destructive', async ({ page }) => {
+    await gotoStory(page, 'molecules-alertdialog--non-destructive');
+    await page.locator('#storybook-root button').first().click();
+    await page.waitForTimeout(500);
+    await screenshotFullPage(page, 'molecules-alertdialog-non-destructive');
+  });
+});
+
+test.describe('Drawer', () => {
+  test('default', async ({ page }) => {
+    await gotoStory(page, 'molecules-drawer--default');
+    await page.locator('#storybook-root button').first().click();
+    await page.waitForTimeout(500);
+    await screenshotFullPage(page, 'molecules-drawer-default');
+  });
+
+  test('with-form', async ({ page }) => {
+    await gotoStory(page, 'molecules-drawer--with-form');
+    await page.locator('#storybook-root button').first().click();
+    await page.waitForTimeout(500);
+    await screenshotFullPage(page, 'molecules-drawer-with-form');
+  });
+});
+
+test.describe('MultiSelect', () => {
+  test('default', async ({ page }) => {
+    await gotoStory(page, 'molecules-select--multi-select-default');
+    await screenshotStory(page, 'molecules-multiselect-default');
+  });
+
+  test('with-values', async ({ page }) => {
+    await gotoStory(page, 'molecules-select--multi-select-with-values');
+    await screenshotStory(page, 'molecules-multiselect-with-values');
+  });
+
+  test('error', async ({ page }) => {
+    await gotoStory(page, 'molecules-select--multi-select-error');
+    await screenshotStory(page, 'molecules-multiselect-error');
+  });
+
+  test('disabled', async ({ page }) => {
+    await gotoStory(page, 'molecules-select--multi-select-disabled');
+    await screenshotStory(page, 'molecules-multiselect-disabled');
   });
 });
 

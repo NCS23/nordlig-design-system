@@ -107,8 +107,8 @@ Textarea, TimePicker, Toast, Toolbar
 Card, Carousel, Chart, Command, DataTable, Modal, SessionCard, Sidebar, StatCard,
 Table, Timeline, Tree
 
-**Templates (1):**
-PageShell
+**Templates (3):**
+PageShell, DashboardLayout, AuthLayout
 
 ---
 
@@ -141,3 +141,8 @@ PageShell
 | 2026-02-20 | **NDS-011 Done:** TimePicker Molecule — Scroll-Column-Pattern, 19 L4-Tokens (`tpick`), 28 Tests, 10 Stories. |
 | 2026-02-20 | **NDS-050 Done:** PageShell Template — Erstes Template-Level-Component, Compound-Pattern, 13 L4-Tokens (`shell`), 22 Tests, 6 Stories. Neues `templates/` Verzeichnis. |
 | 2026-02-20 | **NDS-032 Teilweise Done:** Token-Audit Script erweitert mit `--strict` Flag fuer Typography/Spacing. Baseline: 344 Violations (124 font-size, 56 font-weight, 164 spacing). Datei-Migration in kuenftigen Sessions. |
+| 2026-02-20 | **Welle 4 gestartet und abgeschlossen:** |
+| 2026-02-20 | **NDS-052 Done:** DashboardLayout Template — Compound-Component mit Context, Mobile Overlay, 10 L4-Tokens (`dashboard`), 23 Tests, 8 Stories. |
+| 2026-02-20 | **NDS-051 Done:** AuthLayout Template — Slot-Komponente mit Logo/Footer/Background, 11 L4-Tokens (`auth`), 18 Tests, 6 Stories. |
+| 2026-02-20 | **NDS-032 P1 Done:** Token-Audit P1 Batch — SessionCard, Sidebar, MultiSelect, FileUpload tokenisiert. 344 → 269 Strict Violations (22% Reduktion). |
+| 2026-02-20 | **NDS-009 Done:** Visual Regression Baseline — +6 Atoms, +10 Molecules, +2 Organisms, +3 Templates, +16 Dark Mode. Neues `templates.spec.ts`. |

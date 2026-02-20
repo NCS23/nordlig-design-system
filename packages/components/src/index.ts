@@ -558,5 +558,20 @@ export {
   type PageShellFooterProps,
 } from './templates/PageShell';
 
+export {
+  DashboardLayout,
+  useDashboardLayout,
+  type DashboardLayoutProps,
+  type DashboardLayoutHeaderProps,
+  type DashboardLayoutSidebarProps,
+  type DashboardLayoutContentProps,
+  type DashboardLayoutFooterProps,
+} from './templates/DashboardLayout';
+
+export {
+  AuthLayout,
+  type AuthLayoutProps,
+} from './templates/AuthLayout';
+
 // Utils
 export { cn } from './utils/cn';

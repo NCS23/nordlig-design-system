@@ -40,6 +40,13 @@ const atomStories: StoryConfig[] = [
   // P2 Batch
   { component: 'Rating',        stories: ['default', 'read-only', 'half-stars', 'all-sizes'] },
   { component: 'Highlight',     stories: ['default', 'multiple-matches', 'case-insensitive'] },
+  // Visual Regression Baseline Expansion
+  { component: 'Blockquote',    stories: ['default', 'with-citation', 'long-quote'] },
+  { component: 'Icon',          stories: ['all-sizes', 'color-variants', 'gallery'] },
+  { component: 'Image',         stories: ['default', 'with-aspect-ratio', 'rounded-variants', 'error-fallback'] },
+  { component: 'InputOTP',      stories: ['default', 'four-digit', 'with-groups', 'with-error', 'disabled'] },
+  { component: 'Radio',         stories: ['default', 'with-label', 'checked', 'disabled', 'group'] },
+  { component: 'CopyButton',    stories: ['default', 'all-sizes', 'disabled'] },
 ];
 
 for (const { component, stories } of atomStories) {

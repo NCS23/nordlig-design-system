@@ -297,7 +297,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
               <div className="text-center">
                 <p
                   className={cn(
-                    'text-sm font-medium transition-colors duration-200',
+                    'text-[length:var(--font-fileupload-instruction-size)] [font-weight:var(--font-fileupload-instruction-weight)] transition-colors duration-200',
                     dragOver
                       ? 'text-[var(--color-fileupload-drag-text)]'
                       : 'text-[var(--color-fileupload-zone-text)]'
@@ -306,7 +306,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                   {dragOver ? 'Dateien loslassen…' : defaultInstruction}
                 </p>
                 {defaultSubText && !dragOver && (
-                  <p className="mt-1 text-xs text-[var(--color-fileupload-zone-text-sub)]">
+                  <p className="mt-[var(--spacing-fileupload-subtext-mt)] text-[length:var(--font-fileupload-hint-size)] text-[var(--color-fileupload-zone-text-sub)]">
                     {defaultSubText}
                   </p>
                 )}
@@ -316,14 +316,14 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
 
           {/* File List */}
           {hasFiles && (
-            <div className="p-3">
+            <div className="p-[var(--spacing-fileupload-list-padding)]">
               <div className="flex flex-col gap-[var(--spacing-fileupload-file-gap)]">
                 {files.map((uploadedFile, idx) => {
                   const FileIcon = getFileIcon(uploadedFile.file);
                   return (
                     <div
                       key={uploadedFile.id}
-                      className="flex items-center gap-[var(--spacing-fileupload-file-item-gap)] rounded-[var(--radius-fileupload-item)] p-2 hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200"
+                      className="flex items-center gap-[var(--spacing-fileupload-file-item-gap)] rounded-[var(--radius-fileupload-item)] p-[var(--spacing-fileupload-item-padding)] hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200"
                     >
                       {/* Preview or Icon */}
                       {uploadedFile.preview ? (
@@ -341,10 +341,10 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                       )}
                       {/* Name & Size */}
                       <div className="min-w-0 flex-1">
-                        <p className="text-sm font-medium text-[var(--color-fileupload-file-text)] truncate">
+                        <p className="text-[length:var(--font-fileupload-filename-size)] [font-weight:var(--font-fileupload-instruction-weight)] text-[var(--color-fileupload-file-text)] truncate">
                           {uploadedFile.file.name}
                         </p>
-                        <p className="text-xs text-[var(--color-fileupload-file-size)]">
+                        <p className="text-[length:var(--font-fileupload-hint-size)] text-[var(--color-fileupload-file-size)]">
                           {formatFileSize(uploadedFile.file.size)}
                         </p>
                       </div>
@@ -356,7 +356,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                           removeFile(idx);
                         }}
                         aria-label={`${uploadedFile.file.name} entfernen`}
-                        className="shrink-0 p-1 rounded text-[var(--color-fileupload-file-remove)] hover:text-[var(--color-fileupload-file-remove-hover)] hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200"
+                        className="shrink-0 p-[var(--spacing-fileupload-remove-padding)] rounded text-[var(--color-fileupload-file-remove)] hover:text-[var(--color-fileupload-file-remove-hover)] hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200"
                       >
                         <IconAtom icon={X} size={14} />
                       </button>
@@ -367,7 +367,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
 
               {/* Add More hint */}
               {multiple && (
-                <p className="mt-2 text-center text-xs text-[var(--color-fileupload-zone-text-sub)]">
+                <p className="mt-[var(--spacing-fileupload-addmore-mt)] text-center text-[length:var(--font-fileupload-hint-size)] text-[var(--color-fileupload-zone-text-sub)]">
                   Klicken oder ziehen für weitere Dateien
                 </p>
               )}
@@ -376,7 +376,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
 
           {/* Progress Bar */}
           {progress !== undefined && progress >= 0 && progress <= 100 && (
-            <div className="px-3 pb-3">
+            <div className="px-[var(--spacing-fileupload-progress-px)] pb-[var(--spacing-fileupload-progress-pb)]">
               <div className="h-1 w-full rounded-[var(--radius-fileupload-progress)] bg-[var(--color-fileupload-progress-bg)] overflow-hidden">
                 <div
                   role="progressbar"
@@ -388,7 +388,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <p className="mt-1 text-xs text-[var(--color-fileupload-file-size)] text-right tabular-nums">
+              <p className="mt-[var(--spacing-fileupload-subtext-mt)] text-[length:var(--font-fileupload-hint-size)] text-[var(--color-fileupload-file-size)] text-right tabular-nums">
                 {progress}%
               </p>
             </div>
@@ -397,7 +397,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
 
         {/* Error Message */}
         {displayError && (
-          <p role="alert" className="text-xs text-[var(--color-fileupload-error-text)]">
+          <p role="alert" className="text-[length:var(--font-fileupload-hint-size)] text-[var(--color-fileupload-error-text)]">
             {displayError}
           </p>
         )}
