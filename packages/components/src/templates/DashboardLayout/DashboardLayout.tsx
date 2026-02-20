@@ -126,9 +126,9 @@ const DashboardLayoutHeader = React.forwardRef<
   <header
     ref={ref}
     className={cn(
-      'flex items-center shrink-0 sticky top-0 z-20',
-      'h-[var(--sizing-dashboard-header-height)]',
-      'px-[var(--spacing-dashboard-header-px)]',
+      'flex items-center gap-3 shrink-0 sticky top-0 z-20',
+      'h-12 md:h-[var(--sizing-dashboard-header-height)]',
+      'px-3 md:px-[var(--spacing-dashboard-header-px)]',
       'bg-[var(--color-dashboard-header-bg)]',
       'border-b border-[var(--color-dashboard-header-border)]',
       '[box-shadow:var(--shadow-dashboard-header)]',

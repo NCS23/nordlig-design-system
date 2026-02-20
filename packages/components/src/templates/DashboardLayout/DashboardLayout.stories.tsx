@@ -106,24 +106,24 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
       >
         <Icon icon={Menu} size="sm" />
       </Button>
-      <Heading level={4} as="h1" className="ml-2 truncate md:ml-0">
+      <Heading level={4} as="h1" className="truncate">
         Training Analyzer
       </Heading>
 
       {withSearch && (
-        <div className="ml-4 hidden flex-1 md:block max-w-sm">
+        <div className="hidden flex-1 md:block max-w-sm">
           <SearchInput placeholder="Training suchen..." inputSize="sm" />
         </div>
       )}
 
-      <div className="ml-auto flex shrink-0 items-center gap-2">
+      <div className="ml-auto flex shrink-0 items-center gap-3">
         <Button variant="ghost" size="sm" aria-label="Benachrichtigungen" className="relative">
           <Icon icon={Bell} size="sm" />
           <Badge variant="error" size="sm" className="absolute -top-1 -right-1">
             3
           </Badge>
         </Button>
-        <Separator orientation="vertical" className="mx-1 hidden h-6 sm:block" />
+        <Separator orientation="vertical" className="hidden h-6 sm:block" />
         <Avatar size="sm" className="hidden sm:flex">
           <AvatarFallback>NR</AvatarFallback>
         </Avatar>
@@ -278,7 +278,7 @@ export const CollapsedSidebar: Story = {
             >
               <Icon icon={Menu} size="sm" />
             </Button>
-            <Heading level={4} as="h1" className="ml-2">
+            <Heading level={4} as="h1" className="truncate">
               Training Analyzer
             </Heading>
           </DashboardLayout.Header>
@@ -369,10 +369,10 @@ export const WithUserMenu: Story = {
             >
               <Icon icon={Menu} size="sm" />
             </Button>
-            <Heading level={4} as="h1" className="ml-2 md:ml-0">
+            <Heading level={4} as="h1" className="truncate">
               Training Analyzer
             </Heading>
-            <div className="ml-auto flex items-center gap-3">
+            <div className="ml-auto flex shrink-0 items-center gap-3">
               <Button variant="ghost" size="sm" aria-label="Benachrichtigungen">
                 <Icon icon={Bell} size="sm" />
               </Button>
