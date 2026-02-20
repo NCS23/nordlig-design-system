@@ -22,14 +22,10 @@ type Story = StoryObj<typeof AuthLayout>;
 
 /* ─── Reusable Logo ────────────────────────────────────────────────────────── */
 
-const Logo = ({ large = false }: { large?: boolean }) => (
-  <div className="flex items-center gap-2">
-    <div
-      className={`${large ? 'h-12 w-12 text-xl' : 'h-10 w-10 text-lg'} flex shrink-0 items-center justify-center rounded-lg bg-[var(--color-bg-primary)] font-bold text-[var(--color-text-on-primary)]`}
-    >
-      N
-    </div>
-    <Text variant="body" as="span" className={`font-bold ${large ? 'text-2xl' : 'text-xl'}`}>
+const Logo = () => (
+  <div className="flex items-center gap-3">
+    <img src="/bildmarke.svg" alt="" className="h-8 w-auto" />
+    <Text variant="body" as="span" className="text-xl font-bold">
       Nordlig
     </Text>
   </div>
@@ -203,9 +199,7 @@ export const WithLogo: Story = {
     <AuthLayout
       logo={
         <div className="flex flex-col items-center gap-2">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-bg-primary)] text-2xl font-bold text-[var(--color-text-on-primary)]">
-            N
-          </div>
+          <img src="/bildmarke.svg" alt="" className="h-12 w-auto" />
           <Heading level={3}>Nordlig</Heading>
           <Text variant="muted">Training Analyzer</Text>
         </div>
