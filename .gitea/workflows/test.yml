@@ -57,8 +57,10 @@ jobs:
               "http://localhost/exec/$EID/start" 2>&1
           }
 
-          # Git pull to update source
+          # Git pull to update source, then verify
           echo "Running git pull..."
           docker_exec "cd /app && git pull origin main 2>&1"
+          echo "Verifying deploy..."
+          docker_exec "cd /app && git log --oneline -1 2>&1"
 
           echo "Deploy complete."
