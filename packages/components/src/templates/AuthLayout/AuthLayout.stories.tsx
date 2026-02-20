@@ -23,10 +23,10 @@ type Story = StoryObj<typeof AuthLayout>;
 /* ─── Reusable Logo (inside card) ──────────────────────────────────────────── */
 
 const CardLogo = () => (
-  <div className="mb-6 flex items-center justify-center gap-3">
+  <div className="mb-6 flex items-center gap-3">
     <img src="/bildmarke.svg" alt="" className="h-8 w-auto" />
     <Text variant="body" as="span" className="text-xl font-bold">
-      Nordlig
+      Nordlig Design System
     </Text>
   </div>
 );
@@ -197,10 +197,12 @@ export const MobileView: Story = {
 export const WithLogo: Story = {
   render: () => (
     <AuthLayout>
-      <div className="mb-6 flex flex-col items-center gap-2">
-        <img src="/bildmarke.svg" alt="" className="h-12 w-auto" />
-        <Heading level={3}>Nordlig</Heading>
-        <Text variant="muted">Training Analyzer</Text>
+      <div className="mb-6 flex items-center gap-3">
+        <img src="/bildmarke.svg" alt="" className="h-10 w-auto" />
+        <div>
+          <Heading level={3}>Nordlig Design System</Heading>
+          <Text variant="muted">Training Analyzer</Text>
+        </div>
       </div>
       <Heading level={2} className="mb-6">
         Willkommen zurueck
