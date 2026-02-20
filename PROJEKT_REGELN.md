@@ -996,29 +996,28 @@ Bei **jeder neuen Komponente** und bei **jeder aenderungsrelevanten Modifikation
 
 ### Review-Kriterien
 
-Das Review prueft folgende Aspekte (orientiert an DESIGN_UX_REVIEW.md):
+Das Review prueft gegen die **[Gestaltungsprinzipien (DESIGN_PRINCIPLES.md)](DESIGN_PRINCIPLES.md)** und die Nordlig-Heuristik (5 Saeulen: Funktionalismus, Lagom, Hygge, Demokratisk, Tidloeshet).
 
-1. **Design-Sprache Konformitaet**
-   - Passt die Komponente zur nordischen Aesthetik (Minimalismus, Klarheit, Weissraum)?
-   - Sind die visuellen Proportionen harmonisch?
+**Kurzform-Checkliste aus DESIGN_PRINCIPLES.md:**
 
-2. **Visuelle Konsistenz**
-   - Einheitliche Spacing-, Sizing- und Radius-Werte (Token-basiert)?
-   - Konsistente Farbverwendung ueber alle Varianten?
-   - Hover/Focus/Active/Disabled States vollstaendig und einheitlich?
+- [ ] Weissraum: Genug Luft? Kein cramped Layout? Header >= 56px?
+- [ ] Farbe: 70-20-10? Warme Toene? Kontrast >= 4.5:1?
+- [ ] Typografie: Max 3 Gewichte? Klare Hierarchie? Body >= 16px?
+- [ ] Form: Weiche Radii? Sanfte Schatten? Konsistente Borders?
+- [ ] Bewegung: Subtil? Funktional? reduced-motion respektiert?
+- [ ] Dichte: Nicht ueberladen? Progressive Disclosure?
+- [ ] Ehrlichkeit: Klare Zustaende? Menschliche Fehlermeldungen?
+- [ ] Accessibility: Tastatur? Screenreader? Touch-Targets >= 44px?
+- [ ] Zeitlosigkeit: Kein Trend-Chasing? In 5 Jahren noch gut?
 
-3. **Accessibility (WCAG 2.1 AA)**
-   - Focus-Ring Standard eingehalten (ring-2, offset-1, focus-visible)?
-   - Farbkontrast >= 4.5:1 (Text) / >= 3:1 (UI-Elemente)?
-   - Touch-Target >= 44x44px fuer interaktive Elemente?
-   - ARIA-Labels und Keyboard-Navigation vorhanden?
+**Zusaetzlich technisch:**
 
-4. **Token-Architektur**
+1. **Token-Architektur**
    - Alle visuellen Werte tokenisiert (keine hardcoded Tailwind-Klassen)?
    - L4 Tokens referenzieren nur L3 (keine Ebenen uebersprungen)?
    - Token-Naming konsistent mit bestehenden Patterns?
 
-5. **UX Pattern-Konsistenz**
+2. **UX Pattern-Konsistenz**
    - Interaktionsmuster konsistent mit aehnlichen Komponenten?
    - Animation/Transition Standards eingehalten?
    - Disabled-State Standard eingehalten?
@@ -1048,6 +1047,7 @@ Das Review ist Teil der bestehenden "Neue Komponente anlegen - Checkliste" und w
 - [TOKEN_GUIDELINES.md](docs/TOKEN_GUIDELINES.md) - Wann welche Tokens
 - [COMPONENT_GUIDELINES.md](docs/COMPONENT_GUIDELINES.md) - Atomic Design Details
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Für externe Contributors
+- [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) - Verbindliche Gestaltungsprinzipien (Skandinavisches Design)
 - [DESIGN_UX_REVIEW.md](DESIGN_UX_REVIEW.md) - Design & UX Review (14.02.2026)
 
 ---

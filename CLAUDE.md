@@ -68,7 +68,9 @@ Jeder Schritt ist Pflicht. Keine Abkuerzungen.
 ### 6. Design & UX Review (NEVER SKIP!)
 
 - Via Task-Agent ausfuehren (UX-Review-Prompt)
-- Pruefen: Accessibility (WCAG 2.1 AA), Design-Konsistenz, Edge Cases, Token-Architektur
+- **Gegen [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) pruefen** — die fuenf Saeulen: Funktionalismus, Lagom, Hygge, Demokratisk, Tidloeshet
+- Nordlig-Heuristik anwenden: Ist es noetig? Ausgewogen? Einladend? Fuer alle? Zeitlos?
+- Kurzform-Checkliste: Weissraum, Farbe (70-20-10), Typografie (max 3 Gewichte), Form (weiche Radii), Dichte, Ehrlichkeit, Accessibility
 - **Alle Critical + Major Issues sofort fixen**
 - Erst nach Review + Fixes gilt die Komponente als fertig
 - Review-Empfehlungen gegen PROJEKT_REGELN.md validieren — Agenten koennen falsche Empfehlungen geben
