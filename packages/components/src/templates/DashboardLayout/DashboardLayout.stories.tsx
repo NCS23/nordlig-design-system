@@ -121,7 +121,7 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
           <Button variant="ghost" size="sm" aria-label="3 Benachrichtigungen">
             <Icon icon={Bell} size="sm" />
           </Button>
-          <span className="pointer-events-none absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[var(--color-bg-error)] text-[10px] font-bold text-[var(--color-text-on-primary)]">
+          <span className="pointer-events-none absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[var(--color-bg-error-solid)] text-[10px] font-bold text-[var(--color-text-on-primary)]">
             3
           </span>
         </div>
