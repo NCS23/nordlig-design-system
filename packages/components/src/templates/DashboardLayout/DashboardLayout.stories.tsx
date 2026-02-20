@@ -100,13 +100,13 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
       <Button
         variant="ghost"
         size="sm"
-        className="md:hidden"
+        className="shrink-0 md:hidden"
         onClick={() => setSidebarOpen(true)}
         aria-label="Navigation oeffnen"
       >
         <Icon icon={Menu} size="sm" />
       </Button>
-      <Heading level={4} as="h1" className="ml-2 md:ml-0">
+      <Heading level={4} as="h1" className="ml-2 truncate md:ml-0">
         Training Analyzer
       </Heading>
 
@@ -116,15 +116,15 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
         </div>
       )}
 
-      <div className="ml-auto flex items-center gap-2">
+      <div className="ml-auto flex shrink-0 items-center gap-2">
         <Button variant="ghost" size="sm" aria-label="Benachrichtigungen" className="relative">
           <Icon icon={Bell} size="sm" />
           <Badge variant="error" size="sm" className="absolute -top-1 -right-1">
             3
           </Badge>
         </Button>
-        <Separator orientation="vertical" className="mx-1 h-6" />
-        <Avatar size="sm">
+        <Separator orientation="vertical" className="mx-1 hidden h-6 sm:block" />
+        <Avatar size="sm" className="hidden sm:flex">
           <AvatarFallback>NR</AvatarFallback>
         </Avatar>
       </div>
@@ -185,19 +185,19 @@ const DashboardContent = () => (
             ].map((item) => (
               <div
                 key={item.name}
-                className="flex items-center justify-between rounded-lg border border-[var(--color-border-muted)] p-3"
+                className="flex items-center justify-between gap-3 rounded-lg border border-[var(--color-border-muted)] p-3"
               >
-                <div>
+                <div className="min-w-0">
                   <Text variant="body" as="span" className="font-medium">
                     {item.name}
                   </Text>
-                  <Text variant="muted" as="span" className="ml-2">
+                  <Text variant="muted" as="span" className="ml-2 hidden sm:inline">
                     {item.type}
                   </Text>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex shrink-0 items-center gap-3">
                   <Badge variant="neutral" size="sm">{item.dist}</Badge>
-                  <Text variant="muted" as="span">{item.date}</Text>
+                  <Text variant="muted" as="span" className="hidden sm:inline">{item.date}</Text>
                 </div>
               </div>
             ))}
