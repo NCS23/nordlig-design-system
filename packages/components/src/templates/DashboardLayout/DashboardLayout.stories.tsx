@@ -106,9 +106,9 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
       >
         <Icon icon={Menu} size="sm" />
       </Button>
-      <Heading level={4} as="h1" className="truncate">
+      <Text variant="body" as="span" className="truncate font-semibold">
         Training Analyzer
-      </Heading>
+      </Text>
 
       {withSearch && (
         <div className="hidden flex-1 md:block max-w-sm">
@@ -116,14 +116,16 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
         </div>
       )}
 
-      <div className="ml-auto flex shrink-0 items-center gap-3">
-        <Button variant="ghost" size="sm" aria-label="Benachrichtigungen" className="relative">
-          <Icon icon={Bell} size="sm" />
-          <Badge variant="error" size="sm" className="absolute -top-1 -right-1">
+      <div className="ml-auto flex shrink-0 items-center gap-1">
+        <div className="relative">
+          <Button variant="ghost" size="sm" aria-label="3 Benachrichtigungen">
+            <Icon icon={Bell} size="sm" />
+          </Button>
+          <span className="pointer-events-none absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[var(--color-bg-error)] text-[10px] font-bold text-[var(--color-text-on-primary)]">
             3
-          </Badge>
-        </Button>
-        <Separator orientation="vertical" className="hidden h-6 sm:block" />
+          </span>
+        </div>
+        <Separator orientation="vertical" className="mx-1 hidden h-6 sm:block" />
         <Avatar size="sm" className="hidden sm:flex">
           <AvatarFallback>NR</AvatarFallback>
         </Avatar>
@@ -278,9 +280,9 @@ export const CollapsedSidebar: Story = {
             >
               <Icon icon={Menu} size="sm" />
             </Button>
-            <Heading level={4} as="h1" className="truncate">
+            <Text variant="body" as="span" className="truncate font-semibold">
               Training Analyzer
-            </Heading>
+            </Text>
           </DashboardLayout.Header>
           <DashboardLayout.Body>
             <DashboardLayout.Sidebar>
@@ -363,20 +365,20 @@ export const WithUserMenu: Story = {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="shrink-0 md:hidden"
               onClick={() => setSidebarOpen(true)}
               aria-label="Navigation oeffnen"
             >
               <Icon icon={Menu} size="sm" />
             </Button>
-            <Heading level={4} as="h1" className="truncate">
+            <Text variant="body" as="span" className="truncate font-semibold">
               Training Analyzer
-            </Heading>
-            <div className="ml-auto flex shrink-0 items-center gap-3">
+            </Text>
+            <div className="ml-auto flex shrink-0 items-center gap-1">
               <Button variant="ghost" size="sm" aria-label="Benachrichtigungen">
                 <Icon icon={Bell} size="sm" />
               </Button>
-              <Separator orientation="vertical" className="h-6" />
+              <Separator orientation="vertical" className="mx-1 hidden h-6 sm:block" />
               <div className="flex items-center gap-2">
                 <Avatar size="sm">
                   <AvatarImage src="https://api.dicebear.com/7.x/initials/svg?seed=NR" alt="Nils R." />
@@ -386,7 +388,7 @@ export const WithUserMenu: Story = {
                   <Text variant="small" as="span" className="font-medium">Nils R.</Text>
                 </div>
               </div>
-              <Button variant="ghost" size="sm" aria-label="Abmelden">
+              <Button variant="ghost" size="sm" aria-label="Abmelden" className="hidden sm:inline-flex">
                 <Icon icon={LogOut} size="sm" />
               </Button>
             </div>
