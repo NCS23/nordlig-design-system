@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 3: Role/functional tokens - References Level 2 only",
     "bg": {
-      "paper":          { "$type": "color", "$value": "{color.neutral.1.0}" },
+      "paper":          { "$type": "color", "$value": "{color.neutral.1.50}", "$description": "Warm white (not pure #fff) per design principles" },
       "base":           { "$type": "color", "$value": "{color.neutral.1.50}" },
       "surface":        { "$type": "color", "$value": "{color.neutral.1.100}" },
       "elevated":       { "$type": "color", "$value": "{color.neutral.1.50}" },
@@ -61,7 +61,8 @@
       "primary-disabled": { "$type": "color", "$value": "{color.neutral.1.300}" },
       "secondary":        { "$type": "color", "$value": "{color.neutral.1.500}", "$description": "Consolidated from secondary.1 = neutral.1" },
       "secondary-hover":  { "$type": "color", "$value": "{color.neutral.1.600}" },
-      "secondary-active": { "$type": "color", "$value": "{color.neutral.1.700}" }
+      "secondary-active": { "$type": "color", "$value": "{color.neutral.1.700}" },
+      "hover-overlay":    { "$type": "color", "$value": "{color.neutral.1.200}", "$description": "Subtle hover feedback (replaces bg-black/5, bg-black/10)" }
     }
   }
 }

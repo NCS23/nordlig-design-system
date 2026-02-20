@@ -19,7 +19,7 @@
     "alertdlg": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "AlertDialog panel shadow" }
   },
   "radius": {
-    "alertdlg": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "AlertDialog border radius" }
+    "alertdlg": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px AlertDialog radius (large overlay)" }
   },
   "spacing": {
     "alertdlg": {

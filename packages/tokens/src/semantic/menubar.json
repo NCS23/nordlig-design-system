@@ -20,7 +20,8 @@
       "padding":           { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Menubar inner padding" },
       "trigger-padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Trigger horizontal padding" },
       "trigger-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Trigger vertical padding" },
-      "gap":               { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between menubar items (4px)" }
+      "gap":               { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between menubar items (4px)" },
+      "item-py":           { "$type": "dimension", "$value": "6px", "$description": "6px dropdown item vertical padding" }
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "spacing": {
+    "$description": "Level 4: Timeline component tokens",
+    "timeline": {
+      "item-pb":      { "$type": "dimension", "$value": "{spacing.xl}", "$description": "32px item bottom padding" },
+      "line-left":    { "$type": "dimension", "$value": "{spacing.md}", "$description": "16px line left offset" },
+      "line-top":     { "$type": "dimension", "$value": "{spacing.xl}", "$description": "32px line top offset" },
+      "content-ml":   { "$type": "dimension", "$value": "{spacing.md}", "$description": "16px content left margin" },
+      "desc-mt":      { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px description margin top" }
+    }
+  },
+  "sizing": {
+    "timeline": {
+      "dot":       { "$type": "dimension", "$value": "{spacing.xl}", "$description": "32px dot diameter (w-8 h-8)" },
+      "inner-dot": { "$type": "dimension", "$value": "10px", "$description": "10px inner dot (w-2.5 h-2.5)" },
+      "line-w":    { "$type": "dimension", "$value": "2px", "$description": "2px line width" }
+    }
+  }
+}

@@ -8,5 +8,14 @@
       "title":        { "$type": "color", "$value": "{color.text.base}", "$description": "Title text color" },
       "description":  { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color (muted)" }
     }
+  },
+  "spacing": {
+    "emptystate": {
+      "padding-y":  { "$type": "dimension", "$value": "{spacing.2xl}", "$description": "48px vertical padding" },
+      "padding-x":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px horizontal padding" },
+      "icon-mb":    { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "16px below icon" },
+      "title-mb":   { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px below title" },
+      "desc-mb":    { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px below description" }
+    }
   }
 }

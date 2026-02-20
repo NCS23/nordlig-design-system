@@ -13,7 +13,7 @@
     "dialog": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Dialog panel shadow" }
   },
   "radius": {
-    "dialog": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Dialog border radius" }
+    "dialog": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px dialog radius (large overlay)" }
   },
   "spacing": {
     "dialog": {

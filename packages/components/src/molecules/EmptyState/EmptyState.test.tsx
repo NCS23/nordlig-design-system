@@ -46,7 +46,7 @@ describe('EmptyState', () => {
   it('does not render icon when omitted', () => {
     const { container } = render(<EmptyState title="Keine Daten" />);
     // The icon wrapper div with mb-4 should not be present
-    const iconWrapper = container.querySelector('.mb-4');
+    const iconWrapper = container.querySelector('.mb-\\[var\\(--spacing-emptystate-icon-mb\\)\\]');
     expect(iconWrapper).not.toBeInTheDocument();
   });
 
@@ -76,7 +76,7 @@ describe('EmptyState', () => {
         icon={<svg data-testid="icon" />}
       />
     );
-    const iconWrapper = container.querySelector('.mb-4');
+    const iconWrapper = container.querySelector('.mb-\\[var\\(--spacing-emptystate-icon-mb\\)\\]');
     expect(iconWrapper).toHaveClass('text-[var(--color-emptystate-icon)]');
   });
 
@@ -88,7 +88,7 @@ describe('EmptyState', () => {
         icon={<svg data-testid="icon" />}
       />
     );
-    const iconWrapper = container.querySelector('.mb-4');
+    const iconWrapper = container.querySelector('.mb-\\[var\\(--spacing-emptystate-icon-mb\\)\\]');
     expect(iconWrapper).toHaveClass('text-[var(--color-emptystate-icon-error)]');
   });
 
@@ -100,7 +100,7 @@ describe('EmptyState', () => {
         icon={<svg data-testid="icon" />}
       />
     );
-    const iconWrapper = container.querySelector('.mb-4');
+    const iconWrapper = container.querySelector('.mb-\\[var\\(--spacing-emptystate-icon-mb\\)\\]');
     expect(iconWrapper).toHaveClass(
       'text-[var(--color-emptystate-icon-success)]'
     );

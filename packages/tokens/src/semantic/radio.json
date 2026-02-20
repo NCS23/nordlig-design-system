@@ -14,6 +14,13 @@
       "description":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
     }
   },
+  "font": {
+    "radio": {
+      "label-size":        { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "14px label text" },
+      "label-weight":      { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "500 label weight" },
+      "description-size":  { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "12px description text" }
+    }
+  },
   "sizing": {
     "$description": "Level 4: Radio size tokens — References Level 3 only",
     "radio": {

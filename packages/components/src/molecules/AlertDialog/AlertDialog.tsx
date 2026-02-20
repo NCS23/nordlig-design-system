@@ -150,7 +150,7 @@ const AlertDialogAction = React.forwardRef<
     className={cn(
       'inline-flex items-center justify-center',
       'rounded-[var(--radius-alertdlg)]',
-      'px-4 py-2 text-sm font-medium',
+      'min-h-[44px] px-4 py-2 text-sm font-medium',
       'transition-colors',
       'bg-[var(--color-alertdlg-action-bg)]',
       'text-[var(--color-alertdlg-action-text)]',
@@ -174,7 +174,7 @@ const AlertDialogCancel = React.forwardRef<
     className={cn(
       'inline-flex items-center justify-center',
       'rounded-[var(--radius-alertdlg)]',
-      'px-4 py-2 text-sm font-medium',
+      'min-h-[44px] px-4 py-2 text-sm font-medium',
       'transition-colors',
       'bg-[var(--color-alertdlg-cancel-bg)]',
       'text-[var(--color-alertdlg-cancel-text)]',

@@ -93,7 +93,7 @@ const Tag = React.forwardRef<HTMLSpanElement, TagProps>(
         {onRemove && (
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full p-0.5 hover:bg-black/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-tag-border-focus)] transition-colors"
+            className="inline-flex items-center justify-center rounded-full p-0.5 hover:bg-[var(--color-interactive-hover-overlay)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-tag-border-focus)] transition-colors"
             onClick={handleRemove}
             onKeyDown={handleRemoveKeyDown}
             aria-label="Tag entfernen"

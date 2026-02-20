@@ -309,7 +309,8 @@ describe('Carousel', () => {
     it('active dot uses white background', () => {
       renderCarousel({ showDots: true });
       const activeDot = screen.getByLabelText('Gehe zu Slide 1');
-      expect(activeDot).toHaveClass('bg-white');
+      const dotVisual = activeDot.querySelector('span');
+      expect(dotVisual).toHaveClass('bg-[var(--color-bg-paper)]');
     });
   });
 });

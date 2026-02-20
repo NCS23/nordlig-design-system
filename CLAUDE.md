@@ -3,6 +3,39 @@
 > Diese Datei wird automatisch von Claude Code geladen und definiert den verbindlichen Workflow.
 > Detaillierte Regeln: [PROJEKT_REGELN.md](PROJEKT_REGELN.md)
 
+---
+
+## !! PFLICHT-WORKFLOW BEI JEDER STORY — KEINE AUSNAHMEN !!
+
+**Bevor du irgendeine Story anfaengst, muessen ALLE diese Schritte beachtet werden. Wenn du einen Schritt uebergehst, ist das ein schwerwiegender Fehler.**
+
+### A. VOR Arbeitsbeginn: Gitea-Issue anlegen
+
+1. Remote-URL ermitteln: `git remote -v`
+2. Gitea-Issue via API erstellen (`POST /api/v1/repos/{owner}/{repo}/issues`)
+3. Issue-Nummer in BACKLOG.md Changelog referenzieren
+4. **Gitea ist die Single Source of Truth** — BACKLOG.md ist nur Uebersicht + Changelog
+
+### B. NACH Abschluss jeder Story: Commit + Push + CI
+
+1. Alle Tests lokal gruen: `pnpm --filter @nordlig/components test -- --run`
+2. Storybook baut: `pnpm --filter @nordlig/storybook build`
+3. Commit erstellen (mit Story-Nummer im Message)
+4. Pushen: `git push`
+5. **CI abwarten** — Status pollen bis `completed`
+6. Bei CI-Fehler: sofort fixen, neu pushen, erneut warten
+7. Gitea-Issue kommentieren + schliessen
+
+### C. Reihenfolge ist VERPFLICHTEND
+
+```
+Gitea-Issue → Arbeit → Tests → Storybook → Commit → Push → CI gruen → Issue schliessen
+```
+
+**FEHLER AUS WELLE 5 (NDS-120 bis NDS-124): Stories wurden OHNE Gitea-Issues und OHNE Commit/Push bearbeitet. Das darf NIE WIEDER passieren.**
+
+---
+
 ## Sprache
 
 - Code, Variablennamen, Props, CSS: **Englisch**

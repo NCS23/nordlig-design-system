@@ -146,3 +146,9 @@ PageShell, DashboardLayout, AuthLayout
 | 2026-02-20 | **NDS-051 Done:** AuthLayout Template — Slot-Komponente mit Logo/Footer/Background, 11 L4-Tokens (`auth`), 18 Tests, 6 Stories. |
 | 2026-02-20 | **NDS-032 P1 Done:** Token-Audit P1 Batch — SessionCard, Sidebar, MultiSelect, FileUpload tokenisiert. 344 → 269 Strict Violations (22% Reduktion). |
 | 2026-02-20 | **NDS-009 Done:** Visual Regression Baseline — +6 Atoms, +10 Molecules, +2 Organisms, +3 Templates, +16 Dark Mode. Neues `templates.spec.ts`. |
+| 2026-02-20 | **Welle 5 gestartet und abgeschlossen: Design-Prinzipien Compliance** |
+| 2026-02-20 | **NDS-120 Done:** Token-Foundation Fixes — `prefers-reduced-motion` global CSS, `--color-bg-paper` warm (neutral.1.50), Font-Weights auf 3 reduziert (400/500/600), Heading Line-Heights enger, `radius.component.xl` fuer Modale/Panels. |
+| 2026-02-20 | **NDS-121 Done:** Hardcoded Colors + Radio Fix — Neuer L3-Token `interactive.hover-overlay`, 5 Komponenten entfaerbt (Carousel, Stepper, Timeline, Alert, Tag), Radio Typografie tokenisiert. L4-Tokens: `carousel.json` erweitert. |
+| 2026-02-20 | **NDS-122 Done:** Touch-Target Audit — 11 Komponenten auf min. 44px Touch-Targets gefixt (Toast, Carousel, Command, Tree, ThemeToggle, CopyButton, Stepper, AlertDialog, Sidebar). Invisible Hit-Areas + direkte Groessenanpassungen. |
+| 2026-02-20 | **NDS-123 Done:** PageShell Stories Rewrite — Placeholder-Divs durch echte DS-Komponenten ersetzt (Card, StatCard, Heading, Text, Badge, Button, Avatar, Sidebar). Training-Analyzer-Inhalte, Mobile-Story, responsive Header. |
+| 2026-02-20 | **NDS-124 Done:** Hardcoded Spacing Batch — 8 Komponenten tokenisiert (EmptyState, StatCard, Timeline, Command, NavigationMenu, PasswordInput, Combobox, Menubar). 3 neue Token-Dateien (statcard.json, timeline.json, navmenu.json), ~35 neue Spacing/Sizing-Tokens. |

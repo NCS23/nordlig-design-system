@@ -138,7 +138,7 @@ const MenubarItem = React.forwardRef<
     className={cn(
       'relative flex items-center',
       'gap-[var(--spacing-dropdown-item-gap)]',
-      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-dropdown-item-padding-y)]',
+      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
       'rounded-[var(--radius-dropdown-item)]',
       'text-sm outline-none cursor-pointer select-none',
       'transition-colors',
@@ -198,7 +198,7 @@ const MenubarLabel = React.forwardRef<
   <MenubarPrimitive.Label
     ref={ref}
     className={cn(
-      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-dropdown-item-padding-y)]',
+      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
       'text-xs font-semibold text-[var(--color-dropdown-label-text)]',
       className
     )}
@@ -235,7 +235,7 @@ const MenubarCheckboxItem = React.forwardRef<
     checked={checked}
     className={cn(
       'relative flex items-center pl-8',
-      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-dropdown-item-padding-y)]',
+      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
       'rounded-[var(--radius-dropdown-item)]',
       'text-sm outline-none cursor-pointer select-none',
       'transition-colors',
@@ -271,7 +271,7 @@ const MenubarRadioItem = React.forwardRef<
     ref={ref}
     className={cn(
       'relative flex items-center pl-8',
-      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-dropdown-item-padding-y)]',
+      'px-[var(--spacing-dropdown-item-padding-x)] py-[var(--spacing-menubar-item-py)]',
       'rounded-[var(--radius-dropdown-item)]',
       'text-sm outline-none cursor-pointer select-none',
       'transition-colors',

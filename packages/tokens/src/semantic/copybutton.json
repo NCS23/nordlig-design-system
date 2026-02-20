@@ -14,9 +14,9 @@
   },
   "sizing": {
     "cpybtn": {
-      "sm": { "$type": "dimension", "$value": "28px", "$description": "CopyButton size sm (compact icon-only)" },
-      "md": { "$type": "dimension", "$value": "32px", "$description": "CopyButton size md" },
-      "lg": { "$type": "dimension", "$value": "36px", "$description": "CopyButton size lg" }
+      "sm": { "$type": "dimension", "$value": "36px", "$description": "CopyButton size sm (36px)" },
+      "md": { "$type": "dimension", "$value": "40px", "$description": "CopyButton size md (40px)" },
+      "lg": { "$type": "dimension", "$value": "44px", "$description": "CopyButton size lg (44px, touch-target safe)" }
     }
   }
 }

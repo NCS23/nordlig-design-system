@@ -143,7 +143,7 @@ const Toast = React.forwardRef<
       <ToastPrimitive.Close
         className={cn(
           'flex-shrink-0 inline-flex items-center justify-center',
-          'h-5 w-5 rounded transition-colors',
+          'min-h-11 min-w-11 -m-2 rounded transition-colors',
           'text-[var(--color-toast-description)]',
           'hover:bg-[var(--color-toast-close-hover-bg)]',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)]'

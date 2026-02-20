@@ -35,7 +35,7 @@ const CommandInput = React.forwardRef<
   React.ComponentRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b border-[var(--color-command-border)] px-3" cmdk-input-wrapper="" role="search">
+  <div className="flex items-center border-b border-[var(--color-command-border)] px-[var(--spacing-command-input-px)]" cmdk-input-wrapper="" role="search">
     <Icon icon={Search} size="sm" className="mr-2 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
@@ -64,7 +64,7 @@ const CommandList = React.forwardRef<
   <CommandPrimitive.List
     ref={ref}
     className={cn(
-      'max-h-[300px] overflow-y-auto overflow-x-hidden p-1',
+      'max-h-[300px] overflow-y-auto overflow-x-hidden p-[var(--spacing-command-list-padding)]',
       className
     )}
     {...props}
@@ -81,7 +81,7 @@ const CommandEmpty = React.forwardRef<
   <CommandPrimitive.Empty
     ref={ref}
     className={cn(
-      'py-6 text-center text-sm text-[var(--color-command-empty-text)]',
+      'py-[var(--spacing-command-empty-py)] text-center text-sm text-[var(--color-command-empty-text)]',
       className
     )}
     {...props}
@@ -98,10 +98,10 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      'overflow-hidden p-1',
+      'overflow-hidden p-[var(--spacing-command-list-padding)]',
       '[&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
       '[&_[cmdk-group-heading]]:text-[var(--color-command-group-heading)]',
-      '[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5',
+      '[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-[var(--spacing-command-group-heading-py)]',
       className
     )}
     {...props}
@@ -118,7 +118,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-pointer select-none items-center rounded-[var(--radius-component-md)] px-2 py-1.5 text-sm',
+      'relative flex cursor-pointer select-none items-center min-h-[44px] rounded-[var(--radius-component-md)] px-[var(--spacing-command-item-px)] py-[var(--spacing-command-item-py)] text-sm',
       'text-[var(--color-command-item-text)]',
       'outline-none transition-colors',
       'data-[selected=true]:bg-[var(--color-command-item-hover-bg)]',
@@ -139,7 +139,7 @@ const CommandSeparator = React.forwardRef<
   <CommandPrimitive.Separator
     ref={ref}
     className={cn(
-      'h-px bg-[var(--color-command-separator)] -mx-1 my-1',
+      'h-px bg-[var(--color-command-separator)] -mx-1 my-[var(--spacing-command-separator-my)]',
       className
     )}
     {...props}

@@ -66,7 +66,7 @@ describe('Stepper', () => {
       <Stepper steps={defaultSteps} currentStep={1} />
     );
     const indicators = container.querySelectorAll(
-      '.w-8.h-8.rounded-full'
+      '.w-10.h-10.rounded-full'
     );
     expect(indicators[1].className).toContain(
       'bg-[var(--color-bg-primary)]'
@@ -81,7 +81,7 @@ describe('Stepper', () => {
     );
     // Completed steps (0, 1) should have SVG check icons
     const indicators = container.querySelectorAll(
-      '.w-8.h-8.rounded-full'
+      '.w-10.h-10.rounded-full'
     );
     expect(indicators[0].querySelector('svg')).toBeInTheDocument();
     expect(indicators[1].querySelector('svg')).toBeInTheDocument();
@@ -94,7 +94,7 @@ describe('Stepper', () => {
       <Stepper steps={defaultSteps} currentStep={2} />
     );
     const indicators = container.querySelectorAll(
-      '.w-8.h-8.rounded-full'
+      '.w-10.h-10.rounded-full'
     );
     expect(indicators[0].className).toContain(
       'bg-[var(--color-bg-success)]'
@@ -109,7 +109,7 @@ describe('Stepper', () => {
       <Stepper steps={defaultSteps} currentStep={0} />
     );
     const indicators = container.querySelectorAll(
-      '.w-8.h-8.rounded-full'
+      '.w-10.h-10.rounded-full'
     );
     expect(indicators[1].className).toContain(
       'bg-[var(--color-bg-surface)]'

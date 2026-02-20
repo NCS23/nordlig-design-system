@@ -74,7 +74,7 @@ const NavigationMenuTrigger = React.forwardRef<
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(
-      'group inline-flex items-center gap-[var(--spacing-navmenu-gap)] px-3 py-2 text-sm font-medium',
+      'group inline-flex items-center gap-[var(--spacing-navmenu-gap)] px-[var(--spacing-navmenu-trigger-px)] py-[var(--spacing-navmenu-trigger-py)] text-sm font-medium',
       'rounded-[var(--radius-nav)]',
       'text-[var(--color-nav-text)]',
       'hover:bg-[var(--color-nav-hover-bg)]',
@@ -104,12 +104,12 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      'absolute top-full left-0 mt-1',
+      'absolute top-full left-0 mt-[var(--spacing-navmenu-indicator-mt)]',
       'bg-[var(--color-nav-dropdown-bg)]',
       'border border-[var(--color-nav-dropdown-border)]',
       'rounded-[var(--radius-nav-dropdown)]',
       '[box-shadow:var(--shadow-nav-dropdown)]',
-      'p-4 min-w-[220px]',
+      'p-[var(--spacing-navmenu-content-p)] min-w-[220px]',
       'data-[motion=from-start]:animate-in data-[motion=from-start]:fade-in-0 data-[motion=from-start]:slide-in-from-left-2',
       'data-[motion=from-end]:animate-in data-[motion=from-end]:fade-in-0 data-[motion=from-end]:slide-in-from-right-2',
       'data-[motion=to-start]:animate-out data-[motion=to-start]:fade-out-0',
@@ -130,7 +130,7 @@ const NavigationMenuLink = React.forwardRef<
   <NavigationMenuPrimitive.Link
     ref={ref}
     className={cn(
-      'block px-3 py-2 text-sm',
+      'block px-[var(--spacing-navmenu-trigger-px)] py-[var(--spacing-navmenu-trigger-py)] text-sm',
       'rounded-[var(--radius-nav)]',
       'text-[var(--color-nav-text)]',
       'hover:bg-[var(--color-nav-hover-bg)]',
@@ -155,7 +155,7 @@ const NavigationMenuViewport = React.forwardRef<
     <NavigationMenuPrimitive.Viewport
       ref={ref}
       className={cn(
-        'relative mt-1 overflow-hidden',
+        'relative mt-[var(--spacing-navmenu-indicator-mt)] overflow-hidden',
         'h-[var(--radix-navigation-menu-viewport-height)]',
         'w-[var(--radix-navigation-menu-viewport-width)]',
         'origin-top',

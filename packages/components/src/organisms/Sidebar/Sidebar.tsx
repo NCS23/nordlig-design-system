@@ -215,7 +215,7 @@ const SidebarItem = React.forwardRef<HTMLElement, SidebarItemProps>(
     const { collapsed } = useSidebar();
 
     const baseClasses = cn(
-      'flex items-center gap-[var(--spacing-sidebar-item-gap)] px-[var(--spacing-sidebar-item-px)] py-[var(--spacing-sidebar-item-py)] rounded-[var(--radius-md)] text-[length:var(--font-sidebar-item-size)] transition-colors w-full',
+      'flex items-center gap-[var(--spacing-sidebar-item-gap)] min-h-[44px] px-[var(--spacing-sidebar-item-px)] py-[var(--spacing-sidebar-item-py)] rounded-[var(--radius-md)] text-[length:var(--font-sidebar-item-size)] transition-colors w-full',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
       active
         ? 'bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)] [font-weight:var(--font-sidebar-badge-weight)]'

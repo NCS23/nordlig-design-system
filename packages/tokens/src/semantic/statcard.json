@@ -1,0 +1,11 @@
+{
+  "spacing": {
+    "$description": "Level 4: StatCard component tokens",
+    "statcard": {
+      "padding":   { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px card padding" },
+      "value-mt":  { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px above value" },
+      "trend-mt":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px above trend" },
+      "trend-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px trend arrow-text gap" }
+    }
+  }
+}

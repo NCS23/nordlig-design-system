@@ -101,7 +101,7 @@ describe('Timeline', () => {
       </Timeline>
     );
     // Only h4 in content, no p tag
-    const contentArea = container.querySelector('.ml-4');
+    const contentArea = container.querySelector('[class*="spacing-timeline-content-ml"]');
     expect(contentArea?.querySelector('p')).not.toBeInTheDocument();
   });
 
@@ -111,7 +111,7 @@ describe('Timeline', () => {
         <TimelineItem title="Nur Titel" />
       </Timeline>
     );
-    const contentArea = container.querySelector('.ml-4');
+    const contentArea = container.querySelector('[class*="spacing-timeline-content-ml"]');
     const spans = contentArea?.querySelectorAll('span');
     // No timestamp span
     expect(spans?.length ?? 0).toBe(0);
@@ -125,7 +125,7 @@ describe('Timeline', () => {
         <TimelineItem title="Default" />
       </Timeline>
     );
-    const dot = container.querySelector('.w-8.h-8.rounded-full');
+    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-bg-surface)]');
     expect(dot?.className).toContain('text-[var(--color-text-muted)]');
   });
@@ -136,9 +136,9 @@ describe('Timeline', () => {
         <TimelineItem title="Erfolg" variant="success" />
       </Timeline>
     );
-    const dot = container.querySelector('.w-8.h-8.rounded-full');
+    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-bg-success)]');
-    expect(dot?.className).toContain('text-white');
+    expect(dot?.className).toContain('text-[var(--color-text-inverse)]');
   });
 
   it('applies warning variant styles', () => {
@@ -147,9 +147,9 @@ describe('Timeline', () => {
         <TimelineItem title="Warnung" variant="warning" />
       </Timeline>
     );
-    const dot = container.querySelector('.w-8.h-8.rounded-full');
+    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-bg-warning)]');
-    expect(dot?.className).toContain('text-white');
+    expect(dot?.className).toContain('text-[var(--color-text-inverse)]');
   });
 
   it('applies error variant styles', () => {
@@ -158,9 +158,9 @@ describe('Timeline', () => {
         <TimelineItem title="Fehler" variant="error" />
       </Timeline>
     );
-    const dot = container.querySelector('.w-8.h-8.rounded-full');
+    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-bg-error)]');
-    expect(dot?.className).toContain('text-white');
+    expect(dot?.className).toContain('text-[var(--color-text-inverse)]');
   });
 
   // ─── Icon ─────────────────────────────────────────────────────────────
@@ -183,8 +183,8 @@ describe('Timeline', () => {
         <TimelineItem title="Ohne Icon" />
       </Timeline>
     );
-    const dot = container.querySelector('.w-8.h-8.rounded-full');
-    const innerDot = dot?.querySelector('.w-2\\.5.h-2\\.5');
+    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
+    const innerDot = dot?.querySelector('[class*="sizing-timeline-inner-dot"]');
     expect(innerDot).toBeInTheDocument();
   });
 

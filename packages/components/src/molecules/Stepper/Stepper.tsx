@@ -31,10 +31,10 @@ const StepIndicator: React.FC<{
   return (
     <div
       className={cn(
-        'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium',
+        'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium',
         'transition-colors duration-200',
-        isCompleted && 'bg-[var(--color-bg-success)] text-white',
-        isCurrent && 'bg-[var(--color-bg-primary)] text-white',
+        isCompleted && 'bg-[var(--color-bg-success)] text-[var(--color-text-inverse)]',
+        isCurrent && 'bg-[var(--color-bg-primary)] text-[var(--color-text-inverse)]',
         !isCompleted && !isCurrent &&
           'bg-[var(--color-bg-surface)] text-[var(--color-text-muted)]'
       )}
@@ -65,7 +65,7 @@ const ConnectingLine: React.FC<{
           ? 'bg-[var(--color-bg-success)]'
           : 'bg-[var(--color-border-default)]',
         orientation === 'horizontal' && 'h-0.5 flex-1',
-        orientation === 'vertical' && 'w-0.5 min-h-[24px] ml-4'
+        orientation === 'vertical' && 'w-0.5 min-h-[24px] ml-5'
       )}
       aria-hidden="true"
       data-stepper-line=""

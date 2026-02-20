@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
 const statCardVariants = cva(
-  'rounded-[var(--radius-stat-card)] border border-[var(--color-stat-card-border)] bg-[var(--color-stat-card-bg)] p-6',
+  'rounded-[var(--radius-stat-card)] border border-[var(--color-stat-card-border)] bg-[var(--color-stat-card-bg)] p-[var(--spacing-statcard-padding)]',
   {
     variants: {
       variant: {
@@ -131,12 +131,12 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
         </div>
 
         {/* Value */}
-        <div className="mt-2">
+        <div className="mt-[var(--spacing-statcard-value-mt)]">
           <span className="text-3xl font-bold text-[var(--color-stat-card-text-primary)]">
             {value}
           </span>
           {unit && (
-            <span className="ml-1 text-lg font-normal text-[var(--color-stat-card-text-secondary)]">
+            <span className="ml-[var(--spacing-statcard-trend-gap)] text-lg font-normal text-[var(--color-stat-card-text-secondary)]">
               {unit}
             </span>
           )}
@@ -144,7 +144,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
 
         {/* Description */}
         {description && (
-          <p className="mt-1 text-sm text-[var(--color-stat-card-text-secondary)]">
+          <p className="mt-[var(--spacing-statcard-trend-mt)] text-sm text-[var(--color-stat-card-text-secondary)]">
             {description}
           </p>
         )}

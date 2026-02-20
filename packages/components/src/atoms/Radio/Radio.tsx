@@ -66,14 +66,14 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           <div className="flex flex-col gap-[var(--spacing-radio-content-gap)]">
             <span
               className={cn(
-                'text-sm font-medium cursor-pointer text-[var(--color-radio-label)]',
+                'text-[length:var(--font-radio-label-size)] [font-weight:var(--font-radio-label-weight)] cursor-pointer text-[var(--color-radio-label)]',
                 disabled && 'cursor-not-allowed opacity-50'
               )}
             >
               {label}
             </span>
             {description && (
-              <p id={descriptionId} className="text-xs text-[var(--color-radio-description)]">
+              <p id={descriptionId} className="text-[length:var(--font-radio-description-size)] text-[var(--color-radio-description)]">
                 {description}
               </p>
             )}

@@ -17,7 +17,7 @@
     }
   },
   "radius": {
-    "modal": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px rounded corners" }
+    "modal": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px rounded corners (large overlay)" }
   },
   "spacing": {
     "modal": {

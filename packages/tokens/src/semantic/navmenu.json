@@ -1,0 +1,11 @@
+{
+  "spacing": {
+    "$description": "Level 4: NavigationMenu component tokens",
+    "navmenu": {
+      "trigger-px":    { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px trigger horizontal padding" },
+      "trigger-py":    { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "8px trigger vertical padding" },
+      "content-p":     { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px content padding" },
+      "indicator-mt":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px indicator margin-top" }
+    }
+  }
+}

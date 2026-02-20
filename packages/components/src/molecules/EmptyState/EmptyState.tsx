@@ -21,21 +21,21 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       <div
         ref={ref}
         className={cn(
-          'flex flex-col items-center justify-center text-center py-12 px-4',
+          'flex flex-col items-center justify-center text-center py-[var(--spacing-emptystate-padding-y)] px-[var(--spacing-emptystate-padding-x)]',
           className
         )}
         {...props}
       >
         {icon && (
-          <div className={cn('mb-4', variantIconClassMap[variant])}>
+          <div className={cn('mb-[var(--spacing-emptystate-icon-mb)]', variantIconClassMap[variant])}>
             {icon}
           </div>
         )}
-        <h3 className="text-lg font-semibold text-[var(--color-emptystate-title)] mb-2">
+        <h3 className="text-lg font-semibold text-[var(--color-emptystate-title)] mb-[var(--spacing-emptystate-title-mb)]">
           {title}
         </h3>
         {description && (
-          <p className="text-sm text-[var(--color-emptystate-description)] max-w-sm mb-6">
+          <p className="text-sm text-[var(--color-emptystate-description)] max-w-sm mb-[var(--spacing-emptystate-desc-mb)]">
             {description}
           </p>
         )}

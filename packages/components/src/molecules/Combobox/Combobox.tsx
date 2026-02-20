@@ -100,7 +100,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
             key={group.label}
             heading={group.label}
             className={cn(
-              'overflow-hidden p-1',
+              'overflow-hidden p-[var(--spacing-cmb-content-padding)]',
               '[&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
               '[&_[cmdk-group-heading]]:text-[var(--color-cmb-empty-text)]',
               '[&_[cmdk-group-heading]]:px-[var(--spacing-cmb-item-padding-x)] [&_[cmdk-group-heading]]:py-1.5'
@@ -199,7 +199,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
             >
               <CommandPrimitive className="w-full">
                 {/* Search Input */}
-                <div className="flex items-center border-b border-[var(--color-cmb-content-border)] px-3">
+                <div className="flex items-center border-b border-[var(--color-cmb-content-border)] px-[var(--spacing-cmb-search-px)] py-[var(--spacing-cmb-search-py)]">
                   <Icon
                     icon={Search}
                     size={14}
@@ -226,7 +226,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                 >
                   <CommandPrimitive.Empty
                     className={cn(
-                      'py-6 text-center text-sm',
+                      'py-[var(--spacing-cmb-empty-py)] text-center text-sm',
                       'text-[var(--color-cmb-empty-text)]'
                     )}
                   >

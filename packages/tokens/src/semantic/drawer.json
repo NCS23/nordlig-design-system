@@ -14,7 +14,7 @@
     "drawer": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Drawer elevation shadow" }
   },
   "radius": {
-    "drawer": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Drawer top corner radius" }
+    "drawer": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px drawer radius (large overlay)" }
   },
   "spacing": {
     "drawer": {

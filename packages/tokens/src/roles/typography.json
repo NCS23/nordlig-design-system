@@ -11,8 +11,7 @@
       "weight": {
         "normal":   { "$type": "fontWeight", "$value": "{font.weight.normal}" },
         "medium":   { "$type": "fontWeight", "$value": "{font.weight.medium}" },
-        "semibold": { "$type": "fontWeight", "$value": "{font.weight.semibold}" },
-        "bold":     { "$type": "fontWeight", "$value": "{font.weight.bold}" }
+        "semibold": { "$type": "fontWeight", "$value": "{font.weight.semibold}" }
       },
       "line-height": {
         "xs":   { "$type": "dimension", "$value": "{font.line-height.xs}" },
@@ -29,6 +28,15 @@
         "lg":   { "$type": "dimension", "$value": "{font.size.2xl}" },
         "xl":   { "$type": "dimension", "$value": "{font.size.3xl}" },
         "2xl":  { "$type": "dimension", "$value": "{font.size.4xl}" }
+      },
+      "line-height": {
+        "$description": "Tighter line-heights for headings (1.17-1.35x vs body 1.5x) per design principles",
+        "xs":   { "$type": "dimension", "$value": "{font.line-height.base}", "$description": "h6: 16px font → 24px LH (1.5x, body-sized)" },
+        "sm":   { "$type": "dimension", "$value": "{font.line-height.base}", "$description": "h5: 18px font → 24px LH (1.33x)" },
+        "md":   { "$type": "dimension", "$value": "{font.line-height.lg}", "$description": "h4: 20px font → 27px LH (1.35x)" },
+        "lg":   { "$type": "dimension", "$value": "{font.line-height.xl}", "$description": "h3: 24px font → 30px LH (1.25x)" },
+        "xl":   { "$type": "dimension", "$value": "{font.line-height.2xl}", "$description": "h2: 30px font → 36px LH (1.2x)" },
+        "2xl":  { "$type": "dimension", "$value": "{font.line-height.3xl}", "$description": "h1: 36px font → 45px LH (1.25x)" }
       }
     },
     "body": {

@@ -85,7 +85,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
           onChange={handleChange}
           className={cn(
             inputVariants({ inputSize, error }),
-            'pr-10'
+            'pr-[var(--spacing-pwinput-input-pr)]'
           )}
           {...props}
         />
@@ -96,7 +96,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
           disabled={disabled}
           aria-label={visible ? 'Passwort verbergen' : 'Passwort anzeigen'}
           className={cn(
-            'absolute right-3 top-1/2 -translate-y-1/2 transition-colors',
+            'absolute right-[var(--spacing-pwinput-toggle-inset)] top-1/2 -translate-y-1/2 transition-colors',
             'text-[color:var(--color-pwinput-toggle)] hover:text-[color:var(--color-pwinput-toggle-hover)]',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 rounded-sm',
             'disabled:pointer-events-none disabled:opacity-50'
@@ -113,7 +113,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
             aria-valuemin={1}
             aria-valuemax={3}
             aria-valuetext={strengthLabelMap[computedStrength]}
-            className="mt-1.5"
+            className="mt-[var(--spacing-pwinput-strength-mt)]"
           >
             <div className="h-1 w-full rounded-full bg-[var(--color-pwinput-toggle)] opacity-20">
               <div
@@ -124,7 +124,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
                 )}
               />
             </div>
-            <p aria-live="polite" className="mt-0.5 text-xs text-[color:var(--color-pwinput-toggle)]">
+            <p aria-live="polite" className="mt-[var(--spacing-pwinput-hint-mt)] text-xs text-[color:var(--color-pwinput-toggle)]">
               {strengthLabelMap[computedStrength]}
             </p>
           </div>

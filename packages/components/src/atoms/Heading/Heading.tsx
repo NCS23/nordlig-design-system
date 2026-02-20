@@ -5,12 +5,12 @@ import { cn } from '../../utils/cn';
 const headingVariants = cva('', {
   variants: {
     level: {
-      1: 'text-[length:var(--font-heading-h1-size)] [font-weight:var(--font-heading-h1-weight)] tracking-tight text-[var(--color-text-heading)]',
-      2: 'text-[length:var(--font-heading-h2-size)] [font-weight:var(--font-heading-h2-weight)] tracking-tight text-[var(--color-text-heading)]',
-      3: 'text-[length:var(--font-heading-h3-size)] [font-weight:var(--font-heading-h3-weight)] text-[var(--color-text-heading)]',
-      4: 'text-[length:var(--font-heading-h4-size)] [font-weight:var(--font-heading-h4-weight)] text-[var(--color-text-heading)]',
-      5: 'text-[length:var(--font-heading-h5-size)] [font-weight:var(--font-heading-h5-weight)] text-[var(--color-text-heading)]',
-      6: 'text-[length:var(--font-heading-h6-size)] [font-weight:var(--font-heading-h6-weight)] text-[var(--color-text-heading)]',
+      1: 'text-[length:var(--font-heading-h1-size)] [font-weight:var(--font-heading-h1-weight)] [line-height:var(--font-heading-h1-line-height)] tracking-tight text-[var(--color-text-heading)]',
+      2: 'text-[length:var(--font-heading-h2-size)] [font-weight:var(--font-heading-h2-weight)] [line-height:var(--font-heading-h2-line-height)] tracking-tight text-[var(--color-text-heading)]',
+      3: 'text-[length:var(--font-heading-h3-size)] [font-weight:var(--font-heading-h3-weight)] [line-height:var(--font-heading-h3-line-height)] text-[var(--color-text-heading)]',
+      4: 'text-[length:var(--font-heading-h4-size)] [font-weight:var(--font-heading-h4-weight)] [line-height:var(--font-heading-h4-line-height)] text-[var(--color-text-heading)]',
+      5: 'text-[length:var(--font-heading-h5-size)] [font-weight:var(--font-heading-h5-weight)] [line-height:var(--font-heading-h5-line-height)] text-[var(--color-text-heading)]',
+      6: 'text-[length:var(--font-heading-h6-size)] [font-weight:var(--font-heading-h6-weight)] [line-height:var(--font-heading-h6-line-height)] text-[var(--color-text-heading)]',
     },
   },
 });

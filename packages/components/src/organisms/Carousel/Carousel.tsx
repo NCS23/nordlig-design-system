@@ -146,7 +146,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
             type="button"
             className={cn(
               'absolute top-1/2 -translate-y-1/2 z-10 left-2',
-              'w-8 h-8 rounded-full bg-[var(--color-bg-paper)]/80 backdrop-blur-sm',
+              'w-10 h-10 rounded-full bg-[var(--color-bg-paper)]/80 backdrop-blur-sm',
               'flex items-center justify-center',
               'text-[var(--color-text-base)] hover:bg-[var(--color-bg-paper)] transition-colors',
               '[box-shadow:var(--shadow-card-raised)]',
@@ -165,7 +165,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
             type="button"
             className={cn(
               'absolute top-1/2 -translate-y-1/2 z-10 right-2',
-              'w-8 h-8 rounded-full bg-[var(--color-bg-paper)]/80 backdrop-blur-sm',
+              'w-10 h-10 rounded-full bg-[var(--color-bg-paper)]/80 backdrop-blur-sm',
               'flex items-center justify-center',
               'text-[var(--color-text-base)] hover:bg-[var(--color-bg-paper)] transition-colors',
               '[box-shadow:var(--shadow-card-raised)]',
@@ -180,22 +180,28 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 
         {/* Dot Indicators */}
         {showDots && slideCount > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-[var(--spacing-carousel-dot-gap)] z-10 bg-black/30 backdrop-blur-sm rounded-full px-2 py-1.5">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex z-10 bg-[var(--color-bg-overlay)] backdrop-blur-sm rounded-full px-1 py-1">
             {slides.map((_, index) => (
               <button
                 key={index}
                 type="button"
                 className={cn(
-                  'w-2 h-2 rounded-full transition-colors duration-200 cursor-pointer',
-                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
-                  index === currentIndex
-                    ? 'bg-white'
-                    : 'bg-white/50 hover:bg-white/70'
+                  'relative min-h-11 min-w-11 flex items-center justify-center rounded-full transition-colors duration-200 cursor-pointer',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
                 )}
                 onClick={() => goToSlide(index)}
                 aria-label={`Gehe zu Slide ${index + 1}`}
                 aria-current={index === currentIndex ? 'true' : undefined}
-              />
+              >
+                <span
+                  className={cn(
+                    'block w-2 h-2 rounded-full transition-colors duration-200',
+                    index === currentIndex
+                      ? 'bg-[var(--color-bg-paper)]'
+                      : 'bg-[var(--color-bg-paper)]/50 hover:bg-[var(--color-bg-paper)]/70'
+                  )}
+                />
+              </button>
             ))}
           </div>
         )}

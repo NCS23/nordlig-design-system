@@ -59,7 +59,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         {closeable && (
           <button
             onClick={onClose}
-            className="shrink-0 p-1 rounded-[var(--radius-alert)] hover:bg-black/5 transition-colors"
+            className="shrink-0 p-1 rounded-[var(--radius-alert)] hover:bg-[var(--color-interactive-hover-overlay)] transition-colors"
             aria-label="Schließen"
           >
             <Icon icon={X} size="sm" className="text-[var(--color-alert-title)] opacity-50" />
@@ -108,7 +108,7 @@ const AlertClose = React.forwardRef<
   <button
     ref={ref}
     className={cn(
-      'shrink-0 p-1 rounded-[var(--radius-alert)] hover:bg-black/5 transition-colors',
+      'shrink-0 p-1 rounded-[var(--radius-alert)] hover:bg-[var(--color-interactive-hover-overlay)] transition-colors',
       className
     )}
     aria-label="Schließen"

@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react';
 import '../storybook.css';
 import '../../../packages/styles/dist/tokens.css';
 import '../../../packages/styles/dist/tokens-annotated.css';
+import '../../../packages/styles/src/global.css';
 
 const preview: Preview = {
   parameters: {
