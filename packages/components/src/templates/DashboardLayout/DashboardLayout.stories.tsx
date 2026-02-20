@@ -478,7 +478,7 @@ export const FullDashboard: Story = {
         </DashboardLayout.Body>
         <DashboardLayout.Footer>
           <Text variant="muted" as="span">
-            Nordlig Design System v1.0
+            Training Analyzer v1.0
           </Text>
           <Separator orientation="vertical" className="mx-3 h-4" />
           <Text variant="muted" as="span">

@@ -199,10 +199,7 @@ export const WithLogo: Story = {
     <AuthLayout>
       <div className="mb-6 flex items-center gap-3">
         <img src="/bildmarke.svg" alt="" className="h-10 w-auto" />
-        <div>
-          <Heading level={3}>Nordlig Design System</Heading>
-          <Text variant="muted">Training Analyzer</Text>
-        </div>
+        <Heading level={3}>Nordlig Design System</Heading>
       </div>
       <Heading level={2} className="mb-6">
         Willkommen zurueck
