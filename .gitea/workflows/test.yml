@@ -59,8 +59,8 @@ jobs:
 
           # Git pull to update source, then verify
           echo "Running git pull..."
-          docker_exec "cd /app && git pull origin main 2>&1"
+          docker_exec "git config --global --add safe.directory /app && cd /app && git pull origin main 2>&1"
           echo "Verifying deploy..."
-          docker_exec "cd /app && git log --oneline -1 2>&1"
+          docker_exec "git config --global --add safe.directory /app && cd /app && git log --oneline -1 2>&1"
 
           echo "Deploy complete."
