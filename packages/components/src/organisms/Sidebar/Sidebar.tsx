@@ -78,7 +78,7 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
           ref={ref}
           data-collapsed={collapsed || undefined}
           className={cn(
-            'h-full bg-[var(--color-bg-paper)] border-r border-[var(--color-border-base)] flex flex-col transition-all duration-200',
+            'h-full bg-[var(--color-bg-paper)] border-r border-[var(--color-border-muted)] flex flex-col transition-all duration-200',
             collapsed && !collapsedWidth ? 'w-16' : '',
             !collapsed && !width ? 'w-60' : '',
             className
@@ -146,7 +146,7 @@ const SidebarFooter = React.forwardRef<HTMLDivElement, SidebarFooterProps>(
       <div
         ref={ref}
         className={cn(
-          'p-[var(--spacing-sidebar-header-padding)] border-t border-[var(--color-border-base)] mt-auto',
+          'p-[var(--spacing-sidebar-header-padding)] border-t border-[var(--color-border-muted)] mt-auto',
           className
         )}
         {...props}

@@ -119,7 +119,7 @@ describe('Sidebar', () => {
     expect(sidebar.className).toContain('h-full');
     expect(sidebar.className).toContain('bg-[var(--color-bg-paper)]');
     expect(sidebar.className).toContain('border-r');
-    expect(sidebar.className).toContain('border-[var(--color-border-base)]');
+    expect(sidebar.className).toContain('border-[var(--color-border-muted)]');
     expect(sidebar.className).toContain('flex');
     expect(sidebar.className).toContain('flex-col');
     expect(sidebar.className).toContain('transition-all');
@@ -248,7 +248,7 @@ describe('SidebarFooter', () => {
     );
     const footer = screen.getByTestId('footer');
     expect(footer.className).toContain('border-t');
-    expect(footer.className).toContain('border-[var(--color-border-base)]');
+    expect(footer.className).toContain('border-[var(--color-border-muted)]');
     expect(footer.className).toContain('mt-auto');
   });
 
