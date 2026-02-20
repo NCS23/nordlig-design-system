@@ -57,7 +57,7 @@ export default tseslint.config(
     rules: {
       // --- Enforce DS component usage (KEINE rohen HTML-Elemente!) ---
       'no-restricted-syntax': [
-        'warn',
+        'error',
         {
           selector: 'JSXOpeningElement[name.name="button"]',
           message: 'Use <Button> from the design system instead of raw <button>.',
