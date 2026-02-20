@@ -1,8 +1,45 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Home, BarChart3, Settings, Users, Bell, Search, Menu, LogOut, ChevronLeft } from 'lucide-react';
+import {
+  Home,
+  Activity,
+  TrendingUp,
+  Settings,
+  BarChart3,
+  Bell,
+  LogOut,
+  Calendar,
+  Menu,
+  Timer,
+  Heart,
+  Flame,
+  Route,
+} from 'lucide-react';
 import { DashboardLayout, useDashboardLayout } from './DashboardLayout';
 import { Icon } from '../../atoms/Icon';
+import { Button } from '../../atoms/Button';
+import { Heading } from '../../atoms/Heading';
+import { Text } from '../../atoms/Text';
+import { Badge } from '../../atoms/Badge';
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from '../../atoms/Avatar';
+import {
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarItem,
+  SidebarCollapseButton,
+} from '../../organisms/Sidebar';
+import { StatCard } from '../../organisms/StatCard';
+import { Card, CardHeader, CardBody } from '../../organisms/Card';
+import { Breadcrumbs, BreadcrumbItem } from '../../molecules/Breadcrumbs';
+import { SearchInput } from '../../molecules/SearchInput';
+import { Separator } from '../../atoms/Separator';
 
 const meta: Meta<typeof DashboardLayout> = {
   title: 'Templates/DashboardLayout',
@@ -13,123 +50,252 @@ const meta: Meta<typeof DashboardLayout> = {
 export default meta;
 type Story = StoryObj<typeof DashboardLayout>;
 
-/* ─── Helpers ──────────────────────────────────────────────────────────────── */
+/* ─── Reusable Sidebar ─────────────────────────────────────────────────────── */
 
-const SidebarPlaceholder = ({ collapsed = false }: { collapsed?: boolean }) => (
-  <nav className="flex flex-col h-full bg-[var(--color-bg-paper)] border-r border-[var(--color-border-base)]">
-    <div className="p-4 font-semibold text-[var(--color-text-base)]">
-      {collapsed ? 'N' : 'Nordlig'}
-    </div>
-    <div className="flex-1 px-2 py-1">
-      {[
-        { icon: Home, label: 'Dashboard', active: true },
-        { icon: BarChart3, label: 'Analytics' },
-        { icon: Users, label: 'Team' },
-        { icon: Settings, label: 'Settings' },
-      ].map(({ icon, label, active }) => (
-        <div
-          key={label}
-          className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm mb-1 ${
-            active
-              ? 'bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)]'
-              : 'text-[var(--color-text-base)] hover:bg-[var(--color-bg-muted)]'
-          }`}
-        >
-          <Icon icon={icon} size="sm" />
-          {!collapsed && <span>{label}</span>}
+const AppSidebar = () => {
+  const { sidebarCollapsed } = useDashboardLayout();
+  return (
+    <Sidebar
+      collapsible
+      collapsed={sidebarCollapsed}
+      aria-label="Hauptnavigation"
+      className="h-full"
+    >
+      <SidebarHeader>
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)] text-sm font-bold">
+          N
         </div>
-      ))}
-    </div>
-  </nav>
-);
+        {!sidebarCollapsed && (
+          <Text variant="body" as="span" className="font-semibold">
+            Nordlig
+          </Text>
+        )}
+      </SidebarHeader>
+      <SidebarContent>
+        <SidebarGroup label="Training">
+          <SidebarItem icon={<Icon icon={Home} size={18} />} label="Dashboard" active />
+          <SidebarItem icon={<Icon icon={Activity} size={18} />} label="Aktivitaeten" badge="12" />
+          <SidebarItem icon={<Icon icon={TrendingUp} size={18} />} label="Trends" />
+          <SidebarItem icon={<Icon icon={Calendar} size={18} />} label="Kalender" />
+        </SidebarGroup>
+        <SidebarGroup label="Analyse">
+          <SidebarItem icon={<Icon icon={BarChart3} size={18} />} label="Statistiken" />
+          <SidebarItem icon={<Icon icon={Heart} size={18} />} label="HR Zonen" />
+        </SidebarGroup>
+      </SidebarContent>
+      <SidebarFooter>
+        <SidebarItem icon={<Icon icon={Settings} size={18} />} label="Einstellungen" />
+        {!sidebarCollapsed && <SidebarCollapseButton />}
+      </SidebarFooter>
+    </Sidebar>
+  );
+};
 
-const ContentPlaceholder = ({ title = 'Dashboard' }: { title?: string }) => (
-  <div>
-    <h1 className="text-2xl font-bold text-[var(--color-text-base)] mb-6">{title}</h1>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {['Trainings', 'Distanz', 'Kalorien'].map((label) => (
-        <div
-          key={label}
-          className="rounded-lg border border-[var(--color-border-base)] bg-[var(--color-bg-paper)] p-6"
-        >
-          <div className="text-sm text-[var(--color-text-muted)]">{label}</div>
-          <div className="text-2xl font-bold text-[var(--color-text-base)] mt-1">42</div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+/* ─── Reusable Header ──────────────────────────────────────────────────────── */
 
-const HamburgerButton = () => {
+const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
   const { setSidebarOpen } = useDashboardLayout();
   return (
-    <button
-      className="md:hidden p-2 rounded-md hover:bg-[var(--color-bg-muted)]"
-      onClick={() => setSidebarOpen(true)}
-      aria-label="Open navigation"
-    >
-      <Icon icon={Menu} size="sm" />
-    </button>
+    <DashboardLayout.Header>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="md:hidden"
+        onClick={() => setSidebarOpen(true)}
+        aria-label="Navigation oeffnen"
+      >
+        <Icon icon={Menu} size="sm" />
+      </Button>
+      <Heading level={4} as="h1" className="ml-2 md:ml-0">
+        Training Analyzer
+      </Heading>
+
+      {withSearch && (
+        <div className="ml-4 hidden flex-1 md:block max-w-sm">
+          <SearchInput placeholder="Training suchen..." inputSize="sm" />
+        </div>
+      )}
+
+      <div className="ml-auto flex items-center gap-2">
+        <Button variant="ghost" size="sm" aria-label="Benachrichtigungen" className="relative">
+          <Icon icon={Bell} size="sm" />
+          <Badge variant="error" size="sm" className="absolute -top-1 -right-1">
+            3
+          </Badge>
+        </Button>
+        <Separator orientation="vertical" className="mx-1 h-6" />
+        <Avatar size="sm">
+          <AvatarFallback>NR</AvatarFallback>
+        </Avatar>
+      </div>
+    </DashboardLayout.Header>
   );
 };
 
-const CollapseToggle = () => {
-  const { sidebarCollapsed, setSidebarCollapsed } = useDashboardLayout();
-  return (
-    <button
-      className="p-2 rounded-md hover:bg-[var(--color-bg-muted)] text-[var(--color-text-muted)]"
-      onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-      aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-    >
-      <Icon icon={ChevronLeft} size="sm" />
-    </button>
-  );
-};
+/* ─── Dashboard Content ────────────────────────────────────────────────────── */
+
+const DashboardContent = () => (
+  <>
+    <Heading level={2} className="mb-6">
+      Dashboard
+    </Heading>
+
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-6">
+      <StatCard
+        title="Trainings"
+        value={42}
+        trend={{ value: 12, direction: 'up', label: 'vs. Vormonat' }}
+        icon={<Icon icon={Activity} size="sm" />}
+      />
+      <StatCard
+        title="Distanz"
+        value="287"
+        unit="km"
+        trend={{ value: 8, direction: 'up', label: 'vs. Vormonat' }}
+        icon={<Icon icon={Route} size="sm" />}
+      />
+      <StatCard
+        title="Dauer"
+        value="32:15"
+        unit="Std"
+        trend={{ value: 3, direction: 'down', label: 'vs. Vormonat' }}
+        icon={<Icon icon={Timer} size="sm" />}
+        variant="warning"
+      />
+      <StatCard
+        title="Kalorien"
+        value="18.430"
+        unit="kcal"
+        trend={{ value: 5, direction: 'up', label: 'vs. Vormonat' }}
+        icon={<Icon icon={Flame} size="sm" />}
+      />
+    </div>
+
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <Card>
+        <CardHeader>
+          <Heading level={3}>Letzte Aktivitaeten</Heading>
+        </CardHeader>
+        <CardBody>
+          <div className="space-y-3">
+            {[
+              { name: 'Morgenlauf', type: 'Laufen', dist: '8.2 km', date: 'Heute' },
+              { name: 'Intervall-Training', type: 'Laufen', dist: '6.1 km', date: 'Gestern' },
+              { name: 'Rennrad Tour', type: 'Radfahren', dist: '42.5 km', date: 'Mo, 17.02.' },
+            ].map((item) => (
+              <div
+                key={item.name}
+                className="flex items-center justify-between rounded-lg border border-[var(--color-border-muted)] p-3"
+              >
+                <div>
+                  <Text variant="body" as="span" className="font-medium">
+                    {item.name}
+                  </Text>
+                  <Text variant="muted" as="span" className="ml-2">
+                    {item.type}
+                  </Text>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Badge variant="neutral" size="sm">{item.dist}</Badge>
+                  <Text variant="muted" as="span">{item.date}</Text>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <Heading level={3}>Wochenziel</Heading>
+        </CardHeader>
+        <CardBody>
+          <div className="space-y-4">
+            {[
+              { label: 'Distanz', current: 28, goal: 40, unit: 'km' },
+              { label: 'Trainings', current: 4, goal: 5, unit: '' },
+              { label: 'Aktive Minuten', current: 180, goal: 300, unit: 'min' },
+            ].map((g) => (
+              <div key={g.label}>
+                <div className="flex justify-between mb-1">
+                  <Text variant="small" as="span">{g.label}</Text>
+                  <Text variant="muted" as="span">
+                    {g.current}{g.unit ? ` ${g.unit}` : ''} / {g.goal}{g.unit ? ` ${g.unit}` : ''}
+                  </Text>
+                </div>
+                <div className="h-2 w-full rounded-full bg-[var(--color-bg-surface-hover)]">
+                  <div
+                    className="h-2 rounded-full bg-[var(--color-bg-primary)]"
+                    style={{ width: `${Math.min((g.current / g.goal) * 100, 100)}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardBody>
+      </Card>
+    </div>
+  </>
+);
 
 /* ─── Stories ──────────────────────────────────────────────────────────────── */
 
 export const Default: Story = {
-  render: () => (
-    <DashboardLayout>
-      <DashboardLayout.Header>
-        <HamburgerButton />
-        <span className="ml-2 font-semibold text-[var(--color-text-base)]">Training Analyzer</span>
-      </DashboardLayout.Header>
-      <DashboardLayout.Body>
-        <DashboardLayout.Sidebar>
-          <SidebarPlaceholder />
-        </DashboardLayout.Sidebar>
-        <DashboardLayout.Content>
-          <ContentPlaceholder />
-        </DashboardLayout.Content>
-      </DashboardLayout.Body>
-    </DashboardLayout>
-  ),
+  render: () => {
+    const Inner = () => (
+      <>
+        <AppHeader />
+        <DashboardLayout.Body>
+          <DashboardLayout.Sidebar>
+            <AppSidebar />
+          </DashboardLayout.Sidebar>
+          <DashboardLayout.Content>
+            <DashboardContent />
+          </DashboardLayout.Content>
+        </DashboardLayout.Body>
+      </>
+    );
+    return (
+      <DashboardLayout>
+        <Inner />
+      </DashboardLayout>
+    );
+  },
 };
 
 export const CollapsedSidebar: Story = {
   render: () => {
-    const CollapsedDemo = () => {
-      const { sidebarCollapsed } = useDashboardLayout();
+    const Inner = () => {
+      const { setSidebarCollapsed, sidebarCollapsed } = useDashboardLayout();
       return (
-        <DashboardLayout.Body>
-          <DashboardLayout.Sidebar>
-            <SidebarPlaceholder collapsed={sidebarCollapsed} />
-          </DashboardLayout.Sidebar>
-          <DashboardLayout.Content>
-            <ContentPlaceholder />
-          </DashboardLayout.Content>
-        </DashboardLayout.Body>
+        <>
+          <DashboardLayout.Header>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+              aria-label={sidebarCollapsed ? 'Sidebar aufklappen' : 'Sidebar zuklappen'}
+            >
+              <Icon icon={Menu} size="sm" />
+            </Button>
+            <Heading level={4} as="h1" className="ml-2">
+              Training Analyzer
+            </Heading>
+          </DashboardLayout.Header>
+          <DashboardLayout.Body>
+            <DashboardLayout.Sidebar>
+              <AppSidebar />
+            </DashboardLayout.Sidebar>
+            <DashboardLayout.Content>
+              <DashboardContent />
+            </DashboardLayout.Content>
+          </DashboardLayout.Body>
+        </>
       );
     };
-
     return (
-      <DashboardLayout defaultSidebarCollapsed={true}>
-        <DashboardLayout.Header>
-          <CollapseToggle />
-          <span className="ml-2 font-semibold text-[var(--color-text-base)]">Training Analyzer</span>
-        </DashboardLayout.Header>
-        <CollapsedDemo />
+      <DashboardLayout defaultSidebarCollapsed>
+        <Inner />
       </DashboardLayout>
     );
   },
@@ -137,154 +303,199 @@ export const CollapsedSidebar: Story = {
 
 export const MobileOverlay: Story = {
   parameters: { viewport: { defaultViewport: 'mobile1' } },
-  render: () => (
-    <DashboardLayout>
-      <DashboardLayout.Header>
-        <HamburgerButton />
-        <span className="ml-2 font-semibold text-[var(--color-text-base)]">Training Analyzer</span>
-      </DashboardLayout.Header>
-      <DashboardLayout.Body>
-        <DashboardLayout.Sidebar>
-          <SidebarPlaceholder />
-        </DashboardLayout.Sidebar>
-        <DashboardLayout.Content>
-          <ContentPlaceholder />
-        </DashboardLayout.Content>
-      </DashboardLayout.Body>
-    </DashboardLayout>
-  ),
+  render: () => {
+    const Inner = () => (
+      <>
+        <AppHeader />
+        <DashboardLayout.Body>
+          <DashboardLayout.Sidebar>
+            <AppSidebar />
+          </DashboardLayout.Sidebar>
+          <DashboardLayout.Content>
+            <DashboardContent />
+          </DashboardLayout.Content>
+        </DashboardLayout.Body>
+      </>
+    );
+    return (
+      <DashboardLayout>
+        <Inner />
+      </DashboardLayout>
+    );
+  },
 };
 
 export const WithBreadcrumbs: Story = {
-  render: () => (
-    <DashboardLayout>
-      <DashboardLayout.Header>
-        <HamburgerButton />
-        <span className="ml-2 font-semibold text-[var(--color-text-base)]">Training Analyzer</span>
-      </DashboardLayout.Header>
-      <DashboardLayout.Body>
-        <DashboardLayout.Sidebar>
-          <SidebarPlaceholder />
-        </DashboardLayout.Sidebar>
-        <DashboardLayout.Content>
-          <nav className="text-sm text-[var(--color-text-muted)] mb-4">
-            Dashboard / Analytics / Weekly Report
-          </nav>
-          <ContentPlaceholder title="Weekly Report" />
-        </DashboardLayout.Content>
-      </DashboardLayout.Body>
-    </DashboardLayout>
-  ),
+  render: () => {
+    const Inner = () => (
+      <>
+        <AppHeader />
+        <DashboardLayout.Body>
+          <DashboardLayout.Sidebar>
+            <AppSidebar />
+          </DashboardLayout.Sidebar>
+          <DashboardLayout.Content>
+            <Breadcrumbs className="mb-4">
+              <BreadcrumbItem href="#">Dashboard</BreadcrumbItem>
+              <BreadcrumbItem href="#">Analyse</BreadcrumbItem>
+              <BreadcrumbItem isCurrent>Wochenbericht</BreadcrumbItem>
+            </Breadcrumbs>
+            <DashboardContent />
+          </DashboardLayout.Content>
+        </DashboardLayout.Body>
+      </>
+    );
+    return (
+      <DashboardLayout>
+        <Inner />
+      </DashboardLayout>
+    );
+  },
 };
 
 export const WithUserMenu: Story = {
-  render: () => (
-    <DashboardLayout>
-      <DashboardLayout.Header>
-        <HamburgerButton />
-        <span className="ml-2 font-semibold text-[var(--color-text-base)]">Training Analyzer</span>
-        <div className="ml-auto flex items-center gap-2">
-          <button className="p-2 rounded-md hover:bg-[var(--color-bg-muted)]" aria-label="Notifications">
-            <Icon icon={Bell} size="sm" />
-          </button>
-          <div className="h-8 w-8 rounded-full bg-[var(--color-bg-primary)] flex items-center justify-center text-[var(--color-text-on-primary)] text-sm font-medium">
-            NR
-          </div>
-        </div>
-      </DashboardLayout.Header>
-      <DashboardLayout.Body>
-        <DashboardLayout.Sidebar>
-          <SidebarPlaceholder />
-        </DashboardLayout.Sidebar>
-        <DashboardLayout.Content>
-          <ContentPlaceholder />
-        </DashboardLayout.Content>
-      </DashboardLayout.Body>
-    </DashboardLayout>
-  ),
+  render: () => {
+    const Inner = () => {
+      const { setSidebarOpen } = useDashboardLayout();
+      return (
+        <>
+          <DashboardLayout.Header>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden"
+              onClick={() => setSidebarOpen(true)}
+              aria-label="Navigation oeffnen"
+            >
+              <Icon icon={Menu} size="sm" />
+            </Button>
+            <Heading level={4} as="h1" className="ml-2 md:ml-0">
+              Training Analyzer
+            </Heading>
+            <div className="ml-auto flex items-center gap-3">
+              <Button variant="ghost" size="sm" aria-label="Benachrichtigungen">
+                <Icon icon={Bell} size="sm" />
+              </Button>
+              <Separator orientation="vertical" className="h-6" />
+              <div className="flex items-center gap-2">
+                <Avatar size="sm">
+                  <AvatarImage src="https://api.dicebear.com/7.x/initials/svg?seed=NR" alt="Nils R." />
+                  <AvatarFallback>NR</AvatarFallback>
+                </Avatar>
+                <div className="hidden md:block">
+                  <Text variant="small" as="span" className="font-medium">Nils R.</Text>
+                </div>
+              </div>
+              <Button variant="ghost" size="sm" aria-label="Abmelden">
+                <Icon icon={LogOut} size="sm" />
+              </Button>
+            </div>
+          </DashboardLayout.Header>
+          <DashboardLayout.Body>
+            <DashboardLayout.Sidebar>
+              <AppSidebar />
+            </DashboardLayout.Sidebar>
+            <DashboardLayout.Content>
+              <DashboardContent />
+            </DashboardLayout.Content>
+          </DashboardLayout.Body>
+        </>
+      );
+    };
+    return (
+      <DashboardLayout>
+        <Inner />
+      </DashboardLayout>
+    );
+  },
 };
 
 export const WithSearch: Story = {
-  render: () => (
-    <DashboardLayout>
-      <DashboardLayout.Header>
-        <HamburgerButton />
-        <span className="ml-2 font-semibold text-[var(--color-text-base)]">Training Analyzer</span>
-        <div className="ml-4 flex-1 max-w-sm">
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-[var(--color-border-base)] bg-[var(--color-bg-surface)]">
-            <Icon icon={Search} size="sm" className="text-[var(--color-text-muted)]" />
-            <span className="text-sm text-[var(--color-text-muted)]">Suche...</span>
-          </div>
-        </div>
-      </DashboardLayout.Header>
-      <DashboardLayout.Body>
-        <DashboardLayout.Sidebar>
-          <SidebarPlaceholder />
-        </DashboardLayout.Sidebar>
-        <DashboardLayout.Content>
-          <ContentPlaceholder />
-        </DashboardLayout.Content>
-      </DashboardLayout.Body>
-    </DashboardLayout>
-  ),
+  render: () => {
+    const Inner = () => (
+      <>
+        <AppHeader withSearch />
+        <DashboardLayout.Body>
+          <DashboardLayout.Sidebar>
+            <AppSidebar />
+          </DashboardLayout.Sidebar>
+          <DashboardLayout.Content>
+            <DashboardContent />
+          </DashboardLayout.Content>
+        </DashboardLayout.Body>
+      </>
+    );
+    return (
+      <DashboardLayout>
+        <Inner />
+      </DashboardLayout>
+    );
+  },
 };
 
 export const NoFooter: Story = {
-  render: () => (
-    <DashboardLayout>
-      <DashboardLayout.Header>
-        <span className="font-semibold text-[var(--color-text-base)]">Minimal Layout</span>
-      </DashboardLayout.Header>
-      <DashboardLayout.Body>
-        <DashboardLayout.Sidebar>
-          <SidebarPlaceholder />
-        </DashboardLayout.Sidebar>
-        <DashboardLayout.Content>
-          <ContentPlaceholder title="Minimal Dashboard" />
-        </DashboardLayout.Content>
-      </DashboardLayout.Body>
-    </DashboardLayout>
-  ),
+  render: () => {
+    const Inner = () => (
+      <>
+        <AppHeader />
+        <DashboardLayout.Body>
+          <DashboardLayout.Sidebar>
+            <AppSidebar />
+          </DashboardLayout.Sidebar>
+          <DashboardLayout.Content>
+            <Heading level={2} className="mb-6">
+              Minimal Dashboard
+            </Heading>
+            <Card>
+              <CardBody>
+                <Text variant="muted">
+                  Dashboard-Layout ohne Footer — nur Header, Sidebar und Content.
+                </Text>
+              </CardBody>
+            </Card>
+          </DashboardLayout.Content>
+        </DashboardLayout.Body>
+      </>
+    );
+    return (
+      <DashboardLayout>
+        <Inner />
+      </DashboardLayout>
+    );
+  },
 };
 
 export const FullDashboard: Story = {
   render: () => {
-    const FullContent = () => {
-      const { sidebarCollapsed } = useDashboardLayout();
-      return (
+    const Inner = () => (
+      <>
+        <AppHeader withSearch />
         <DashboardLayout.Body>
           <DashboardLayout.Sidebar>
-            <SidebarPlaceholder collapsed={sidebarCollapsed} />
+            <AppSidebar />
           </DashboardLayout.Sidebar>
           <DashboardLayout.Content>
-            <nav className="text-sm text-[var(--color-text-muted)] mb-4">
-              Dashboard / Uebersicht
-            </nav>
-            <ContentPlaceholder />
+            <Breadcrumbs className="mb-4">
+              <BreadcrumbItem href="#">Dashboard</BreadcrumbItem>
+              <BreadcrumbItem isCurrent>Uebersicht</BreadcrumbItem>
+            </Breadcrumbs>
+            <DashboardContent />
           </DashboardLayout.Content>
         </DashboardLayout.Body>
-      );
-    };
-
+        <DashboardLayout.Footer>
+          <Text variant="muted" as="span">
+            Nordlig Design System v1.0
+          </Text>
+          <Separator orientation="vertical" className="mx-3 h-4" />
+          <Text variant="muted" as="span">
+            &copy; 2026
+          </Text>
+        </DashboardLayout.Footer>
+      </>
+    );
     return (
       <DashboardLayout>
-        <DashboardLayout.Header>
-          <HamburgerButton />
-          <CollapseToggle />
-          <span className="ml-2 font-semibold text-[var(--color-text-base)]">Training Analyzer</span>
-          <div className="ml-auto flex items-center gap-2">
-            <button className="p-2 rounded-md hover:bg-[var(--color-bg-muted)]" aria-label="Notifications">
-              <Icon icon={Bell} size="sm" />
-            </button>
-            <button className="p-2 rounded-md hover:bg-[var(--color-bg-muted)]" aria-label="Logout">
-              <Icon icon={LogOut} size="sm" />
-            </button>
-          </div>
-        </DashboardLayout.Header>
-        <FullContent />
-        <DashboardLayout.Footer>
-          <span className="text-sm text-[var(--color-text-muted)]">Nordlig Design System v1.0</span>
-        </DashboardLayout.Footer>
+        <Inner />
       </DashboardLayout>
     );
   },

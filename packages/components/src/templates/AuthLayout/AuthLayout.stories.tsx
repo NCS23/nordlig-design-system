@@ -1,6 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { AuthLayout } from './AuthLayout';
+import { Heading } from '../../atoms/Heading';
+import { Text } from '../../atoms/Text';
+import { Button } from '../../atoms/Button';
+import { Link } from '../../atoms/Link';
+import { InputField } from '../../molecules/InputField';
+import { PasswordInput } from '../../molecules/PasswordInput';
+import { CheckboxField } from '../../molecules/CheckboxField';
+import { Label } from '../../atoms/Label';
+import { Separator } from '../../atoms/Separator';
 
 const meta: Meta<typeof AuthLayout> = {
   title: 'Templates/AuthLayout',
@@ -11,40 +20,29 @@ const meta: Meta<typeof AuthLayout> = {
 export default meta;
 type Story = StoryObj<typeof AuthLayout>;
 
-/* ─── Helpers ──────────────────────────────────────────────────────────────── */
+/* ─── Reusable Logo ────────────────────────────────────────────────────────── */
 
-const Logo = () => (
+const Logo = ({ large = false }: { large?: boolean }) => (
   <div className="flex items-center gap-2">
-    <div className="h-10 w-10 rounded-lg bg-[var(--color-bg-primary)] flex items-center justify-center text-[var(--color-text-on-primary)] font-bold text-lg">
+    <div
+      className={`${large ? 'h-12 w-12 text-xl' : 'h-10 w-10 text-lg'} flex shrink-0 items-center justify-center rounded-lg bg-[var(--color-bg-primary)] font-bold text-[var(--color-text-on-primary)]`}
+    >
       N
     </div>
-    <span className="text-xl font-bold text-[var(--color-text-base)]">Nordlig</span>
+    <Text variant="body" as="span" className={`font-bold ${large ? 'text-2xl' : 'text-xl'}`}>
+      Nordlig
+    </Text>
   </div>
 );
 
-const FormField = ({ label, type = 'text', placeholder }: { label: string; type?: string; placeholder?: string }) => (
-  <div className="mb-4">
-    <label className="block text-sm font-medium text-[var(--color-text-base)] mb-1">{label}</label>
-    <input
-      type={type}
-      placeholder={placeholder}
-      className="w-full px-3 py-2 rounded-md border border-[var(--color-border-base)] bg-[var(--color-bg-surface)] text-[var(--color-text-base)] text-sm"
-    />
-  </div>
-);
-
-const SubmitButton = ({ children }: { children: React.ReactNode }) => (
-  <button className="w-full py-2 px-4 rounded-md bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)] font-medium text-sm hover:opacity-90">
-    {children}
-  </button>
-);
+/* ─── Footer Links ─────────────────────────────────────────────────────────── */
 
 const FooterLinks = ({ links }: { links: { label: string; href: string }[] }) => (
-  <div className="flex items-center justify-center gap-4 text-sm">
+  <div className="flex items-center justify-center gap-4">
     {links.map(({ label, href }) => (
-      <a key={label} href={href} className="text-[var(--color-auth-footer-link)] hover:underline">
+      <Link key={label} href={href}>
         {label}
-      </a>
+      </Link>
     ))}
   </div>
 );
@@ -64,10 +62,18 @@ export const Login: Story = {
         />
       }
     >
-      <h2 className="text-xl font-bold text-[var(--color-text-base)] mb-6">Anmelden</h2>
-      <FormField label="E-Mail" type="email" placeholder="name@example.com" />
-      <FormField label="Passwort" type="password" placeholder="Passwort eingeben" />
-      <SubmitButton>Anmelden</SubmitButton>
+      <Heading level={2} className="mb-6">
+        Anmelden
+      </Heading>
+      <div className="space-y-4">
+        <InputField label="E-Mail" type="email" placeholder="name@example.com" />
+        <div>
+          <Label className="mb-1">Passwort</Label>
+          <PasswordInput placeholder="Passwort eingeben" />
+        </div>
+        <CheckboxField label="Angemeldet bleiben" />
+        <Button className="w-full">Anmelden</Button>
+      </div>
     </AuthLayout>
   ),
 };
@@ -80,15 +86,25 @@ export const Register: Story = {
         <FooterLinks links={[{ label: 'Bereits registriert? Anmelden', href: '/login' }]} />
       }
     >
-      <h2 className="text-xl font-bold text-[var(--color-text-base)] mb-6">Konto erstellen</h2>
-      <div className="grid grid-cols-2 gap-4">
-        <FormField label="Vorname" placeholder="Max" />
-        <FormField label="Nachname" placeholder="Mustermann" />
+      <Heading level={2} className="mb-6">
+        Konto erstellen
+      </Heading>
+      <div className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <InputField label="Vorname" placeholder="Max" />
+          <InputField label="Nachname" placeholder="Mustermann" />
+        </div>
+        <InputField label="E-Mail" type="email" placeholder="name@example.com" />
+        <div>
+          <Label className="mb-1">Passwort</Label>
+          <PasswordInput placeholder="Min. 8 Zeichen" />
+        </div>
+        <div>
+          <Label className="mb-1">Passwort bestaetigen</Label>
+          <PasswordInput placeholder="Passwort wiederholen" />
+        </div>
+        <Button className="w-full">Registrieren</Button>
       </div>
-      <FormField label="E-Mail" type="email" placeholder="name@example.com" />
-      <FormField label="Passwort" type="password" placeholder="Min. 8 Zeichen" />
-      <FormField label="Passwort bestaetigen" type="password" placeholder="Passwort wiederholen" />
-      <SubmitButton>Registrieren</SubmitButton>
     </AuthLayout>
   ),
 };
@@ -101,12 +117,16 @@ export const ForgotPassword: Story = {
         <FooterLinks links={[{ label: 'Zurueck zur Anmeldung', href: '/login' }]} />
       }
     >
-      <h2 className="text-xl font-bold text-[var(--color-text-base)] mb-2">Passwort zuruecksetzen</h2>
-      <p className="text-sm text-[var(--color-text-muted)] mb-6">
+      <Heading level={2} className="mb-2">
+        Passwort zuruecksetzen
+      </Heading>
+      <Text variant="muted" className="mb-6">
         Gib deine E-Mail-Adresse ein und wir senden dir einen Link zum Zuruecksetzen.
-      </p>
-      <FormField label="E-Mail" type="email" placeholder="name@example.com" />
-      <SubmitButton>Link senden</SubmitButton>
+      </Text>
+      <div className="space-y-4">
+        <InputField label="E-Mail" type="email" placeholder="name@example.com" />
+        <Button className="w-full">Link senden</Button>
+      </div>
     </AuthLayout>
   ),
 };
@@ -119,7 +139,8 @@ export const WithBackground: Story = {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-base) 100%)',
+            background:
+              'linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-base) 100%)',
             opacity: 0.05,
           }}
         />
@@ -133,10 +154,17 @@ export const WithBackground: Story = {
         />
       }
     >
-      <h2 className="text-xl font-bold text-[var(--color-text-base)] mb-6">Anmelden</h2>
-      <FormField label="E-Mail" type="email" placeholder="name@example.com" />
-      <FormField label="Passwort" type="password" placeholder="Passwort eingeben" />
-      <SubmitButton>Anmelden</SubmitButton>
+      <Heading level={2} className="mb-6">
+        Anmelden
+      </Heading>
+      <div className="space-y-4">
+        <InputField label="E-Mail" type="email" placeholder="name@example.com" />
+        <div>
+          <Label className="mb-1">Passwort</Label>
+          <PasswordInput placeholder="Passwort eingeben" />
+        </div>
+        <Button className="w-full">Anmelden</Button>
+      </div>
     </AuthLayout>
   ),
 };
@@ -155,10 +183,17 @@ export const MobileView: Story = {
         />
       }
     >
-      <h2 className="text-xl font-bold text-[var(--color-text-base)] mb-6">Anmelden</h2>
-      <FormField label="E-Mail" type="email" placeholder="name@example.com" />
-      <FormField label="Passwort" type="password" placeholder="Passwort eingeben" />
-      <SubmitButton>Anmelden</SubmitButton>
+      <Heading level={2} className="mb-6">
+        Anmelden
+      </Heading>
+      <div className="space-y-4">
+        <InputField label="E-Mail" type="email" placeholder="name@example.com" />
+        <div>
+          <Label className="mb-1">Passwort</Label>
+          <PasswordInput placeholder="Passwort eingeben" />
+        </div>
+        <Button className="w-full">Anmelden</Button>
+      </div>
     </AuthLayout>
   ),
 };
@@ -168,18 +203,33 @@ export const WithLogo: Story = {
     <AuthLayout
       logo={
         <div className="flex flex-col items-center gap-2">
-          <div className="h-16 w-16 rounded-2xl bg-[var(--color-bg-primary)] flex items-center justify-center text-[var(--color-text-on-primary)] font-bold text-2xl">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-bg-primary)] text-2xl font-bold text-[var(--color-text-on-primary)]">
             N
           </div>
-          <span className="text-2xl font-bold text-[var(--color-text-base)]">Nordlig</span>
-          <span className="text-sm text-[var(--color-text-muted)]">Training Analyzer</span>
+          <Heading level={3}>Nordlig</Heading>
+          <Text variant="muted">Training Analyzer</Text>
         </div>
       }
     >
-      <h2 className="text-xl font-bold text-[var(--color-text-base)] mb-6">Willkommen zurueck</h2>
-      <FormField label="E-Mail" type="email" placeholder="name@example.com" />
-      <FormField label="Passwort" type="password" placeholder="Passwort eingeben" />
-      <SubmitButton>Anmelden</SubmitButton>
+      <Heading level={2} className="mb-6">
+        Willkommen zurueck
+      </Heading>
+      <div className="space-y-4">
+        <InputField label="E-Mail" type="email" placeholder="name@example.com" />
+        <div>
+          <Label className="mb-1">Passwort</Label>
+          <PasswordInput placeholder="Passwort eingeben" />
+        </div>
+        <Button className="w-full">Anmelden</Button>
+      </div>
+      <Separator className="my-4" />
+      <Text variant="muted" className="text-center">
+        Oder weiter mit
+      </Text>
+      <div className="mt-3 grid grid-cols-2 gap-3">
+        <Button variant="secondary" className="w-full">Google</Button>
+        <Button variant="secondary" className="w-full">Apple</Button>
+      </div>
     </AuthLayout>
   ),
 };
