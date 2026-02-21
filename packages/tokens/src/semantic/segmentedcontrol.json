@@ -1,0 +1,45 @@
+{
+  "color": {
+    "$description": "Level 4: SegmentedControl atom tokens",
+    "seg": {
+      "bg":          { "$type": "color", "$value": "{color.bg.surface}", "$description": "Container background" },
+      "active-bg":   { "$type": "color", "$value": "{color.bg.paper}", "$description": "Active segment background" },
+      "text":        { "$type": "color", "$value": "{color.text.muted}", "$description": "Inactive segment text" },
+      "active-text": { "$type": "color", "$value": "{color.text.base}", "$description": "Active segment text" },
+      "hover-bg":    { "$type": "color", "$value": "{color.bg.surface-hover}", "$description": "Hover background (inactive)" }
+    }
+  },
+  "radius": {
+    "seg": {
+      "container": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Outer container radius" },
+      "item":      { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Segment item radius" }
+    }
+  },
+  "spacing": {
+    "seg": {
+      "padding":  { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Container inner padding" },
+      "item-px":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Segment horizontal padding" },
+      "gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between segments" }
+    }
+  },
+  "sizing": {
+    "seg": {
+      "sm-height": { "$type": "dimension", "$value": "28px", "$description": "Height sm" },
+      "md-height": { "$type": "dimension", "$value": "32px", "$description": "Height md" },
+      "lg-height": { "$type": "dimension", "$value": "36px", "$description": "Height lg" }
+    }
+  },
+  "font": {
+    "seg": {
+      "size-sm":  { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Font size sm" },
+      "size-md":  { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Font size md" },
+      "size-lg":  { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Font size lg" },
+      "weight":   { "$type": "dimension", "$value": "{font.component.weight.medium}", "$description": "Segment font weight" }
+    }
+  },
+  "shadow": {
+    "seg": {
+      "active": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Active segment shadow" }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "spacing": {
+    "$description": "Level 4: EmptyStatePage template tokens",
+    "emptypage": {
+      "padding-y":   { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Vertical padding for centering area" },
+      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between illustration, text and CTA" },
+      "text-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between title and description" }
+    }
+  },
+  "sizing": {
+    "emptypage": {
+      "max-width":       { "$type": "dimension", "$value": "420px", "$description": "Max width of content area" },
+      "illustration-size": { "$type": "dimension", "$value": "160px", "$description": "Illustration max width/height" }
+    }
+  },
+  "color": {
+    "emptypage": {
+      "title-text": { "$type": "color", "$value": "{color.text.base}", "$description": "Title text color" },
+      "desc-text":  { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
+    }
+  },
+  "font": {
+    "emptypage": {
+      "title-size":   { "$type": "dimension", "$value": "{font.heading.size.md}", "$description": "Title font size" },
+      "title-weight": { "$type": "dimension", "$value": "{font.component.weight.semibold}", "$description": "Title font weight" },
+      "desc-size":    { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Description font size" }
+    }
+  }
+}

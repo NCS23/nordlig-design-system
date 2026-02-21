@@ -48,7 +48,7 @@
   "font": {
     "$description": "Level 4: Input typography tokens",
     "input": {
-      "weight": { "$type": "fontWeight", "$value": "{font.weight.normal}", "$description": "Font weight 400 (normal)" }
+      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.normal}", "$description": "Font weight 400 (normal)" }
     }
   }
 }

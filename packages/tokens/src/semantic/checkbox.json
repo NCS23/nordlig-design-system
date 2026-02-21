@@ -35,9 +35,9 @@
     "$description": "Level 4: CheckboxField typography tokens",
     "checkbox": {
       "label-size":   { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Label font size 14px (text-sm)" },
-      "label-weight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$description": "Label font weight 500 (font-medium)" },
+      "label-weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Label font weight 500 (font-medium)" },
       "desc-size":    { "$type": "dimension", "$value": "{font.caption.size}", "$description": "Description font size 12px (text-xs)" },
-      "desc-weight":  { "$type": "fontWeight", "$value": "{font.weight.normal}", "$description": "Description font weight 400" },
+      "desc-weight":  { "$type": "fontWeight", "$value": "{font.component.weight.normal}", "$description": "Description font weight 400" },
       "label-line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "20px" },
       "desc-line-height":  { "$type": "dimension", "$value": "{font.component.line-height.xs}", "$description": "18px" }
     }

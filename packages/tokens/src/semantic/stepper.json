@@ -18,10 +18,10 @@
   },
   "sizing": {
     "stepper": {
-      "indicator":  { "$type": "dimension", "$value": "{spacing.xl}", "$description": "32px indicator diameter" },
+      "indicator":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "32px indicator diameter" },
       "line-h":     { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "1px horizontal line height" },
       "line-v-w":   { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "1px vertical line width" },
-      "line-v-min": { "$type": "dimension", "$value": "{spacing.lg}", "$description": "24px min vertical line height" }
+      "line-v-min": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px min vertical line height" }
     }
   },
   "spacing": {
@@ -29,7 +29,7 @@
     "stepper": {
       "step-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "12px gap between indicator and content" },
       "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px gap within step content" },
-      "line-offset": { "$type": "dimension", "$value": "{spacing.md}", "$description": "16px vertical line offset (half of 32px indicator)" }
+      "line-offset": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px vertical line offset (half of 32px indicator)" }
     }
   },
   "font": {

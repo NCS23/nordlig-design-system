@@ -1,0 +1,25 @@
+{
+  "color": {
+    "$description": "Level 4: ErrorPage template tokens",
+    "errorpage": {
+      "bg":        { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" },
+      "code-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Error code text color" },
+      "desc-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Description text color" }
+    }
+  },
+  "spacing": {
+    "errorpage": {
+      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between content sections" },
+      "text-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between title and description" }
+    }
+  },
+  "font": {
+    "errorpage": {
+      "code-size":    { "$type": "dimension", "$value": "{font.heading.size.2xl}", "$description": "Error code font size (e.g. 404)" },
+      "code-weight":  { "$type": "dimension", "$value": "{font.component.weight.semibold}", "$description": "Error code font weight" },
+      "title-size":   { "$type": "dimension", "$value": "{font.heading.size.lg}", "$description": "Error title font size" },
+      "title-weight": { "$type": "dimension", "$value": "{font.component.weight.semibold}", "$description": "Error title font weight" },
+      "desc-size":    { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Description font size" }
+    }
+  }
+}

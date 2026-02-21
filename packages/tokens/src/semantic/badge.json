@@ -59,7 +59,7 @@
   "font": {
     "$description": "Level 4: Badge typography tokens",
     "badge": {
-      "weight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$description": "Font weight 500 (medium)" }
+      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.medium}", "$description": "Font weight 500 (medium)" }
     }
   }
 }

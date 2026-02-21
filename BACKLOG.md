@@ -107,8 +107,14 @@ Textarea, TimePicker, Toast, Toolbar
 Card, Carousel, Chart, Command, DataTable, Modal, SessionCard, Sidebar, StatCard,
 Table, Timeline, Tree
 
-**Templates (3):**
-PageShell, DashboardLayout, AuthLayout
+**Molecules (27):**
+Accordion, AlertDialog, Breadcrumbs, Collapsible, ContextMenu, DatePicker, Dialog,
+Drawer, DropdownMenu, EmptyState, FileUpload, Form, InputField, Menubar,
+NavigationMenu, Pagination, RadioGroup, Resizable, SearchFilter, Select, Sheet,
+Stepper, Tabs, Textarea, TimePicker, Toast, Toolbar
+
+**Templates (8):**
+PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPage, EmptyStatePage
 
 ---
 
@@ -162,3 +168,14 @@ PageShell, DashboardLayout, AuthLayout
 | 2026-02-20 | **NDS-130 Done:** Card-Familie Harmonisierung — Shadow + Font + Spacing Tokens fuer StatCard (10 neue Font-Tokens), SessionCard L4-Shadow-Tokens. Alle drei Cards nutzen gleiche L3-Foundations. Gitea #86. |
 | 2026-02-20 | **NDS-131 Done:** Typografie-Tokenisierung Batch 1 — 20 Komponenten (Menubar, Command, AlertDialog, Calendar, Form, Combobox, Select, Timeline, Stepper, Toolbar, Textarea, Modal, ContextMenu, DropdownMenu, Sheet, Dialog, Toast, Accordion, NavigationMenu, Drawer). 76 neue Font-Tokens, 81 Tailwind-Ersetzungen. Gitea #87. |
 | 2026-02-20 | **NDS-132 Done:** Typografie-Tokenisierung Batch 2 — 14 Komponenten (DataTable, Tree, Chart, Breadcrumbs, EmptyState, LoadingOverlay, PasswordInput, ColorPicker, Pagination, Tabs, InputField, HoverCard, Popover, Tooltip). 21 neue Font-Tokens, 23 Ersetzungen. Neue `inputfield.json`. Gitea #88. |
+| 2026-02-21 | **Welle 10 gestartet und abgeschlossen: Templates (FormPage + ListPage) + SearchFilter** |
+| 2026-02-21 | **NDS-060 Done:** SearchFilter Molecule — Such+Filter-Leiste, 6 L4-Tokens (`searchfilter`), 13 Tests, 4 Stories. Gitea #52. |
+| 2026-02-21 | **NDS-053 Done:** FormPage Template — Formular-Seiten-Layout (Header/Body/Actions), maxWidth sm/md/lg, 10 L4-Tokens (`formpage`), 15 Tests, 4 Stories. Gitea #47. |
+| 2026-02-21 | **NDS-055 Done:** ListPage Template — Listen/Tabellen-Layout (Header/Toolbar/Body/Footer), 8 L4-Tokens (`listpage`), 15 Tests, 3 Stories. Gitea #49. |
+| 2026-02-21 | **Content-Padding erhoehen:** PageShell + DashboardLayout content-p von 24px (lg) auf 32px (xl). Design-Philosophie: "so luftig wie noetig und moeglich". |
+| 2026-02-21 | **Welle 11 gestartet und abgeschlossen: Templates abrunden + SegmentedControl + Token-Audit** |
+| 2026-02-21 | **NDS-007 Done:** SegmentedControl Atom — Animierter Indicator, radiogroup ARIA, 18 L4-Tokens (`seg`), 19 Tests, 6 Stories. Gitea #2. |
+| 2026-02-21 | **NDS-054 Done:** DetailPage Template — Header/Body/Content/Sidebar, responsive Sidebar, 7 L4-Tokens (`detailpage`), 17 Tests, 4 Stories. Gitea #48. |
+| 2026-02-21 | **NDS-056 Done:** ErrorPage Template — 404/500/Wartung, zentriert, 10 L4-Tokens (`errorpage`), 22 Tests, 4 Stories. Gitea #50. |
+| 2026-02-21 | **NDS-057 Done:** EmptyStatePage Template — Page-Level Empty State, 10 L4-Tokens (`emptypage`), 13 Tests, 4 Stories. Gitea #51. |
+| 2026-02-21 | **NDS-032 P2 Done:** Token-Audit L2-Violations — alle 16 L2→L3 Referenzen gefixt (8 Dateien). 0 L2-Violations verbleibend. |

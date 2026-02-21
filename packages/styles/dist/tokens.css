@@ -190,6 +190,7 @@
   --spacing-base-1-5: 6px;
   --spacing-base-2-5: 10px;
   --spacing-base-3-5: 14px;
+  --spacing-emptystate-padding-y: 48px; /** 48px vertical padding */
   --spacing-sidebar-badge-py: 2px; /** Badge vertical padding */
   --font-base-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-base-family-serif: 'Merriweather', Georgia, serif;
@@ -228,11 +229,17 @@
   --sizing-cpick-swatch-size: 24px; /** Color swatch size */
   --sizing-dashboard-sidebar-width: 240px; /** Sidebar expanded width */
   --sizing-dashboard-sidebar-collapsed-width: 64px; /** Sidebar collapsed width */
+  --sizing-detailpage-sidebar-width: 280px; /** Sidebar width on desktop */
+  --sizing-emptypage-max-width: 420px; /** Max width of content area */
+  --sizing-emptypage-illustration-size: 160px; /** Illustration max width/height */
   --sizing-formpage-max-width-sm: 480px; /** Narrow form (login, simple) */
   --sizing-formpage-max-width-md: 640px; /** Medium form (default) */
   --sizing-formpage-max-width-lg: 800px; /** Wide form (complex) */
   --sizing-shell-footer-height: 48px; /** Fixed footer height */
   --sizing-searchfilter-search-max-width: 320px; /** Max width of search input on desktop */
+  --sizing-seg-sm-height: 28px; /** Height sm */
+  --sizing-seg-md-height: 32px; /** Height md */
+  --sizing-seg-lg-height: 36px; /** Height lg */
   --sizing-textarea-min-height: 100px; /** Default minimum height */
   --sizing-textarea-max-height: 400px; /** Auto-resize maximum */
   --sizing-timeline-inner-dot: 10px; /** 10px inner dot */
@@ -506,13 +513,6 @@
   --spacing-component-gap-xl: var(--spacing-xl);
   --spacing-layout-gutter: var(--spacing-lg);
   --spacing-layout-section: var(--spacing-2xl);
-  --spacing-emptystate-padding-y: var(--spacing-2xl); /** 48px vertical padding */
-  --spacing-pwinput-input-pr: var(--spacing-xl); /** 40px input right padding for toggle */
-  --spacing-stepper-line-offset: var(--spacing-md); /** 16px vertical line offset (half of 32px indicator) */
-  --spacing-timeline-item-pb: var(--spacing-xl); /** 32px item bottom padding */
-  --spacing-timeline-line-left: var(--spacing-md); /** 16px line left offset */
-  --spacing-timeline-line-top: var(--spacing-xl); /** 32px line top offset */
-  --spacing-timeline-content-ml: var(--spacing-md); /** 16px content left margin */
   --font-component-size-xs: var(--font-size-xs);
   --font-component-size-sm: var(--font-size-sm);
   --font-component-size-md: var(--font-size-base);
@@ -538,10 +538,6 @@
   --font-heading-line-height-2xl: var(--font-line-height-3xl); /** h1: 36px font → 45px LH (1.25x) */
   --font-body-size: var(--font-size-base);
   --font-caption-size: var(--font-size-xs);
-  --font-badge-weight: var(--font-weight-medium); /** Font weight 500 (medium) */
-  --font-checkbox-label-weight: var(--font-weight-medium); /** Label font weight 500 (font-medium) */
-  --font-checkbox-desc-weight: var(--font-weight-normal); /** Description font weight 400 */
-  --font-input-weight: var(--font-weight-normal); /** Font weight 400 (normal) */
   --sizing-component-height-sm: var(--sizing-height-sm);
   --sizing-component-height-md: var(--sizing-height-md);
   --sizing-component-height-lg: var(--sizing-height-lg);
@@ -565,13 +561,8 @@
   --sizing-component-track-lg: var(--spacing-sm);
   --sizing-component-border-width-default: var(--sizing-border-width-default);
   --sizing-component-border-width-thick: var(--sizing-border-width-thick);
-  --sizing-alert-title-weight: var(--font-weight-semibold); /** Title font weight (600) */
-  --sizing-alert-desc-weight: var(--font-weight-normal); /** Description font weight (400) */
   --sizing-dashboard-header-height: var(--sizing-layout-header-height); /** Fixed header height */
   --sizing-shell-header-height: var(--sizing-layout-header-height); /** Fixed header height */
-  --sizing-stepper-indicator: var(--spacing-xl); /** 32px indicator diameter */
-  --sizing-stepper-line-v-min: var(--spacing-lg); /** 24px min vertical line height */
-  --sizing-timeline-dot: var(--spacing-xl); /** 32px dot diameter */
   --color-accordion-bg: var(--color-bg-paper); /** Item background */
   --color-accordion-border: var(--color-border-muted); /** Item border/divider */
   --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
@@ -768,11 +759,16 @@
   --color-dropdown-destructive-hover-bg: var(--color-bg-error-subtle); /** Destructive item hover bg */
   --color-dropdown-separator: var(--color-border-muted); /** Separator line */
   --color-dropdown-label-text: var(--color-text-muted); /** Group label text */
+  --color-emptypage-title-text: var(--color-text-base); /** Title text color */
+  --color-emptypage-desc-text: var(--color-text-muted); /** Description text color */
   --color-emptystate-icon: var(--color-text-muted); /** Default icon color (muted) */
   --color-emptystate-icon-error: var(--color-text-error); /** Error variant icon color */
   --color-emptystate-icon-success: var(--color-text-success); /** Success variant icon color */
   --color-emptystate-title: var(--color-text-base); /** Title text color */
   --color-emptystate-description: var(--color-text-muted); /** Description text color (muted) */
+  --color-errorpage-bg: var(--color-bg-base); /** Page background */
+  --color-errorpage-code-text: var(--color-text-muted); /** Error code text color */
+  --color-errorpage-desc-text: var(--color-text-muted); /** Description text color */
   --color-fileupload-zone-bg: var(--color-bg-surface); /** Upload zone background */
   --color-fileupload-zone-border: var(--color-border-default); /** Dashed border */
   --color-fileupload-zone-text: var(--color-text-base); /** Zone primary instruction text */
@@ -908,6 +904,11 @@
   --color-sinput-icon-focus: var(--color-text-base); /** Search icon on focus */
   --color-sinput-clear: var(--color-text-muted); /** Clear button color */
   --color-sinput-clear-hover: var(--color-text-base); /** Clear button hover */
+  --color-seg-bg: var(--color-bg-surface); /** Container background */
+  --color-seg-active-bg: var(--color-bg-paper); /** Active segment background */
+  --color-seg-text: var(--color-text-muted); /** Inactive segment text */
+  --color-seg-active-text: var(--color-text-base); /** Active segment text */
+  --color-seg-hover-bg: var(--color-bg-surface-hover); /** Hover background (inactive) */
   --color-select-trigger-bg: var(--color-bg-paper); /** White trigger background (matches Input) */
   --color-select-trigger-text: var(--color-text-base); /** Trigger text color */
   --color-select-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
@@ -1131,6 +1132,8 @@
   --radius-radio-item: var(--radius-component-md); /** 6px item row rounding */
   --radius-rsz-handle: var(--radius-component-sm); /** Handle grip radius */
   --radius-scrollarea-thumb: var(--radius-component-full); /** Scrollbar thumb radius */
+  --radius-seg-container: var(--radius-component-md); /** Outer container radius */
+  --radius-seg-item: var(--radius-component-sm); /** Segment item radius */
   --radius-select-popover: var(--radius-component-lg); /** 8px dropdown radius */
   --radius-select-item: var(--radius-component-md); /** 6px item radius */
   --radius-sheet: var(--radius-component-xl); /** 12px sheet radius (large overlay) */
@@ -1166,6 +1169,7 @@
   --shadow-nav-dropdown: var(--shadow-elevation-floating); /** Dropdown panel shadow */
   --shadow-shell-header: var(--shadow-elevation-raised); /** Header elevation shadow */
   --shadow-popover: var(--shadow-elevation-floating); /** Elevated popover shadow */
+  --shadow-seg-active: var(--shadow-elevation-raised); /** Active segment shadow */
   --shadow-select-popover: var(--shadow-elevation-floating); /** Dropdown elevation */
   --shadow-session-card-hover: var(--shadow-elevation-floating); /** Hover card shadow */
   --shadow-sheet: var(--shadow-elevation-floating); /** Sheet panel shadow */
@@ -1230,6 +1234,10 @@
   --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
   --spacing-datepicker-grid-gap: var(--spacing-component-gap-sm); /** 2px gap between day cells */
   --spacing-datepicker-range-gap: var(--spacing-component-gap-sm); /** Gap between date inputs in range picker (8px) */
+  --spacing-detailpage-header-gap: var(--spacing-component-gap-md); /** Gap between header elements */
+  --spacing-detailpage-section-gap: var(--spacing-component-gap-lg); /** Gap between major sections */
+  --spacing-detailpage-sidebar-gap: var(--spacing-component-gap-lg); /** Gap between content and sidebar */
+  --spacing-detailpage-content-gap: var(--spacing-component-gap-md); /** Gap within content body */
   --spacing-dialog-padding: var(--spacing-component-padding-lg); /** Dialog content padding */
   --spacing-dialog-gap: var(--spacing-component-gap-md); /** Dialog content gap */
   --spacing-drawer-padding: var(--spacing-component-padding-lg); /** Drawer content padding */
@@ -1238,10 +1246,15 @@
   --spacing-dropdown-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
   --spacing-dropdown-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
   --spacing-dropdown-item-gap: var(--spacing-component-gap-sm); /** 8px gap between icon and text */
+  --spacing-emptypage-padding-y: var(--spacing-component-padding-xl); /** Vertical padding for centering area */
+  --spacing-emptypage-content-gap: var(--spacing-component-gap-lg); /** Gap between illustration, text and CTA */
+  --spacing-emptypage-text-gap: var(--spacing-component-gap-sm); /** Gap between title and description */
   --spacing-emptystate-padding-x: var(--spacing-component-padding-md); /** 16px horizontal padding */
   --spacing-emptystate-icon-mb: var(--spacing-component-gap-lg); /** 16px below icon */
   --spacing-emptystate-title-mb: var(--spacing-component-gap-sm); /** 8px below title */
   --spacing-emptystate-desc-mb: var(--spacing-component-padding-lg); /** 24px below description */
+  --spacing-errorpage-content-gap: var(--spacing-component-gap-lg); /** Gap between content sections */
+  --spacing-errorpage-text-gap: var(--spacing-component-gap-sm); /** Gap between title and description */
   --spacing-fileupload-zone-padding: var(--spacing-component-padding-lg); /** Zone inner padding */
   --spacing-fileupload-file-gap: var(--spacing-component-gap-sm); /** Gap between file items */
   --spacing-fileupload-file-item-gap: var(--spacing-component-gap-md); /** Gap inside file item row (12px) */
@@ -1304,6 +1317,7 @@
   --spacing-pagination-nav-gap: var(--spacing-component-gap-sm); /** Gap between pagination nav elements (8px) */
   --spacing-pagination-item-gap: var(--spacing-component-gap-xs); /** Gap between page buttons (4px) */
   --spacing-pwinput-toggle-inset: var(--spacing-component-padding-sm); /** 12px toggle button right offset */
+  --spacing-pwinput-input-pr: var(--spacing-component-padding-xl); /** 40px input right padding for toggle */
   --spacing-pwinput-strength-mt: var(--spacing-component-gap-xs); /** 6px strength indicator margin top */
   --spacing-pwinput-hint-mt: var(--spacing-component-gap-2xs); /** 2px hint text margin top */
   --spacing-popover-padding: var(--spacing-component-padding-md); /** 16px internal padding */
@@ -1317,6 +1331,9 @@
   --spacing-searchfilter-gap: var(--spacing-component-gap-sm); /** Gap between search input and filter slots (8px) */
   --spacing-searchfilter-py: var(--spacing-component-padding-sm); /** Vertical padding (8px) */
   --spacing-sinput-icon-gap: var(--spacing-component-gap-sm); /** Gap between icon and text */
+  --spacing-seg-padding: var(--spacing-component-padding-xs); /** Container inner padding */
+  --spacing-seg-item-px: var(--spacing-component-padding-sm); /** Segment horizontal padding */
+  --spacing-seg-gap: var(--spacing-component-gap-xs); /** Gap between segments */
   --spacing-select-popover-padding: var(--spacing-component-padding-xs); /** 4px inner padding for item list */
   --spacing-select-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
   --spacing-select-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
@@ -1353,6 +1370,7 @@
   --spacing-statcard-header-gap: var(--spacing-component-gap-sm); /** Gap between icon and title (8px) */
   --spacing-stepper-step-gap: var(--spacing-component-gap-md); /** 12px gap between indicator and content */
   --spacing-stepper-content-gap: var(--spacing-component-gap-sm); /** 8px gap within step content */
+  --spacing-stepper-line-offset: var(--spacing-component-padding-md); /** 16px vertical line offset (half of 32px indicator) */
   --spacing-switch-field-gap: var(--spacing-component-gap-lg); /** Gap between switch and label area (16px) */
   --spacing-switch-content-gap: var(--spacing-component-gap-2xs); /** Gap between label and description (2px) */
   --spacing-table-cell-x-compact: var(--spacing-component-padding-md); /** 16px – airy even at compact */
@@ -1375,6 +1393,10 @@
   --spacing-textarea-padding-y-lg: var(--sizing-component-padding-y-xl); /** 12px – lg size vertical padding */
   --spacing-textarea-field-gap: var(--sizing-component-gap-sm); /** Gap between label, textarea, and hint (6px) */
   --spacing-textarea-footer-gap: var(--spacing-component-gap-sm); /** Gap between hint and character count (8px) */
+  --spacing-timeline-item-pb: var(--spacing-component-padding-xl); /** 32px item bottom padding */
+  --spacing-timeline-line-left: var(--spacing-component-padding-md); /** 16px line left offset */
+  --spacing-timeline-line-top: var(--spacing-component-padding-xl); /** 32px line top offset */
+  --spacing-timeline-content-ml: var(--spacing-component-padding-md); /** 16px content left margin */
   --spacing-timeline-desc-mt: var(--spacing-component-gap-sm); /** 8px description margin top */
   --spacing-tpick-popover-padding: var(--spacing-component-padding-sm); /** 8px popover inner padding */
   --spacing-tpick-column-gap: var(--spacing-component-gap-xs); /** 4px gap between cells */
@@ -1420,6 +1442,7 @@
   --font-avatar-md-size: var(--font-component-size-sm); /** Fallback text size md (text-sm) */
   --font-avatar-lg-size: var(--font-component-size-md); /** Fallback text size lg (text-base) */
   --font-avatar-xl-size: var(--font-component-size-lg); /** Fallback text size xl (text-lg) */
+  --font-badge-weight: var(--font-component-weight-medium); /** Font weight 500 (medium) */
   --font-banner-size: var(--font-component-size-sm); /** Banner content font size (text-sm) */
   --font-bq-cite-size: var(--font-component-size-sm); /** Citation font size (14px) */
   --font-bq-cite-weight: var(--font-component-weight-medium); /** Citation author font weight (500) */
@@ -1430,7 +1453,9 @@
   --font-chart-tooltip-weight: var(--font-component-weight-medium); /** Chart tooltip label/value font weight */
   --font-chart-legend-size: var(--font-component-size-sm); /** Chart legend item font size */
   --font-checkbox-label-size: var(--font-component-size-sm); /** Label font size 14px (text-sm) */
+  --font-checkbox-label-weight: var(--font-component-weight-medium); /** Label font weight 500 (font-medium) */
   --font-checkbox-desc-size: var(--font-caption-size); /** Description font size 12px (text-xs) */
+  --font-checkbox-desc-weight: var(--font-component-weight-normal); /** Description font weight 400 */
   --font-checkbox-label-line-height: var(--font-component-line-height-sm); /** 20px */
   --font-checkbox-desc-line-height: var(--font-component-line-height-xs); /** 18px */
   --font-code-size: var(--font-component-size-sm); /** Code font size (14px) */
@@ -1453,6 +1478,8 @@
   --font-datepicker-day-size: var(--font-component-size-sm); /** Day number size (14px) */
   --font-datepicker-selected-weight: var(--font-component-weight-semibold); /** Selected day weight */
   --font-datepicker-today-weight: var(--font-component-weight-medium); /** Today day weight */
+  --font-detailpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
+  --font-detailpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
   --font-dialog-title-size: var(--font-component-size-lg); /** Dialog title font size (text-lg equivalent) */
   --font-dialog-title-weight: var(--font-component-weight-semibold); /** Dialog title font weight (font-semibold) */
   --font-dialog-description-size: var(--font-component-size-sm); /** Dialog description font size (text-sm equivalent) */
@@ -1463,9 +1490,17 @@
   --font-dropdown-label-size: var(--font-component-size-xs); /** Group label font size (text-xs equivalent) */
   --font-dropdown-label-weight: var(--font-component-weight-semibold); /** Group label font weight (font-semibold) */
   --font-dropdown-shortcut-size: var(--font-component-size-xs); /** Shortcut text font size (text-xs equivalent) */
+  --font-emptypage-title-size: var(--font-heading-size-md); /** Title font size */
+  --font-emptypage-title-weight: var(--font-component-weight-semibold); /** Title font weight */
+  --font-emptypage-desc-size: var(--font-component-size-md); /** Description font size */
   --font-emptystate-title-size: var(--font-component-size-lg); /** Title font size (text-lg) */
   --font-emptystate-title-weight: var(--font-component-weight-semibold); /** Title font weight (semibold) */
   --font-emptystate-desc-size: var(--font-component-size-sm); /** Description font size (text-sm) */
+  --font-errorpage-code-size: var(--font-heading-size-2xl); /** Error code font size (e.g. 404) */
+  --font-errorpage-code-weight: var(--font-component-weight-semibold); /** Error code font weight */
+  --font-errorpage-title-size: var(--font-heading-size-lg); /** Error title font size */
+  --font-errorpage-title-weight: var(--font-component-weight-semibold); /** Error title font weight */
+  --font-errorpage-desc-size: var(--font-component-size-md); /** Description font size */
   --font-fileupload-instruction-size: var(--font-component-size-sm); /** Instruction text size (14px) */
   --font-fileupload-instruction-weight: var(--font-component-weight-medium); /** Instruction text weight */
   --font-fileupload-filename-size: var(--font-component-size-sm); /** File name size (14px) */
@@ -1476,6 +1511,7 @@
   --font-formpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
   --font-formpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
   --font-hovercard-content-size: var(--font-component-size-sm); /** HoverCard content font size */
+  --font-input-weight: var(--font-component-weight-normal); /** Font weight 400 (normal) */
   --font-inputfield-label-weight: var(--font-component-weight-medium); /** Label font weight */
   --font-inputotp-size: var(--font-component-size-sm); /** OTP digit font size (text-sm) */
   --font-inputotp-weight: var(--font-component-weight-medium); /** OTP digit font weight (500) */
@@ -1517,6 +1553,10 @@
   --font-radio-label-weight: var(--font-component-weight-medium); /** 500 label weight */
   --font-radio-description-size: var(--font-component-size-xs); /** 12px description text */
   --font-searchfilter-count-size: var(--font-component-size-sm); /** Result count font size */
+  --font-seg-size-sm: var(--font-component-size-xs); /** Font size sm */
+  --font-seg-size-md: var(--font-component-size-sm); /** Font size md */
+  --font-seg-size-lg: var(--font-component-size-md); /** Font size lg */
+  --font-seg-weight: var(--font-component-weight-medium); /** Segment font weight */
   --font-select-item-size: var(--font-component-size-sm); /** Item text size (14px) */
   --font-select-group-size: var(--font-component-size-xs); /** Group label size (12px) */
   --font-select-group-weight: var(--font-component-weight-medium); /** Group label weight */
@@ -1586,6 +1626,8 @@
   --sizing-alert-border-width: var(--sizing-component-track-sm); /** Left accent border width (4px) */
   --sizing-alert-font-size: var(--font-component-size-sm); /** Text font size (14px) */
   --sizing-alert-line-height: var(--font-component-line-height-sm); /** Text line height (21px) */
+  --sizing-alert-title-weight: var(--font-component-weight-semibold); /** Title font weight (600) */
+  --sizing-alert-desc-weight: var(--font-component-weight-normal); /** Description font weight (400) */
   --sizing-avatar-sm: var(--sizing-component-height-sm); /** Avatar size sm (h-9 = 36px) */
   --sizing-avatar-md: var(--sizing-component-height-md); /** Avatar size md (h-10 = 40px) */
   --sizing-avatar-lg: var(--sizing-component-height-lg); /** Avatar size lg (h-11 = 44px) */
@@ -1674,12 +1716,15 @@
   --sizing-spinner-md: var(--sizing-component-icon-md);
   --sizing-spinner-lg: var(--sizing-component-icon-lg);
   --sizing-spinner-xl: var(--sizing-component-icon-xl);
+  --sizing-stepper-indicator: var(--spacing-component-padding-xl); /** 32px indicator diameter */
   --sizing-stepper-line-h: var(--sizing-component-border-width-default); /** 1px horizontal line height */
   --sizing-stepper-line-v-w: var(--sizing-component-border-width-default); /** 1px vertical line width */
+  --sizing-stepper-line-v-min: var(--spacing-component-padding-lg); /** 24px min vertical line height */
   --sizing-switch-track-height: var(--sizing-component-icon-md); /** Switch track height (24px = h-6) */
   --sizing-switch-track-width: var(--sizing-component-height-lg); /** Switch track width (44px = w-11) */
   --sizing-switch-thumb-size: var(--sizing-component-icon-control); /** Switch thumb size (20px) */
   --sizing-tag-border-width: var(--sizing-component-border-width-default); /** Tag border width (1px) */
+  --sizing-timeline-dot: var(--spacing-component-padding-xl); /** 32px dot diameter */
   --sizing-timeline-line-w: var(--sizing-component-border-width-default); /** 1px line width (reduced from 2px) */
   --sizing-tpick-cell-height: var(--sizing-component-height-sm); /** Time cell height */
   --sizing-toggle-sm-height: var(--sizing-component-height-sm); /** Toggle item height sm */

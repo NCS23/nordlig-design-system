@@ -138,6 +138,10 @@ export {
 } from './atoms/Banner';
 export { Rating, type RatingProps } from './atoms/Rating';
 export { Highlight, type HighlightProps } from './atoms/Highlight';
+export {
+  SegmentedControl,
+  type SegmentedControlProps,
+} from './atoms/SegmentedControl';
 
 // Molecules
 export { SearchInput, type SearchInputProps } from './molecules/SearchInput';
@@ -593,6 +597,25 @@ export {
   type ListPageBodyProps,
   type ListPageFooterProps,
 } from './templates/ListPage';
+
+export {
+  EmptyStatePage,
+  type EmptyStatePageProps,
+} from './templates/EmptyStatePage';
+
+export {
+  DetailPage,
+  type DetailPageProps,
+  type DetailPageHeaderProps,
+  type DetailPageContentProps,
+  type DetailPageSidebarProps,
+  type DetailPageBodyProps,
+} from './templates/DetailPage';
+
+export {
+  ErrorPage,
+  type ErrorPageProps,
+} from './templates/ErrorPage';
 
 // Utils
 export { cn } from './utils/cn';

@@ -35,8 +35,8 @@
       "border-width":    { "$type": "dimension", "$value": "{sizing.component.track.sm}", "$description": "Left accent border width (4px)" },
       "font-size":       { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Text font size (14px)" },
       "line-height":     { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "Text line height (21px)" },
-      "title-weight":    { "$type": "number", "$value": "{font.weight.semibold}", "$description": "Title font weight (600)" },
-      "desc-weight":     { "$type": "number", "$value": "{font.weight.normal}", "$description": "Description font weight (400)" }
+      "title-weight":    { "$type": "number", "$value": "{font.component.weight.semibold}", "$description": "Title font weight (600)" },
+      "desc-weight":     { "$type": "number", "$value": "{font.component.weight.normal}", "$description": "Description font weight (400)" }
     }
   }
 }

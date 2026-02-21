@@ -4463,6 +4463,116 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
+## [SegmentedControl] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-007 (Gitea #2)
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `seg-bg`, `seg-active-bg`, `seg-text`, `seg-active-text`, `seg-hover-bg`
+  - Radius: `seg-container`, `seg-item`
+  - Spacing: `seg-padding`, `seg-item-px`, `seg-gap`
+  - Sizing: `seg-sm-height`, `seg-md-height`, `seg-lg-height`
+  - Font: `seg-size-sm`, `seg-size-md`, `seg-size-lg`, `seg-weight`
+  - Shadow: `seg-active`
+
+### Architecture
+- Animated sliding indicator via `useLayoutEffect` + `translateX`
+- `role="radiogroup"` + `role="radio"` + roving tabindex
+- Keyboard: ArrowLeft/Right, skips disabled
+- Controlled + Uncontrolled (value/defaultValue)
+- Sizes: sm, md, lg
+
+### Files
+- `packages/tokens/src/semantic/segmentedcontrol.json`
+- `packages/components/src/atoms/SegmentedControl/SegmentedControl.tsx`
+- `packages/components/src/atoms/SegmentedControl/SegmentedControl.test.tsx` (19 Tests)
+- `packages/components/src/atoms/SegmentedControl/SegmentedControl.stories.tsx` (6 Stories)
+- `packages/components/src/atoms/SegmentedControl/index.ts`
+
+---
+
+## [DetailPage] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-054 (Gitea #48)
+**Level:** Template
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Spacing: `detailpage-header-gap`, `detailpage-section-gap`, `detailpage-sidebar-gap`, `detailpage-content-gap`
+  - Sizing: `detailpage-sidebar-width`
+  - Font: `detailpage-title-size`, `detailpage-title-weight`
+
+### Architecture
+- Compound Pattern: `DetailPage` + `.Header` + `.Body` + `.Content` + `.Sidebar`
+- Responsive: Sidebar below Content on Mobile, side-by-side ab `lg:`
+- Semantic HTML: `<header>` + `<aside>`
+
+### Files
+- `packages/tokens/src/semantic/detailpage.json`
+- `packages/components/src/templates/DetailPage/DetailPage.tsx`
+- `packages/components/src/templates/DetailPage/DetailPage.test.tsx` (17 Tests)
+- `packages/components/src/templates/DetailPage/DetailPage.stories.tsx` (4 Stories)
+- `packages/components/src/templates/DetailPage/index.ts`
+
+---
+
+## [ErrorPage] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-056 (Gitea #50)
+**Level:** Template
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `errorpage-bg`, `errorpage-code-text`, `errorpage-desc-text`
+  - Spacing: `errorpage-content-gap`, `errorpage-text-gap`
+  - Font: `errorpage-code-size`, `errorpage-code-weight`, `errorpage-title-size`, `errorpage-title-weight`, `errorpage-desc-size`
+
+### Architecture
+- Single component (nicht Compound) — Props: code, title, description, illustration, actions
+- Zentriert (min-h-[60vh])
+- Illustration + Error code + Titel + Beschreibung + CTA
+
+### Files
+- `packages/tokens/src/semantic/errorpage.json`
+- `packages/components/src/templates/ErrorPage/ErrorPage.tsx`
+- `packages/components/src/templates/ErrorPage/ErrorPage.test.tsx` (22 Tests)
+- `packages/components/src/templates/ErrorPage/ErrorPage.stories.tsx` (4 Stories)
+- `packages/components/src/templates/ErrorPage/index.ts`
+
+---
+
+## [EmptyStatePage] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-057 (Gitea #51)
+**Level:** Template
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Spacing: `emptypage-padding-y`, `emptypage-content-gap`, `emptypage-text-gap`
+  - Sizing: `emptypage-max-width`, `emptypage-illustration-size`
+  - Color: `emptypage-title-text`, `emptypage-desc-text`
+  - Font: `emptypage-title-size`, `emptypage-title-weight`, `emptypage-desc-size`
+
+### Architecture
+- Single component — Props: title, description, illustration, actions
+- Page-level EmptyState (zentriert, min-h-[60vh])
+- Unterschied zum EmptyState-Molecule: Full-Page-Template statt eingebetteter Bereich
+
+### Files
+- `packages/tokens/src/semantic/emptypage.json`
+- `packages/components/src/templates/EmptyStatePage/EmptyStatePage.tsx`
+- `packages/components/src/templates/EmptyStatePage/EmptyStatePage.test.tsx` (13 Tests)
+- `packages/components/src/templates/EmptyStatePage/EmptyStatePage.stories.tsx` (4 Stories)
+- `packages/components/src/templates/EmptyStatePage/index.ts`
+
+---
+
 **Last Updated:** 2026-02-21
-**Design System Status:** ✅ Complete (86 Components + 5 Templates, Welle 10 abgeschlossen)
-**Test Count:** ~1668 Tests, 95 Test-Dateien
+**Design System Status:** ✅ Complete (87 Components + 8 Templates, Welle 11 abgeschlossen)
+**Test Count:** ~1747 Tests, 99 Test-Dateien
