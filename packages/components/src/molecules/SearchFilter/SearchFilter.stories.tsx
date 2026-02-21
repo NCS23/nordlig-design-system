@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { SearchFilter } from './SearchFilter';
+import { Select } from '../Select';
 
 const meta: Meta<typeof SearchFilter> = {
   title: 'Molecules/SearchFilter',
@@ -40,16 +41,24 @@ export const MitFiltern: Story = {
         onSearchChange={setValue}
         searchPlaceholder="Nutzer suchen..."
       >
-        <select className="rounded-[var(--radius-component-md)] border border-[var(--color-border-muted)] bg-[var(--color-bg-paper)] px-3 py-2 text-[length:var(--font-component-size-sm)]">
-          <option>Alle Rollen</option>
-          <option>Admin</option>
-          <option>Nutzer</option>
-        </select>
-        <select className="rounded-[var(--radius-component-md)] border border-[var(--color-border-muted)] bg-[var(--color-bg-paper)] px-3 py-2 text-[length:var(--font-component-size-sm)]">
-          <option>Alle Status</option>
-          <option>Aktiv</option>
-          <option>Inaktiv</option>
-        </select>
+        <Select
+          options={[
+            { value: 'all', label: 'Alle Rollen' },
+            { value: 'admin', label: 'Admin' },
+            { value: 'user', label: 'Nutzer' },
+          ]}
+          placeholder="Rolle"
+          inputSize="sm"
+        />
+        <Select
+          options={[
+            { value: 'all', label: 'Alle Status' },
+            { value: 'active', label: 'Aktiv' },
+            { value: 'inactive', label: 'Inaktiv' },
+          ]}
+          placeholder="Status"
+          inputSize="sm"
+        />
       </SearchFilter>
     );
   },
@@ -86,11 +95,15 @@ export const Komplett: Story = {
         resultLabel="Eintraege"
         searchPlaceholder="Eintraege suchen..."
       >
-        <select className="rounded-[var(--radius-component-md)] border border-[var(--color-border-muted)] bg-[var(--color-bg-paper)] px-3 py-2 text-[length:var(--font-component-size-sm)]">
-          <option>Kategorie</option>
-          <option>A</option>
-          <option>B</option>
-        </select>
+        <Select
+          options={[
+            { value: 'all', label: 'Kategorie' },
+            { value: 'a', label: 'A' },
+            { value: 'b', label: 'B' },
+          ]}
+          placeholder="Kategorie"
+          inputSize="sm"
+        />
       </SearchFilter>
     );
   },

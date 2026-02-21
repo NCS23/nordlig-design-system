@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FormPage } from './FormPage';
+import { Heading } from '../../atoms/Heading';
+import { Button } from '../../atoms/Button';
+import { Label } from '../../atoms/Label';
+import { Text } from '../../atoms/Text';
 
 const meta: Meta<typeof FormPage> = {
   title: 'Templates/FormPage',
@@ -16,29 +20,9 @@ type Story = StoryObj<typeof FormPage>;
 
 const InputPlaceholder = ({ label }: { label: string }) => (
   <div className="flex flex-col gap-1">
-    <label className="text-[length:var(--font-component-size-sm)] text-[var(--color-text-base)]">
-      {label}
-    </label>
+    <Label>{label}</Label>
     <div className="h-10 rounded-[var(--radius-component-md)] border border-[var(--color-border-muted)] bg-[var(--color-bg-paper)]" />
   </div>
-);
-
-const ActionButton = ({
-  children,
-  variant = 'secondary',
-}: {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary';
-}) => (
-  <button
-    className={`rounded-[var(--radius-component-md)] px-4 py-2 text-[length:var(--font-component-size-sm)] ${
-      variant === 'primary'
-        ? 'bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)]'
-        : 'border border-[var(--color-border-muted)] bg-[var(--color-bg-paper)] text-[var(--color-text-base)]'
-    }`}
-  >
-    {children}
-  </button>
 );
 
 /* ─── Default ────────────────────────────────────────────────────────────── */
@@ -47,9 +31,7 @@ export const Default: Story = {
   render: () => (
     <FormPage>
       <FormPage.Header>
-        <h2 className="text-[length:var(--font-formpage-title-size)] [font-weight:var(--font-formpage-title-weight)] text-[var(--color-text-base)]">
-          Neues Projekt erstellen
-        </h2>
+        <Heading level={2}>Neues Projekt erstellen</Heading>
       </FormPage.Header>
       <FormPage.Body>
         <InputPlaceholder label="Projektname" />
@@ -58,8 +40,8 @@ export const Default: Story = {
         <InputPlaceholder label="Deadline" />
       </FormPage.Body>
       <FormPage.Actions>
-        <ActionButton>Abbrechen</ActionButton>
-        <ActionButton variant="primary">Erstellen</ActionButton>
+        <Button variant="secondary">Abbrechen</Button>
+        <Button variant="primary">Erstellen</Button>
       </FormPage.Actions>
     </FormPage>
   ),
@@ -72,20 +54,18 @@ export const MitBreadcrumbs: Story = {
   render: () => (
     <FormPage>
       <FormPage.Header>
-        <nav className="text-[length:var(--font-component-size-sm)] text-[var(--color-text-muted)]">
+        <Text size="sm" className="text-[var(--color-text-muted)]">
           Projekte / Neues Projekt
-        </nav>
-        <h2 className="text-[length:var(--font-formpage-title-size)] [font-weight:var(--font-formpage-title-weight)] text-[var(--color-text-base)]">
-          Neues Projekt erstellen
-        </h2>
+        </Text>
+        <Heading level={2}>Neues Projekt erstellen</Heading>
       </FormPage.Header>
       <FormPage.Body>
         <InputPlaceholder label="Projektname" />
         <InputPlaceholder label="Beschreibung" />
       </FormPage.Body>
       <FormPage.Actions>
-        <ActionButton>Abbrechen</ActionButton>
-        <ActionButton variant="primary">Speichern</ActionButton>
+        <Button variant="secondary">Abbrechen</Button>
+        <Button variant="primary">Speichern</Button>
       </FormPage.Actions>
     </FormPage>
   ),
@@ -99,22 +79,20 @@ export const MaxWidthVarianten: Story = {
     <div className="flex flex-col gap-8">
       {(['sm', 'md', 'lg'] as const).map((size) => (
         <div key={size}>
-          <p className="mb-2 text-[length:var(--font-component-size-sm)] text-[var(--color-text-muted)]">
+          <Text size="sm" className="mb-2 text-[var(--color-text-muted)]">
             maxWidth=&quot;{size}&quot;
-          </p>
+          </Text>
           <div className="border border-dashed border-[var(--color-border-muted)] p-4">
             <FormPage maxWidth={size}>
               <FormPage.Header>
-                <h2 className="text-[length:var(--font-formpage-title-size)] [font-weight:var(--font-formpage-title-weight)] text-[var(--color-text-base)]">
-                  Formular ({size})
-                </h2>
+                <Heading level={2}>Formular ({size})</Heading>
               </FormPage.Header>
               <FormPage.Body>
                 <InputPlaceholder label="Feld 1" />
                 <InputPlaceholder label="Feld 2" />
               </FormPage.Body>
               <FormPage.Actions>
-                <ActionButton variant="primary">Speichern</ActionButton>
+                <Button variant="primary">Speichern</Button>
               </FormPage.Actions>
             </FormPage>
           </div>
@@ -131,12 +109,10 @@ export const Bearbeiten: Story = {
   render: () => (
     <FormPage>
       <FormPage.Header>
-        <nav className="text-[length:var(--font-component-size-sm)] text-[var(--color-text-muted)]">
+        <Text size="sm" className="text-[var(--color-text-muted)]">
           Einstellungen / Profil
-        </nav>
-        <h2 className="text-[length:var(--font-formpage-title-size)] [font-weight:var(--font-formpage-title-weight)] text-[var(--color-text-base)]">
-          Profil bearbeiten
-        </h2>
+        </Text>
+        <Heading level={2}>Profil bearbeiten</Heading>
       </FormPage.Header>
       <FormPage.Body>
         <InputPlaceholder label="Vorname" />
@@ -145,8 +121,8 @@ export const Bearbeiten: Story = {
         <InputPlaceholder label="Abteilung" />
       </FormPage.Body>
       <FormPage.Actions>
-        <ActionButton>Abbrechen</ActionButton>
-        <ActionButton variant="primary">Aenderungen speichern</ActionButton>
+        <Button variant="secondary">Abbrechen</Button>
+        <Button variant="primary">Aenderungen speichern</Button>
       </FormPage.Actions>
     </FormPage>
   ),
