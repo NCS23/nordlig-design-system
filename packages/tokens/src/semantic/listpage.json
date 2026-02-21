@@ -1,0 +1,23 @@
+{
+  "spacing": {
+    "$description": "Level 4: ListPage template tokens",
+    "listpage": {
+      "header-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between title and action button (8px)" },
+      "toolbar-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between toolbar items (8px)" },
+      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between page sections (16px)" },
+      "footer-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap in footer area (8px)" }
+    }
+  },
+  "font": {
+    "listpage": {
+      "title-size":        { "$type": "dimension", "$value": "{font.heading.size.md}", "$description": "Page title font size (20px)" },
+      "title-weight":      { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Page title font weight" },
+      "result-count-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Result count font size" }
+    }
+  },
+  "color": {
+    "listpage": {
+      "result-count": { "$type": "color", "$value": "{color.text.muted}", "$description": "Result count text color" }
+    }
+  }
+}

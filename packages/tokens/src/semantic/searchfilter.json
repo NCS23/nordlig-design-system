@@ -1,0 +1,24 @@
+{
+  "spacing": {
+    "$description": "Level 4: SearchFilter molecule tokens",
+    "searchfilter": {
+      "gap":  { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between search input and filter slots (8px)" },
+      "py":   { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Vertical padding (8px)" }
+    }
+  },
+  "sizing": {
+    "searchfilter": {
+      "search-max-width": { "$type": "dimension", "$value": "320px", "$description": "Max width of search input on desktop" }
+    }
+  },
+  "font": {
+    "searchfilter": {
+      "count-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Result count font size" }
+    }
+  },
+  "color": {
+    "searchfilter": {
+      "count": { "$type": "color", "$value": "{color.text.muted}", "$description": "Result count text color" }
+    }
+  }
+}

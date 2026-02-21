@@ -228,7 +228,11 @@
   --sizing-cpick-swatch-size: 24px; /** Color swatch size */
   --sizing-dashboard-sidebar-width: 240px; /** Sidebar expanded width */
   --sizing-dashboard-sidebar-collapsed-width: 64px; /** Sidebar collapsed width */
+  --sizing-formpage-max-width-sm: 480px; /** Narrow form (login, simple) */
+  --sizing-formpage-max-width-md: 640px; /** Medium form (default) */
+  --sizing-formpage-max-width-lg: 800px; /** Wide form (complex) */
   --sizing-shell-footer-height: 48px; /** Fixed footer height */
+  --sizing-searchfilter-search-max-width: 320px; /** Max width of search input on desktop */
   --sizing-textarea-min-height: 100px; /** Default minimum height */
   --sizing-textarea-max-height: 400px; /** Auto-resize maximum */
   --sizing-timeline-inner-dot: 10px; /** 10px inner dot */
@@ -789,6 +793,7 @@
   --color-fileupload-progress-fill: var(--color-bg-primary); /** Progress bar */
   --color-fileupload-error-text: var(--color-text-error); /** Error message */
   --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
+  --color-formpage-bg: var(--color-bg-base); /** Page background */
   --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
   --color-hl-text: var(--color-text-base); /** Highlight text */
   --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
@@ -820,6 +825,7 @@
   --color-kbd-border: var(--color-border-muted); /** Key border */
   --color-link-text: var(--color-interactive-primary); /** Default link text color */
   --color-link-text-hover: var(--color-interactive-primary-hover); /** Link hover text color */
+  --color-listpage-result-count: var(--color-text-muted); /** Result count text color */
   --color-ldovl-bg: var(--color-bg-overlay); /** Overlay background (semi-transparent) */
   --color-ldovl-text: var(--color-text-base); /** Loading text color */
   --color-ldovl-spinner: var(--color-interactive-primary); /** Spinner color */
@@ -897,6 +903,7 @@
   --color-rsz-panel-border: var(--color-border-muted); /** Panel divider border */
   --color-scrollarea-thumb: var(--color-border-default); /** Scrollbar thumb color */
   --color-scrollarea-thumb-hover: var(--color-border-strong); /** Scrollbar thumb hover color */
+  --color-searchfilter-count: var(--color-text-muted); /** Result count text color */
   --color-sinput-icon: var(--color-text-muted); /** Search icon color */
   --color-sinput-icon-focus: var(--color-text-base); /** Search icon on focus */
   --color-sinput-clear: var(--color-text-muted); /** Clear button color */
@@ -1246,6 +1253,9 @@
   --spacing-fileupload-subtext-mt: var(--spacing-component-gap-xs); /** Sub-text top margin (4px) */
   --spacing-fileupload-addmore-mt: var(--spacing-component-gap-md); /** Add-more hint top margin (8px) */
   --spacing-form-field-gap: var(--sizing-component-gap-sm); /** Gap between label, input, and hint in FormItem (6px) */
+  --spacing-formpage-header-gap: var(--spacing-component-gap-lg); /** Gap below header section (16px) */
+  --spacing-formpage-body-gap: var(--spacing-component-gap-md); /** Gap between form fields (8px) */
+  --spacing-formpage-actions-gap: var(--spacing-component-gap-sm); /** Gap between action buttons (8px) */
   --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
   --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
   --spacing-input-padding-y: var(--spacing-component-padding-sm); /** 12px */
@@ -1256,6 +1266,10 @@
   --spacing-inputotp-group-gap: var(--spacing-component-gap-md); /** Gap between groups */
   --spacing-label-indicator-gap: var(--spacing-component-gap-2xs); /** 2px — Gap between label text and required indicator (*) */
   --spacing-link-gap: var(--spacing-component-gap-xs); /** Gap between text and external icon (4px) */
+  --spacing-listpage-header-gap: var(--spacing-component-gap-md); /** Gap between title and action button (8px) */
+  --spacing-listpage-toolbar-gap: var(--spacing-component-gap-sm); /** Gap between toolbar items (8px) */
+  --spacing-listpage-section-gap: var(--spacing-component-gap-lg); /** Gap between page sections (16px) */
+  --spacing-listpage-footer-gap: var(--spacing-component-gap-md); /** Gap in footer area (8px) */
   --spacing-ldovl-gap: var(--spacing-component-gap-md); /** Gap between spinner and text */
   --spacing-menubar-padding: var(--spacing-component-padding-xs); /** Menubar inner padding */
   --spacing-menubar-trigger-padding-x: var(--spacing-component-padding-md); /** Trigger horizontal padding */
@@ -1300,6 +1314,8 @@
   --spacing-radio-content-gap: var(--spacing-component-gap-2xs); /** Gap between label and description (2px) */
   --spacing-rtg-gap: var(--spacing-component-gap-sm); /** Gap between stars */
   --spacing-rsz-handle-size: var(--spacing-component-padding-xs); /** Handle hit-area width/height */
+  --spacing-searchfilter-gap: var(--spacing-component-gap-sm); /** Gap between search input and filter slots (8px) */
+  --spacing-searchfilter-py: var(--spacing-component-padding-sm); /** Vertical padding (8px) */
   --spacing-sinput-icon-gap: var(--spacing-component-gap-sm); /** Gap between icon and text */
   --spacing-select-popover-padding: var(--spacing-component-padding-xs); /** 4px inner padding for item list */
   --spacing-select-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
@@ -1457,6 +1473,8 @@
   --font-form-label-size: var(--font-component-size-sm); /** Label text size (14px) */
   --font-form-label-weight: var(--font-component-weight-medium); /** Label text weight */
   --font-form-message-size: var(--font-component-size-sm); /** Error/description text size (14px) */
+  --font-formpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
+  --font-formpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
   --font-hovercard-content-size: var(--font-component-size-sm); /** HoverCard content font size */
   --font-inputfield-label-weight: var(--font-component-weight-medium); /** Label font weight */
   --font-inputotp-size: var(--font-component-size-sm); /** OTP digit font size (text-sm) */
@@ -1465,6 +1483,9 @@
   --font-kbd-lg-size: var(--font-component-size-sm); /** Kbd lg font size (14px) */
   --font-label-size: var(--font-component-size-sm); /** Label font size (14px) */
   --font-label-weight: var(--font-component-weight-medium); /** Label font weight (500) */
+  --font-listpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
+  --font-listpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
+  --font-listpage-result-count-size: var(--font-component-size-sm); /** Result count font size */
   --font-ldovl-text-size: var(--font-component-size-sm); /** Loading text font size */
   --font-menubar-trigger-size: var(--font-component-size-sm); /** Trigger text size (14px) */
   --font-menubar-trigger-weight: var(--font-component-weight-medium); /** Trigger text weight */
@@ -1495,6 +1516,7 @@
   --font-radio-label-size: var(--font-component-size-sm); /** 14px label text */
   --font-radio-label-weight: var(--font-component-weight-medium); /** 500 label weight */
   --font-radio-description-size: var(--font-component-size-xs); /** 12px description text */
+  --font-searchfilter-count-size: var(--font-component-size-sm); /** Result count font size */
   --font-select-item-size: var(--font-component-size-sm); /** Item text size (14px) */
   --font-select-group-size: var(--font-component-size-xs); /** Group label size (12px) */
   --font-select-group-weight: var(--font-component-weight-medium); /** Group label weight */

@@ -4380,6 +4380,89 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
-**Last Updated:** 2026-02-20
-**Design System Status:** ✅ Complete (85 Components + 3 Templates, Welle 4 abgeschlossen)
-**Test Count:** 1628 Tests, 92 Test-Dateien
+## [SearchFilter] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-060 (Gitea #52)
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Spacing: `searchfilter-gap`, `searchfilter-py`
+  - Font: `searchfilter-count-size`
+  - Color: `searchfilter-count`
+
+### Architecture
+- Kombiniert SearchInput mit optionalen Filter-Slots (children) und Ergebniszahl
+- Flexbox-Layout: column auf Mobile, row ab sm Breakpoint
+- SearchInput intern, delegiert Props (value, onChange, debounce, clear)
+- `aria-live="polite"` auf Ergebniszahl, `role="search"` auf Root
+
+### Files
+- `packages/tokens/src/semantic/searchfilter.json`
+- `packages/components/src/molecules/SearchFilter/SearchFilter.tsx`
+- `packages/components/src/molecules/SearchFilter/SearchFilter.test.tsx` (13 Tests)
+- `packages/components/src/molecules/SearchFilter/SearchFilter.stories.tsx` (4 Stories)
+- `packages/components/src/molecules/SearchFilter/index.ts`
+
+---
+
+## [FormPage] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-053 (Gitea #47)
+**Level:** Template
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `formpage-bg`
+  - Spacing: `formpage-header-gap`, `formpage-body-gap`, `formpage-actions-gap`
+  - Sizing: `formpage-max-width-sm` (480px), `formpage-max-width-md` (640px), `formpage-max-width-lg` (800px)
+  - Font: `formpage-title-size`, `formpage-title-weight`
+
+### Architecture
+- Compound Pattern: `FormPage` + `FormPage.Header` + `FormPage.Body` + `FormPage.Actions`
+- Content-Template INNERHALB von PageShell.Content (nicht standalone)
+- maxWidth Prop: sm/md/lg (Token-basiert)
+- Actions: justify-end mit gap
+
+### Files
+- `packages/tokens/src/semantic/formpage.json`
+- `packages/components/src/templates/FormPage/FormPage.tsx`
+- `packages/components/src/templates/FormPage/FormPage.test.tsx` (14 Tests)
+- `packages/components/src/templates/FormPage/FormPage.stories.tsx` (4 Stories)
+- `packages/components/src/templates/FormPage/index.ts`
+
+---
+
+## [ListPage] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-055 (Gitea #49)
+**Level:** Template
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Spacing: `listpage-header-gap`, `listpage-toolbar-gap`, `listpage-section-gap`, `listpage-footer-gap`
+  - Font: `listpage-title-size`, `listpage-title-weight`, `listpage-result-count-size`
+  - Color: `listpage-result-count`
+
+### Architecture
+- Compound Pattern: `ListPage` + `ListPage.Header` + `ListPage.Toolbar` + `ListPage.Body` + `ListPage.Footer`
+- Content-Template INNERHALB von PageShell.Content (nicht standalone)
+- Header: justify-between (Titel links, Action rechts)
+- Toolbar: responsive (column → row)
+- Body: flex-1 fuer Tabelle/EmptyState
+
+### Files
+- `packages/tokens/src/semantic/listpage.json`
+- `packages/components/src/templates/ListPage/ListPage.tsx`
+- `packages/components/src/templates/ListPage/ListPage.test.tsx` (13 Tests)
+- `packages/components/src/templates/ListPage/ListPage.stories.tsx` (3 Stories)
+- `packages/components/src/templates/ListPage/index.ts`
+
+---
+
+**Last Updated:** 2026-02-21
+**Design System Status:** ✅ Complete (86 Components + 5 Templates, Welle 10 abgeschlossen)
+**Test Count:** ~1668 Tests, 95 Test-Dateien
