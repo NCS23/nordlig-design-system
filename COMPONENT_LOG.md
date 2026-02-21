@@ -4573,6 +4573,60 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
+## [DataTablePattern] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-061 (Gitea #53)
+**Level:** Pattern
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Spacing: `dtpattern-section-gap`, `dtpattern-header-gap`, `dtpattern-bulk-px`, `dtpattern-bulk-py`, `dtpattern-bulk-gap`
+  - Color: `dtpattern-bulk-bg`, `dtpattern-bulk-border`, `dtpattern-bulk-text`
+  - Radius: `dtpattern-bulk`
+
+### Architecture
+- Composition pattern: SearchFilter + DataTable + BulkActions + EmptyState + Pagination
+- Client-side search filtering across all data values
+- Generic `<TData>` type support via inner function + cast pattern
+
+### Files
+- `packages/tokens/src/semantic/datatablepattern.json`
+- `packages/components/src/patterns/DataTablePattern/DataTablePattern.tsx`
+- `packages/components/src/patterns/DataTablePattern/DataTablePattern.test.tsx` (20 Tests)
+- `packages/components/src/patterns/DataTablePattern/DataTablePattern.stories.tsx` (6 Stories)
+- `packages/components/src/patterns/DataTablePattern/index.ts`
+
+---
+
+## [FormWizard] - 2026-02-21
+
+**Status:** ✅ Complete
+**Story:** NDS-062 (Gitea #54)
+**Level:** Pattern
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Spacing: `fwizard-stepper-mb`, `fwizard-content-py`, `fwizard-content-gap`, `fwizard-nav-gap`, `fwizard-nav-pt`, `fwizard-summary-gap`, `fwizard-summary-padding`
+  - Color: `fwizard-summary-bg`, `fwizard-summary-border`
+  - Radius: `fwizard-summary`
+
+### Architecture
+- Multi-step form: Stepper + useZodForm + per-step validation
+- Single form instance for ALL steps (data persists on navigation)
+- Partial validation via `form.trigger(step.fields)`
+- Optional summary step with styled review card
+- All steps stay mounted (hidden) to preserve DOM state
+
+### Files
+- `packages/tokens/src/semantic/formwizard.json`
+- `packages/components/src/patterns/FormWizard/FormWizard.tsx`
+- `packages/components/src/patterns/FormWizard/FormWizard.test.tsx` (25 Tests)
+- `packages/components/src/patterns/FormWizard/FormWizard.stories.tsx` (4 Stories)
+- `packages/components/src/patterns/FormWizard/index.ts`
+
+---
+
 **Last Updated:** 2026-02-21
-**Design System Status:** ✅ Complete (87 Components + 8 Templates, Welle 11 abgeschlossen)
-**Test Count:** ~1747 Tests, 99 Test-Dateien
+**Design System Status:** ✅ Complete (87 Components + 8 Templates + 2 Patterns, Welle 12 abgeschlossen)
+**Test Count:** 1795 Tests, 101 Test-Dateien

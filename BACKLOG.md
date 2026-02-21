@@ -179,3 +179,8 @@ PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPag
 | 2026-02-21 | **NDS-056 Done:** ErrorPage Template — 404/500/Wartung, zentriert, 10 L4-Tokens (`errorpage`), 22 Tests, 4 Stories. Gitea #50. |
 | 2026-02-21 | **NDS-057 Done:** EmptyStatePage Template — Page-Level Empty State, 10 L4-Tokens (`emptypage`), 13 Tests, 4 Stories. Gitea #51. |
 | 2026-02-21 | **NDS-032 P2 Done:** Token-Audit L2-Violations — alle 16 L2→L3 Referenzen gefixt (8 Dateien). 0 L2-Violations verbleibend. |
+| 2026-02-21 | **Design-Harmonisierung Done:** Card-Border flat variant, Badge xs (4-Layer-Tokens), DetailPage Stories Redesign (Avatar, KV-Grid, Separator), Template-Stories aktualisiert (FormPage, ListPage, DashboardLayout, EmptyStatePage). |
+| 2026-02-21 | **Welle 12 gestartet und abgeschlossen: Token-Cleanup + Patterns (Epic 3 Start)** |
+| 2026-02-21 | **NDS-032 P3 Done:** Final Token Cleanup — ~137 hardcoded Tailwind-Utilities in 25 Komponenten durch `var(--*)` Token-Referenzen ersetzt. +76 neue L4-Tokens, +2 L3-Tokens (indicator.dot-sm, dot-md). 22 Token-Dateien erweitert. |
+| 2026-02-21 | **NDS-061 Done:** DataTablePattern — Erstes Pattern! SearchFilter + DataTable + BulkActions + EmptyState + Pagination. 9 L4-Tokens (`dtpattern`), 20 Tests, 6 Stories. Neues `patterns/` Verzeichnis. Gitea #53. |
+| 2026-02-21 | **NDS-062 Done:** FormWizard Pattern — Multi-Step-Form mit Stepper, Zod-Validation pro Step, Datenpersistenz. 10 L4-Tokens (`fwizard`), 25 Tests, 4 Stories. Gitea #54. |
