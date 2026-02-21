@@ -20,7 +20,7 @@
     "shell": {
       "header-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Header horizontal padding (24px)" },
       "header-py":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Header vertical padding (12px)" },
-      "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Content area padding (24px)" },
+      "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Content area padding (32px)" },
       "footer-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Footer horizontal padding (24px)" },
       "footer-py":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Footer vertical padding (12px)" },
       "header-logo-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between logo and wordmark in header (8px)" }

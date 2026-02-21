@@ -19,7 +19,7 @@
   "spacing": {
     "dashboard": {
       "header-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Header horizontal padding (24px)" },
-      "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Content area padding (24px)" }
+      "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Content area padding (32px)" }
     }
   },
   "shadow": {
