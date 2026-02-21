@@ -735,6 +735,9 @@
   --color-datatable-sort-icon: var(--color-text-muted); /** Sort icon inactive */
   --color-datatable-sort-icon-active: var(--color-interactive-primary); /** Sort icon active */
   --color-datatable-empty-text: var(--color-text-muted); /** Empty state text */
+  --color-dtpattern-bulk-bg: var(--color-bg-info-subtle); /** Bulk actions bar background */
+  --color-dtpattern-bulk-border: var(--color-border-info); /** Bulk actions bar border */
+  --color-dtpattern-bulk-text: var(--color-text-base); /** Bulk actions bar text */
   --color-datepicker-popover-bg: var(--color-bg-paper); /** White popover background */
   --color-datepicker-popover-border: var(--color-border-muted); /** Subtle popover border */
   --color-datepicker-header-text: var(--color-text-base); /** Month/year header text */
@@ -799,6 +802,8 @@
   --color-fileupload-error-text: var(--color-text-error); /** Error message */
   --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
   --color-formpage-bg: var(--color-bg-base); /** Page background */
+  --color-fwizard-summary-bg: var(--color-bg-surface); /** Summary section background */
+  --color-fwizard-summary-border: var(--color-border-muted); /** Summary section border */
   --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
   --color-hl-text: var(--color-text-base); /** Highlight text */
   --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
@@ -1117,6 +1122,7 @@
   --radius-cmb-content: var(--radius-component-lg); /** Dropdown border radius */
   --radius-command: var(--radius-component-lg); /** Command palette border radius */
   --radius-cpybtn: var(--radius-component-md); /** Button radius */
+  --radius-dtpattern-bulk: var(--radius-component-md); /** Bulk actions bar border radius */
   --radius-datepicker-popover: var(--radius-component-lg); /** 8px popover radius */
   --radius-datepicker-day: var(--radius-component-md); /** 6px day cell radius */
   --radius-dialog: var(--radius-component-xl); /** 12px dialog radius (large overlay) */
@@ -1127,6 +1133,7 @@
   --radius-fileupload-zone: var(--radius-component-lg); /** Zone radius */
   --radius-fileupload-item: var(--radius-component-md); /** File item radius */
   --radius-fileupload-progress: var(--radius-component-full); /** Pill progress bar */
+  --radius-fwizard-summary: var(--radius-component-lg); /** Summary section border radius */
   --radius-hl: var(--radius-component-sm); /** Highlight border radius */
   --radius-hovercard: var(--radius-component-lg); /** HoverCard border radius */
   --radius-img-sm: var(--radius-component-sm); /** Small radius */
@@ -1273,6 +1280,11 @@
   --spacing-dashboard-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
   --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
   --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
+  --spacing-dtpattern-section-gap: var(--spacing-component-gap-lg); /** 16px gap between sections */
+  --spacing-dtpattern-header-gap: var(--spacing-component-gap-sm); /** 8px gap in header between title/actions */
+  --spacing-dtpattern-bulk-px: var(--spacing-component-padding-sm); /** 12px bulk actions horizontal padding */
+  --spacing-dtpattern-bulk-py: var(--spacing-component-gap-sm); /** 8px bulk actions vertical padding */
+  --spacing-dtpattern-bulk-gap: var(--spacing-component-gap-md); /** 8px gap in bulk actions bar */
   --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
   --spacing-datepicker-grid-gap: var(--spacing-component-gap-sm); /** 2px gap between day cells */
   --spacing-datepicker-range-gap: var(--spacing-component-gap-sm); /** Gap between date inputs in range picker (8px) */
@@ -1316,6 +1328,13 @@
   --spacing-formpage-header-gap: var(--spacing-component-gap-lg); /** Gap below header section (16px) */
   --spacing-formpage-body-gap: var(--spacing-component-gap-md); /** Gap between form fields (8px) */
   --spacing-formpage-actions-gap: var(--spacing-component-gap-sm); /** Gap between action buttons (8px) */
+  --spacing-fwizard-stepper-mb: var(--spacing-component-padding-xl); /** 24px stepper bottom margin */
+  --spacing-fwizard-content-py: var(--spacing-component-padding-lg); /** 20px step content vertical padding */
+  --spacing-fwizard-content-gap: var(--spacing-component-gap-lg); /** 16px gap between form fields */
+  --spacing-fwizard-nav-gap: var(--spacing-component-gap-md); /** 8px gap between navigation buttons */
+  --spacing-fwizard-nav-pt: var(--spacing-component-padding-lg); /** 20px navigation top padding */
+  --spacing-fwizard-summary-gap: var(--spacing-component-gap-md); /** 8px gap in summary items */
+  --spacing-fwizard-summary-padding: var(--spacing-component-padding-md); /** 16px summary card padding */
   --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
   --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
   --spacing-input-padding-y: var(--spacing-component-padding-sm); /** 12px */

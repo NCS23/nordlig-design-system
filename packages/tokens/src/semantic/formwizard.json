@@ -1,0 +1,25 @@
+{
+  "spacing": {
+    "fwizard": {
+      "$description": "Level 4: FormWizard pattern tokens",
+      "stepper-mb":      { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "24px stepper bottom margin" },
+      "content-py":      { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "20px step content vertical padding" },
+      "content-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "16px gap between form fields" },
+      "nav-gap":         { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "8px gap between navigation buttons" },
+      "nav-pt":          { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "20px navigation top padding" },
+      "summary-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "8px gap in summary items" },
+      "summary-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px summary card padding" }
+    }
+  },
+  "color": {
+    "fwizard": {
+      "summary-bg":     { "$type": "color", "$value": "{color.bg.surface}", "$description": "Summary section background" },
+      "summary-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Summary section border" }
+    }
+  },
+  "radius": {
+    "fwizard": {
+      "summary": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Summary section border radius" }
+    }
+  }
+}

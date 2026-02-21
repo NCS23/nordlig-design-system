@@ -617,5 +617,11 @@ export {
   type ErrorPageProps,
 } from './templates/ErrorPage';
 
+// ─── Patterns ──────────────────────────────────────────────────────────────────
+export { DataTablePattern } from './patterns/DataTablePattern';
+export type { DataTablePatternProps } from './patterns/DataTablePattern';
+export { FormWizard } from './patterns/FormWizard';
+export type { FormWizardProps, FormWizardStep } from './patterns/FormWizard';
+
 // Utils
 export { cn } from './utils/cn';

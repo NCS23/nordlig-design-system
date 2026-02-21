@@ -1,0 +1,24 @@
+{
+  "spacing": {
+    "dtpattern": {
+      "$description": "Level 4: DataTablePattern tokens",
+      "section-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "16px gap between sections" },
+      "header-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px gap in header between title/actions" },
+      "bulk-px":       { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px bulk actions horizontal padding" },
+      "bulk-py":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px bulk actions vertical padding" },
+      "bulk-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "8px gap in bulk actions bar" }
+    }
+  },
+  "color": {
+    "dtpattern": {
+      "bulk-bg":      { "$type": "color", "$value": "{color.bg.info-subtle}", "$description": "Bulk actions bar background" },
+      "bulk-border":  { "$type": "color", "$value": "{color.border.info}", "$description": "Bulk actions bar border" },
+      "bulk-text":    { "$type": "color", "$value": "{color.text.base}", "$description": "Bulk actions bar text" }
+    }
+  },
+  "radius": {
+    "dtpattern": {
+      "bulk": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Bulk actions bar border radius" }
+    }
+  }
+}
