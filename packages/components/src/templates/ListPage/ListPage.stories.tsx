@@ -5,6 +5,7 @@ import { SearchFilter } from '../../molecules/SearchFilter';
 import { Heading } from '../../atoms/Heading';
 import { Text } from '../../atoms/Text';
 import { Button } from '../../atoms/Button';
+import { Badge } from '../../atoms/Badge';
 import { Select } from '../../molecules/Select';
 import { Pagination } from '../../molecules/Pagination';
 
@@ -25,16 +26,18 @@ const PlaceholderTable = () => (
   <div className="overflow-hidden rounded-[var(--radius-component-lg)] border border-[var(--color-border-muted)]">
     {/* Header */}
     <div className="flex border-b border-[var(--color-border-muted)] bg-[var(--color-bg-surface)] px-4 py-3">
-      <Text size="sm" className="flex-1 [font-weight:var(--font-component-weight-medium)] text-[var(--color-text-muted)]">Name</Text>
-      <Text size="sm" className="flex-1 [font-weight:var(--font-component-weight-medium)] text-[var(--color-text-muted)]">Status</Text>
-      <Text size="sm" className="flex-1 [font-weight:var(--font-component-weight-medium)] text-[var(--color-text-muted)]">Datum</Text>
+      <Text variant="muted" as="span" className="flex-1 [font-weight:var(--font-component-weight-medium)]">Name</Text>
+      <Text variant="muted" as="span" className="flex-1 [font-weight:var(--font-component-weight-medium)]">Status</Text>
+      <Text variant="muted" as="span" className="flex-1 [font-weight:var(--font-component-weight-medium)]">Datum</Text>
     </div>
     {/* Rows */}
     {['Max Mustermann', 'Anna Schmidt', 'Jan Becker', 'Lisa Weber'].map((name) => (
       <div key={name} className="flex border-b border-[var(--color-border-muted)] px-4 py-3 last:border-b-0">
-        <Text size="sm" className="flex-1">{name}</Text>
-        <Text size="sm" className="flex-1 text-[var(--color-text-success)]">Aktiv</Text>
-        <Text size="sm" className="flex-1 text-[var(--color-text-muted)]">21.02.2026</Text>
+        <Text as="span" className="flex-1">{name}</Text>
+        <div className="flex-1">
+          <Badge variant="success" size="xs">Aktiv</Badge>
+        </div>
+        <Text variant="muted" as="span" className="flex-1">21.02.2026</Text>
       </div>
     ))}
   </div>
@@ -53,7 +56,7 @@ export const Default: Story = {
         <PlaceholderTable />
       </ListPage.Body>
       <ListPage.Footer>
-        <Text size="sm" className="text-[var(--color-listpage-result-count)]">
+        <Text variant="muted" as="span">
           4 Ergebnisse
         </Text>
         <Pagination currentPage={1} totalPages={3} onPageChange={() => {}} />
@@ -96,7 +99,7 @@ export const MitSuchfilter: Story = {
           <PlaceholderTable />
         </ListPage.Body>
         <ListPage.Footer>
-          <Text size="sm" className="text-[var(--color-listpage-result-count)]">
+          <Text variant="muted" as="span">
             42 Ergebnisse
           </Text>
           <Pagination currentPage={1} totalPages={5} onPageChange={() => {}} />
@@ -117,8 +120,8 @@ export const LeerZustand: Story = {
       </ListPage.Header>
       <ListPage.Body>
         <div className="flex flex-col items-center justify-center py-16 text-center">
-          <Heading level={3}>Keine Projekte vorhanden</Heading>
-          <Text size="sm" className="mt-1 text-[var(--color-text-muted)]">
+          <Heading level={4}>Keine Projekte vorhanden</Heading>
+          <Text variant="muted" className="mt-1">
             Erstelle dein erstes Projekt um loszulegen.
           </Text>
           <div className="mt-4">

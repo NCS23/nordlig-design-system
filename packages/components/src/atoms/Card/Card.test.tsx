@@ -13,7 +13,8 @@ describe('Card', () => {
     const card = screen.getByTestId('card');
     expect(card.className).toContain('p-[var(--spacing-card-padding-normal)]');
     expect(card.className).toContain('bg-[var(--color-card-bg)]');
-    expect(card.className).not.toContain('border');
+    expect(card.className).toContain('border');
+    expect(card.className).toContain('border-[var(--color-card-border)]');
     expect(card.className).not.toContain('[box-shadow:var(--shadow-card-raised)]');
     expect(card.className).not.toContain('[box-shadow:var(--shadow-card-elevated)]');
   });

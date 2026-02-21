@@ -19,6 +19,7 @@ const badgeVariants = cva(
           'bg-[var(--color-badge-neutral-bg)] text-[var(--color-badge-neutral-text)] border-[var(--color-badge-neutral-border)]',
       },
       size: {
+        xs: 'px-[var(--sizing-badge-xs-padding-x)] py-[var(--sizing-badge-xs-padding-y)] text-[length:var(--sizing-badge-xs-font-size)]',
         sm: 'px-[var(--sizing-badge-sm-padding-x)] py-[var(--sizing-badge-sm-padding-y)] text-[length:var(--sizing-badge-sm-font-size)]',
         md: 'px-[var(--sizing-badge-md-padding-x)] py-[var(--sizing-badge-md-padding-y)] text-[length:var(--sizing-badge-md-font-size)]',
         lg: 'px-[var(--sizing-badge-lg-padding-x)] py-[var(--sizing-badge-lg-padding-y)] text-[length:var(--sizing-badge-lg-font-size)]',

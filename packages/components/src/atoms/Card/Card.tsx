@@ -7,7 +7,7 @@ const cardVariants = cva(
   {
     variants: {
       elevation: {
-        flat: '',
+        flat: 'border border-[var(--color-card-border)]',
         raised: 'border border-[var(--color-card-border)] [box-shadow:var(--shadow-card-raised)]',
         elevated: 'border border-[var(--color-card-border)] [box-shadow:var(--shadow-card-elevated)]',
       },

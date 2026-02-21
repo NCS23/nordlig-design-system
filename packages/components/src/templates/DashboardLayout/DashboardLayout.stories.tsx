@@ -128,11 +128,11 @@ const AppHeader = ({ withSearch = false }: { withSearch?: boolean }) => {
 
 const DashboardContent = () => (
   <>
-    <Heading level={2} className="mb-6">
+    <Heading level={2} className="mb-[var(--spacing-component-gap-xl)]">
       Dashboard
     </Heading>
 
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-6">
+    <div className="grid grid-cols-1 gap-[var(--spacing-layout-gutter)] sm:grid-cols-2 lg:grid-cols-4 mb-[var(--spacing-component-gap-xl)]">
       <StatCard
         title="Trainings"
         value={42}
@@ -163,11 +163,12 @@ const DashboardContent = () => (
       />
     </div>
 
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-[var(--spacing-layout-gutter)] lg:grid-cols-2">
       <Card>
         <CardHeader>
-          <Heading level={3}>Letzte Aktivitaeten</Heading>
+          <Heading level={4}>Letzte Aktivitaeten</Heading>
         </CardHeader>
+        <Separator />
         <CardBody>
           <div className="space-y-3">
             {[
@@ -188,7 +189,7 @@ const DashboardContent = () => (
                   </Text>
                 </div>
                 <div className="flex shrink-0 items-center gap-3">
-                  <Badge variant="neutral" size="sm">{item.dist}</Badge>
+                  <Badge variant="neutral" size="xs">{item.dist}</Badge>
                   <Text variant="muted" as="span" className="hidden sm:inline">{item.date}</Text>
                 </div>
               </div>
@@ -199,8 +200,9 @@ const DashboardContent = () => (
 
       <Card>
         <CardHeader>
-          <Heading level={3}>Wochenziel</Heading>
+          <Heading level={4}>Wochenziel</Heading>
         </CardHeader>
+        <Separator />
         <CardBody>
           <div className="space-y-4">
             {[
@@ -437,7 +439,7 @@ export const NoFooter: Story = {
             <AppSidebar />
           </DashboardLayout.Sidebar>
           <DashboardLayout.Content>
-            <Heading level={2} className="mb-6">
+            <Heading level={2} className="mb-[var(--spacing-component-gap-xl)]">
               Minimal Dashboard
             </Heading>
             <Card>

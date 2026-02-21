@@ -33,6 +33,12 @@
     "$description": "Level 4: Badge size tokens — References Level 3 only",
     "badge": {
       "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "Badge border width (1px)" },
+      "xs": {
+        "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.xs}" },
+        "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.xs}" },
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.xs}" },
+        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.xs}", "$description": "18px" }
+      },
       "sm": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },

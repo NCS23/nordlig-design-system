@@ -51,6 +51,14 @@ describe('Badge', () => {
     expect(badge.className).toContain('text-[var(--color-badge-info-text)]');
   });
 
+  it('applies size=xs', () => {
+    render(<Badge data-testid="badge" size="xs">Tiny</Badge>);
+    const badge = screen.getByTestId('badge');
+    expect(badge.className).toContain('px-[var(--sizing-badge-xs-padding-x)]');
+    expect(badge.className).toContain('py-[var(--sizing-badge-xs-padding-y)]');
+    expect(badge.className).toContain('text-[length:var(--sizing-badge-xs-font-size)]');
+  });
+
   it('applies size=sm', () => {
     render(<Badge data-testid="badge" size="sm">Small</Badge>);
     const badge = screen.getByTestId('badge');

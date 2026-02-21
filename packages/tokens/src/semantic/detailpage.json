@@ -2,10 +2,10 @@
   "spacing": {
     "$description": "Level 4: DetailPage template tokens",
     "detailpage": {
-      "header-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between header elements" },
-      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between major sections" },
-      "sidebar-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between content and sidebar" },
-      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap within content body" }
+      "header-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between header elements (16px)" },
+      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xl}", "$description": "Gap between major sections (32px)" },
+      "sidebar-gap": { "$type": "dimension", "$value": "{spacing.layout.gutter}", "$description": "Gap between content and sidebar (24px)" },
+      "content-gap": { "$type": "dimension", "$value": "{spacing.layout.gutter}", "$description": "Gap between cards in content (24px)" }
     }
   },
   "sizing": {

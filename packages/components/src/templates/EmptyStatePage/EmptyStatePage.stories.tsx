@@ -18,7 +18,7 @@ type Story = StoryObj<typeof EmptyStatePage>;
 
 const IllustrationPlaceholder = () => (
   <div className="flex h-24 w-24 items-center justify-center rounded-[var(--radius-component-lg)] bg-[var(--color-bg-surface)]">
-    <Text className="text-[var(--color-text-muted)]">Illustration</Text>
+    <Text variant="muted">Illustration</Text>
   </div>
 );
 

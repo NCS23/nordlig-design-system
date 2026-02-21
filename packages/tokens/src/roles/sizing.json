@@ -8,11 +8,13 @@
         "lg": { "$type": "dimension", "$value": "{sizing.height.lg}" }
       },
       "padding-x": {
+        "xs": { "$type": "dimension", "$value": "{sizing.padding-x.xs}" },
         "sm": { "$type": "dimension", "$value": "{sizing.padding-x.sm}" },
         "md": { "$type": "dimension", "$value": "{sizing.padding-x.md}" },
         "lg": { "$type": "dimension", "$value": "{sizing.padding-x.lg}" }
       },
       "padding-y": {
+        "xs": { "$type": "dimension", "$value": "{sizing.padding-y.xs}" },
         "sm": { "$type": "dimension", "$value": "{sizing.padding-y.sm}" },
         "md": { "$type": "dimension", "$value": "{sizing.padding-y.md}" },
         "lg": { "$type": "dimension", "$value": "{sizing.padding-y.lg}" },

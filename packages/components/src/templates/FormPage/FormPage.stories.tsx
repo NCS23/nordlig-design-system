@@ -54,7 +54,7 @@ export const MitBreadcrumbs: Story = {
   render: () => (
     <FormPage>
       <FormPage.Header>
-        <Text size="sm" className="text-[var(--color-text-muted)]">
+        <Text variant="muted">
           Projekte / Neues Projekt
         </Text>
         <Heading level={2}>Neues Projekt erstellen</Heading>
@@ -79,7 +79,7 @@ export const MaxWidthVarianten: Story = {
     <div className="flex flex-col gap-8">
       {(['sm', 'md', 'lg'] as const).map((size) => (
         <div key={size}>
-          <Text size="sm" className="mb-2 text-[var(--color-text-muted)]">
+          <Text variant="muted" className="mb-2">
             maxWidth=&quot;{size}&quot;
           </Text>
           <div className="border border-dashed border-[var(--color-border-muted)] p-4">
@@ -109,7 +109,7 @@ export const Bearbeiten: Story = {
   render: () => (
     <FormPage>
       <FormPage.Header>
-        <Text size="sm" className="text-[var(--color-text-muted)]">
+        <Text variant="muted">
           Einstellungen / Profil
         </Text>
         <Heading level={2}>Profil bearbeiten</Heading>

@@ -425,9 +425,11 @@
   --sizing-height-sm: var(--spacing-base-9);
   --sizing-height-md: var(--spacing-base-10);
   --sizing-height-lg: var(--spacing-base-11);
+  --sizing-padding-x-xs: var(--spacing-base-2);
   --sizing-padding-x-sm: var(--spacing-base-3);
   --sizing-padding-x-md: var(--spacing-base-4);
   --sizing-padding-x-lg: var(--spacing-base-8);
+  --sizing-padding-y-xs: var(--spacing-base-0-5);
   --sizing-padding-y-sm: var(--spacing-base-1-5);
   --sizing-padding-y-md: var(--spacing-base-2);
   --sizing-padding-y-lg: var(--spacing-base-2-5);
@@ -541,9 +543,11 @@
   --sizing-component-height-sm: var(--sizing-height-sm);
   --sizing-component-height-md: var(--sizing-height-md);
   --sizing-component-height-lg: var(--sizing-height-lg);
+  --sizing-component-padding-x-xs: var(--sizing-padding-x-xs);
   --sizing-component-padding-x-sm: var(--sizing-padding-x-sm);
   --sizing-component-padding-x-md: var(--sizing-padding-x-md);
   --sizing-component-padding-x-lg: var(--sizing-padding-x-lg);
+  --sizing-component-padding-y-xs: var(--sizing-padding-y-xs);
   --sizing-component-padding-y-sm: var(--sizing-padding-y-sm);
   --sizing-component-padding-y-md: var(--sizing-padding-y-md);
   --sizing-component-padding-y-lg: var(--sizing-padding-y-lg);
@@ -1234,10 +1238,10 @@
   --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
   --spacing-datepicker-grid-gap: var(--spacing-component-gap-sm); /** 2px gap between day cells */
   --spacing-datepicker-range-gap: var(--spacing-component-gap-sm); /** Gap between date inputs in range picker (8px) */
-  --spacing-detailpage-header-gap: var(--spacing-component-gap-md); /** Gap between header elements */
-  --spacing-detailpage-section-gap: var(--spacing-component-gap-lg); /** Gap between major sections */
-  --spacing-detailpage-sidebar-gap: var(--spacing-component-gap-lg); /** Gap between content and sidebar */
-  --spacing-detailpage-content-gap: var(--spacing-component-gap-md); /** Gap within content body */
+  --spacing-detailpage-header-gap: var(--spacing-component-gap-lg); /** Gap between header elements (16px) */
+  --spacing-detailpage-section-gap: var(--spacing-component-gap-xl); /** Gap between major sections (32px) */
+  --spacing-detailpage-sidebar-gap: var(--spacing-layout-gutter); /** Gap between content and sidebar (24px) */
+  --spacing-detailpage-content-gap: var(--spacing-layout-gutter); /** Gap between cards in content (24px) */
   --spacing-dialog-padding: var(--spacing-component-padding-lg); /** Dialog content padding */
   --spacing-dialog-gap: var(--spacing-component-gap-md); /** Dialog content gap */
   --spacing-drawer-padding: var(--spacing-component-padding-lg); /** Drawer content padding */
@@ -1634,6 +1638,10 @@
   --sizing-avatar-xl: var(--sizing-component-icon-xl); /** Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16) */
   --sizing-avatar-border-width: var(--sizing-component-border-width-default); /** Avatar border width (1px) */
   --sizing-badge-border-width: var(--sizing-component-border-width-default); /** Badge border width (1px) */
+  --sizing-badge-xs-padding-x: var(--sizing-component-padding-x-xs);
+  --sizing-badge-xs-padding-y: var(--sizing-component-padding-y-xs);
+  --sizing-badge-xs-font-size: var(--font-component-size-xs);
+  --sizing-badge-xs-line-height: var(--font-component-line-height-xs); /** 18px */
   --sizing-badge-sm-padding-x: var(--sizing-component-padding-x-sm);
   --sizing-badge-sm-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-badge-sm-font-size: var(--font-component-size-sm);
