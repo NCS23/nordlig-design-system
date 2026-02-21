@@ -151,7 +151,7 @@ const DateRangePicker = React.forwardRef<HTMLDivElement, DateRangePickerProps>(
                   aria-expanded={open}
                 />
               </div>
-              <span className="text-sm text-[var(--color-datepicker-weekday-text)] shrink-0">–</span>
+              <span className="text-[length:var(--font-datepicker-range-text-size)] text-[var(--color-datepicker-weekday-text)] shrink-0">–</span>
               <div className="relative flex-1">
                 <Input
                   type="text"

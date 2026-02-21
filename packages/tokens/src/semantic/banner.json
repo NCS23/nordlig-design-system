@@ -31,7 +31,8 @@
     "banner": {
       "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Horizontal padding" },
       "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Vertical padding" },
-      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.md}",     "$description": "Gap between elements" }
+      "gap":             { "$type": "dimension", "$value": "{spacing.component.gap.md}",     "$description": "Gap between elements" },
+      "dismiss-padding": { "$type": "dimension", "$value": "{spacing.component.gap.xs}",   "$description": "4px dismiss button padding" }
     }
   }
 }

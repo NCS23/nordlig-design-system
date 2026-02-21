@@ -21,7 +21,14 @@
       "trigger-padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Trigger horizontal padding" },
       "trigger-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Trigger vertical padding" },
       "gap":               { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between menubar items (4px)" },
-      "item-py":           { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "6px dropdown item vertical padding" }
+      "item-py":           { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "6px dropdown item vertical padding" },
+      "separator-my":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px separator vertical margin" },
+      "indicator-left":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px checkbox/radio indicator left offset" }
+    }
+  },
+  "sizing": {
+    "menubar": {
+      "item-icon": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "16px item icon size" }
     }
   },
   "font": {

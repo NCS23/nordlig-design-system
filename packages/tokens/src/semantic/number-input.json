@@ -64,6 +64,11 @@
       "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "NumberInput border width (1px)" }
     }
   },
+  "spacing": {
+    "numberinput": {
+      "stepper-px": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px stepper button horizontal padding" }
+    }
+  },
   "radius": {
     "numberinput": {
       "$type": "dimension",

@@ -72,7 +72,7 @@ const ToolbarButton = React.forwardRef<
     )}
     {...props}
   >
-    {icon && <span className="shrink-0 [&>svg]:h-4 [&>svg]:w-4">{icon}</span>}
+    {icon && <span className="shrink-0 [&>svg]:h-[var(--sizing-toolbar-item-icon)] [&>svg]:w-[var(--sizing-toolbar-item-icon)]">{icon}</span>}
     {children}
   </ToolbarPrimitive.Button>
 ));
@@ -138,7 +138,7 @@ const ToolbarToggleItem = React.forwardRef<
     )}
     {...props}
   >
-    {icon && <span className="shrink-0 [&>svg]:h-4 [&>svg]:w-4">{icon}</span>}
+    {icon && <span className="shrink-0 [&>svg]:h-[var(--sizing-toolbar-item-icon)] [&>svg]:w-[var(--sizing-toolbar-item-icon)]">{icon}</span>}
     {children}
   </ToolbarPrimitive.ToggleItem>
 ));
@@ -153,7 +153,7 @@ const ToolbarSeparator = React.forwardRef<
   <ToolbarPrimitive.Separator
     ref={ref}
     className={cn(
-      'mx-1 w-px self-stretch bg-[var(--color-toolbar-separator)]',
+      'mx-[var(--spacing-toolbar-separator-mx)] w-px self-stretch bg-[var(--color-toolbar-separator)]',
       className
     )}
     {...props}

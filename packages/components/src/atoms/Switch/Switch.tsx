@@ -18,7 +18,7 @@ const Switch = React.forwardRef<
     ref={ref}
     className={cn(
       'peer inline-flex h-[var(--sizing-switch-track-height)] w-[var(--sizing-switch-track-width)] shrink-0 cursor-pointer items-center',
-      'rounded-full transition-colors duration-200',
+      'rounded-[var(--radius-switch-track)] transition-colors duration-200',
       'bg-[var(--color-switch-track-bg)]',
       'data-[state=checked]:bg-[var(--color-switch-track-bg-checked)]',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-switch-focus-ring)] focus-visible:ring-offset-1',
@@ -29,7 +29,7 @@ const Switch = React.forwardRef<
   >
     <SwitchPrimitive.Thumb
       className={cn(
-        'pointer-events-none block h-[var(--sizing-switch-thumb-size)] w-[var(--sizing-switch-thumb-size)] rounded-full',
+        'pointer-events-none block h-[var(--sizing-switch-thumb-size)] w-[var(--sizing-switch-thumb-size)] rounded-[var(--radius-switch-thumb)]',
         'bg-[var(--color-switch-thumb-bg)] [box-shadow:var(--shadow-switch-thumb)]',
         'transition-transform duration-200',
         'data-[state=unchecked]:translate-x-0.5',

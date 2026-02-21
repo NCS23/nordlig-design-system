@@ -174,7 +174,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
         onKeyDown={handleKeyDown}
         className={cn(
           'inline-flex items-center gap-[var(--spacing-rtg-gap)]',
-          isInteractive && 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 rounded-sm',
+          isInteractive && 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 rounded-[var(--radius-rtg-focus)]',
           className
         )}
         {...restProps}

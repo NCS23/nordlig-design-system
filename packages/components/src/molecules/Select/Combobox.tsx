@@ -163,7 +163,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
     const renderFilteredItems = () => {
       if (filtered.length === 0) {
         return (
-          <div className="px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] text-sm text-[var(--color-select-empty-text)]">
+          <div className="px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] text-[length:var(--font-select-item-size)] text-[var(--color-select-empty-text)]">
             {emptyText}
           </div>
         );
@@ -191,11 +191,11 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
         return groups.map((group, gi) => (
           <div key={gi} role="group" aria-labelledby={`cbox-group-${gi}`}>
             {gi > 0 && (
-              <div className="mx-2 my-1 h-px bg-[var(--color-select-separator)]" />
+              <div className="mx-2 my-[var(--spacing-select-separator-my)] h-px bg-[var(--color-select-separator)]" />
             )}
             <div
               id={`cbox-group-${gi}`}
-              className="px-[var(--spacing-select-item-padding-x)] py-1 text-xs font-medium text-[var(--color-select-group-label)] uppercase tracking-wider"
+              className="px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-group-py)] text-[length:var(--font-select-group-size)] [font-weight:var(--font-select-group-weight)] text-[var(--color-select-group-label)] uppercase tracking-wider"
             >
               {group.label}
             </div>
@@ -223,7 +223,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
           onKeyDown={handleKeyDown}
           onMouseEnter={() => !opt.disabled && setFocusedIndex(idx)}
           className={cn(
-            'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-sm transition-colors',
+            'flex items-center gap-[var(--spacing-select-item-gap)] px-[var(--spacing-select-item-padding-x)] py-[var(--spacing-select-item-padding-y)] cursor-pointer rounded-[var(--radius-select-item)] text-[length:var(--font-select-item-size)] transition-colors',
             'text-[var(--color-select-item-text)]',
             opt.disabled &&
               'text-[var(--color-select-item-disabled-text)] cursor-not-allowed',
@@ -300,12 +300,12 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               )}
             >
               {/* Search Input */}
-              <div className="p-2 border-b border-[var(--color-select-separator)]">
+              <div className="p-[var(--spacing-select-search-padding)] border-b border-[var(--color-select-separator)]">
                 <div className="relative">
                   <Icon
                     icon={Search}
                     size={14}
-                    className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--color-select-icon)]"
+                    className="absolute left-[var(--spacing-select-search-icon-left)] top-1/2 -translate-y-1/2 text-[var(--color-select-icon)]"
                   />
                   <input
                     ref={searchRef}
@@ -316,7 +316,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                     placeholder={searchPlaceholder}
                     aria-label="Optionen durchsuchen"
                     className={cn(
-                      'w-full pl-8 pr-3 py-1.5 text-sm rounded-[var(--radius-select-item)]',
+                      'w-full pl-8 pr-3 py-[var(--spacing-select-search-py)] text-[length:var(--font-select-item-size)] rounded-[var(--radius-select-item)]',
                       'bg-[var(--color-select-search-bg)]',
                       'text-[var(--color-select-trigger-text)]',
                       'placeholder:text-[var(--color-select-trigger-placeholder)]',

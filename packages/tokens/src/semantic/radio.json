@@ -30,7 +30,9 @@
   },
   "radius": {
     "radio": {
-      "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px item row rounding" }
+      "item":   { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px item row rounding" },
+      "button": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circular radio button (9999px)" },
+      "dot":    { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circular inner dot (9999px)" }
     }
   },
   "spacing": {
@@ -38,7 +40,9 @@
       "group-gap-v":  { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Vertical gap between radio items (12px)" },
       "group-gap-h":  { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Horizontal gap between radio items (16px)" },
       "item-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between radio and label (8px)" },
-      "content-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "Gap between label and description (2px)" }
+      "content-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "Gap between label and description (2px)" },
+      "item-padding": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px item row padding" },
+      "visual-mt":    { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px visual container top margin" }
     }
   }
 }

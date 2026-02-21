@@ -103,7 +103,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               'overflow-hidden p-[var(--spacing-cmb-content-padding)]',
               '[&_[cmdk-group-heading]]:text-[length:var(--font-cmb-heading-size)] [&_[cmdk-group-heading]]:[font-weight:var(--font-cmb-heading-weight)]',
               '[&_[cmdk-group-heading]]:text-[var(--color-cmb-empty-text)]',
-              '[&_[cmdk-group-heading]]:px-[var(--spacing-cmb-item-padding-x)] [&_[cmdk-group-heading]]:py-1.5'
+              '[&_[cmdk-group-heading]]:px-[var(--spacing-cmb-item-padding-x)] [&_[cmdk-group-heading]]:py-[var(--spacing-cmb-heading-py)]'
             )}
           >
             {group.options.map((opt) => renderItem(opt))}
@@ -136,7 +136,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
             icon={Check}
             size={14}
             className={cn(
-              'mr-2',
+              'mr-[var(--spacing-cmb-icon-mr)]',
               isSelected ? 'opacity-100' : 'opacity-0'
             )}
           />
@@ -203,7 +203,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
                   <Icon
                     icon={Search}
                     size={14}
-                    className="mr-2 opacity-50"
+                    className="mr-[var(--spacing-cmb-icon-mr)] opacity-50"
                   />
                   <CommandPrimitive.Input
                     placeholder={searchPlaceholder}

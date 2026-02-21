@@ -37,7 +37,9 @@
     "datepicker": {
       "popover-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px popover inner padding" },
       "grid-gap":        { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "2px gap between day cells" },
-      "range-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between date inputs in range picker (8px)" }
+      "range-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between date inputs in range picker (8px)" },
+      "header-mb":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px header bottom margin" },
+      "weekday-mb":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px weekday row bottom margin" }
     }
   },
   "font": {
@@ -48,7 +50,8 @@
       "weekday-weight": { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",   "$description": "Weekday label weight" },
       "day-size":       { "$type": "dimension",   "$value": "{font.component.size.sm}",        "$description": "Day number size (14px)" },
       "selected-weight":{ "$type": "fontWeight",   "$value": "{font.component.weight.semibold}", "$description": "Selected day weight" },
-      "today-weight":   { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",   "$description": "Today day weight" }
+      "today-weight":   { "$type": "fontWeight",   "$value": "{font.component.weight.medium}",   "$description": "Today day weight" },
+      "range-text-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "14px range separator text size" }
     }
   }
 }

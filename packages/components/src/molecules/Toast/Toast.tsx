@@ -127,7 +127,7 @@ const Toast = React.forwardRef<
       className={cn(toastVariants({ variant, className }))}
       {...props}
     >
-      <div className="flex-shrink-0 pt-0.5">
+      <div className="flex-shrink-0 pt-[var(--spacing-toast-icon-pt)]">
         <IconAtom icon={VariantIcon} size="md" className={iconClass} />
       </div>
       <div className="flex-1 min-w-0">
@@ -135,7 +135,7 @@ const Toast = React.forwardRef<
           {title}
         </ToastPrimitive.Title>
         {description && (
-          <ToastPrimitive.Description className="mt-1 text-[length:var(--font-toast-description-size)] text-[var(--color-toast-description)]">
+          <ToastPrimitive.Description className="mt-[var(--spacing-toast-desc-mt)] text-[length:var(--font-toast-description-size)] text-[var(--color-toast-description)]">
             {description}
           </ToastPrimitive.Description>
         )}
@@ -143,7 +143,7 @@ const Toast = React.forwardRef<
       <ToastPrimitive.Close
         className={cn(
           'flex-shrink-0 inline-flex items-center justify-center',
-          'min-h-11 min-w-11 -m-2 rounded transition-colors',
+          'min-h-11 min-w-11 -m-[var(--spacing-toast-close-nm)] rounded transition-colors',
           'text-[var(--color-toast-description)]',
           'hover:bg-[var(--color-toast-close-hover-bg)]',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)]'

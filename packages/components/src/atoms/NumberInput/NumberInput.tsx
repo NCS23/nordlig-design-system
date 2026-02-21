@@ -207,7 +207,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
           disabled={disabled || isAtMin}
           onClick={decrement}
           aria-label={decrementLabel}
-          className="flex items-center justify-center px-2 h-full text-[var(--color-numberinput-stepper-text)] hover:text-[var(--color-numberinput-stepper-text-hover)] hover:bg-[var(--color-numberinput-stepper-bg-hover)] rounded-l-[var(--radius-numberinput)] transition-colors disabled:opacity-30 disabled:pointer-events-none"
+          className="flex items-center justify-center px-[var(--spacing-numberinput-stepper-px)] h-full text-[var(--color-numberinput-stepper-text)] hover:text-[var(--color-numberinput-stepper-text-hover)] hover:bg-[var(--color-numberinput-stepper-bg-hover)] rounded-l-[var(--radius-numberinput)] transition-colors disabled:opacity-30 disabled:pointer-events-none"
         >
           <Icon icon={Minus} size={iconSize} />
         </button>
@@ -248,7 +248,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
           disabled={disabled || isAtMax}
           onClick={increment}
           aria-label={incrementLabel}
-          className="flex items-center justify-center px-2 h-full text-[var(--color-numberinput-stepper-text)] hover:text-[var(--color-numberinput-stepper-text-hover)] hover:bg-[var(--color-numberinput-stepper-bg-hover)] rounded-r-[var(--radius-numberinput)] transition-colors disabled:opacity-30 disabled:pointer-events-none"
+          className="flex items-center justify-center px-[var(--spacing-numberinput-stepper-px)] h-full text-[var(--color-numberinput-stepper-text)] hover:text-[var(--color-numberinput-stepper-text-hover)] hover:bg-[var(--color-numberinput-stepper-bg-hover)] rounded-r-[var(--radius-numberinput)] transition-colors disabled:opacity-30 disabled:pointer-events-none"
         >
           <Icon icon={Plus} size={iconSize} />
         </button>

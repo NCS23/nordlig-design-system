@@ -439,6 +439,8 @@
   --sizing-gap-lg: var(--spacing-base-2-5);
   --sizing-border-width-default: var(--spacing-base-px);
   --sizing-border-width-thick: var(--spacing-base-0-5);
+  --sizing-component-indicator-dot-sm: var(--spacing-base-2); /** 8px small dot (carousel, chart) */
+  --sizing-component-indicator-dot-md: var(--spacing-base-2-5); /** 10px medium dot (chart legend) */
   --sizing-layout-header-height: var(--spacing-base-14); /** 56px shared header height for templates */
   --color-bg-paper: var(--color-neutral-1-50); /** Warm white (not pure #fff) per design principles */
   --color-bg-base: var(--color-neutral-1-50);
@@ -565,6 +567,9 @@
   --sizing-component-track-lg: var(--spacing-sm);
   --sizing-component-border-width-default: var(--sizing-border-width-default);
   --sizing-component-border-width-thick: var(--sizing-border-width-thick);
+  --sizing-carousel-dot-size: var(--sizing-component-indicator-dot-sm); /** Dot indicator size 8px */
+  --sizing-chart-indicator-dot: var(--sizing-component-indicator-dot-md); /** Tooltip dot indicator size (10px) */
+  --sizing-chart-legend-dot: var(--sizing-component-indicator-dot-md); /** Legend dot size (10px) */
   --sizing-dashboard-header-height: var(--sizing-layout-header-height); /** Fixed header height */
   --sizing-shell-header-height: var(--sizing-layout-header-height); /** Fixed header height */
   --color-accordion-bg: var(--color-bg-paper); /** Item background */
@@ -1093,7 +1098,13 @@
   --radius-banner-dismiss: var(--radius-component-sm); /** Dismiss button border radius (rounded-sm) */
   --radius-bq: var(--radius-component-sm); /** Corner radius */
   --radius-card: var(--radius-component-lg);
+  --radius-carousel-nav: var(--radius-component-full); /** Nav button border radius (full) */
+  --radius-carousel-dots: var(--radius-component-full); /** Dots container border radius (full) */
+  --radius-carousel-dot-btn: var(--radius-component-full); /** Dot button border radius (full) */
+  --radius-carousel-dot: var(--radius-component-full); /** Dot indicator border radius (full) */
   --radius-chart-tooltip: var(--radius-component-md); /** Chart tooltip border radius */
+  --radius-chart-indicator: var(--radius-component-full); /** Indicator border radius (full) */
+  --radius-chart-legend-dot: var(--radius-component-full); /** Legend dot border radius (full) */
   --radius-checkbox: var(--radius-component-sm); /** 2px subtle rounding */
   --radius-code: var(--radius-component-sm); /** Inline code border radius */
   --radius-code-block: var(--radius-component-lg); /** Code block border radius */
@@ -1110,6 +1121,7 @@
   --radius-datepicker-day: var(--radius-component-md); /** 6px day cell radius */
   --radius-dialog: var(--radius-component-xl); /** 12px dialog radius (large overlay) */
   --radius-drawer: var(--radius-component-xl); /** 12px drawer radius (large overlay) */
+  --radius-drawer-handle: var(--radius-component-full); /** Pill-shaped handle bar (9999px) */
   --radius-dropdown-menu: var(--radius-component-lg); /** 8px menu radius */
   --radius-dropdown-item: var(--radius-component-md); /** 6px item radius */
   --radius-fileupload-zone: var(--radius-component-lg); /** Zone radius */
@@ -1131,9 +1143,14 @@
   --radius-nav-dropdown: var(--radius-component-lg); /** Dropdown panel radius */
   --radius-numberinput: var(--radius-component-md); /** NumberInput border radius */
   --radius-pagination-item: var(--radius-component-md); /** 6px rounded corners */
+  --radius-pwinput-toggle: var(--radius-component-sm); /** 4px toggle button radius */
+  --radius-pwinput-strength: var(--radius-component-full); /** Pill-shaped strength bar (9999px) */
   --radius-popover: var(--radius-component-lg); /** 8px rounded corners */
   --radius-progress: var(--radius-component-full);
   --radius-radio-item: var(--radius-component-md); /** 6px item row rounding */
+  --radius-radio-button: var(--radius-component-full); /** Circular radio button (9999px) */
+  --radius-radio-dot: var(--radius-component-full); /** Circular inner dot (9999px) */
+  --radius-rtg-focus: var(--radius-component-sm); /** 4px focus outline radius */
   --radius-rsz-handle: var(--radius-component-sm); /** Handle grip radius */
   --radius-scrollarea-thumb: var(--radius-component-full); /** Scrollbar thumb radius */
   --radius-seg-container: var(--radius-component-md); /** Outer container radius */
@@ -1141,13 +1158,20 @@
   --radius-select-popover: var(--radius-component-lg); /** 8px dropdown radius */
   --radius-select-item: var(--radius-component-md); /** 6px item radius */
   --radius-sheet: var(--radius-component-xl); /** 12px sheet radius (large overlay) */
+  --radius-sidebar-badge: var(--radius-component-full); /** Pill-shaped badge (9999px) */
   --radius-skeleton: var(--radius-component-md);
   --radius-skeleton-circle: var(--radius-component-full);
   --radius-slider-track: var(--radius-component-full); /** Slider track radius */
   --radius-slider-thumb: var(--radius-component-full); /** Slider thumb radius */
+  --radius-stepper-indicator: var(--radius-component-full); /** Circular indicator (9999px) */
+  --radius-switch-track: var(--radius-component-full); /** Pill-shaped track (9999px) */
+  --radius-switch-thumb: var(--radius-component-full); /** Circular thumb (9999px) */
   --radius-tabs-list: var(--radius-component-lg); /** 8px pills list radius */
   --radius-tabs-trigger: var(--radius-component-md); /** 6px pills trigger radius */
   --radius-tag: var(--radius-component-md); /** Tag border radius */
+  --radius-tag-dismiss: var(--radius-component-full); /** Dismiss button border radius (fully round) */
+  --radius-timeline-dot: var(--radius-component-full); /** Circular dot (9999px) */
+  --radius-timeline-inner-dot: var(--radius-component-full); /** Circular inner dot (9999px) */
   --radius-tpick-popover: var(--radius-component-lg); /** 8px popover radius */
   --radius-tpick-cell: var(--radius-component-md); /** 6px time cell radius */
   --radius-toast: var(--radius-component-lg); /** 8px rounded corners */
@@ -1189,6 +1213,9 @@
   --spacing-alert-padding: var(--spacing-component-padding-md); /** Alert padding all sides (16px) */
   --spacing-alert-gap: var(--spacing-component-gap-md); /** Gap between icon and content (12px) */
   --spacing-alert-content-gap: var(--spacing-component-gap-xs); /** Gap between title and description (4px) */
+  --spacing-alert-icon-mt: var(--spacing-component-gap-2xs); /** Icon top margin for vertical alignment (2px) */
+  --spacing-alert-close-padding: var(--spacing-component-gap-xs); /** Close button padding (4px) */
+  --spacing-alert-title-mb: var(--spacing-component-gap-xs); /** Title bottom margin (4px) */
   --spacing-alertdlg-padding: var(--spacing-component-padding-lg); /** AlertDialog content padding */
   --spacing-alertdlg-gap: var(--spacing-component-gap-md); /** AlertDialog content gap */
   --spacing-auth-card-padding: var(--spacing-component-padding-xl); /** Card inner padding (32px) */
@@ -1197,6 +1224,7 @@
   --spacing-banner-padding-x: var(--spacing-component-padding-lg); /** Horizontal padding */
   --spacing-banner-padding-y: var(--spacing-component-padding-md); /** Vertical padding */
   --spacing-banner-gap: var(--spacing-component-gap-md); /** Gap between elements */
+  --spacing-banner-dismiss-padding: var(--spacing-component-gap-xs); /** 4px dismiss button padding */
   --spacing-bq-padding: var(--spacing-component-padding-lg); /** Internal padding */
   --spacing-bq-border-width: var(--spacing-component-padding-xs); /** Left border width (4px) */
   --spacing-bq-cite-gap: var(--spacing-component-gap-md); /** Gap before citation */
@@ -1208,9 +1236,17 @@
   --spacing-card-padding-spacious: var(--spacing-component-padding-lg);
   --spacing-card-gap: var(--spacing-component-gap-md);
   --spacing-carousel-dot-gap: var(--sizing-component-gap-sm); /** Gap between pagination dots (6px) */
+  --spacing-carousel-nav-offset: var(--spacing-component-gap-sm); /** Nav button distance from edge (8px) */
+  --spacing-carousel-dots-bottom: var(--spacing-component-gap-md); /** Dots distance from bottom (12px) */
+  --spacing-carousel-dots-px: var(--spacing-component-gap-xs); /** Dots container horizontal padding (4px) */
+  --spacing-carousel-dots-py: var(--spacing-component-gap-xs); /** Dots container vertical padding (4px) */
   --spacing-chart-tooltip-gap: var(--spacing-component-gap-xs); /** Gap in tooltip items (4px) */
   --spacing-chart-legend-gap: var(--spacing-component-gap-lg); /** Gap between legend items (16px) */
   --spacing-chart-legend-item-gap: var(--sizing-component-gap-sm); /** Gap within legend item (6px) */
+  --spacing-chart-tooltip-px: var(--spacing-component-gap-md); /** Tooltip horizontal padding (12px) */
+  --spacing-chart-tooltip-py: var(--spacing-component-gap-sm); /** Tooltip vertical padding (8px) */
+  --spacing-chart-tooltip-label-mb: var(--spacing-component-gap-xs); /** Tooltip label bottom margin (4px) */
+  --spacing-chart-legend-pt: var(--spacing-component-gap-md); /** Legend top padding (12px) */
   --spacing-checkbox-field-gap: var(--spacing-component-gap-sm); /** 8px — Gap between checkbox and content */
   --spacing-checkbox-content-gap: var(--spacing-component-gap-2xs); /** 2px — Gap between label and description */
   --spacing-cpick-padding: var(--spacing-component-padding-md); /** 12px container padding */
@@ -1223,6 +1259,8 @@
   --spacing-cmb-search-py: var(--spacing-component-gap-xs); /** 6px search input vertical padding */
   --spacing-cmb-search-px: var(--spacing-component-padding-sm); /** 12px search input horizontal padding */
   --spacing-cmb-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
+  --spacing-cmb-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
+  --spacing-cmb-icon-mr: var(--spacing-component-gap-sm); /** 8px icon margin right */
   --spacing-command-padding: var(--spacing-component-padding-sm); /** Command item padding */
   --spacing-command-input-px: var(--spacing-component-padding-sm); /** 12px input wrapper horizontal padding */
   --spacing-command-list-padding: var(--spacing-component-gap-xs); /** 4px list inner padding */
@@ -1238,6 +1276,8 @@
   --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
   --spacing-datepicker-grid-gap: var(--spacing-component-gap-sm); /** 2px gap between day cells */
   --spacing-datepicker-range-gap: var(--spacing-component-gap-sm); /** Gap between date inputs in range picker (8px) */
+  --spacing-datepicker-header-mb: var(--spacing-component-gap-sm); /** 8px header bottom margin */
+  --spacing-datepicker-weekday-mb: var(--spacing-component-gap-xs); /** 4px weekday row bottom margin */
   --spacing-detailpage-header-gap: var(--spacing-component-gap-lg); /** Gap between header elements (16px) */
   --spacing-detailpage-section-gap: var(--spacing-component-gap-xl); /** Gap between major sections (32px) */
   --spacing-detailpage-sidebar-gap: var(--spacing-layout-gutter); /** Gap between content and sidebar (24px) */
@@ -1246,10 +1286,13 @@
   --spacing-dialog-gap: var(--spacing-component-gap-md); /** Dialog content gap */
   --spacing-drawer-padding: var(--spacing-component-padding-lg); /** Drawer content padding */
   --spacing-drawer-gap: var(--spacing-component-gap-md); /** Drawer section gap */
+  --spacing-drawer-handle-mt: var(--spacing-component-padding-md); /** 16px handle top margin */
+  --spacing-drawer-footer-pt: var(--spacing-component-gap-sm); /** 8px footer top padding */
   --spacing-dropdown-padding: var(--spacing-component-padding-xs); /** 4px inner padding */
   --spacing-dropdown-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
   --spacing-dropdown-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
   --spacing-dropdown-item-gap: var(--spacing-component-gap-sm); /** 8px gap between icon and text */
+  --spacing-dropdown-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
   --spacing-emptypage-padding-y: var(--spacing-component-padding-xl); /** Vertical padding for centering area */
   --spacing-emptypage-content-gap: var(--spacing-component-gap-lg); /** Gap between illustration, text and CTA */
   --spacing-emptypage-text-gap: var(--spacing-component-gap-sm); /** Gap between title and description */
@@ -1293,6 +1336,8 @@
   --spacing-menubar-trigger-padding-y: var(--spacing-component-padding-xs); /** Trigger vertical padding */
   --spacing-menubar-gap: var(--spacing-component-gap-xs); /** Gap between menubar items (4px) */
   --spacing-menubar-item-py: var(--spacing-component-gap-xs); /** 6px dropdown item vertical padding */
+  --spacing-menubar-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-menubar-indicator-left: var(--spacing-component-gap-sm); /** 8px checkbox/radio indicator left offset */
   --spacing-modal-padding-x: var(--spacing-component-padding-lg); /** 24px horizontal padding */
   --spacing-modal-padding-y: var(--spacing-component-padding-md); /** 16px vertical padding */
   --spacing-modal-gap: var(--spacing-component-gap-md); /** 8px footer button gap */
@@ -1312,6 +1357,7 @@
   --spacing-navmenu-trigger-py: var(--spacing-component-padding-xs); /** 8px trigger vertical padding */
   --spacing-navmenu-content-p: var(--spacing-component-padding-md); /** 16px content padding */
   --spacing-navmenu-indicator-mt: var(--spacing-component-gap-xs); /** 4px indicator margin-top */
+  --spacing-numberinput-stepper-px: var(--spacing-component-gap-sm); /** 8px stepper button horizontal padding */
   --spacing-shell-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
   --spacing-shell-header-py: var(--spacing-component-padding-sm); /** Header vertical padding (12px) */
   --spacing-shell-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
@@ -1330,6 +1376,8 @@
   --spacing-radio-group-gap-h: var(--spacing-component-gap-lg); /** Horizontal gap between radio items (16px) */
   --spacing-radio-item-gap: var(--spacing-component-gap-sm); /** Gap between radio and label (8px) */
   --spacing-radio-content-gap: var(--spacing-component-gap-2xs); /** Gap between label and description (2px) */
+  --spacing-radio-item-padding: var(--spacing-component-gap-sm); /** 8px item row padding */
+  --spacing-radio-visual-mt: var(--spacing-component-gap-2xs); /** 2px visual container top margin */
   --spacing-rtg-gap: var(--spacing-component-gap-sm); /** Gap between stars */
   --spacing-rsz-handle-size: var(--spacing-component-padding-xs); /** Handle hit-area width/height */
   --spacing-searchfilter-gap: var(--spacing-component-gap-sm); /** Gap between search input and filter slots (8px) */
@@ -1343,6 +1391,11 @@
   --spacing-select-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
   --spacing-select-item-gap: var(--spacing-component-gap-sm); /** Gap between icon and text in item */
   --spacing-select-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
+  --spacing-select-search-padding: var(--spacing-component-gap-sm); /** 8px search container padding */
+  --spacing-select-search-icon-left: var(--spacing-component-padding-sm); /** 10px search icon left offset */
+  --spacing-select-search-py: var(--spacing-component-gap-xs); /** 6px search input vertical padding */
+  --spacing-select-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-select-group-py: var(--spacing-component-gap-xs); /** 4px group label vertical padding */
   --spacing-session-card-grid-gap: var(--spacing-component-gap-lg); /** Gap between grid items (16px) */
   --spacing-session-card-section-gap: var(--spacing-component-gap-lg); /** Gap between sections (16px) */
   --spacing-session-card-zone-header-mb: var(--spacing-component-gap-md); /** Zone header bottom margin (8px) */
@@ -1353,6 +1406,9 @@
   --spacing-sheet-padding: var(--spacing-component-padding-lg); /** Sheet content padding */
   --spacing-sheet-header-gap: var(--sizing-component-gap-sm); /** Gap between title and description in header (6px) */
   --spacing-sheet-footer-gap: var(--spacing-component-gap-sm); /** Gap between footer buttons (8px) */
+  --spacing-sheet-close-inset: var(--spacing-component-padding-md); /** 16px close button offset from edge */
+  --spacing-sheet-header-mb: var(--spacing-component-padding-md); /** 16px header bottom margin */
+  --spacing-sheet-footer-pt: var(--spacing-component-padding-md); /** 16px footer top padding */
   --spacing-sidebar-header-gap: var(--spacing-component-gap-md); /** Gap between items in sidebar header (12px) */
   --spacing-sidebar-item-gap: var(--spacing-component-gap-md); /** Gap between icon and label in sidebar item (12px) */
   --spacing-sidebar-header-padding: var(--spacing-component-padding-lg); /** Header/footer padding (16px) */
@@ -1392,6 +1448,11 @@
   --spacing-tabs-content-padding: var(--spacing-component-padding-md); /** 16px content padding-top */
   --spacing-tabs-list-gap: var(--spacing-component-gap-sm); /** 4px gap between pills */
   --spacing-tag-gap: var(--spacing-component-gap-xs); /** Gap between text and remove icon (4px) */
+  --spacing-tag-sm-px: var(--spacing-component-gap-sm); /** 8px horizontal padding for sm size */
+  --spacing-tag-sm-py: var(--spacing-component-gap-2xs); /** 2px vertical padding for sm size */
+  --spacing-tag-md-px: var(--spacing-component-padding-sm); /** 12px horizontal padding for md size */
+  --spacing-tag-md-py: var(--spacing-component-gap-xs); /** 4px vertical padding for md size */
+  --spacing-tag-dismiss-p: var(--spacing-component-gap-2xs); /** 2px padding for dismiss button */
   --spacing-textarea-padding-y-sm: var(--sizing-component-padding-y-md); /** 8px – sm size vertical padding */
   --spacing-textarea-padding-y-md: var(--sizing-component-padding-y-lg); /** 10px – md size vertical padding */
   --spacing-textarea-padding-y-lg: var(--sizing-component-padding-y-xl); /** 12px – lg size vertical padding */
@@ -1402,16 +1463,21 @@
   --spacing-timeline-line-top: var(--spacing-component-padding-xl); /** 32px line top offset */
   --spacing-timeline-content-ml: var(--spacing-component-padding-md); /** 16px content left margin */
   --spacing-timeline-desc-mt: var(--spacing-component-gap-sm); /** 8px description margin top */
+  --spacing-timeline-desc-text-mt: var(--spacing-component-gap-2xs); /** 2px description text margin top */
   --spacing-tpick-popover-padding: var(--spacing-component-padding-sm); /** 8px popover inner padding */
   --spacing-tpick-column-gap: var(--spacing-component-gap-xs); /** 4px gap between cells */
   --spacing-toast-padding: var(--spacing-component-padding-md); /** 16px internal padding */
   --spacing-toast-gap: var(--spacing-component-gap-md); /** 8px gap between icon/content/close */
   --spacing-toast-viewport-padding: var(--spacing-component-padding-md); /** 16px distance from screen edges */
+  --spacing-toast-icon-pt: var(--spacing-component-gap-2xs); /** 2px top padding for variant icon alignment */
+  --spacing-toast-desc-mt: var(--spacing-component-gap-xs); /** 4px margin-top between title and description */
+  --spacing-toast-close-nm: var(--spacing-component-gap-sm); /** 8px negative margin for close button touch target */
   --spacing-togglegroup-gap: var(--spacing-component-gap-xs); /** Gap between toggle items (4px) */
   --spacing-toolbar-padding: var(--spacing-component-padding-xs); /** Toolbar inner padding */
   --spacing-toolbar-gap: var(--spacing-component-gap-sm); /** Gap between items */
   --spacing-toolbar-btn-padding-x: var(--spacing-component-padding-md); /** Button horizontal padding */
   --spacing-toolbar-btn-padding-y: var(--spacing-component-padding-xs); /** Button vertical padding */
+  --spacing-toolbar-separator-mx: var(--spacing-component-gap-xs); /** 4px separator horizontal margin */
   --spacing-tooltip-padding-x: var(--spacing-component-padding-sm); /** 12px horizontal padding */
   --spacing-tooltip-padding-y: var(--spacing-component-padding-xs); /** 8px vertical padding */
   --spacing-tree-item-gap: var(--spacing-component-gap-xs); /** Gap between icon and label in tree item (4px) */
@@ -1482,6 +1548,7 @@
   --font-datepicker-day-size: var(--font-component-size-sm); /** Day number size (14px) */
   --font-datepicker-selected-weight: var(--font-component-weight-semibold); /** Selected day weight */
   --font-datepicker-today-weight: var(--font-component-weight-medium); /** Today day weight */
+  --font-datepicker-range-text-size: var(--font-component-size-sm); /** 14px range separator text size */
   --font-detailpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
   --font-detailpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
   --font-dialog-title-size: var(--font-component-size-lg); /** Dialog title font size (text-lg equivalent) */
@@ -1676,6 +1743,9 @@
   --sizing-btn-lg-line-height: var(--font-component-line-height-lg);
   --sizing-btn-lg-radius: var(--radius-component-md);
   --sizing-btn-border-width: var(--sizing-component-border-width-default);
+  --sizing-carousel-nav-size: var(--sizing-component-height-md); /** Nav button size 40px */
+  --sizing-chart-indicator-line-h: var(--spacing-component-gap-2xs); /** Line indicator height (2px) */
+  --sizing-chart-indicator-line-w: var(--spacing-component-gap-md); /** Line indicator width (14px) */
   --sizing-checkbox-box-size: var(--sizing-component-icon-control); /** Checkbox box size (20px) */
   --sizing-checkbox-icon-size: var(--sizing-component-icon-sm); /** Check icon size inside checkbox (16px) */
   --sizing-checkbox-border-width: var(--sizing-component-border-width-thick); /** 2px */
@@ -1683,6 +1753,9 @@
   --sizing-cpybtn-md: var(--sizing-component-height-md); /** CopyButton size md (40px) */
   --sizing-cpybtn-lg: var(--sizing-component-height-lg); /** CopyButton size lg (44px, touch-target safe) */
   --sizing-datepicker-day-size: var(--sizing-component-height-sm); /** Day cell width/height */
+  --sizing-drawer-handle-h: var(--spacing-component-gap-xs); /** 6px handle height */
+  --sizing-drawer-handle-w: var(--spacing-component-padding-xl); /** 48px handle width */
+  --sizing-dropdown-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
   --sizing-icon-sm: var(--sizing-component-icon-sm); /** Small icon (16x16) */
   --sizing-icon-md: var(--sizing-component-icon-control); /** Medium icon (20x20) — default */
   --sizing-icon-lg: var(--sizing-component-icon-md); /** Large icon (24x24) */
@@ -1703,6 +1776,7 @@
   --sizing-inputotp-slot-size: var(--sizing-component-height-md); /** Slot width and height (40px) */
   --sizing-inputotp-border-width: var(--sizing-component-border-width-default); /** Slot border width (1px) */
   --sizing-kbd-border-width: var(--sizing-component-border-width-default); /** Key border width (1px) */
+  --sizing-menubar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
   --sizing-numberinput-border-width: var(--sizing-component-border-width-default); /** NumberInput border width (1px) */
   --sizing-pagination-item-size: var(--sizing-component-height-sm); /** Page button width & height (36px square) */
   --sizing-pagination-font-size: var(--font-component-size-sm); /** Page button font size */
@@ -1714,6 +1788,7 @@
   --sizing-rtg-sm: var(--sizing-component-icon-sm); /** Star size sm */
   --sizing-rtg-md: var(--sizing-component-icon-md); /** Star size md */
   --sizing-rtg-lg: var(--sizing-component-icon-lg); /** Star size lg */
+  --sizing-sheet-close-size: var(--sizing-component-icon-lg); /** 32px close button width/height */
   --sizing-skeleton-circle-sm: var(--sizing-component-height-sm); /** Skeleton circle sm (36px) */
   --sizing-skeleton-circle-md: var(--sizing-component-height-md); /** Skeleton circle md (40px) */
   --sizing-skeleton-circle-lg: var(--sizing-component-height-lg); /** Skeleton circle lg (44px) */
@@ -1744,4 +1819,5 @@
   --sizing-toggle-lg-height: var(--sizing-component-height-lg); /** Toggle item height lg */
   --sizing-toggle-lg-padding-x: var(--sizing-component-padding-x-lg); /** Toggle item horizontal padding lg */
   --sizing-toggle-lg-font-size: var(--font-component-size-md); /** Toggle item font size lg */
+  --sizing-toolbar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
 }

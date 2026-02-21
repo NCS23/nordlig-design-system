@@ -32,6 +32,12 @@
       "thumb-size":   { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Switch thumb size (20px)" }
     }
   },
+  "radius": {
+    "switch": {
+      "track": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Pill-shaped track (9999px)" },
+      "thumb": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circular thumb (9999px)" }
+    }
+  },
   "shadow": {
     "switch": {
       "thumb": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Thumb shadow" }

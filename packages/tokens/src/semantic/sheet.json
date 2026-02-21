@@ -19,7 +19,15 @@
     "sheet": {
       "padding":    { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Sheet content padding" },
       "header-gap": { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between title and description in header (6px)" },
-      "footer-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between footer buttons (8px)" }
+      "footer-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between footer buttons (8px)" },
+      "close-inset":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px close button offset from edge" },
+      "header-mb":    { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px header bottom margin" },
+      "footer-pt":    { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px footer top padding" }
+    }
+  },
+  "sizing": {
+    "sheet": {
+      "close-size": { "$type": "dimension", "$value": "{sizing.component.icon.lg}", "$description": "32px close button width/height" }
     }
   },
   "font": {

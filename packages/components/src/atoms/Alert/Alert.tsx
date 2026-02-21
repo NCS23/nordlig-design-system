@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
 const alertVariants = cva(
-  'relative flex items-start gap-[var(--spacing-alert-gap)] p-4 [border-left-width:var(--sizing-alert-border-width)] rounded-[var(--radius-alert)]',
+  'relative flex items-start gap-[var(--spacing-alert-gap)] p-[var(--spacing-alert-padding)] [border-left-width:var(--sizing-alert-border-width)] rounded-[var(--radius-alert)]',
   {
     variants: {
       variant: {
@@ -54,12 +54,12 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         className={cn(alertVariants({ variant, className }))}
         {...props}
       >
-        <Icon icon={IconComponent} size="md" className={cn('mt-0.5', iconClass)} />
+        <Icon icon={IconComponent} size="md" className={cn('mt-[var(--spacing-alert-icon-mt)]', iconClass)} />
         <div className="flex-1 min-w-0">{children}</div>
         {closeable && (
           <button
             onClick={onClose}
-            className="shrink-0 p-1 rounded-[var(--radius-alert)] hover:bg-[var(--color-interactive-hover-overlay)] transition-colors"
+            className="shrink-0 p-[var(--spacing-alert-close-padding)] rounded-[var(--radius-alert)] hover:bg-[var(--color-interactive-hover-overlay)] transition-colors"
             aria-label="Schließen"
           >
             <Icon icon={X} size="sm" className="text-[var(--color-alert-title)] opacity-50" />
@@ -78,7 +78,7 @@ const AlertTitle = React.forwardRef<HTMLHeadingElement, AlertTitleProps>(
   ({ className, children, ...props }, ref) => (
     <h5
       ref={ref}
-      className={cn('text-[length:var(--sizing-alert-font-size)] [font-weight:var(--sizing-alert-title-weight)] text-[var(--color-alert-title)] mb-1', className)}
+      className={cn('text-[length:var(--sizing-alert-font-size)] [font-weight:var(--sizing-alert-title-weight)] text-[var(--color-alert-title)] mb-[var(--spacing-alert-title-mb)]', className)}
       {...props}
     >
       {children}
@@ -108,7 +108,7 @@ const AlertClose = React.forwardRef<
   <button
     ref={ref}
     className={cn(
-      'shrink-0 p-1 rounded-[var(--radius-alert)] hover:bg-[var(--color-interactive-hover-overlay)] transition-colors',
+      'shrink-0 p-[var(--spacing-alert-close-padding)] rounded-[var(--radius-alert)] hover:bg-[var(--color-interactive-hover-overlay)] transition-colors',
       className
     )}
     aria-label="Schließen"

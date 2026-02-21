@@ -107,7 +107,7 @@ const DropdownMenuItem = React.forwardRef<
   >
     {icon && (
       <span className={cn(
-        'shrink-0 [&>svg]:h-4 [&>svg]:w-4',
+        'shrink-0 [&>svg]:h-[var(--sizing-dropdown-item-icon)] [&>svg]:w-[var(--sizing-dropdown-item-icon)]',
         destructive
           ? 'text-[var(--color-dropdown-destructive-text)]'
           : 'text-[var(--color-dropdown-item-icon)]',
@@ -129,7 +129,7 @@ const DropdownMenuSeparator = React.forwardRef<
   <DropdownMenuPrimitive.Separator
     ref={ref}
     className={cn(
-      '-mx-[var(--spacing-dropdown-padding)] my-1 h-px',
+      '-mx-[var(--spacing-dropdown-padding)] my-[var(--spacing-dropdown-separator-my)] h-px',
       'bg-[var(--color-dropdown-separator)]',
       className
     )}

@@ -29,7 +29,9 @@
       "trigger-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between text and chevron in trigger (8px)" },
       "search-py":       { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "6px search input vertical padding" },
       "search-px":       { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px search input horizontal padding" },
-      "empty-py":        { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px empty state vertical padding" }
+      "empty-py":        { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px empty state vertical padding" },
+      "heading-py":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "6px group heading vertical padding" },
+      "icon-mr":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px icon margin right" }
     }
   },
   "font": {

@@ -125,7 +125,7 @@ describe('Timeline', () => {
         <TimelineItem title="Default" />
       </Timeline>
     );
-    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
+    const dot = container.querySelector('[class*="radius-timeline-dot"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-timeline-dot-default-bg)]');
     expect(dot?.className).toContain('text-[var(--color-timeline-dot-default-text)]');
   });
@@ -136,7 +136,7 @@ describe('Timeline', () => {
         <TimelineItem title="Erfolg" variant="success" />
       </Timeline>
     );
-    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
+    const dot = container.querySelector('[class*="radius-timeline-dot"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-timeline-dot-success-bg)]');
     expect(dot?.className).toContain('text-[var(--color-timeline-dot-success-text)]');
   });
@@ -147,7 +147,7 @@ describe('Timeline', () => {
         <TimelineItem title="Warnung" variant="warning" />
       </Timeline>
     );
-    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
+    const dot = container.querySelector('[class*="radius-timeline-dot"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-timeline-dot-warning-bg)]');
     expect(dot?.className).toContain('text-[var(--color-timeline-dot-warning-text)]');
   });
@@ -158,7 +158,7 @@ describe('Timeline', () => {
         <TimelineItem title="Fehler" variant="error" />
       </Timeline>
     );
-    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
+    const dot = container.querySelector('[class*="radius-timeline-dot"][class*="sizing-timeline-dot"]');
     expect(dot?.className).toContain('bg-[var(--color-timeline-dot-error-bg)]');
     expect(dot?.className).toContain('text-[var(--color-timeline-dot-error-text)]');
   });
@@ -183,7 +183,7 @@ describe('Timeline', () => {
         <TimelineItem title="Ohne Icon" />
       </Timeline>
     );
-    const dot = container.querySelector('[class*="rounded-full"][class*="sizing-timeline-dot"]');
+    const dot = container.querySelector('[class*="radius-timeline-dot"][class*="sizing-timeline-dot"]');
     const innerDot = dot?.querySelector('[class*="sizing-timeline-inner-dot"]');
     expect(innerDot).toBeInTheDocument();
   });

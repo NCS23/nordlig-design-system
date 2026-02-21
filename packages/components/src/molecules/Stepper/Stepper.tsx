@@ -32,7 +32,7 @@ const StepIndicator: React.FC<{
     <div
       data-stepper-indicator
       className={cn(
-        'w-[var(--sizing-stepper-indicator)] h-[var(--sizing-stepper-indicator)] rounded-full flex items-center justify-center text-[length:var(--font-stepper-indicator-size)] [font-weight:var(--font-stepper-indicator-weight)]',
+        'w-[var(--sizing-stepper-indicator)] h-[var(--sizing-stepper-indicator)] rounded-[var(--radius-stepper-indicator)] flex items-center justify-center text-[length:var(--font-stepper-indicator-size)] [font-weight:var(--font-stepper-indicator-weight)]',
         'transition-colors duration-200',
         isCompleted && 'bg-[var(--color-stepper-completed-bg)] border-2 border-[var(--color-stepper-completed-border)] text-[var(--color-stepper-completed-text)]',
         isCurrent && 'bg-[var(--color-stepper-current-bg)] text-[var(--color-stepper-current-text)]',
@@ -127,7 +127,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
                     type="button"
                     onClick={() => onStepClick(index)}
                     className={cn(
-                      'cursor-pointer rounded-full',
+                      'cursor-pointer rounded-[var(--radius-stepper-indicator)]',
                       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
                     )}
                     aria-label={`Gehe zu Schritt ${index + 1}: ${step.label}`}

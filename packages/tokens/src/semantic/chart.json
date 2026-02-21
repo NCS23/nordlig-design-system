@@ -28,14 +28,28 @@
   },
   "radius": {
     "chart": {
-      "tooltip": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Chart tooltip border radius" }
+      "tooltip":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Chart tooltip border radius" },
+      "indicator":  { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Indicator border radius (full)" },
+      "legend-dot": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Legend dot border radius (full)" }
     }
   },
   "spacing": {
     "chart": {
       "tooltip-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap in tooltip items (4px)" },
       "legend-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between legend items (16px)" },
-      "legend-item-gap":  { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap within legend item (6px)" }
+      "legend-item-gap":  { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap within legend item (6px)" },
+      "tooltip-px":       { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Tooltip horizontal padding (12px)" },
+      "tooltip-py":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Tooltip vertical padding (8px)" },
+      "tooltip-label-mb": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Tooltip label bottom margin (4px)" },
+      "legend-pt":        { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Legend top padding (12px)" }
+    }
+  },
+  "sizing": {
+    "chart": {
+      "indicator-dot":    { "$type": "dimension", "$value": "{sizing.component.indicator.dot-md}", "$description": "Tooltip dot indicator size (10px)" },
+      "indicator-line-h": { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "Line indicator height (2px)" },
+      "indicator-line-w": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Line indicator width (14px)" },
+      "legend-dot":       { "$type": "dimension", "$value": "{sizing.component.indicator.dot-md}", "$description": "Legend dot size (10px)" }
     }
   }
 }

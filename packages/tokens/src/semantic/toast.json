@@ -27,7 +27,10 @@
     "toast": {
       "padding":          { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px internal padding" },
       "gap":              { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "8px gap between icon/content/close" },
-      "viewport-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px distance from screen edges" }
+      "viewport-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px distance from screen edges" },
+      "icon-pt":          { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px top padding for variant icon alignment" },
+      "desc-mt":          { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px margin-top between title and description" },
+      "close-nm":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px negative margin for close button touch target" }
     }
   },
   "font": {

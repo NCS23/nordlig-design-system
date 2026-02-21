@@ -158,7 +158,7 @@ const MenubarItem = React.forwardRef<
   >
     {icon && (
       <span className={cn(
-        'shrink-0 [&>svg]:h-4 [&>svg]:w-4',
+        'shrink-0 [&>svg]:h-[var(--sizing-menubar-item-icon)] [&>svg]:w-[var(--sizing-menubar-item-icon)]',
         destructive
           ? 'text-[var(--color-dropdown-destructive-text)]'
           : 'text-[var(--color-dropdown-item-icon)]',
@@ -180,7 +180,7 @@ const MenubarSeparator = React.forwardRef<
   <MenubarPrimitive.Separator
     ref={ref}
     className={cn(
-      '-mx-[var(--spacing-dropdown-padding)] my-1 h-px',
+      '-mx-[var(--spacing-dropdown-padding)] my-[var(--spacing-menubar-separator-my)] h-px',
       'bg-[var(--color-dropdown-separator)]',
       className
     )}
@@ -246,7 +246,7 @@ const MenubarCheckboxItem = React.forwardRef<
     )}
     {...props}
   >
-    <span className="absolute left-2 flex items-center justify-center">
+    <span className="absolute left-[var(--spacing-menubar-indicator-left)] flex items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
         <Icon icon={Check} size={14} />
       </MenubarPrimitive.ItemIndicator>
@@ -282,7 +282,7 @@ const MenubarRadioItem = React.forwardRef<
     )}
     {...props}
   >
-    <span className="absolute left-2 flex items-center justify-center">
+    <span className="absolute left-[var(--spacing-menubar-indicator-left)] flex items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
         <Circle size={8} fill="currentColor" />
       </MenubarPrimitive.ItemIndicator>

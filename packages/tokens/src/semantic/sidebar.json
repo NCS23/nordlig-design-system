@@ -17,6 +17,11 @@
       "collapse-padding": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Collapse button padding" }
     }
   },
+  "radius": {
+    "sidebar": {
+      "badge": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Pill-shaped badge (9999px)" }
+    }
+  },
   "font": {
     "sidebar": {
       "label-size":   { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Group label size (12px)" },

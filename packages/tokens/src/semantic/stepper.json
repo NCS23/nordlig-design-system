@@ -16,6 +16,11 @@
       "label-default":    { "$type": "color", "$value": "{color.text.muted}", "$description": "Other step labels" }
     }
   },
+  "radius": {
+    "stepper": {
+      "indicator": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circular indicator (9999px)" }
+    }
+  },
   "sizing": {
     "stepper": {
       "indicator":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "32px indicator diameter" },

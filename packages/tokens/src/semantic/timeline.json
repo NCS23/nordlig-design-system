@@ -18,6 +18,12 @@
       "timestamp":         { "$type": "color", "$value": "{color.text.muted}", "$description": "Item timestamp" }
     }
   },
+  "radius": {
+    "timeline": {
+      "dot":       { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circular dot (9999px)" },
+      "inner-dot": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Circular inner dot (9999px)" }
+    }
+  },
   "spacing": {
     "$description": "Level 4: Timeline component tokens",
     "timeline": {
@@ -25,7 +31,8 @@
       "line-left":  { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px line left offset" },
       "line-top":   { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "32px line top offset" },
       "content-ml": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px content left margin" },
-      "desc-mt":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px description margin top" }
+      "desc-mt":    { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px description margin top" },
+      "desc-text-mt": { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px description text margin top" }
     }
   },
   "sizing": {

@@ -25,7 +25,13 @@
       "padding":       { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Toolbar inner padding" },
       "gap":           { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between items" },
       "btn-padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Button horizontal padding" },
-      "btn-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Button vertical padding" }
+      "btn-padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Button vertical padding" },
+      "separator-mx":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px separator horizontal margin" }
+    }
+  },
+  "sizing": {
+    "toolbar": {
+      "item-icon": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "16px item icon size" }
     }
   },
   "font": {

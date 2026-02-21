@@ -13,6 +13,11 @@
       "gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between stars" }
     }
   },
+  "radius": {
+    "rtg": {
+      "focus": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "4px focus outline radius" }
+    }
+  },
   "sizing": {
     "rtg": {
       "sm": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Star size sm" },

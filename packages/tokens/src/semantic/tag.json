@@ -89,6 +89,11 @@
       "$type": "dimension",
       "$value": "{radius.component.md}",
       "$description": "Tag border radius"
+    },
+    "tag-dismiss": {
+      "$type": "dimension",
+      "$value": "{radius.component.full}",
+      "$description": "Dismiss button border radius (fully round)"
     }
   },
   "sizing": {
@@ -98,7 +103,12 @@
   },
   "spacing": {
     "tag": {
-      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between text and remove icon (4px)" }
+      "gap":        { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between text and remove icon (4px)" },
+      "sm-px":      { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px horizontal padding for sm size" },
+      "sm-py":      { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px vertical padding for sm size" },
+      "md-px":      { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px horizontal padding for md size" },
+      "md-py":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px vertical padding for md size" },
+      "dismiss-p":  { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "2px padding for dismiss button" }
     }
   },
   "font": {

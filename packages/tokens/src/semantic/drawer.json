@@ -14,12 +14,21 @@
     "drawer": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Drawer elevation shadow" }
   },
   "radius": {
-    "drawer": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px drawer radius (large overlay)" }
+    "drawer": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px drawer radius (large overlay)" },
+    "drawer-handle": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Pill-shaped handle bar (9999px)" }
+  },
+  "sizing": {
+    "drawer": {
+      "handle-h": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "6px handle height" },
+      "handle-w": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "48px handle width" }
+    }
   },
   "spacing": {
     "drawer": {
-      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Drawer content padding" },
-      "gap":     { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Drawer section gap" }
+      "padding":   { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Drawer content padding" },
+      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Drawer section gap" },
+      "handle-mt": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px handle top margin" },
+      "footer-pt": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px footer top padding" }
     }
   },
   "font": {

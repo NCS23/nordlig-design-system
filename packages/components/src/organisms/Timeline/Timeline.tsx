@@ -78,14 +78,14 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
           {/* Icon dot */}
           <div
             className={cn(
-              'relative z-10 w-[var(--sizing-timeline-dot)] h-[var(--sizing-timeline-dot)] rounded-full flex items-center justify-center shrink-0',
+              'relative z-10 w-[var(--sizing-timeline-dot)] h-[var(--sizing-timeline-dot)] rounded-[var(--radius-timeline-dot)] flex items-center justify-center shrink-0',
               variantDotStyles[variant]
             )}
           >
             {icon || (
               <div
                 className={cn(
-                  'h-[var(--sizing-timeline-inner-dot)] w-[var(--sizing-timeline-inner-dot)] rounded-full',
+                  'h-[var(--sizing-timeline-inner-dot)] w-[var(--sizing-timeline-inner-dot)] rounded-[var(--radius-timeline-inner-dot)]',
                   variant === 'default'
                     ? 'bg-[var(--color-timeline-inner-dot-default)]'
                     : 'bg-[var(--color-timeline-inner-dot-variant)]'
@@ -105,7 +105,7 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
               {title}
             </h4>
             {description && (
-              <p className="text-[length:var(--font-timeline-desc-size)] text-[var(--color-timeline-description)] mt-0.5">
+              <p className="text-[length:var(--font-timeline-desc-size)] text-[var(--color-timeline-description)] mt-[var(--spacing-timeline-desc-text-mt)]">
                 {description}
               </p>
             )}

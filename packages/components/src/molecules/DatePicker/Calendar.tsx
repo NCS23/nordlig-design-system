@@ -188,7 +188,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
         onKeyDown={handleKeyDown}
       >
         {/* Header: Month/Year + Nav */}
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between mb-[var(--spacing-datepicker-header-mb)]">
           <button
             type="button"
             onClick={() => onMonthChange(subMonths(month, 1))}
@@ -226,7 +226,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
         </div>
 
         {/* Weekday headers */}
-        <div className="grid grid-cols-7 mb-1" role="row">
+        <div className="grid grid-cols-7 mb-[var(--spacing-datepicker-weekday-mb)]" role="row">
           {WEEKDAYS.map((day) => (
             <div
               key={day}

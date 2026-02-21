@@ -24,9 +24,12 @@
   "spacing": {
     "$description": "Level 4: Alert spacing tokens",
     "alert": {
-      "padding":     { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Alert padding all sides (16px)" },
-      "gap":         { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between icon and content (12px)" },
-      "content-gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between title and description (4px)" }
+      "padding":       { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Alert padding all sides (16px)" },
+      "gap":           { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between icon and content (12px)" },
+      "content-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between title and description (4px)" },
+      "icon-mt":       { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "Icon top margin for vertical alignment (2px)" },
+      "close-padding": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Close button padding (4px)" },
+      "title-mb":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Title bottom margin (4px)" }
     }
   },
   "sizing": {

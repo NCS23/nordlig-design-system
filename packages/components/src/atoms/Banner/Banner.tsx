@@ -97,7 +97,7 @@ const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
         {dismissible && (
           <button
             onClick={onDismiss}
-            className="shrink-0 p-1 rounded-[var(--radius-banner-dismiss)] text-[var(--color-banner-dismiss)] hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
+            className="shrink-0 p-[var(--spacing-banner-dismiss-padding)] rounded-[var(--radius-banner-dismiss)] text-[var(--color-banner-dismiss)] hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
             aria-label="Schließen"
           >
             <Icon icon={X} size="sm" />

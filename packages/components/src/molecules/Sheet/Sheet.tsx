@@ -106,8 +106,8 @@ const SheetContent = React.forwardRef<
       {children}
       <DialogPrimitive.Close
         className={cn(
-          'absolute right-4 top-4 inline-flex items-center justify-center',
-          'h-8 w-8 rounded-[var(--radius-component-sm)]',
+          'absolute right-[var(--spacing-sheet-close-inset)] top-[var(--spacing-sheet-close-inset)] inline-flex items-center justify-center',
+          'h-[var(--sizing-sheet-close-size)] w-[var(--sizing-sheet-close-size)] rounded-[var(--radius-component-sm)]',
           'text-[var(--color-sheet-description)]',
           'transition-colors',
           'hover:bg-[var(--color-sheet-border)] hover:text-[var(--color-sheet-title)]',
@@ -128,7 +128,7 @@ const SheetHeader = React.forwardRef<HTMLDivElement, SheetHeaderProps>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex flex-col gap-[var(--spacing-sheet-header-gap)] mb-4', className)}
+      className={cn('flex flex-col gap-[var(--spacing-sheet-header-gap)] mb-[var(--spacing-sheet-header-mb)]', className)}
       {...props}
     />
   )
@@ -176,7 +176,7 @@ const SheetFooter = React.forwardRef<HTMLDivElement, SheetFooterProps>(
     <div
       ref={ref}
       className={cn(
-        'flex items-center justify-end gap-[var(--spacing-sheet-footer-gap)] mt-auto pt-4',
+        'flex items-center justify-end gap-[var(--spacing-sheet-footer-gap)] mt-auto pt-[var(--spacing-sheet-footer-pt)]',
         className
       )}
       {...props}

@@ -98,7 +98,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
           className={cn(
             'absolute right-[var(--spacing-pwinput-toggle-inset)] top-1/2 -translate-y-1/2 transition-colors',
             'text-[color:var(--color-pwinput-toggle)] hover:text-[color:var(--color-pwinput-toggle-hover)]',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 rounded-sm',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 rounded-[var(--radius-pwinput-toggle)]',
             'disabled:pointer-events-none disabled:opacity-50'
           )}
         >
@@ -115,10 +115,10 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
             aria-valuetext={strengthLabelMap[computedStrength]}
             className="mt-[var(--spacing-pwinput-strength-mt)]"
           >
-            <div className="h-1 w-full rounded-full bg-[var(--color-pwinput-toggle)] opacity-20">
+            <div className="h-1 w-full rounded-[var(--radius-pwinput-strength)] bg-[var(--color-pwinput-toggle)] opacity-20">
               <div
                 className={cn(
-                  'h-full rounded-full transition-all duration-300',
+                  'h-full rounded-[var(--radius-pwinput-strength)] transition-all duration-300',
                   strengthWidthMap[computedStrength],
                   strengthClassMap[computedStrength]
                 )}

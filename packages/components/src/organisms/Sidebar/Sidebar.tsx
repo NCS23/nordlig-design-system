@@ -230,7 +230,7 @@ const SidebarItem = React.forwardRef<HTMLElement, SidebarItemProps>(
         {icon && <span className="shrink-0">{icon}</span>}
         {!collapsed && <span className="truncate">{label}</span>}
         {!collapsed && badge !== undefined && (
-          <span className="ml-auto text-[length:var(--font-sidebar-badge-size)] [font-weight:var(--font-sidebar-badge-weight)] bg-[var(--color-badge-error-bg)] text-[var(--color-badge-error-text)] px-[var(--spacing-sidebar-badge-px)] py-[var(--spacing-sidebar-badge-py)] rounded-full">
+          <span className="ml-auto text-[length:var(--font-sidebar-badge-size)] [font-weight:var(--font-sidebar-badge-weight)] bg-[var(--color-badge-error-bg)] text-[var(--color-badge-error-text)] px-[var(--spacing-sidebar-badge-px)] py-[var(--spacing-sidebar-badge-py)] rounded-[var(--radius-sidebar-badge)]">
             {badge}
           </span>
         )}

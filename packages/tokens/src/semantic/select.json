@@ -45,7 +45,12 @@
       "item-padding-x":   { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px item horizontal padding" },
       "item-padding-y":   { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "8px item vertical padding" },
       "item-gap":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and text in item" },
-      "trigger-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap in trigger between content and chevron (8px)" }
+      "trigger-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap in trigger between content and chevron (8px)" },
+      "search-padding":   { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px search container padding" },
+      "search-icon-left": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "10px search icon left offset" },
+      "search-py":        { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "6px search input vertical padding" },
+      "separator-my":     { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px separator vertical margin" },
+      "group-py":         { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px group label vertical padding" }
     }
   },
   "font": {

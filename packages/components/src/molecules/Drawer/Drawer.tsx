@@ -75,7 +75,7 @@ const DrawerContent = React.forwardRef<
       {...props}
     >
       {showHandle && (
-        <div className="mx-auto mt-4 h-1.5 w-12 shrink-0 rounded-full bg-[var(--color-drawer-handle)]" />
+        <div className="mx-auto mt-[var(--spacing-drawer-handle-mt)] h-[var(--sizing-drawer-handle-h)] w-[var(--sizing-drawer-handle-w)] shrink-0 rounded-[var(--radius-drawer-handle)] bg-[var(--color-drawer-handle)]" />
       )}
       {children}
     </DrawerPrimitive.Content>
@@ -134,7 +134,7 @@ const DrawerFooter = React.forwardRef<HTMLDivElement, DrawerFooterProps>(
     <div
       ref={ref}
       className={cn(
-        'flex items-center justify-end gap-[var(--spacing-drawer-gap)] p-[var(--spacing-drawer-padding)] pt-2',
+        'flex items-center justify-end gap-[var(--spacing-drawer-gap)] p-[var(--spacing-drawer-padding)] pt-[var(--spacing-drawer-footer-pt)]',
         className
       )}
       {...props}

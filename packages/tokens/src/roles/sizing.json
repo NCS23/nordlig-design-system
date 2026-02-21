@@ -37,6 +37,10 @@
         "md": { "$type": "dimension", "$value": "{spacing.xs}" },
         "lg": { "$type": "dimension", "$value": "{spacing.sm}" }
       },
+      "indicator": {
+        "dot-sm": { "$type": "dimension", "$value": "{spacing.base.2}", "$description": "8px small dot (carousel, chart)" },
+        "dot-md": { "$type": "dimension", "$value": "{spacing.base.2-5}", "$description": "10px medium dot (chart legend)" }
+      },
       "border-width": {
         "default": { "$type": "dimension", "$value": "{sizing.border-width.default}" },
         "thick":   { "$type": "dimension", "$value": "{sizing.border-width.thick}" }

@@ -133,12 +133,12 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
           'text-[var(--color-chart-tooltip-text)]',
           'rounded-[var(--radius-chart-tooltip)]',
           '[box-shadow:var(--shadow-chart-tooltip)]',
-          'px-3 py-2 text-[length:var(--font-chart-tooltip-size)]'
+          'px-[var(--spacing-chart-tooltip-px)] py-[var(--spacing-chart-tooltip-py)] text-[length:var(--font-chart-tooltip-size)]'
         )}
         data-testid="chart-tooltip"
       >
         {!hideLabel && formattedLabel && (
-          <div className="mb-1 [font-weight:var(--font-chart-tooltip-weight)]" data-testid="chart-tooltip-label">
+          <div className="mb-[var(--spacing-chart-tooltip-label-mb)] [font-weight:var(--font-chart-tooltip-weight)]" data-testid="chart-tooltip-label">
             {formattedLabel}
           </div>
         )}
@@ -160,10 +160,10 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
                   <span
                     className={cn(
                       'inline-block shrink-0',
-                      indicator === 'dot' && 'h-2.5 w-2.5 rounded-full',
-                      indicator === 'line' && 'h-0.5 w-3.5 rounded-full',
+                      indicator === 'dot' && 'h-[var(--sizing-chart-indicator-dot)] w-[var(--sizing-chart-indicator-dot)] rounded-[var(--radius-chart-indicator)]',
+                      indicator === 'line' && 'h-[var(--sizing-chart-indicator-line-h)] w-[var(--sizing-chart-indicator-line-w)] rounded-[var(--radius-chart-indicator)]',
                       indicator === 'dashed' &&
-                        'h-0.5 w-3.5 rounded-full border-b border-dashed'
+                        'h-[var(--sizing-chart-indicator-line-h)] w-[var(--sizing-chart-indicator-line-w)] rounded-[var(--radius-chart-indicator)] border-b border-dashed'
                     )}
                     style={{
                       backgroundColor:
@@ -204,7 +204,7 @@ const ChartLegendContent = React.forwardRef<HTMLDivElement, ChartLegendContentPr
     return (
       <div
         ref={ref}
-        className={cn('flex items-center justify-center gap-[var(--spacing-chart-legend-gap)] pt-3', className)}
+        className={cn('flex items-center justify-center gap-[var(--spacing-chart-legend-gap)] pt-[var(--spacing-chart-legend-pt)]', className)}
         data-testid="chart-legend"
       >
         {payload.map((entry, index) => {
@@ -220,7 +220,7 @@ const ChartLegendContent = React.forwardRef<HTMLDivElement, ChartLegendContentPr
               data-testid="chart-legend-item"
             >
               <span
-                className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+                className="inline-block h-[var(--sizing-chart-legend-dot)] w-[var(--sizing-chart-legend-dot)] shrink-0 rounded-[var(--radius-chart-legend-dot)]"
                 style={{ backgroundColor: color }}
                 data-testid="chart-legend-color"
               />

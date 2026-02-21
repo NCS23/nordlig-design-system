@@ -2,7 +2,25 @@
   "spacing": {
     "$description": "Level 4: Carousel component tokens",
     "carousel": {
-      "dot-gap": { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between pagination dots (6px)" }
+      "dot-gap":    { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between pagination dots (6px)" },
+      "nav-offset": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Nav button distance from edge (8px)" },
+      "dots-bottom": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Dots distance from bottom (12px)" },
+      "dots-px":    { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Dots container horizontal padding (4px)" },
+      "dots-py":    { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Dots container vertical padding (4px)" }
+    }
+  },
+  "sizing": {
+    "carousel": {
+      "nav-size":  { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Nav button size 40px" },
+      "dot-size":  { "$type": "dimension", "$value": "{sizing.component.indicator.dot-sm}", "$description": "Dot indicator size 8px" }
+    }
+  },
+  "radius": {
+    "carousel": {
+      "nav":     { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Nav button border radius (full)" },
+      "dots":    { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Dots container border radius (full)" },
+      "dot-btn": { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Dot button border radius (full)" },
+      "dot":     { "$type": "dimension", "$value": "{radius.component.full}", "$description": "Dot indicator border radius (full)" }
     }
   }
 }

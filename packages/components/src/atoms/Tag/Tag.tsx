@@ -21,8 +21,8 @@ const tagVariants = cva(
           'bg-[var(--color-tag-bg-info)] text-[var(--color-tag-text-info)] border-[var(--color-tag-border-info)]',
       },
       size: {
-        sm: 'px-2 py-0.5 text-[length:var(--font-tag-sm-size)]',
-        md: 'px-3 py-1 text-[length:var(--font-tag-md-size)]',
+        sm: 'px-[var(--spacing-tag-sm-px)] py-[var(--spacing-tag-sm-py)] text-[length:var(--font-tag-sm-size)]',
+        md: 'px-[var(--spacing-tag-md-px)] py-[var(--spacing-tag-md-py)] text-[length:var(--font-tag-md-size)]',
       },
     },
     defaultVariants: {
@@ -93,7 +93,7 @@ const Tag = React.forwardRef<HTMLSpanElement, TagProps>(
         {onRemove && (
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full p-0.5 hover:bg-[var(--color-interactive-hover-overlay)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-tag-border-focus)] transition-colors"
+            className="inline-flex items-center justify-center rounded-[var(--radius-tag-dismiss)] p-[var(--spacing-tag-dismiss-p)] hover:bg-[var(--color-interactive-hover-overlay)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-tag-border-focus)] transition-colors"
             onClick={handleRemove}
             onKeyDown={handleRemoveKeyDown}
             aria-label="Tag entfernen"
