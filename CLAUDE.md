@@ -77,6 +77,7 @@ Gitea-Issue → Arbeit → Tests → Storybook → Commit → Push → CI gruen 
 
 Kompakte Uebersicht — Details in [PROJEKT_REGELN.md](PROJEKT_REGELN.md):
 
+- [ ] **Design-Philosophie studieren:** [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) gelesen (5 Saeulen + 7 Kriterien)
 - [ ] BACKLOG.md lesen, Story-Status aktualisieren
 - [ ] Gitea-Issue anlegen (Section A oben)
 - [ ] L4-Tokens erstellen, `pnpm build` in `packages/tokens/`, Ergebnis in `tokens.css` pruefen

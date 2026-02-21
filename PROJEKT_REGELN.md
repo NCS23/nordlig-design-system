@@ -115,6 +115,9 @@ Pages       → (in Consumer-Apps, nicht im Design System)
 
 ### Neue Komponente anlegen - Checkliste
 
+> **PFLICHT VOR JEDER GESTALTUNG:** Lies [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) und verinnerliche die 5 Saeulen (Funktionalismus, Lagom, Hygge, Demokratisk, Tidloeshet) sowie die 7 Gestaltungskriterien (A-G). Die Philosophie muss bereits beim Entwurf ins Produkt einfliessen — nicht erst beim Review. Jede Entscheidung (Spacing, Farbe, Typografie, Interaktion) muss gegen die Nordlig-Heuristik geprueft werden: Ist es noetig? Ausgewogen? Einladend? Fuer alle? Zeitlos?
+
+- [ ] **0. Design-Philosophie studieren:** [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) gelesen, 5 Saeulen + 7 Kriterien verstanden
 - [ ] **1. Token-Check:** Prüfe ob alle Tokens existieren
   - [ ] Level 4 Semantic Token-Datei erstellt
   - [ ] Fehlende Level 3 Roles ergänzt
