@@ -4192,7 +4192,7 @@ Vollstaendiger Color-Picker mit 2D-Saturation/Brightness-Feld, Hue-Slider, optio
 - ✅ Focus-Ring: focus-visible:outline-none + ring-2 + ring-offset-1 (System-Pattern)
 
 ### UX Review
-5 Critical + 7 Major Findings — alle behoben. Siehe DESIGN_UX_REVIEW.md Abschnitt 10.3.
+5 Critical + 7 Major Findings — alle behoben. Siehe docs/reviews/2026-02-14-design-ux-review.md Abschnitt 10.3.
 
 **Tests:** 27 | **Stories:** 7
 

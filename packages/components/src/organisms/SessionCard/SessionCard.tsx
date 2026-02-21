@@ -2,6 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 import { Skeleton, SkeletonKeyframes } from '../../atoms/Skeleton/Skeleton';
+import { Card } from '../../atoms/Card';
 
 /**
  * Typ für Trainingssitzungsdaten
@@ -34,12 +35,12 @@ export interface SessionData {
  * Styling-Varianten für die SessionCard
  */
 const sessionCardVariants = cva(
-  'relative rounded-[var(--radius-session-card)] border border-[var(--color-session-card-border)] bg-[var(--color-session-card-bg)] [box-shadow:var(--shadow-session-card-default)] transition-all duration-200',
+  'relative transition-all duration-200',
   {
     variants: {
       size: {
-        default: 'p-[var(--spacing-session-card-padding)]',
-        compact: 'p-[var(--spacing-session-card-padding)]'
+        default: '',
+        compact: ''
       },
       state: {
         default: '',
@@ -82,7 +83,11 @@ const HrZoneBar: React.FC<{ zones?: SessionData['hrZones']; totalDuration: numbe
       <div className="flex items-center justify-between mb-[var(--spacing-session-card-zone-header-mb)]">
         <span className="text-[length:var(--font-session-card-text-size)] [font-weight:var(--font-session-card-value-weight)] text-[var(--color-session-card-text-secondary)]">Herzfrequenzzonen</span>
       </div>
-      <div className="h-2 rounded-[var(--radius-full)] bg-[var(--color-session-card-zone-bg)] overflow-hidden flex">
+      <div
+        className="h-2 rounded-[var(--radius-full)] bg-[var(--color-session-card-zone-bg)] overflow-hidden flex"
+        role="img"
+        aria-label={`Herzfrequenzzonen: ${zoneData.map(z => `${z.name} ${z.duration}min`).join(', ')}`}
+      >
         {zoneData.map((zone, index) => {
           const percentage = totalDuration > 0 ? (zone.duration / totalDuration) * 100 : 0;
           return (
@@ -93,7 +98,7 @@ const HrZoneBar: React.FC<{ zones?: SessionData['hrZones']; totalDuration: numbe
                 width: `${percentage}%`,
                 backgroundColor: `var(${zoneColors[index]})`
               }}
-              title={`${zone.name}: ${zone.duration}min`}
+              aria-hidden="true"
             />
           );
         })}
@@ -239,20 +244,24 @@ const SessionCard = React.forwardRef<HTMLDivElement, SessionCardProps>(
 
     if (loading) {
       return (
-        <div
+        <Card
           ref={ref}
+          elevation="raised"
+          padding="normal"
           className={cn(sessionCardVariants({ size, state: finalState }), className)}
           {...props}
         >
           <SessionCardSkeleton />
-        </div>
+        </Card>
       );
     }
 
     if (error) {
       return (
-        <div
+        <Card
           ref={ref}
+          elevation="raised"
+          padding="normal"
           className={cn(sessionCardVariants({ size, state: finalState }), className)}
           {...props}
         >
@@ -262,7 +271,7 @@ const SessionCard = React.forwardRef<HTMLDivElement, SessionCardProps>(
               <div className="text-[length:var(--font-session-card-hint-size)] text-[var(--color-session-card-text-secondary)]">{error}</div>
             </div>
           </div>
-        </div>
+        </Card>
       );
     }
 
@@ -280,8 +289,11 @@ const SessionCard = React.forwardRef<HTMLDivElement, SessionCardProps>(
     };
 
     return (
-      <div
+      <Card
         ref={ref}
+        elevation="raised"
+        padding="normal"
+        hoverable={!!onClick}
         className={cn(sessionCardVariants({ size, state: finalState }), className)}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
@@ -322,7 +334,7 @@ const SessionCard = React.forwardRef<HTMLDivElement, SessionCardProps>(
           metrics={sessionData.metrics}
           distance={sessionData.distance}
         />
-      </div>
+      </Card>
     );
   }
 );

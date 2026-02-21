@@ -1,9 +1,7 @@
 {
   "color": {
-    "$description": "Level 4: StatCard component tokens",
+    "$description": "Level 4: StatCard component tokens (Shell kommt von Card-Atom)",
     "statcard": {
-      "bg":             { "$type": "color", "$value": "{color.bg.paper}", "$description": "Card background" },
-      "border":         { "$type": "color", "$value": "{color.border.muted}", "$description": "Default border" },
       "text-primary":   { "$type": "color", "$value": "{color.text.base}", "$description": "Main value text" },
       "text-secondary": { "$type": "color", "$value": "{color.text.muted}", "$description": "Title, unit, description" },
       "border-success": { "$type": "color", "$value": "{color.border.success}", "$description": "Success variant left accent" },
@@ -14,16 +12,9 @@
       "trend-neutral":  { "$type": "color", "$value": "{color.text.muted}", "$description": "Neutral trend indicator" }
     }
   },
-  "shadow": {
-    "statcard": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Default card shadow (matches Card.raised)" }
-  },
-  "radius": {
-    "statcard": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
-  },
   "spacing": {
     "$description": "Level 4: StatCard component tokens",
     "statcard": {
-      "padding":          { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px card padding" },
       "value-mt":         { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "8px above value" },
       "trend-mt":         { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px above trend" },
       "trend-gap":        { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px trend arrow-text gap" },

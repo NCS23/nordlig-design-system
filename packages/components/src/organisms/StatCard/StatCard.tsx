@@ -3,9 +3,10 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
+import { Card } from '../../atoms/Card';
 
 const statCardVariants = cva(
-  'rounded-[var(--radius-statcard)] border border-[var(--color-statcard-border)] bg-[var(--color-statcard-bg)] p-[var(--spacing-statcard-padding)] [box-shadow:var(--shadow-statcard)]',
+  '',
   {
     variants: {
       variant: {
@@ -106,9 +107,11 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
     ref
   ) => {
     return (
-      <div
+      <Card
         ref={ref}
-        className={cn(statCardVariants({ variant, className }))}
+        elevation="raised"
+        padding="normal"
+        className={cn(statCardVariants({ variant }), className)}
         {...props}
       >
         {/* Title row */}
@@ -148,7 +151,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
             {description}
           </p>
         )}
-      </div>
+      </Card>
     );
   }
 );

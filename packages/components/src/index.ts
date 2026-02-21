@@ -395,7 +395,7 @@ export {
   type CardHeaderProps,
   type CardBodyProps,
   type CardFooterProps,
-} from './organisms/Card';
+} from './atoms/Card';
 
 export {
   Table,

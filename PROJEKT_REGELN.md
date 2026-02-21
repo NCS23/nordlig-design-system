@@ -1048,7 +1048,7 @@ Das Review ist Teil der bestehenden "Neue Komponente anlegen - Checkliste" und w
 - [COMPONENT_GUIDELINES.md](docs/COMPONENT_GUIDELINES.md) - Atomic Design Details
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Für externe Contributors
 - [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) - Verbindliche Gestaltungsprinzipien (Skandinavisches Design)
-- [DESIGN_UX_REVIEW.md](DESIGN_UX_REVIEW.md) - Design & UX Review (14.02.2026)
+- [Design & UX Review (14.02.2026)](docs/reviews/2026-02-14-design-ux-review.md)
 
 ---
 

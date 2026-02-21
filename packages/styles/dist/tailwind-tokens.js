@@ -686,8 +686,6 @@ export const ColorSelectEmptyText = "#475569"; // No results text
 export const ColorSelectCheckboxText = "#ffffff"; // Checkbox checked text (white)
 export const ColorSelectCheckboxBg = "#f8fafc"; // Checkbox unchecked background
 export const ColorSeparator = "#e2e8f0"; // Separator line color
-export const ColorSessionCardBg = "#f8fafc"; // Card background
-export const ColorSessionCardBorder = "#e2e8f0"; // Default border
 export const ColorSessionCardBorderHover = "#cbd5e1"; // Hover border
 export const ColorSessionCardBgHover = "#f1f5f9"; // Hover background
 export const ColorSessionCardBgError = "#fef2f2"; // Error state background
@@ -719,8 +717,6 @@ export const ColorSliderThumbHover = "#0284c7"; // Slider thumb hover border
 export const ColorSpinnerPrimary = "#0ea5e9";
 export const ColorSpinnerTrack = "#e2e8f0";
 export const ColorSpinnerLabel = "#475569";
-export const ColorStatcardBg = "#f8fafc"; // Card background
-export const ColorStatcardBorder = "#e2e8f0"; // Default border
 export const ColorStatcardTextPrimary = "#0f172a"; // Main value text
 export const ColorStatcardTextSecondary = "#475569"; // Title, unit, description
 export const ColorStatcardBorderSuccess = "#10b981"; // Success variant left accent
@@ -914,13 +910,11 @@ export const RadiusRszHandle = "0.125rem"; // Handle grip radius
 export const RadiusScrollareaThumb = "9999px"; // Scrollbar thumb radius
 export const RadiusSelectPopover = "0.5rem"; // 8px dropdown radius
 export const RadiusSelectItem = "0.375rem"; // 6px item radius
-export const RadiusSessionCard = "0.5rem"; // Card border radius
 export const RadiusSheet = "0.75rem"; // 12px sheet radius (large overlay)
 export const RadiusSkeleton = "0.375rem";
 export const RadiusSkeletonCircle = "9999px";
 export const RadiusSliderTrack = "9999px"; // Slider track radius
 export const RadiusSliderThumb = "9999px"; // Slider thumb radius
-export const RadiusStatcard = "0.5rem"; // Card border radius
 export const RadiusTabsList = "0.5rem"; // 8px pills list radius
 export const RadiusTabsTrigger = "0.375rem"; // 6px pills trigger radius
 export const RadiusTag = "0.375rem"; // Tag border radius
@@ -997,14 +991,10 @@ export const ShadowPopover =
   "0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)"; // Elevated popover shadow
 export const ShadowSelectPopover =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Dropdown elevation
-export const ShadowSessionCardDefault =
-  "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)"; // Default card shadow
 export const ShadowSessionCardHover =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Hover card shadow
 export const ShadowSheet =
   "0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)"; // Sheet panel shadow
-export const ShadowStatcard =
-  "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)"; // Default card shadow (matches Card.raised)
 export const ShadowSwitchThumb =
   "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)"; // Thumb shadow
 export const ShadowTabsTriggerActive =
@@ -1203,8 +1193,7 @@ export const SpacingSelectItemPaddingY = "8px"; // 8px item vertical padding
 export const SpacingSelectItemGap = "8px"; // Gap between icon and text in item
 export const SpacingSelectTriggerGap = "8px"; // Gap in trigger between content and chevron (8px)
 export const SpacingSessionCardGridGap = "16px"; // Gap between grid items (16px)
-export const SpacingSessionCardPadding = "32px"; // Card padding (24px)
-export const SpacingSessionCardSectionGap = "16px"; // Gap between sections — mt-4/mb-4 (16px)
+export const SpacingSessionCardSectionGap = "16px"; // Gap between sections (16px)
 export const SpacingSessionCardZoneHeaderMb = "12px"; // Zone header bottom margin (8px)
 export const SpacingSessionCardZoneLabelMt = "4px"; // Zone label top margin (4px)
 export const SpacingSessionCardErrorPadding = "32px"; // Error state padding (32px)
@@ -1228,7 +1217,6 @@ export const SpacingSidebarBadgePy = "2px"; // Badge vertical padding
 export const SpacingSidebarCollapsePadding = "4px"; // Collapse button padding
 export const SpacingSliderGap = "12px"; // Gap between slider and value display (12px)
 export const SpacingSpinnerGap = "8px"; // Gap between spinner and label (8px)
-export const SpacingStatcardPadding = "24px"; // 24px card padding
 export const SpacingStatcardValueMt = "8px"; // 8px above value
 export const SpacingStatcardTrendMt = "4px"; // 4px above trend
 export const SpacingStatcardTrendGap = "4px"; // 4px trend arrow-text gap

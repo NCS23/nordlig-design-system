@@ -132,7 +132,8 @@ describe('SessionCard', () => {
     const { container } = render(<SessionCard sessionData={mockSessionData} size="compact" />);
 
     const card = container.firstElementChild as HTMLElement;
-    expect(card).toHaveClass('p-[var(--spacing-session-card-padding)]');
+    // Card-Atom liefert padding via elevation="raised" padding="normal"
+    expect(card).toHaveClass('p-[var(--spacing-card-padding-normal)]');
   });
 
   it('wendet Interactive-State bei onClick an', () => {

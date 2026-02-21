@@ -61,7 +61,7 @@ const a11yStories: A11yStoryConfig[] = [
   { level: 'molecules', component: 'Textarea', stories: ['default'] },
 
   // ─── Organisms ────────────────────────────────────────────────────────────
-  { level: 'organisms', component: 'Card', stories: ['flat'] },
+  { level: 'atoms', component: 'Card', stories: ['flat'] },
   { level: 'organisms', component: 'Table', stories: ['basic'] },
   { level: 'organisms', component: 'Sidebar', stories: ['default'] },
 ];

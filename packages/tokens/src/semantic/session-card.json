@@ -1,9 +1,7 @@
 {
   "color": {
-    "$description": "Level 4: SessionCard component tokens",
+    "$description": "Level 4: SessionCard component tokens (Shell kommt von Card-Atom)",
     "session-card": {
-      "bg":             { "$type": "color", "$value": "{color.bg.paper}", "$description": "Card background" },
-      "border":         { "$type": "color", "$value": "{color.border.muted}", "$description": "Default border" },
       "border-hover":   { "$type": "color", "$value": "{color.border.default}", "$description": "Hover border" },
       "bg-hover":       { "$type": "color", "$value": "{color.bg.surface}", "$description": "Hover background" },
       "bg-error":       { "$type": "color", "$value": "{color.bg.error-subtle}", "$description": "Error state background" },
@@ -24,18 +22,13 @@
   },
   "shadow": {
     "session-card": {
-      "default": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Default card shadow" },
-      "hover":   { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Hover card shadow" }
+      "hover": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Hover card shadow" }
     }
-  },
-  "radius": {
-    "session-card": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Card border radius" }
   },
   "spacing": {
     "session-card": {
-      "grid-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between grid items (16px)" },
-      "padding":    { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Card padding (24px)" },
-      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between sections — mt-4/mb-4 (16px)" },
+      "grid-gap":       { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between grid items (16px)" },
+      "section-gap":    { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between sections (16px)" },
       "zone-header-mb": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Zone header bottom margin (8px)" },
       "zone-label-mt":  { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Zone label top margin (4px)" },
       "error-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Error state padding (32px)" },

@@ -928,8 +928,6 @@
   --color-select-checkbox-text: var(--color-text-on-primary); /** Checkbox checked text (white) */
   --color-select-checkbox-bg: var(--color-bg-paper); /** Checkbox unchecked background */
   --color-separator: var(--color-border-muted); /** Separator line color */
-  --color-session-card-bg: var(--color-bg-paper); /** Card background */
-  --color-session-card-border: var(--color-border-muted); /** Default border */
   --color-session-card-border-hover: var(--color-border-default); /** Hover border */
   --color-session-card-bg-hover: var(--color-bg-surface); /** Hover background */
   --color-session-card-bg-error: var(--color-bg-error-subtle); /** Error state background */
@@ -961,8 +959,6 @@
   --color-spinner-primary: var(--color-interactive-primary);
   --color-spinner-track: var(--color-border-muted);
   --color-spinner-label: var(--color-text-muted);
-  --color-statcard-bg: var(--color-bg-paper); /** Card background */
-  --color-statcard-border: var(--color-border-muted); /** Default border */
   --color-statcard-text-primary: var(--color-text-base); /** Main value text */
   --color-statcard-text-secondary: var(--color-text-muted); /** Title, unit, description */
   --color-statcard-border-success: var(--color-border-success); /** Success variant left accent */
@@ -1132,13 +1128,11 @@
   --radius-scrollarea-thumb: var(--radius-component-full); /** Scrollbar thumb radius */
   --radius-select-popover: var(--radius-component-lg); /** 8px dropdown radius */
   --radius-select-item: var(--radius-component-md); /** 6px item radius */
-  --radius-session-card: var(--radius-component-lg); /** Card border radius */
   --radius-sheet: var(--radius-component-xl); /** 12px sheet radius (large overlay) */
   --radius-skeleton: var(--radius-component-md);
   --radius-skeleton-circle: var(--radius-component-full);
   --radius-slider-track: var(--radius-component-full); /** Slider track radius */
   --radius-slider-thumb: var(--radius-component-full); /** Slider thumb radius */
-  --radius-statcard: var(--radius-component-lg); /** Card border radius */
   --radius-tabs-list: var(--radius-component-lg); /** 8px pills list radius */
   --radius-tabs-trigger: var(--radius-component-md); /** 6px pills trigger radius */
   --radius-tag: var(--radius-component-md); /** Tag border radius */
@@ -1168,10 +1162,8 @@
   --shadow-shell-header: var(--shadow-elevation-low); /** Header elevation shadow */
   --shadow-popover: var(--shadow-elevation-high); /** Elevated popover shadow */
   --shadow-select-popover: var(--shadow-elevation-medium); /** Dropdown elevation */
-  --shadow-session-card-default: var(--shadow-elevation-low); /** Default card shadow */
   --shadow-session-card-hover: var(--shadow-elevation-medium); /** Hover card shadow */
   --shadow-sheet: var(--shadow-elevation-overlay); /** Sheet panel shadow */
-  --shadow-statcard: var(--shadow-elevation-low); /** Default card shadow (matches Card.raised) */
   --shadow-switch-thumb: var(--shadow-elevation-low); /** Thumb shadow */
   --shadow-tabs-trigger-active: var(--shadow-elevation-low); /** Pills active tab shadow */
   --shadow-tpick-popover: var(--shadow-elevation-medium); /** Popover elevation */
@@ -1317,8 +1309,7 @@
   --spacing-select-item-gap: var(--spacing-component-gap-sm); /** Gap between icon and text in item */
   --spacing-select-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
   --spacing-session-card-grid-gap: var(--spacing-component-gap-lg); /** Gap between grid items (16px) */
-  --spacing-session-card-padding: var(--spacing-component-padding-xl); /** Card padding (24px) */
-  --spacing-session-card-section-gap: var(--spacing-component-gap-lg); /** Gap between sections — mt-4/mb-4 (16px) */
+  --spacing-session-card-section-gap: var(--spacing-component-gap-lg); /** Gap between sections (16px) */
   --spacing-session-card-zone-header-mb: var(--spacing-component-gap-md); /** Zone header bottom margin (8px) */
   --spacing-session-card-zone-label-mt: var(--spacing-component-gap-xs); /** Zone label top margin (4px) */
   --spacing-session-card-error-padding: var(--spacing-component-padding-xl); /** Error state padding (32px) */
@@ -1341,7 +1332,6 @@
   --spacing-sidebar-collapse-padding: var(--spacing-component-gap-xs); /** Collapse button padding */
   --spacing-slider-gap: var(--spacing-component-gap-md); /** Gap between slider and value display (12px) */
   --spacing-spinner-gap: var(--spacing-component-gap-sm); /** Gap between spinner and label (8px) */
-  --spacing-statcard-padding: var(--spacing-component-padding-lg); /** 24px card padding */
   --spacing-statcard-value-mt: var(--spacing-component-gap-sm); /** 8px above value */
   --spacing-statcard-trend-mt: var(--spacing-component-gap-xs); /** 4px above trend */
   --spacing-statcard-trend-gap: var(--spacing-component-gap-xs); /** 4px trend arrow-text gap */

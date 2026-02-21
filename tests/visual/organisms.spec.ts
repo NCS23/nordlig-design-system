@@ -9,7 +9,6 @@ interface StoryConfig {
 }
 
 const organismStories: StoryConfig[] = [
-  { component: 'Card',     stories: ['flat', 'raised', 'elevated', 'all-elevations', 'all-paddings'] },
   { component: 'Table',    stories: ['basic', 'striped', 'all-densities'] },
   { component: 'Command',  stories: ['default', 'with-groups'] },
   // Neue Komponenten (Completion Package)

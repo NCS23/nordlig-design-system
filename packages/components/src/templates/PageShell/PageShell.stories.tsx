@@ -1,4 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { LayoutDashboard, FolderKanban, Settings, HelpCircle } from 'lucide-react';
+import { Icon } from '../../atoms/Icon';
+import {
+  Sidebar,
+  SidebarContent as SidebarContentComponent,
+  SidebarGroup,
+  SidebarItem,
+} from '../../organisms/Sidebar';
 import { PageShell } from './PageShell';
 
 const meta: Meta<typeof PageShell> = {
@@ -16,7 +24,7 @@ type Story = StoryObj<typeof PageShell>;
 
 const PlaceholderBlock = ({ label, className = '' }: { label: string; className?: string }) => (
   <div
-    className={`rounded-[var(--radius-component-lg,8px)] border border-dashed border-[var(--color-border-muted)] bg-[var(--color-bg-surface)] p-6 text-center text-sm text-[var(--color-text-muted)] ${className}`}
+    className={`rounded-[var(--radius-component-lg,8px)] border border-dashed border-[var(--color-border-muted)] bg-[var(--color-bg-surface)] p-6 text-center text-[length:var(--font-component-size-sm)] text-[var(--color-text-muted)] ${className}`}
   >
     {label}
   </div>
@@ -28,7 +36,7 @@ const HeaderContent = () => (
   <>
     <div className="flex items-center gap-2">
       <div className="h-7 w-7 rounded-[var(--radius-component-md,6px)] bg-[var(--color-bg-primary)]" />
-      <span className="text-sm font-semibold text-[var(--color-text-base)]">App Name</span>
+      <span className="text-[length:var(--font-component-size-sm)] [font-weight:var(--font-component-weight-semibold)] text-[var(--color-text-base)]">App Name</span>
     </div>
     <div className="ml-auto flex items-center gap-2">
       <div className="h-8 w-8 rounded-full bg-[var(--color-bg-surface)]" />
@@ -38,17 +46,17 @@ const HeaderContent = () => (
 
 /* ─── Sidebar ─────────────────────────────────────────────────────────────── */
 
-const SidebarContent = () => (
-  <nav className="flex flex-col gap-1 p-2">
-    {['Dashboard', 'Projekte', 'Einstellungen', 'Hilfe'].map((item) => (
-      <div
-        key={item}
-        className="rounded-[var(--radius-component-md,6px)] px-3 py-2 text-sm text-[var(--color-text-muted)]"
-      >
-        {item}
-      </div>
-    ))}
-  </nav>
+const SidebarNav = () => (
+  <Sidebar aria-label="Seitennavigation">
+    <SidebarContentComponent>
+      <SidebarGroup label="Navigation">
+        <SidebarItem icon={<Icon icon={LayoutDashboard} size={18} />} label="Dashboard" active />
+        <SidebarItem icon={<Icon icon={FolderKanban} size={18} />} label="Projekte" />
+        <SidebarItem icon={<Icon icon={Settings} size={18} />} label="Einstellungen" />
+        <SidebarItem icon={<Icon icon={HelpCircle} size={18} />} label="Hilfe" />
+      </SidebarGroup>
+    </SidebarContentComponent>
+  </Sidebar>
 );
 
 /* ─── Stories ─────────────────────────────────────────────────────────────── */
@@ -71,7 +79,7 @@ export const Default: Story = {
         </PageShell.Content>
       </PageShell.Body>
       <PageShell.Footer>
-        <span className="text-xs text-[var(--color-text-muted)]">Footer-Inhalt</span>
+        <span className="text-[length:var(--font-component-size-xs)] text-[var(--color-text-muted)]">Footer-Inhalt</span>
       </PageShell.Footer>
     </PageShell>
   ),
@@ -86,7 +94,7 @@ export const MitSidebar: Story = {
       </PageShell.Header>
       <PageShell.Body>
         <PageShell.Sidebar>
-          <SidebarContent />
+          <SidebarNav />
         </PageShell.Sidebar>
         <PageShell.Content>
           <div className="flex flex-col gap-4">
@@ -96,7 +104,7 @@ export const MitSidebar: Story = {
         </PageShell.Content>
       </PageShell.Body>
       <PageShell.Footer>
-        <span className="text-xs text-[var(--color-text-muted)]">Footer-Inhalt</span>
+        <span className="text-[length:var(--font-component-size-xs)] text-[var(--color-text-muted)]">Footer-Inhalt</span>
       </PageShell.Footer>
     </PageShell>
   ),
