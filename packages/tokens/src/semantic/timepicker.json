@@ -15,7 +15,7 @@
   },
   "shadow": {
     "tpick": {
-      "popover": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Popover elevation" }
+      "popover": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Popover elevation" }
     }
   },
   "radius": {

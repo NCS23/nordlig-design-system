@@ -16,9 +16,9 @@
   },
   "shadow": {
     "card": {
-      "raised":   { "$type": "shadow", "$value": "{shadow.elevation.low}" },
-      "elevated": { "$type": "shadow", "$value": "{shadow.elevation.medium}" },
-      "hover":    { "$type": "shadow", "$value": "{shadow.elevation.high}" }
+      "raised":   { "$type": "shadow", "$value": "{shadow.elevation.raised}" },
+      "elevated": { "$type": "shadow", "$value": "{shadow.elevation.floating}" },
+      "hover":    { "$type": "shadow", "$value": "{shadow.elevation.floating}" }
     }
   },
   "radius": {

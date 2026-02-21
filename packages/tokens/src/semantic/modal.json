@@ -13,7 +13,7 @@
   },
   "shadow": {
     "modal": {
-      "content": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Prominent modal shadow" }
+      "content": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Prominent modal shadow" }
     }
   },
   "radius": {

@@ -30,7 +30,7 @@
   },
   "shadow": {
     "select": {
-      "popover": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Dropdown elevation" }
+      "popover": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Dropdown elevation" }
     }
   },
   "radius": {

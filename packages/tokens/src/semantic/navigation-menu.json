@@ -12,7 +12,7 @@
   },
   "shadow": {
     "nav": {
-      "dropdown": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Dropdown panel shadow" }
+      "dropdown": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Dropdown panel shadow" }
     }
   },
   "radius": {

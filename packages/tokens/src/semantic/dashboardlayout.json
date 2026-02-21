@@ -24,7 +24,7 @@
   },
   "shadow": {
     "dashboard": {
-      "header": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Header elevation shadow" }
+      "header": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Header elevation shadow" }
     }
   }
 }

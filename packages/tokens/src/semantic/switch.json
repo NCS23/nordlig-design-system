@@ -34,7 +34,7 @@
   },
   "shadow": {
     "switch": {
-      "thumb": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Thumb shadow" }
+      "thumb": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Thumb shadow" }
     }
   }
 }

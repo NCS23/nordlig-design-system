@@ -16,7 +16,7 @@
   },
   "shadow": {
     "dropdown": {
-      "menu": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Menu elevation" }
+      "menu": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Menu elevation" }
     }
   },
   "radius": {

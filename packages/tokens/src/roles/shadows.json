@@ -2,11 +2,9 @@
   "shadow": {
     "$description": "Level 3: Role shadow tokens — functional elevation roles",
     "elevation": {
-      "low":    { "$type": "shadow", "$value": "{shadow.sm}" },
-      "medium": { "$type": "shadow", "$value": "{shadow.md}" },
-      "high":    { "$type": "shadow", "$value": "{shadow.lg}" },
-      "overlay": { "$type": "shadow", "$value": "{shadow.xl}", "$description": "Modal/dialog content shadow" },
-      "key":     { "$type": "shadow", "$value": "{shadow.xs}", "$description": "Subtle key/pressed element shadow (Kbd)" }
+      "$description": "3 Stufen: flat (kein Shadow), raised (subtil), floating (deutlich)",
+      "raised":   { "$type": "shadow", "$value": "{shadow.sm}", "$description": "Subtle lift for cards, headers, tabs" },
+      "floating": { "$type": "shadow", "$value": "{shadow.md}", "$description": "Floating elements: popovers, dropdowns, modals, tooltips" }
     }
   }
 }

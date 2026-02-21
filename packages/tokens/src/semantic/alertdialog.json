@@ -16,7 +16,7 @@
     }
   },
   "shadow": {
-    "alertdlg": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "AlertDialog panel shadow" }
+    "alertdlg": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "AlertDialog panel shadow" }
   },
   "radius": {
     "alertdlg": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px AlertDialog radius (large overlay)" }

@@ -14,7 +14,7 @@
     }
   },
   "shadow": {
-    "command": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Command palette shadow" }
+    "command": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Command palette shadow" }
   },
   "radius": {
     "command": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Command palette border radius" }

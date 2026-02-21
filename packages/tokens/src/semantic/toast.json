@@ -18,7 +18,7 @@
     }
   },
   "shadow": {
-    "toast": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Medium elevation shadow" }
+    "toast": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Medium elevation shadow" }
   },
   "radius": {
     "toast": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px rounded corners" }

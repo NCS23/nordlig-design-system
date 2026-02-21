@@ -21,7 +21,7 @@
   },
   "shadow": {
     "tabs": {
-      "trigger-active": { "$type": "shadow", "$value": "{shadow.elevation.low}", "$description": "Pills active tab shadow" }
+      "trigger-active": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Pills active tab shadow" }
     }
   },
   "radius": {

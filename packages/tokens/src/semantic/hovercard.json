@@ -12,7 +12,7 @@
     }
   },
   "shadow": {
-    "hovercard": { "$type": "shadow", "$value": "{shadow.elevation.high}", "$description": "HoverCard shadow" }
+    "hovercard": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "HoverCard shadow" }
   },
   "radius": {
     "hovercard": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "HoverCard border radius" }

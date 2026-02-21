@@ -196,11 +196,14 @@ export const MobileView: Story = {
 
 export const WithLogo: Story = {
   render: () => (
-    <AuthLayout>
-      <div className="mb-6 flex items-center gap-3">
-        <img src="/bildmarke.svg" alt="" className="h-10 w-auto" />
-        <Heading level={3}>Nordlig Design System</Heading>
-      </div>
+    <AuthLayout
+      logo={
+        <div className="flex items-center gap-3">
+          <img src="/bildmarke.svg" alt="" className="h-10 w-auto" />
+          <Heading level={3}>Nordlig Design System</Heading>
+        </div>
+      }
+    >
       <Heading level={2} className="mb-6">
         Willkommen zurueck
       </Heading>

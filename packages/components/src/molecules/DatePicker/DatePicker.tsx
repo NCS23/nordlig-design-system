@@ -162,7 +162,7 @@ const DatePicker = React.forwardRef<HTMLInputElement, DatePickerProps>(
                 'bg-[var(--color-datepicker-popover-bg)]',
                 'border border-[var(--color-datepicker-popover-border)]',
                 'rounded-[var(--radius-datepicker-popover)]',
-                'shadow-[var(--shadow-datepicker-popover)]',
+                '[box-shadow:var(--shadow-datepicker-popover)]',
                 'animate-in fade-in-0 zoom-in-95'
               )}
             >

@@ -13,7 +13,7 @@
     "sheet": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px sheet radius (large overlay)" }
   },
   "shadow": {
-    "sheet": { "$type": "shadow", "$value": "{shadow.elevation.overlay}", "$description": "Sheet panel shadow" }
+    "sheet": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Sheet panel shadow" }
   },
   "spacing": {
     "sheet": {

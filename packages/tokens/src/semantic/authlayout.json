@@ -18,7 +18,7 @@
     "auth": {
       "card-padding": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Card inner padding (32px)" },
       "logo-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap between logo and card (16px)" },
-      "footer-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between card and footer (12px)" }
+      "footer-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.xl}", "$description": "Gap between card and footer (32px)" }
     }
   },
   "radius": {
@@ -28,7 +28,7 @@
   },
   "shadow": {
     "auth": {
-      "card": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Card elevation shadow" }
+      "card": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Card elevation shadow" }
     }
   }
 }

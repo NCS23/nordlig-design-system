@@ -8,7 +8,7 @@
     }
   },
   "shadow": {
-    "kbd": { "$type": "shadow", "$value": "{shadow.elevation.key}", "$description": "Key pressed effect shadow" }
+    "kbd": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Key pressed effect shadow" }
   },
   "radius": {
     "kbd": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Key border radius" }

@@ -39,17 +39,17 @@
   --color-base-zinc-800: #27272a;
   --color-base-zinc-900: #18181b;
   --color-base-zinc-950: #09090b;
-  --color-base-sky-50: #f0f9ff;
-  --color-base-sky-100: #e0f2fe;
-  --color-base-sky-200: #bae6fd;
-  --color-base-sky-300: #7dd3fc;
-  --color-base-sky-400: #38bdf8;
-  --color-base-sky-500: #0ea5e9;
-  --color-base-sky-600: #0284c7;
-  --color-base-sky-700: #0369a1;
-  --color-base-sky-800: #075985;
-  --color-base-sky-900: #0c4a6e;
-  --color-base-sky-950: #082f49;
+  --color-base-sky-50: #f5f7f8;
+  --color-base-sky-100: #e8eef1;
+  --color-base-sky-200: #cddce4;
+  --color-base-sky-300: #9fc2d4;
+  --color-base-sky-400: #63a3c4;
+  --color-base-sky-500: #34799c;
+  --color-base-sky-600: #2a6887;
+  --color-base-sky-700: #23536b;
+  --color-base-sky-800: #1e4456;
+  --color-base-sky-900: #1a3746;
+  --color-base-sky-950: #13252f;
   --color-base-cyan-50: #ecfeff;
   --color-base-cyan-100: #cffafe;
   --color-base-cyan-200: #a5f3fc;
@@ -487,11 +487,8 @@
   --radius-component-lg: var(--radius-lg);
   --radius-component-xl: var(--radius-xl); /** 12px — Modale, Panels, grosse Overlays */
   --radius-component-full: var(--radius-full);
-  --shadow-elevation-low: var(--shadow-sm);
-  --shadow-elevation-medium: var(--shadow-md);
-  --shadow-elevation-high: var(--shadow-lg);
-  --shadow-elevation-overlay: var(--shadow-xl); /** Modal/dialog content shadow */
-  --shadow-elevation-key: var(--shadow-xs); /** Subtle key/pressed element shadow (Kbd) */
+  --shadow-elevation-raised: var(--shadow-sm); /** Subtle lift for cards, headers, tabs */
+  --shadow-elevation-floating: var(--shadow-md); /** Floating elements: popovers, dropdowns, modals, tooltips */
   --spacing-component-padding-xs: var(--spacing-xs);
   --spacing-component-padding-sm: var(--spacing-sm);
   --spacing-component-padding-md: var(--spacing-md);
@@ -502,6 +499,7 @@
   --spacing-component-gap-sm: var(--spacing-xs);
   --spacing-component-gap-md: var(--spacing-sm);
   --spacing-component-gap-lg: var(--spacing-md);
+  --spacing-component-gap-xl: var(--spacing-xl);
   --spacing-layout-gutter: var(--spacing-lg);
   --spacing-layout-section: var(--spacing-2xl);
   --spacing-emptystate-padding-y: var(--spacing-2xl); /** 48px vertical padding */
@@ -1143,32 +1141,32 @@
   --radius-toolbar-bar: var(--radius-component-md); /** Toolbar container radius */
   --radius-toolbar-item: var(--radius-component-sm); /** Button/toggle item radius */
   --radius-tooltip: var(--radius-component-md); /** 6px rounded corners */
-  --shadow-alertdlg: var(--shadow-elevation-overlay); /** AlertDialog panel shadow */
-  --shadow-auth-card: var(--shadow-elevation-medium); /** Card elevation shadow */
-  --shadow-card-raised: var(--shadow-elevation-low);
-  --shadow-card-elevated: var(--shadow-elevation-medium);
-  --shadow-card-hover: var(--shadow-elevation-high);
-  --shadow-chart-tooltip: var(--shadow-elevation-medium); /** Chart tooltip shadow */
-  --shadow-command: var(--shadow-elevation-overlay); /** Command palette shadow */
-  --shadow-dashboard-header: var(--shadow-elevation-low); /** Header elevation shadow */
-  --shadow-datepicker-popover: var(--shadow-elevation-medium); /** Popover elevation */
-  --shadow-dialog: var(--shadow-elevation-overlay); /** Dialog panel shadow */
-  --shadow-drawer: var(--shadow-elevation-overlay); /** Drawer elevation shadow */
-  --shadow-dropdown-menu: var(--shadow-elevation-medium); /** Menu elevation */
-  --shadow-hovercard: var(--shadow-elevation-high); /** HoverCard shadow */
-  --shadow-kbd: var(--shadow-elevation-key); /** Key pressed effect shadow */
-  --shadow-modal-content: var(--shadow-elevation-overlay); /** Prominent modal shadow */
-  --shadow-nav-dropdown: var(--shadow-elevation-medium); /** Dropdown panel shadow */
-  --shadow-shell-header: var(--shadow-elevation-low); /** Header elevation shadow */
-  --shadow-popover: var(--shadow-elevation-high); /** Elevated popover shadow */
-  --shadow-select-popover: var(--shadow-elevation-medium); /** Dropdown elevation */
-  --shadow-session-card-hover: var(--shadow-elevation-medium); /** Hover card shadow */
-  --shadow-sheet: var(--shadow-elevation-overlay); /** Sheet panel shadow */
-  --shadow-switch-thumb: var(--shadow-elevation-low); /** Thumb shadow */
-  --shadow-tabs-trigger-active: var(--shadow-elevation-low); /** Pills active tab shadow */
-  --shadow-tpick-popover: var(--shadow-elevation-medium); /** Popover elevation */
-  --shadow-toast: var(--shadow-elevation-medium); /** Medium elevation shadow */
-  --shadow-tooltip: var(--shadow-elevation-medium); /** Tooltip elevation */
+  --shadow-alertdlg: var(--shadow-elevation-floating); /** AlertDialog panel shadow */
+  --shadow-auth-card: var(--shadow-elevation-floating); /** Card elevation shadow */
+  --shadow-card-raised: var(--shadow-elevation-raised);
+  --shadow-card-elevated: var(--shadow-elevation-floating);
+  --shadow-card-hover: var(--shadow-elevation-floating);
+  --shadow-chart-tooltip: var(--shadow-elevation-floating); /** Chart tooltip shadow */
+  --shadow-command: var(--shadow-elevation-floating); /** Command palette shadow */
+  --shadow-dashboard-header: var(--shadow-elevation-raised); /** Header elevation shadow */
+  --shadow-datepicker-popover: var(--shadow-elevation-floating); /** Popover elevation */
+  --shadow-dialog: var(--shadow-elevation-floating); /** Dialog panel shadow */
+  --shadow-drawer: var(--shadow-elevation-floating); /** Drawer elevation shadow */
+  --shadow-dropdown-menu: var(--shadow-elevation-floating); /** Menu elevation */
+  --shadow-hovercard: var(--shadow-elevation-floating); /** HoverCard shadow */
+  --shadow-kbd: var(--shadow-elevation-raised); /** Key pressed effect shadow */
+  --shadow-modal-content: var(--shadow-elevation-floating); /** Prominent modal shadow */
+  --shadow-nav-dropdown: var(--shadow-elevation-floating); /** Dropdown panel shadow */
+  --shadow-shell-header: var(--shadow-elevation-raised); /** Header elevation shadow */
+  --shadow-popover: var(--shadow-elevation-floating); /** Elevated popover shadow */
+  --shadow-select-popover: var(--shadow-elevation-floating); /** Dropdown elevation */
+  --shadow-session-card-hover: var(--shadow-elevation-floating); /** Hover card shadow */
+  --shadow-sheet: var(--shadow-elevation-floating); /** Sheet panel shadow */
+  --shadow-switch-thumb: var(--shadow-elevation-raised); /** Thumb shadow */
+  --shadow-tabs-trigger-active: var(--shadow-elevation-raised); /** Pills active tab shadow */
+  --shadow-tpick-popover: var(--shadow-elevation-floating); /** Popover elevation */
+  --shadow-toast: var(--shadow-elevation-floating); /** Medium elevation shadow */
+  --shadow-tooltip: var(--shadow-elevation-floating); /** Tooltip elevation */
   --spacing-accordion-trigger-padding-x: var(--spacing-component-padding-md); /** 16px trigger horizontal padding */
   --spacing-accordion-trigger-padding-y: var(--spacing-component-padding-sm); /** 12px trigger vertical padding */
   --spacing-accordion-content-padding-x: var(--spacing-component-padding-md); /** 16px content horizontal padding */
@@ -1180,7 +1178,7 @@
   --spacing-alertdlg-gap: var(--spacing-component-gap-md); /** AlertDialog content gap */
   --spacing-auth-card-padding: var(--spacing-component-padding-xl); /** Card inner padding (32px) */
   --spacing-auth-logo-gap: var(--spacing-component-gap-lg); /** Gap between logo and card (16px) */
-  --spacing-auth-footer-gap: var(--spacing-component-gap-md); /** Gap between card and footer (12px) */
+  --spacing-auth-footer-gap: var(--spacing-component-gap-xl); /** Gap between card and footer (32px) */
   --spacing-banner-padding-x: var(--spacing-component-padding-lg); /** Horizontal padding */
   --spacing-banner-padding-y: var(--spacing-component-padding-md); /** Vertical padding */
   --spacing-banner-gap: var(--spacing-component-gap-md); /** Gap between elements */

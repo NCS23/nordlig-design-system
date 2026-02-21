@@ -22,7 +22,7 @@
   },
   "shadow": {
     "session-card": {
-      "hover": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Hover card shadow" }
+      "hover": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Hover card shadow" }
     }
   },
   "spacing": {

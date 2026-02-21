@@ -23,7 +23,7 @@
   },
   "shadow": {
     "chart": {
-      "tooltip": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Chart tooltip shadow" }
+      "tooltip": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Chart tooltip shadow" }
     }
   },
   "radius": {

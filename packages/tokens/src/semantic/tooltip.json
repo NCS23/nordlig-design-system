@@ -13,7 +13,7 @@
     }
   },
   "shadow": {
-    "tooltip": { "$type": "shadow", "$value": "{shadow.elevation.medium}", "$description": "Tooltip elevation" }
+    "tooltip": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Tooltip elevation" }
   },
   "radius": {
     "tooltip": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px rounded corners" }

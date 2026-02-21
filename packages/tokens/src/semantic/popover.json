@@ -12,7 +12,7 @@
     }
   },
   "shadow": {
-    "popover": { "$type": "shadow", "$value": "{shadow.elevation.high}", "$description": "Elevated popover shadow" }
+    "popover": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Elevated popover shadow" }
   },
   "radius": {
     "popover": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "8px rounded corners" }
