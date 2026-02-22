@@ -268,7 +268,7 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
           {/* Panel */}
           <SheetContent side={side} aria-label={title}>
             <SheetHeader>
-              <div className="flex items-center justify-between gap-[var(--spacing-notifcenter-header-gap)]">
+              <div className="flex items-center justify-between gap-[var(--spacing-notifcenter-header-gap)] pr-10">
                 <SheetTitle>{title}</SheetTitle>
                 {hasUnread && (
                   <Badge variant="info" size="sm">
