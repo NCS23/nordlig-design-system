@@ -1368,10 +1368,10 @@
   --spacing-navmenu-trigger-py: var(--spacing-component-padding-xs); /** 8px trigger vertical padding */
   --spacing-navmenu-content-p: var(--spacing-component-padding-md); /** 16px content padding */
   --spacing-navmenu-indicator-mt: var(--spacing-component-gap-xs); /** 4px indicator margin-top */
-  --spacing-notifcenter-section-gap: var(--spacing-component-gap-lg); /** Gap zwischen Header und Liste */
-  --spacing-notifcenter-item-gap: var(--spacing-component-gap-sm); /** Gap zwischen Notification-Items */
-  --spacing-notifcenter-item-padding: var(--spacing-component-padding-md); /** Padding eines Notification-Items */
-  --spacing-notifcenter-header-gap: var(--spacing-component-gap-sm); /** Gap im Header (Titel + Actions) */
+  --spacing-notifcenter-section-gap: var(--spacing-component-padding-lg); /** Gap zwischen Header und Liste (24px) */
+  --spacing-notifcenter-item-gap: var(--spacing-component-gap-md); /** Gap zwischen Notification-Items (12px) */
+  --spacing-notifcenter-item-padding: var(--spacing-component-padding-md); /** Padding eines Notification-Items (16px) */
+  --spacing-notifcenter-header-gap: var(--spacing-component-gap-md); /** Gap im Header (Titel + Actions) (12px) */
   --spacing-notifcenter-empty-padding: var(--spacing-component-padding-xl); /** Vertikales Padding im leeren Zustand */
   --spacing-numberinput-stepper-px: var(--spacing-component-gap-sm); /** 8px stepper button horizontal padding */
   --spacing-shell-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */

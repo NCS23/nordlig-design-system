@@ -2,10 +2,10 @@
   "spacing": {
     "$description": "Level 4: NotificationCenter pattern tokens",
     "notifcenter": {
-      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap zwischen Header und Liste" },
-      "item-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap zwischen Notification-Items" },
-      "item-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Padding eines Notification-Items" },
-      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap im Header (Titel + Actions)" },
+      "section-gap": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Gap zwischen Header und Liste (24px)" },
+      "item-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap zwischen Notification-Items (12px)" },
+      "item-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Padding eines Notification-Items (16px)" },
+      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap im Header (Titel + Actions) (12px)" },
       "empty-padding": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Vertikales Padding im leeren Zustand" }
     }
   },

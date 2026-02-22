@@ -303,7 +303,7 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
               )}
             </SheetHeader>
 
-            <Separator className="my-[var(--spacing-notifcenter-header-gap)]" />
+            <Separator className="my-[var(--spacing-notifcenter-section-gap)]" />
 
             {/* Notification-Liste */}
             {hasNotifications ? (
