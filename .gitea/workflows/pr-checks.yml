@@ -1,10 +1,11 @@
-name: Bundle Size
+name: PR Checks
 
 on:
   pull_request:
+    branches: [main]
 
 jobs:
-  size:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,6 +24,8 @@ jobs:
 
       - name: Build all packages
         run: pnpm build
+
+      # ── Bundle Size Checks ──────────────────────────────────────────────
 
       - name: Check component bundle size
         run: |
@@ -59,3 +62,45 @@ jobs:
             echo "Tokens CSS: **${SIZE_KB}KB**" >> $GITHUB_STEP_SUMMARY
             echo "Tokens CSS: ${SIZE_KB}KB"
           fi
+
+      # ── Storybook Build ─────────────────────────────────────────────────
+
+      - name: Build Storybook
+        run: pnpm --filter @nordlig/storybook build
+
+      - name: Upload Storybook artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-preview
+          path: apps/storybook/storybook-static/
+          retention-days: 7
+
+      # ── Playwright Tests (a11y + visual) ────────────────────────────────
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run accessibility tests (axe-core)
+        run: npx playwright test a11y.spec.ts
+
+      - name: Run visual tests
+        run: pnpm test:visual
+
+      - name: Upload test results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 14
+
+      - name: Upload visual test screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-test-screenshots
+          path: tests/visual/__screenshots__/
+          retention-days: 14

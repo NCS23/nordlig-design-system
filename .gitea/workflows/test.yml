@@ -26,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build tokens
-        run: pnpm build:tokens
+      - name: Build all packages
+        run: pnpm build
 
       - name: Lint (ESLint + jsx-a11y)
         run: npx eslint packages/components/src/ --max-warnings 10
