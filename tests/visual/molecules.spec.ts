@@ -39,6 +39,8 @@ const moleculeStories: StoryConfig[] = [
   { component: 'SwitchField',     stories: ['with-label', 'with-description', 'all-states'] },
   { component: 'TimePicker',      stories: ['default', 'with-value', 'with-seconds', 'twelve-hour', 'all-sizes', 'error', 'disabled'] },
   { component: 'Toolbar',         stories: ['default', 'with-toggle-group', 'with-separators', 'vertical'] },
+  { component: 'Resizable',       stories: ['default', 'vertical', 'with-handle', 'three-panels'] },
+  { component: 'SearchFilter',    stories: ['default'] },
 ];
 
 for (const { component, stories } of moleculeStories) {

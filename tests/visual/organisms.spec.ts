@@ -20,8 +20,8 @@ const organismStories: StoryConfig[] = [
   // Visual Regression Baseline Expansion
   { component: 'SessionCard',  stories: ['default', 'compact', 'loading', 'error', 'all-states'] },
   { component: 'DataTable',    stories: ['basic', 'with-sorting', 'with-pagination', 'full-featured', 'empty'] },
-  { component: 'AppHeader',    stories: ['default', 'mit-navigation', 'ohne-rand', 'flach-ohne-schatten'] },
-  { component: 'AppFooter',    stories: ['default', 'mit-links', 'ohne-rand'] },
+  { component: 'AppHeader',    stories: ['default', 'with-navigation', 'no-border', 'flat'] },
+  { component: 'AppFooter',    stories: ['default', 'with-links', 'no-border'] },
 ];
 
 for (const { component, stories } of organismStories) {

@@ -9,7 +9,7 @@ interface StoryConfig {
 }
 
 const templateStories: StoryConfig[] = [
-  { component: 'PageShell',       stories: ['default', 'with-footer', 'no-sidebar', 'sidebar-right', 'content-max-width'] },
+  { component: 'PageShell',       stories: ['default', 'mit-sidebar', 'ohne-footer'] },
   { component: 'DashboardLayout', stories: ['default', 'collapsed-sidebar', 'with-breadcrumbs', 'no-footer', 'full-dashboard'] },
   { component: 'AuthLayout',      stories: ['login', 'register', 'forgot-password', 'with-background', 'with-logo'] },
   { component: 'FormPage',        stories: ['default', 'mit-breadcrumbs', 'max-width-varianten', 'bearbeiten'] },

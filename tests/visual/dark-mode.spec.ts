@@ -19,7 +19,7 @@ const darkModeStories = [
   { id: 'molecules-accordion--single-default',     name: 'accordion-default' },
   { id: 'molecules-pagination--default',            name: 'pagination-default' },
   // Organisms
-  { id: 'organisms-card--all-elevations', name: 'card-all-elevations' },
+  { id: 'atoms-card--all-elevations',     name: 'card-all-elevations' },
   { id: 'organisms-table--basic',         name: 'table-basic' },
   { id: 'organisms-appheader--default',   name: 'appheader-default' },
   { id: 'organisms-appfooter--default',   name: 'appfooter-default' },
@@ -77,6 +77,37 @@ const darkModeStories = [
   { id: 'patterns-formwizard--default',          name: 'formwizard-default' },
   // Spoiler
   { id: 'atoms-spoiler--default',                name: 'spoiler-default' },
+  // ── NDS-080: Fehlende Dark-Mode-Tests ──────────────────────────────────────
+  // Atoms
+  { id: 'atoms-segmentedcontrol--default',       name: 'segmentedcontrol-default' },
+  { id: 'atoms-slider--default',                 name: 'slider-default' },
+  { id: 'atoms-themetoggle--default',            name: 'themetoggle-default' },
+  { id: 'atoms-spinner--default',                name: 'spinner-default' },
+  { id: 'atoms-skeleton--basic',                 name: 'skeleton-basic' },
+  { id: 'atoms-avatar--default',                 name: 'avatar-default' },
+  { id: 'atoms-togglegroup--default',            name: 'togglegroup-default' },
+  { id: 'atoms-scrollarea--default',             name: 'scrollarea-default' },
+  { id: 'atoms-aspectratio--default-16-by-9',    name: 'aspectratio-default' },
+  { id: 'atoms-icon--all-sizes',                 name: 'icon-all-sizes' },
+  // Molecules
+  { id: 'molecules-datepicker--default',         name: 'datepicker-default' },
+  { id: 'molecules-select--default',             name: 'select-default' },
+  { id: 'molecules-textarea--default',           name: 'textarea-default' },
+  { id: 'molecules-fileupload--default',         name: 'fileupload-default' },
+  { id: 'molecules-radiogroup--basic',           name: 'radiogroup-basic' },
+  { id: 'molecules-collapsible--default',        name: 'collapsible-default' },
+  { id: 'molecules-emptystate--default',         name: 'emptystate-default' },
+  { id: 'molecules-breadcrumbs--default',        name: 'breadcrumbs-default' },
+  { id: 'molecules-form--default',               name: 'form-default' },
+  { id: 'molecules-colorpicker--default',        name: 'colorpicker-default' },
+  { id: 'molecules-menubar--default',            name: 'menubar-default' },
+  { id: 'molecules-progressfield--with-label',   name: 'progressfield-default' },
+  { id: 'molecules-resizable--default',          name: 'resizable-default' },
+  { id: 'molecules-searchfilter--default',       name: 'searchfilter-default' },
+  // Organisms
+  { id: 'organisms-command--default',            name: 'command-default' },
+  { id: 'organisms-modal--basic',                 name: 'modal-basic' },
+  { id: 'organisms-chart--balkendiagramm',       name: 'chart-balken' },
 ];
 
 test.describe('Dark Mode', () => {
