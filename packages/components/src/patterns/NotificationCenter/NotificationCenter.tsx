@@ -21,6 +21,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
 } from '../../molecules/Sheet';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -267,43 +268,41 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
 
           {/* Panel */}
           <SheetContent side={side} aria-label={title}>
-            <SheetHeader className="!gap-[var(--spacing-notifcenter-section-gap)] !mb-[var(--spacing-notifcenter-header-gap)]">
+            <SheetHeader>
               <SheetTitle>{title}</SheetTitle>
-
-              {/* Badge */}
               {hasUnread && (
-                <Badge variant="info" size="sm" className="w-fit">
-                  {unreadCount} neu
-                </Badge>
-              )}
-
-              {/* Aktionen */}
-              {hasNotifications && (
-                <div className="flex items-center gap-[var(--spacing-notifcenter-header-gap)]">
-                  {hasUnread && onMarkAllRead && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={onMarkAllRead}
-                    >
-                      <IconAtom icon={CheckCheck} size="sm" />
-                      Alle gelesen
-                    </Button>
-                  )}
-                  {onClearAll && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={onClearAll}
-                    >
-                      Alle entfernen
-                    </Button>
-                  )}
-                </div>
+                <SheetDescription>
+                  {unreadCount} ungelesene {unreadCount === 1 ? 'Benachrichtigung' : 'Benachrichtigungen'}
+                </SheetDescription>
               )}
             </SheetHeader>
 
-            <Separator />
+            {/* Aktionen */}
+            {hasNotifications && (
+              <div className="flex items-center gap-[var(--spacing-notifcenter-header-gap)] mb-[var(--spacing-notifcenter-section-gap)]">
+                {hasUnread && onMarkAllRead && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={onMarkAllRead}
+                  >
+                    <IconAtom icon={CheckCheck} size="sm" />
+                    Alle gelesen
+                  </Button>
+                )}
+                {onClearAll && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={onClearAll}
+                  >
+                    Alle entfernen
+                  </Button>
+                )}
+              </div>
+            )}
+
+            <Separator className="mb-[var(--spacing-notifcenter-section-gap)]" />
 
             {/* Notification-Liste */}
             {hasNotifications ? (
