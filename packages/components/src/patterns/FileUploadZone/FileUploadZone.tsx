@@ -111,6 +111,8 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
     const defaultInstruction = instructionText || 'Dateien hierher ziehen oder klicken zum Auswählen';
     const defaultSubText = subText || buildSubText(accept, maxSize);
 
+    const hasActiveUploads = files.some((f) => f.status === 'uploading');
+
     // ── Validation ──────────────────────────────────────────────────────
 
     const validateFile = (file: File): string | null => {
@@ -228,6 +230,7 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
           className
         )}
         data-testid="file-upload-zone"
+        aria-busy={hasActiveUploads || undefined}
       >
         {/* Header */}
         {(title || description) && (
@@ -271,7 +274,8 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
           aria-disabled={disabled || undefined}
           data-testid="file-upload-zone-dropzone"
           className={cn(
-            'group relative rounded-[var(--radius-fileupload-zone)] transition-all duration-200 cursor-pointer',
+            'group relative rounded-[var(--radius-fileupload-zone)] cursor-pointer',
+            'transition-colors duration-200 motion-reduce:transition-none',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
             disabled && 'cursor-not-allowed opacity-50',
             !dragOver && [
@@ -293,16 +297,17 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
               size={48}
               strokeWidth={1.5}
               className={cn(
-                'transition-all duration-200',
+                'transition-colors duration-200 motion-reduce:transition-none',
                 dragOver
-                  ? 'text-[var(--color-fileupload-drag-icon)] animate-bounce'
-                  : 'text-[var(--color-fileupload-zone-icon)] group-hover:scale-110'
+                  ? 'text-[var(--color-fileupload-drag-icon)] scale-105 motion-reduce:scale-100'
+                  : 'text-[var(--color-fileupload-zone-icon)] group-hover:scale-105 motion-reduce:group-hover:scale-100'
               )}
             />
             <div className="text-center">
               <p
                 className={cn(
-                  'text-[length:var(--font-fileupload-instruction-size)] [font-weight:var(--font-fileupload-instruction-weight)] transition-colors duration-200',
+                  'text-[length:var(--font-fileupload-instruction-size)] [font-weight:var(--font-fileupload-instruction-weight)]',
+                  'transition-colors duration-200 motion-reduce:transition-none',
                   dragOver
                     ? 'text-[var(--color-fileupload-drag-text)]'
                     : 'text-[var(--color-fileupload-zone-text)]'
@@ -328,7 +333,12 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
 
         {/* Summary */}
         {summary && (
-          <Text variant="small" className="text-[var(--color-fuzpattern-summary-text)]" data-testid="file-upload-zone-summary">
+          <Text
+            variant="small"
+            className="text-[var(--color-fuzpattern-summary-text)]"
+            data-testid="file-upload-zone-summary"
+            aria-live="polite"
+          >
             {summary}
           </Text>
         )}
@@ -356,7 +366,7 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
                     'border border-[var(--color-fuzpattern-item-border)]',
                     'bg-[var(--color-fuzpattern-item-bg)]',
                     'p-[var(--spacing-fuzpattern-item-padding)]',
-                    'transition-colors duration-200',
+                    'transition-colors duration-200 motion-reduce:transition-none',
                     hasError && 'border-[var(--color-fileupload-error-border)]'
                   )}
                   data-testid={`file-upload-zone-item-${idx}`}
@@ -366,7 +376,10 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
                     <img
                       src={uploadedFile.preview}
                       alt={uploadedFile.file.name}
-                      className="h-10 w-10 rounded object-cover shrink-0"
+                      className={cn(
+                        'h-[var(--sizing-fuzpattern-preview-size)] w-[var(--sizing-fuzpattern-preview-size)]',
+                        'rounded-[var(--radius-fuzpattern-preview)] object-cover shrink-0'
+                      )}
                     />
                   ) : (
                     <IconAtom
@@ -387,7 +400,7 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
                     <p className="text-[length:var(--font-fileupload-hint-size)] text-[var(--color-fileupload-file-size)]">
                       {formatFileSize(uploadedFile.file.size)}
                       {hasError && uploadedFile.error && (
-                        <span className="ml-2 text-[var(--color-fileupload-error-text)]">
+                        <span className="ml-[var(--spacing-fuzpattern-error-gap)] text-[var(--color-fileupload-error-text)]">
                           — {uploadedFile.error}
                         </span>
                       )}
@@ -396,14 +409,14 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
                     {/* Per-File Progress */}
                     {isUploading && (
                       <div className="mt-[var(--spacing-fileupload-subtext-mt)]">
-                        <div className="h-1 w-full rounded-[var(--radius-fileupload-progress)] bg-[var(--color-fileupload-progress-bg)] overflow-hidden">
+                        <div className="h-[var(--sizing-fuzpattern-progress-height)] w-full rounded-[var(--radius-fileupload-progress)] bg-[var(--color-fileupload-progress-bg)] overflow-hidden">
                           <div
                             role="progressbar"
                             aria-valuenow={uploadedFile.progress}
                             aria-valuemin={0}
                             aria-valuemax={100}
                             aria-label={`Upload-Fortschritt ${uploadedFile.file.name}`}
-                            className="h-full rounded-[var(--radius-fileupload-progress)] bg-[var(--color-fileupload-progress-fill)] transition-all duration-300"
+                            className="h-full rounded-[var(--radius-fileupload-progress)] bg-[var(--color-fileupload-progress-fill)] transition-[width] duration-500 motion-reduce:transition-none"
                             style={{ width: `${uploadedFile.progress}%` }}
                           />
                         </div>
@@ -411,7 +424,7 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
                     )}
                   </div>
 
-                  {/* Entfernen-Button */}
+                  {/* Entfernen-Button — min 44x44px Touch-Target */}
                   <button
                     type="button"
                     onClick={(e) => {
@@ -421,13 +434,17 @@ const FileUploadZone = React.forwardRef<HTMLDivElement, FileUploadZoneProps>(
                     aria-label={`${uploadedFile.file.name} entfernen`}
                     disabled={disabled}
                     className={cn(
-                      'shrink-0 p-[var(--spacing-fileupload-remove-padding)] rounded',
-                      'text-[var(--color-fileupload-file-remove)] hover:text-[var(--color-fileupload-file-remove-hover)]',
-                      'hover:bg-[var(--color-fileupload-hover-bg)] transition-colors duration-200',
+                      'shrink-0 flex items-center justify-center',
+                      'min-h-[var(--sizing-fuzpattern-remove-target)] min-w-[var(--sizing-fuzpattern-remove-target)]',
+                      'rounded-[var(--radius-fuzpattern-item)]',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
+                      'text-[var(--color-fileupload-file-remove)]',
+                      'transition-colors duration-200 motion-reduce:transition-none',
+                      !disabled && 'hover:text-[var(--color-fileupload-file-remove-hover)] hover:bg-[var(--color-fileupload-hover-bg)]',
                       disabled && 'cursor-not-allowed opacity-50'
                     )}
                   >
-                    <IconAtom icon={X} size={14} />
+                    <IconAtom icon={X} size="sm" />
                   </button>
                 </div>
               );

@@ -416,4 +416,177 @@ describe('FileUploadZone', () => {
     const input = screen.getByTestId('file-upload-zone').querySelector('input[type="file"]') as HTMLInputElement;
     expect(input).toHaveAttribute('accept', '.csv,.fit');
   });
+
+  // --- 38. Focus-Ring auf Entfernen-Button ---
+  it('hat Focus-Ring auf dem Entfernen-Button', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'focus.csv' }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    const removeBtn = screen.getByLabelText('focus.csv entfernen');
+    expect(removeBtn.className).toContain('focus-visible:ring-2');
+    expect(removeBtn.className).toContain('focus-visible:ring-[var(--color-border-focus)]');
+  });
+
+  // --- 39. motion-reduce Guards auf Drop-Zone ---
+  it('hat motion-reduce Guard auf der Drop-Zone', () => {
+    render(<FileUploadZone />);
+    const dropzone = screen.getByTestId('file-upload-zone-dropzone');
+    expect(dropzone.className).toContain('motion-reduce:transition-none');
+  });
+
+  // --- 40. Touch-Target des Entfernen-Buttons ---
+  it('hat min 44x44px Touch-Target auf dem Entfernen-Button', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'touch.csv' }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    const removeBtn = screen.getByLabelText('touch.csv entfernen');
+    expect(removeBtn.className).toContain('min-h-[var(--sizing-fuzpattern-remove-target)]');
+    expect(removeBtn.className).toContain('min-w-[var(--sizing-fuzpattern-remove-target)]');
+  });
+
+  // --- 41. Disabled Entfernen-Button hat keinen Hover ---
+  it('unterdrueckt hover auf Entfernen-Button bei disabled', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'locked.csv' }),
+    ];
+
+    render(<FileUploadZone files={files} disabled />);
+    const removeBtn = screen.getByLabelText('locked.csv entfernen');
+    expect(removeBtn.className).not.toContain('hover:text-');
+    expect(removeBtn.className).toContain('cursor-not-allowed');
+  });
+
+  // --- 42. Tokenisierte Preview-Groesse ---
+  it('verwendet tokenisierte Groesse fuer Bild-Vorschau', () => {
+    const files: FileUploadZoneFile[] = [
+      {
+        file: createMockFile('sized.png', 4096, 'image/png'),
+        id: 'sized-1',
+        progress: 100,
+        status: 'complete',
+        preview: 'blob:http://localhost/preview-sized',
+      },
+    ];
+
+    render(<FileUploadZone files={files} preview />);
+    const img = screen.getByAltText('sized.png');
+    expect(img.className).toContain('h-[var(--sizing-fuzpattern-preview-size)]');
+    expect(img.className).toContain('w-[var(--sizing-fuzpattern-preview-size)]');
+  });
+
+  // --- 43. Tokenisierte Progress-Bar-Hoehe ---
+  it('verwendet tokenisierte Hoehe fuer die Progress-Bar', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'progress.csv', status: 'uploading', progress: 50 }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    const progressContainer = screen.getByRole('progressbar').parentElement;
+    expect(progressContainer?.className).toContain('h-[var(--sizing-fuzpattern-progress-height)]');
+  });
+
+  // --- 44. aria-live auf Summary ---
+  it('hat aria-live="polite" auf der Zusammenfassung', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'live.csv', size: 512 }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    const summary = screen.getByTestId('file-upload-zone-summary');
+    expect(summary).toHaveAttribute('aria-live', 'polite');
+  });
+
+  // --- 45. aria-busy bei aktiven Uploads ---
+  it('setzt aria-busy bei laufenden Uploads', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'busy.csv', status: 'uploading', progress: 30 }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    expect(screen.getByTestId('file-upload-zone')).toHaveAttribute('aria-busy', 'true');
+  });
+
+  // --- 46. Kein aria-busy ohne aktive Uploads ---
+  it('setzt kein aria-busy ohne laufende Uploads', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'done.csv', status: 'complete', progress: 100 }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    expect(screen.getByTestId('file-upload-zone')).not.toHaveAttribute('aria-busy');
+  });
+
+  // --- 47. Drag-Over zeigt visuelles Feedback ---
+  it('zeigt drag-over visuelles Feedback', () => {
+    render(<FileUploadZone />);
+    const dropzone = screen.getByTestId('file-upload-zone-dropzone');
+
+    fireEvent.dragOver(dropzone, { dataTransfer: { files: [] } });
+
+    expect(dropzone.className).toContain('border-[var(--color-fileupload-drag-border)]');
+    expect(dropzone.className).toContain('bg-[var(--color-fileupload-drag-bg)]');
+  });
+
+  // --- 48. Drag-Over zeigt "Dateien loslassen..." ---
+  it('zeigt "Dateien loslassen..." bei Drag-Over', () => {
+    render(<FileUploadZone />);
+    const dropzone = screen.getByTestId('file-upload-zone-dropzone');
+
+    fireEvent.dragOver(dropzone, { dataTransfer: { files: [] } });
+
+    expect(screen.getByText('Dateien loslassen…')).toBeInTheDocument();
+  });
+
+  // --- 49. Drag-Leave setzt State zurueck ---
+  it('setzt Drag-State bei Drag-Leave zurueck', () => {
+    render(<FileUploadZone />);
+    const dropzone = screen.getByTestId('file-upload-zone-dropzone');
+
+    fireEvent.dragOver(dropzone, { dataTransfer: { files: [] } });
+    expect(screen.getByText('Dateien loslassen…')).toBeInTheDocument();
+
+    fireEvent.dragLeave(dropzone);
+    expect(screen.queryByText('Dateien loslassen…')).not.toBeInTheDocument();
+    expect(screen.getByText('Dateien hierher ziehen oder klicken zum Auswählen')).toBeInTheDocument();
+  });
+
+  // --- 50. Drop bei disabled wird ignoriert ---
+  it('ignoriert Drop bei disabled', () => {
+    const onFilesAdd = vi.fn();
+    render(<FileUploadZone disabled onFilesAdd={onFilesAdd} />);
+    const dropzone = screen.getByTestId('file-upload-zone-dropzone');
+
+    const file = createMockFile('dropped.csv', 1024, 'text/csv');
+    fireEvent.drop(dropzone, {
+      dataTransfer: { files: [file] },
+    });
+
+    expect(onFilesAdd).not.toHaveBeenCalled();
+  });
+
+  // --- 51. Tokenisierter Error-Gap ---
+  it('verwendet tokenisierten error-gap statt hardcodiertem ml-2', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'err.csv', status: 'error', error: 'Fehler' }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    const errorSpan = screen.getByText(/— Fehler/);
+    expect(errorSpan.className).toContain('ml-[var(--spacing-fuzpattern-error-gap)]');
+  });
+
+  // --- 52. motion-reduce auf File-Items ---
+  it('hat motion-reduce Guard auf Datei-Items', () => {
+    const files: FileUploadZoneFile[] = [
+      createUploadedFile({ name: 'motion.csv' }),
+    ];
+
+    render(<FileUploadZone files={files} />);
+    const item = screen.getByTestId('file-upload-zone-item-0');
+    expect(item.className).toContain('motion-reduce:transition-none');
+  });
 });

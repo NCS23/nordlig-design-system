@@ -440,6 +440,8 @@
   --sizing-component-indicator-dot-sm: var(--spacing-base-2); /** 8px small dot (carousel, chart) */
   --sizing-component-indicator-dot-md: var(--spacing-base-2-5); /** 10px medium dot (chart legend) */
   --sizing-layout-header-height: var(--spacing-base-14); /** 56px shared header height for templates */
+  --sizing-fuzpattern-zone-icon: var(--spacing-base-12); /** Upload-Icon Groesse (48px) */
+  --sizing-fuzpattern-remove-target: var(--spacing-base-11); /** Touch-Target Entfernen-Button (44px) */
   --color-bg-paper: var(--color-neutral-1-50); /** Warm white (not pure #fff) per design principles */
   --color-bg-base: var(--color-neutral-1-50);
   --color-bg-surface: var(--color-neutral-1-100);
@@ -1116,6 +1118,7 @@
   --radius-fileupload-item: var(--radius-component-md); /** File item radius */
   --radius-fileupload-progress: var(--radius-component-full); /** Pill progress bar */
   --radius-fuzpattern-item: var(--radius-component-md); /** Datei-Item Border-Radius */
+  --radius-fuzpattern-preview: var(--radius-component-sm); /** Bild-Vorschau Border-Radius */
   --radius-fwizard-summary: var(--radius-component-lg); /** Summary section border radius */
   --radius-hl: var(--radius-component-sm); /** Highlight border radius */
   --radius-hovercard: var(--radius-component-lg); /** HoverCard border radius */
@@ -1303,6 +1306,7 @@
   --spacing-fuzpattern-header-gap: var(--spacing-component-gap-sm); /** Gap im Header */
   --spacing-fuzpattern-list-gap: var(--spacing-component-gap-sm); /** Gap zwischen Datei-Items */
   --spacing-fuzpattern-item-padding: var(--spacing-component-padding-sm); /** Padding der Datei-Items */
+  --spacing-fuzpattern-error-gap: var(--spacing-component-gap-sm); /** Gap vor Fehlermeldung im Item */
   --spacing-footer-px: var(--spacing-component-padding-lg); /** Horizontales Padding (24px) */
   --spacing-footer-py: var(--spacing-component-padding-sm); /** Vertikales Padding (12px) */
   --spacing-form-field-gap: var(--sizing-component-gap-sm); /** Gap between label, input, and hint in FormItem (6px) */
@@ -1729,6 +1733,9 @@
   --sizing-drawer-handle-h: var(--spacing-component-gap-xs); /** 6px handle height */
   --sizing-drawer-handle-w: var(--spacing-component-padding-xl); /** 48px handle width */
   --sizing-dropdown-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+  --sizing-fuzpattern-preview-size: var(--sizing-component-icon-xl); /** Bild-Vorschau Groesse (40px) */
+  --sizing-fuzpattern-remove-icon: var(--sizing-component-icon-sm); /** Entfernen-Icon Groesse (16px) */
+  --sizing-fuzpattern-progress-height: var(--sizing-component-track-sm); /** Fortschrittsbalken Hoehe */
   --sizing-icon-sm: var(--sizing-component-icon-sm); /** Small icon (16x16) */
   --sizing-icon-md: var(--sizing-component-icon-control); /** Medium icon (20x20) — default */
   --sizing-icon-lg: var(--sizing-component-icon-md); /** Large icon (24x24) */

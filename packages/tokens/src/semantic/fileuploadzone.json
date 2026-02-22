@@ -5,7 +5,8 @@
       "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap zwischen Sektionen" },
       "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap im Header" },
       "list-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap zwischen Datei-Items" },
-      "item-padding": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Padding der Datei-Items" }
+      "item-padding": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Padding der Datei-Items" },
+      "error-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap vor Fehlermeldung im Item" }
     }
   },
   "color": {
@@ -18,7 +19,18 @@
   },
   "radius": {
     "fuzpattern": {
-      "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Datei-Item Border-Radius" }
+      "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Datei-Item Border-Radius" },
+      "preview": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Bild-Vorschau Border-Radius" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: FileUploadZone sizing tokens",
+    "fuzpattern": {
+      "preview-size": { "$type": "dimension", "$value": "{sizing.component.icon.xl}", "$description": "Bild-Vorschau Groesse (40px)" },
+      "zone-icon": { "$type": "dimension", "$value": "{spacing.base.12}", "$description": "Upload-Icon Groesse (48px)" },
+      "remove-icon": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Entfernen-Icon Groesse (16px)" },
+      "remove-target": { "$type": "dimension", "$value": "{spacing.base.11}", "$description": "Touch-Target Entfernen-Button (44px)" },
+      "progress-height": { "$type": "dimension", "$value": "{sizing.component.track.sm}", "$description": "Fortschrittsbalken Hoehe" }
     }
   }
 }
