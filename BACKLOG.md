@@ -196,3 +196,4 @@ PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPag
 | 2026-02-22 | **NDS-080 Done:** Visual Regression 100% — SegmentedControl + Resizable + SearchFilter Visual Tests. 28 neue Dark-Mode-Tests. PageShell Story-IDs gefixt. 447 Visual Tests gesamt. |
 | 2026-02-22 | **NDS-015/091 Done:** Changeset-basiertes Versioning — @changesets/cli eingerichtet, linked Versioning (Tokens+Styles+Components), Initiales Release v1.0.0, CHANGELOG.md pro Package generiert. |
 | 2026-02-22 | **NDS-092 Done:** CI/CD Pipeline — Node 18+20 Build-Matrix in test.yml, Storybook-Artefakt-Upload fuer PRs, Deploy nur auf Node 20. Publish-Workflow war bereits vorhanden. |
+| 2026-02-22 | **NDS-102 Done:** Token-Dokumentation — TOKEN_GUIDELINES.md erweitert um Token-Inventar (1245 Tokens, 104 Dateien), L3-Kategorien-Mapping, L4-Dateiliste, Dark-Mode-Strategie Detail. |

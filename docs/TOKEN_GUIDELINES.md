@@ -601,6 +601,83 @@ Spacing:    spacing-{component}-{property}
 
 ---
 
-**Nächste Schritte:**
+## 🗂️ Token-Inventar (Stand: v1.0.0)
+
+### Uebersicht
+
+| Layer | Dateien | Tokens | Beschreibung |
+|-------|---------|--------|--------------|
+| L1 Base | 5 | ~150 | Rohe Hex/px-Werte |
+| L2 Global | 5 | ~200 | Theme-Zuordnung |
+| L3 Roles | 5 | ~120 | Funktionale Rollen |
+| L4 Semantic | 89 | ~775 | Component-spezifisch |
+| **Gesamt** | **104** | **~1245** | |
+
+### L3 Role-Token Kategorien
+
+| Kategorie | Prefix | Beispiele |
+|-----------|--------|-----------|
+| Hintergrund | `color.bg.*` | `paper`, `base`, `surface`, `primary`, `primary-hover`, `success-subtle`, `overlay`, `inverse` |
+| Text | `color.text.*` | `base`, `heading`, `muted`, `disabled`, `inverse`, `primary`, `success`, `error` |
+| Rand | `color.border.*` | `default`, `muted`, `strong`, `focus`, `success`, `error` |
+| Interaktiv | `color.interactive.*` | `primary`, `primary-hover`, `primary-active`, `primary-disabled`, `hover-overlay` |
+| Spacing | `spacing.component.*` | `padding.{xs-xl}`, `gap.{xs-xl}` |
+| Sizing | `sizing.component.*` | `height.{sm-lg}`, `padding-x.{sm-lg}`, `border-width.*` |
+| Layout | `sizing.layout.*` | `header-height`, `gutter`, `section` |
+| Schatten | `shadow.elevation.*` | `raised`, `floating`, `overlay` |
+| Radius | `radius.component.*` | `sm`, `md`, `lg`, `xl`, `full` |
+| Typografie | `font.component.*` | `size.{xs-lg}`, `weight.{normal-semibold}` |
+
+### L4 Semantic-Token Dateien (89 Stueck)
+
+Jede Component hat eine eigene JSON-Datei in `packages/tokens/src/semantic/`:
+
+**Atoms:** alert, avatar, badge, banner, blockquote, button, card, checkbox, code, copybutton, heading, highlight, icon, image, input, inputotp, kbd, label, link, numberinput, popover, progress, radio, rating, scrollarea, segmentedcontrol, separator, skeleton, slider, spinner, spoiler, switch, tag, text, themetoggle, toggle, togglegroup, tooltip, visuallyhidden
+
+**Molecules:** accordion, alertdialog, breadcrumbs, calendar, checkboxfield, collapsible, colorpicker, combobox, contextmenu, datepicker, dialog, drawer, dropdownmenu, emptystate, fileupload, form, inputfield, loadingoverlay, menubar, multiselect, navigationmenu, pagination, passwordinput, progressfield, radiogroup, resizable, searchfilter, searchinput, select, sheet, stepper, switchfield, tabs, textarea, timepicker, toast, toolbar
+
+**Organisms:** appfooter, appheader, carousel, chart, command, datatable, modal, sessioncard, sidebar, statcard, table, timeline, tree
+
+**Templates:** authlayout, dashboardlayout, detailpage, emptystatepage, errorpage, formpage, listpage, pageshell
+
+**Patterns:** datatablepattern, formwizard
+
+---
+
+## 🌙 Dark-Mode-Strategie (Detail)
+
+### Prinzip: L2-Override, L3+L4 folgen automatisch
+
+```
+Light Mode:    L1(hex) → L2(theme) → L3(role) → L4(component) → CSS var
+Dark Mode:     L1(hex) → L2(DARK)  → L3(role) → L4(component) → CSS var
+                              ↑
+                         Nur hier aendern!
+```
+
+### Technische Umsetzung
+
+1. **Light Mode** (Standard): `:root { ... }` in `tokens.css`
+2. **Dark Mode**: `.dark { ... }` Override in derselben CSS-Datei
+3. **Aktivierung**: `<html class="dark">` oder `prefers-color-scheme: dark`
+
+### Dark-Mode-Regeln
+
+| Light (L2) | Dark (L2) | Effekt |
+|------------|-----------|--------|
+| `neutral.1.50` (slate-50) | slate-800 | Helle Flaechen werden dunkel |
+| `neutral.1.900` (slate-900) | slate-50 | Dunkler Text wird hell |
+| `primary.1.500` (sky-500) | sky-400 | Primary wird heller fuer Kontrast |
+| `neutral.1.400` (Midpoint) | Unveraendert | Bleibt Uebergangspunkt |
+
+### Was NICHT im Dark-Mode aendern
+
+- L4-Tokens (Component-spezifisch) — folgen automatisch
+- L3-Tokens (Rollen) — folgen automatisch
+- Spacing, Sizing, Radius, Typography — themeunabhaengig
+
+---
+
+**Naechste Schritte:**
 - [ARCHITECTURE.md](ARCHITECTURE.md) - 4-Layer System verstehen
 - [COMPONENT_GUIDELINES.md](COMPONENT_GUIDELINES.md) - Tokens in Components nutzen
