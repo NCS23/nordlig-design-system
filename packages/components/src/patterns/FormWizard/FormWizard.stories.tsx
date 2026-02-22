@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { FormWizard, type FormWizardStep } from './FormWizard';
 import { FormField } from '../../molecules/Form/Form';
 import { Input } from '../../atoms/Input';
+import { Heading } from '../../atoms/Heading';
 
 // ---------------------------------------------------------------------------
 // Meta
@@ -138,9 +139,9 @@ export const WithSummary: StoryObj<typeof FormWizard> = {
         }}
         summaryStep={(data) => (
           <div className="flex flex-col gap-4">
-            <h3 className="text-[length:var(--font-component-size-lg)] [font-weight:var(--font-component-weight-semibold)]">
+            <Heading level={3}>
               Bitte pruefen Sie Ihre Angaben
-            </h3>
+            </Heading>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <span className="text-[var(--color-text-muted)] text-[length:var(--font-component-size-sm)]">

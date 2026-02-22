@@ -121,7 +121,6 @@ export const WithSelection: Story = {
       data={data.slice(0, 6)}
       selectable
       onSelectionChange={(rows) => {
-        // eslint-disable-next-line no-console
         console.log('Ausgewaehlte Zeilen:', rows);
       }}
     />
@@ -142,7 +141,6 @@ export const FullFeatured: Story = {
       pageSize={5}
       selectable
       onSelectionChange={(rows) => {
-        // eslint-disable-next-line no-console
         console.log('Ausgewaehlte Zeilen:', rows);
       }}
     />

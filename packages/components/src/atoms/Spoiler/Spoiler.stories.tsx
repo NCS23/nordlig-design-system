@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Spoiler } from './Spoiler';
+import { Button } from '../Button';
 import React from 'react';
 
 const meta: Meta<typeof Spoiler> = {
@@ -29,12 +30,12 @@ export const Controlled: Story = {
     const [open, setOpen] = React.useState(false);
     return (
       <div className="flex flex-col gap-4">
-        <button
+        <Button
           onClick={() => setOpen(!open)}
-          className="self-start rounded bg-[var(--color-bg-primary)] px-3 py-1.5 text-[color:var(--color-text-on-primary)] text-sm"
+          size="sm"
         >
           {open ? 'Verbergen' : 'Aufdecken'}
-        </button>
+        </Button>
         <p className="text-[color:var(--color-text-base)]">
           Das Ergebnis der Pruefung war{' '}
           <Spoiler open={open} onOpenChange={setOpen} label="[Ergebnis]">
