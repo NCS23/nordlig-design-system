@@ -268,16 +268,9 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
           {/* Panel */}
           <SheetContent side={side} aria-label={title}>
             <SheetHeader>
-              <div className="flex items-center justify-between gap-[var(--spacing-notifcenter-header-gap)] pr-10">
-                <SheetTitle>{title}</SheetTitle>
-                {hasUnread && (
-                  <Badge variant="info" size="sm">
-                    {unreadCount} neu
-                  </Badge>
-                )}
-              </div>
+              <SheetTitle>{title}</SheetTitle>
 
-              {/* Aktionen */}
+              {/* Aktionen + Badge */}
               {hasNotifications && (
                 <div className="flex items-center gap-[var(--spacing-notifcenter-header-gap)]">
                   {hasUnread && onMarkAllRead && (
@@ -299,7 +292,17 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
                       Alle entfernen
                     </Button>
                   )}
+                  {hasUnread && (
+                    <Badge variant="info" size="sm" className="ml-auto">
+                      {unreadCount} neu
+                    </Badge>
+                  )}
                 </div>
+              )}
+              {!hasNotifications && hasUnread && (
+                <Badge variant="info" size="sm">
+                  {unreadCount} neu
+                </Badge>
               )}
             </SheetHeader>
 
