@@ -790,6 +790,10 @@
   --color-fileupload-progress-fill: var(--color-bg-primary); /** Progress bar */
   --color-fileupload-error-text: var(--color-text-error); /** Error message */
   --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
+  --color-fuzpattern-header-text: var(--color-text-base); /** Header Titel */
+  --color-fuzpattern-summary-text: var(--color-text-muted); /** Zusammenfassung */
+  --color-fuzpattern-item-bg: var(--color-bg-surface); /** Datei-Item Hintergrund */
+  --color-fuzpattern-item-border: var(--color-border-muted); /** Datei-Item Rand */
   --color-footer-bg: var(--color-bg-paper); /** Footer-Hintergrund */
   --color-footer-border: var(--color-border-muted); /** Footer oberer Rand */
   --color-fwizard-summary-bg: var(--color-bg-surface); /** Summary section background */
@@ -1111,6 +1115,7 @@
   --radius-fileupload-zone: var(--radius-component-lg); /** Zone radius */
   --radius-fileupload-item: var(--radius-component-md); /** File item radius */
   --radius-fileupload-progress: var(--radius-component-full); /** Pill progress bar */
+  --radius-fuzpattern-item: var(--radius-component-md); /** Datei-Item Border-Radius */
   --radius-fwizard-summary: var(--radius-component-lg); /** Summary section border radius */
   --radius-hl: var(--radius-component-sm); /** Highlight border radius */
   --radius-hovercard: var(--radius-component-lg); /** HoverCard border radius */
@@ -1294,6 +1299,10 @@
   --spacing-fileupload-progress-pb: var(--spacing-component-padding-md); /** Progress bar bottom padding */
   --spacing-fileupload-subtext-mt: var(--spacing-component-gap-xs); /** Sub-text top margin (4px) */
   --spacing-fileupload-addmore-mt: var(--spacing-component-gap-md); /** Add-more hint top margin (8px) */
+  --spacing-fuzpattern-section-gap: var(--spacing-component-gap-lg); /** Gap zwischen Sektionen */
+  --spacing-fuzpattern-header-gap: var(--spacing-component-gap-sm); /** Gap im Header */
+  --spacing-fuzpattern-list-gap: var(--spacing-component-gap-sm); /** Gap zwischen Datei-Items */
+  --spacing-fuzpattern-item-padding: var(--spacing-component-padding-sm); /** Padding der Datei-Items */
   --spacing-footer-px: var(--spacing-component-padding-lg); /** Horizontales Padding (24px) */
   --spacing-footer-py: var(--spacing-component-padding-sm); /** Vertikales Padding (12px) */
   --spacing-form-field-gap: var(--sizing-component-gap-sm); /** Gap between label, input, and hint in FormItem (6px) */

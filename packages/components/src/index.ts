@@ -633,6 +633,8 @@ export { DataTablePattern } from './patterns/DataTablePattern';
 export type { DataTablePatternProps } from './patterns/DataTablePattern';
 export { FormWizard } from './patterns/FormWizard';
 export type { FormWizardProps, FormWizardStep } from './patterns/FormWizard';
+export { FileUploadZone } from './patterns/FileUploadZone';
+export type { FileUploadZoneProps, FileUploadZoneFile, FileUploadZoneStatus } from './patterns/FileUploadZone';
 
 // Utils
 export { cn } from './utils/cn';

@@ -1,0 +1,24 @@
+{
+  "spacing": {
+    "$description": "Level 4: FileUploadZone pattern tokens",
+    "fuzpattern": {
+      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap zwischen Sektionen" },
+      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap im Header" },
+      "list-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap zwischen Datei-Items" },
+      "item-padding": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Padding der Datei-Items" }
+    }
+  },
+  "color": {
+    "fuzpattern": {
+      "header-text": { "$type": "color", "$value": "{color.text.base}", "$description": "Header Titel" },
+      "summary-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Zusammenfassung" },
+      "item-bg": { "$type": "color", "$value": "{color.bg.surface}", "$description": "Datei-Item Hintergrund" },
+      "item-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Datei-Item Rand" }
+    }
+  },
+  "radius": {
+    "fuzpattern": {
+      "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Datei-Item Border-Radius" }
+    }
+  }
+}

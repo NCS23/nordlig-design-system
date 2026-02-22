@@ -2848,7 +2848,7 @@
 **Molecules:** 27
 **Organisms:** 13 (inkl. AppHeader, AppFooter)
 **Templates:** 8 (PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPage, EmptyStatePage)
-**Patterns:** 2 (DataTablePattern, FormWizard)
+**Patterns:** 3 (DataTablePattern, FormWizard, FileUploadZone)
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
 **Total Tests:** 1844 (104 Testdateien)
@@ -4654,6 +4654,37 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
+## [FileUploadZone] - 2026-02-22
+
+**Status:** ✅ Complete
+**Story:** NDS-064
+**Level:** Pattern
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `fuzpattern-header-text`, `fuzpattern-summary-text`, `fuzpattern-item-bg`, `fuzpattern-item-border`
+  - Spacing: `fuzpattern-section-gap`, `fuzpattern-header-gap`, `fuzpattern-list-gap`, `fuzpattern-item-padding`
+  - Radius: `fuzpattern-item`
+
+### Architecture
+- Controlled pattern: Consumer verwaltet Datei-State mit per-File Progress/Status
+- Composition aus Atoms (Icon, Heading, Text) + eigenem Drop-Zone-UI
+- Per-File Progress-Tracking (pending → uploading → complete/error)
+- Drag & Drop mit visuellen Feedback-States
+- Datei-Validierung (Typ, Groesse) mit Fehleranzeige
+- Bild-Vorschau-Support (Thumbnails)
+- Zusammenfassung (Dateianzahl, Gesamtgroesse, fertig/fehlerhaft Zaehler)
+- Accessibility: role="list", role="button", aria-labels, Keyboard-Support
+
+### Files
+- `packages/tokens/src/semantic/fileuploadzone.json`
+- `packages/components/src/patterns/FileUploadZone/FileUploadZone.tsx`
+- `packages/components/src/patterns/FileUploadZone/FileUploadZone.test.tsx` (37 Tests)
+- `packages/components/src/patterns/FileUploadZone/FileUploadZone.stories.tsx` (9 Stories)
+- `packages/components/src/patterns/FileUploadZone/index.ts`
+
+---
+
 **Last Updated:** 2026-02-22
-**Design System Status:** ✅ Complete (88 Components + 8 Templates + 2 Patterns, Welle 13 abgeschlossen)
-**Test Count:** 1817 Tests, 102 Test-Dateien
+**Design System Status:** ✅ Complete (88 Components + 8 Templates + 3 Patterns, Welle 13 abgeschlossen)
+**Test Count:** 1854 Tests, 103 Test-Dateien
