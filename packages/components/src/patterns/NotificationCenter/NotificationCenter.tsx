@@ -267,7 +267,7 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
 
           {/* Panel */}
           <SheetContent side={side} aria-label={title}>
-            <SheetHeader>
+            <SheetHeader className="!gap-[var(--spacing-notifcenter-section-gap)]">
               <SheetTitle>{title}</SheetTitle>
 
               {/* Badge + Aktionen */}
