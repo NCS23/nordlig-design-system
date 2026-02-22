@@ -268,7 +268,7 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
 
           {/* Panel */}
           <SheetContent side={side} aria-label={title}>
-            <SheetHeader className="!mb-[var(--spacing-notifcenter-empty-padding)]">
+            <SheetHeader className={hasUnread ? '!mb-[var(--spacing-notifcenter-empty-padding)]' : undefined}>
               <SheetTitle>{title}</SheetTitle>
               {hasUnread && (
                 <SheetDescription>
