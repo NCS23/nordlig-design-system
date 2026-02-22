@@ -12,11 +12,5 @@
     "detailpage": {
       "sidebar-width": { "$type": "dimension", "$value": "280px", "$description": "Sidebar width on desktop" }
     }
-  },
-  "font": {
-    "detailpage": {
-      "title-size":   { "$type": "dimension", "$value": "{font.heading.size.md}", "$description": "Page title font size (20px)" },
-      "title-weight": { "$type": "dimension", "$value": "{font.component.weight.semibold}", "$description": "Page title font weight" }
-    }
   }
 }

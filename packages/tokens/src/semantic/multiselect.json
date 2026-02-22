@@ -8,7 +8,6 @@
       "trigger-py":   { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Trigger vertical padding" },
       "search-py":    { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Search input vertical padding" },
       "item-px":      { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Item horizontal padding (12px)" },
-      "item-py":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Item vertical padding" },
       "section-px":   { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Popover section padding (8px)" },
       "selectall-px": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Select-all horizontal padding (12px)" },
       "selectall-py": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Select-all vertical padding (4px)" }

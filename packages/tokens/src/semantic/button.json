@@ -41,7 +41,6 @@
         "padding-y":   { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
         "gap":         { "$type": "dimension", "$value": "{sizing.component.gap.sm}" },
         "font-size":   { "$type": "dimension", "$value": "{font.component.size.sm}" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}" },
         "radius":      { "$type": "dimension", "$value": "{radius.component.md}" }
       },
       "md": {
@@ -50,7 +49,6 @@
         "padding-y":   { "$type": "dimension", "$value": "{sizing.component.padding-y.md}" },
         "gap":         { "$type": "dimension", "$value": "{sizing.component.gap.md}" },
         "font-size":   { "$type": "dimension", "$value": "{font.component.size.md}" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.md}" },
         "radius":      { "$type": "dimension", "$value": "{radius.component.md}" }
       },
       "lg": {
@@ -59,17 +57,9 @@
         "padding-y":   { "$type": "dimension", "$value": "{sizing.component.padding-y.lg}" },
         "gap":         { "$type": "dimension", "$value": "{sizing.component.gap.lg}" },
         "font-size":   { "$type": "dimension", "$value": "{font.component.size.lg}" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.lg}" },
         "radius":      { "$type": "dimension", "$value": "{radius.component.md}" }
       },
       "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}" }
-    }
-  },
-  "spacing": {
-    "btn": {
-      "padding-x": { "$type": "dimension", "$value": "{spacing.component.padding.md}" },
-      "padding-y": { "$type": "dimension", "$value": "{spacing.component.padding.sm}" },
-      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}" }
     }
   }
 }

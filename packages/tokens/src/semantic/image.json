@@ -4,8 +4,7 @@
     "img": {
       "bg":            { "$type": "color", "$value": "{color.bg.surface}", "$description": "Loading placeholder background" },
       "fallback-bg":   { "$type": "color", "$value": "{color.bg.surface-hover}", "$description": "Error fallback background" },
-      "fallback-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Error fallback icon/text" },
-      "border":        { "$type": "color", "$value": "{color.border.muted}", "$description": "Optional border" }
+      "fallback-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Error fallback icon/text" }
     }
   },
   "radius": {

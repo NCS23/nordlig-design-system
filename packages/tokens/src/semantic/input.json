@@ -15,23 +15,19 @@
   "sizing": {
     "$description": "Level 4: Input sizing – matches Button heights for inline forms",
     "input": {
-      "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "1px" },
       "sm": {
         "height":    { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "36px – matches Button sm" },
         "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "0.875rem" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "21px" },
         "radius":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px" }
       },
       "md": {
         "height":    { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "40px – matches Button md" },
         "font-size": { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "1rem" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.md}", "$description": "24px" },
         "radius":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px" }
       },
       "lg": {
         "height":    { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "44px – matches Button lg" },
         "font-size": { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "1.125rem" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.lg}", "$description": "27px" },
         "radius":    { "$type": "dimension", "$value": "{radius.component.md}", "$description": "6px" }
       }
     }
@@ -39,16 +35,9 @@
   "spacing": {
     "input": {
       "padding-x":    { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "16px" },
-      "padding-y":    { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px" },
       "icon-inset":   { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "40px – right padding when icon present" },
       "icon-padding":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px – icon button internal padding" },
       "field-gap":    { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "6px — Gap between Label, Input/Select/Textarea, and Hint in Field wrappers" }
-    }
-  },
-  "font": {
-    "$description": "Level 4: Input typography tokens",
-    "input": {
-      "weight": { "$type": "fontWeight", "$value": "{font.component.weight.normal}", "$description": "Font weight 400 (normal)" }
     }
   }
 }

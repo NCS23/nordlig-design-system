@@ -113,4 +113,32 @@ describe('InputOTP', () => {
     // Der Container sollte group/otp Klasse haben fuer CSS-Selektoren
     expect(otpContainer!.className).toContain('group/otp');
   });
+
+  // Test 7: Separator leitet ref weiter
+  it('Separator leitet ref weiter', () => {
+    const ref = { current: null } as React.RefObject<HTMLDivElement>;
+    render(
+      <InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS}>
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+        <InputOTPSeparator ref={ref} />
+        <InputOTPGroup>
+          <InputOTPSlot index={3} />
+          <InputOTPSlot index={4} />
+          <InputOTPSlot index={5} />
+        </InputOTPGroup>
+      </InputOTP>
+    );
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+  });
+
+  // Test 8: Disabled-Zustand wird angewendet
+  it('wendet disabled-Styling an', () => {
+    const { container } = renderOTP({ disabled: true });
+    const input = container.querySelector('input');
+    expect(input).toBeDisabled();
+  });
 });

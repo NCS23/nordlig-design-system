@@ -184,3 +184,10 @@ PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPag
 | 2026-02-21 | **NDS-032 P3 Done:** Final Token Cleanup — ~137 hardcoded Tailwind-Utilities in 25 Komponenten durch `var(--*)` Token-Referenzen ersetzt. +76 neue L4-Tokens, +2 L3-Tokens (indicator.dot-sm, dot-md). 22 Token-Dateien erweitert. |
 | 2026-02-21 | **NDS-061 Done:** DataTablePattern — Erstes Pattern! SearchFilter + DataTable + BulkActions + EmptyState + Pagination. 9 L4-Tokens (`dtpattern`), 20 Tests, 6 Stories. Neues `patterns/` Verzeichnis. Gitea #53. |
 | 2026-02-21 | **NDS-062 Done:** FormWizard Pattern — Multi-Step-Form mit Stepper, Zod-Validation pro Step, Datenpersistenz. 10 L4-Tokens (`fwizard`), 25 Tests, 4 Stories. Gitea #54. |
+| 2026-02-22 | **Welle 13 gestartet und abgeschlossen: Cleanup & Quality** |
+| 2026-02-22 | **NDS-031 Done:** Orphaned Token Cleanup — 64 verwaiste L4-Tokens aus 30 JSON-Dateien entfernt. 0 Orphans verbleibend. Token-Count: 1299 → 1245. |
+| 2026-02-22 | **NDS-026 Done:** Final gap-* Hardcodes — letzte 2 hardcoded `gap-*` Klassen in DashboardLayout + TimePicker durch Token-Referenzen ersetzt. 0 hardcoded gaps verbleibend. |
+| 2026-02-22 | **NDS-008 Done:** Unit Test Backfill — AspectRatio (6→9), InputOTP (6→8), VisuallyHidden (6→8). Alle Atoms jetzt >= 8 Tests. |
+| 2026-02-22 | **Visual Test Gaps geschlossen:** 5 Templates (FormPage, ListPage, DetailPage, ErrorPage, EmptyStatePage) + 2 Patterns zu Playwright Visual Tests + Dark-Mode-Tests hinzugefuegt. Neues `patterns.spec.ts`. |
+| 2026-02-22 | **NDS-018 Done:** Spoiler Atom — Inline-Reveal/Hide-Komponente, controlled/uncontrolled, 7 L4-Tokens (`spl`), 15 Tests, 4 Stories. Keyboard accessible (Enter/Space). |
+| 2026-02-22 | **Combobox Test Fix:** 2 flaky Keyboard-Navigation-Tests (ArrowDown+Enter in jsdom) durch zuverlaessige Click-Tests ersetzt. |

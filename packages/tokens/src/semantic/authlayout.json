@@ -5,8 +5,7 @@
       "bg":          { "$type": "color", "$value": "{color.bg.base}", "$description": "Full-page background" },
       "card-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Form card background" },
       "card-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Card border" },
-      "footer-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Footer text color" },
-      "footer-link": { "$type": "color", "$value": "{color.text.primary}", "$description": "Footer link color" }
+      "footer-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Footer text color" }
     }
   },
   "sizing": {

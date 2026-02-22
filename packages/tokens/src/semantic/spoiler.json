@@ -1,0 +1,56 @@
+{
+  "color": {
+    "spl": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.bg.surface}",
+        "$description": "Hintergrund im verdeckten Zustand"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.base}",
+        "$description": "Textfarbe im aufgedeckten Zustand"
+      },
+      "hint": {
+        "$type": "color",
+        "$value": "{color.text.muted}",
+        "$description": "Hinweistext-Farbe (Klick-Aufforderung)"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.muted}",
+        "$description": "Rahmenfarbe"
+      }
+    }
+  },
+  "spacing": {
+    "spl": {
+      "px": {
+        "$type": "dimension",
+        "$value": "{spacing.component.padding.xs}",
+        "$description": "Horizontales Padding"
+      },
+      "py": {
+        "$type": "dimension",
+        "$value": "{spacing.component.padding.xs}",
+        "$description": "Vertikales Padding"
+      }
+    }
+  },
+  "radius": {
+    "spl": {
+      "$type": "dimension",
+      "$value": "{radius.component.sm}",
+      "$description": "Border-Radius"
+    }
+  },
+  "font": {
+    "spl": {
+      "hint-size": {
+        "$type": "dimension",
+        "$value": "{font.component.size.sm}",
+        "$description": "Schriftgroesse Hinweistext"
+      }
+    }
+  }
+}

@@ -11,7 +11,6 @@
   "sizing": {
     "$description": "Level 4: DashboardLayout sizing",
     "dashboard": {
-      "header-height":           { "$type": "dimension", "$value": "{sizing.layout.header-height}", "$description": "Fixed header height" },
       "sidebar-width":           { "$type": "dimension", "$value": "240px", "$description": "Sidebar expanded width" },
       "sidebar-collapsed-width": { "$type": "dimension", "$value": "64px", "$description": "Sidebar collapsed width" }
     }
@@ -19,6 +18,7 @@
   "spacing": {
     "dashboard": {
       "header-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Header horizontal padding (24px)" },
+      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Header items gap (12px)" },
       "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Content area padding (32px)" }
     }
   },

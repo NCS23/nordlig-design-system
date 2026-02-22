@@ -1,11 +1,4 @@
 {
-  "color": {
-    "$description": "Level 4: Icon component color tokens",
-    "icon": {
-      "default": { "$type": "color", "$value": "{color.text.base}", "$description": "Default icon stroke color (currentColor)" },
-      "muted":   { "$type": "color", "$value": "{color.text.muted}", "$description": "Muted/secondary icon color" }
-    }
-  },
   "sizing": {
     "$description": "Level 4: Icon component sizing tokens",
     "icon": {

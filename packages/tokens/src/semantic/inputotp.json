@@ -3,7 +3,6 @@
     "$description": "Level 4: InputOTP component tokens",
     "inputotp": {
       "bg":            { "$type": "color", "$value": "{color.bg.paper}", "$description": "Slot background" },
-      "bg-disabled":   { "$type": "color", "$value": "{color.bg.surface}", "$description": "Disabled slot background" },
       "text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Digit text color" },
       "border":        { "$type": "color", "$value": "{color.border.default}", "$description": "Slot border" },
       "border-focus":  { "$type": "color", "$value": "{color.border.focus}", "$description": "Active slot focus ring" },
@@ -29,8 +28,7 @@
   },
   "spacing": {
     "inputotp": {
-      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between slots" },
-      "group-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between groups" }
+      "gap":       { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between slots" }
     }
   }
 }

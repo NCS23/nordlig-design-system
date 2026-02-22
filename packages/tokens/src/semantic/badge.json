@@ -36,26 +36,22 @@
       "xs": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.xs}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.xs}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.xs}" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.xs}", "$description": "18px" }
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.xs}" }
       },
       "sm": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.sm}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "21px" }
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" }
       },
       "md": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.sm}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "21px" }
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.sm}" }
       },
       "lg": {
         "padding-x": { "$type": "dimension", "$value": "{sizing.component.padding-x.md}" },
         "padding-y": { "$type": "dimension", "$value": "{sizing.component.padding-y.md}" },
-        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}" },
-        "line-height": { "$type": "dimension", "$value": "{font.component.line-height.md}", "$description": "24px" }
+        "font-size": { "$type": "dimension", "$value": "{font.component.size.md}" }
       }
     }
   },

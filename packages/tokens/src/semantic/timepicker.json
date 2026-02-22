@@ -34,7 +34,8 @@
   "spacing": {
     "tpick": {
       "popover-padding": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "8px popover inner padding" },
-      "column-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px gap between cells" }
+      "column-gap":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px gap between cells" },
+      "columns-gap":     { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px gap between time columns" }
     }
   },
   "font": {

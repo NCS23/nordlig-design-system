@@ -4,8 +4,6 @@
     "cpick": {
       "bg": { "$type": "color", "$value": "{color.bg.paper}", "$description": "Container background" },
       "border": { "$type": "color", "$value": "{color.border.default}", "$description": "Container border" },
-      "slider-track": { "$type": "color", "$value": "{color.bg.surface}", "$description": "Slider track background" },
-      "slider-thumb-border": { "$type": "color", "$value": "{color.border.strong}", "$description": "Slider thumb border" },
       "input-bg": { "$type": "color", "$value": "{color.bg.paper}", "$description": "Hex input background" },
       "input-border": { "$type": "color", "$value": "{color.border.default}", "$description": "Hex input border" },
       "input-text": { "$type": "color", "$value": "{color.text.base}", "$description": "Hex input text" },

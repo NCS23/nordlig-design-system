@@ -2,7 +2,6 @@
   "spacing": {
     "$description": "Level 4: Carousel component tokens",
     "carousel": {
-      "dot-gap":    { "$type": "dimension", "$value": "{sizing.component.gap.sm}", "$description": "Gap between pagination dots (6px)" },
       "nav-offset": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Nav button distance from edge (8px)" },
       "dots-bottom": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Dots distance from bottom (12px)" },
       "dots-px":    { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Dots container horizontal padding (4px)" },

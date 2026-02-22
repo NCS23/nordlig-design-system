@@ -7,10 +7,5 @@
       "clear":       { "$type": "color", "$value": "{color.text.muted}", "$description": "Clear button color" },
       "clear-hover": { "$type": "color", "$value": "{color.text.base}",  "$description": "Clear button hover" }
     }
-  },
-  "spacing": {
-    "sinput": {
-      "icon-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between icon and text" }
-    }
   }
 }

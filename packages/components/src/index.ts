@@ -84,6 +84,7 @@ export {
   spinnerVariants,
   type SpinnerProps,
 } from './atoms/Spinner';
+export { Spoiler, type SpoilerProps } from './atoms/Spoiler';
 export {
   Skeleton,
   SkeletonText,

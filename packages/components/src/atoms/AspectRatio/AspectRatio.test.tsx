@@ -83,4 +83,34 @@ describe('AspectRatio', () => {
     expect(img).toBeInTheDocument();
     expect(img).toHaveAttribute('src', 'https://example.com/image.jpg');
   });
+
+  // ─── displayName ──────────────────────────────────────────────────────
+
+  it('hat korrekten displayName', () => {
+    expect(AspectRatio.displayName).toBe('AspectRatio');
+  });
+
+  // ─── Ref Forwarding ──────────────────────────────────────────────────
+
+  it('leitet ref weiter', () => {
+    const ref = { current: null } as React.RefObject<HTMLDivElement>;
+    render(
+      <AspectRatio ref={ref} ratio={16 / 9}>
+        <div>Inhalt</div>
+      </AspectRatio>
+    );
+    expect(ref.current).toBeInstanceOf(HTMLElement);
+  });
+
+  // ─── Square Ratio ──────────────────────────────────────────────────────
+
+  it('unterstuetzt 1:1 Quadrat-Verhaeltnis', () => {
+    const { container } = render(
+      <AspectRatio ratio={1}>
+        <div data-testid="square">Quadrat</div>
+      </AspectRatio>
+    );
+    expect(screen.getByTestId('square')).toBeInTheDocument();
+    expect(container.firstChild).toBeInTheDocument();
+  });
 });

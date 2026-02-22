@@ -4627,6 +4627,35 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
-**Last Updated:** 2026-02-21
-**Design System Status:** ✅ Complete (87 Components + 8 Templates + 2 Patterns, Welle 12 abgeschlossen)
-**Test Count:** 1795 Tests, 101 Test-Dateien
+## [Spoiler] - 2026-02-22
+
+**Status:** ✅ Complete
+**Story:** NDS-018
+**Level:** Atom
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `spl-bg`, `spl-text`, `spl-hint`, `spl-border`
+  - Spacing: `spl-px`, `spl-py`
+  - Radius: `spl`
+  - Font: `spl-hint-size`
+
+### Architecture
+- Inline spoiler/reveal component (click to show/hide)
+- Controlled (`open` + `onOpenChange`) and uncontrolled mode
+- Keyboard accessible: `role="button"`, `aria-expanded`, Enter/Space
+- Hidden state: matching bg+text color, hint label overlay
+- Toggle behavior: click to reveal, click again to hide
+
+### Files
+- `packages/tokens/src/semantic/spoiler.json`
+- `packages/components/src/atoms/Spoiler/Spoiler.tsx`
+- `packages/components/src/atoms/Spoiler/Spoiler.test.tsx` (15 Tests)
+- `packages/components/src/atoms/Spoiler/Spoiler.stories.tsx` (4 Stories)
+- `packages/components/src/atoms/Spoiler/index.ts`
+
+---
+
+**Last Updated:** 2026-02-22
+**Design System Status:** ✅ Complete (88 Components + 8 Templates + 2 Patterns, Welle 13 abgeschlossen)
+**Test Count:** 1817 Tests, 102 Test-Dateien

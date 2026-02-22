@@ -7,7 +7,6 @@
       "3":              { "$type": "color", "$value": "{color.text.warning}", "$description": "Chart color 3 (amber)" },
       "4":              { "$type": "color", "$value": "{color.text.error}", "$description": "Chart color 4 (red)" },
       "5":              { "$type": "color", "$value": "{color.text.info}", "$description": "Chart color 5 (info blue)" },
-      "grid":           { "$type": "color", "$value": "{color.border.muted}", "$description": "Chart grid line color" },
       "axis":           { "$type": "color", "$value": "{color.text.muted}", "$description": "Chart axis text color" },
       "tooltip-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Chart tooltip background" },
       "tooltip-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Chart tooltip border" },

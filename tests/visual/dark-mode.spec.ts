@@ -64,6 +64,17 @@ const darkModeStories = [
   { id: 'templates-pageshell--default',          name: 'pageshell-default' },
   { id: 'templates-dashboardlayout--default',    name: 'dashboardlayout-default' },
   { id: 'templates-authlayout--login',           name: 'authlayout-login' },
+  // Neue Templates
+  { id: 'templates-formpage--default',           name: 'formpage-default' },
+  { id: 'templates-listpage--default',           name: 'listpage-default' },
+  { id: 'templates-detailpage--default',         name: 'detailpage-default' },
+  { id: 'templates-errorpage--not-found',        name: 'errorpage-not-found' },
+  { id: 'templates-emptystatepage--keine-daten', name: 'emptystatepage-keine-daten' },
+  // Patterns
+  { id: 'patterns-datatablepattern--default',    name: 'datatablepattern-default' },
+  { id: 'patterns-formwizard--default',          name: 'formwizard-default' },
+  // Spoiler
+  { id: 'atoms-spoiler--default',                name: 'spoiler-default' },
 ];
 
 test.describe('Dark Mode', () => {

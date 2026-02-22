@@ -149,7 +149,6 @@
   --color-base-green-800: #166534;
   --color-base-green-900: #14532d;
   --color-base-green-950: #052e16;
-  --color-scrollarea-track: rgba(0, 0, 0, 0); /** Scrollbar track background */
   --radius-base-none: 0px;
   --radius-base-sm: 0.125rem;
   --radius-base-base: 0.25rem;
@@ -241,7 +240,6 @@
   --sizing-seg-md-height: 32px; /** Height md */
   --sizing-seg-lg-height: 36px; /** Height lg */
   --sizing-textarea-min-height: 100px; /** Default minimum height */
-  --sizing-textarea-max-height: 400px; /** Auto-resize maximum */
   --sizing-timeline-inner-dot: 10px; /** 10px inner dot */
   --sizing-tpick-column-width: 64px; /** Column width per unit */
   --color-primary-1-50: var(--color-base-sky-50);
@@ -570,7 +568,6 @@
   --sizing-carousel-dot-size: var(--sizing-component-indicator-dot-sm); /** Dot indicator size 8px */
   --sizing-chart-indicator-dot: var(--sizing-component-indicator-dot-md); /** Tooltip dot indicator size (10px) */
   --sizing-chart-legend-dot: var(--sizing-component-indicator-dot-md); /** Legend dot size (10px) */
-  --sizing-dashboard-header-height: var(--sizing-layout-header-height); /** Fixed header height */
   --sizing-shell-header-height: var(--sizing-layout-header-height); /** Fixed header height */
   --color-accordion-bg: var(--color-bg-paper); /** Item background */
   --color-accordion-border: var(--color-border-muted); /** Item border/divider */
@@ -607,7 +604,6 @@
   --color-auth-card-bg: var(--color-bg-paper); /** Form card background */
   --color-auth-card-border: var(--color-border-muted); /** Card border */
   --color-auth-footer-text: var(--color-text-muted); /** Footer text color */
-  --color-auth-footer-link: var(--color-text-primary); /** Footer link color */
   --color-avatar-bg: var(--color-bg-surface); /** Avatar fallback background */
   --color-avatar-text: var(--color-text-muted); /** Avatar fallback text */
   --color-avatar-border: var(--color-border-default); /** Avatar border */
@@ -669,7 +665,6 @@
   --color-chart-3: var(--color-text-warning); /** Chart color 3 (amber) */
   --color-chart-4: var(--color-text-error); /** Chart color 4 (red) */
   --color-chart-5: var(--color-text-info); /** Chart color 5 (info blue) */
-  --color-chart-grid: var(--color-border-muted); /** Chart grid line color */
   --color-chart-axis: var(--color-text-muted); /** Chart axis text color */
   --color-chart-tooltip-bg: var(--color-bg-paper); /** Chart tooltip background */
   --color-chart-tooltip-border: var(--color-border-muted); /** Chart tooltip border */
@@ -692,8 +687,6 @@
   --color-code-line-number: var(--color-text-muted); /** Line number text color */
   --color-cpick-bg: var(--color-bg-paper); /** Container background */
   --color-cpick-border: var(--color-border-default); /** Container border */
-  --color-cpick-slider-track: var(--color-bg-surface); /** Slider track background */
-  --color-cpick-slider-thumb-border: var(--color-border-strong); /** Slider thumb border */
   --color-cpick-input-bg: var(--color-bg-paper); /** Hex input background */
   --color-cpick-input-border: var(--color-border-default); /** Hex input border */
   --color-cpick-input-text: var(--color-text-base); /** Hex input text */
@@ -701,8 +694,6 @@
   --color-cpick-swatch-border: var(--color-border-muted); /** Swatch border */
   --color-cpick-swatch-border-active: var(--color-border-focus); /** Active swatch border */
   --color-cpick-label-text: var(--color-text-muted); /** Label text color */
-  --color-cmb-trigger-bg: var(--color-bg-paper); /** Trigger background (matches Input) */
-  --color-cmb-trigger-border: var(--color-border-default); /** Trigger border */
   --color-cmb-trigger-text: var(--color-text-base); /** Trigger text */
   --color-cmb-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
   --color-cmb-content-bg: var(--color-bg-paper); /** Dropdown background */
@@ -801,19 +792,15 @@
   --color-fileupload-progress-fill: var(--color-bg-primary); /** Progress bar */
   --color-fileupload-error-text: var(--color-text-error); /** Error message */
   --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
-  --color-formpage-bg: var(--color-bg-base); /** Page background */
   --color-fwizard-summary-bg: var(--color-bg-surface); /** Summary section background */
   --color-fwizard-summary-border: var(--color-border-muted); /** Summary section border */
   --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
   --color-hl-text: var(--color-text-base); /** Highlight text */
   --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
   --color-hovercard-border: var(--color-border-muted); /** HoverCard border */
-  --color-icon-default: var(--color-text-base); /** Default icon stroke color (currentColor) */
-  --color-icon-muted: var(--color-text-muted); /** Muted/secondary icon color */
   --color-img-bg: var(--color-bg-surface); /** Loading placeholder background */
   --color-img-fallback-bg: var(--color-bg-surface-hover); /** Error fallback background */
   --color-img-fallback-text: var(--color-text-muted); /** Error fallback icon/text */
-  --color-img-border: var(--color-border-muted); /** Optional border */
   --color-input-bg: var(--color-bg-paper); /** White paper background */
   --color-input-bg-disabled: var(--color-bg-surface);
   --color-input-text: var(--color-text-base);
@@ -823,7 +810,6 @@
   --color-input-border-focus: var(--color-border-focus);
   --color-input-border-error: var(--color-border-error);
   --color-inputotp-bg: var(--color-bg-paper); /** Slot background */
-  --color-inputotp-bg-disabled: var(--color-bg-surface); /** Disabled slot background */
   --color-inputotp-text: var(--color-text-base); /** Digit text color */
   --color-inputotp-border: var(--color-border-default); /** Slot border */
   --color-inputotp-border-focus: var(--color-border-focus); /** Active slot focus ring */
@@ -835,7 +821,6 @@
   --color-kbd-border: var(--color-border-muted); /** Key border */
   --color-link-text: var(--color-interactive-primary); /** Default link text color */
   --color-link-text-hover: var(--color-interactive-primary-hover); /** Link hover text color */
-  --color-listpage-result-count: var(--color-text-muted); /** Result count text color */
   --color-ldovl-bg: var(--color-bg-overlay); /** Overlay background (semi-transparent) */
   --color-ldovl-text: var(--color-text-base); /** Loading text color */
   --color-ldovl-spinner: var(--color-interactive-primary); /** Spinner color */
@@ -906,7 +891,6 @@
   --color-rtg-filled: var(--color-text-warning); /** Filled star (gold/amber) */
   --color-rtg-empty: var(--color-text-disabled); /** Empty star */
   --color-rtg-hover: var(--color-border-warning); /** Hover color */
-  --color-rtg-text: var(--color-text-muted); /** Optional rating text */
   --color-rsz-handle-bg: var(--color-border-muted); /** Handle default background */
   --color-rsz-handle-hover-bg: var(--color-interactive-primary); /** Handle hover/active */
   --color-rsz-handle-border: var(--color-border-default); /** Handle grip border */
@@ -923,16 +907,11 @@
   --color-seg-text: var(--color-text-muted); /** Inactive segment text */
   --color-seg-active-text: var(--color-text-base); /** Active segment text */
   --color-seg-hover-bg: var(--color-bg-surface-hover); /** Hover background (inactive) */
-  --color-select-trigger-bg: var(--color-bg-paper); /** White trigger background (matches Input) */
   --color-select-trigger-text: var(--color-text-base); /** Trigger text color */
   --color-select-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
   --color-select-trigger-border: var(--color-border-default); /** Default border */
-  --color-select-trigger-border-hover: var(--color-border-strong); /** Hover border */
-  --color-select-trigger-border-focus: var(--color-border-focus); /** Focus border (sky) */
-  --color-select-trigger-border-error: var(--color-border-error); /** Error border */
   --color-select-trigger-disabled-bg: var(--color-bg-surface); /** Disabled background */
   --color-select-icon: var(--color-text-muted); /** Chevron/search icon color */
-  --color-select-icon-hover: var(--color-text-base); /** Icon hover color */
   --color-select-popover-bg: var(--color-bg-paper); /** White dropdown background */
   --color-select-popover-border: var(--color-border-muted); /** Dropdown border */
   --color-select-item-text: var(--color-text-base); /** Option text */
@@ -956,7 +935,6 @@
   --color-session-card-text-secondary: var(--color-text-muted); /** Date, labels, description */
   --color-session-card-text-tertiary: var(--color-text-disabled); /** Zone labels (Z1-Z5) */
   --color-session-card-text-error: var(--color-text-error); /** Error message text */
-  --color-session-card-skeleton: var(--color-bg-surface); /** Skeleton placeholder */
   --color-session-card-zone-bg: var(--color-bg-surface); /** Zone bar background */
   --color-session-card-zone-1: var(--color-border-strong); /** HR Zone 1 Recovery */
   --color-session-card-zone-2: var(--color-border-success); /** HR Zone 2 Aerobic */
@@ -979,6 +957,10 @@
   --color-spinner-primary: var(--color-interactive-primary);
   --color-spinner-track: var(--color-border-muted);
   --color-spinner-label: var(--color-text-muted);
+  --color-spl-bg: var(--color-bg-surface); /** Hintergrund im verdeckten Zustand */
+  --color-spl-text: var(--color-text-base); /** Textfarbe im aufgedeckten Zustand */
+  --color-spl-hint: var(--color-text-muted); /** Hinweistext-Farbe (Klick-Aufforderung) */
+  --color-spl-border: var(--color-border-muted); /** Rahmenfarbe */
   --color-statcard-text-primary: var(--color-text-base); /** Main value text */
   --color-statcard-text-secondary: var(--color-text-muted); /** Title, unit, description */
   --color-statcard-border-success: var(--color-border-success); /** Success variant left accent */
@@ -986,7 +968,6 @@
   --color-statcard-border-error: var(--color-border-error); /** Error variant left accent */
   --color-statcard-trend-up: var(--color-text-success); /** Positive trend indicator */
   --color-statcard-trend-down: var(--color-text-error); /** Negative trend indicator */
-  --color-statcard-trend-neutral: var(--color-text-muted); /** Neutral trend indicator */
   --color-stepper-completed-bg: var(--color-bg-success-subtle); /** Completed step bg — subtle, NOT solid */
   --color-stepper-completed-border: var(--color-border-success); /** Completed step ring */
   --color-stepper-completed-text: var(--color-text-success); /** Completed step check icon */
@@ -1118,7 +1099,6 @@
   --radius-cpick-field: var(--radius-component-md); /** 6px saturation field radius */
   --radius-cpick-slider: var(--radius-component-full); /** Pill slider track */
   --radius-cpick-thumb: var(--radius-component-full); /** Circular thumb */
-  --radius-cmb-trigger: var(--radius-component-md); /** Trigger border radius */
   --radius-cmb-content: var(--radius-component-lg); /** Dropdown border radius */
   --radius-command: var(--radius-component-lg); /** Command palette border radius */
   --radius-cpybtn: var(--radius-component-md); /** Button radius */
@@ -1164,12 +1144,12 @@
   --radius-seg-item: var(--radius-component-sm); /** Segment item radius */
   --radius-select-popover: var(--radius-component-lg); /** 8px dropdown radius */
   --radius-select-item: var(--radius-component-md); /** 6px item radius */
-  --radius-sheet: var(--radius-component-xl); /** 12px sheet radius (large overlay) */
   --radius-sidebar-badge: var(--radius-component-full); /** Pill-shaped badge (9999px) */
   --radius-skeleton: var(--radius-component-md);
   --radius-skeleton-circle: var(--radius-component-full);
   --radius-slider-track: var(--radius-component-full); /** Slider track radius */
   --radius-slider-thumb: var(--radius-component-full); /** Slider thumb radius */
+  --radius-spl: var(--radius-component-sm); /** Border-Radius */
   --radius-stepper-indicator: var(--radius-component-full); /** Circular indicator (9999px) */
   --radius-switch-track: var(--radius-component-full); /** Pill-shaped track (9999px) */
   --radius-switch-thumb: var(--radius-component-full); /** Circular thumb (9999px) */
@@ -1219,7 +1199,6 @@
   --spacing-accordion-content-padding-y: var(--spacing-component-padding-sm); /** 12px content vertical padding */
   --spacing-alert-padding: var(--spacing-component-padding-md); /** Alert padding all sides (16px) */
   --spacing-alert-gap: var(--spacing-component-gap-md); /** Gap between icon and content (12px) */
-  --spacing-alert-content-gap: var(--spacing-component-gap-xs); /** Gap between title and description (4px) */
   --spacing-alert-icon-mt: var(--spacing-component-gap-2xs); /** Icon top margin for vertical alignment (2px) */
   --spacing-alert-close-padding: var(--spacing-component-gap-xs); /** Close button padding (4px) */
   --spacing-alert-title-mb: var(--spacing-component-gap-xs); /** Title bottom margin (4px) */
@@ -1235,14 +1214,10 @@
   --spacing-bq-padding: var(--spacing-component-padding-lg); /** Internal padding */
   --spacing-bq-border-width: var(--spacing-component-padding-xs); /** Left border width (4px) */
   --spacing-bq-cite-gap: var(--spacing-component-gap-md); /** Gap before citation */
-  --spacing-btn-padding-x: var(--spacing-component-padding-md);
-  --spacing-btn-padding-y: var(--spacing-component-padding-sm);
-  --spacing-btn-gap: var(--spacing-component-gap-sm);
   --spacing-card-padding-compact: var(--spacing-component-padding-sm);
   --spacing-card-padding-normal: var(--spacing-component-padding-md);
   --spacing-card-padding-spacious: var(--spacing-component-padding-lg);
   --spacing-card-gap: var(--spacing-component-gap-md);
-  --spacing-carousel-dot-gap: var(--sizing-component-gap-sm); /** Gap between pagination dots (6px) */
   --spacing-carousel-nav-offset: var(--spacing-component-gap-sm); /** Nav button distance from edge (8px) */
   --spacing-carousel-dots-bottom: var(--spacing-component-gap-md); /** Dots distance from bottom (12px) */
   --spacing-carousel-dots-px: var(--spacing-component-gap-xs); /** Dots container horizontal padding (4px) */
@@ -1268,7 +1243,6 @@
   --spacing-cmb-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
   --spacing-cmb-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
   --spacing-cmb-icon-mr: var(--spacing-component-gap-sm); /** 8px icon margin right */
-  --spacing-command-padding: var(--spacing-component-padding-sm); /** Command item padding */
   --spacing-command-input-px: var(--spacing-component-padding-sm); /** 12px input wrapper horizontal padding */
   --spacing-command-list-padding: var(--spacing-component-gap-xs); /** 4px list inner padding */
   --spacing-command-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
@@ -1277,6 +1251,7 @@
   --spacing-command-item-py: var(--spacing-component-gap-xs); /** 6px item vertical padding */
   --spacing-command-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
   --spacing-dashboard-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
+  --spacing-dashboard-header-gap: var(--spacing-component-gap-md); /** Header items gap (12px) */
   --spacing-dashboard-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
   --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
   --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
@@ -1337,13 +1312,10 @@
   --spacing-fwizard-summary-padding: var(--spacing-component-padding-md); /** 16px summary card padding */
   --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
   --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
-  --spacing-input-padding-y: var(--spacing-component-padding-sm); /** 12px */
   --spacing-input-icon-inset: var(--sizing-component-height-md); /** 40px – right padding when icon present */
   --spacing-input-icon-padding: var(--spacing-component-padding-sm); /** 12px – icon button internal padding */
   --spacing-input-field-gap: var(--sizing-component-gap-sm); /** 6px — Gap between Label, Input/Select/Textarea, and Hint in Field wrappers */
   --spacing-inputotp-gap: var(--spacing-component-gap-sm); /** Gap between slots */
-  --spacing-inputotp-group-gap: var(--spacing-component-gap-md); /** Gap between groups */
-  --spacing-label-indicator-gap: var(--spacing-component-gap-2xs); /** 2px — Gap between label text and required indicator (*) */
   --spacing-link-gap: var(--spacing-component-gap-xs); /** Gap between text and external icon (4px) */
   --spacing-listpage-header-gap: var(--spacing-component-gap-md); /** Gap between title and action button (8px) */
   --spacing-listpage-toolbar-gap: var(--spacing-component-gap-sm); /** Gap between toolbar items (8px) */
@@ -1366,12 +1338,10 @@
   --spacing-multiselect-trigger-py: var(--spacing-component-gap-xs); /** Trigger vertical padding */
   --spacing-multiselect-search-py: var(--spacing-component-gap-xs); /** Search input vertical padding */
   --spacing-multiselect-item-px: var(--spacing-component-padding-md); /** Item horizontal padding (12px) */
-  --spacing-multiselect-item-py: var(--spacing-component-gap-xs); /** Item vertical padding */
   --spacing-multiselect-section-px: var(--spacing-component-padding-sm); /** Popover section padding (8px) */
   --spacing-multiselect-selectall-px: var(--spacing-component-padding-md); /** Select-all horizontal padding (12px) */
   --spacing-multiselect-selectall-py: var(--spacing-component-gap-xs); /** Select-all vertical padding (4px) */
   --spacing-navmenu-gap: var(--spacing-component-gap-xs); /** Gap between nav items (4px) */
-  --spacing-navmenu-trigger-gap: var(--spacing-component-gap-xs); /** Gap between trigger text and chevron (4px) */
   --spacing-navmenu-trigger-px: var(--spacing-component-padding-sm); /** 12px trigger horizontal padding */
   --spacing-navmenu-trigger-py: var(--spacing-component-padding-xs); /** 8px trigger vertical padding */
   --spacing-navmenu-content-p: var(--spacing-component-padding-md); /** 16px content padding */
@@ -1398,10 +1368,8 @@
   --spacing-radio-item-padding: var(--spacing-component-gap-sm); /** 8px item row padding */
   --spacing-radio-visual-mt: var(--spacing-component-gap-2xs); /** 2px visual container top margin */
   --spacing-rtg-gap: var(--spacing-component-gap-sm); /** Gap between stars */
-  --spacing-rsz-handle-size: var(--spacing-component-padding-xs); /** Handle hit-area width/height */
   --spacing-searchfilter-gap: var(--spacing-component-gap-sm); /** Gap between search input and filter slots (8px) */
   --spacing-searchfilter-py: var(--spacing-component-padding-sm); /** Vertical padding (8px) */
-  --spacing-sinput-icon-gap: var(--spacing-component-gap-sm); /** Gap between icon and text */
   --spacing-seg-padding: var(--spacing-component-padding-xs); /** Container inner padding */
   --spacing-seg-item-px: var(--spacing-component-padding-sm); /** Segment horizontal padding */
   --spacing-seg-gap: var(--spacing-component-gap-xs); /** Gap between segments */
@@ -1442,6 +1410,8 @@
   --spacing-sidebar-collapse-padding: var(--spacing-component-gap-xs); /** Collapse button padding */
   --spacing-slider-gap: var(--spacing-component-gap-md); /** Gap between slider and value display (12px) */
   --spacing-spinner-gap: var(--spacing-component-gap-sm); /** Gap between spinner and label (8px) */
+  --spacing-spl-px: var(--spacing-component-padding-xs); /** Horizontales Padding */
+  --spacing-spl-py: var(--spacing-component-padding-xs); /** Vertikales Padding */
   --spacing-statcard-value-mt: var(--spacing-component-gap-sm); /** 8px above value */
   --spacing-statcard-trend-mt: var(--spacing-component-gap-xs); /** 4px above trend */
   --spacing-statcard-trend-gap: var(--spacing-component-gap-xs); /** 4px trend arrow-text gap */
@@ -1485,6 +1455,7 @@
   --spacing-timeline-desc-text-mt: var(--spacing-component-gap-2xs); /** 2px description text margin top */
   --spacing-tpick-popover-padding: var(--spacing-component-padding-sm); /** 8px popover inner padding */
   --spacing-tpick-column-gap: var(--spacing-component-gap-xs); /** 4px gap between cells */
+  --spacing-tpick-columns-gap: var(--spacing-component-gap-xs); /** 4px gap between time columns */
   --spacing-toast-padding: var(--spacing-component-padding-md); /** 16px internal padding */
   --spacing-toast-gap: var(--spacing-component-gap-md); /** 8px gap between icon/content/close */
   --spacing-toast-viewport-padding: var(--spacing-component-padding-md); /** 16px distance from screen edges */
@@ -1544,9 +1515,6 @@
   --font-checkbox-label-size: var(--font-component-size-sm); /** Label font size 14px (text-sm) */
   --font-checkbox-label-weight: var(--font-component-weight-medium); /** Label font weight 500 (font-medium) */
   --font-checkbox-desc-size: var(--font-caption-size); /** Description font size 12px (text-xs) */
-  --font-checkbox-desc-weight: var(--font-component-weight-normal); /** Description font weight 400 */
-  --font-checkbox-label-line-height: var(--font-component-line-height-sm); /** 20px */
-  --font-checkbox-desc-line-height: var(--font-component-line-height-xs); /** 18px */
   --font-code-size: var(--font-component-size-sm); /** Code font size (14px) */
   --font-cpick-label-size: var(--font-component-size-sm); /** Label text font size */
   --font-cpick-input-size: var(--font-component-size-sm); /** Hex input font size */
@@ -1568,8 +1536,6 @@
   --font-datepicker-selected-weight: var(--font-component-weight-semibold); /** Selected day weight */
   --font-datepicker-today-weight: var(--font-component-weight-medium); /** Today day weight */
   --font-datepicker-range-text-size: var(--font-component-size-sm); /** 14px range separator text size */
-  --font-detailpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
-  --font-detailpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
   --font-dialog-title-size: var(--font-component-size-lg); /** Dialog title font size (text-lg equivalent) */
   --font-dialog-title-weight: var(--font-component-weight-semibold); /** Dialog title font weight (font-semibold) */
   --font-dialog-description-size: var(--font-component-size-sm); /** Dialog description font size (text-sm equivalent) */
@@ -1598,10 +1564,7 @@
   --font-form-label-size: var(--font-component-size-sm); /** Label text size (14px) */
   --font-form-label-weight: var(--font-component-weight-medium); /** Label text weight */
   --font-form-message-size: var(--font-component-size-sm); /** Error/description text size (14px) */
-  --font-formpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
-  --font-formpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
   --font-hovercard-content-size: var(--font-component-size-sm); /** HoverCard content font size */
-  --font-input-weight: var(--font-component-weight-normal); /** Font weight 400 (normal) */
   --font-inputfield-label-weight: var(--font-component-weight-medium); /** Label font weight */
   --font-inputotp-size: var(--font-component-size-sm); /** OTP digit font size (text-sm) */
   --font-inputotp-weight: var(--font-component-weight-medium); /** OTP digit font weight (500) */
@@ -1609,9 +1572,6 @@
   --font-kbd-lg-size: var(--font-component-size-sm); /** Kbd lg font size (14px) */
   --font-label-size: var(--font-component-size-sm); /** Label font size (14px) */
   --font-label-weight: var(--font-component-weight-medium); /** Label font weight (500) */
-  --font-listpage-title-size: var(--font-heading-size-md); /** Page title font size (20px) */
-  --font-listpage-title-weight: var(--font-component-weight-semibold); /** Page title font weight */
-  --font-listpage-result-count-size: var(--font-component-size-sm); /** Result count font size */
   --font-ldovl-text-size: var(--font-component-size-sm); /** Loading text font size */
   --font-menubar-trigger-size: var(--font-component-size-sm); /** Trigger text size (14px) */
   --font-menubar-trigger-weight: var(--font-component-weight-medium); /** Trigger text weight */
@@ -1665,6 +1625,7 @@
   --font-slider-value-size: var(--font-component-size-sm); /** Slider value display font size (text-sm) */
   --font-slider-value-weight: var(--font-component-weight-medium); /** Slider value display font weight (500) */
   --font-spinner-label-size: var(--font-component-size-sm); /** Spinner label font size (text-sm) */
+  --font-spl-hint-size: var(--font-component-size-sm); /** Schriftgroesse Hinweistext */
   --font-statcard-title-size: var(--font-component-size-sm); /** Title text size (14px) */
   --font-statcard-title-weight: var(--font-component-weight-medium); /** Title font weight */
   --font-statcard-value-size: var(--font-heading-size-lg); /** Main value size (30px) */
@@ -1692,7 +1653,6 @@
   --font-text-caption-size: var(--font-component-size-sm); /** Caption variant font size (text-sm) */
   --font-text-small-size: var(--font-component-size-xs); /** Small variant font size (text-xs) */
   --font-text-muted-size: var(--font-component-size-sm); /** Muted variant font size (text-sm) */
-  --font-textarea-label-size: var(--font-component-size-sm); /** Label font size (text-sm equivalent) */
   --font-textarea-label-weight: var(--font-component-weight-medium); /** Label font weight (font-medium) */
   --font-textarea-hint-size: var(--font-component-size-xs); /** Helper/error text font size (text-xs equivalent) */
   --font-textarea-counter-size: var(--font-component-size-xs); /** Character counter font size (text-xs equivalent) */
@@ -1715,9 +1675,7 @@
   --font-tree-label-size: var(--font-component-size-sm); /** Tree node label font size */
   --sizing-alert-border-width: var(--sizing-component-track-sm); /** Left accent border width (4px) */
   --sizing-alert-font-size: var(--font-component-size-sm); /** Text font size (14px) */
-  --sizing-alert-line-height: var(--font-component-line-height-sm); /** Text line height (21px) */
   --sizing-alert-title-weight: var(--font-component-weight-semibold); /** Title font weight (600) */
-  --sizing-alert-desc-weight: var(--font-component-weight-normal); /** Description font weight (400) */
   --sizing-avatar-sm: var(--sizing-component-height-sm); /** Avatar size sm (h-9 = 36px) */
   --sizing-avatar-md: var(--sizing-component-height-md); /** Avatar size md (h-10 = 40px) */
   --sizing-avatar-lg: var(--sizing-component-height-lg); /** Avatar size lg (h-11 = 44px) */
@@ -1727,46 +1685,38 @@
   --sizing-badge-xs-padding-x: var(--sizing-component-padding-x-xs);
   --sizing-badge-xs-padding-y: var(--sizing-component-padding-y-xs);
   --sizing-badge-xs-font-size: var(--font-component-size-xs);
-  --sizing-badge-xs-line-height: var(--font-component-line-height-xs); /** 18px */
   --sizing-badge-sm-padding-x: var(--sizing-component-padding-x-sm);
   --sizing-badge-sm-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-badge-sm-font-size: var(--font-component-size-sm);
-  --sizing-badge-sm-line-height: var(--font-component-line-height-sm); /** 21px */
   --sizing-badge-md-padding-x: var(--sizing-component-padding-x-md);
   --sizing-badge-md-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-badge-md-font-size: var(--font-component-size-sm);
-  --sizing-badge-md-line-height: var(--font-component-line-height-sm); /** 21px */
   --sizing-badge-lg-padding-x: var(--sizing-component-padding-x-md);
   --sizing-badge-lg-padding-y: var(--sizing-component-padding-y-md);
   --sizing-badge-lg-font-size: var(--font-component-size-md);
-  --sizing-badge-lg-line-height: var(--font-component-line-height-md); /** 24px */
   --sizing-btn-sm-height: var(--sizing-component-height-sm);
   --sizing-btn-sm-padding-x: var(--sizing-component-padding-x-sm);
   --sizing-btn-sm-padding-y: var(--sizing-component-padding-y-sm);
   --sizing-btn-sm-gap: var(--sizing-component-gap-sm);
   --sizing-btn-sm-font-size: var(--font-component-size-sm);
-  --sizing-btn-sm-line-height: var(--font-component-line-height-sm);
   --sizing-btn-sm-radius: var(--radius-component-md);
   --sizing-btn-md-height: var(--sizing-component-height-md);
   --sizing-btn-md-padding-x: var(--sizing-component-padding-x-md);
   --sizing-btn-md-padding-y: var(--sizing-component-padding-y-md);
   --sizing-btn-md-gap: var(--sizing-component-gap-md);
   --sizing-btn-md-font-size: var(--font-component-size-md);
-  --sizing-btn-md-line-height: var(--font-component-line-height-md);
   --sizing-btn-md-radius: var(--radius-component-md);
   --sizing-btn-lg-height: var(--sizing-component-height-lg);
   --sizing-btn-lg-padding-x: var(--sizing-component-padding-x-lg);
   --sizing-btn-lg-padding-y: var(--sizing-component-padding-y-lg);
   --sizing-btn-lg-gap: var(--sizing-component-gap-lg);
   --sizing-btn-lg-font-size: var(--font-component-size-lg);
-  --sizing-btn-lg-line-height: var(--font-component-line-height-lg);
   --sizing-btn-lg-radius: var(--radius-component-md);
   --sizing-btn-border-width: var(--sizing-component-border-width-default);
   --sizing-carousel-nav-size: var(--sizing-component-height-md); /** Nav button size 40px */
   --sizing-chart-indicator-line-h: var(--spacing-component-gap-2xs); /** Line indicator height (2px) */
   --sizing-chart-indicator-line-w: var(--spacing-component-gap-md); /** Line indicator width (14px) */
   --sizing-checkbox-box-size: var(--sizing-component-icon-control); /** Checkbox box size (20px) */
-  --sizing-checkbox-icon-size: var(--sizing-component-icon-sm); /** Check icon size inside checkbox (16px) */
   --sizing-checkbox-border-width: var(--sizing-component-border-width-thick); /** 2px */
   --sizing-cpybtn-sm: var(--sizing-component-height-sm); /** CopyButton size sm (36px) */
   --sizing-cpybtn-md: var(--sizing-component-height-md); /** CopyButton size md (40px) */
@@ -1779,18 +1729,14 @@
   --sizing-icon-md: var(--sizing-component-icon-control); /** Medium icon (20x20) — default */
   --sizing-icon-lg: var(--sizing-component-icon-md); /** Large icon (24x24) */
   --sizing-icon-xl: var(--sizing-component-icon-lg); /** Extra large icon (32x32) */
-  --sizing-input-border-width: var(--sizing-component-border-width-default); /** 1px */
   --sizing-input-sm-height: var(--sizing-component-height-sm); /** 36px – matches Button sm */
   --sizing-input-sm-font-size: var(--font-component-size-sm); /** 0.875rem */
-  --sizing-input-sm-line-height: var(--font-component-line-height-sm); /** 21px */
   --sizing-input-sm-radius: var(--radius-component-md); /** 6px */
   --sizing-input-md-height: var(--sizing-component-height-md); /** 40px – matches Button md */
   --sizing-input-md-font-size: var(--font-component-size-md); /** 1rem */
-  --sizing-input-md-line-height: var(--font-component-line-height-md); /** 24px */
   --sizing-input-md-radius: var(--radius-component-md); /** 6px */
   --sizing-input-lg-height: var(--sizing-component-height-lg); /** 44px – matches Button lg */
   --sizing-input-lg-font-size: var(--font-component-size-lg); /** 1.125rem */
-  --sizing-input-lg-line-height: var(--font-component-line-height-lg); /** 27px */
   --sizing-input-lg-radius: var(--radius-component-md); /** 6px */
   --sizing-inputotp-slot-size: var(--sizing-component-height-md); /** Slot width and height (40px) */
   --sizing-inputotp-border-width: var(--sizing-component-border-width-default); /** Slot border width (1px) */

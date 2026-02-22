@@ -8,8 +8,7 @@
       "border-warning": { "$type": "color", "$value": "{color.border.warning}", "$description": "Warning variant left accent" },
       "border-error":   { "$type": "color", "$value": "{color.border.error}", "$description": "Error variant left accent" },
       "trend-up":       { "$type": "color", "$value": "{color.text.success}", "$description": "Positive trend indicator" },
-      "trend-down":     { "$type": "color", "$value": "{color.text.error}", "$description": "Negative trend indicator" },
-      "trend-neutral":  { "$type": "color", "$value": "{color.text.muted}", "$description": "Neutral trend indicator" }
+      "trend-down":     { "$type": "color", "$value": "{color.text.error}", "$description": "Negative trend indicator" }
     }
   },
   "spacing": {

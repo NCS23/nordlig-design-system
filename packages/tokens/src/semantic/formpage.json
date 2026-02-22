@@ -1,10 +1,4 @@
 {
-  "color": {
-    "$description": "Level 4: FormPage template tokens",
-    "formpage": {
-      "bg": { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" }
-    }
-  },
   "spacing": {
     "formpage": {
       "header-gap":  { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap below header section (16px)" },
@@ -17,12 +11,6 @@
       "max-width-sm": { "$type": "dimension", "$value": "480px", "$description": "Narrow form (login, simple)" },
       "max-width-md": { "$type": "dimension", "$value": "640px", "$description": "Medium form (default)" },
       "max-width-lg": { "$type": "dimension", "$value": "800px", "$description": "Wide form (complex)" }
-    }
-  },
-  "font": {
-    "formpage": {
-      "title-size":   { "$type": "dimension", "$value": "{font.heading.size.md}", "$description": "Page title font size (20px)" },
-      "title-weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Page title font weight" }
     }
   }
 }

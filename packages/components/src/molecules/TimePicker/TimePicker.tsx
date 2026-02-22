@@ -355,7 +355,7 @@ const TimePicker = React.forwardRef<HTMLInputElement, TimePickerProps>(
                 'animate-in fade-in-0 zoom-in-95'
               )}
             >
-              <div className="flex gap-1">
+              <div className="flex gap-[var(--spacing-tpick-columns-gap)]">
                 <TimeColumn
                   values={hourValues}
                   selected={timeFormat === '12h' ? selectedHour12 : hours}

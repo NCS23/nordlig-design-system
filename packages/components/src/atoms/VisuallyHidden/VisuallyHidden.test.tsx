@@ -37,4 +37,19 @@ describe('VisuallyHidden', () => {
     expect(el).toHaveAttribute('id', 'my-id');
     expect(el).toHaveAttribute('aria-label', 'test');
   });
+
+  it('hat korrekten displayName', () => {
+    expect(VisuallyHidden.displayName).toBe('VisuallyHidden');
+  });
+
+  it('rendert mehrere Kinder', () => {
+    render(
+      <VisuallyHidden data-testid="vh">
+        <span>Erstes Kind</span>
+        <span>Zweites Kind</span>
+      </VisuallyHidden>
+    );
+    expect(screen.getByText('Erstes Kind')).toBeInTheDocument();
+    expect(screen.getByText('Zweites Kind')).toBeInTheDocument();
+  });
 });

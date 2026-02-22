@@ -21,7 +21,6 @@
   },
   "spacing": {
     "command": {
-      "padding":         { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Command item padding" },
       "input-px":        { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "12px input wrapper horizontal padding" },
       "list-padding":    { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "4px list inner padding" },
       "empty-py":        { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "24px empty state vertical padding" },

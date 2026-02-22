@@ -48,6 +48,7 @@ const atomStories: StoryConfig[] = [
   { component: 'Radio',         stories: ['default', 'with-label', 'checked', 'disabled', 'group'] },
   { component: 'CopyButton',    stories: ['default', 'all-sizes', 'disabled'] },
   { component: 'Card',          stories: ['flat', 'raised', 'elevated', 'all-elevations', 'all-paddings'] },
+  { component: 'Spoiler',       stories: ['default', 'mit-label', 'inline-text'] },
 ];
 
 for (const { component, stories } of atomStories) {

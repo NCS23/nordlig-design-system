@@ -9,9 +9,6 @@
       "description": { "$type": "color", "$value": "{color.text.muted}", "$description": "Sheet description text" }
     }
   },
-  "radius": {
-    "sheet": { "$type": "dimension", "$value": "{radius.component.xl}", "$description": "12px sheet radius (large overlay)" }
-  },
   "shadow": {
     "sheet": { "$type": "shadow", "$value": "{shadow.elevation.floating}", "$description": "Sheet panel shadow" }
   },

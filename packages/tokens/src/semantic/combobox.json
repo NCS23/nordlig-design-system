@@ -2,8 +2,6 @@
   "color": {
     "$description": "Level 4: Combobox component tokens",
     "cmb": {
-      "trigger-bg":          { "$type": "color", "$value": "{color.bg.paper}",          "$description": "Trigger background (matches Input)" },
-      "trigger-border":      { "$type": "color", "$value": "{color.border.default}",    "$description": "Trigger border" },
       "trigger-text":        { "$type": "color", "$value": "{color.text.base}",         "$description": "Trigger text" },
       "trigger-placeholder": { "$type": "color", "$value": "{color.text.muted}",        "$description": "Placeholder text" },
       "content-bg":          { "$type": "color", "$value": "{color.bg.paper}",          "$description": "Dropdown background" },
@@ -17,7 +15,6 @@
   },
   "radius": {
     "cmb": {
-      "trigger": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Trigger border radius" },
       "content": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Dropdown border radius" }
     }
   },

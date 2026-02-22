@@ -12,10 +12,5 @@
     "rsz": {
       "handle": { "$type": "dimension", "$value": "{radius.component.sm}", "$description": "Handle grip radius" }
     }
-  },
-  "spacing": {
-    "rsz": {
-      "handle-size": { "$type": "dimension", "$value": "{spacing.component.padding.xs}", "$description": "Handle hit-area width/height" }
-    }
   }
 }

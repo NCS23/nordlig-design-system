@@ -26,7 +26,6 @@
     "alert": {
       "padding":       { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Alert padding all sides (16px)" },
       "gap":           { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between icon and content (12px)" },
-      "content-gap":   { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between title and description (4px)" },
       "icon-mt":       { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "Icon top margin for vertical alignment (2px)" },
       "close-padding": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Close button padding (4px)" },
       "title-mb":      { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Title bottom margin (4px)" }
@@ -37,9 +36,7 @@
     "alert": {
       "border-width":    { "$type": "dimension", "$value": "{sizing.component.track.sm}", "$description": "Left accent border width (4px)" },
       "font-size":       { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Text font size (14px)" },
-      "line-height":     { "$type": "dimension", "$value": "{font.component.line-height.sm}", "$description": "Text line height (21px)" },
-      "title-weight":    { "$type": "number", "$value": "{font.component.weight.semibold}", "$description": "Title font weight (600)" },
-      "desc-weight":     { "$type": "number", "$value": "{font.component.weight.normal}", "$description": "Description font weight (400)" }
+      "title-weight":    { "$type": "number", "$value": "{font.component.weight.semibold}", "$description": "Title font weight (600)" }
     }
   }
 }

@@ -2,16 +2,11 @@
   "color": {
     "$description": "Level 4: Select/Combobox/MultiSelect component tokens",
     "select": {
-      "trigger-bg":         { "$type": "color", "$value": "{color.bg.paper}", "$description": "White trigger background (matches Input)" },
       "trigger-text":       { "$type": "color", "$value": "{color.text.base}", "$description": "Trigger text color" },
       "trigger-placeholder": { "$type": "color", "$value": "{color.text.muted}", "$description": "Placeholder text" },
       "trigger-border":     { "$type": "color", "$value": "{color.border.default}", "$description": "Default border" },
-      "trigger-border-hover": { "$type": "color", "$value": "{color.border.strong}", "$description": "Hover border" },
-      "trigger-border-focus": { "$type": "color", "$value": "{color.border.focus}", "$description": "Focus border (sky)" },
-      "trigger-border-error": { "$type": "color", "$value": "{color.border.error}", "$description": "Error border" },
       "trigger-disabled-bg": { "$type": "color", "$value": "{color.bg.surface}", "$description": "Disabled background" },
       "icon":               { "$type": "color", "$value": "{color.text.muted}", "$description": "Chevron/search icon color" },
-      "icon-hover":         { "$type": "color", "$value": "{color.text.base}", "$description": "Icon hover color" },
       "popover-bg":         { "$type": "color", "$value": "{color.bg.paper}", "$description": "White dropdown background" },
       "popover-border":     { "$type": "color", "$value": "{color.border.muted}", "$description": "Dropdown border" },
       "item-text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Option text" },

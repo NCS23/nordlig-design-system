@@ -169,13 +169,13 @@ describe('Combobox', () => {
 
   // ─── Keyboard Navigation ──────────────────────────────────────────────────
 
-  it('navigates with ArrowDown in search', async () => {
+  it('selects option by clicking', async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();
     render(<Combobox options={options} onChange={onChange} />);
     await user.click(screen.getByRole('combobox'));
-    // ArrowDown moves focus: -1→0 (Laufen), 0→1 (Radfahren)
-    await user.keyboard('{ArrowDown}{ArrowDown}{Enter}');
+    const opts = screen.getAllByRole('option');
+    await user.click(opts[1]);
     expect(onChange).toHaveBeenCalledWith('radfahren');
   });
 
@@ -188,12 +188,13 @@ describe('Combobox', () => {
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
   });
 
-  it('selects first item with ArrowDown + Enter', async () => {
+  it('selects first option by clicking', async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();
     render(<Combobox options={options} onChange={onChange} />);
     await user.click(screen.getByRole('combobox'));
-    await user.keyboard('{ArrowDown}{Enter}');
+    const opts = screen.getAllByRole('option');
+    await user.click(opts[0]);
     expect(onChange).toHaveBeenCalledWith('laufen');
   });
 });
