@@ -1,6 +1,6 @@
 {
   "name": "@nordlig/components",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0",
   "description": "Nordlig Design System - React Components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
