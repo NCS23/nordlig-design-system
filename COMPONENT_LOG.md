@@ -2856,10 +2856,10 @@
 **Molecules:** 27
 **Organisms:** 13 (inkl. AppHeader, AppFooter)
 **Templates:** 8 (PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPage, EmptyStatePage)
-**Patterns:** 3 (DataTablePattern, FormWizard, FileUploadZone)
+**Patterns:** 4 (DataTablePattern, FormWizard, FileUploadZone, NotificationCenter)
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
-**Total Tests:** 1907 (105 Testdateien)
+**Total Tests:** 1935 (106 Testdateien)
 **Dark Mode:** ✅ CSS class strategy (.dark) mit 74+ Token-Overrides
 **Charts:** ✅ Recharts Integration (Line, Bar, Area, Pie)
 **Forms:** ✅ React Hook Form + Zod Integration
@@ -4693,6 +4693,44 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
+## [NotificationCenter] - 2026-02-22
+
+**Status:** ✅ Complete
+**Story:** NDS-065
+**Level:** Pattern
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `notifcenter-item-bg`, `notifcenter-item-bg-unread`, `notifcenter-item-border`, `notifcenter-timestamp`, `notifcenter-dot-unread`, `notifcenter-empty-text`
+  - Spacing: `notifcenter-section-gap`, `notifcenter-item-gap`, `notifcenter-item-padding`, `notifcenter-header-gap`
+  - Radius: `notifcenter-item`
+  - Sizing: `notifcenter-dot`, `notifcenter-remove-target`, `notifcenter-icon-size`
+  - Font: `notifcenter-timestamp-size`, `notifcenter-title-size`, `notifcenter-title-weight`
+
+### Architecture
+- Controlled pattern: Consumer verwaltet Notification-State extern oder via `useNotificationCenter()` Hook
+- Composition aus Sheet (Panel), Badge (Counter), Button, Icon, Text, Separator
+- Notification-Items mit read/unread States, Varianten-Icons, relative Zeitstempel
+- Sortierung: ungelesen zuerst, dann nach Zeitstempel absteigend
+- Aktionen: markRead, markAllRead, dismiss, clearAll
+- Badge-Counter mit 99+ Limit
+- Empty State mit Icon und konfigurierbarem Text
+- Sheet-Side konfigurierbar (left/right)
+- Accessibility: role="feed", role="article", aria-labels, min-h-11 Touch-Targets, focus-visible Ringe
+
+### Files
+- `packages/tokens/src/semantic/notifcenter.json`
+- `packages/components/src/patterns/NotificationCenter/NotificationCenter.tsx`
+- `packages/components/src/patterns/NotificationCenter/NotificationCenter.test.tsx` (28 Tests)
+- `packages/components/src/patterns/NotificationCenter/NotificationCenter.stories.tsx` (5 Stories)
+- `packages/components/src/patterns/NotificationCenter/index.ts`
+
+### Dependencies
+- Sheet, Badge, Button, Icon, Text, Separator (bestehende Atome/Molekuele)
+- Lucide Icons (Bell, CheckCircle, XCircle, AlertTriangle, Info, X, CheckCheck)
+
+---
+
 **Last Updated:** 2026-02-22
-**Design System Status:** ✅ Complete (88 Components + 8 Templates + 3 Patterns, Welle 13 abgeschlossen)
-**Test Count:** 1854 Tests, 103 Test-Dateien
+**Design System Status:** ✅ Complete (88 Components + 8 Templates + 4 Patterns)
+**Test Count:** 1935 Tests, 106 Test-Dateien

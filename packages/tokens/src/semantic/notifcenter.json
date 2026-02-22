@@ -1,0 +1,41 @@
+{
+  "spacing": {
+    "$description": "Level 4: NotificationCenter pattern tokens",
+    "notifcenter": {
+      "section-gap": { "$type": "dimension", "$value": "{spacing.component.gap.lg}", "$description": "Gap zwischen Header und Liste" },
+      "item-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap zwischen Notification-Items" },
+      "item-padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Padding eines Notification-Items" },
+      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap im Header (Titel + Actions)" },
+      "empty-padding": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Vertikales Padding im leeren Zustand" }
+    }
+  },
+  "color": {
+    "notifcenter": {
+      "item-bg": { "$type": "color", "$value": "{color.bg.paper}", "$description": "Gelesenes Item Hintergrund" },
+      "item-bg-unread": { "$type": "color", "$value": "{color.bg.info-subtle}", "$description": "Ungelesenes Item Hintergrund" },
+      "item-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Item Rand" },
+      "timestamp": { "$type": "color", "$value": "{color.text.muted}", "$description": "Zeitstempel-Farbe" },
+      "dot-unread": { "$type": "color", "$value": "{color.interactive.primary}", "$description": "Ungelesen-Punkt" },
+      "empty-text": { "$type": "color", "$value": "{color.text.muted}", "$description": "Leer-Nachricht" }
+    }
+  },
+  "radius": {
+    "notifcenter": {
+      "item": { "$type": "dimension", "$value": "{radius.component.md}", "$description": "Notification-Item Border-Radius" }
+    }
+  },
+  "sizing": {
+    "notifcenter": {
+      "dot": { "$type": "dimension", "$value": "{sizing.component.indicator.dot-sm}", "$description": "Ungelesen-Punkt Groesse (8px)" },
+      "remove-target": { "$type": "dimension", "$value": "{spacing.base.11}", "$description": "Touch-Target Entfernen-Button (44px)" },
+      "icon-size": { "$type": "dimension", "$value": "{sizing.component.icon.md}", "$description": "Varianten-Icon Groesse" }
+    }
+  },
+  "font": {
+    "notifcenter": {
+      "timestamp-size": { "$type": "dimension", "$value": "{font.caption.size}", "$description": "Zeitstempel Schriftgroesse" },
+      "title-size": { "$type": "dimension", "$value": "{font.label.size}", "$description": "Item-Titel Schriftgroesse" },
+      "title-weight": { "$type": "dimension", "$value": "{font.label.weight}", "$description": "Item-Titel Schriftgewicht" }
+    }
+  }
+}

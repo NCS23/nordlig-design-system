@@ -638,6 +638,8 @@ export { FormWizard } from './patterns/FormWizard';
 export type { FormWizardProps, FormWizardStep } from './patterns/FormWizard';
 export { FileUploadZone } from './patterns/FileUploadZone';
 export type { FileUploadZoneProps, FileUploadZoneFile, FileUploadZoneStatus } from './patterns/FileUploadZone';
+export { NotificationCenter, useNotificationCenter } from './patterns/NotificationCenter';
+export type { NotificationCenterProps, Notification, NotificationVariant } from './patterns/NotificationCenter';
 
 // Utils
 export { cn } from './utils/cn';

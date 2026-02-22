@@ -442,6 +442,7 @@
   --sizing-layout-header-height: var(--spacing-base-14); /** 56px shared header height for templates */
   --sizing-fuzpattern-zone-icon: var(--spacing-base-12); /** Upload-Icon Groesse (48px) */
   --sizing-fuzpattern-remove-target: var(--spacing-base-11); /** Touch-Target Entfernen-Button (44px) */
+  --sizing-notifcenter-remove-target: var(--spacing-base-11); /** Touch-Target Entfernen-Button (44px) */
   --color-bg-paper: var(--color-neutral-1-50); /** Warm white (not pure #fff) per design principles */
   --color-bg-base: var(--color-neutral-1-50);
   --color-bg-surface: var(--color-neutral-1-100);
@@ -571,6 +572,7 @@
   --sizing-chart-indicator-dot: var(--sizing-component-indicator-dot-md); /** Tooltip dot indicator size (10px) */
   --sizing-chart-legend-dot: var(--sizing-component-indicator-dot-md); /** Legend dot size (10px) */
   --sizing-header-height: var(--sizing-layout-header-height); /** Feste Header-Hoehe (56px) */
+  --sizing-notifcenter-dot: var(--sizing-component-indicator-dot-sm); /** Ungelesen-Punkt Groesse (8px) */
   --color-accordion-bg: var(--color-bg-paper); /** Item background */
   --color-accordion-border: var(--color-border-muted); /** Item border/divider */
   --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
@@ -850,6 +852,12 @@
   --color-nav-dropdown-bg: var(--color-bg-paper); /** Dropdown panel background */
   --color-nav-dropdown-border: var(--color-border-muted); /** Dropdown panel border */
   --color-nav-focus-ring: var(--color-border-focus); /** Focus ring color */
+  --color-notifcenter-item-bg: var(--color-bg-paper); /** Gelesenes Item Hintergrund */
+  --color-notifcenter-item-bg-unread: var(--color-bg-info-subtle); /** Ungelesenes Item Hintergrund */
+  --color-notifcenter-item-border: var(--color-border-muted); /** Item Rand */
+  --color-notifcenter-timestamp: var(--color-text-muted); /** Zeitstempel-Farbe */
+  --color-notifcenter-dot-unread: var(--color-interactive-primary); /** Ungelesen-Punkt */
+  --color-notifcenter-empty-text: var(--color-text-muted); /** Leer-Nachricht */
   --color-numberinput-bg: var(--color-bg-paper); /** Input background */
   --color-numberinput-bg-disabled: var(--color-bg-surface); /** Disabled background */
   --color-numberinput-text: var(--color-text-base); /** Input value text */
@@ -1134,6 +1142,7 @@
   --radius-modal: var(--radius-component-xl); /** 12px rounded corners (large overlay) */
   --radius-nav: var(--radius-component-md); /** Navigation item radius */
   --radius-nav-dropdown: var(--radius-component-lg); /** Dropdown panel radius */
+  --radius-notifcenter-item: var(--radius-component-md); /** Notification-Item Border-Radius */
   --radius-numberinput: var(--radius-component-md); /** NumberInput border radius */
   --radius-pagination-item: var(--radius-component-md); /** 6px rounded corners */
   --radius-pwinput-toggle: var(--radius-component-sm); /** 4px toggle button radius */
@@ -1359,6 +1368,11 @@
   --spacing-navmenu-trigger-py: var(--spacing-component-padding-xs); /** 8px trigger vertical padding */
   --spacing-navmenu-content-p: var(--spacing-component-padding-md); /** 16px content padding */
   --spacing-navmenu-indicator-mt: var(--spacing-component-gap-xs); /** 4px indicator margin-top */
+  --spacing-notifcenter-section-gap: var(--spacing-component-gap-lg); /** Gap zwischen Header und Liste */
+  --spacing-notifcenter-item-gap: var(--spacing-component-gap-sm); /** Gap zwischen Notification-Items */
+  --spacing-notifcenter-item-padding: var(--spacing-component-padding-md); /** Padding eines Notification-Items */
+  --spacing-notifcenter-header-gap: var(--spacing-component-gap-sm); /** Gap im Header (Titel + Actions) */
+  --spacing-notifcenter-empty-padding: var(--spacing-component-padding-xl); /** Vertikales Padding im leeren Zustand */
   --spacing-numberinput-stepper-px: var(--spacing-component-gap-sm); /** 8px stepper button horizontal padding */
   --spacing-shell-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
   --spacing-pagination-nav-gap: var(--spacing-component-gap-sm); /** Gap between pagination nav elements (8px) */
@@ -1599,6 +1613,7 @@
   --font-nav-trigger-weight: var(--font-component-weight-medium); /** Trigger text font weight (font-medium) */
   --font-nav-link-size: var(--font-component-size-sm); /** Link text font size (text-sm equivalent) */
   --font-nav-link-weight: var(--font-component-weight-medium); /** Active link font weight (font-medium) */
+  --font-notifcenter-timestamp-size: var(--font-caption-size); /** Zeitstempel Schriftgroesse */
   --font-numberinput-weight: var(--font-component-weight-medium); /** Input value font weight (500) */
   --font-pagination-item-weight: var(--font-component-weight-medium); /** Page button font weight */
   --font-pagination-info-size: var(--font-component-size-sm); /** Compact variant info text font size */
@@ -1753,6 +1768,7 @@
   --sizing-inputotp-border-width: var(--sizing-component-border-width-default); /** Slot border width (1px) */
   --sizing-kbd-border-width: var(--sizing-component-border-width-default); /** Key border width (1px) */
   --sizing-menubar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+  --sizing-notifcenter-icon-size: var(--sizing-component-icon-md); /** Varianten-Icon Groesse */
   --sizing-numberinput-border-width: var(--sizing-component-border-width-default); /** NumberInput border width (1px) */
   --sizing-pagination-item-size: var(--sizing-component-height-sm); /** Page button width & height (36px square) */
   --sizing-pagination-font-size: var(--font-component-size-sm); /** Page button font size */
@@ -1796,4 +1812,6 @@
   --sizing-toggle-lg-padding-x: var(--sizing-component-padding-x-lg); /** Toggle item horizontal padding lg */
   --sizing-toggle-lg-font-size: var(--font-component-size-md); /** Toggle item font size lg */
   --sizing-toolbar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+  --font-notifcenter-title-size: var(--font-label-size); /** Item-Titel Schriftgroesse */
+  --font-notifcenter-title-weight: var(--font-label-weight); /** Item-Titel Schriftgewicht */
 }
