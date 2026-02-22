@@ -26,3 +26,11 @@ jobs:
 
       - name: Build Storybook
         run: pnpm --filter @nordlig/storybook build
+
+      - name: Upload Storybook artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-preview
+          path: apps/storybook/storybook-static/
+          retention-days: 7
