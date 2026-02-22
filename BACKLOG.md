@@ -57,8 +57,8 @@ Eine Story ist **Done**, wenn alle folgenden Punkte erfuellt sind:
 
 | Epic | Titel | Stories | Gitea Label |
 |------|-------|---------|-------------|
-| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-026, NDS-030–NDS-033 | `epic/0-architecture` |
-| **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-047 | `epic/1-components` |
+| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-026, NDS-030–NDS-033, NDS-139–NDS-141 | `epic/0-architecture` |
+| **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-047, NDS-133–NDS-138 | `epic/1-components` |
 | **2** | Templates & Page Layouts | NDS-050–NDS-057 | `epic/2-templates` |
 | **3** | Patterns & Recipes | NDS-060–NDS-065 | `epic/3-patterns` |
 | **4** | Figma Pipeline & Form Builder | NDS-070–NDS-074 | `epic/4-figma` |
@@ -76,6 +76,8 @@ Eine Story ist **Done**, wenn alle folgenden Punkte erfuellt sind:
 | CheckboxField | atom | molecule | Importiert Checkbox + Label (Atoms) |
 | SwitchField | atom | molecule | Importiert Switch + Label (Atoms) |
 | ProgressField | atom | molecule | Importiert Progress + Label (Atoms) |
+| Card | atom | molecule | 4 Sub-Parts (Header/Body/Footer) — Kompositions-Container (NDS-139) |
+| SearchFilter | molecule | pattern | Kombiniert SearchInput + Filter-Layout (NDS-140) |
 
 ### Fehlende Layer (Epic 2 + 3)
 
@@ -201,3 +203,4 @@ PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPag
 | 2026-02-22 | **NDS-071 Done:** FormFieldController — Neues `FormFieldController` fuer RadioGroup/Slider/FileUpload-Support im Form Builder. react-hook-form Controller-Integration. 11 neue Tests, 2 neue Stories (Form + FormWizard). |
 | 2026-02-22 | **NDS-065 Done:** NotificationCenter Pattern — Sheet-basiertes Notification-Panel mit read/unread States, Badge-Counter, useNotificationCenter Hook. 17 L4-Tokens (`notifcenter`), 28 Tests, 5 Stories. |
 | 2026-02-22 | **NDS-090 Done:** Monorepo Build-Optimierung — 4 redundante PR-Workflows (a11y, bundle-size, visual-tests, storybook) zu einem `pr-checks.yml` konsolidiert. Neue `tsup.config.ts` mit clean/treeshake/external/sourcemap (Bundle -8%). `turbo.json` mit inputs + task-dependencies. `test.yml` auf Full-Build gefixt. Tree.tsx Rekursions-Bug gefixt. |
+| 2026-02-22 | **Komponenten-Audit:** 102 Komponenten erfasst. 9 neue Stories erstellt: NDS-133 (Stack), NDS-134 (Container), NDS-135 (Grid), NDS-136 (Spacer), NDS-137 (List/ListItem), NDS-138 (Separator Label), NDS-139 (Card Atom→Molecule), NDS-140 (SearchFilter Molecule→Pattern), NDS-141 (SessionCard/StatCard Review). Gitea #97–#105. |
