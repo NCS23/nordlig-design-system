@@ -268,39 +268,35 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
           {/* Panel */}
           <SheetContent side={side} aria-label={title}>
             <SheetHeader>
-              <div className="flex items-center gap-[var(--spacing-notifcenter-header-gap)] pr-12">
-                <SheetTitle>{title}</SheetTitle>
+              <SheetTitle>{title}</SheetTitle>
+
+              {/* Badge + Aktionen */}
+              <div className="flex items-center flex-wrap gap-[var(--spacing-notifcenter-header-gap)]">
                 {hasUnread && (
                   <Badge variant="info" size="sm">
                     {unreadCount} neu
                   </Badge>
                 )}
+                {hasNotifications && hasUnread && onMarkAllRead && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={onMarkAllRead}
+                  >
+                    <IconAtom icon={CheckCheck} size="sm" />
+                    Alle gelesen
+                  </Button>
+                )}
+                {hasNotifications && onClearAll && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={onClearAll}
+                  >
+                    Alle entfernen
+                  </Button>
+                )}
               </div>
-
-              {/* Aktionen */}
-              {hasNotifications && (
-                <div className="flex items-center gap-[var(--spacing-notifcenter-header-gap)]">
-                  {hasUnread && onMarkAllRead && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={onMarkAllRead}
-                    >
-                      <IconAtom icon={CheckCheck} size="sm" />
-                      Alle gelesen
-                    </Button>
-                  )}
-                  {onClearAll && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={onClearAll}
-                    >
-                      Alle entfernen
-                    </Button>
-                  )}
-                </div>
-              )}
             </SheetHeader>
 
             <Separator className="my-[var(--spacing-notifcenter-section-gap)]" />
