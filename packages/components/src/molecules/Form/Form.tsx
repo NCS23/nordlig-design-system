@@ -1,9 +1,11 @@
 import React from 'react';
 import {
   useForm,
+  Controller,
   type UseFormReturn,
   type FieldValues,
   type SubmitHandler,
+  type ControllerRenderProps,
 } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -139,6 +141,81 @@ function FormField({ name, label, description, children, className }: FormFieldP
 FormField.displayName = 'FormField';
 
 // ---------------------------------------------------------------------------
+// FormFieldController — fuer Komponenten mit eigener Value-API
+// ---------------------------------------------------------------------------
+
+export interface FormFieldControllerProps {
+  /** Field name in the form schema */
+  name: string;
+  /** Label text */
+  label?: string;
+  /** Description text below the field */
+  description?: string;
+  /** Render function receiving the Controller field props (value, onChange, onBlur, ref, name) */
+  children: (field: ControllerRenderProps<FieldValues, string>) => React.ReactElement;
+  /** Additional CSS class */
+  className?: string;
+}
+
+/**
+ * Form field wrapper for components that don't use standard HTML input registration
+ * (RadioGroup, Slider, FileUpload, etc.). Uses react-hook-form's Controller
+ * instead of register for full value lifecycle control.
+ */
+function FormFieldController({
+  name,
+  label,
+  description,
+  children,
+  className,
+}: FormFieldControllerProps) {
+  const form = useFormContext();
+  const fieldId = `field-${name}`;
+  const errorId = `${fieldId}-error`;
+  const descriptionId = `${fieldId}-description`;
+  const error = form.formState.errors[name];
+  const errorMessage = error?.message as string | undefined;
+  const hasError = !!error;
+
+  return (
+    <div className={cn('flex flex-col gap-[var(--spacing-form-field-gap)]', className)}>
+      {label && (
+        <label
+          htmlFor={fieldId}
+          className="text-[length:var(--font-form-label-size)] text-[var(--color-input-text)] [font-weight:var(--font-form-label-weight)]"
+        >
+          {label}
+        </label>
+      )}
+      <Controller
+        name={name}
+        control={form.control}
+        render={({ field }) => children(field)}
+      />
+      {hasError && errorMessage && (
+        <p
+          id={errorId}
+          role="alert"
+          className="text-[length:var(--font-form-message-size)] text-[var(--color-text-error)]"
+        >
+          {errorMessage}
+        </p>
+      )}
+      {description && !hasError && (
+        <p
+          id={descriptionId}
+          className="text-[length:var(--font-form-message-size)] text-[var(--color-text-muted)]"
+        >
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
+FormFieldController.displayName = 'FormFieldController';
+
+// ---------------------------------------------------------------------------
 // FormMessage
 // ---------------------------------------------------------------------------
 
@@ -180,6 +257,6 @@ function useZodForm<T extends z.ZodType<any>>(
 // Exports
 // ---------------------------------------------------------------------------
 
-export { Form, FormField, FormMessage, useZodForm, useFormContext };
+export { Form, FormField, FormFieldController, FormMessage, useZodForm, useFormContext };
 export { z } from 'zod';
-export type { UseFormReturn, SubmitHandler } from 'react-hook-form';
+export type { UseFormReturn, SubmitHandler, ControllerRenderProps } from 'react-hook-form';

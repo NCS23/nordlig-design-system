@@ -1,11 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { z } from 'zod';
-import { Form, FormField, FormMessage, useZodForm } from './Form';
+import { Form, FormField, FormFieldController, FormMessage, useZodForm } from './Form';
 import { Input } from '../../atoms/Input';
 import { Button } from '../../atoms/Button';
 import { Heading } from '../../atoms/Heading';
 import { Label } from '../../atoms/Label';
 import { CheckboxField } from '../CheckboxField';
+import { RadioGroup } from '../RadioGroup/RadioGroup';
+import { Radio } from '../../atoms/Radio/Radio';
+import { Slider } from '../../atoms/Slider/Slider';
+import { FileUpload } from '../FileUpload/FileUpload';
 
 // ---------------------------------------------------------------------------
 // Meta
@@ -351,7 +355,82 @@ export const LoginForm: StoryObj = {
 };
 
 // ---------------------------------------------------------------------------
-// 8. DesignTokens - Verwendete Design-Tokens
+// 8. FormFieldController — RadioGroup, Slider, FileUpload
+// ---------------------------------------------------------------------------
+
+export const ControllerDemo: StoryObj = {
+  name: 'FormFieldController (RadioGroup, Slider, FileUpload)',
+  render: () => {
+    const schema = z.object({
+      sportart: z.string().min(1, 'Sportart ist erforderlich'),
+      intensitaet: z.number().min(1, 'Intensitaet muss mindestens 1% sein').max(100),
+      dateiname: z.string().optional(),
+    });
+
+    function ControllerForm() {
+      const form = useZodForm(schema, {
+        defaultValues: { sportart: '', intensitaet: 50, dateiname: '' },
+      });
+
+      return (
+        <Form
+          form={form}
+          onSubmit={(data) => alert(JSON.stringify(data, null, 2))}
+          className="flex flex-col gap-4 max-w-md"
+        >
+          <FormFieldController
+            name="sportart"
+            label="Sportart"
+            description="Waehlen Sie Ihre bevorzugte Sportart"
+          >
+            {(field) => (
+              <RadioGroup
+                value={field.value as string}
+                onValueChange={field.onChange}
+                aria-label="Sportart"
+              >
+                <Radio value="laufen" label="Laufen" />
+                <Radio value="radfahren" label="Radfahren" />
+                <Radio value="schwimmen" label="Schwimmen" />
+              </RadioGroup>
+            )}
+          </FormFieldController>
+          <FormFieldController
+            name="intensitaet"
+            label="Intensitaet (%)"
+            description="Trainingsintensitaet einstellen"
+          >
+            {(field) => (
+              <Slider
+                value={[field.value as number]}
+                onValueChange={(val) => field.onChange(val[0])}
+                min={0}
+                max={100}
+                step={5}
+                showValue
+              />
+            )}
+          </FormFieldController>
+          <FormFieldController name="dateiname" label="Trainingsdatei">
+            {(field) => (
+              <FileUpload
+                accept=".csv,.fit"
+                onUpload={(files) => field.onChange(files[0]?.name || '')}
+                aria-label="Trainingsdatei hochladen"
+              />
+            )}
+          </FormFieldController>
+          <Button type="submit">Absenden</Button>
+        </Form>
+      );
+    }
+
+    return <ControllerForm />;
+  },
+};
+
+// ---------------------------------------------------------------------------
+// 9. DesignTokens - Verwendete Design-Tokens
 // ---------------------------------------------------------------------------
 
 export const DesignTokens: StoryObj = {

@@ -2,8 +2,11 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 import { z } from 'zod';
-import { Form, FormField, FormMessage, useZodForm, useFormContext } from './Form';
+import { Form, FormField, FormFieldController, FormMessage, useZodForm, useFormContext } from './Form';
 import { Input } from '../../atoms/Input';
+import { RadioGroup } from '../RadioGroup/RadioGroup';
+import { Radio } from '../../atoms/Radio/Radio';
+import { Slider } from '../../atoms/Slider/Slider';
 
 // ---------------------------------------------------------------------------
 // Shared test schema
@@ -321,6 +324,342 @@ describe('Validation', () => {
 
     await waitFor(() => {
       expect(screen.getByLabelText('Name')).toHaveAttribute('aria-invalid', 'true');
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// FormFieldController
+// ---------------------------------------------------------------------------
+
+const controllerSchema = z.object({
+  level: z.string().min(1, 'Auswahl erforderlich'),
+  intensity: z.number().min(1, 'Mindestens 1'),
+});
+
+type ControllerFormValues = z.infer<typeof controllerSchema>;
+
+function ControllerTestForm({
+  onSubmit = vi.fn(),
+  defaultValues,
+  children,
+}: {
+  onSubmit?: (data: ControllerFormValues) => void;
+  defaultValues?: Partial<ControllerFormValues>;
+  children: React.ReactNode;
+}) {
+  const form = useZodForm(controllerSchema, {
+    defaultValues: { level: '', intensity: 0, ...defaultValues },
+  });
+
+  return (
+    <Form form={form} onSubmit={onSubmit}>
+      {children}
+    </Form>
+  );
+}
+
+describe('FormFieldController', () => {
+  it('renders label', () => {
+    render(
+      <ControllerTestForm>
+        <FormFieldController name="level" label="Erfahrungslevel">
+          {(field) => (
+            <RadioGroup
+              value={field.value as string}
+              onValueChange={field.onChange}
+              aria-label="Erfahrungslevel"
+            >
+              <Radio value="anfaenger" label="Anfaenger" />
+              <Radio value="fortgeschritten" label="Fortgeschritten" />
+            </RadioGroup>
+          )}
+        </FormFieldController>
+      </ControllerTestForm>,
+    );
+    expect(screen.getByText('Erfahrungslevel')).toBeInTheDocument();
+    expect(screen.getByText('Erfahrungslevel').tagName).toBe('LABEL');
+  });
+
+  it('renders description', () => {
+    render(
+      <ControllerTestForm>
+        <FormFieldController
+          name="level"
+          label="Level"
+          description="Waehlen Sie Ihr Erfahrungslevel"
+        >
+          {(field) => (
+            <RadioGroup
+              value={field.value as string}
+              onValueChange={field.onChange}
+              aria-label="Level"
+            >
+              <Radio value="a" label="A" />
+            </RadioGroup>
+          )}
+        </FormFieldController>
+      </ControllerTestForm>,
+    );
+    expect(screen.getByText('Waehlen Sie Ihr Erfahrungslevel')).toBeInTheDocument();
+  });
+
+  it('shows validation error', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <ControllerTestForm>
+        <FormFieldController name="level" label="Level">
+          {(field) => (
+            <RadioGroup
+              value={field.value as string}
+              onValueChange={field.onChange}
+              aria-label="Level"
+            >
+              <Radio value="a" label="A" />
+            </RadioGroup>
+          )}
+        </FormFieldController>
+        <button type="submit">Absenden</button>
+      </ControllerTestForm>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Absenden' }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Auswahl erforderlich')).toBeInTheDocument();
+      expect(screen.getByRole('alert')).toHaveTextContent('Auswahl erforderlich');
+    });
+  });
+
+  it('applies custom className', () => {
+    render(
+      <ControllerTestForm>
+        <FormFieldController name="level" className="custom-ctrl">
+          {(field) => (
+            <RadioGroup
+              value={field.value as string}
+              onValueChange={field.onChange}
+              aria-label="Level"
+            >
+              <Radio value="a" label="A" />
+            </RadioGroup>
+          )}
+        </FormFieldController>
+      </ControllerTestForm>,
+    );
+    expect(document.querySelector('.custom-ctrl')).toBeInTheDocument();
+  });
+
+  it('has displayName', () => {
+    expect(FormFieldController.displayName).toBe('FormFieldController');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// FormFieldController + RadioGroup Integration
+// ---------------------------------------------------------------------------
+
+describe('FormFieldController + RadioGroup', () => {
+  it('submits selected RadioGroup value', async () => {
+    const user = userEvent.setup();
+    const handleSubmit = vi.fn();
+
+    render(
+      <ControllerTestForm
+        onSubmit={handleSubmit}
+        defaultValues={{ intensity: 5 }}
+      >
+        <FormFieldController name="level" label="Level">
+          {(field) => (
+            <RadioGroup
+              value={field.value as string}
+              onValueChange={field.onChange}
+              aria-label="Level"
+            >
+              <Radio value="anfaenger" label="Anfaenger" />
+              <Radio value="fortgeschritten" label="Fortgeschritten" />
+            </RadioGroup>
+          )}
+        </FormFieldController>
+        <button type="submit">Absenden</button>
+      </ControllerTestForm>,
+    );
+
+    await user.click(screen.getByLabelText('Fortgeschritten'));
+    await user.click(screen.getByRole('button', { name: 'Absenden' }));
+
+    await waitFor(() => {
+      expect(handleSubmit).toHaveBeenCalledWith(
+        expect.objectContaining({ level: 'fortgeschritten' }),
+        expect.anything(),
+      );
+    });
+  });
+
+  it('changes RadioGroup value updates form state', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <ControllerTestForm>
+        <FormFieldController name="level" label="Level">
+          {(field) => (
+            <RadioGroup
+              value={field.value as string}
+              onValueChange={field.onChange}
+              aria-label="Level"
+            >
+              <Radio value="anfaenger" label="Anfaenger" />
+              <Radio value="fortgeschritten" label="Fortgeschritten" />
+            </RadioGroup>
+          )}
+        </FormFieldController>
+      </ControllerTestForm>,
+    );
+
+    const anfaenger = screen.getByLabelText('Anfaenger') as HTMLInputElement;
+    const fortgeschritten = screen.getByLabelText('Fortgeschritten') as HTMLInputElement;
+
+    await user.click(anfaenger);
+    expect(anfaenger).toBeChecked();
+
+    await user.click(fortgeschritten);
+    expect(fortgeschritten).toBeChecked();
+    expect(anfaenger).not.toBeChecked();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// FormFieldController + Slider Integration
+// ---------------------------------------------------------------------------
+
+describe('FormFieldController + Slider', () => {
+  it('renders Slider within FormFieldController', () => {
+    render(
+      <ControllerTestForm defaultValues={{ intensity: 50 }}>
+        <FormFieldController name="intensity" label="Intensitaet">
+          {(field) => (
+            <Slider
+              value={[field.value as number]}
+              onValueChange={(val) => field.onChange(val[0])}
+              min={0}
+              max={100}
+              showValue
+            />
+          )}
+        </FormFieldController>
+      </ControllerTestForm>,
+    );
+
+    expect(screen.getByText('Intensitaet')).toBeInTheDocument();
+    expect(screen.getByRole('slider')).toBeInTheDocument();
+  });
+
+  it('shows validation error for Slider', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <ControllerTestForm defaultValues={{ intensity: 0 }}>
+        <FormFieldController name="intensity" label="Intensitaet">
+          {(field) => (
+            <Slider
+              value={[field.value as number]}
+              onValueChange={(val) => field.onChange(val[0])}
+              min={0}
+              max={100}
+            />
+          )}
+        </FormFieldController>
+        <button type="submit">Absenden</button>
+      </ControllerTestForm>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Absenden' }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Mindestens 1')).toBeInTheDocument();
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// FormFieldController + FileUpload Integration
+// ---------------------------------------------------------------------------
+
+const fileUploadSchema = z.object({
+  dokumente: z
+    .array(z.instanceof(File))
+    .min(1, 'Mindestens eine Datei erforderlich'),
+});
+
+function FileUploadTestForm({
+  onSubmit = vi.fn(),
+  children,
+}: {
+  onSubmit?: (data: z.infer<typeof fileUploadSchema>) => void;
+  children: React.ReactNode;
+}) {
+  const form = useZodForm(fileUploadSchema, {
+    defaultValues: { dokumente: [] },
+  });
+
+  return (
+    <Form form={form} onSubmit={onSubmit}>
+      {children}
+    </Form>
+  );
+}
+
+describe('FormFieldController + FileUpload', () => {
+  it('renders FileUpload within FormFieldController', async () => {
+    const { FileUpload } = await import('../FileUpload/FileUpload');
+
+    render(
+      <FileUploadTestForm>
+        <FormFieldController name="dokumente" label="Dokumente">
+          {(field) => (
+            <FileUpload
+              accept=".csv"
+              onUpload={(files) => {
+                const current = (field.value as File[]) || [];
+                field.onChange([...current, ...files]);
+              }}
+              aria-label="Dokumente hochladen"
+            />
+          )}
+        </FormFieldController>
+      </FileUploadTestForm>,
+    );
+
+    expect(screen.getByText('Dokumente')).toBeInTheDocument();
+  });
+
+  it('shows validation error for FileUpload', async () => {
+    const user = userEvent.setup();
+    const { FileUpload } = await import('../FileUpload/FileUpload');
+
+    render(
+      <FileUploadTestForm>
+        <FormFieldController name="dokumente" label="Dokumente">
+          {(field) => (
+            <FileUpload
+              accept=".csv"
+              onUpload={(files) => {
+                const current = (field.value as File[]) || [];
+                field.onChange([...current, ...files]);
+              }}
+              aria-label="Dokumente hochladen"
+            />
+          )}
+        </FormFieldController>
+        <button type="submit">Absenden</button>
+      </FileUploadTestForm>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Absenden' }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Mindestens eine Datei erforderlich')).toBeInTheDocument();
     });
   });
 });

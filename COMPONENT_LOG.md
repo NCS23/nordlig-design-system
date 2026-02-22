@@ -2055,9 +2055,17 @@
 **Status:** ✅ Complete
 **Level:** Molecule
 **Libraries:** react-hook-form, zod, @hookform/resolvers
-**Sub-Components:** Form, FormField, FormMessage + useZodForm, useFormContext Hooks
+**Sub-Components:** Form, FormField, FormFieldController, FormMessage + useZodForm, useFormContext Hooks
 **L4 Tokens:** 0 (nutzt existierende Input/Error Tokens)
-**Tests:** 16 | **Stories:** 7
+**Tests:** 27 | **Stories:** 8
+
+### NDS-071 Update (2026-02-22): FormFieldController
+- Neues `FormFieldController` fuer nicht-standard Inputs (RadioGroup, Slider, FileUpload)
+- Nutzt react-hook-form `Controller` statt `register`
+- Render-Function-Pattern: `children: (field) => ReactElement`
+- 11 neue Tests (5 Basis + 2 RadioGroup + 2 Slider + 2 FileUpload Integration)
+- 1 neue Story (ControllerDemo mit RadioGroup, Slider, FileUpload)
+- FormWizard Story erweitert (ErweiterteFeldtypen mit RadioGroup, Slider, FileUpload)
 
 ---
 
@@ -2851,7 +2859,7 @@
 **Patterns:** 3 (DataTablePattern, FormWizard, FileUploadZone)
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
-**Total Tests:** 1844 (104 Testdateien)
+**Total Tests:** 1907 (105 Testdateien)
 **Dark Mode:** ✅ CSS class strategy (.dark) mit 74+ Token-Overrides
 **Charts:** ✅ Recharts Integration (Line, Bar, Area, Pie)
 **Forms:** ✅ React Hook Form + Zod Integration
