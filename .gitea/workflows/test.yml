@@ -33,7 +33,7 @@ jobs:
         run: npx eslint packages/components/src/ --max-warnings 10
 
       - name: Run unit tests
-        run: pnpm test
+        run: pnpm --filter @nordlig/components test
 
       - name: Validate tokens
         run: pnpm validate:tokens

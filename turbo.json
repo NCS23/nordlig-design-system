@@ -6,12 +6,8 @@
       "inputs": ["src/**", "tsup.config.ts", "style-dictionary.config.js", "package.json"],
       "outputs": ["dist/**"]
     },
-    "lint": {
-      "dependsOn": ["build"]
-    },
-    "test": {
-      "dependsOn": ["build"]
-    },
+    "lint": {},
+    "test": {},
     "dev": {
       "cache": false,
       "persistent": true
