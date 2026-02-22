@@ -78,12 +78,12 @@ describe('DashboardLayout', () => {
       expect(root.className).toContain('bg-[var(--color-dashboard-bg)]');
     });
 
-    it('header has dashboard header tokens', () => {
+    it('header has AppHeader tokens', () => {
       renderDashboard();
       const header = screen.getByText('Header').closest('header')!;
-      expect(header.className).toContain('bg-[var(--color-dashboard-header-bg)]');
-      expect(header.className).toContain('h-14');
-      expect(header.className).toContain('[box-shadow:var(--shadow-dashboard-header)]');
+      expect(header.className).toContain('bg-[var(--color-header-bg)]');
+      expect(header.className).toContain('h-[var(--sizing-header-height)]');
+      expect(header.className).toContain('[box-shadow:var(--shadow-header)]');
     });
 
     it('header is sticky', () => {

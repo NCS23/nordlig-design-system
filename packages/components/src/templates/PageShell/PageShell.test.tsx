@@ -83,7 +83,7 @@ describe('PageShell', () => {
       </PageShell>
     );
     const header = screen.getByTestId('header');
-    expect(header.className).toContain('bg-[var(--color-shell-header-bg)]');
+    expect(header.className).toContain('bg-[var(--color-header-bg)]');
   });
 
   it('header has token-based height', () => {
@@ -94,7 +94,7 @@ describe('PageShell', () => {
       </PageShell>
     );
     expect(screen.getByTestId('header').className).toContain(
-      'h-[var(--sizing-shell-header-height)]'
+      'h-[var(--sizing-header-height)]'
     );
   });
 
@@ -106,7 +106,7 @@ describe('PageShell', () => {
       </PageShell>
     );
     expect(screen.getByTestId('footer').className).toContain(
-      'border-[var(--color-shell-footer-border)]'
+      'border-[var(--color-footer-border)]'
     );
   });
 

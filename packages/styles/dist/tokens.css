@@ -231,10 +231,10 @@
   --sizing-detailpage-sidebar-width: 280px; /** Sidebar width on desktop */
   --sizing-emptypage-max-width: 420px; /** Max width of content area */
   --sizing-emptypage-illustration-size: 160px; /** Illustration max width/height */
+  --sizing-footer-height: 48px; /** Feste Footer-Hoehe */
   --sizing-formpage-max-width-sm: 480px; /** Narrow form (login, simple) */
   --sizing-formpage-max-width-md: 640px; /** Medium form (default) */
   --sizing-formpage-max-width-lg: 800px; /** Wide form (complex) */
-  --sizing-shell-footer-height: 48px; /** Fixed footer height */
   --sizing-searchfilter-search-max-width: 320px; /** Max width of search input on desktop */
   --sizing-seg-sm-height: 28px; /** Height sm */
   --sizing-seg-md-height: 32px; /** Height md */
@@ -568,7 +568,7 @@
   --sizing-carousel-dot-size: var(--sizing-component-indicator-dot-sm); /** Dot indicator size 8px */
   --sizing-chart-indicator-dot: var(--sizing-component-indicator-dot-md); /** Tooltip dot indicator size (10px) */
   --sizing-chart-legend-dot: var(--sizing-component-indicator-dot-md); /** Legend dot size (10px) */
-  --sizing-shell-header-height: var(--sizing-layout-header-height); /** Fixed header height */
+  --sizing-header-height: var(--sizing-layout-header-height); /** Feste Header-Hoehe (56px) */
   --color-accordion-bg: var(--color-bg-paper); /** Item background */
   --color-accordion-border: var(--color-border-muted); /** Item border/divider */
   --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
@@ -718,8 +718,6 @@
   --color-cpybtn-icon-copied: var(--color-text-success); /** Check icon after copy */
   --color-cpybtn-border: var(--color-border-default); /** Button border */
   --color-dashboard-bg: var(--color-bg-base); /** Page background */
-  --color-dashboard-header-bg: var(--color-bg-paper); /** Header background */
-  --color-dashboard-header-border: var(--color-border-muted); /** Header bottom border */
   --color-dashboard-overlay-bg: var(--color-bg-overlay); /** Mobile sidebar backdrop */
   --color-datatable-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
   --color-datatable-row-selected-bg: var(--color-bg-surface); /** Selected row background */
@@ -792,8 +790,12 @@
   --color-fileupload-progress-fill: var(--color-bg-primary); /** Progress bar */
   --color-fileupload-error-text: var(--color-text-error); /** Error message */
   --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
+  --color-footer-bg: var(--color-bg-paper); /** Footer-Hintergrund */
+  --color-footer-border: var(--color-border-muted); /** Footer oberer Rand */
   --color-fwizard-summary-bg: var(--color-bg-surface); /** Summary section background */
   --color-fwizard-summary-border: var(--color-border-muted); /** Summary section border */
+  --color-header-bg: var(--color-bg-paper); /** Header-Hintergrund */
+  --color-header-border: var(--color-border-muted); /** Header unterer Rand */
   --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
   --color-hl-text: var(--color-text-base); /** Highlight text */
   --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
@@ -853,10 +855,6 @@
   --color-numberinput-stepper-text-hover: var(--color-text-base); /** Stepper button icon hover color */
   --color-numberinput-stepper-bg-hover: var(--color-bg-surface); /** Stepper button hover background */
   --color-shell-bg: var(--color-bg-base); /** Page background */
-  --color-shell-header-bg: var(--color-bg-paper); /** Header background */
-  --color-shell-header-border: var(--color-border-muted); /** Header bottom border */
-  --color-shell-footer-bg: var(--color-bg-paper); /** Footer background */
-  --color-shell-footer-border: var(--color-border-muted); /** Footer top border */
   --color-pagination-item-bg: var(--color-bg-paper); /** Page button background */
   --color-pagination-item-border: var(--color-border-default); /** Page button border */
   --color-pagination-item-text: var(--color-text-base); /** Page button text */
@@ -1173,16 +1171,15 @@
   --shadow-card-hover: var(--shadow-elevation-floating);
   --shadow-chart-tooltip: var(--shadow-elevation-floating); /** Chart tooltip shadow */
   --shadow-command: var(--shadow-elevation-floating); /** Command palette shadow */
-  --shadow-dashboard-header: var(--shadow-elevation-raised); /** Header elevation shadow */
   --shadow-datepicker-popover: var(--shadow-elevation-floating); /** Popover elevation */
   --shadow-dialog: var(--shadow-elevation-floating); /** Dialog panel shadow */
   --shadow-drawer: var(--shadow-elevation-floating); /** Drawer elevation shadow */
   --shadow-dropdown-menu: var(--shadow-elevation-floating); /** Menu elevation */
+  --shadow-header: var(--shadow-elevation-raised); /** Header-Elevation */
   --shadow-hovercard: var(--shadow-elevation-floating); /** HoverCard shadow */
   --shadow-kbd: var(--shadow-elevation-raised); /** Key pressed effect shadow */
   --shadow-modal-content: var(--shadow-elevation-floating); /** Prominent modal shadow */
   --shadow-nav-dropdown: var(--shadow-elevation-floating); /** Dropdown panel shadow */
-  --shadow-shell-header: var(--shadow-elevation-raised); /** Header elevation shadow */
   --shadow-popover: var(--shadow-elevation-floating); /** Elevated popover shadow */
   --shadow-seg-active: var(--shadow-elevation-raised); /** Active segment shadow */
   --shadow-select-popover: var(--shadow-elevation-floating); /** Dropdown elevation */
@@ -1250,8 +1247,6 @@
   --spacing-command-item-px: var(--spacing-component-padding-xs); /** 8px item horizontal padding */
   --spacing-command-item-py: var(--spacing-component-gap-xs); /** 6px item vertical padding */
   --spacing-command-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
-  --spacing-dashboard-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
-  --spacing-dashboard-header-gap: var(--spacing-component-gap-md); /** Header items gap (12px) */
   --spacing-dashboard-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
   --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
   --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
@@ -1299,6 +1294,8 @@
   --spacing-fileupload-progress-pb: var(--spacing-component-padding-md); /** Progress bar bottom padding */
   --spacing-fileupload-subtext-mt: var(--spacing-component-gap-xs); /** Sub-text top margin (4px) */
   --spacing-fileupload-addmore-mt: var(--spacing-component-gap-md); /** Add-more hint top margin (8px) */
+  --spacing-footer-px: var(--spacing-component-padding-lg); /** Horizontales Padding (24px) */
+  --spacing-footer-py: var(--spacing-component-padding-sm); /** Vertikales Padding (12px) */
   --spacing-form-field-gap: var(--sizing-component-gap-sm); /** Gap between label, input, and hint in FormItem (6px) */
   --spacing-formpage-header-gap: var(--spacing-component-gap-lg); /** Gap below header section (16px) */
   --spacing-formpage-body-gap: var(--spacing-component-gap-md); /** Gap between form fields (8px) */
@@ -1310,6 +1307,9 @@
   --spacing-fwizard-nav-pt: var(--spacing-component-padding-lg); /** 20px navigation top padding */
   --spacing-fwizard-summary-gap: var(--spacing-component-gap-md); /** 8px gap in summary items */
   --spacing-fwizard-summary-padding: var(--spacing-component-padding-md); /** 16px summary card padding */
+  --spacing-header-px: var(--spacing-component-padding-lg); /** Horizontales Padding (24px) */
+  --spacing-header-py: var(--spacing-component-padding-sm); /** Vertikales Padding (12px) */
+  --spacing-header-gap: var(--spacing-component-gap-md); /** Gap zwischen Header-Elementen (12px) */
   --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
   --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
   --spacing-input-icon-inset: var(--sizing-component-height-md); /** 40px – right padding when icon present */
@@ -1347,12 +1347,7 @@
   --spacing-navmenu-content-p: var(--spacing-component-padding-md); /** 16px content padding */
   --spacing-navmenu-indicator-mt: var(--spacing-component-gap-xs); /** 4px indicator margin-top */
   --spacing-numberinput-stepper-px: var(--spacing-component-gap-sm); /** 8px stepper button horizontal padding */
-  --spacing-shell-header-px: var(--spacing-component-padding-lg); /** Header horizontal padding (24px) */
-  --spacing-shell-header-py: var(--spacing-component-padding-sm); /** Header vertical padding (12px) */
   --spacing-shell-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
-  --spacing-shell-footer-px: var(--spacing-component-padding-lg); /** Footer horizontal padding (24px) */
-  --spacing-shell-footer-py: var(--spacing-component-padding-sm); /** Footer vertical padding (12px) */
-  --spacing-shell-header-logo-gap: var(--spacing-component-gap-sm); /** Gap between logo and wordmark in header (8px) */
   --spacing-pagination-nav-gap: var(--spacing-component-gap-sm); /** Gap between pagination nav elements (8px) */
   --spacing-pagination-item-gap: var(--spacing-component-gap-xs); /** Gap between page buttons (4px) */
   --spacing-pwinput-toggle-inset: var(--spacing-component-padding-sm); /** 12px toggle button right offset */

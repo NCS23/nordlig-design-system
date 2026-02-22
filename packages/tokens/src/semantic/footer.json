@@ -1,0 +1,21 @@
+{
+  "color": {
+    "$description": "Level 4: AppFooter organism tokens",
+    "footer": {
+      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Footer-Hintergrund" },
+      "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Footer oberer Rand" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: AppFooter sizing",
+    "footer": {
+      "height": { "$type": "dimension", "$value": "48px", "$description": "Feste Footer-Hoehe" }
+    }
+  },
+  "spacing": {
+    "footer": {
+      "px": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Horizontales Padding (24px)" },
+      "py": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Vertikales Padding (12px)" }
+    }
+  }
+}

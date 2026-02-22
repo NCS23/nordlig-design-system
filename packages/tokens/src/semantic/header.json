@@ -1,0 +1,27 @@
+{
+  "color": {
+    "$description": "Level 4: AppHeader organism tokens",
+    "header": {
+      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Header-Hintergrund" },
+      "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Header unterer Rand" }
+    }
+  },
+  "sizing": {
+    "$description": "Level 4: AppHeader sizing",
+    "header": {
+      "height": { "$type": "dimension", "$value": "{sizing.layout.header-height}", "$description": "Feste Header-Hoehe (56px)" }
+    }
+  },
+  "spacing": {
+    "header": {
+      "px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Horizontales Padding (24px)" },
+      "py":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Vertikales Padding (12px)" },
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap zwischen Header-Elementen (12px)" }
+    }
+  },
+  "shadow": {
+    "header": {
+      "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Header-Elevation"
+    }
+  }
+}

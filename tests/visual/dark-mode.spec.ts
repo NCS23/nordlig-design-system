@@ -21,6 +21,8 @@ const darkModeStories = [
   // Organisms
   { id: 'organisms-card--all-elevations', name: 'card-all-elevations' },
   { id: 'organisms-table--basic',         name: 'table-basic' },
+  { id: 'organisms-appheader--default',   name: 'appheader-default' },
+  { id: 'organisms-appfooter--default',   name: 'appfooter-default' },
   // Neue Komponenten (Completion Package)
   { id: 'atoms-label--all-states',                name: 'label-all-states' },
   { id: 'atoms-link--all-variants',               name: 'link-all-variants' },

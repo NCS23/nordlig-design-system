@@ -1,5 +1,7 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
+import { AppHeader } from '../../organisms/AppHeader';
+import { AppFooter } from '../../organisms/AppFooter';
 
 // ─── Context ────────────────────────────────────────────────────────────────
 
@@ -69,23 +71,15 @@ const PageShellHeader = React.forwardRef<HTMLElement, PageShellHeaderProps>(
     const { stickyHeader } = usePageShell();
 
     return (
-      <header
+      <AppHeader
         ref={ref}
-        className={cn(
-          'flex items-center shrink-0 gap-[var(--spacing-shell-header-logo-gap)]',
-          'h-[var(--sizing-shell-header-height)]',
-          'px-[var(--spacing-shell-header-px)] py-[var(--spacing-shell-header-py)]',
-          'bg-[var(--color-shell-header-bg)]',
-          'border-b border-[var(--color-shell-header-border)]',
-          '[box-shadow:var(--shadow-shell-header)]',
-          'z-10',
-          stickyHeader && 'sticky top-0',
-          className
-        )}
+        sticky={stickyHeader}
+        zIndex={10}
+        className={className}
         {...props}
       >
         {children}
-      </header>
+      </AppHeader>
     );
   }
 );
@@ -153,24 +147,11 @@ export interface PageShellFooterProps
   extends React.HTMLAttributes<HTMLElement> {}
 
 const PageShellFooter = React.forwardRef<HTMLElement, PageShellFooterProps>(
-  ({ className, children, ...props }, ref) => {
-    return (
-      <footer
-        ref={ref}
-        className={cn(
-          'flex items-center shrink-0',
-          'h-[var(--sizing-shell-footer-height)]',
-          'px-[var(--spacing-shell-footer-px)] py-[var(--spacing-shell-footer-py)]',
-          'bg-[var(--color-shell-footer-bg)]',
-          'border-t border-[var(--color-shell-footer-border)]',
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </footer>
-    );
-  }
+  ({ className, children, ...props }, ref) => (
+    <AppFooter ref={ref} className={className} {...props}>
+      {children}
+    </AppFooter>
+  )
 );
 
 PageShellFooter.displayName = 'PageShell.Footer';

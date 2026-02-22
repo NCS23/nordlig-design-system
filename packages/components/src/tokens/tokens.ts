@@ -476,8 +476,6 @@ export const ColorCpybtnIcon = "#475569"; // Copy icon color
 export const ColorCpybtnIconCopied = "#047857"; // Check icon after copy
 export const ColorCpybtnBorder = "#cbd5e1"; // Button border
 export const ColorDashboardBg = "#f8fafc"; // Page background
-export const ColorDashboardHeaderBg = "#f8fafc"; // Header background
-export const ColorDashboardHeaderBorder = "#e2e8f0"; // Header bottom border
 export const ColorDashboardOverlayBg = "#00000080"; // Mobile sidebar backdrop
 export const ColorDatatableToolbarBg = "#f8fafc"; // Toolbar background
 export const ColorDatatableRowSelectedBg = "#f1f5f9"; // Selected row background
@@ -550,8 +548,12 @@ export const ColorFileuploadProgressBg = "#e2e8f0"; // Progress track
 export const ColorFileuploadProgressFill = "#34799c"; // Progress bar
 export const ColorFileuploadErrorText = "#b91c1c"; // Error message
 export const ColorFileuploadErrorBorder = "#ef4444"; // Error zone border
+export const ColorFooterBg = "#f8fafc"; // Footer-Hintergrund
+export const ColorFooterBorder = "#e2e8f0"; // Footer oberer Rand
 export const ColorFwizardSummaryBg = "#f1f5f9"; // Summary section background
 export const ColorFwizardSummaryBorder = "#e2e8f0"; // Summary section border
+export const ColorHeaderBg = "#f8fafc"; // Header-Hintergrund
+export const ColorHeaderBorder = "#e2e8f0"; // Header unterer Rand
 export const ColorHlBg = "#fef3c7"; // Highlight background (yellow)
 export const ColorHlText = "#0f172a"; // Highlight text
 export const ColorHovercardBg = "#f8fafc"; // HoverCard background
@@ -611,10 +613,6 @@ export const ColorNumberinputStepperText = "#475569"; // Stepper button icon col
 export const ColorNumberinputStepperTextHover = "#0f172a"; // Stepper button icon hover color
 export const ColorNumberinputStepperBgHover = "#f1f5f9"; // Stepper button hover background
 export const ColorShellBg = "#f8fafc"; // Page background
-export const ColorShellHeaderBg = "#f8fafc"; // Header background
-export const ColorShellHeaderBorder = "#e2e8f0"; // Header bottom border
-export const ColorShellFooterBg = "#f8fafc"; // Footer background
-export const ColorShellFooterBorder = "#e2e8f0"; // Footer top border
 export const ColorPaginationItemBg = "#f8fafc"; // Page button background
 export const ColorPaginationItemBorder = "#cbd5e1"; // Page button border
 export const ColorPaginationItemText = "#0f172a"; // Page button text
@@ -986,8 +984,6 @@ export const ShadowChartTooltip =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Chart tooltip shadow
 export const ShadowCommand =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Command palette shadow
-export const ShadowDashboardHeader =
-  "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)"; // Header elevation shadow
 export const ShadowDatepickerPopover =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Popover elevation
 export const ShadowDialog =
@@ -996,6 +992,8 @@ export const ShadowDrawer =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Drawer elevation shadow
 export const ShadowDropdownMenu =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Menu elevation
+export const ShadowHeader =
+  "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)"; // Header-Elevation
 export const ShadowHovercard =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // HoverCard shadow
 export const ShadowKbd =
@@ -1004,8 +1002,6 @@ export const ShadowModalContent =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Prominent modal shadow
 export const ShadowNavDropdown =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Dropdown panel shadow
-export const ShadowShellHeader =
-  "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)"; // Header elevation shadow
 export const ShadowPopover =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Elevated popover shadow
 export const ShadowSegActive =
@@ -1130,8 +1126,6 @@ export const SpacingCommandGroupHeadingPy = "4px"; // 6px group heading vertical
 export const SpacingCommandItemPx = "8px"; // 8px item horizontal padding
 export const SpacingCommandItemPy = "4px"; // 6px item vertical padding
 export const SpacingCommandSeparatorMy = "4px"; // 4px separator vertical margin
-export const SpacingDashboardHeaderPx = "24px"; // Header horizontal padding (24px)
-export const SpacingDashboardHeaderGap = "12px"; // Header items gap (12px)
 export const SpacingDashboardContentP = "32px"; // Content area padding (32px)
 export const SpacingDatatableToolbarPadding = "16px"; // Toolbar padding
 export const SpacingDatatableToolbarGap = "12px"; // Toolbar item gap
@@ -1180,6 +1174,8 @@ export const SpacingFileuploadProgressPx = "16px"; // Progress bar horizontal pa
 export const SpacingFileuploadProgressPb = "16px"; // Progress bar bottom padding
 export const SpacingFileuploadSubtextMt = "4px"; // Sub-text top margin (4px)
 export const SpacingFileuploadAddmoreMt = "12px"; // Add-more hint top margin (8px)
+export const SpacingFooterPx = "24px"; // Horizontales Padding (24px)
+export const SpacingFooterPy = "12px"; // Vertikales Padding (12px)
 export const SpacingFormFieldGap = "6px"; // Gap between label, input, and hint in FormItem (6px)
 export const SpacingFormpageHeaderGap = "16px"; // Gap below header section (16px)
 export const SpacingFormpageBodyGap = "12px"; // Gap between form fields (8px)
@@ -1191,6 +1187,9 @@ export const SpacingFwizardNavGap = "12px"; // 8px gap between navigation button
 export const SpacingFwizardNavPt = "24px"; // 20px navigation top padding
 export const SpacingFwizardSummaryGap = "12px"; // 8px gap in summary items
 export const SpacingFwizardSummaryPadding = "16px"; // 16px summary card padding
+export const SpacingHeaderPx = "24px"; // Horizontales Padding (24px)
+export const SpacingHeaderPy = "12px"; // Vertikales Padding (12px)
+export const SpacingHeaderGap = "12px"; // Gap zwischen Header-Elementen (12px)
 export const SpacingHovercardPadding = "16px"; // HoverCard content padding
 export const SpacingInputPaddingX = "16px"; // 16px
 export const SpacingInputIconInset = "40px"; // 40px – right padding when icon present
@@ -1228,12 +1227,7 @@ export const SpacingNavmenuTriggerPy = "8px"; // 8px trigger vertical padding
 export const SpacingNavmenuContentP = "16px"; // 16px content padding
 export const SpacingNavmenuIndicatorMt = "4px"; // 4px indicator margin-top
 export const SpacingNumberinputStepperPx = "8px"; // 8px stepper button horizontal padding
-export const SpacingShellHeaderPx = "24px"; // Header horizontal padding (24px)
-export const SpacingShellHeaderPy = "12px"; // Header vertical padding (12px)
 export const SpacingShellContentP = "32px"; // Content area padding (32px)
-export const SpacingShellFooterPx = "24px"; // Footer horizontal padding (24px)
-export const SpacingShellFooterPy = "12px"; // Footer vertical padding (12px)
-export const SpacingShellHeaderLogoGap = "8px"; // Gap between logo and wordmark in header (8px)
 export const SpacingPaginationNavGap = "8px"; // Gap between pagination nav elements (8px)
 export const SpacingPaginationItemGap = "4px"; // Gap between page buttons (4px)
 export const SpacingPwinputToggleInset = "12px"; // 12px toggle button right offset
@@ -1751,9 +1745,11 @@ export const SizingDrawerHandleW = "32px"; // 48px handle width
 export const SizingDropdownItemIcon = "16px"; // 16px item icon size
 export const SizingEmptypageMaxWidth = "420px"; // Max width of content area
 export const SizingEmptypageIllustrationSize = "160px"; // Illustration max width/height
+export const SizingFooterHeight = "48px"; // Feste Footer-Hoehe
 export const SizingFormpageMaxWidthSm = "480px"; // Narrow form (login, simple)
 export const SizingFormpageMaxWidthMd = "640px"; // Medium form (default)
 export const SizingFormpageMaxWidthLg = "800px"; // Wide form (complex)
+export const SizingHeaderHeight = "56px"; // Feste Header-Hoehe (56px)
 export const SizingIconSm = "16px"; // Small icon (16x16)
 export const SizingIconMd = "20px"; // Medium icon (20x20) — default
 export const SizingIconLg = "24px"; // Large icon (24x24)
@@ -1772,8 +1768,6 @@ export const SizingInputotpBorderWidth = "1px"; // Slot border width (1px)
 export const SizingKbdBorderWidth = "1px"; // Key border width (1px)
 export const SizingMenubarItemIcon = "16px"; // 16px item icon size
 export const SizingNumberinputBorderWidth = "1px"; // NumberInput border width (1px)
-export const SizingShellHeaderHeight = "56px"; // Fixed header height
-export const SizingShellFooterHeight = "48px"; // Fixed footer height
 export const SizingPaginationItemSize = "36px"; // Page button width & height (36px square)
 export const SizingPaginationFontSize = "0.875rem"; // Page button font size
 export const SizingProgressSmHeight = "4px";

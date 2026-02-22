@@ -505,6 +505,16 @@ export {
 } from './organisms/Sidebar';
 
 export {
+  AppHeader,
+  type AppHeaderProps,
+} from './organisms/AppHeader';
+
+export {
+  AppFooter,
+  type AppFooterProps,
+} from './organisms/AppFooter';
+
+export {
   Carousel,
   CarouselItem,
   type CarouselProps,

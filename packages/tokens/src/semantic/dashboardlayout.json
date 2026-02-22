@@ -2,10 +2,8 @@
   "color": {
     "$description": "Level 4: DashboardLayout template tokens",
     "dashboard": {
-      "bg":            { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" },
-      "header-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Header background" },
-      "header-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Header bottom border" },
-      "overlay-bg":    { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Mobile sidebar backdrop" }
+      "bg":         { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" },
+      "overlay-bg": { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Mobile sidebar backdrop" }
     }
   },
   "sizing": {
@@ -17,14 +15,7 @@
   },
   "spacing": {
     "dashboard": {
-      "header-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Header horizontal padding (24px)" },
-      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Header items gap (12px)" },
-      "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Content area padding (32px)" }
-    }
-  },
-  "shadow": {
-    "dashboard": {
-      "header": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Header elevation shadow" }
+      "content-p": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Content area padding (32px)" }
     }
   }
 }

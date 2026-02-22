@@ -1,5 +1,7 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
+import { AppHeader } from '../../organisms/AppHeader';
+import { AppFooter } from '../../organisms/AppFooter';
 
 // ─── Context ────────────────────────────────────────────────────────────────
 
@@ -123,21 +125,9 @@ const DashboardLayoutHeader = React.forwardRef<
   HTMLElement,
   DashboardLayoutHeaderProps
 >(({ className, children, ...props }, ref) => (
-  <header
-    ref={ref}
-    className={cn(
-      'flex items-center gap-[var(--spacing-dashboard-header-gap)] shrink-0 sticky top-0 z-20',
-      'h-14 md:h-16',
-      'px-4 md:px-6',
-      'bg-[var(--color-dashboard-header-bg)]',
-      'border-b border-[var(--color-dashboard-header-border)]',
-      '[box-shadow:var(--shadow-dashboard-header)]',
-      className
-    )}
-    {...props}
-  >
+  <AppHeader ref={ref} sticky elevated zIndex={20} className={className} {...props}>
     {children}
-  </header>
+  </AppHeader>
 ));
 
 DashboardLayoutHeader.displayName = 'DashboardLayout.Header';
@@ -243,19 +233,9 @@ const DashboardLayoutFooter = React.forwardRef<
   HTMLElement,
   DashboardLayoutFooterProps
 >(({ className, children, ...props }, ref) => (
-  <footer
-    ref={ref}
-    className={cn(
-      'flex items-center shrink-0',
-      'px-[var(--spacing-dashboard-header-px)]',
-      'bg-[var(--color-dashboard-header-bg)]',
-      'border-t border-[var(--color-dashboard-header-border)]',
-      className
-    )}
-    {...props}
-  >
+  <AppFooter ref={ref} className={className} {...props}>
     {children}
-  </footer>
+  </AppFooter>
 ));
 
 DashboardLayoutFooter.displayName = 'DashboardLayout.Footer';

@@ -2,33 +2,12 @@
   "color": {
     "$description": "Level 4: PageShell template tokens",
     "shell": {
-      "bg":            { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" },
-      "header-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Header background" },
-      "header-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Header bottom border" },
-      "footer-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Footer background" },
-      "footer-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Footer top border" }
-    }
-  },
-  "sizing": {
-    "$description": "Level 4: PageShell sizing",
-    "shell": {
-      "header-height": { "$type": "dimension", "$value": "{sizing.layout.header-height}", "$description": "Fixed header height" },
-      "footer-height": { "$type": "dimension", "$value": "48px", "$description": "Fixed footer height" }
+      "bg": { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" }
     }
   },
   "spacing": {
     "shell": {
-      "header-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Header horizontal padding (24px)" },
-      "header-py":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Header vertical padding (12px)" },
-      "content-p":  { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Content area padding (32px)" },
-      "footer-px":  { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Footer horizontal padding (24px)" },
-      "footer-py":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Footer vertical padding (12px)" },
-      "header-logo-gap": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Gap between logo and wordmark in header (8px)" }
-    }
-  },
-  "shadow": {
-    "shell": {
-      "header": { "$type": "shadow", "$value": "{shadow.elevation.raised}", "$description": "Header elevation shadow" }
+      "content-p": { "$type": "dimension", "$value": "{spacing.component.padding.xl}", "$description": "Content area padding (32px)" }
     }
   }
 }

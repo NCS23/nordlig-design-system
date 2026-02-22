@@ -2842,18 +2842,16 @@
 
 ## Development Statistics
 
-**Total Components:** 61 (61 complete)
+**Total Components:** 100 (90 Components + 8 Templates + 2 Patterns)
 **System:** 1 (ThemeProvider + useTheme)
-**Atoms:** 26 (Button, Badge, Code, Input, Link, Checkbox + CheckboxField, Switch + SwitchField, Tooltip, Progress + ProgressField, Spinner, Skeleton, Separator, Popover, Alert, ToggleGroup, Avatar, Slider, HoverCard, ScrollArea, AspectRatio, ThemeToggle, Label, Kbd, VisuallyHidden, Tag, NumberInput)
-**Molecules:** 24 (InputField, DatePicker + Calendar + DateRangePicker, Select + Combobox + MultiSelect, Textarea, FileUpload, Toast, RadioGroup, Tabs, Accordion, DropdownMenu, ContextMenu, NavigationMenu, EmptyState, Pagination, Sheet, Dialog, AlertDialog, Breadcrumbs, Collapsible, Form, Stepper)
-**Organisms:** 9 (Card, Table, Modal, Chart, Command, StatCard, SessionCard, Timeline, Sidebar)
-**Templates:** 0
+**Atoms:** 38
+**Molecules:** 27
+**Organisms:** 13 (inkl. AppHeader, AppFooter)
+**Templates:** 8 (PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPage, EmptyStatePage)
+**Patterns:** 2 (DataTablePattern, FormWizard)
 
 **Test Infrastructure:** ✅ Vitest + Testing Library + jsdom + Coverage + ResizeObserver Polyfill
-**Test Coverage:** 58 von 60 Components getestet (exkl. Button: nur manuell geprüft, StatCard: Tests ausstehend)
-**Storybook Stories:** 426 Stories (422 + 4 AlertDialog)
-**Design Tokens:** 533 L4-Tokens (518 + 15 AlertDialog) + 7 L3 Tokens + 3 L2 + 3 L1
-**Total Tests:** 1104 (1096 + 8 AlertDialog)
+**Total Tests:** 1844 (104 Testdateien)
 **Dark Mode:** ✅ CSS class strategy (.dark) mit 74+ Token-Overrides
 **Charts:** ✅ Recharts Integration (Line, Bar, Area, Pie)
 **Forms:** ✅ React Hook Form + Zod Integration
