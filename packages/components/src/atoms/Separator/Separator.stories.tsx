@@ -100,3 +100,47 @@ export const CustomSpacing: Story = {
     </div>
   ),
 };
+
+export const WithLabel: Story = {
+  name: 'Mit Label',
+  render: () => (
+    <div className="w-full max-w-md flex flex-col gap-6">
+      <div>
+        <p className="text-sm mb-3">Anmeldung per E-Mail</p>
+        <Separator label="oder" className="my-3" />
+        <p className="text-sm mt-3">Anmeldung per SSO</p>
+      </div>
+    </div>
+  ),
+};
+
+export const LabelPositions: Story = {
+  name: 'Label-Positionen',
+  render: () => (
+    <div className="w-full max-w-md flex flex-col gap-8">
+      <div>
+        <span className="text-xs text-[var(--color-text-muted)]">labelPosition=&quot;left&quot;</span>
+        <Separator label="Abschnitt 1" labelPosition="left" className="mt-1" />
+      </div>
+      <div>
+        <span className="text-xs text-[var(--color-text-muted)]">labelPosition=&quot;center&quot; (Standard)</span>
+        <Separator label="Abschnitt 2" labelPosition="center" className="mt-1" />
+      </div>
+      <div>
+        <span className="text-xs text-[var(--color-text-muted)]">labelPosition=&quot;right&quot;</span>
+        <Separator label="Abschnitt 3" labelPosition="right" className="mt-1" />
+      </div>
+    </div>
+  ),
+};
+
+export const WithIcon: Story = {
+  name: 'Mit Icon',
+  render: () => (
+    <div className="w-full max-w-md flex flex-col gap-6">
+      <Separator icon={<span>⚡</span>} label="Neue Eintraege" />
+      <Separator icon={<span>📅</span>} label="Heute" />
+      <Separator icon={<span>🏃</span>} />
+    </div>
+  ),
+};
