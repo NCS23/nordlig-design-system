@@ -1,0 +1,97 @@
+{
+  "color": {
+    "$description": "Level 4: Spotlight/CommandPalette pattern tokens",
+    "spotlight": {
+      "overlay": {
+        "$type": "color",
+        "$value": "{color.bg.overlay}",
+        "$description": "Backdrop overlay"
+      },
+      "bg": {
+        "$type": "color",
+        "$value": "{color.bg.paper}",
+        "$description": "Palette background"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.muted}",
+        "$description": "Palette border"
+      },
+      "input-text": {
+        "$type": "color",
+        "$value": "{color.text.base}",
+        "$description": "Search input text"
+      },
+      "input-placeholder": {
+        "$type": "color",
+        "$value": "{color.text.disabled}",
+        "$description": "Search input placeholder"
+      },
+      "item-text": {
+        "$type": "color",
+        "$value": "{color.text.base}",
+        "$description": "Item text"
+      },
+      "item-hover-bg": {
+        "$type": "color",
+        "$value": "{color.bg.surface}",
+        "$description": "Item hover background"
+      },
+      "group-heading": {
+        "$type": "color",
+        "$value": "{color.text.muted}",
+        "$description": "Group heading text"
+      },
+      "empty-text": {
+        "$type": "color",
+        "$value": "{color.text.muted}",
+        "$description": "Empty state text"
+      },
+      "shortcut-text": {
+        "$type": "color",
+        "$value": "{color.text.muted}",
+        "$description": "Keyboard shortcut text"
+      },
+      "separator": {
+        "$type": "color",
+        "$value": "{color.border.muted}",
+        "$description": "Input/list separator"
+      }
+    }
+  },
+  "shadow": {
+    "spotlight": {
+      "$type": "shadow",
+      "$value": "{shadow.elevation.floating}",
+      "$description": "Palette drop shadow"
+    }
+  },
+  "radius": {
+    "spotlight": {
+      "$type": "dimension",
+      "$value": "{radius.component.xl}",
+      "$description": "Palette border radius"
+    }
+  },
+  "spacing": {
+    "spotlight": {
+      "input-px": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Search input horizontal padding (16px)" },
+      "list-padding": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "List padding (4px)" },
+      "item-px": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Item horizontal padding (12px)" },
+      "item-py": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Item vertical padding (8px)" },
+      "group-heading-px": { "$type": "dimension", "$value": "{spacing.component.padding.sm}", "$description": "Group heading horizontal padding" },
+      "group-heading-py": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Group heading vertical padding" },
+      "empty-py": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Empty state vertical padding" },
+      "icon-mr": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Icon right margin (8px)" }
+    }
+  },
+  "font": {
+    "spotlight": {
+      "input-size": { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Search input font size" },
+      "item-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Item font size" },
+      "heading-size": { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Group heading font size" },
+      "heading-weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Group heading font weight" },
+      "shortcut-size": { "$type": "dimension", "$value": "{font.component.size.xs}", "$description": "Shortcut text font size" }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "color": {
+    "$description": "Level 4: RichTextEditor component tokens",
+    "rte": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.bg.paper}",
+        "$description": "Editor background"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.default}",
+        "$description": "Editor border"
+      },
+      "border-focus": {
+        "$type": "color",
+        "$value": "{color.border.focus}",
+        "$description": "Editor border/ring on focus"
+      },
+      "border-error": {
+        "$type": "color",
+        "$value": "{color.border.error}",
+        "$description": "Editor border on error"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.base}",
+        "$description": "Editor content text color"
+      },
+      "placeholder": {
+        "$type": "color",
+        "$value": "{color.text.disabled}",
+        "$description": "Placeholder text color"
+      },
+      "toolbar-bg": {
+        "$type": "color",
+        "$value": "{color.bg.surface}",
+        "$description": "Toolbar background"
+      },
+      "toolbar-border": {
+        "$type": "color",
+        "$value": "{color.border.muted}",
+        "$description": "Toolbar bottom border"
+      },
+      "toolbar-btn-text": {
+        "$type": "color",
+        "$value": "{color.text.base}",
+        "$description": "Toolbar button text"
+      },
+      "toolbar-btn-hover-bg": {
+        "$type": "color",
+        "$value": "{color.bg.surface}",
+        "$description": "Toolbar button hover background"
+      },
+      "toolbar-btn-active-bg": {
+        "$type": "color",
+        "$value": "{color.bg.primary-subtle}",
+        "$description": "Toolbar button active state background"
+      },
+      "toolbar-btn-active-text": {
+        "$type": "color",
+        "$value": "{color.text.primary}",
+        "$description": "Toolbar button active state text"
+      }
+    }
+  },
+  "radius": {
+    "rte": {
+      "$type": "dimension",
+      "$value": "{radius.component.md}",
+      "$description": "Editor border radius"
+    },
+    "rte-toolbar-btn": {
+      "$type": "dimension",
+      "$value": "{radius.component.sm}",
+      "$description": "Toolbar button border radius"
+    }
+  },
+  "spacing": {
+    "rte": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.padding.md}", "$description": "Editor content padding (16px)" },
+      "toolbar-padding": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Toolbar padding (8px)" },
+      "toolbar-gap": { "$type": "dimension", "$value": "{spacing.component.gap.2xs}", "$description": "Toolbar button gap (2px)" }
+    }
+  },
+  "sizing": {
+    "rte": {
+      "toolbar-btn": { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Toolbar button size (32px)" }
+    }
+  },
+  "font": {
+    "rte": {
+      "content-size": { "$type": "dimension", "$value": "{font.component.size.md}", "$description": "Editor content font size" }
+    }
+  }
+}

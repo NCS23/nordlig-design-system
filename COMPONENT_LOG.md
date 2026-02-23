@@ -4731,6 +4731,143 @@ color (5), sizing (2), spacing (4), shadow (1)
 
 ---
 
-**Last Updated:** 2026-02-22
-**Design System Status:** ✅ Complete (88 Components + 8 Templates + 4 Patterns)
+## Wave 16: New Components (2026-02-23)
+
+### Component: TagInput
+**Ticket:** NDS-070
+**Level:** Molecule
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `taginput-bg`, `taginput-border`, `taginput-border-hover`, `taginput-border-focus`, `taginput-border-error`, `taginput-input-text`, `taginput-input-placeholder`, `taginput-bg-disabled`
+  - Spacing: `taginput-padding`, `taginput-gap`
+  - Radius: `taginput`
+  - Sizing: `taginput-min-height`
+  - Font: `taginput-input-size`
+
+### Architecture
+- Multi-value input: inline Tags + auto-wachsendes Input-Feld
+- Controlled/Uncontrolled Pattern (value/defaultValue)
+- Tag-Erstellung via Enter oder benutzerdefinierte Delimiter (Komma, Tab)
+- Tag-Entfernung via X-Button oder Backspace
+- Constraints: maxTags, allowDuplicates, validate()
+- Form-kompatibel via value/onChange
+- Composites: Tag (Atom)
+- Accessibility: aria-live="polite", aria-label, aria-invalid
+
+### Files
+- `packages/tokens/src/semantic/taginput.json`
+- `packages/components/src/molecules/TagInput/TagInput.tsx`
+- `packages/components/src/molecules/TagInput/TagInput.test.tsx` (32 Tests)
+- `packages/components/src/molecules/TagInput/TagInput.stories.tsx` (11 Stories)
+- `packages/components/src/molecules/TagInput/index.ts`
+
+### Dependencies
+- Tag (Atom)
+
+---
+
+### Component: Spotlight / CommandPalette
+**Ticket:** NDS-071
+**Level:** Pattern
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `spotlight-overlay`, `spotlight-bg`, `spotlight-border`, `spotlight-input-text`, `spotlight-input-placeholder`, `spotlight-item-text`, `spotlight-item-hover-bg`, `spotlight-group-heading`, `spotlight-empty-text`, `spotlight-shortcut-text`, `spotlight-separator`
+  - Shadow: `spotlight`
+  - Radius: `spotlight`
+  - Spacing: `spotlight-input-px`, `spotlight-list-padding`, `spotlight-item-px`, `spotlight-item-py`, `spotlight-group-heading-px`, `spotlight-group-heading-py`, `spotlight-empty-py`, `spotlight-icon-mr`
+  - Font: `spotlight-input-size`, `spotlight-item-size`, `spotlight-heading-size`, `spotlight-heading-weight`, `spotlight-shortcut-size`
+
+### Architecture
+- Globale Command-Palette (Cmd+K / Ctrl+K)
+- Composition aus Dialog (Radix) + Command (cmdk)
+- Oben positioniert (top-20%, nicht center)
+- Gruppierte Items mit Icons, Beschreibungen, Keyboard-Shortcuts (Kbd-Atom)
+- Controlled/Uncontrolled Pattern
+- `useSpotlight()` Convenience-Hook
+- Schliesst bei Auswahl oder Escape
+- Accessibility: aria-label, focus trap, sr-only title
+
+### Files
+- `packages/tokens/src/semantic/spotlight.json`
+- `packages/components/src/patterns/Spotlight/Spotlight.tsx`
+- `packages/components/src/patterns/Spotlight/Spotlight.test.tsx` (20 Tests)
+- `packages/components/src/patterns/Spotlight/Spotlight.stories.tsx` (5 Stories)
+- `packages/components/src/patterns/Spotlight/index.ts`
+
+### Dependencies
+- Dialog (Radix), Command (cmdk), Kbd (Atom), Icon (Atom)
+
+---
+
+### Component: RichTextEditor
+**Ticket:** NDS-072
+**Level:** Organism
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Color: `rte-bg`, `rte-border`, `rte-border-focus`, `rte-border-error`, `rte-text`, `rte-placeholder`, `rte-toolbar-bg`, `rte-toolbar-border`, `rte-toolbar-btn-text`, `rte-toolbar-btn-hover-bg`, `rte-toolbar-btn-active-bg`, `rte-toolbar-btn-active-text`
+  - Radius: `rte`, `rte-toolbar-btn`
+  - Spacing: `rte-padding`, `rte-toolbar-padding`, `rte-toolbar-gap`
+  - Sizing: `rte-toolbar-btn`
+  - Font: `rte-content-size`
+
+### Architecture
+- WYSIWYG-Editor basierend auf Tiptap (ProseMirror)
+- Toolbar mit Toggle-Buttons (Bold, Italic, Underline, Strikethrough, H1-H3, Listen, Blockquote, Code, Link)
+- Features-Prop limitiert verfuegbare Formatierungen
+- readOnly/disabled/error States
+- hideToolbar Option
+- Controlled value/onChange (HTML output)
+- Link-Insertion via window.prompt
+- Accessibility: role="toolbar", aria-label, aria-pressed, focus-visible
+
+### Files
+- `packages/tokens/src/semantic/richtexteditor.json`
+- `packages/components/src/organisms/RichTextEditor/RichTextEditor.tsx`
+- `packages/components/src/organisms/RichTextEditor/RichTextEditor.test.tsx` (26 Tests)
+- `packages/components/src/organisms/RichTextEditor/RichTextEditor.stories.tsx` (9 Stories)
+- `packages/components/src/organisms/RichTextEditor/index.ts`
+
+### Dependencies
+- @tiptap/react, @tiptap/starter-kit, @tiptap/extension-link, @tiptap/extension-placeholder, @tiptap/extension-underline
+- Separator (Atom), Icon (Atom)
+
+---
+
+### Component: AnalyticsDashboard
+**Ticket:** NDS-073
+**Level:** Pattern
+
+### Tokens Created
+- **Level 4 (Semantic):**
+  - Spacing: `adash-section-gap`, `adash-metrics-gap`, `adash-charts-gap`, `adash-header-gap`
+  - Font: `adash-section-title-size`, `adash-section-title-weight`
+
+### Architecture
+- Kompositions-Pattern fuer Dashboard-Ansichten
+- Drei optionale Sektionen: Metrics (StatCard-Grid), Charts (Line/Bar/Area/Pie), Table (DataTable)
+- Responsive Metrics-Grid: auto-fill oder fixe Spaltenanzahl (1-4)
+- Charts-Layout: single oder grid-2
+- Loading-State mit Skeleton-Platzhaltern pro Sektion
+- Optionaler Header-Slot
+- Composites: StatCard, ChartContainer, DataTable, Card, Skeleton, Heading
+- Accessibility: role="region" mit aria-labels pro Sektion, aria-busy bei Loading
+
+### Files
+- `packages/tokens/src/semantic/analyticsdashboard.json`
+- `packages/components/src/patterns/AnalyticsDashboard/AnalyticsDashboard.tsx`
+- `packages/components/src/patterns/AnalyticsDashboard/AnalyticsDashboard.test.tsx` (21 Tests)
+- `packages/components/src/patterns/AnalyticsDashboard/AnalyticsDashboard.stories.tsx` (6 Stories)
+- `packages/components/src/patterns/AnalyticsDashboard/index.ts`
+
+### Dependencies
+- StatCard (Organism), Chart (Organism), DataTable (Organism), Card (Molecule), Skeleton (Atom), Heading (Atom)
+- @tanstack/react-table (via DataTable)
+
+---
+
+**Last Updated:** 2026-02-23
+**Design System Status:** ✅ Complete (92 Components + 8 Templates + 7 Patterns)
 **Test Count:** 1935 Tests, 106 Test-Dateien

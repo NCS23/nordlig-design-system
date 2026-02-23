@@ -567,6 +567,11 @@ export {
   type TimelineProps,
   type TimelineItemProps,
 } from './organisms/Timeline';
+export {
+  RichTextEditor,
+  type RichTextEditorProps,
+  type RichTextFeature,
+} from './organisms/RichTextEditor';
 
 export {
   Stepper,
@@ -595,6 +600,10 @@ export {
   type ResizablePanelProps,
   type ResizableHandleProps,
 } from './molecules/Resizable';
+export {
+  TagInput,
+  type TagInputProps,
+} from './molecules/TagInput';
 
 // Templates
 export {
@@ -671,6 +680,15 @@ export { FileUploadZone } from './patterns/FileUploadZone';
 export type { FileUploadZoneProps, FileUploadZoneFile, FileUploadZoneStatus } from './patterns/FileUploadZone';
 export { NotificationCenter, useNotificationCenter } from './patterns/NotificationCenter';
 export type { NotificationCenterProps, Notification, NotificationVariant } from './patterns/NotificationCenter';
+export { Spotlight, useSpotlight } from './patterns/Spotlight';
+export type { SpotlightProps, SpotlightItem, SpotlightGroup } from './patterns/Spotlight';
+export { AnalyticsDashboard } from './patterns/AnalyticsDashboard';
+export type {
+  AnalyticsDashboardProps,
+  AnalyticsDashboardMetric,
+  AnalyticsDashboardChart,
+  AnalyticsDashboardTable,
+} from './patterns/AnalyticsDashboard';
 
 // Utils
 export { cn } from './utils/cn';

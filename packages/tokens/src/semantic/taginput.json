@@ -1,0 +1,70 @@
+{
+  "color": {
+    "$description": "Level 4: TagInput component tokens",
+    "taginput": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.bg.paper}",
+        "$description": "Container background"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.default}",
+        "$description": "Container border"
+      },
+      "border-hover": {
+        "$type": "color",
+        "$value": "{color.border.strong}",
+        "$description": "Container border on hover"
+      },
+      "border-focus": {
+        "$type": "color",
+        "$value": "{color.border.focus}",
+        "$description": "Container border/ring on focus"
+      },
+      "border-error": {
+        "$type": "color",
+        "$value": "{color.border.error}",
+        "$description": "Container border on error"
+      },
+      "input-text": {
+        "$type": "color",
+        "$value": "{color.text.base}",
+        "$description": "Inline input text color"
+      },
+      "input-placeholder": {
+        "$type": "color",
+        "$value": "{color.text.disabled}",
+        "$description": "Placeholder text color"
+      },
+      "bg-disabled": {
+        "$type": "color",
+        "$value": "{color.bg.surface}",
+        "$description": "Container background when disabled"
+      }
+    }
+  },
+  "spacing": {
+    "taginput": {
+      "padding": { "$type": "dimension", "$value": "{spacing.component.gap.sm}", "$description": "Container inner padding (8px)" },
+      "gap": { "$type": "dimension", "$value": "{spacing.component.gap.xs}", "$description": "Gap between tags (4px)" }
+    }
+  },
+  "radius": {
+    "taginput": {
+      "$type": "dimension",
+      "$value": "{radius.component.md}",
+      "$description": "Container border radius"
+    }
+  },
+  "sizing": {
+    "taginput": {
+      "min-height": { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Minimum container height" }
+    }
+  },
+  "font": {
+    "taginput": {
+      "input-size": { "$type": "dimension", "$value": "{font.component.size.sm}", "$description": "Inline input font size (14px)" }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "spacing": {
+    "$description": "Level 4: AnalyticsDashboard pattern tokens",
+    "adash": {
+      "section-gap": { "$type": "dimension", "$value": "{spacing.component.padding.lg}", "$description": "Gap between dashboard sections (24px)" },
+      "metrics-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between metric cards (12px)" },
+      "charts-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between charts (12px)" },
+      "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between header elements" }
+    }
+  },
+  "font": {
+    "adash": {
+      "section-title-size": { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Section title font size" },
+      "section-title-weight": { "$type": "fontWeight", "$value": "{font.component.weight.semibold}", "$description": "Section title font weight" }
+    }
+  }
+}
