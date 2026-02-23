@@ -5,7 +5,8 @@
       "height": {
         "sm": { "$type": "dimension", "$value": "{sizing.height.sm}" },
         "md": { "$type": "dimension", "$value": "{sizing.height.md}" },
-        "lg": { "$type": "dimension", "$value": "{sizing.height.lg}" }
+        "lg": { "$type": "dimension", "$value": "{sizing.height.lg}" },
+        "xl": { "$type": "dimension", "$value": "{sizing.height.xl}" }
       },
       "padding-x": {
         "xs": { "$type": "dimension", "$value": "{sizing.padding-x.xs}" },

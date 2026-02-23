@@ -423,6 +423,7 @@
   --sizing-height-sm: var(--spacing-base-9);
   --sizing-height-md: var(--spacing-base-10);
   --sizing-height-lg: var(--spacing-base-11);
+  --sizing-height-xl: var(--spacing-base-16);
   --sizing-padding-x-xs: var(--spacing-base-2);
   --sizing-padding-x-sm: var(--spacing-base-3);
   --sizing-padding-x-md: var(--spacing-base-4);
@@ -546,6 +547,7 @@
   --sizing-component-height-sm: var(--sizing-height-sm);
   --sizing-component-height-md: var(--sizing-height-md);
   --sizing-component-height-lg: var(--sizing-height-lg);
+  --sizing-component-height-xl: var(--sizing-height-xl);
   --sizing-component-padding-x-xs: var(--sizing-padding-x-xs);
   --sizing-component-padding-x-sm: var(--sizing-padding-x-sm);
   --sizing-component-padding-x-md: var(--sizing-padding-x-md);
@@ -1764,7 +1766,7 @@
   --sizing-avatar-sm: var(--sizing-component-height-sm); /** Avatar size sm (h-9 = 36px) */
   --sizing-avatar-md: var(--sizing-component-height-md); /** Avatar size md (h-10 = 40px) */
   --sizing-avatar-lg: var(--sizing-component-height-lg); /** Avatar size lg (h-11 = 44px) */
-  --sizing-avatar-xl: var(--sizing-component-icon-xl); /** Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16) */
+  --sizing-avatar-xl: var(--sizing-component-height-xl); /** Avatar size xl (64px) */
   --sizing-avatar-border-width: var(--sizing-component-border-width-default); /** Avatar border width (1px) */
   --sizing-badge-border-width: var(--sizing-component-border-width-default); /** Badge border width (1px) */
   --sizing-badge-xs-padding-x: var(--sizing-component-padding-x-xs);
@@ -1837,7 +1839,7 @@
   --sizing-progress-sm-height: var(--sizing-component-track-sm);
   --sizing-progress-md-height: var(--sizing-component-track-md);
   --sizing-progress-lg-height: var(--sizing-component-track-lg);
-  --sizing-radio-button-size: var(--sizing-component-icon-sm); /** Radio button outer size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available */
+  --sizing-radio-button-size: var(--sizing-component-icon-control); /** Radio button outer size (20px via L3 icon.control) */
   --sizing-radio-dot-size: var(--sizing-component-track-lg); /** Radio inner dot size (12px) */
   --sizing-rtg-sm: var(--sizing-component-icon-sm); /** Star size sm */
   --sizing-rtg-md: var(--sizing-component-icon-md); /** Star size md */

@@ -22,7 +22,7 @@
       "sm": { "$type": "dimension", "$value": "{sizing.component.height.sm}", "$description": "Avatar size sm (h-9 = 36px)" },
       "md": { "$type": "dimension", "$value": "{sizing.component.height.md}", "$description": "Avatar size md (h-10 = 40px)" },
       "lg": { "$type": "dimension", "$value": "{sizing.component.height.lg}", "$description": "Avatar size lg (h-11 = 44px)" },
-      "xl": { "$type": "dimension", "$value": "{sizing.component.icon.xl}", "$description": "Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16)" },
+      "xl": { "$type": "dimension", "$value": "{sizing.component.height.xl}", "$description": "Avatar size xl (64px)" },
       "border-width": { "$type": "dimension", "$value": "{sizing.component.border-width.default}", "$description": "Avatar border width (1px)" }
     }
   },

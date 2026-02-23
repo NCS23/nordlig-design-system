@@ -24,7 +24,7 @@
   "sizing": {
     "$description": "Level 4: Radio size tokens — References Level 3 only",
     "radio": {
-      "button-size": { "$type": "dimension", "$value": "{sizing.component.icon.sm}", "$description": "Radio button outer size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available" },
+      "button-size": { "$type": "dimension", "$value": "{sizing.component.icon.control}", "$description": "Radio button outer size (20px via L3 icon.control)" },
       "dot-size":    { "$type": "dimension", "$value": "{sizing.component.track.lg}", "$description": "Radio inner dot size (12px)" }
     }
   },

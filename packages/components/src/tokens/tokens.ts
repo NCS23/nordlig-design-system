@@ -1727,6 +1727,7 @@ export const FontTreeLabelSize = "0.875rem"; // Tree node label font size
 export const SizingHeightSm = "36px";
 export const SizingHeightMd = "40px";
 export const SizingHeightLg = "44px";
+export const SizingHeightXl = "64px";
 export const SizingPaddingXXs = "8px";
 export const SizingPaddingXSm = "12px";
 export const SizingPaddingXMd = "16px";
@@ -1744,6 +1745,7 @@ export const SizingBorderWidthThick = "2px";
 export const SizingComponentHeightSm = "36px";
 export const SizingComponentHeightMd = "40px";
 export const SizingComponentHeightLg = "44px";
+export const SizingComponentHeightXl = "64px";
 export const SizingComponentPaddingXXs = "8px";
 export const SizingComponentPaddingXSm = "12px";
 export const SizingComponentPaddingXMd = "16px";
@@ -1776,7 +1778,7 @@ export const SizingAuthCardMaxWidth = "420px"; // Card max width
 export const SizingAvatarSm = "36px"; // Avatar size sm (h-9 = 36px)
 export const SizingAvatarMd = "40px"; // Avatar size md (h-10 = 40px)
 export const SizingAvatarLg = "44px"; // Avatar size lg (h-11 = 44px)
-export const SizingAvatarXl = "48px"; // Avatar size xl (48px) — TODO: Add sizing.component.height.xl to L3 for 64px (h-16)
+export const SizingAvatarXl = "64px"; // Avatar size xl (64px)
 export const SizingAvatarBorderWidth = "1px"; // Avatar border width (1px)
 export const SizingBadgeBorderWidth = "1px"; // Badge border width (1px)
 export const SizingBadgeXsPaddingX = "8px";
@@ -1870,7 +1872,7 @@ export const SizingPaginationFontSize = "0.875rem"; // Page button font size
 export const SizingProgressSmHeight = "4px";
 export const SizingProgressMdHeight = "8px";
 export const SizingProgressLgHeight = "12px";
-export const SizingRadioButtonSize = "16px"; // Radio button outer size (16px via L3) — TODO: Need L3 token for 20px (h-5 w-5). Currently using icon.sm=16px as closest available
+export const SizingRadioButtonSize = "20px"; // Radio button outer size (20px via L3 icon.control)
 export const SizingRadioDotSize = "12px"; // Radio inner dot size (12px)
 export const SizingRtgSm = "16px"; // Star size sm
 export const SizingRtgMd = "24px"; // Star size md

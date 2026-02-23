@@ -4,7 +4,8 @@
     "height": {
       "sm": { "$type": "dimension", "$value": "{spacing.base.9}" },
       "md": { "$type": "dimension", "$value": "{spacing.base.10}" },
-      "lg": { "$type": "dimension", "$value": "{spacing.base.11}" }
+      "lg": { "$type": "dimension", "$value": "{spacing.base.11}" },
+      "xl": { "$type": "dimension", "$value": "{spacing.base.16}" }
     },
     "padding-x": {
       "xs": { "$type": "dimension", "$value": "{spacing.base.2}" },

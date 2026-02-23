@@ -11,6 +11,7 @@
     "@nordlig/tokens": "workspace:*"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^8.4.0",
     "@storybook/addon-essentials": "^8.4.0",
     "@storybook/addon-interactions": "^8.4.0",
     "@storybook/addon-links": "^8.4.0",

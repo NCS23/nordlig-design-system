@@ -4,6 +4,8 @@ Nordisches Design fur moderne Apps.
 
 **Version:** 1.0.0-alpha | **Status:** Foundation Phase
 
+**[Storybook](http://192.168.68.52:6006)** | **[CONTRIBUTING](CONTRIBUTING.md)** | **[Architektur](docs/ARCHITECTURE.md)** | **[Token Guidelines](docs/TOKEN_GUIDELINES.md)**
+
 ---
 
 ## Architektur

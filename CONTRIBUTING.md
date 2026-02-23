@@ -542,27 +542,88 @@ const meta: Meta<typeof Button> = {
 
 ---
 
+## 📦 Semantic Versioning Policy
+
+Nordlig folgt [Semantic Versioning 2.0.0](https://semver.org/lang/de/) mit Changesets.
+
+### Major (x.0.0) — Breaking Changes
+
+Aenderungen, die bestehenden Consumer-Code brechen:
+
+| Aktion | Beispiel |
+|--------|----------|
+| Token umbenennen/loeschen | `--color-btn-bg` → `--color-btn-primary-bg` |
+| Prop entfernen/umbenennen | `<Button color="...">` → `<Button variant="...">` |
+| Default-Wert aendern | `size` Default von `md` auf `sm` |
+| HTML-Struktur aendern | `<button>` wird zu `<a>` |
+| Peer-Dependency aendern | React 18 → React 19 |
+| CSS Custom Property entfernen | `--spacing-btn-gap` wird geloescht |
+
+### Minor (0.x.0) — Neue Features
+
+Rueckwaertskompatible Erweiterungen:
+
+| Aktion | Beispiel |
+|--------|----------|
+| Neue Komponente | `TagInput` hinzugefuegt |
+| Neue Prop | `<Button loading>` hinzugefuegt |
+| Neuer Variant | `variant="ghost"` zu Button |
+| Neuer Token | `--color-btn-warning-bg` hinzugefuegt |
+| Neues Export | `useSpotlight()` Hook exportiert |
+
+### Patch (0.0.x) — Bugfixes
+
+Rueckwaertskompatible Korrekturen:
+
+| Aktion | Beispiel |
+|--------|----------|
+| Bugfix | Focus-Ring wird jetzt korrekt angezeigt |
+| Token-Wert anpassen | `--spacing-btn-gap: 8px` → `10px` (gleiche Semantik) |
+| A11y-Fix | Fehlenden `aria-label` ergaenzt |
+| Typo-Fix | `"Schliesssen"` → `"Schliessen"` |
+| Dependency-Update | `lucide-react` 0.562 → 0.563 |
+
+### Deprecation Policy
+
+- Deprecated Features bleiben **mindestens 1 Minor-Version** erhalten
+- Deprecations werden mit `@deprecated` JSDoc-Tag markiert
+- Console-Warnung bei Nutzung deprecierter Props (Development-Mode)
+- MIGRATION.md wird bei jedem Major-Release aktualisiert
+
+### Changeset Workflow
+
+```bash
+# 1. Changeset erstellen
+pnpm changeset
+
+# 2. Art der Aenderung waehlen (major/minor/patch)
+# 3. Betroffene Packages waehlen
+# 4. Beschreibung eingeben
+
+# 5. Commit mit Changeset
+git add .changeset/ && git commit -m "chore: add changeset"
+
+# 6. Release (CI oder manuell)
+pnpm changeset version  # Bumpt Versionen
+pnpm changeset publish  # Publiziert
+```
+
+---
+
 ## 🚨 Breaking Changes
-
-### Was ist ein Breaking Change?
-
-- Token umbenennen/löschen
-- Component API ändern (Props entfernen/umbenennen)
-- CSS Class Names ändern
-- Semantic HTML ändern
 
 ### Breaking Change Prozess
 
-1. **Issue erstellen** - Diskussion mit Team
-2. **Migration Path** - Wie upgraden Consumer?
-3. **Deprecation Notice** - Alte API bleibt 1 Version
-4. **Major Version Bump** - 1.x.x → 2.0.0
-5. **Release Notes** - Detaillierte Migration Guide
+1. **Issue erstellen** — Diskussion mit Team
+2. **Migration Path** — Wie upgraden Consumer?
+3. **Deprecation Notice** — Alte API bleibt mindestens 1 Minor-Version
+4. **Major Version Bump** — 1.x.x → 2.0.0
+5. **Release Notes** — Detaillierte Migration Guide
 
 ### Breaking Change PR Template
 
 ```markdown
-## 🚨 BREAKING CHANGE
+## BREAKING CHANGE
 
 ### What breaks?
 Renamed `color-btn-bg` to `color-btn-primary-bg`
@@ -571,10 +632,8 @@ Renamed `color-btn-bg` to `color-btn-primary-bg`
 Consistency with other component tokens that specify variant in name.
 
 ### Migration Path
-```bash
-# Find & Replace in your codebase
+Find & Replace in your codebase:
 color-btn-bg → color-btn-primary-bg
-```
 
 ### Deprecation Notice
 `color-btn-bg` will remain available with deprecation warning until v2.0.0
