@@ -470,6 +470,9 @@
   --color-bg-info: var(--color-accent-4-100);
   --color-bg-info-solid: var(--color-accent-4-500);
   --color-bg-overlay: var(--color-neutral-overlay); /** Modal/dialog backdrop */
+  --color-bg-content-overlay: rgba(255, 255, 255, 0.8); /** Semi-transparent content overlay (carousel nav) */
+  --color-bg-content-overlay-muted: rgba(255, 255, 255, 0.5); /** Lighter content overlay (inactive dots) */
+  --color-bg-content-overlay-strong: rgba(255, 255, 255, 0.7); /** Medium content overlay (dot hover) */
   --color-bg-inverse: var(--color-neutral-1-900); /** Dark/inverted background (code blocks) */
   --color-bg-inverse-hover: var(--color-neutral-1-700); /** Hover on inverted background */
   --color-text-base: var(--color-neutral-1-900);
@@ -621,7 +624,7 @@
   --color-badge-error-bg: var(--color-bg-error);
   --color-badge-error-bg-solid: var(--color-bg-error-solid); /** Opaque bg for count badges */
   --color-badge-error-text: var(--color-text-error);
-  --color-badge-error-text-solid: #ffffff; /** White text on solid error bg */
+  --color-badge-error-text-solid: var(--color-text-inverse); /** White text on solid error bg */
   --color-badge-error-border: var(--color-border-error);
   --color-badge-info-bg: var(--color-bg-info);
   --color-badge-info-text: var(--color-text-info);
@@ -669,11 +672,11 @@
   --color-card-bg-raised: var(--color-bg-paper); /** Raised card bg (same in light, differs in dark) */
   --color-card-bg-elevated: var(--color-bg-paper); /** Elevated card bg (same in light, differs in dark) */
   --color-card-border: var(--color-border-muted);
-  --color-carousel-nav-bg: rgba(255, 255, 255, 0.8); /** Nav button bg (semi-transparent) */
-  --color-carousel-nav-bg-hover: #ffffff; /** Nav button bg on hover */
-  --color-carousel-dot-active: #ffffff; /** Active dot color */
-  --color-carousel-dot-inactive: rgba(255, 255, 255, 0.5); /** Inactive dot color */
-  --color-carousel-dot-hover: rgba(255, 255, 255, 0.7); /** Inactive dot hover color */
+  --color-carousel-nav-bg: var(--color-bg-content-overlay); /** Nav button bg (semi-transparent) */
+  --color-carousel-nav-bg-hover: var(--color-bg-paper); /** Nav button bg on hover */
+  --color-carousel-dot-active: var(--color-bg-paper); /** Active dot color */
+  --color-carousel-dot-inactive: var(--color-bg-content-overlay-muted); /** Inactive dot color */
+  --color-carousel-dot-hover: var(--color-bg-content-overlay-strong); /** Inactive dot hover color */
   --color-chart-1: var(--color-bg-primary); /** Chart color 1 (primary blue) */
   --color-chart-2: var(--color-text-success); /** Chart color 2 (green) */
   --color-chart-3: var(--color-text-warning); /** Chart color 3 (amber) */
@@ -1248,6 +1251,12 @@
   --spacing-carousel-dots-bottom: var(--spacing-component-gap-md); /** Dots distance from bottom (12px) */
   --spacing-carousel-dots-px: var(--spacing-component-gap-xs); /** Dots container horizontal padding (4px) */
   --spacing-carousel-dots-py: var(--spacing-component-gap-xs); /** Dots container vertical padding (4px) */
+  --spacing-code-inline-px: var(--spacing-component-gap-xs); /** 4px inline code horizontal padding */
+  --spacing-code-inline-py: var(--spacing-component-gap-2xs); /** 2px inline code vertical padding */
+  --spacing-code-block-padding: var(--spacing-component-padding-md); /** 16px code block padding */
+  --spacing-code-copy-offset: var(--spacing-component-gap-md); /** 12px copy button offset from edge */
+  --spacing-code-copy-padding: var(--spacing-component-gap-xs); /** 4px copy button padding */
+  --spacing-code-line-number-pr: var(--spacing-component-padding-md); /** 16px line number right padding */
   --spacing-chart-tooltip-gap: var(--spacing-component-gap-xs); /** Gap in tooltip items (4px) */
   --spacing-chart-legend-gap: var(--spacing-component-gap-lg); /** Gap between legend items (16px) */
   --spacing-chart-legend-item-gap: var(--sizing-component-gap-sm); /** Gap within legend item (6px) */
@@ -1272,13 +1281,18 @@
   --spacing-command-input-px: var(--spacing-component-padding-sm); /** 12px input wrapper horizontal padding */
   --spacing-command-list-padding: var(--spacing-component-gap-xs); /** 4px list inner padding */
   --spacing-command-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
+  --spacing-command-group-heading-px: var(--spacing-component-padding-xs); /** 8px group heading horizontal padding */
   --spacing-command-group-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
+  --spacing-command-input-icon-mr: var(--spacing-component-gap-sm); /** 8px search icon margin right */
+  --spacing-command-separator-mx: var(--spacing-component-gap-xs); /** 4px separator horizontal margin */
   --spacing-command-item-px: var(--spacing-component-padding-xs); /** 8px item horizontal padding */
   --spacing-command-item-py: var(--spacing-component-gap-xs); /** 6px item vertical padding */
   --spacing-command-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
   --spacing-dashboard-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
   --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
   --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
+  --spacing-datatable-colheader-px: var(--spacing-component-gap-sm); /** 8px column header horizontal padding */
+  --spacing-datatable-colheader-py: var(--spacing-component-gap-xs); /** 4px column header vertical padding */
   --spacing-dtpattern-section-gap: var(--spacing-component-gap-lg); /** 16px gap between sections */
   --spacing-dtpattern-header-gap: var(--spacing-component-gap-sm); /** 8px gap in header between title/actions */
   --spacing-dtpattern-bulk-px: var(--spacing-component-padding-sm); /** 12px bulk actions horizontal padding */
@@ -1344,7 +1358,14 @@
   --spacing-header-px: var(--spacing-component-padding-lg); /** Horizontales Padding (24px) */
   --spacing-header-py: var(--spacing-component-padding-sm); /** Vertikales Padding (12px) */
   --spacing-header-gap: var(--spacing-component-gap-md); /** Gap zwischen Header-Elementen (12px) */
+  --spacing-hl-px: var(--spacing-component-gap-2xs); /** 2px highlight mark horizontal padding */
   --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
+  --spacing-kbd-sm-px: var(--spacing-component-gap-xs); /** 4px sm horizontal padding */
+  --spacing-kbd-sm-py: var(--spacing-component-gap-2xs); /** 2px sm vertical padding */
+  --spacing-kbd-md-px: var(--spacing-component-gap-xs); /** 4px md horizontal padding */
+  --spacing-kbd-md-py: var(--spacing-component-gap-2xs); /** 2px md vertical padding */
+  --spacing-kbd-lg-px: var(--spacing-component-gap-sm); /** 8px lg horizontal padding */
+  --spacing-kbd-lg-py: var(--spacing-component-gap-xs); /** 4px lg vertical padding */
   --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
   --spacing-input-icon-inset: var(--sizing-component-height-md); /** 40px – right padding when icon present */
   --spacing-input-icon-padding: var(--spacing-component-padding-sm); /** 12px – icon button internal padding */
@@ -1504,7 +1525,13 @@
   --spacing-toolbar-separator-mx: var(--spacing-component-gap-xs); /** 4px separator horizontal margin */
   --spacing-tooltip-padding-x: var(--spacing-component-padding-sm); /** 12px horizontal padding */
   --spacing-tooltip-padding-y: var(--spacing-component-padding-xs); /** 8px vertical padding */
+  --spacing-tree-item-px: var(--spacing-component-gap-sm); /** 8px tree item horizontal padding */
+  --spacing-tree-item-py: var(--spacing-component-gap-xs); /** 4px tree item vertical padding */
   --spacing-tree-item-gap: var(--spacing-component-gap-xs); /** Gap between icon and label in tree item (4px) */
+  --spacing-notifcenter-icon-mt: var(--spacing-component-gap-2xs); /** 2px icon top margin for alignment */
+  --spacing-notifcenter-desc-mt: var(--spacing-component-gap-2xs); /** 2px description top margin */
+  --spacing-notifcenter-time-mt: var(--spacing-component-gap-xs); /** 4px timestamp top margin */
+  --spacing-notifcenter-actions-gap: var(--spacing-component-gap-2xs); /** 2px gap between action buttons */
   --font-heading-h1-size: var(--font-heading-size-2xl); /** h1 font size (2.25rem / text-4xl) */
   --font-heading-h1-weight: var(--font-component-weight-semibold); /** h1 font weight (600) */
   --font-heading-h1-line-height: var(--font-heading-line-height-2xl); /** h1 line-height (45px / 1.25x) */

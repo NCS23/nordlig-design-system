@@ -11,7 +11,7 @@ const Code = React.forwardRef<HTMLElement, CodeProps>(
       <code
         ref={ref}
         className={cn(
-          'font-mono text-[length:var(--font-code-size)] bg-[var(--color-code-bg)] text-[var(--color-code-text)] px-1.5 py-0.5 rounded-[var(--radius-code)]',
+          'font-mono text-[length:var(--font-code-size)] bg-[var(--color-code-bg)] text-[var(--color-code-text)] px-[var(--spacing-code-inline-px)] py-[var(--spacing-code-inline-py)] rounded-[var(--radius-code)]',
           className
         )}
         {...props}
@@ -58,7 +58,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
       const lines = textContent.split('\n');
       return lines.map((line, index) => (
         <div key={index} className="flex">
-          <span className="text-[var(--color-code-line-number)] select-none pr-4 text-right inline-block w-8">
+          <span className="text-[var(--color-code-line-number)] select-none pr-[var(--spacing-code-line-number-pr)] text-right inline-block w-8">
             {index + 1}
           </span>
           <span>{line}</span>
@@ -71,7 +71,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
         <pre
           ref={ref}
           className={cn(
-            'bg-[var(--color-code-block-bg)] text-[var(--color-code-block-text)] p-4 rounded-[var(--radius-code-block)] overflow-x-auto font-mono text-[length:var(--font-code-size)]',
+            'bg-[var(--color-code-block-bg)] text-[var(--color-code-block-text)] p-[var(--spacing-code-block-padding)] rounded-[var(--radius-code-block)] overflow-x-auto font-mono text-[length:var(--font-code-size)]',
             className
           )}
           {...props}
@@ -82,7 +82,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
           <button
             type="button"
             onClick={handleCopy}
-            className="absolute top-3 right-3 p-1.5 rounded-[var(--radius-code)] bg-[var(--color-code-block-bg)] hover:bg-[var(--color-code-copy-hover-bg)] text-[var(--color-code-block-text)] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
+            className="absolute top-[var(--spacing-code-copy-offset)] right-[var(--spacing-code-copy-offset)] p-[var(--spacing-code-copy-padding)] rounded-[var(--radius-code)] bg-[var(--color-code-block-bg)] hover:bg-[var(--color-code-copy-hover-bg)] text-[var(--color-code-block-text)] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1"
             aria-label={copied ? 'Kopiert' : 'Code kopieren'}
           >
             {copied ? <Icon icon={Check} size="sm" /> : <Icon icon={Copy} size="sm" />}

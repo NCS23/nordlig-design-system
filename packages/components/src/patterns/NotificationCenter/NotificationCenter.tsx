@@ -143,7 +143,7 @@ function NotificationItem({ notification, onMarkRead, onDismiss }: NotificationI
       )}
 
       {/* Icon */}
-      <div className="flex-shrink-0 mt-0.5">
+      <div className="flex-shrink-0 mt-[var(--spacing-notifcenter-icon-mt)]">
         <IconAtom icon={VariantIcon} size="md" className={iconClass} />
       </div>
 
@@ -158,20 +158,20 @@ function NotificationItem({ notification, onMarkRead, onDismiss }: NotificationI
           {notification.title}
         </p>
         {notification.description && (
-          <Text variant="muted" className="mt-0.5 line-clamp-2">
+          <Text variant="muted" className="mt-[var(--spacing-notifcenter-desc-mt)] line-clamp-2">
             {notification.description}
           </Text>
         )}
         <time
           dateTime={notification.timestamp.toISOString()}
-          className="block mt-1 text-[length:var(--font-notifcenter-timestamp-size)] text-[var(--color-notifcenter-timestamp)]"
+          className="block mt-[var(--spacing-notifcenter-time-mt)] text-[length:var(--font-notifcenter-timestamp-size)] text-[var(--color-notifcenter-timestamp)]"
         >
           {formatRelativeTime(notification.timestamp)}
         </time>
       </div>
 
       {/* Actions */}
-      <div className="flex-shrink-0 flex items-center gap-0.5">
+      <div className="flex-shrink-0 flex items-center gap-[var(--spacing-notifcenter-actions-gap)]">
         {!notification.read && onMarkRead && (
           <button
             type="button"

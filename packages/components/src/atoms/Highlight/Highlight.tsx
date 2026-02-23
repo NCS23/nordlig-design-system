@@ -47,7 +47,7 @@ const Highlight = React.forwardRef<HTMLSpanElement, HighlightProps>(
                 className={cn(
                   'bg-[var(--color-hl-bg)] text-[color:var(--color-hl-text)]',
                   'rounded-[var(--radius-hl)]',
-                  'px-0.5'
+                  'px-[var(--spacing-hl-px)]'
                 )}
               >
                 {part}

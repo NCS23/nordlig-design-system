@@ -7,9 +7,9 @@ const kbdVariants = cva(
   {
     variants: {
       size: {
-        sm: 'px-1 py-0.5 text-[length:var(--font-kbd-sm-size)]',
-        md: 'px-1.5 py-0.5 text-[length:var(--font-kbd-md-size)]',
-        lg: 'px-2 py-1 text-[length:var(--font-kbd-lg-size)]',
+        sm: 'px-[var(--spacing-kbd-sm-px)] py-[var(--spacing-kbd-sm-py)] text-[length:var(--font-kbd-sm-size)]',
+        md: 'px-[var(--spacing-kbd-md-px)] py-[var(--spacing-kbd-md-py)] text-[length:var(--font-kbd-md-size)]',
+        lg: 'px-[var(--spacing-kbd-lg-px)] py-[var(--spacing-kbd-lg-py)] text-[length:var(--font-kbd-lg-size)]',
       },
     },
     defaultVariants: {

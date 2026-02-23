@@ -43,31 +43,31 @@ describe('Kbd', () => {
   it('applies default size (md)', () => {
     render(<Kbd data-testid="kbd">K</Kbd>);
     const kbd = screen.getByTestId('kbd');
-    expect(kbd.className).toContain('px-1.5');
+    expect(kbd.className).toContain('px-[var(--spacing-kbd-md-px)]');
     expect(kbd.className).toContain('text-[length:var(--font-kbd-md-size)]');
   });
 
   it('applies size=sm', () => {
     render(<Kbd data-testid="kbd" size="sm">K</Kbd>);
     const kbd = screen.getByTestId('kbd');
-    expect(kbd.className).toContain('px-1');
-    expect(kbd.className).toContain('py-0.5');
+    expect(kbd.className).toContain('px-[var(--spacing-kbd-sm-px)]');
+    expect(kbd.className).toContain('py-[var(--spacing-kbd-sm-py)]');
     expect(kbd.className).toContain('text-[length:var(--font-kbd-sm-size)]');
   });
 
   it('applies size=md', () => {
     render(<Kbd data-testid="kbd" size="md">K</Kbd>);
     const kbd = screen.getByTestId('kbd');
-    expect(kbd.className).toContain('px-1.5');
-    expect(kbd.className).toContain('py-0.5');
+    expect(kbd.className).toContain('px-[var(--spacing-kbd-md-px)]');
+    expect(kbd.className).toContain('py-[var(--spacing-kbd-md-py)]');
     expect(kbd.className).toContain('text-[length:var(--font-kbd-md-size)]');
   });
 
   it('applies size=lg', () => {
     render(<Kbd data-testid="kbd" size="lg">K</Kbd>);
     const kbd = screen.getByTestId('kbd');
-    expect(kbd.className).toContain('px-2');
-    expect(kbd.className).toContain('py-1');
+    expect(kbd.className).toContain('px-[var(--spacing-kbd-lg-px)]');
+    expect(kbd.className).toContain('py-[var(--spacing-kbd-lg-py)]');
     expect(kbd.className).toContain('text-[length:var(--font-kbd-lg-size)]');
   });
 

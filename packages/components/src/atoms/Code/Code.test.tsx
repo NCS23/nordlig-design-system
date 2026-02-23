@@ -20,8 +20,8 @@ describe('Code (inline)', () => {
     expect(code.className).toContain('text-[length:var(--font-code-size)]');
     expect(code.className).toContain('bg-[var(--color-code-bg)]');
     expect(code.className).toContain('text-[var(--color-code-text)]');
-    expect(code.className).toContain('px-1.5');
-    expect(code.className).toContain('py-0.5');
+    expect(code.className).toContain('px-[var(--spacing-code-inline-px)]');
+    expect(code.className).toContain('py-[var(--spacing-code-inline-py)]');
     expect(code.className).toContain('rounded-[var(--radius-code)]');
   });
 
@@ -66,7 +66,7 @@ describe('CodeBlock', () => {
     const pre = screen.getByTestId('block');
     expect(pre.className).toContain('bg-[var(--color-code-block-bg)]');
     expect(pre.className).toContain('text-[var(--color-code-block-text)]');
-    expect(pre.className).toContain('p-4');
+    expect(pre.className).toContain('p-[var(--spacing-code-block-padding)]');
     expect(pre.className).toContain('rounded-[var(--radius-code-block)]');
     expect(pre.className).toContain('overflow-x-auto');
     expect(pre.className).toContain('font-mono');

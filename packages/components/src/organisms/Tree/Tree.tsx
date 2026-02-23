@@ -121,7 +121,7 @@ function TreeNodeItem({
         aria-level={level + 1}
         tabIndex={isFocused ? 0 : -1}
         className={cn(
-          'flex items-center gap-[var(--spacing-tree-item-gap)] min-h-[44px] py-1 px-2 rounded-[var(--radius-sm)] cursor-pointer',
+          'flex items-center gap-[var(--spacing-tree-item-gap)] min-h-[44px] py-[var(--spacing-tree-item-py)] px-[var(--spacing-tree-item-px)] rounded-[var(--radius-sm)] cursor-pointer',
           'hover:bg-[var(--color-bg-muted)] transition-colors',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
           isSelected && 'bg-[var(--color-bg-muted)]'

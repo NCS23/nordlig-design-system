@@ -36,7 +36,7 @@ const CommandInput = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
   <div className="flex items-center border-b border-[var(--color-command-border)] px-[var(--spacing-command-input-px)]" cmdk-input-wrapper="" role="search">
-    <Icon icon={Search} size="sm" className="mr-2 opacity-50" />
+    <Icon icon={Search} size="sm" className="mr-[var(--spacing-command-input-icon-mr)] opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       role="combobox"
@@ -101,7 +101,7 @@ const CommandGroup = React.forwardRef<
       'overflow-hidden p-[var(--spacing-command-list-padding)]',
       '[&_[cmdk-group-heading]]:text-[length:var(--font-command-heading-size)] [&_[cmdk-group-heading]]:[font-weight:var(--font-command-heading-weight)]',
       '[&_[cmdk-group-heading]]:text-[var(--color-command-group-heading)]',
-      '[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-[var(--spacing-command-group-heading-py)]',
+      '[&_[cmdk-group-heading]]:px-[var(--spacing-command-group-heading-px)] [&_[cmdk-group-heading]]:py-[var(--spacing-command-group-heading-py)]',
       className
     )}
     {...props}
@@ -139,7 +139,7 @@ const CommandSeparator = React.forwardRef<
   <CommandPrimitive.Separator
     ref={ref}
     className={cn(
-      'h-px bg-[var(--color-command-separator)] -mx-1 my-[var(--spacing-command-separator-my)]',
+      'h-px bg-[var(--color-command-separator)] mx-[calc(-1*var(--spacing-command-separator-mx))] my-[var(--spacing-command-separator-my)]',
       className
     )}
     {...props}

@@ -224,7 +224,7 @@ function DataTableColumnHeader<TData, TValue>({
   return (
     <button
       className={cn(
-        'inline-flex items-center gap-[var(--spacing-datatable-toolbar-gap)] -ml-2 px-2 py-1 rounded transition-colors',
+        'inline-flex items-center gap-[var(--spacing-datatable-toolbar-gap)] ml-[calc(-1*var(--spacing-datatable-colheader-px))] px-[var(--spacing-datatable-colheader-px)] py-[var(--spacing-datatable-colheader-py)] rounded transition-colors',
         'hover:bg-[var(--color-datatable-toolbar-bg)]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
         className
