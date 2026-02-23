@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Container } from './Container';
+import { Heading } from '../Heading';
+import { Text } from '../Text';
 
 const meta: Meta<typeof Container> = {
   title: 'Atoms/Container',
@@ -73,10 +75,10 @@ export const NarrowContent: Story = {
   name: 'Schmaler Inhalt',
   render: () => (
     <Container maxWidth="sm" className="py-8">
-      <h2 className="text-lg font-semibold mb-2">Einstellungen</h2>
-      <p className="text-sm text-[var(--color-text-muted)]">
+      <Heading level={2} className="mb-2">Einstellungen</Heading>
+      <Text variant="muted">
         Ein schmaler Container eignet sich gut fuer Formulare und Einstellungsseiten.
-      </p>
+      </Text>
     </Container>
   ),
 };

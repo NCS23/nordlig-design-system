@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Stack, VStack, HStack } from './Stack';
+import { Link } from '../Link';
 
 const meta: Meta<typeof Stack> = {
   title: 'Atoms/Stack',
@@ -138,9 +139,9 @@ export const SemanticHTML: Story = {
   name: 'Semantisches HTML',
   render: () => (
     <Stack as="nav" direction="horizontal" gap="md" align="center">
-      <a href="#" className="text-sm text-[var(--color-text-link)]">Dashboard</a>
-      <a href="#" className="text-sm text-[var(--color-text-link)]">Training</a>
-      <a href="#" className="text-sm text-[var(--color-text-link)]">Statistik</a>
+      <Link href="#">Dashboard</Link>
+      <Link href="#">Training</Link>
+      <Link href="#">Statistik</Link>
     </Stack>
   ),
 };
