@@ -2,7 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 import { Skeleton, SkeletonKeyframes } from '../../atoms/Skeleton/Skeleton';
-import { Card } from '../../atoms/Card';
+import { Card } from '../../molecules/Card';
 
 /**
  * Typ für Trainingssitzungsdaten

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
-import { Card } from '../../atoms/Card';
+import { Card } from '../../molecules/Card';
 
 const statCardVariants = cva(
   '',

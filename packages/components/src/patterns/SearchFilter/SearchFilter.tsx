@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
-import { SearchInput, type SearchInputProps } from '../SearchInput';
+import { SearchInput, type SearchInputProps } from '../../molecules/SearchInput';
 
 export interface SearchFilterProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Placeholder fuer das Suchfeld */

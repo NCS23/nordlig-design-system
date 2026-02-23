@@ -176,6 +176,17 @@ export {
 } from './atoms/List';
 
 // Molecules
+export {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  cardVariants,
+  type CardProps,
+  type CardHeaderProps,
+  type CardBodyProps,
+  type CardFooterProps,
+} from './molecules/Card';
 export { SearchInput, type SearchInputProps } from './molecules/SearchInput';
 export { PasswordInput, type PasswordInputProps } from './molecules/PasswordInput';
 export { LoadingOverlay, type LoadingOverlayProps } from './molecules/LoadingOverlay';
@@ -424,17 +435,6 @@ export {
 } from './molecules/Drawer';
 
 // Organisms
-export {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  cardVariants,
-  type CardProps,
-  type CardHeaderProps,
-  type CardBodyProps,
-  type CardFooterProps,
-} from './atoms/Card';
 
 export {
   Table,
@@ -595,10 +595,6 @@ export {
   type ResizablePanelProps,
   type ResizableHandleProps,
 } from './molecules/Resizable';
-export {
-  SearchFilter,
-  type SearchFilterProps,
-} from './molecules/SearchFilter';
 
 // Templates
 export {
@@ -663,6 +659,10 @@ export {
 } from './templates/ErrorPage';
 
 // ─── Patterns ──────────────────────────────────────────────────────────────────
+export {
+  SearchFilter,
+  type SearchFilterProps,
+} from './patterns/SearchFilter';
 export { DataTablePattern } from './patterns/DataTablePattern';
 export type { DataTablePatternProps } from './patterns/DataTablePattern';
 export { FormWizard } from './patterns/FormWizard';

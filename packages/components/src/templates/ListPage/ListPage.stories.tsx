@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ListPage } from './ListPage';
-import { SearchFilter } from '../../molecules/SearchFilter';
+import { SearchFilter } from '../../patterns/SearchFilter';
 import { Heading } from '../../atoms/Heading';
 import { Text } from '../../atoms/Text';
 import { Button } from '../../atoms/Button';

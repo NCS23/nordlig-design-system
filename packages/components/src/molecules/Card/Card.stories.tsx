@@ -4,7 +4,7 @@ import { Button } from '../../atoms/Button';
 import { Heading } from '../../atoms/Heading';
 
 const meta: Meta<typeof Card> = {
-  title: 'Atoms/Card',
+  title: 'Molecules/Card',
   component: Card,
   tags: ['autodocs'],
   argTypes: {

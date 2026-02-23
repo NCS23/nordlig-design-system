@@ -4,7 +4,7 @@ import { Heading } from '../../atoms/Heading';
 import { Text } from '../../atoms/Text';
 import { Button } from '../../atoms/Button';
 import { Badge } from '../../atoms/Badge';
-import { Card, CardHeader, CardBody } from '../../atoms/Card';
+import { Card, CardHeader, CardBody } from '../../molecules/Card';
 import { Avatar, AvatarImage, AvatarFallback } from '../../atoms/Avatar';
 import { Separator } from '../../atoms/Separator';
 import {

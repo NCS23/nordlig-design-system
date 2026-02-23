@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { SearchFilter } from './SearchFilter';
-import { Select } from '../Select';
+import { Select } from '../../molecules/Select';
 
 const meta: Meta<typeof SearchFilter> = {
-  title: 'Molecules/SearchFilter',
+  title: 'Patterns/SearchFilter',
   component: SearchFilter,
   parameters: {
     layout: 'padded',

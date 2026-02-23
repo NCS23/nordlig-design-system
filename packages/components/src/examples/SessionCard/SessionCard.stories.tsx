@@ -85,7 +85,7 @@ const minimalSessionData: SessionData = {
 };
 
 const meta: Meta<typeof SessionCard> = {
-  title: 'Organisms/SessionCard',
+  title: 'Examples/SessionCard',
   component: SessionCard,
   parameters: {
     layout: 'padded',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 import { DataTable } from '../../organisms/DataTable/DataTable';
-import { SearchFilter } from '../../molecules/SearchFilter/SearchFilter';
+import { SearchFilter } from '../SearchFilter/SearchFilter';
 import { EmptyState } from '../../molecules/EmptyState/EmptyState';
 import { Heading } from '../../atoms/Heading';
 import { Text } from '../../atoms/Text';

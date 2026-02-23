@@ -35,7 +35,7 @@ import {
   SidebarCollapseButton,
 } from '../../organisms/Sidebar';
 import { StatCard } from '../../organisms/StatCard';
-import { Card, CardHeader, CardBody } from '../../atoms/Card';
+import { Card, CardHeader, CardBody } from '../../molecules/Card';
 import { Breadcrumbs, BreadcrumbItem } from '../../molecules/Breadcrumbs';
 import { SearchInput } from '../../molecules/SearchInput';
 import { Separator } from '../../atoms/Separator';
