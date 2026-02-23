@@ -257,7 +257,7 @@ const NotificationCenter = React.forwardRef<HTMLDivElement, NotificationCenterPr
                 <Badge
                   variant="error"
                   size="xs"
-                  className="absolute -top-1 -right-1"
+                  className="absolute -top-1 -right-1 !bg-[var(--color-badge-error-bg-solid)] !text-[var(--color-badge-error-text-solid)]"
                   aria-label={`${unreadCount} ungelesen`}
                 >
                   {unreadCount > 99 ? '99+' : unreadCount}

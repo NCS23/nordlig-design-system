@@ -300,17 +300,17 @@ describe('Carousel', () => {
       expect(screen.getByRole('region')).toHaveClass('rounded-[var(--radius-card)]');
     });
 
-    it('arrow buttons use paper background token', () => {
+    it('arrow buttons use carousel nav background token', () => {
       renderCarousel({ showArrows: true });
       const nextBtn = screen.getByLabelText('Naechster Slide');
-      expect(nextBtn).toHaveClass('bg-[var(--color-bg-paper)]/80');
+      expect(nextBtn).toHaveClass('bg-[var(--color-carousel-nav-bg)]');
     });
 
-    it('active dot uses white background', () => {
+    it('active dot uses carousel dot active token', () => {
       renderCarousel({ showDots: true });
       const activeDot = screen.getByLabelText('Gehe zu Slide 1');
       const dotVisual = activeDot.querySelector('span');
-      expect(dotVisual).toHaveClass('bg-[var(--color-bg-paper)]');
+      expect(dotVisual).toHaveClass('bg-[var(--color-carousel-dot-active)]');
     });
   });
 });

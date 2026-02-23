@@ -619,7 +619,9 @@
   --color-badge-warning-text: var(--color-text-warning);
   --color-badge-warning-border: var(--color-border-warning);
   --color-badge-error-bg: var(--color-bg-error);
+  --color-badge-error-bg-solid: var(--color-bg-error-solid); /** Opaque bg for count badges */
   --color-badge-error-text: var(--color-text-error);
+  --color-badge-error-text-solid: #ffffff; /** White text on solid error bg */
   --color-badge-error-border: var(--color-border-error);
   --color-badge-info-bg: var(--color-bg-info);
   --color-badge-info-text: var(--color-text-info);
@@ -664,7 +666,14 @@
   --color-btn-disabled-bg: var(--color-interactive-primary-disabled);
   --color-btn-disabled-text: var(--color-text-disabled);
   --color-card-bg: var(--color-bg-paper); /** White paper background */
+  --color-card-bg-raised: var(--color-bg-paper); /** Raised card bg (same in light, differs in dark) */
+  --color-card-bg-elevated: var(--color-bg-paper); /** Elevated card bg (same in light, differs in dark) */
   --color-card-border: var(--color-border-muted);
+  --color-carousel-nav-bg: rgba(255, 255, 255, 0.8); /** Nav button bg (semi-transparent) */
+  --color-carousel-nav-bg-hover: #ffffff; /** Nav button bg on hover */
+  --color-carousel-dot-active: #ffffff; /** Active dot color */
+  --color-carousel-dot-inactive: rgba(255, 255, 255, 0.5); /** Inactive dot color */
+  --color-carousel-dot-hover: rgba(255, 255, 255, 0.7); /** Inactive dot hover color */
   --color-chart-1: var(--color-bg-primary); /** Chart color 1 (primary blue) */
   --color-chart-2: var(--color-text-success); /** Chart color 2 (green) */
   --color-chart-3: var(--color-text-warning); /** Chart color 3 (amber) */

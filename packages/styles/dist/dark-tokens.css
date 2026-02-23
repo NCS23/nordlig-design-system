@@ -240,7 +240,9 @@
   --color-btn-ghost-bg-hover: #334155;     /* slate-700 */
   --color-btn-ghost-bg-active: #475569;    /* slate-600 */
 
-  /* --- Badge (rgba subtle bg for a11y contrast) --- */
+  /* --- Badge (rgba subtle bg for a11y contrast; notification count uses solid) --- */
+  --color-badge-error-bg-solid: #dc2626;  /* red-600: opaque bg for count badges */
+  --color-badge-error-text-solid: #ffffff; /* white text on solid red */
   --color-badge-neutral-bg: #334155;
   --color-badge-neutral-text: #cbd5e1;     /* slate-300: 4.8:1 on neutral bg */
   --color-badge-success-bg: rgba(34, 197, 94, 0.18);
@@ -291,6 +293,10 @@
   --color-cpick-input-bg: #15202e;
   --color-cmb-search-bg: #15202e;
 
+  /* --- LoadingOverlay: distinct overlay on dark backgrounds --- */
+  --color-ldovl-bg: rgba(15, 23, 42, 0.85);  /* slate-900 at 85%: softer than pure black */
+  --color-ldovl-spinner: #7dd3fc;             /* sky-300: brighter spinner */
+
   /* --- Slider: visible thumb on dark track --- */
   --color-slider-thumb: #e2e8f0;
   --color-slider-thumb-border: #38bdf8;
@@ -321,8 +327,22 @@
   --color-hl-bg: rgba(251, 191, 36, 0.25); /* amber-400 at 25%: visible highlight */
   --color-hl-text: #fef3c7;                /* amber-100: warm readable text */
 
-  /* --- Card: a11y border 3:1 on paper --- */
+  /* --- Card: elevation hierarchy via bg color steps --- */
   --color-card-border: #64748b;            /* slate-500: meets 3:1 on paper */
+  --color-card-bg-raised: #283548;         /* between paper and surface: subtle lift */
+  --color-card-bg-elevated: #334155;       /* slate-700: clearly elevated */
+
+  /* --- Carousel: visible nav on dark content --- */
+  --color-carousel-nav-bg: rgba(30, 41, 59, 0.85);   /* slate-800 at 85% */
+  --color-carousel-nav-bg-hover: #1e293b;             /* slate-800 solid */
+  --color-carousel-dot-active: #f1f5f9;               /* slate-100: bright dot */
+  --color-carousel-dot-inactive: rgba(241, 245, 249, 0.4); /* slate-100 at 40% */
+  --color-carousel-dot-hover: rgba(241, 245, 249, 0.7);    /* slate-100 at 70% */
+
+  /* --- Resizable: handle must stand out from panel border --- */
+  --color-rsz-handle-bg: #94a3b8;         /* slate-400: clearly visible handle */
+  --color-rsz-handle-border: #cbd5e1;     /* slate-300: visible grip lines */
+  --color-rsz-panel-border: #334155;      /* slate-700: subtle panel divider */
 
   /* --- Auth: a11y border --- */
   --color-auth-card-border: #64748b;

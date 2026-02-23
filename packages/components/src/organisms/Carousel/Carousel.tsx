@@ -146,9 +146,9 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
             type="button"
             className={cn(
               'absolute top-1/2 -translate-y-1/2 z-10 left-[var(--spacing-carousel-nav-offset)]',
-              'w-[var(--sizing-carousel-nav-size)] h-[var(--sizing-carousel-nav-size)] rounded-[var(--radius-carousel-nav)] bg-[var(--color-bg-paper)]/80 backdrop-blur-sm',
+              'w-[var(--sizing-carousel-nav-size)] h-[var(--sizing-carousel-nav-size)] rounded-[var(--radius-carousel-nav)] bg-[var(--color-carousel-nav-bg)] backdrop-blur-sm',
               'flex items-center justify-center',
-              'text-[var(--color-text-base)] hover:bg-[var(--color-bg-paper)] transition-colors',
+              'text-[var(--color-text-base)] hover:bg-[var(--color-carousel-nav-bg-hover)] transition-colors',
               '[box-shadow:var(--shadow-card-raised)]',
               'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
             )}
@@ -165,9 +165,9 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
             type="button"
             className={cn(
               'absolute top-1/2 -translate-y-1/2 z-10 right-[var(--spacing-carousel-nav-offset)]',
-              'w-[var(--sizing-carousel-nav-size)] h-[var(--sizing-carousel-nav-size)] rounded-[var(--radius-carousel-nav)] bg-[var(--color-bg-paper)]/80 backdrop-blur-sm',
+              'w-[var(--sizing-carousel-nav-size)] h-[var(--sizing-carousel-nav-size)] rounded-[var(--radius-carousel-nav)] bg-[var(--color-carousel-nav-bg)] backdrop-blur-sm',
               'flex items-center justify-center',
-              'text-[var(--color-text-base)] hover:bg-[var(--color-bg-paper)] transition-colors',
+              'text-[var(--color-text-base)] hover:bg-[var(--color-carousel-nav-bg-hover)] transition-colors',
               '[box-shadow:var(--shadow-card-raised)]',
               'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
             )}
@@ -197,8 +197,8 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
                   className={cn(
                     'block w-[var(--sizing-carousel-dot-size)] h-[var(--sizing-carousel-dot-size)] rounded-[var(--radius-carousel-dot)] transition-colors duration-200',
                     index === currentIndex
-                      ? 'bg-[var(--color-bg-paper)]'
-                      : 'bg-[var(--color-bg-paper)]/50 hover:bg-[var(--color-bg-paper)]/70'
+                      ? 'bg-[var(--color-carousel-dot-active)]'
+                      : 'bg-[var(--color-carousel-dot-inactive)] hover:bg-[var(--color-carousel-dot-hover)]'
                   )}
                 />
               </button>

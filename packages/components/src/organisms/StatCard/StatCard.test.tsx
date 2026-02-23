@@ -79,7 +79,7 @@ describe('StatCard', () => {
   it('applies default variant (no left border accent)', () => {
     render(<StatCard data-testid="stat" title="Pace" value="5:41" />);
     const card = screen.getByTestId('stat');
-    expect(card.className).toContain('bg-[var(--color-card-bg)]');
+    expect(card.className).toContain('bg-[var(--color-card-bg-raised)]');
     expect(card.className).toContain('border');
     expect(card.className).not.toContain('border-l-4');
   });
@@ -151,7 +151,7 @@ describe('StatCard', () => {
     const card = screen.getByTestId('stat');
     expect(card.className).toContain('rounded-[var(--radius-card)]');
     expect(card.className).toContain('border-[var(--color-card-border)]');
-    expect(card.className).toContain('bg-[var(--color-card-bg)]');
+    expect(card.className).toContain('bg-[var(--color-card-bg-raised)]');
   });
 
   it('renders trend direction up with correct styling class', () => {
