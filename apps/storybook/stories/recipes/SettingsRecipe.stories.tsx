@@ -68,7 +68,7 @@ function SettingsPage() {
           <TabsTrigger value="darstellung">Darstellung</TabsTrigger>
           <TabsTrigger value="benachrichtigungen">Benachrichtigungen</TabsTrigger>
           <TabsTrigger value="gefahrenzone">
-            Gefahrenzone <Badge variant="error" size="xs" className="ml-1">!</Badge>
+            Gefahrenzone <Badge variant="error" size="xs" className="ml-2">!</Badge>
           </TabsTrigger>
         </TabsList>
 
@@ -173,9 +173,11 @@ function SettingsPage() {
   );
 }
 
-const meta: Meta = {
+const meta: Meta<typeof SettingsPage> = {
   title: 'Recipes/Einstellungen',
+  component: SettingsPage,
   parameters: {
+    layout: 'padded',
     docs: {
       description: {
         component:
@@ -186,7 +188,6 @@ const meta: Meta = {
   },
 };
 export default meta;
+type Story = StoryObj<typeof SettingsPage>;
 
-export const Einstellungen: StoryObj = {
-  render: () => <SettingsPage />,
-};
+export const Default: Story = {};

@@ -128,9 +128,11 @@ function DataListPage() {
   );
 }
 
-const meta: Meta = {
+const meta: Meta<typeof DataListPage> = {
   title: 'Recipes/Datenliste',
+  component: DataListPage,
   parameters: {
+    layout: 'padded',
     docs: {
       description: {
         component:
@@ -141,7 +143,6 @@ const meta: Meta = {
   },
 };
 export default meta;
+type Story = StoryObj<typeof DataListPage>;
 
-export const BenutzerListe: StoryObj = {
-  render: () => <DataListPage />,
-};
+export const Default: Story = {};

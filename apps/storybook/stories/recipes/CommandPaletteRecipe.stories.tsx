@@ -100,9 +100,11 @@ function AppWithSpotlight() {
   );
 }
 
-const meta: Meta = {
+const meta: Meta<typeof AppWithSpotlight> = {
   title: 'Recipes/Command Palette',
+  component: AppWithSpotlight,
   parameters: {
+    layout: 'padded',
     docs: {
       description: {
         component:
@@ -114,7 +116,6 @@ const meta: Meta = {
   },
 };
 export default meta;
+type Story = StoryObj<typeof AppWithSpotlight>;
 
-export const MitSpotlight: StoryObj = {
-  render: () => <AppWithSpotlight />,
-};
+export const Default: Story = {};

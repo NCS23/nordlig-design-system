@@ -111,9 +111,11 @@ function RegistrationForm() {
   );
 }
 
-const meta: Meta = {
+const meta: Meta<typeof RegistrationForm> = {
   title: 'Recipes/Formular',
+  component: RegistrationForm,
   parameters: {
+    layout: 'padded',
     docs: {
       description: {
         component:
@@ -124,7 +126,6 @@ const meta: Meta = {
   },
 };
 export default meta;
+type Story = StoryObj<typeof RegistrationForm>;
 
-export const Registrierung: StoryObj = {
-  render: () => <RegistrationForm />,
-};
+export const Default: Story = {};

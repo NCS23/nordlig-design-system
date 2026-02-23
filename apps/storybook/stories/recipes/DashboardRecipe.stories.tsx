@@ -99,9 +99,11 @@ const tableData = {
   ],
 } satisfies AnalyticsDashboardTable;
 
-const meta: Meta = {
+const meta: Meta<typeof AnalyticsDashboard> = {
   title: 'Recipes/Dashboard',
+  component: AnalyticsDashboard,
   parameters: {
+    layout: 'padded',
     docs: {
       description: {
         component:
@@ -112,8 +114,9 @@ const meta: Meta = {
   },
 };
 export default meta;
+type Story = StoryObj<typeof AnalyticsDashboard>;
 
-export const TrainingsDashboard: StoryObj = {
+export const TrainingsDashboard: Story = {
   render: () => (
     <AnalyticsDashboard
       metrics={metrics}
@@ -133,7 +136,7 @@ export const TrainingsDashboard: StoryObj = {
   ),
 };
 
-export const NurMetriken: StoryObj = {
+export const NurMetriken: Story = {
   render: () => (
     <AnalyticsDashboard
       metrics={metrics}
@@ -142,7 +145,7 @@ export const NurMetriken: StoryObj = {
   ),
 };
 
-export const LadeZustand: StoryObj = {
+export const LadeZustand: Story = {
   render: () => (
     <AnalyticsDashboard
       metrics={metrics}

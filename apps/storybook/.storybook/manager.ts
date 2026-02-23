@@ -1,39 +1,38 @@
 import { addons } from '@storybook/manager-api';
 import { create } from '@storybook/theming/create';
 
-const darkTheme = create({
-  base: 'dark',
+const lightTheme = create({
+  base: 'light',
   brandTitle: 'Nordlig Design System',
 
-  // Farben passend zum DS Dark Mode
-  colorPrimary: '#38bdf8',
-  colorSecondary: '#38bdf8',
+  colorPrimary: '#0284c7',
+  colorSecondary: '#0284c7',
 
   // UI
-  appBg: '#0f172a',
-  appContentBg: '#1e293b',
-  appPreviewBg: '#0f172a',
-  appBorderColor: '#334155',
+  appBg: '#f8fafc',
+  appContentBg: '#ffffff',
+  appPreviewBg: 'transparent',
+  appBorderColor: '#e2e8f0',
   appBorderRadius: 6,
 
   // Text
-  textColor: '#f1f5f9',
-  textInverseColor: '#0f172a',
-  textMutedColor: '#94a3b8',
+  textColor: '#1e293b',
+  textInverseColor: '#f8fafc',
+  textMutedColor: '#64748b',
 
   // Toolbar
-  barTextColor: '#94a3b8',
-  barSelectedColor: '#38bdf8',
-  barHoverColor: '#f1f5f9',
-  barBg: '#1e293b',
+  barTextColor: '#64748b',
+  barSelectedColor: '#0284c7',
+  barHoverColor: '#1e293b',
+  barBg: '#ffffff',
 
   // Inputs
-  inputBg: '#1e293b',
-  inputBorder: '#475569',
-  inputTextColor: '#f1f5f9',
+  inputBg: '#ffffff',
+  inputBorder: '#cbd5e1',
+  inputTextColor: '#1e293b',
   inputBorderRadius: 4,
 });
 
 addons.setConfig({
-  theme: darkTheme,
+  theme: lightTheme,
 });
