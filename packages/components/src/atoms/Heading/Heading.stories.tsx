@@ -4,7 +4,6 @@ import { Heading } from './Heading';
 const meta: Meta<typeof Heading> = {
   title: 'Atoms/Heading',
   component: Heading,
-  tags: ['autodocs'],
   argTypes: {
     level: {
       control: 'select',

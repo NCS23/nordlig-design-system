@@ -5,7 +5,6 @@ import { Button } from '../../atoms/Button';
 const meta: Meta<typeof Separator> = {
   title: 'Atoms/Separator',
   component: Separator,
-  tags: ['autodocs'],
   argTypes: {
     orientation: {
       control: 'select',

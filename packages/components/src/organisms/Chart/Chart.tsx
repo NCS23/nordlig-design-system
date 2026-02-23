@@ -3,43 +3,63 @@ import { cn } from '../../utils/cn';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
+/** Configuration map for chart data series — maps data keys to labels, colors and icons. */
 export interface ChartConfig {
   [key: string]: {
+    /** Display label for this series in tooltips and legends. */
     label: string;
+    /** Override color (CSS value). Falls back to `--color-chart-{n}` tokens. */
     color?: string;
+    /** Icon component shown in the legend. */
     icon?: React.ComponentType;
   };
 }
 
+/** Wrapper that provides chart config context and injects CSS color variables. */
 export interface ChartContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Series configuration map. */
   config: ChartConfig;
   children: React.ReactNode;
   className?: string;
 }
 
+/** Styled tooltip content for Recharts. Renders inside `<Tooltip content={<ChartTooltipContent />} />`. */
 export interface ChartTooltipContentProps {
+  /** Whether the tooltip is currently visible (provided by Recharts). */
   active?: boolean;
+  /** Data points at the hovered position (provided by Recharts). */
   payload?: Array<{
     name: string;
     value: number;
     color: string;
     dataKey: string;
   }>;
+  /** X-axis label at the hovered position. */
   label?: string;
+  /** Hide the header label row. */
   hideLabel?: boolean;
+  /** Hide the color indicator dot/line. */
   hideIndicator?: boolean;
+  /** Style of the color indicator.
+   * @default 'dot' */
   indicator?: 'dot' | 'line' | 'dashed';
+  /** Custom formatter for the label text. */
   labelFormatter?: (label: string) => string;
+  /** Custom formatter for data values. */
   formatter?: (value: number) => string;
+  /** Override config (falls back to context). */
   config?: ChartConfig;
 }
 
+/** Styled legend content for Recharts. Renders inside `<Legend content={<ChartLegendContent />} />`. */
 export interface ChartLegendContentProps {
+  /** Legend entries (provided by Recharts). */
   payload?: Array<{
     value: string;
     color: string;
     dataKey?: string;
   }>;
+  /** Override config (falls back to context). */
   config?: ChartConfig;
   className?: string;
 }

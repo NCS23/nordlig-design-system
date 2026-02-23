@@ -59,7 +59,6 @@ const basicColumns: ColumnDef<TrainingSession>[] = [
 const meta: Meta<typeof DataTable> = {
   title: 'Organisms/DataTable',
   component: DataTable,
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {

@@ -4,7 +4,6 @@ import { Button } from './Button';
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
   component: Button,
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',

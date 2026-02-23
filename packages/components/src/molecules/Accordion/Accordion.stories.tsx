@@ -5,7 +5,6 @@ import { Heading } from '../../atoms/Heading';
 const meta: Meta<typeof Accordion> = {
   title: 'Molecules/Accordion',
   component: Accordion,
-  tags: ['autodocs'],
 };
 
 export default meta;

@@ -64,7 +64,6 @@ const optionsWithDisabled: SelectOption[] = [
 const meta: Meta<typeof Select> = {
   title: 'Molecules/Select',
   component: Select,
-  tags: ['autodocs'],
   argTypes: {
     inputSize: {
       control: 'select',

@@ -5,7 +5,6 @@ import { Button } from '../../atoms/Button';
 const meta: Meta<typeof Tooltip> = {
   title: 'Atoms/Tooltip',
   component: Tooltip,
-  tags: ['autodocs'],
   argTypes: {
     side: {
       control: 'select',

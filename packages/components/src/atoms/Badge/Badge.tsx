@@ -32,9 +32,17 @@ const badgeVariants = cva(
   }
 );
 
+/** Small label for status, counts or categories. */
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof badgeVariants> {}
+    VariantProps<typeof badgeVariants> {
+  /** Semantic color variant.
+   * @default 'neutral' */
+  variant?: 'success' | 'warning' | 'error' | 'info' | 'neutral';
+  /** Size preset controlling padding and font-size.
+   * @default 'md' */
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+}
 
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   ({ className, variant, size, ...props }, ref) => {

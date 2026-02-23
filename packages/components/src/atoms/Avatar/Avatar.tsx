@@ -20,9 +20,14 @@ const avatarVariants = cva(
   }
 );
 
+/** Circular user avatar with image, fallback initials and size variants. */
 export interface AvatarProps
   extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
-    VariantProps<typeof avatarVariants> {}
+    VariantProps<typeof avatarVariants> {
+  /** Size preset controlling width and height.
+   * @default 'md' */
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+}
 
 const Avatar = React.forwardRef<
   React.ComponentRef<typeof AvatarPrimitive.Root>,

@@ -47,9 +47,15 @@ const inputVariants = cva(
   }
 );
 
+/** Text input field with size variants, error state and built-in password toggle. */
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
     Omit<VariantProps<typeof inputVariants>, 'error'> {
+  /** Size preset controlling height, font-size and border-radius.
+   * @default 'md' */
+  inputSize?: 'sm' | 'md' | 'lg';
+  /** Shows error border and ring styling.
+   * @default false */
   error?: boolean;
 }
 

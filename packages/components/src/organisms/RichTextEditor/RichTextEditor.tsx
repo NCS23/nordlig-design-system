@@ -75,7 +75,7 @@ interface ToolbarButtonProps {
   icon: LucideIcon;
   label: string;
   active: boolean;
-  disabled: boolean;
+  disabled?: boolean;
   onClick: () => void;
 }
 
@@ -236,7 +236,7 @@ const RichTextEditor = React.forwardRef<HTMLDivElement, RichTextEditorProps>(
     // Sync controlled value
     useEffect(() => {
       if (editor && value !== undefined && editor.getHTML() !== value) {
-        editor.commands.setContent(value, false);
+        editor.commands.setContent(value, { emitUpdate: false });
       }
     }, [editor, value]);
 

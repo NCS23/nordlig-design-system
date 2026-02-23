@@ -6,7 +6,6 @@ import { Icon } from '../../atoms/Icon';
 
 const meta: Meta = {
   title: 'Molecules/Breadcrumbs',
-  tags: ['autodocs'],
 };
 
 export default meta;

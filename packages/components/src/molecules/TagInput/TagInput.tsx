@@ -90,7 +90,6 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
         if (validate) {
           const result = validate(trimmed);
           if (result !== true && result !== '') return;
-          if (result === false) return;
         }
 
         setTags([...tags, trimmed]);

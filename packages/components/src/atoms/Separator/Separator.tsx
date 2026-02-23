@@ -1,11 +1,20 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+/** Visual divider between content sections. Supports labels and icons. */
 export interface SeparatorProps extends React.HTMLAttributes<HTMLElement> {
+  /** Direction of the divider line.
+   * @default 'horizontal' */
   orientation?: 'horizontal' | 'vertical';
+  /** If true, the separator is purely visual and hidden from assistive technology.
+   * @default true */
   decorative?: boolean;
+  /** Optional text label rendered inline with the divider. */
   label?: React.ReactNode;
+  /** Position of the label along the divider.
+   * @default 'center' */
   labelPosition?: 'left' | 'center' | 'right';
+  /** Optional icon rendered next to the label. */
   icon?: React.ReactNode;
 }
 

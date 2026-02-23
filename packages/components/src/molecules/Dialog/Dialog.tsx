@@ -35,14 +35,19 @@ DialogOverlay.displayName = 'DialogOverlay';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
+/** Props for the dialog content panel (centered overlay with close button). */
 export interface DialogContentProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {}
 
+/** Container for the dialog title and description. */
 export interface DialogHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
+/** Accessible dialog title rendered as heading. */
 export interface DialogTitleProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title> {}
+/** Secondary text below the dialog title. */
 export interface DialogDescriptionProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description> {}
+/** Container for dialog action buttons (flex end aligned). */
 export interface DialogFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 // ─── DialogContent ──────────────────────────────────────────────────────────

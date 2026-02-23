@@ -6,7 +6,6 @@ import { Heading } from '../../atoms/Heading';
 const meta: Meta<typeof Card> = {
   title: 'Molecules/Card',
   component: Card,
-  tags: ['autodocs'],
   argTypes: {
     elevation: {
       control: 'select',

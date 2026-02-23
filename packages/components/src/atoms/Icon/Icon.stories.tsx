@@ -25,7 +25,6 @@ import { Icon } from './Icon';
 const meta: Meta<typeof Icon> = {
   title: 'Atoms/Icon',
   component: Icon,
-  tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',

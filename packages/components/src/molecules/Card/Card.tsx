@@ -29,9 +29,20 @@ const cardVariants = cva(
   }
 );
 
+/** Container component with elevation, padding and hover variants. Use with CardHeader, CardBody and CardFooter. */
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {}
+    VariantProps<typeof cardVariants> {
+  /** Shadow depth — `flat` (border only), `raised` (subtle shadow), `elevated` (prominent shadow).
+   * @default 'flat' */
+  elevation?: 'flat' | 'raised' | 'elevated';
+  /** Internal spacing preset.
+   * @default 'normal' */
+  padding?: 'compact' | 'normal' | 'spacious';
+  /** Enables hover shadow effect for clickable cards.
+   * @default false */
+  hoverable?: boolean;
+}
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, elevation, padding, hoverable, children, ...props }, ref) => {

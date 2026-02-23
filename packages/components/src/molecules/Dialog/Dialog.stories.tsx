@@ -17,7 +17,6 @@ import { RadioGroup } from '../RadioGroup';
 
 const meta: Meta = {
   title: 'Molecules/Dialog',
-  tags: ['autodocs'],
 };
 
 export default meta;

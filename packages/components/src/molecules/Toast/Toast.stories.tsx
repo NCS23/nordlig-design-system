@@ -6,7 +6,6 @@ import * as ToastPrimitive from '@radix-ui/react-toast';
 
 const meta: Meta = {
   title: 'Molecules/Toast',
-  tags: ['autodocs'],
 };
 
 export default meta;

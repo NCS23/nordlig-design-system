@@ -6,7 +6,6 @@ import { Heading } from '../../atoms/Heading';
 const meta: Meta<typeof Pagination> = {
   title: 'Molecules/Pagination',
   component: Pagination,
-  tags: ['autodocs'],
 };
 
 export default meta;

@@ -21,18 +21,39 @@ import { Checkbox } from '../../atoms/Checkbox';
 
 /* ─── DataTable ─── */
 
+/** Feature-rich data table with sorting, filtering, pagination and row selection. Built on TanStack Table. */
 export interface DataTableProps<TData, TValue> {
+  /** Column definitions (see TanStack Table `ColumnDef`). */
   columns: ColumnDef<TData, TValue>[];
+  /** Row data array. */
   data: TData[];
+  /** Row height preset.
+   * @default 'normal' */
   density?: 'compact' | 'normal' | 'spacious';
+  /** Alternate row background colors.
+   * @default false */
   striped?: boolean;
+  /** Show a search input above the table.
+   * @default false */
   searchable?: boolean;
+  /** Placeholder text for the search input.
+   * @default 'Suchen...' */
   searchPlaceholder?: string;
+  /** Column accessor key to filter on. If omitted, filters globally. */
   searchColumn?: string;
+  /** Enable pagination controls.
+   * @default false */
   pagination?: boolean;
+  /** Rows per page when pagination is enabled.
+   * @default 10 */
   pageSize?: number;
+  /** Add checkbox column for row selection.
+   * @default false */
   selectable?: boolean;
+  /** Callback when selected rows change. */
   onSelectionChange?: (rows: TData[]) => void;
+  /** Content shown when data is empty.
+   * @default 'Keine Ergebnisse.' */
   emptyMessage?: React.ReactNode;
   className?: string;
 }

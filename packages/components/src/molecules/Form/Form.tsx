@@ -36,9 +36,12 @@ function useFormContext<T extends FieldValues = FieldValues>() {
 // Form
 // ---------------------------------------------------------------------------
 
+/** Form wrapper that provides react-hook-form context to child fields. */
 export interface FormProps<T extends FieldValues>
   extends Omit<React.FormHTMLAttributes<HTMLFormElement>, 'onSubmit'> {
+  /** react-hook-form instance from `useForm()` or `useZodForm()`. */
   form: UseFormReturn<T>;
+  /** Callback with validated form data. */
   onSubmit: SubmitHandler<T>;
   children: React.ReactNode;
   className?: string;
@@ -70,10 +73,15 @@ const Form = React.forwardRef(FormInner) as <T extends FieldValues>(
 // FormField
 // ---------------------------------------------------------------------------
 
+/** Field wrapper that connects a child input to the form via `register()`. Renders label, error and description. */
 export interface FormFieldProps {
+  /** Field name matching the form schema key. */
   name: string;
+  /** Label text rendered above the field. */
   label?: string;
+  /** Helper text rendered below the field (hidden when error is shown). */
   description?: string;
+  /** Input element to register (Input, Select, Textarea, etc.). */
   children: React.ReactElement;
   className?: string;
 }

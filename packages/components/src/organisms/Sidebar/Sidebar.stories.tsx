@@ -29,7 +29,6 @@ import {
 const meta: Meta<typeof Sidebar> = {
   title: 'Organisms/Sidebar',
   component: Sidebar,
-  tags: ['autodocs'],
   argTypes: {
     collapsible: { control: 'boolean' },
     defaultCollapsed: { control: 'boolean' },

@@ -5,7 +5,6 @@ import { Heading } from '../../atoms/Heading';
 const meta: Meta<typeof Tabs> = {
   title: 'Molecules/Tabs',
   component: Tabs,
-  tags: ['autodocs'],
 };
 
 export default meta;
