@@ -108,12 +108,6 @@ function Spotlight({
     [onSelect, setOpen]
   );
 
-  // Build a flat lookup for finding items by label
-  const allItems = React.useMemo(
-    () => groups.flatMap((g) => g.items),
-    [groups]
-  );
-
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setOpen}>
       <DialogPrimitive.Portal>

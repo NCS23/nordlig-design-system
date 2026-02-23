@@ -283,6 +283,7 @@ const RichTextEditor = React.forwardRef<HTMLDivElement, RichTextEditorProps>(
         )}
 
         <div
+          role="presentation"
           onClick={handleContainerClick}
           className={cn(
             'p-[var(--spacing-rte-padding)]',

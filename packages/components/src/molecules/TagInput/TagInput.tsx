@@ -199,8 +199,8 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
           disabled && 'cursor-not-allowed bg-[var(--color-taginput-bg-disabled)] opacity-50',
           className
         )}
+        role="presentation"
         onClick={handleContainerClick}
-        aria-invalid={error || undefined}
         data-disabled={disabled || undefined}
         {...props}
       >
@@ -238,6 +238,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
               'disabled:cursor-not-allowed'
             )}
             aria-label={placeholder}
+            aria-invalid={error || undefined}
           />
         )}
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
-import { StatCard, type StatCardProps } from '../../organisms/StatCard';
+import { StatCard } from '../../organisms/StatCard';
 import { Card, CardHeader, CardBody } from '../../molecules/Card';
 import {
   ChartContainer,
@@ -70,9 +70,9 @@ export interface AnalyticsDashboardChart {
 
 export interface AnalyticsDashboardTable {
   /** Tabellen-Spalten */
-  columns: ColumnDef<any, any>[];
+  columns: ColumnDef<Record<string, unknown>, unknown>[];
   /** Tabellen-Daten */
-  data: any[];
+  data: Record<string, unknown>[];
   /** Titel */
   title?: string;
 }

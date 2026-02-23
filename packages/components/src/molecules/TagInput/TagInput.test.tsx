@@ -199,8 +199,8 @@ describe('TagInput', () => {
   });
 
   it('sets aria-invalid when error', () => {
-    render(<TagInput data-testid="taginput" error />);
-    expect(screen.getByTestId('taginput')).toHaveAttribute('aria-invalid', 'true');
+    render(<TagInput data-testid="taginput" error placeholder="Add tag" />);
+    expect(screen.getByLabelText('Add tag')).toHaveAttribute('aria-invalid', 'true');
   });
 
   // --- Focus -------------------------------------------------------------------
