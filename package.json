@@ -22,6 +22,8 @@
     "agents:dev": "pnpm --filter './packages/mcp-agents/*' run dev",
     "orchestrate": "node packages/mcp-agents/cli/build/index.js",
     "generate:component": "node scripts/generate-component.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"
@@ -40,6 +42,7 @@
     "glob": "^13.0.3",
     "postcss": "^8.5.6",
     "postcss-value-parser": "^4.2.0",
+    "prettier": "^3",
     "turbo": "^2.3.0",
     "typescript-eslint": "^8.56.0"
   },

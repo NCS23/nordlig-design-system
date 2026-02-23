@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "Nordlig Design System - Generated CSS & Tailwind Config",
   "main": "dist/tokens.css",
+  "exports": {
+    ".": "./dist/tokens.css",
+    "./dark": "./dist/dark-tokens.css",
+    "./tailwind": "./dist/tailwind-tokens.js"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
-    "dist/**",
-    "src/**"
+    "dist/**"
   ],
   "scripts": {
     "clean": "rm -rf dist"

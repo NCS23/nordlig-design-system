@@ -4,6 +4,14 @@
   "description": "Nordlig Design System - Design Tokens (4-Layer Architecture)",
   "main": "dist/tokens.js",
   "types": "dist/tokens.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./json": "./dist/tokens.json"
+  },
+  "sideEffects": false,
   "files": [
     "dist/**",
     "src/**"

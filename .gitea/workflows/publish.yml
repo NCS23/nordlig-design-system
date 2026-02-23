@@ -30,13 +30,10 @@ jobs:
           echo "//100.94.133.78:3001/api/packages/NCSNASadmin/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - name: Publish @nordlig/tokens
-        run: pnpm --filter @nordlig/tokens publish --no-git-checks --access public
-        continue-on-error: true
+        run: pnpm --filter @nordlig/tokens publish --no-git-checks --access public 2>&1 | tee /tmp/pub-tokens.log || grep -q "already been published" /tmp/pub-tokens.log
 
       - name: Publish @nordlig/styles
-        run: pnpm --filter @nordlig/styles publish --no-git-checks --access public
-        continue-on-error: true
+        run: pnpm --filter @nordlig/styles publish --no-git-checks --access public 2>&1 | tee /tmp/pub-styles.log || grep -q "already been published" /tmp/pub-styles.log
 
       - name: Publish @nordlig/components
-        run: pnpm --filter @nordlig/components publish --no-git-checks --access public
-        continue-on-error: true
+        run: pnpm --filter @nordlig/components publish --no-git-checks --access public 2>&1 | tee /tmp/pub-components.log || grep -q "already been published" /tmp/pub-components.log
