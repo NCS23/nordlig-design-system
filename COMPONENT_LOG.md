@@ -87,7 +87,7 @@
 
 **Status:** ✅ Complete
 **Developer:** Claude Code + Nils
-**Level:** Organism
+**Level:** Molecule
 
 ### Tokens Used
 - **Level 4 (Semantic) – Spacing:**
@@ -2746,7 +2746,7 @@
 
 **Status:** ✅ Complete
 **Developer:** MCP Agent + Claude Code (L4-Token-Korrektur)
-**Level:** Organism
+**Level:** Example (Domain-spezifisch: Training/Fitness)
 
 ### Tokens Created
 - **Level 4 (Semantic) – Color:**
