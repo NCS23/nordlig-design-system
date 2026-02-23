@@ -19,7 +19,7 @@ const Command = React.forwardRef<
     className={cn(
       'rounded-[var(--radius-command)]',
       'border border-[var(--color-command-border)]',
-      'bg-[var(--color-command-bg)]',
+      'bg-[var(--color-command-bg)] text-[var(--color-text-base)]',
       '[box-shadow:var(--shadow-command)]',
       'overflow-hidden',
       className

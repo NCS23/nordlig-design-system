@@ -105,7 +105,7 @@ const NavigationMenuContent = React.forwardRef<
     ref={ref}
     className={cn(
       'absolute top-full left-0 mt-[var(--spacing-navmenu-indicator-mt)]',
-      'bg-[var(--color-nav-dropdown-bg)]',
+      'bg-[var(--color-nav-dropdown-bg)] text-[var(--color-text-base)]',
       'border border-[var(--color-nav-dropdown-border)]',
       'rounded-[var(--radius-nav-dropdown)]',
       '[box-shadow:var(--shadow-nav-dropdown)]',

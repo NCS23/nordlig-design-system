@@ -41,7 +41,7 @@ const AppHeader = React.forwardRef<HTMLElement, AppHeaderProps>(
         'h-[var(--sizing-header-height)]',
         'px-[var(--spacing-header-px)] py-[var(--spacing-header-py)]',
         'gap-[var(--spacing-header-gap)]',
-        'bg-[var(--color-header-bg)]',
+        'bg-[var(--color-header-bg)] text-[var(--color-text-base)]',
         bordered && 'border-b border-[var(--color-header-border)]',
         elevated && '[box-shadow:var(--shadow-header)]',
         sticky && 'sticky top-0',

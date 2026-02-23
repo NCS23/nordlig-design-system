@@ -31,7 +31,7 @@ const actionVariantClasses: Record<NonNullable<ConfirmOptions['variant']>, strin
   ].join(' '),
   warning: [
     'bg-[var(--color-bg-warning-solid)]',
-    'text-[var(--color-text-base)]',
+    'text-[var(--color-text-inverse)]',
     'hover:opacity-90',
   ].join(' '),
   danger: [

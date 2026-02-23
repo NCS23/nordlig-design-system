@@ -186,7 +186,7 @@ const DateRangePicker = React.forwardRef<HTMLDivElement, DateRangePickerProps>(
               onOpenAutoFocus={(e) => e.preventDefault()}
               className={cn(
                 'z-50',
-                'bg-[var(--color-datepicker-popover-bg)]',
+                'bg-[var(--color-datepicker-popover-bg)] text-[var(--color-text-base)]',
                 'border border-[var(--color-datepicker-popover-border)]',
                 'rounded-[var(--radius-datepicker-popover)]',
                 '[box-shadow:var(--shadow-datepicker-popover)]',

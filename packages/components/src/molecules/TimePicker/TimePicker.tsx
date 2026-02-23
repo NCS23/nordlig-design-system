@@ -347,7 +347,7 @@ const TimePicker = React.forwardRef<HTMLInputElement, TimePickerProps>(
               onOpenAutoFocus={(e) => e.preventDefault()}
               className={cn(
                 'z-50',
-                'bg-[var(--color-tpick-popover-bg)]',
+                'bg-[var(--color-tpick-popover-bg)] text-[var(--color-text-base)]',
                 'border border-[var(--color-tpick-popover-border)]',
                 'rounded-[var(--radius-tpick-popover)]',
                 '[box-shadow:var(--shadow-tpick-popover)]',

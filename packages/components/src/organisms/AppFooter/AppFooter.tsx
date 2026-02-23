@@ -22,7 +22,7 @@ const AppFooter = React.forwardRef<HTMLElement, AppFooterProps>(
         'flex items-center shrink-0',
         'h-[var(--sizing-footer-height)]',
         'px-[var(--spacing-footer-px)] py-[var(--spacing-footer-py)]',
-        'bg-[var(--color-footer-bg)]',
+        'bg-[var(--color-footer-bg)] text-[var(--color-text-base)]',
         bordered && 'border-t border-[var(--color-footer-border)]',
         className,
       )}

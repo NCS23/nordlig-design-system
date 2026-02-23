@@ -291,7 +291,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
               onOpenAutoFocus={(e) => e.preventDefault()}
               className={cn(
                 'z-50 overflow-hidden',
-                'bg-[var(--color-select-popover-bg)]',
+                'bg-[var(--color-select-popover-bg)] text-[var(--color-text-base)]',
                 'border border-[var(--color-select-popover-border)]',
                 'rounded-[var(--radius-select-popover)]',
                 'shadow-[var(--shadow-select-popover)]',

@@ -190,7 +190,7 @@ const Combobox = React.forwardRef<HTMLDivElement, ComboboxProps>(
               onOpenAutoFocus={(e) => e.preventDefault()}
               className={cn(
                 'z-50 overflow-hidden',
-                'bg-[var(--color-cmb-content-bg)]',
+                'bg-[var(--color-cmb-content-bg)] text-[var(--color-text-base)]',
                 'border border-[var(--color-cmb-content-border)]',
                 'rounded-[var(--radius-cmb-content)]',
                 '[box-shadow:var(--shadow-select-popover)]',

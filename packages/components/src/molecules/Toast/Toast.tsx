@@ -11,7 +11,7 @@ const toastVariants = cva(
   [
     'group pointer-events-auto relative flex w-full items-start gap-[var(--spacing-toast-gap)]',
     'overflow-hidden rounded-[var(--radius-toast)] border border-[var(--color-toast-border)]',
-    'bg-[var(--color-toast-bg)] p-[var(--spacing-toast-padding)]',
+    'bg-[var(--color-toast-bg)] text-[var(--color-text-base)] p-[var(--spacing-toast-padding)]',
     '[box-shadow:var(--shadow-toast)]',
     'border-l-4',
     'data-[state=open]:animate-in data-[state=open]:slide-in-from-right-full data-[state=open]:fade-in-0',

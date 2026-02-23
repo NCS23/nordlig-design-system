@@ -48,7 +48,7 @@ const Slider = React.forwardRef<
         ))}
       </SliderPrimitive.Root>
       {showValue && (
-        <span className="min-w-[3ch] text-[length:var(--font-slider-value-size)] [font-weight:var(--font-slider-value-weight)] tabular-nums">
+        <span className="min-w-[3ch] text-[length:var(--font-slider-value-size)] [font-weight:var(--font-slider-value-weight)] text-[var(--color-text-base)] tabular-nums">
           {currentValue.join(' – ')}
         </span>
       )}

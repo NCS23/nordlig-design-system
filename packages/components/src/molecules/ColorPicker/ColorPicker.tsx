@@ -518,7 +518,7 @@ const ColorPicker = React.forwardRef<HTMLDivElement, ColorPickerProps>(
           'inline-flex flex-col',
           'gap-[var(--spacing-cpick-gap)]',
           'p-[var(--spacing-cpick-padding)]',
-          'bg-[var(--color-cpick-bg)]',
+          'bg-[var(--color-cpick-bg)] text-[var(--color-text-base)]',
           'border border-[var(--color-cpick-border)]',
           'rounded-[var(--radius-cpick-container)]',
           className

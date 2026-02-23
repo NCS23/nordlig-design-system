@@ -2,7 +2,6 @@ import type { Preview, Decorator } from '@storybook/react';
 import React from 'react';
 import '../storybook.css';
 import '../../../packages/styles/dist/tokens.css';
-import '../../../packages/styles/dist/tokens-annotated.css';
 import '../../../packages/styles/dist/dark-tokens.css';
 import '../../../packages/styles/src/global.css';
 
