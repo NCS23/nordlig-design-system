@@ -130,7 +130,6 @@ function DataListPage() {
 
 const meta: Meta = {
   title: 'Recipes/Datenliste',
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {

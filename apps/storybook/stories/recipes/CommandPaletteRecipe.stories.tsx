@@ -38,25 +38,25 @@ function AppWithSpotlight() {
     {
       label: 'Schnellaktionen',
       items: [
-        { id: 'new-doc', label: 'Neues Dokument', icon: Plus, description: 'Leeres Dokument erstellen', shortcut: 'N', onSelect: () => handleSelect('new-doc') },
-        { id: 'search', label: 'Volltextsuche', icon: Search, description: 'In allen Dokumenten suchen', shortcut: 'F', onSelect: () => handleSelect('search') },
+        { id: 'new-doc', label: 'Neues Dokument', icon: <Plus size={16} />, description: 'Leeres Dokument erstellen', shortcut: 'N', onSelect: () => handleSelect('new-doc') },
+        { id: 'search', label: 'Volltextsuche', icon: <Search size={16} />, description: 'In allen Dokumenten suchen', shortcut: 'F', onSelect: () => handleSelect('search') },
       ],
     },
     {
       label: 'Navigation',
       items: [
-        { id: 'dashboard', label: 'Dashboard', icon: BarChart3, onSelect: () => handleSelect('dashboard') },
-        { id: 'docs', label: 'Dokumente', icon: FileText, onSelect: () => handleSelect('docs') },
-        { id: 'profile', label: 'Profil', icon: User, onSelect: () => handleSelect('profile') },
-        { id: 'settings', label: 'Einstellungen', icon: Settings, shortcut: ',', onSelect: () => handleSelect('settings') },
+        { id: 'dashboard', label: 'Dashboard', icon: <BarChart3 size={16} />, onSelect: () => handleSelect('dashboard') },
+        { id: 'docs', label: 'Dokumente', icon: <FileText size={16} />, onSelect: () => handleSelect('docs') },
+        { id: 'profile', label: 'Profil', icon: <User size={16} />, onSelect: () => handleSelect('profile') },
+        { id: 'settings', label: 'Einstellungen', icon: <Settings size={16} />, shortcut: ',', onSelect: () => handleSelect('settings') },
       ],
     },
     {
       label: 'System',
       items: [
-        { id: 'theme', label: 'Dark Mode umschalten', icon: Moon, onSelect: () => handleSelect('theme') },
-        { id: 'help', label: 'Hilfe & Feedback', icon: HelpCircle, onSelect: () => handleSelect('help') },
-        { id: 'logout', label: 'Abmelden', icon: LogOut, onSelect: () => handleSelect('logout') },
+        { id: 'theme', label: 'Dark Mode umschalten', icon: <Moon size={16} />, onSelect: () => handleSelect('theme') },
+        { id: 'help', label: 'Hilfe & Feedback', icon: <HelpCircle size={16} />, onSelect: () => handleSelect('help') },
+        { id: 'logout', label: 'Abmelden', icon: <LogOut size={16} />, onSelect: () => handleSelect('logout') },
       ],
     },
   ];
@@ -102,7 +102,6 @@ function AppWithSpotlight() {
 
 const meta: Meta = {
   title: 'Recipes/Command Palette',
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {

@@ -175,7 +175,6 @@ function SettingsPage() {
 
 const meta: Meta = {
   title: 'Recipes/Einstellungen',
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {

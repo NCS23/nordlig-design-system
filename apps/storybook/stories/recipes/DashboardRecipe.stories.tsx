@@ -14,6 +14,7 @@ import { Activity, TrendingUp, Clock, Flame } from 'lucide-react';
 
 const metrics: AnalyticsDashboardMetric[] = [
   {
+    id: 'distance',
     title: 'Distanz diese Woche',
     value: '42.5',
     unit: 'km',
@@ -21,6 +22,7 @@ const metrics: AnalyticsDashboardMetric[] = [
     icon: <Activity size={18} />,
   },
   {
+    id: 'pace',
     title: 'Durchschnitts-Pace',
     value: '5:23',
     unit: 'min/km',
@@ -28,12 +30,14 @@ const metrics: AnalyticsDashboardMetric[] = [
     icon: <TrendingUp size={18} />,
   },
   {
+    id: 'time',
     title: 'Trainingszeit',
     value: '3h 48m',
     trend: { value: 0, direction: 'neutral' },
     icon: <Clock size={18} />,
   },
   {
+    id: 'calories',
     title: 'Kalorien',
     value: '2.847',
     unit: 'kcal',
@@ -44,6 +48,7 @@ const metrics: AnalyticsDashboardMetric[] = [
 
 const charts: AnalyticsDashboardChart[] = [
   {
+    id: 'weekly-distance',
     title: 'Woechentliche Distanz',
     type: 'bar',
     config: {
@@ -58,9 +63,11 @@ const charts: AnalyticsDashboardChart[] = [
       { name: 'Sa', distanz: 16.7 },
       { name: 'So', distanz: 0 },
     ],
-    dataKey: 'name',
+    dataKeys: ['distanz'],
+    xAxisKey: 'name',
   },
   {
+    id: 'heart-rate',
     title: 'Herzfrequenz-Verlauf',
     type: 'area',
     config: {
@@ -70,7 +77,8 @@ const charts: AnalyticsDashboardChart[] = [
       name: `${i + 1}`,
       bpm: 135 + Math.round(Math.sin(i / 3) * 20 + Math.random() * 10),
     })),
-    dataKey: 'name',
+    dataKeys: ['bpm'],
+    xAxisKey: 'name',
   },
 ];
 
@@ -93,7 +101,6 @@ const tableData = {
 
 const meta: Meta = {
   title: 'Recipes/Dashboard',
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {

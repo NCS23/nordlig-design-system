@@ -113,7 +113,6 @@ function RegistrationForm() {
 
 const meta: Meta = {
   title: 'Recipes/Formular',
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
