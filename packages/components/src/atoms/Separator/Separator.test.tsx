@@ -90,4 +90,55 @@ describe('Separator', () => {
     render(<Separator data-testid="sep" />);
     expect(screen.getByTestId('sep').className).toContain('shrink-0');
   });
+
+  // ─── Label Extension ──────────────────────────────────────────────────
+
+  it('renders as div with label text', () => {
+    render(<Separator data-testid="sep" label="OR" />);
+    const el = screen.getByTestId('sep');
+    expect(el.tagName).toBe('DIV');
+    expect(screen.getByText('OR')).toBeInTheDocument();
+  });
+
+  it('renders icon in labeled separator', () => {
+    render(<Separator data-testid="sep" icon={<span data-testid="sep-icon">*</span>} />);
+    expect(screen.getByTestId('sep-icon')).toBeInTheDocument();
+  });
+
+  it('renders both icon and label', () => {
+    render(<Separator data-testid="sep" label="More" icon={<span data-testid="sep-icon">+</span>} />);
+    expect(screen.getByText('More')).toBeInTheDocument();
+    expect(screen.getByTestId('sep-icon')).toBeInTheDocument();
+  });
+
+  it('centers label by default', () => {
+    render(<Separator data-testid="sep" label="Center" />);
+    const el = screen.getByTestId('sep');
+    // Both line spans should render (left and right)
+    const lines = el.querySelectorAll('span.h-px');
+    expect(lines.length).toBe(2);
+  });
+
+  it('positions label on the left (no left line)', () => {
+    render(<Separator data-testid="sep" label="Left" labelPosition="left" />);
+    const el = screen.getByTestId('sep');
+    // Only right line should render
+    const lines = el.querySelectorAll('span.h-px');
+    expect(lines.length).toBe(1);
+  });
+
+  it('positions label on the right (no right line)', () => {
+    render(<Separator data-testid="sep" label="Right" labelPosition="right" />);
+    const el = screen.getByTestId('sep');
+    // Only left line should render
+    const lines = el.querySelectorAll('span.h-px');
+    expect(lines.length).toBe(1);
+  });
+
+  it('labeled separator preserves role and aria-hidden', () => {
+    render(<Separator data-testid="sep" label="Test" />);
+    const el = screen.getByTestId('sep');
+    expect(el).toHaveAttribute('role', 'none');
+    expect(el).toHaveAttribute('aria-hidden', 'true');
+  });
 });
