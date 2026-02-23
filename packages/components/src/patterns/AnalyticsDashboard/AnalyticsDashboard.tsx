@@ -279,7 +279,7 @@ const AnalyticsDashboard = React.forwardRef<HTMLDivElement, AnalyticsDashboardPr
       >
         {/* Header */}
         {header && (
-          <div className="flex items-center gap-[var(--spacing-adash-header-gap)]">
+          <div className="w-full">
             {header}
           </div>
         )}
