@@ -452,6 +452,7 @@
   --color-bg-primary-active: var(--color-primary-1-700);
   --color-bg-primary-subtle: var(--color-primary-1-50);
   --color-bg-primary-muted: var(--color-primary-1-100);
+  --color-bg-muted: var(--color-neutral-1-100); /** Subtle hover/selection background */
   --color-bg-surface-hover: var(--color-neutral-1-200);
   --color-bg-surface-active: var(--color-neutral-1-300);
   --color-bg-secondary: var(--color-neutral-1-500); /** Secondary bg (consolidated from secondary.1 = neutral.1) */
