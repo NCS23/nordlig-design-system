@@ -167,13 +167,29 @@
   --color-bg-paper: #1e293b;        /* slate-800: primary surface */
   --color-bg-base: #0f172a;         /* slate-900: page background */
   --color-bg-surface: #334155;      /* slate-700: raised surface */
-  --color-bg-elevated: #334155;     /* slate-700: elevated cards */
+  --color-bg-elevated: #3b4d63;     /* custom: above surface for visual hierarchy */
   --color-bg-primary: #38bdf8;      /* sky-400: vibrant in dark */
   --color-bg-primary-hover: #7dd3fc; /* sky-300 */
   --color-bg-primary-active: #0ea5e9; /* sky-500 */
+  --color-bg-primary-subtle: rgba(56, 189, 248, 0.10); /* sky-400 at 10% — visible tint on dark bg */
+  --color-bg-primary-muted: rgba(56, 189, 248, 0.18);  /* sky-400 at 18% — stronger tint */
   --color-bg-secondary: #334155;    /* slate-700 */
   --color-bg-secondary-hover: #475569; /* slate-600 */
   --color-bg-overlay: rgba(0, 0, 0, 0.7);
+
+  /* Status backgrounds — CORRECT token names (bg-X-subtle, not X-bg-subtle) */
+  --color-bg-success-subtle: rgba(34, 197, 94, 0.15);  /* green-500 at 15% */
+  --color-bg-success: #065f46;       /* emerald-800: badge/banner bg */
+  --color-bg-success-solid: #34d399; /* emerald-400: solid indicators */
+  --color-bg-warning-subtle: rgba(245, 158, 11, 0.15); /* amber-500 at 15% */
+  --color-bg-warning: #92400e;       /* amber-800: badge/banner bg */
+  --color-bg-warning-solid: #fbbf24; /* amber-400: solid indicators */
+  --color-bg-error-subtle: rgba(239, 68, 68, 0.15);    /* red-500 at 15% */
+  --color-bg-error: #991b1b;         /* red-800: badge/banner bg */
+  --color-bg-error-solid: #f87171;   /* red-400: solid indicators */
+  --color-bg-info-subtle: rgba(56, 189, 248, 0.15);    /* sky-400 at 15% */
+  --color-bg-info: #075985;          /* sky-800: badge/banner bg */
+  --color-bg-info-solid: #60a5fa;    /* blue-400: solid indicators */
 
   /* ===================================================================
      L3 Role: Text
@@ -199,6 +215,8 @@
   --color-border-focus: #38bdf8;    /* sky-400 */
   --color-border-error: #f87171;    /* red-400 */
   --color-border-success: #4ade80;  /* green-400 */
+  --color-border-warning: #fbbf24;  /* amber-400 */
+  --color-border-info: #60a5fa;     /* blue-400 */
 
   /* ===================================================================
      L3 Role: Interactive
@@ -210,29 +228,7 @@
   --color-interactive-secondary: #94a3b8;       /* slate-400 */
   --color-interactive-secondary-hover: #cbd5e1; /* slate-300 */
   --color-interactive-secondary-active: #e2e8f0; /* slate-200 */
-
-  /* ===================================================================
-     L3 Role: Status colors
-     =================================================================== */
-  --color-success-bg-subtle: rgba(34, 197, 94, 0.15);
-  --color-success-bg: #065f46;       /* emerald-800 */
-  --color-success-border: #22c55e;   /* green-500 */
-  --color-success-text: #4ade80;     /* green-400 */
-
-  --color-warning-bg-subtle: rgba(245, 158, 11, 0.15);
-  --color-warning-bg: #92400e;       /* amber-800 */
-  --color-warning-border: #f59e0b;   /* amber-500 */
-  --color-warning-text: #fbbf24;     /* amber-400 */
-
-  --color-error-bg-subtle: rgba(239, 68, 68, 0.15);
-  --color-error-bg: #991b1b;         /* red-800 */
-  --color-error-border: #ef4444;     /* red-500 */
-  --color-error-text: #f87171;       /* red-400 */
-
-  --color-info-bg-subtle: rgba(56, 189, 248, 0.15);
-  --color-info-bg: #075985;          /* sky-800 */
-  --color-info-border: #38bdf8;      /* sky-400 */
-  --color-info-text: #7dd3fc;        /* sky-300 */
+  --color-interactive-hover-overlay: rgba(255, 255, 255, 0.06); /* subtle white tint */
 
   /* ===================================================================
      L4 Component overrides (only where L3 cascading is insufficient)
@@ -257,6 +253,7 @@
 
   /* Toggle */
   --color-toggle-hover-bg: #475569;  /* slate-600 */
+  --color-toggle-active-text: #0f172a; /* dark text on bright primary bg */
 
   /* Kbd */
   --color-kbd-bg: #334155;       /* slate-700 */
@@ -268,6 +265,45 @@
   --color-scrollarea-track: rgba(0, 0, 0, 0);
   --color-scrollarea-thumb: #64748b;       /* slate-500 */
   --color-scrollarea-thumb-hover: #94a3b8; /* slate-400 */
+
+  /* AlertDialog: destructive action needs contrast fix */
+  --color-alertdlg-action-bg: #dc2626;       /* red-600: solid red, not dark red-900 */
+  --color-alertdlg-action-text: #ffffff;     /* white on solid red for contrast */
+  --color-alertdlg-action-hover-bg: #b91c1c; /* red-700 */
+
+  /* Slider: thumb must be visible on dark track */
+  --color-slider-thumb: #e2e8f0;        /* slate-200: light thumb on dark */
+  --color-slider-thumb-border: #38bdf8; /* sky-400 */
+  --color-slider-thumb-hover: #7dd3fc;  /* sky-300 */
+
+  /* Switch: thumb must be visible */
+  --color-switch-thumb-bg: #e2e8f0;     /* slate-200: light thumb */
+
+  /* Tabs pills: active must be LIGHTER than container (hierarchy fix) */
+  --color-tabs-trigger-bg-active: #475569;  /* slate-600: above list bg (#334155) */
+
+  /* Segmented control: active must pop above container */
+  --color-seg-active-bg: #475569;     /* slate-600: above seg-bg (#334155) */
+
+  /* Skeleton: shimmer should be lighter than base for visible animation */
+  --color-skeleton-shimmer: #3b4d63;  /* slightly lighter than surface */
+
+  /* Code block: keep dark bg in dark mode (don't invert to light) */
+  --color-code-block-bg: #0f172a;     /* slate-900: darker than paper */
+  --color-code-block-text: #e2e8f0;   /* slate-200: light text on dark */
+  --color-code-copy-hover-bg: #334155; /* slate-700: hover on dark bg */
+
+  /* Table: header should be distinguishable */
+  --color-table-header-bg: #1e293b;   /* paper level: above base bg */
+
+  /* Pagination: active page text on bright bg */
+  --color-pagination-item-active-text: #0f172a; /* dark text on sky-400 */
+
+  /* Datepicker: selected day text on bright bg */
+  --color-datepicker-day-selected-text: #0f172a; /* dark text on sky-400 */
+
+  /* TimePicker: selected cell text on bright bg */
+  --color-tpick-column-selected-text: #0f172a; /* dark text on sky-400 */
 
   /* ===================================================================
      Shadows (darker, more pronounced for dark backgrounds)
