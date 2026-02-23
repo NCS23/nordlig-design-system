@@ -1,0 +1,76 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as SelectStories from './Select.stories';
+
+<Meta of={SelectStories} />
+
+# Select
+
+Auswahlkomponente fuer vordefinierte Optionen.
+
+## Wann verwenden
+
+- Auswahl aus 4-15 vordefinierten Optionen
+- Formularfelder mit fester Werteliste (Land, Kategorie, Rolle)
+
+**Nicht verwenden fuer:**
+- 1-3 Optionen → `<RadioGroup>`
+- Ja/Nein Auswahl → `<Switch>` oder `<Checkbox>`
+- Suche in grosser Liste → `<Combobox>`
+- Mehrfachauswahl → `<Combobox>` mit `multiple`
+
+## Groessen
+
+| Groesse | Einsatz |
+|---------|---------|
+| `sm` | Kompakte Formulare, Toolbar-Filter |
+| `md` | Standard — die meisten Formulare |
+| `lg` | Hervorgehobene Auswahlfelder |
+
+## Beispiel
+
+```tsx
+import { Select } from '@nordlig/components';
+
+<Select
+  options={[
+    { value: 'de', label: 'Deutschland' },
+    { value: 'at', label: 'Oesterreich' },
+    { value: 'ch', label: 'Schweiz' },
+  ]}
+  placeholder="Land waehlen"
+  onChange={(value) => console.log(value)}
+/>
+
+{/* Gruppierte Optionen */}
+<Select
+  options={[
+    {
+      label: 'Europa',
+      options: [
+        { value: 'de', label: 'Deutschland' },
+        { value: 'fr', label: 'Frankreich' },
+      ],
+    },
+  ]}
+/>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Sinnvollen Placeholder setzen | "Bitte waehlen" ohne Kontext |
+| Optionen alphabetisch oder logisch sortieren | Unsortierte Optionslisten |
+| `error` State mit Fehlermeldung kombinieren | Nur roten Rahmen ohne Text |
+| Gruppierung bei mehr als 8 Optionen | Flache Liste mit 20+ Optionen |
+
+## Accessibility
+
+- Keyboard: Pfeiltasten, Home, End, Enter, Escape
+- `role="combobox"` auf Trigger, `role="listbox"` auf Optionen
+- `aria-selected` auf gewaehler Option
+- Disabled-Optionen haben `aria-disabled`
+- Gruppen mit `role="group"` + Label
+- Focus-Indikator bei Keyboard-Navigation
+
+<Controls />

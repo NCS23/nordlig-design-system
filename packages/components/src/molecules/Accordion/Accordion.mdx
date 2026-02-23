@@ -1,0 +1,64 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as AccordionStories from './Accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+Ein- und ausklappbare Inhaltsbereiche fuer strukturierte Informationen.
+
+## Wann verwenden
+
+- FAQ-Bereiche
+- Einstellungsgruppen
+- Optionale Details die nicht immer sichtbar sein muessen
+- Lange Formulare in Abschnitte unterteilen
+
+## Modi
+
+| Modus | Verhalten |
+|-------|-----------|
+| `single` | Nur ein Element gleichzeitig offen |
+| `multiple` | Mehrere Elemente gleichzeitig offen |
+
+## Aufbau
+
+```tsx
+import {
+  Accordion, AccordionItem,
+  AccordionTrigger, AccordionContent
+} from '@nordlig/components';
+
+<Accordion type="single" defaultValue="item-1">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Allgemeine Einstellungen</AccordionTrigger>
+    <AccordionContent>
+      Hier stehen die Einstellungen...
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Erweitert</AccordionTrigger>
+    <AccordionContent>
+      Erweiterte Optionen...
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| `type="single"` wenn nur ein Bereich relevant ist | Accordion fuer Inhalte die immer sichtbar sein sollen |
+| `defaultValue` fuer den wichtigsten Bereich | Alle Bereiche geschlossen starten wenn einer wichtig ist |
+| Klare, beschreibende Trigger-Texte | Generische Trigger ("Mehr", "Details") |
+
+## Accessibility
+
+- Keyboard: Pfeiltasten (hoch/runter), Home, End
+- ARIA: `aria-expanded`, `aria-controls`, `role="region"`
+- Chevron-Icon rotiert visuell
+- Focus-Ring auf dem Trigger
+- `disabled` Prop auf einzelnen Triggers moeglich
+
+<Controls />

@@ -1,0 +1,80 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as DataTableStories from './DataTable.stories';
+
+<Meta of={DataTableStories} />
+
+# DataTable
+
+Feature-reiche Tabelle mit Sortierung, Suche, Selektion und Pagination.
+
+## Wann verwenden
+
+- Strukturierte Daten mit mehreren Spalten
+- Sortierbare und filterbare Listen
+- Zeilenauswahl fuer Bulk-Aktionen
+
+**Nicht verwenden fuer:**
+- Einfache Key-Value-Paare → Grid oder Definition List
+- Weniger als 3 Spalten und 5 Zeilen → einfache `<Table>`
+- Komplexe Filter + Suche + Pagination → `<DataTablePattern>` (kombiniert alles)
+
+## Features
+
+| Feature | Prop | Beschreibung |
+|---------|------|-------------|
+| Sortierung | Spalten-Header klicken | Auf-/Absteigend sortieren |
+| Suche | `searchable` | Globaler oder spaltenspezifischer Filter |
+| Selektion | `selectable` | Checkbox-Spalte fuer Zeilenauswahl |
+| Pagination | `pagination` | Seitennavigation am Ende |
+| Striping | `striped` | Alternierende Zeilenfarben |
+
+## Dichte
+
+| Dichte | Einsatz |
+|--------|---------|
+| `compact` | Viele Daten, wenig Platz |
+| `normal` | Standard — die meisten Tabellen |
+| `spacious` | Wenige Zeilen, bessere Lesbarkeit |
+
+## Beispiel
+
+```tsx
+import { DataTable } from '@nordlig/components';
+import { ColumnDef } from '@tanstack/react-table';
+
+const columns: ColumnDef<User>[] = [
+  { accessorKey: 'name', header: 'Name' },
+  { accessorKey: 'email', header: 'E-Mail' },
+  { accessorKey: 'role', header: 'Rolle' },
+];
+
+<DataTable
+  columns={columns}
+  data={users}
+  searchable
+  pagination
+  pageSize={10}
+  selectable
+  onSelectionChange={(rows) => setSelected(rows)}
+/>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| `columns` mit `accessorKey` fuer Sortierung | Benutzerdefinierte Sortierlogik ohne @tanstack |
+| `pageSize` an die Datenmenge anpassen | Immer 10 Zeilen bei 1000 Eintraegen |
+| `emptyMessage` fuer leere Zustaende | Leere Tabelle ohne Hinweis |
+| Fuer komplette Seiten `<DataTablePattern>` nutzen | DataTable + SearchFilter + Pagination manuell kombinieren |
+
+## Accessibility
+
+- Semantische `<table>` Struktur (`<thead>`, `<tbody>`, `<th>`, `<td>`)
+- Sortier-Buttons mit `aria-label`
+- Checkboxen mit `aria-label` ("Alle auswaehlen", "Zeile auswaehlen")
+- Selektierte Zeilen visuell hervorgehoben
+- Leerzustand in voller Breite angezeigt
+- Keyboard: Tab + Enter fuer Interaktion
+
+<Controls />

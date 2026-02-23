@@ -1,0 +1,61 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as TooltipStories from './Tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Kontextuelle Hilfe die bei Hover oder Focus erscheint.
+
+## Wann verwenden
+
+- Zusatzinfo zu abgekuerzten Texten
+- Erklaerung von Icon-Buttons
+- Tastaturkuerzel anzeigen
+
+**Nicht verwenden fuer:**
+- Pflichtinformationen (Tooltips sind nicht immer sichtbar)
+- Interaktive Inhalte (Links, Buttons) → `<Popover>` verwenden
+- Lange Texte → `<HoverCard>` oder inline Text
+
+## Position
+
+| Seite | Standard |
+|-------|----------|
+| `top` | Default — ueber dem Element |
+| `right` | Wenn oben kein Platz ist |
+| `bottom` | Unter dem Element |
+| `left` | Links vom Element |
+
+## Beispiel
+
+```tsx
+import { Tooltip } from '@nordlig/components';
+
+<Tooltip content="Aenderungen speichern">
+  <Button variant="primary">Speichern</Button>
+</Tooltip>
+
+<Tooltip content="Strg+S" side="bottom">
+  <Button variant="ghost" aria-label="Speichern">
+    <Icon icon={Save} size="sm" />
+  </Button>
+</Tooltip>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Kurze, hilfreiche Texte (1 Zeile) | Lange Erklaerungen im Tooltip |
+| Verzögerung beibehalten (300ms Default) | `delayDuration={0}` (stoert Mausbewegung) |
+| Fuer Zusatzinfo die nicht pflicht ist | Fuer validierungsrelevante Hinweise |
+
+## Accessibility
+
+- Erscheint bei Focus (Keyboard) und Hover (Maus)
+- `Escape` schliesst den Tooltip
+- Basiert auf Radix UI — korrektes ARIA-Pattern
+- Tooltips sind ergaenzend, nicht die einzige Informationsquelle
+
+<Controls />

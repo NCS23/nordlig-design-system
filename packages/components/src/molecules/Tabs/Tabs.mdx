@@ -1,0 +1,67 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as TabsStories from './Tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+Tab-Navigation fuer die Unterteilung verwandter Inhalte.
+
+## Wann verwenden
+
+- Verwandte Inhalte auf einer Seite organisieren
+- Einstellungskategorien
+- Dashboard-Ansichten wechseln
+
+**Nicht verwenden fuer:**
+- Hauptnavigation der App → `<Sidebar>` oder `<NavigationMenu>`
+- Schrittbasierte Prozesse → `<Stepper>`
+
+## Varianten
+
+| Variante | Verwendung |
+|----------|-----------|
+| `underline` | Standard — klassische Tab-Leiste mit Unterstrich |
+| `pills` | Alternative Darstellung mit gefuelltem Hintergrund |
+
+## Aufbau
+
+```tsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@nordlig/components';
+
+<Tabs defaultValue="uebersicht">
+  <TabsList variant="underline">
+    <TabsTrigger value="uebersicht">Uebersicht</TabsTrigger>
+    <TabsTrigger value="details">Details</TabsTrigger>
+    <TabsTrigger value="einstellungen">Einstellungen</TabsTrigger>
+  </TabsList>
+  <TabsContent value="uebersicht">
+    Uebersicht-Inhalt...
+  </TabsContent>
+  <TabsContent value="details">
+    Detail-Inhalt...
+  </TabsContent>
+  <TabsContent value="einstellungen">
+    Einstellungs-Inhalt...
+  </TabsContent>
+</Tabs>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Maximal 5-7 Tabs | Mehr als 7 Tabs (wird unuebersichtlich) |
+| Kurze Tab-Labels (1-2 Woerter) | Lange Beschreibungen als Tab-Text |
+| `defaultValue` fuer den wichtigsten Tab | Alle Tabs ohne Default (erster wird genommen) |
+| Tabs fuer verwandte Inhalte | Tabs fuer voellig unterschiedliche Features |
+
+## Accessibility
+
+- Keyboard: Pfeiltasten links/rechts, Home, End
+- ARIA: `role="tablist"`, `role="tab"`, `role="tabpanel"`
+- `aria-selected` auf dem aktiven Tab
+- Focus-Ring auf Tab-Triggern
+- `disabled` auf einzelnen Tabs moeglich
+
+<Controls />

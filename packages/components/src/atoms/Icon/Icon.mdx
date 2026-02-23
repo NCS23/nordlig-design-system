@@ -1,0 +1,58 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as IconStories from './Icon.stories';
+
+<Meta of={IconStories} />
+
+# Icon
+
+Wrapper fuer Lucide-Icons mit token-basierter Groesse und optionalem Label.
+
+## Wann verwenden
+
+- Icons in Buttons, Menuepunkten, Listen
+- Status-Indikatoren
+- Dekorative Elemente
+
+## Groessen
+
+| Groesse | Pixel | Einsatz |
+|---------|-------|---------|
+| `sm` | 16px | Inline-Icons, Badges, kompakte Bereiche |
+| `md` | 20px | Standard — Buttons, Menuepunkte |
+| `lg` | 24px | Sidebar-Items, hervorgehobene Icons |
+| `xl` | 32px | Leere Zustaende, Feature-Highlights |
+
+## Beispiel
+
+```tsx
+import { Icon } from '@nordlig/components';
+import { Check, AlertCircle, Settings } from 'lucide-react';
+
+{/* Dekorativ (default) */}
+<Icon icon={Check} size="sm" />
+
+{/* Semantisch — mit Label fuer Screenreader */}
+<Icon icon={AlertCircle} size="md" label="Warnung" />
+
+{/* In einem Button */}
+<Button variant="ghost" aria-label="Einstellungen">
+  <Icon icon={Settings} size="sm" />
+</Button>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Icons aus `lucide-react` importieren | String-Namen verwenden (`name="Check"`) |
+| Token-Groessen verwenden (`size="sm"`) | Hardcodierte Pixel (`size={14}`) |
+| `label` Prop fuer alleinstehende semantische Icons | Icon ohne Kontext oder Label |
+| Dekorative Icons neben Text sind OK ohne Label | Funktionale Icons ohne `aria-label` auf dem Container |
+
+## Accessibility
+
+- Standard: `aria-hidden="true"` (dekorativ)
+- Mit `label` Prop: `role="img"` + `aria-label` (semantisch)
+- Icon-only Buttons: `aria-label` auf dem Button, nicht dem Icon
+
+<Controls />

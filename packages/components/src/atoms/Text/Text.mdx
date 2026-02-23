@@ -1,0 +1,58 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as TextStories from './Text.stories';
+
+<Meta of={TextStories} />
+
+# Text
+
+Typografie-Komponente fuer Fliesstext, Labels und Beschreibungen.
+
+## Wann verwenden
+
+- Fliesstext und Absaetze
+- Beschreibungen und Hilfetexte
+- Labels und sekundaerer Text
+- Ueberall wo kein Heading benoetigt wird
+
+## Varianten
+
+| Variante | Verwendung |
+|----------|-----------|
+| `body` | Standard-Fliesstext |
+| `caption` | Bildunterschriften, Tabellen-Footer |
+| `small` | Kompakter Text, Formularhilfen |
+| `muted` | Sekundaerer Text, Platzhalter, Meta-Info |
+
+## Polymorphes `as`
+
+| Element | Wann |
+|---------|------|
+| `p` | Standard — Absaetze (Default) |
+| `span` | Inline-Text innerhalb anderer Elemente |
+| `div` | Block-Container ohne Absatz-Semantik |
+
+## Beispiel
+
+```tsx
+import { Text } from '@nordlig/components';
+
+<Text>Normaler Absatz</Text>
+<Text variant="muted">Sekundaerer Hinweistext</Text>
+<Text variant="small" as="span">Inline-Info</Text>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| `variant="muted"` fuer sekundaere Infos | Hardcodierte Farben fuer hellen Text |
+| `as="span"` fuer Inline-Text | `<p>` innerhalb von `<p>` verschachteln |
+| Fuer Ueberschriften `<Heading>` verwenden | `<Text>` mit `font-bold` als Heading-Ersatz |
+
+## Accessibility
+
+- Semantische Elemente je nach `as` Prop
+- Farbkontrast wird durch Token-System sichergestellt
+- `muted`-Variante erfuellt WCAG AA Kontrastanforderungen
+
+<Controls />

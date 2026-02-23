@@ -1,0 +1,64 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as SeparatorStories from './Separator.stories';
+
+<Meta of={SeparatorStories} />
+
+# Separator
+
+Visuelle Trennlinie zwischen Inhaltsbereichen, optional mit Label oder Icon.
+
+## Wann verwenden
+
+- Abschnitte innerhalb einer Card trennen
+- Header von Content trennen
+- Toolbar-Gruppen visuell abgrenzen (vertikal)
+- Optionen mit Label trennen ("ODER", "Erweitert")
+
+## Orientierung
+
+| Orientierung | Verwendung |
+|-------------|-----------|
+| `horizontal` | Standard — trennt vertikale Abschnitte |
+| `vertical` | Toolbar-Gruppen, Header-Elemente |
+
+## Label-Optionen
+
+```tsx
+import { Separator } from '@nordlig/components';
+import { Icon } from '@nordlig/components';
+import { Settings } from 'lucide-react';
+
+{/* Einfache Linie */}
+<Separator />
+
+{/* Mit zentriertem Label */}
+<Separator label="ODER" />
+
+{/* Mit Label links */}
+<Separator label="Erweiterte Optionen" labelPosition="left" />
+
+{/* Mit Icon und Label */}
+<Separator
+  icon={<Icon icon={Settings} size="sm" />}
+  label="Einstellungen"
+/>
+
+{/* Vertikal */}
+<Separator orientation="vertical" className="h-6" />
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Sparsam einsetzen — nur wo echte Trennung noetig | Zwischen jedem Element einen Separator |
+| `decorative` fuer rein visuelle Trennung | Semantische Trennung ohne `role="separator"` |
+| Kurze Label-Texte (1-3 Woerter) | Lange Saetze als Label |
+
+## Accessibility
+
+- `decorative={true}` (Default): Rein visuell, `aria-hidden`
+- `decorative={false}`: `role="separator"` fuer semantische Trennung
+- Labels werden von Screenreadern vorgelesen
+
+<Controls />

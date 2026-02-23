@@ -1,0 +1,80 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as SidebarStories from './Sidebar.stories';
+
+<Meta of={SidebarStories} />
+
+# Sidebar
+
+Seitliche Navigationsleiste mit ein-/ausklappbarer Funktion.
+
+## Wann verwenden
+
+- Hauptnavigation in Dashboard-Anwendungen
+- Seitliche Navigation mit Gruppen und Unterpunkten
+- Apps mit mehr als 5 Hauptnavigationspunkten
+
+**Nicht verwenden fuer:**
+- Einfache Websites mit wenigen Seiten → Top-Navigation
+- Mobile-first Apps → Bottom-Tab-Navigation
+- Content-Sidebar (Metadaten, Filter) → `<DetailPage.Sidebar>`
+
+## Aufbau
+
+```tsx
+import {
+  Sidebar, SidebarHeader, SidebarContent,
+  SidebarFooter, SidebarGroup, SidebarItem,
+  SidebarCollapseButton
+} from '@nordlig/components';
+import { Home, Settings } from 'lucide-react';
+
+<Sidebar collapsible collapsed={isCollapsed}>
+  <SidebarContent>
+    <SidebarGroup label="Navigation">
+      <SidebarItem
+        icon={<Icon icon={Home} size={18} />}
+        label="Dashboard"
+        href="/dashboard"
+        active
+      />
+    </SidebarGroup>
+  </SidebarContent>
+  <SidebarFooter>
+    <SidebarItem
+      icon={<Icon icon={Settings} size={18} />}
+      label="Einstellungen"
+      href="/settings"
+    />
+    <SidebarCollapseButton />
+  </SidebarFooter>
+</Sidebar>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| `active` Prop fuer die aktuelle Seite | Alle Items gleich darstellen |
+| Icons auf jedem SidebarItem | Items ohne Icon (besonders bei collapsed) |
+| Gruppen mit beschreibenden Labels | Alle Items in einer flachen Liste |
+| `badge` fuer Zaehler (Notifications) | Eigene Badge-Logik im Label |
+| `collapsible` fuer mehr Platz | Sidebar immer breit lassen |
+
+## Collapsed-Verhalten
+
+Im eingeklappten Zustand:
+- Labels werden versteckt, `title` Attribut zeigt den Text bei Hover
+- Badges werden versteckt
+- Gruppen-Labels werden versteckt
+- Icons bleiben zentriert sichtbar
+
+## Accessibility
+
+- Semantisches `<aside>` Element
+- Aktiver Item: `aria-current="page"`
+- Deaktivierte Items: `aria-disabled`
+- Links (`href`) rendern als `<a>`, sonst als `<button>`
+- Focus-Ring auf allen interaktiven Elementen
+- `data-collapsed` Attribut fuer CSS-Hooks
+
+<Controls />

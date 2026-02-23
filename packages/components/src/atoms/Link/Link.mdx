@@ -1,0 +1,64 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as LinkStories from './Link.stories';
+
+<Meta of={LinkStories} />
+
+# Link
+
+Navigationskomponente fuer interne und externe Verlinkungen.
+
+## Wann verwenden
+
+- Navigation zu anderen Seiten oder Abschnitten
+- Externe Links (werden automatisch erkannt)
+- Inline-Links in Fliesstext
+
+**Nicht verwenden fuer:**
+- Aktionen die keinen Seitenwechsel ausloesen → `<Button>`
+- Breadcrumb-Navigation → `<Breadcrumbs>`
+
+## Varianten
+
+| Variante | Verwendung |
+|----------|-----------|
+| `default` | Standard-Links |
+| `muted` | Sekundaere Links, Footer-Navigation |
+| `destructive` | Loeschaktionen, Warnlinks |
+
+## Underline-Modi
+
+| Modus | Verhalten |
+|-------|-----------|
+| `hover` | Unterstreichung nur bei Hover (Default) |
+| `always` | Immer unterstrichen |
+| `none` | Nie unterstrichen (nur fuer Nav-Elemente) |
+
+## Beispiel
+
+```tsx
+import { Link } from '@nordlig/components';
+
+<Link href="/dashboard">Dashboard</Link>
+<Link href="https://example.com" showExternalIcon>
+  Externe Seite
+</Link>
+<Link variant="muted" href="/impressum">Impressum</Link>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Beschreibende Linktexte ("Zum Dashboard") | Generische Texte ("Hier klicken") |
+| Externe Links mit `showExternalIcon` kennzeichnen | Externe Links ohne visuelle Unterscheidung |
+| `<Button>` fuer Aktionen verwenden | Links fuer onClick-Handler ohne Navigation |
+
+## Accessibility
+
+- Semantisches `<a>` Element
+- Externe Links erhalten automatisch `target="_blank"` + `rel="noopener noreferrer"`
+- `aria-disabled` bei deaktiviertem Zustand
+- Focus-Ring bei Keyboard-Navigation
+- Externe-Link-Icon informiert ueber neues Fenster
+
+<Controls />

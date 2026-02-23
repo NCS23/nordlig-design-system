@@ -1,0 +1,57 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as AvatarStories from './Avatar.stories';
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+Benutzer- und Profilbild-Komponente mit Fallback-Initials.
+
+## Wann verwenden
+
+- Benutzerprofile und -listen
+- Kommentar-Autoren
+- Teamuebersichten
+- Header/Sidebar-Navigation
+
+## Groessen
+
+| Groesse | Einsatz |
+|---------|---------|
+| `sm` | Header, Kommentare, kompakte Listen |
+| `md` | Standard — Benutzerlisten, Cards |
+| `lg` | Profilseiten, Detail-Ansichten |
+| `xl` | Profilseiten-Header, grosse Karten |
+
+## Aufbau
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from '@nordlig/components';
+
+<Avatar size="md">
+  <AvatarImage src="/foto.jpg" alt="Max Mustermann" />
+  <AvatarFallback>MM</AvatarFallback>
+</Avatar>
+
+{/* Ohne Bild — nur Fallback */}
+<Avatar size="lg">
+  <AvatarFallback size="lg">NR</AvatarFallback>
+</Avatar>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Immer einen `AvatarFallback` mitgeben | Nur `AvatarImage` ohne Fallback |
+| `alt` Text auf `AvatarImage` setzen | Leeren `alt` String verwenden |
+| Initials aus Vor- + Nachname (2 Buchstaben) | Einzelne Buchstaben oder lange Texte |
+| `size` auf Root UND Fallback setzen | Nur auf Root setzen (Fallback-Font skaliert nicht) |
+
+## Accessibility
+
+- `AvatarImage` erfordert `alt` Text (Name der Person)
+- Fallback wird automatisch angezeigt wenn Bild fehlt oder laedt
+- Runde Form mit Border fuer klare Abgrenzung
+
+<Controls />

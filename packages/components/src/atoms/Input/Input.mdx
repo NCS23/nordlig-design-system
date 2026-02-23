@@ -1,0 +1,55 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+Standard-Texteingabefeld fuer Formulare.
+
+## Wann verwenden
+
+- Einzelzeilige Texteingabe (Name, E-Mail, Suche)
+- Zahleneingabe
+- Passwort-Eingabe (mit Sichtbarkeits-Toggle)
+
+**Nicht verwenden fuer:**
+- Mehrzeilige Eingabe → `<Textarea>`
+- Auswahl aus vordefinierten Optionen → `<Select>` oder `<Combobox>`
+- Suche mit Ergebnisliste → `<SearchInput>`
+
+## Groessen
+
+| Groesse | Einsatz |
+|---------|---------|
+| `sm` | Kompakte Formulare, Tabellen-Inline-Editing |
+| `md` | Standard — die meisten Formulare |
+| `lg` | Hervorgehobene Eingaben, Suchfelder |
+
+## Beispiel
+
+```tsx
+import { Input } from '@nordlig/components';
+
+<Input placeholder="Name eingeben" inputSize="md" />
+<Input type="email" inputSize="sm" error />
+<Input type="password" inputSize="md" />
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Placeholder als Beispiel, nicht als Label | Placeholder als einziges Label verwenden |
+| `error` State mit Fehlermeldung kombinieren | Nur roten Rahmen ohne Erklaerung |
+| Mit `<InputField>` fuer Label + Hint verwenden | Eigenes Label-Layout bauen |
+| `type="email"` fuer E-Mail-Felder | Immer `type="text"` verwenden |
+
+## Accessibility
+
+- `aria-invalid={true}` wird automatisch bei `error` gesetzt
+- Immer mit einem `<label>` oder `aria-label` verknuepfen
+- Fuer komplette Formularfelder `<InputField>` verwenden (Label + Hint + Error integriert)
+- Focus-Ring bei Keyboard-Navigation sichtbar
+
+<Controls />

@@ -1,0 +1,66 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as PaginationStories from './Pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+Seitennavigation fuer paginierte Daten.
+
+## Wann verwenden
+
+- Tabellen mit vielen Zeilen
+- Listen und Suchergebnisse
+- Kartenraster mit Seitenwechsel
+
+**Nicht verwenden fuer:**
+- Unendliches Scrollen → eigene Scroll-Logik
+- Weniger als 2 Seiten (Pagination ausblenden)
+
+## Varianten
+
+| Variante | Verwendung |
+|----------|-----------|
+| `default` | Vollstaendige Navigation mit Seitenzahlen |
+| `compact` | "Seite X von Y" mit Pfeilen — fuer mobile Ansichten |
+
+## Beispiel
+
+```tsx
+import { Pagination } from '@nordlig/components';
+
+<Pagination
+  currentPage={3}
+  totalPages={12}
+  onPageChange={(page) => setPage(page)}
+  siblingCount={1}
+/>
+
+{/* Kompakte Variante */}
+<Pagination
+  variant="compact"
+  currentPage={3}
+  totalPages={12}
+  onPageChange={(page) => setPage(page)}
+/>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Aktuelle Seite visuell hervorheben | Alle Seiten gleich darstellen |
+| Vor/Zurueck-Buttons deaktivieren am Anfang/Ende | Buttons verstecken statt deaktivieren |
+| `compact` Variante auf mobilen Geraeten | Vollstaendige Pagination auf kleinen Screens |
+| `siblingCount={1}` fuer uebersichtliche Navigation | `siblingCount={3}` bei wenigen Seiten |
+
+## Accessibility
+
+- `<nav aria-label="Seitennavigation">`
+- Aktuelle Seite: `aria-current="page"`
+- Vor/Zurueck: `aria-label="Vorherige Seite"` / `"Naechste Seite"`
+- Seitenzahlen: `aria-label="Seite {n}"`
+- Deaktivierte Buttons korrekt als `disabled` markiert
+- Focus-Ring auf allen Buttons
+
+<Controls />

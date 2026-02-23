@@ -1,0 +1,69 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as DialogStories from './Dialog.stories';
+
+<Meta of={DialogStories} />
+
+# Dialog
+
+Modaler Dialog fuer Bestaetigungen, Formulare und wichtige Interaktionen.
+
+## Wann verwenden
+
+- Bestaetigungsdialoge ("Wirklich loeschen?")
+- Kleine Formulare (Profil bearbeiten, Einladung senden)
+- Wichtige Informationen die sofortige Aufmerksamkeit erfordern
+
+**Nicht verwenden fuer:**
+- Seitliche Panels → `<Sheet>` / `<Drawer>`
+- Einfache Ja/Nein-Fragen → `<ConfirmDialog>` (vereinfachte API)
+- Kontextmenues → `<DropdownMenu>`
+
+## Aufbau
+
+```tsx
+import {
+  Dialog, DialogTrigger, DialogContent,
+  DialogHeader, DialogTitle, DialogDescription, DialogFooter
+} from '@nordlig/components';
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Profil bearbeiten</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Profil bearbeiten</DialogTitle>
+      <DialogDescription>
+        Aendere hier deine persoenlichen Daten.
+      </DialogDescription>
+    </DialogHeader>
+
+    {/* Formular-Inhalt */}
+
+    <DialogFooter>
+      <Button variant="secondary">Abbrechen</Button>
+      <Button variant="primary">Speichern</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| `DialogTitle` immer setzen (Pflicht!) | Dialog ohne Titel oeffnen |
+| Aktionsbuttons im `DialogFooter` platzieren | Buttons im Content verstreuen |
+| Primaere Aktion rechts, Abbrechen links | Nur eine Aktion ohne Abbruchmoeglichkeit |
+| Dialoge fuer schnelle Interaktionen | Komplexe mehrseitige Formulare im Dialog |
+
+## Accessibility
+
+- Focus-Trap: Tab bleibt innerhalb des Dialogs
+- Focus-Restore: Fokus kehrt zum Trigger zurueck
+- `Escape` schliesst den Dialog
+- `DialogTitle` ist Pflicht (ARIA `aria-labelledby`)
+- Backdrop verhindert Interaktion mit dem Hintergrund
+- Schliessen-Button hat `aria-label="Schliessen"`
+
+<Controls />

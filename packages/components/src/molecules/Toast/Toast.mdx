@@ -1,0 +1,78 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as ToastStories from './Toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+Kurze Benachrichtigungen die automatisch verschwinden.
+
+## Wann verwenden
+
+- Erfolgsbestaetigung nach Aktionen ("Gespeichert", "Gesendet")
+- Fehlermeldungen bei API-Aufrufen
+- Warnungen und Hinweise
+
+**Nicht verwenden fuer:**
+- Inline-Validierung → Formular-Error-States
+- Permanente Hinweise → `<Banner>` oder `<Alert>`
+- Aktionen die Rueckgaengig gemacht werden muessen → Toast mit Undo-Button
+
+## Varianten und Dauer
+
+| Variante | Standard-Dauer | Verwendung |
+|----------|---------------|-----------|
+| `success` | 3s | Erfolgreiche Aktionen |
+| `info` | 4s | Informationen, Hinweise |
+| `warning` | 5s | Warnungen |
+| `error` | 7s | Fehler (laenger sichtbar) |
+
+## Beispiel
+
+```tsx
+import { ToastProvider, useToast } from '@nordlig/components';
+
+// 1. Provider in der App-Root einbinden
+<ToastProvider position="bottom-right">
+  <App />
+</ToastProvider>
+
+// 2. In einer Komponente verwenden
+function SaveButton() {
+  const { toast } = useToast();
+
+  const handleSave = async () => {
+    try {
+      await saveData();
+      toast({ variant: 'success', title: 'Gespeichert' });
+    } catch {
+      toast({
+        variant: 'error',
+        title: 'Fehler',
+        description: 'Daten konnten nicht gespeichert werden.',
+      });
+    }
+  };
+
+  return <Button onClick={handleSave}>Speichern</Button>;
+}
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Kurze, klare Titel (2-4 Woerter) | Lange Absaetze im Toast |
+| `description` fuer zusaetzlichen Kontext | Alle Infos in den Titel packen |
+| Position konsistent halten (eine Position pro App) | Position pro Seite wechseln |
+| `error` Variante fuer Fehler (laengere Sichtbarkeit) | `info` fuer Fehlermeldungen |
+
+## Accessibility
+
+- Automatisches Verschwinden nach Varianten-abhaengiger Dauer
+- Manuelles Schliessen per X-Button
+- Swipe-to-Dismiss (Touch-Geraete)
+- Farbkodiert + Icon pro Variante (nicht nur Farbe)
+- `aria-label="Schliessen"` auf dem X-Button
+
+<Controls />

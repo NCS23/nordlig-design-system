@@ -1,0 +1,67 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as CardStories from './Card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+Container-Komponente fuer gruppierte Inhalte mit optionalem Header, Body und Footer.
+
+## Wann verwenden
+
+- Inhalte visuell gruppieren und vom Hintergrund abheben
+- Dashboard-Widgets und Statistiken
+- Formularabschnitte
+- Listen-Eintraege mit Detailansicht
+
+## Elevation
+
+| Elevation | Verwendung |
+|-----------|-----------|
+| `flat` | Standard — auf hellen Hintergruenden, minimaler Schatten |
+| `raised` | Hervorgehobene Karten, Dashboard-Widgets |
+| `elevated` | Modale Karten, Overlay-aehnliche Darstellung |
+
+## Padding
+
+| Padding | Einsatz |
+|---------|---------|
+| `compact` | Dichte Listen, kleine Widgets |
+| `normal` | Standard — die meisten Karten |
+| `spacious` | Feature-Highlights, Hero-Karten |
+
+## Aufbau
+
+```tsx
+import { Card, CardHeader, CardBody, CardFooter } from '@nordlig/components';
+
+<Card elevation="raised" padding="normal">
+  <CardHeader>
+    <Heading level={4}>Titel</Heading>
+  </CardHeader>
+  <Separator />
+  <CardBody>
+    <Text>Inhalt der Karte...</Text>
+  </CardBody>
+  <CardFooter>
+    <Button variant="primary">Aktion</Button>
+  </CardFooter>
+</Card>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Sub-Komponenten (Header/Body/Footer) nutzen | Eigene Padding-/Layout-Logik bauen |
+| `hoverable` fuer klickbare Karten | Card ohne visuelles Feedback klickbar machen |
+| Separator zwischen Header und Body | Visuelle Trennung durch Margin hacken |
+| Einheitliche Elevation pro Kontext | Verschiedene Elevations wild mischen |
+
+## Accessibility
+
+- Semantisches `<div>` — kein spezielles ARIA noetig
+- `hoverable` gibt visuelles Hover-Feedback
+- Fuer klickbare Karten: `role="button"` und `tabIndex={0}` auf der Card oder ein Link-Wrapper verwenden
+
+<Controls />

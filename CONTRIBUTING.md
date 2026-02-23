@@ -93,43 +93,128 @@ chore(deps): update tailwindcss to v3.4
 
 ---
 
-## 📐 Development Workflow
+## 🏗️ Token-Architektur (4-Layer System)
 
-### 1. Neue Component erstellen
+Nordlig verwendet ein striktes 4-Layer Token-System. Jedes Level referenziert **nur** das Level direkt darunter:
 
-**Checke zuerst PROJEKT_REGELN.md!**
-
-```bash
-# 1. Branch erstellen
-git checkout -b feat/badge-component
-
-# 2. Tokens prüfen/erstellen
-# packages/tokens/src/semantic/badge.json
-
-# 3. Component implementieren
-# packages/components/src/atoms/Badge/Badge.tsx
-# packages/components/src/atoms/Badge/Badge.test.tsx
-# packages/components/src/atoms/Badge/Badge.stories.tsx
-
-# 4. Export hinzufügen
-# packages/components/src/index.ts
-
-# 5. Tokens bauen
-pnpm build:tokens
-
-# 6. Tests schreiben & ausführen
-pnpm test
-
-# 7. Storybook Story erstellen
-pnpm storybook
-
-# 8. Commit & Push
-git add -A
-git commit -m "feat(badge): add badge component with success/warning/error variants"
-git push origin feat/badge-component
+```
+Level 4: COMPONENT     z.B. --color-btn-primary-bg
+    ↓ referenziert
+Level 3: SEMANTIC/ROLE  z.B. --color-bg-primary
+    ↓ referenziert
+Level 2: GLOBAL         z.B. --color-sky-500
+    ↓ referenziert
+Level 1: BASE           z.B. #0ea5e9
 ```
 
-### 2. Bug Fix
+**Wichtige Regeln:**
+- In Komponenten werden **ausschliesslich** `var(--*)` Tokens verwendet — keine hardcodierten Werte
+- Level 4 Tokens werden pro Komponente in `packages/tokens/src/semantic/<component>.json` definiert
+- Ebenen duerfen **nie** uebersprungen werden (z.B. L4 → L1 ist verboten)
+- Vollstaendige Dokumentation: [PROJEKT_REGELN.md](PROJEKT_REGELN.md) und [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+
+---
+
+## 📐 Development Workflow
+
+### Der 7-Schritt-Workflow (Definition of Done)
+
+Jede neue Komponente durchlaeuft diese 7 Schritte. **Kein Schritt darf uebersprungen werden.**
+
+#### Schritt 1 — Tokens erstellen
+
+```bash
+# L4-Token-Datei anlegen (z.B. fuer eine Badge-Komponente)
+# packages/tokens/src/semantic/badge.json
+
+# Token Build ausfuehren
+pnpm --filter @nordlig/tokens build
+
+# Pruefen, dass Tokens in tokens.css auftauchen
+grep "badge" packages/styles/dist/tokens.css
+```
+
+#### Schritt 2 — Komponente implementieren
+
+Jede Komponente folgt diesem Muster:
+
+```tsx
+import React from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '../../utils/cn';
+
+const badgeVariants = cva('...base-classes...', {
+  variants: { variant: { ... }, size: { ... } },
+  defaultVariants: { variant: 'neutral', size: 'md' },
+});
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    VariantProps<typeof badgeVariants> {}
+
+const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
+  ({ className, variant, size, ...props }, ref) => (
+    <span ref={ref} className={cn(badgeVariants({ variant, size }), className)} {...props} />
+  )
+);
+Badge.displayName = 'Badge';
+
+export { Badge, badgeVariants };
+```
+
+**Pflicht-Standards:**
+- `forwardRef` + `displayName` auf jeder Komponente
+- `cn()` fuer className-Merging, `cva()` fuer Varianten
+- Nur `var(--*)` Tokens — keine hardcodierten Werte (`bg-sky-500`, `p-4`, etc.)
+- Focus-Ring: `focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)]`
+- Reduced Motion: `motion-reduce:transition-none`
+- Touch-Target: min. 44×44px auf interaktiven Elementen
+
+#### Schritt 3 — Unit Tests schreiben
+
+```bash
+# Mindestens 8 Tests pro Komponente
+# packages/components/src/atoms/Badge/Badge.test.tsx
+
+pnpm --filter @nordlig/components test Badge.test.tsx
+```
+
+Tests muessen abdecken: Rendering, Varianten, Props-Forwarding, Ref-Forwarding, Accessibility (ARIA), Keyboard-Navigation (bei interaktiven Elementen).
+
+#### Schritt 4 — Storybook Stories schreiben
+
+```bash
+# packages/components/src/atoms/Badge/Badge.stories.tsx
+# Mindestens: Default + je eine Story pro Variante + Edge Cases
+```
+
+#### Schritt 5 — Infrastructure
+
+- Export in `packages/components/src/index.ts` hinzufuegen
+- `COMPONENT_LOG.md` aktualisieren
+
+#### Schritt 6 — UX/Design Review
+
+Vor dem Commit: Komponente gegen [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) pruefen.
+Alle Critical + Major Issues muessen vor dem Commit gefixt werden.
+
+#### Schritt 7 — Build verifizieren
+
+```bash
+# Tests
+pnpm --filter @nordlig/components test
+
+# Lint
+pnpm --filter @nordlig/components lint
+
+# Build
+pnpm --filter @nordlig/components build
+
+# Storybook Build
+pnpm --filter @nordlig/storybook build
+```
+
+### Bug Fix Workflow
 
 ```bash
 # 1. Branch erstellen
@@ -140,8 +225,8 @@ git checkout -b fix/button-hover-state
 
 # 3. Fix implementieren
 
-# 4. Tests grün machen
-pnpm test
+# 4. Tests gruen machen
+pnpm --filter @nordlig/components test
 
 # 5. Visual Check in Storybook
 pnpm storybook

@@ -1,0 +1,51 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as BreadcrumbsStories from './Breadcrumbs.stories';
+
+<Meta of={BreadcrumbsStories} />
+
+# Breadcrumbs
+
+Navigationspfad der die aktuelle Position in der Seitenhierarchie zeigt.
+
+## Wann verwenden
+
+- Mehrstufige Navigationsstrukturen (Dashboard → Kategorie → Detail)
+- E-Commerce: Produktkategorien
+- Dokumentation: Kapitel und Abschnitte
+
+**Nicht verwenden fuer:**
+- Flache Seitenstrukturen ohne Hierarchie
+- Step-by-Step-Prozesse → `<Stepper>`
+
+## Aufbau
+
+```tsx
+import { Breadcrumbs, BreadcrumbItem, BreadcrumbSeparator } from '@nordlig/components';
+
+<Breadcrumbs>
+  <BreadcrumbItem href="/dashboard">Dashboard</BreadcrumbItem>
+  <BreadcrumbSeparator />
+  <BreadcrumbItem href="/projekte">Projekte</BreadcrumbItem>
+  <BreadcrumbSeparator />
+  <BreadcrumbItem isCurrent>Design System v2</BreadcrumbItem>
+</Breadcrumbs>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Alle Hierarchiestufen bis zur aktuellen zeigen | Stufen ueberspringen |
+| Letztes Element als `isCurrent` markieren | Letztes Element als klickbaren Link |
+| Kurze, eindeutige Bezeichnungen | Sehr lange Seitentitel (ggf. kuerzen) |
+| Max. 4-5 Stufen | Mehr als 5 Stufen (Navigation ueberdenken) |
+
+## Accessibility
+
+- `<nav aria-label="breadcrumb">` als semantischer Container
+- Aktuelles Element: `aria-current="page"`
+- Separatoren: `role="presentation"` + `aria-hidden="true"`
+- Links sind fokussierbar mit Focus-Ring
+- Unterstreichung bei Hover als Link-Affordance
+
+<Controls />

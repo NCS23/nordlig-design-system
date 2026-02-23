@@ -1,0 +1,68 @@
+import { Meta, Controls, Story } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Primaere Interaktionskomponente fuer Aktionen und Formulare.
+
+## Wann verwenden
+
+- Primaere und sekundaere Call-to-Actions
+- Formular-Absenden und Abbrechen
+- Dialogaktionen (Bestaetigen, Schliessen)
+- Navigationsaktionen die eine Aktion ausloesen (nicht fuer reine Links — dafuer `<Link>` verwenden)
+
+## Varianten
+
+| Variante | Verwendung |
+|----------|-----------|
+| `primary` | Hauptaktion pro Bereich (max. 1 pro Gruppe) |
+| `secondary` | Sekundaere Aktionen, Abbrechen-Buttons |
+| `ghost` | Tertiäre Aktionen, Icon-Buttons, Toolbar-Buttons |
+
+## Groessen
+
+| Groesse | Einsatz |
+|---------|---------|
+| `sm` | Kompakte Bereiche, Tabellen, Inline-Aktionen |
+| `md` | Standard — die meisten Anwendungsfaelle |
+| `lg` | Hervorgehobene Aktionen, Hero-Bereiche |
+
+## Beispiel
+
+```tsx
+import { Button } from '@nordlig/components';
+
+<Button variant="primary" size="md">
+  Speichern
+</Button>
+
+<Button variant="secondary" size="sm">
+  Abbrechen
+</Button>
+
+<Button variant="ghost" size="sm" aria-label="Schliessen">
+  <Icon icon={X} size="sm" />
+</Button>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Max. 1 Primary-Button pro sichtbarem Bereich | Mehrere Primary-Buttons nebeneinander |
+| Klare, aktive Verben ("Speichern", "Senden") | Vage Beschriftung ("OK", "Klick") |
+| Ghost fuer Icon-only Buttons mit `aria-label` | Icon-Button ohne `aria-label` |
+| `disabled` bei fehlender Berechtigung | Button verstecken statt deaktivieren |
+
+## Accessibility
+
+- Focus-Ring: `focus-visible:ring-2` automatisch vorhanden
+- Touch-Target: Mindestens 44x44px
+- Disabled-State: `disabled` Attribut verhindert Interaktion + visuelles Feedback
+- Keyboard: `Enter` und `Space` loesen die Aktion aus
+- Icon-only Buttons muessen ein `aria-label` haben
+
+<Controls />

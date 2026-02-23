@@ -1,0 +1,60 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as BadgeStories from './Badge.stories';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+Status-Indikator fuer Zaehlungen, Kategorien und Zustaende.
+
+## Wann verwenden
+
+- Status anzeigen (Aktiv, Inaktiv, Ausstehend)
+- Zaehlungen (Benachrichtigungen, ungelesene Nachrichten)
+- Kategorien und Tags
+- Inline-Kennzeichnungen in Tabellen und Listen
+
+## Varianten
+
+| Variante | Verwendung |
+|----------|-----------|
+| `neutral` | Standard, Kategorien, Tags |
+| `success` | Aktiv, Erfolgreich, Abgeschlossen |
+| `warning` | Ausstehend, Warnung |
+| `error` | Fehler, Inaktiv, Ueberfaellig |
+| `info` | Information, Neu, Hinweis |
+
+## Groessen
+
+| Groesse | Einsatz |
+|---------|---------|
+| `xs` | In Tabellen, neben Headings, kompakte Bereiche |
+| `sm` | Standard-Inline-Verwendung |
+| `md` | Hervorgehobene Status |
+| `lg` | Standalone-Badges, grosse Karten |
+
+## Beispiel
+
+```tsx
+import { Badge } from '@nordlig/components';
+
+<Badge variant="success" size="xs">Aktiv</Badge>
+<Badge variant="warning" size="sm">Ausstehend</Badge>
+<Badge variant="error">3 Fehler</Badge>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Kurze Labels (1-2 Woerter) | Lange Saetze in Badges |
+| Konsistente Farben fuer gleiche Bedeutung | Gleiche Variante fuer verschiedene Bedeutungen |
+| `xs` in Tabellen und kompakten Listen | `lg` Badges in Tabellenzellen |
+
+## Accessibility
+
+- Rein visuell — Screenreader lesen den Text-Inhalt vor
+- Farbe allein vermittelt keine Information — immer mit Text kombinieren
+- Bei Status-Badges: Kontext durch umgebenden Text sicherstellen
+
+<Controls />

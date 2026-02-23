@@ -1,0 +1,54 @@
+import { Meta, Controls } from '@storybook/blocks';
+import * as HeadingStories from './Heading.stories';
+
+<Meta of={HeadingStories} />
+
+# Heading
+
+Semantische Ueberschriften-Komponente (h1–h6) mit token-basierter Typografie.
+
+## Wann verwenden
+
+- Seitenueberschriften und Abschnittsueberschriften
+- Card-Header, Dialog-Titel, Sidebar-Gruppen
+- Ueberall wo eine semantische Heading-Hierarchie benoetigt wird
+
+## Level-Zuordnung
+
+| Level | Typischer Einsatz |
+|-------|-------------------|
+| `1` | Seitentitel (max. 1 pro Seite) |
+| `2` | Hauptabschnitte |
+| `3` | Unterabschnitte |
+| `4` | Card-Header, Gruppenüberschriften |
+| `5` | Sidebar-Titel, kleine Abschnitte |
+| `6` | Selten — nur bei tiefer Verschachtelung |
+
+## Beispiel
+
+```tsx
+import { Heading } from '@nordlig/components';
+
+<Heading level={1}>Seitentitel</Heading>
+<Heading level={2}>Abschnitt</Heading>
+<Heading level={4}>Card-Header</Heading>
+
+{/* Visuell klein, semantisch h2 */}
+<Heading level={2} as="h4">Optischer h4, semantisch h2</Heading>
+```
+
+## Do / Don't
+
+| Do | Don't |
+|----|-------|
+| Korrekte Hierarchie einhalten (h1 → h2 → h3) | Level ueberspringen (h1 → h4) |
+| `as` Prop fuer visuelles Override nutzen | Level nur wegen Schriftgroesse waehlen |
+| Max. 1 `level={1}` pro Seite | Mehrere h1 auf einer Seite |
+
+## Accessibility
+
+- Semantische h1–h6 Elemente fuer korrekte Dokumentstruktur
+- Screenreader nutzen Headings zur Navigation
+- `as` Prop erlaubt visuelle Anpassung ohne semantischen Bruch
+
+<Controls />
