@@ -329,8 +329,8 @@
 
   /* --- Card: elevation hierarchy via bg color steps --- */
   --color-card-border: #64748b;            /* slate-500: meets 3:1 on paper */
-  --color-card-bg-raised: #283548;         /* between paper and surface: subtle lift */
-  --color-card-bg-elevated: #334155;       /* slate-700: clearly elevated */
+  --color-card-bg-raised: #334155;         /* slate-700 / bg-surface: visible lift from paper */
+  --color-card-bg-elevated: #3b4d63;       /* bg-elevated: clearly above surface */
 
   /* --- Carousel: visible nav on dark content --- */
   --color-carousel-nav-bg: rgba(30, 41, 59, 0.85);   /* slate-800 at 85% */
