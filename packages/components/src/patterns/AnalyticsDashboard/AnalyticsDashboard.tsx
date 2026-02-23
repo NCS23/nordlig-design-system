@@ -188,7 +188,7 @@ function DashboardChart({ chart }: { chart: AnalyticsDashboardChart }) {
         </CardHeader>
       )}
       <CardBody>
-        <ChartContainer config={chart.config} className="h-[300px] w-full">
+        <ChartContainer config={chart.config} className="h-[var(--sizing-adash-chart-height)] w-full">
           <ResponsiveContainer width="100%" height="100%">
             {renderChart()}
           </ResponsiveContainer>
@@ -222,7 +222,7 @@ function ChartSkeleton() {
   return (
     <Card>
       <CardBody>
-        <Skeleton className="h-[300px] w-full" />
+        <Skeleton className="h-[var(--sizing-adash-chart-height)] w-full" />
       </CardBody>
     </Card>
   );

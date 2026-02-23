@@ -43,6 +43,14 @@ const HARDCODED_PX_PATTERN = /(?:^|[\s'"])(?:p|m|gap|space|w|h|top|right|bottom|
 const TOKEN_COLOR_PATTERN = /var\(--color-[^)]+\)/g;
 const TOKEN_SPACING_PATTERN = /var\(--(?:spacing|sizing)-[^)]+\)/g;
 
+// ─── Specificity Patterns ────────────────────────────────────────────────────
+
+// !important usage (should never appear in design system components)
+const IMPORTANT_PATTERN = /!important/g;
+
+// Inline style attributes (should use Tailwind utilities instead)
+const INLINE_STYLE_PATTERN = /\bstyle\s*=\s*\{\s*\{/g;
+
 // ─── Strict Mode Patterns ────────────────────────────────────────────────────
 // Semi-hardcoded Tailwind utilities that should use design tokens
 
@@ -137,6 +145,30 @@ function analyzeFile(filePath, relativePath) {
       });
     }
 
+    // ─── Specificity: !important ──────────────────────────────────────────────
+    const importantMatches = line.matchAll(IMPORTANT_PATTERN);
+    for (const m of importantMatches) {
+      findings.push({
+        type: 'IMPORTANT',
+        file: relativePath,
+        line: lineNum,
+        value: '!important',
+        context: trimmed.substring(0, 80),
+      });
+    }
+
+    // ─── Specificity: Inline Styles ─────────────────────────────────────────
+    const styleMatches = line.matchAll(INLINE_STYLE_PATTERN);
+    for (const m of styleMatches) {
+      findings.push({
+        type: 'INLINE_STYLE',
+        file: relativePath,
+        line: lineNum,
+        value: 'style={{...}}',
+        context: trimmed.substring(0, 80),
+      });
+    }
+
     // ─── Strict Mode: Tailwind Typography + Spacing ──────────────────────────
     const fontSizeMatches = line.matchAll(TAILWIND_FONT_SIZE_PATTERN);
     for (const m of fontSizeMatches) {
@@ -215,6 +247,10 @@ function main() {
   const tailwindColors = totalFindings.filter(f => f.type === 'TAILWIND_COLOR');
   const hardcodedSpacing = totalFindings.filter(f => f.type === 'HARDCODED_SPACING');
 
+  // Specificity issues (always blocking)
+  const importantUsages = totalFindings.filter(f => f.type === 'IMPORTANT');
+  const inlineStyles = totalFindings.filter(f => f.type === 'INLINE_STYLE');
+
   // Strict-only (reported but not blocking unless --strict)
   const twFontSize = totalFindings.filter(f => f.type === 'TAILWIND_FONT_SIZE');
   const twFontWeight = totalFindings.filter(f => f.type === 'TAILWIND_FONT_WEIGHT');
@@ -251,6 +287,29 @@ function main() {
     console.log();
   } else {
     console.log('HARTCODIERTE SPACING-WERTE: Keine gefunden ✓\n');
+  }
+
+  // Report — Specificity issues
+  if (importantUsages.length > 0) {
+    console.log(`!IMPORTANT USAGE (erhoehte Specificity, vermeiden): ${importantUsages.length}`);
+    for (const f of importantUsages) {
+      console.log(`  ${f.file}:${f.line}`);
+      console.log(`    ${f.context}`);
+    }
+    console.log();
+  } else {
+    console.log('!IMPORTANT USAGE: Keine gefunden ✓\n');
+  }
+
+  if (inlineStyles.length > 0) {
+    console.log(`INLINE STYLES (sollten Tailwind-Utilities verwenden): ${inlineStyles.length}`);
+    for (const f of inlineStyles) {
+      console.log(`  ${f.file}:${f.line}`);
+      console.log(`    ${f.context}`);
+    }
+    console.log();
+  } else {
+    console.log('INLINE STYLES: Keine gefunden ✓\n');
   }
 
   // Report — Strict mode findings
@@ -292,7 +351,7 @@ function main() {
   }
 
   // Statistiken
-  const blockingIssues = hardcodedColors.length + tailwindColors.length + hardcodedSpacing.length;
+  const blockingIssues = hardcodedColors.length + tailwindColors.length + hardcodedSpacing.length + importantUsages.length;
   const totalTokenUsage = totalColorTokens + totalSpacingTokens;
   const compliance = totalTokenUsage > 0
     ? ((totalTokenUsage / (totalTokenUsage + blockingIssues)) * 100).toFixed(1)

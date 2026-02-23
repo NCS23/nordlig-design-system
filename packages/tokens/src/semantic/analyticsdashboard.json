@@ -8,6 +8,11 @@
       "header-gap": { "$type": "dimension", "$value": "{spacing.component.gap.md}", "$description": "Gap between header elements" }
     }
   },
+  "sizing": {
+    "adash": {
+      "chart-height": { "$type": "dimension", "$value": "300px", "$description": "Default chart container height" }
+    }
+  },
   "font": {
     "adash": {
       "section-title-size": { "$type": "dimension", "$value": "{font.component.size.lg}", "$description": "Section title font size" },
