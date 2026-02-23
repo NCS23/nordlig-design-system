@@ -29,7 +29,7 @@ ModalOverlay.displayName = 'ModalOverlay';
 const modalContentVariants = cva(
   [
     'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
-    'w-full bg-[var(--color-modal-bg)]',
+    'w-full bg-[var(--color-modal-bg)] text-[var(--color-text-base)]',
     'rounded-[var(--radius-modal)] [box-shadow:var(--shadow-modal-content)]',
     'flex flex-col max-h-[90vh]',
     'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',

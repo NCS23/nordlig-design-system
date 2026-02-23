@@ -206,11 +206,11 @@
   --color-text-info: #7dd3fc;       /* sky-300 */
 
   /* ===================================================================
-     L3 Role: Borders
+     L3 Role: Borders (shifted up for WCAG 1.4.11 — 3:1 on paper)
      =================================================================== */
-  --color-border-default: #475569;  /* slate-600 */
-  --color-border-muted: #3b4a5e;    /* custom: visible on paper (#1e293b) surfaces */
-  --color-border-strong: #64748b;   /* slate-500 */
+  --color-border-default: #64748b;  /* slate-500: 3.07:1 on paper — meets 3:1 for UI */
+  --color-border-muted: #475569;    /* slate-600: decorative dividers, separators */
+  --color-border-strong: #94a3b8;   /* slate-400: emphasis borders, hover states */
   --color-border-focus: #38bdf8;    /* sky-400 */
   --color-border-error: #f87171;    /* red-400 */
   --color-border-success: #4ade80;  /* green-400 */
@@ -240,9 +240,24 @@
   --color-btn-ghost-bg-hover: #334155;     /* slate-700 */
   --color-btn-ghost-bg-active: #475569;    /* slate-600 */
 
-  /* --- Badge --- */
-  --color-badge-neutral-bg: #334155;       /* slate-700 */
-  --color-badge-neutral-text: #cbd5e1;     /* slate-300: improved contrast (4.8:1) */
+  /* --- Badge (rgba subtle bg for a11y contrast) --- */
+  --color-badge-neutral-bg: #334155;
+  --color-badge-neutral-text: #cbd5e1;     /* slate-300: 4.8:1 on neutral bg */
+  --color-badge-success-bg: rgba(34, 197, 94, 0.18);
+  --color-badge-success-text: #4ade80;     /* green-400 */
+  --color-badge-warning-bg: rgba(245, 158, 11, 0.18);
+  --color-badge-warning-text: #fbbf24;     /* amber-400 */
+  --color-badge-error-bg: rgba(239, 68, 68, 0.18);
+  --color-badge-error-text: #fca5a5;       /* red-300: 4.5:1+ on rgba bg */
+  --color-badge-info-bg: rgba(56, 189, 248, 0.18);
+  --color-badge-info-text: #7dd3fc;        /* sky-300 */
+
+  /* --- Banner (same rgba approach as badge) --- */
+  --color-banner-success-bg: rgba(34, 197, 94, 0.18);
+  --color-banner-warning-bg: rgba(245, 158, 11, 0.18);
+  --color-banner-error-bg: rgba(239, 68, 68, 0.18);
+  --color-banner-error-text: #fca5a5;      /* red-300: a11y contrast */
+  --color-banner-info-bg: rgba(56, 189, 248, 0.18);
 
   /* --- Tooltip (inverted: light bg, dark text) --- */
   --color-tooltip-bg: #f1f5f9;
@@ -256,7 +271,7 @@
   /* --- Kbd --- */
   --color-kbd-bg: #334155;
   --color-kbd-text: #f1f5f9;
-  --color-kbd-border: #475569;
+  --color-kbd-border: #64748b;       /* slate-500: visible on kbd bg #334155 */
   --shadow-kbd: 0 1px 0 1px #1e293b;
 
   /* --- Scrollarea --- */
@@ -284,8 +299,9 @@
   /* --- Switch: visible thumb --- */
   --color-switch-thumb-bg: #e2e8f0;
 
-  /* --- Tabs pills: active lighter than container --- */
+  /* --- Tabs: a11y contrast fixes --- */
   --color-tabs-trigger-bg-active: #475569;
+  --color-tabs-trigger-text-active: #bae6fd;  /* sky-200: 5.56:1 on active bg */
 
   /* --- Segmented control: active pops above container --- */
   --color-seg-active-bg: #475569;
@@ -305,11 +321,11 @@
   --color-hl-bg: rgba(251, 191, 36, 0.25); /* amber-400 at 25%: visible highlight */
   --color-hl-text: #fef3c7;                /* amber-100: warm readable text */
 
-  /* --- Card: visible border in dark --- */
-  --color-card-border: #475569;            /* default border, not muted */
+  /* --- Card: a11y border 3:1 on paper --- */
+  --color-card-border: #64748b;            /* slate-500: meets 3:1 on paper */
 
-  /* --- Auth: visible card border --- */
-  --color-auth-card-border: #475569;
+  /* --- Auth: a11y border --- */
+  --color-auth-card-border: #64748b;
 
   /* --- Pagination: text on primary bg --- */
   --color-pagination-item-active-text: #0f172a;

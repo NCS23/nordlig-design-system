@@ -66,7 +66,7 @@ const DrawerContent = React.forwardRef<
       ref={ref}
       className={cn(
         'fixed inset-x-0 bottom-0 z-50 mt-24 flex max-h-[96vh] flex-col',
-        'bg-[var(--color-drawer-bg)]',
+        'bg-[var(--color-drawer-bg)] text-[var(--color-text-base)]',
         'border-t border-[var(--color-drawer-border)]',
         'rounded-t-[var(--radius-drawer)]',
         '[box-shadow:var(--shadow-drawer)]',

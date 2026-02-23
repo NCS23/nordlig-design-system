@@ -39,7 +39,7 @@ SheetOverlay.displayName = 'SheetOverlay';
 const sheetContentVariants = cva(
   [
     'fixed z-50',
-    'bg-[var(--color-sheet-bg)]',
+    'bg-[var(--color-sheet-bg)] text-[var(--color-text-base)]',
     'border-[var(--color-sheet-border)]',
     '[box-shadow:var(--shadow-sheet)]',
     'p-[var(--spacing-sheet-padding)]',

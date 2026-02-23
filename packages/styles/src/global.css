@@ -3,6 +3,11 @@
  * Token-CSS wird separat in dist/tokens.css generiert.
  */
 
+/* Dunkelmodus: Textfarbe auf text-base setzen fuer portalisierte Inhalte */
+.dark {
+  color: var(--color-text-base);
+}
+
 /* Demokratisk Prinzip: Animationen nie erzwingen (WCAG 2.1 AA) */
 @media (prefers-reduced-motion: reduce) {
   *,

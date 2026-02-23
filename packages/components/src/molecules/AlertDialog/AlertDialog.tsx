@@ -60,7 +60,7 @@ const AlertDialogContent = React.forwardRef<
       className={cn(
         'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
         'w-full max-w-lg',
-        'bg-[var(--color-alertdlg-bg)]',
+        'bg-[var(--color-alertdlg-bg)] text-[var(--color-text-base)]',
         'border border-[var(--color-alertdlg-border)]',
         'rounded-[var(--radius-alertdlg)]',
         '[box-shadow:var(--shadow-alertdlg)]',

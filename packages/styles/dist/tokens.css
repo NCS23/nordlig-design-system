@@ -809,6 +809,7 @@
   --color-hl-text: var(--color-text-base); /** Highlight text */
   --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
   --color-hovercard-border: var(--color-border-muted); /** HoverCard border */
+  --color-hovercard-text: var(--color-text-base); /** HoverCard text color */
   --color-img-bg: var(--color-bg-surface); /** Loading placeholder background */
   --color-img-fallback-bg: var(--color-bg-surface-hover); /** Error fallback background */
   --color-img-fallback-text: var(--color-text-muted); /** Error fallback icon/text */
@@ -884,6 +885,7 @@
   --color-pwinput-strength-strong: var(--color-text-success); /** Strength: strong */
   --color-popover-bg: var(--color-bg-paper); /** White popover background */
   --color-popover-border: var(--color-border-muted); /** Subtle outer border */
+  --color-popover-text: var(--color-text-base); /** Popover text color */
   --color-progress-track: var(--color-bg-surface);
   --color-progress-fill: var(--color-interactive-primary);
   --color-progress-fill-success: var(--color-bg-success-solid);

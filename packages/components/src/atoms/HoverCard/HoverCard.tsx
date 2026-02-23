@@ -24,7 +24,7 @@ const HoverCardContent = React.forwardRef<
       sideOffset={sideOffset}
       className={cn(
         'z-50 w-auto',
-        'bg-[var(--color-hovercard-bg)] text-[length:var(--font-hovercard-content-size)]',
+        'bg-[var(--color-hovercard-bg)] text-[var(--color-hovercard-text)] text-[length:var(--font-hovercard-content-size)]',
         'border border-[var(--color-hovercard-border)]',
         'rounded-[var(--radius-hovercard)]',
         '[box-shadow:var(--shadow-hovercard)]',
