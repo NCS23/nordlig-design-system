@@ -221,6 +221,7 @@
   --font-base-letter-spacing-normal: 0em;
   --font-base-letter-spacing-wide: 0.025em;
   --font-kbd-sm-size: 11px; /** Kbd sm font size (11px, no L3 equivalent) */
+  --sizing-adash-chart-height: 300px; /** Default chart container height */
   --sizing-auth-card-max-width: 420px; /** Card max width */
   --sizing-cpick-field-height: 160px; /** Saturation field height */
   --sizing-cpick-slider-height: 12px; /** Hue/alpha slider track height */

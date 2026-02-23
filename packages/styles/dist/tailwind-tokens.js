@@ -1774,6 +1774,7 @@ export const SizingLayoutHeaderHeight = "56px"; // 56px shared header height for
 export const SizingAlertBorderWidth = "4px"; // Left accent border width (4px)
 export const SizingAlertFontSize = "0.875rem"; // Text font size (14px)
 export const SizingAlertTitleWeight = 600; // Title font weight (600)
+export const SizingAdashChartHeight = "300px"; // Default chart container height
 export const SizingAuthCardMaxWidth = "420px"; // Card max width
 export const SizingAvatarSm = "36px"; // Avatar size sm (h-9 = 36px)
 export const SizingAvatarMd = "40px"; // Avatar size md (h-10 = 40px)
