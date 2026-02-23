@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { List, ListItem, DescriptionList, DescriptionTerm, DescriptionDetails } from './List';
 import { Icon } from '../Icon';
+import { Check, Clock, AlertCircle, Activity, Bike, Waves, FileText, ChevronRight } from 'lucide-react';
 
 const meta: Meta<typeof List> = {
   title: 'Atoms/List',
@@ -50,13 +51,13 @@ export const WithIcons: Story = {
   name: 'Mit Icons',
   render: () => (
     <List className="w-full max-w-sm">
-      <ListItem icon={<Icon name="Check" size="sm" className="text-[var(--color-success)]" />}>
+      <ListItem icon={<Icon icon={Check} size="sm" className="text-[var(--color-success)]" />}>
         Aufgabe erledigt
       </ListItem>
-      <ListItem icon={<Icon name="Clock" size="sm" className="text-[var(--color-warning)]" />}>
+      <ListItem icon={<Icon icon={Clock} size="sm" className="text-[var(--color-warning)]" />}>
         In Bearbeitung
       </ListItem>
-      <ListItem icon={<Icon name="AlertCircle" size="sm" className="text-[var(--color-error)]" />}>
+      <ListItem icon={<Icon icon={AlertCircle} size="sm" className="text-[var(--color-error)]" />}>
         Fehler aufgetreten
       </ListItem>
     </List>
@@ -68,19 +69,19 @@ export const WithDescriptions: Story = {
   render: () => (
     <List gap="md" className="w-full max-w-md">
       <ListItem
-        icon={<Icon name="Activity" size="sm" />}
+        icon={<Icon icon={Activity} size="sm" />}
         description="42.5 km in 4h 15min"
       >
         Lauf-Training
       </ListItem>
       <ListItem
-        icon={<Icon name="Bike" size="sm" />}
+        icon={<Icon icon={Bike} size="sm" />}
         description="85 km in 3h 30min"
       >
         Rad-Training
       </ListItem>
       <ListItem
-        icon={<Icon name="Waves" size="sm" />}
+        icon={<Icon icon={Waves} size="sm" />}
         description="3.2 km in 1h 10min"
       >
         Schwimm-Training
@@ -94,22 +95,22 @@ export const WithActions: Story = {
   render: () => (
     <List className="w-full max-w-md">
       <ListItem
-        icon={<Icon name="FileText" size="sm" />}
-        action={<Icon name="ChevronRight" size="sm" className="text-[var(--color-text-muted)]" />}
+        icon={<Icon icon={FileText} size="sm" />}
+        action={<Icon icon={ChevronRight} size="sm" className="text-[var(--color-text-muted)]" />}
         interactive
       >
         Trainingsplan.pdf
       </ListItem>
       <ListItem
-        icon={<Icon name="FileText" size="sm" />}
-        action={<Icon name="ChevronRight" size="sm" className="text-[var(--color-text-muted)]" />}
+        icon={<Icon icon={FileText} size="sm" />}
+        action={<Icon icon={ChevronRight} size="sm" className="text-[var(--color-text-muted)]" />}
         interactive
       >
         Ernaehrungsplan.pdf
       </ListItem>
       <ListItem
-        icon={<Icon name="FileText" size="sm" />}
-        action={<Icon name="ChevronRight" size="sm" className="text-[var(--color-text-muted)]" />}
+        icon={<Icon icon={FileText} size="sm" />}
+        action={<Icon icon={ChevronRight} size="sm" className="text-[var(--color-text-muted)]" />}
         interactive
       >
         Wettkampfkalender.pdf
