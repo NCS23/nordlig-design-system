@@ -45,6 +45,35 @@ const FooterLinks = ({ links }: { links: { label: string; href: string }[] }) =>
 
 /* ─── Stories ──────────────────────────────────────────────────────────────── */
 
+export const Default: Story = {
+  render: () => (
+    <AuthLayout
+      footer={
+        <FooterLinks
+          links={[
+            { label: 'Registrieren', href: '/register' },
+            { label: 'Passwort vergessen?', href: '/forgot' },
+          ]}
+        />
+      }
+    >
+      <CardLogo />
+      <Heading level={2} className="mb-6">
+        Anmelden
+      </Heading>
+      <div className="space-y-4">
+        <InputField label="E-Mail" type="email" placeholder="name@example.com" />
+        <div>
+          <Label className="mb-1">Passwort</Label>
+          <PasswordInput placeholder="Passwort eingeben" />
+        </div>
+        <CheckboxField label="Angemeldet bleiben" />
+        <Button className="w-full">Anmelden</Button>
+      </div>
+    </AuthLayout>
+  ),
+};
+
 export const Login: Story = {
   render: () => (
     <AuthLayout

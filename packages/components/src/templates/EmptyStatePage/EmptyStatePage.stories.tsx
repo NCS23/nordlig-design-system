@@ -24,6 +24,16 @@ const IllustrationPlaceholder = () => (
 
 /* ─── Keine Daten ─────────────────────────────────────────────────────────── */
 
+export const Default: Story = {
+  render: () => (
+    <EmptyStatePage
+      title="Keine Daten vorhanden"
+      description="Es sind noch keine Eintraege vorhanden."
+      actions={<Button>Erstellen</Button>}
+    />
+  ),
+};
+
 export const KeineDaten: Story = {
   name: 'Keine Daten',
   render: () => (

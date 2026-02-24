@@ -119,3 +119,44 @@ export default meta;
 type Story = StoryObj<typeof AppWithSpotlight>;
 
 export const Default: Story = {};
+
+export const Opened: Story = {
+  name: 'Geoeffnet',
+  render: () => {
+    const groups: SpotlightGroup[] = [
+      {
+        label: 'Schnellaktionen',
+        items: [
+          { id: 'new-doc', label: 'Neues Dokument', icon: <Plus size={16} />, description: 'Leeres Dokument erstellen', shortcut: 'N', onSelect: () => {} },
+          { id: 'search', label: 'Volltextsuche', icon: <Search size={16} />, description: 'In allen Dokumenten suchen', shortcut: 'F', onSelect: () => {} },
+        ],
+      },
+      {
+        label: 'Navigation',
+        items: [
+          { id: 'dashboard', label: 'Dashboard', icon: <BarChart3 size={16} />, onSelect: () => {} },
+          { id: 'docs', label: 'Dokumente', icon: <FileText size={16} />, onSelect: () => {} },
+          { id: 'profile', label: 'Profil', icon: <User size={16} />, onSelect: () => {} },
+          { id: 'settings', label: 'Einstellungen', icon: <Settings size={16} />, shortcut: ',', onSelect: () => {} },
+        ],
+      },
+      {
+        label: 'System',
+        items: [
+          { id: 'theme', label: 'Dark Mode umschalten', icon: <Moon size={16} />, onSelect: () => {} },
+          { id: 'help', label: 'Hilfe & Feedback', icon: <HelpCircle size={16} />, onSelect: () => {} },
+          { id: 'logout', label: 'Abmelden', icon: <LogOut size={16} />, onSelect: () => {} },
+        ],
+      },
+    ];
+
+    return (
+      <Spotlight
+        groups={groups}
+        open={true}
+        onOpenChange={() => {}}
+        placeholder="Aktion suchen..."
+      />
+    );
+  },
+};

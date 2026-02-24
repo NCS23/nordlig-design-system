@@ -25,6 +25,17 @@ const IllustrationPlaceholder = ({ label }: { label: string }) => (
 
 /* ─── Stories ──────────────────────────────────────────────────────────────── */
 
+export const Default: Story = {
+  render: () => (
+    <ErrorPage
+      code="404"
+      title="Seite nicht gefunden"
+      description="Die angeforderte Seite existiert nicht."
+      actions={<Button>Zur Startseite</Button>}
+    />
+  ),
+};
+
 export const NotFound: Story = {
   name: '404',
   render: () => (

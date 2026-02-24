@@ -152,7 +152,7 @@ function OnboardingWizardPage() {
 
   return (
     <div style={{ maxWidth: 720 }}>
-      <div className="flex flex-col gap-3 mb-20">
+      <div className="flex flex-col gap-3 mb-8">
         <Heading level={2}>Trainingsplan einrichten</Heading>
         <Text variant="muted">
           Richte in 3 Schritten deinen persoenlichen Trainingsplan ein.
