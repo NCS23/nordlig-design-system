@@ -41,12 +41,16 @@ describe('Card', () => {
     render(<Card data-testid="card" padding="compact">Content</Card>);
     const card = screen.getByTestId('card');
     expect(card.className).toContain('px-[var(--spacing-card-padding-compact)]');
+    expect(card.className).toContain('pt-[var(--spacing-card-padding-compact)]');
+    expect(card.className).toContain('pb-[var(--spacing-card-padding-bottom)]');
   });
 
   it('applies padding=spacious variant', () => {
     render(<Card data-testid="card" padding="spacious">Content</Card>);
     const card = screen.getByTestId('card');
     expect(card.className).toContain('px-[var(--spacing-card-padding-spacious)]');
+    expect(card.className).toContain('pt-[var(--spacing-card-padding-spacious)]');
+    expect(card.className).toContain('pb-[var(--spacing-card-padding-bottom)]');
   });
 
   it('applies hoverable variant', () => {

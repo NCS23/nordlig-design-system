@@ -494,13 +494,13 @@ const Card = ({ children, ...props }: CardProps) => (
 );
 
 const CardHeader = ({ children, ...props }: CardHeaderProps) => (
-  <div className="p-[var(--spacing-card-padding)] border-b" {...props}>
+  <div className="flex flex-col gap-[var(--spacing-card-gap)]" {...props}>
     {children}
   </div>
 );
 
 const CardBody = ({ children, ...props }: CardBodyProps) => (
-  <div className="p-[var(--spacing-card-padding)]" {...props}>
+  <div className="flex-1" {...props}>
     {children}
   </div>
 );

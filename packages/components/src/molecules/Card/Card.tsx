@@ -12,9 +12,9 @@ const cardVariants = cva(
         elevated: 'bg-[var(--color-card-bg-elevated)] border border-[var(--color-card-border)] [box-shadow:var(--shadow-card-elevated)]',
       },
       padding: {
-        compact: 'px-[var(--spacing-card-padding-compact)] pt-[var(--spacing-card-padding-compact)] pb-[var(--spacing-card-padding-compact)]',
+        compact: 'px-[var(--spacing-card-padding-compact)] pt-[var(--spacing-card-padding-compact)] pb-[var(--spacing-card-padding-bottom)]',
         normal: 'px-[var(--spacing-card-padding-normal)] pt-[var(--spacing-card-padding-normal)] pb-[var(--spacing-card-padding-bottom)]',
-        spacious: 'px-[var(--spacing-card-padding-spacious)] pt-[var(--spacing-card-padding-spacious)] pb-[var(--spacing-card-padding-spacious)]',
+        spacious: 'px-[var(--spacing-card-padding-spacious)] pt-[var(--spacing-card-padding-spacious)] pb-[var(--spacing-card-padding-bottom)]',
       },
       hoverable: {
         true: 'cursor-pointer hover:[box-shadow:var(--shadow-card-hover)]',
