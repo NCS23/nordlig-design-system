@@ -2,16 +2,19 @@
   "color": {
     "$description": "Level 4: Card component tokens",
     "card": {
-      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "White paper background" },
-      "border": { "$type": "color", "$value": "{color.border.muted}" }
+      "bg":          { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Default card background" },
+      "bg-raised":   { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Raised card background" },
+      "bg-elevated": { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Elevated card background" },
+      "border":      { "$type": "color", "$value": "{color.border.muted}" }
     }
   },
   "spacing": {
     "card": {
       "padding-compact":  { "$type": "dimension", "$value": "{spacing.component.padding.sm}" },
-      "padding-normal":   { "$type": "dimension", "$value": "{spacing.component.padding.md}" },
+      "padding-normal":   { "$type": "dimension", "$value": "{spacing.base.5}", "$description": "20px card padding (all sides except bottom)" },
       "padding-spacious": { "$type": "dimension", "$value": "{spacing.component.padding.lg}" },
-      "gap":              { "$type": "dimension", "$value": "{spacing.component.gap.md}" }
+      "padding-bottom":   { "$type": "dimension", "$value": "{spacing.base.8}", "$description": "32px card bottom padding" },
+      "gap":              { "$type": "dimension", "$value": "{spacing.base.5}", "$description": "20px gap between card sections" }
     }
   },
   "shadow": {

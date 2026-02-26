@@ -11,7 +11,9 @@ describe('Card', () => {
   it('applies default variants (flat, normal)', () => {
     render(<Card data-testid="card">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('p-[var(--spacing-card-padding-normal)]');
+    expect(card.className).toContain('px-[var(--spacing-card-padding-normal)]');
+    expect(card.className).toContain('pt-[var(--spacing-card-padding-normal)]');
+    expect(card.className).toContain('pb-[var(--spacing-card-padding-bottom)]');
     expect(card.className).toContain('bg-[var(--color-card-bg)]');
     expect(card.className).toContain('border');
     expect(card.className).toContain('border-[var(--color-card-border)]');
@@ -38,13 +40,13 @@ describe('Card', () => {
   it('applies padding=compact variant', () => {
     render(<Card data-testid="card" padding="compact">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('p-[var(--spacing-card-padding-compact)]');
+    expect(card.className).toContain('px-[var(--spacing-card-padding-compact)]');
   });
 
   it('applies padding=spacious variant', () => {
     render(<Card data-testid="card" padding="spacious">Content</Card>);
     const card = screen.getByTestId('card');
-    expect(card.className).toContain('p-[var(--spacing-card-padding-spacious)]');
+    expect(card.className).toContain('px-[var(--spacing-card-padding-spacious)]');
   });
 
   it('applies hoverable variant', () => {

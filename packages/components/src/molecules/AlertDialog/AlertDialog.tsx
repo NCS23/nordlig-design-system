@@ -21,7 +21,7 @@ const AlertDialogOverlay = React.forwardRef<
   <AlertDialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      'fixed inset-0 z-50 bg-[var(--color-alertdlg-overlay)]',
+      'fixed inset-0 z-40 bg-[var(--color-alertdlg-overlay)]',
       'data-[state=open]:animate-in data-[state=open]:fade-in-0',
       'data-[state=closed]:animate-out data-[state=closed]:fade-out-0',
       className
@@ -55,26 +55,27 @@ const AlertDialogContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AlertDialogPrimitive.Portal>
     <AlertDialogOverlay />
-    <AlertDialogPrimitive.Content
-      ref={ref}
-      className={cn(
-        'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
-        'w-full max-w-lg',
-        'bg-[var(--color-alertdlg-bg)] text-[var(--color-text-base)]',
-        'border border-[var(--color-alertdlg-border)]',
-        'rounded-[var(--radius-alertdlg)]',
-        '[box-shadow:var(--shadow-alertdlg)]',
-        'p-[var(--spacing-alertdlg-padding)]',
-        'flex flex-col gap-[var(--spacing-alertdlg-gap)]',
-        'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
-        'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
-        'duration-200',
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </AlertDialogPrimitive.Content>
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <AlertDialogPrimitive.Content
+        ref={ref}
+        className={cn(
+          'w-full max-w-lg',
+          'bg-[var(--color-alertdlg-bg)] text-[var(--color-text-base)]',
+          'border border-[var(--color-alertdlg-border)]',
+          'rounded-[var(--radius-alertdlg)]',
+          '[box-shadow:var(--shadow-alertdlg)]',
+          'p-[var(--spacing-alertdlg-padding)]',
+          'flex flex-col gap-[var(--spacing-alertdlg-gap)]',
+          'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
+          'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
+          'duration-200',
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </AlertDialogPrimitive.Content>
+    </div>
   </AlertDialogPrimitive.Portal>
 ));
 AlertDialogContent.displayName = 'AlertDialogContent';

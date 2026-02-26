@@ -7,9 +7,9 @@
       "title":       { "$type": "color", "$value": "{color.text.base}", "$description": "AlertDialog title text" },
       "description": { "$type": "color", "$value": "{color.text.muted}", "$description": "AlertDialog description text" },
       "border":      { "$type": "color", "$value": "{color.border.muted}", "$description": "AlertDialog border" },
-      "action-bg":   { "$type": "color", "$value": "{color.bg.error}", "$description": "Destructive action button background" },
-      "action-text": { "$type": "color", "$value": "{color.text.inverse}", "$description": "Destructive action button text" },
-      "action-hover-bg": { "$type": "color", "$value": "{color.text.error}", "$description": "Destructive action button hover" },
+      "action-bg":   { "$type": "color", "$value": "{color.bg.error-solid}", "$description": "Destructive action button background (solid red)" },
+      "action-text": { "$type": "color", "$value": "{color.text.on-primary}", "$description": "Destructive action button text (white)" },
+      "action-hover-bg": { "$type": "color", "$value": "{color.text.error}", "$description": "Destructive action button hover (darker red)" },
       "cancel-bg":   { "$type": "color", "$value": "{color.bg.surface}", "$description": "Cancel button background" },
       "cancel-text": { "$type": "color", "$value": "{color.text.base}", "$description": "Cancel button text" },
       "cancel-hover-bg": { "$type": "color", "$value": "{color.bg.surface-hover}", "$description": "Cancel button hover" }

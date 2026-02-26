@@ -392,6 +392,9 @@
   --spacing-xl: var(--spacing-base-8);
   --spacing-2xl: var(--spacing-base-12);
   --spacing-3xl: var(--spacing-base-16);
+  --spacing-card-padding-normal: var(--spacing-base-5); /** 20px card padding (all sides except bottom) */
+  --spacing-card-padding-bottom: var(--spacing-base-8); /** 32px card bottom padding */
+  --spacing-card-gap: var(--spacing-base-5); /** 20px gap between card sections */
   --font-size-xs: var(--font-base-size-xs);
   --font-size-sm: var(--font-base-size-sm);
   --font-size-base: var(--font-base-size-base);
@@ -445,10 +448,10 @@
   --sizing-fuzpattern-zone-icon: var(--spacing-base-12); /** Upload-Icon Groesse (48px) */
   --sizing-fuzpattern-remove-target: var(--spacing-base-11); /** Touch-Target Entfernen-Button (44px) */
   --sizing-notifcenter-remove-target: var(--spacing-base-11); /** Touch-Target Entfernen-Button (44px) */
-  --color-bg-paper: var(--color-neutral-1-50); /** Warm white (not pure #fff) per design principles */
-  --color-bg-base: var(--color-neutral-1-50);
-  --color-bg-surface: var(--color-neutral-1-100);
-  --color-bg-elevated: var(--color-neutral-1-50);
+  --color-bg-paper: var(--color-neutral-1-50); /** Page/content area background */
+  --color-bg-base: var(--color-neutral-1-200); /** App shell/chrome (sidebar, nav bars) */
+  --color-bg-surface: var(--color-neutral-1-100); /** Interactive subtle highlights, hover states */
+  --color-bg-elevated: var(--color-neutral-1-0); /** Cards, panels, floating elements (modals, popovers) */
   --color-bg-primary: var(--color-primary-1-500);
   --color-bg-primary-hover: var(--color-primary-1-600);
   --color-bg-primary-active: var(--color-primary-1-700);
@@ -601,9 +604,9 @@
   --color-alertdlg-title: var(--color-text-base); /** AlertDialog title text */
   --color-alertdlg-description: var(--color-text-muted); /** AlertDialog description text */
   --color-alertdlg-border: var(--color-border-muted); /** AlertDialog border */
-  --color-alertdlg-action-bg: var(--color-bg-error); /** Destructive action button background */
-  --color-alertdlg-action-text: var(--color-text-inverse); /** Destructive action button text */
-  --color-alertdlg-action-hover-bg: var(--color-text-error); /** Destructive action button hover */
+  --color-alertdlg-action-bg: var(--color-bg-error-solid); /** Destructive action button background (solid red) */
+  --color-alertdlg-action-text: var(--color-text-on-primary); /** Destructive action button text (white) */
+  --color-alertdlg-action-hover-bg: var(--color-text-error); /** Destructive action button hover (darker red) */
   --color-alertdlg-cancel-bg: var(--color-bg-surface); /** Cancel button background */
   --color-alertdlg-cancel-text: var(--color-text-base); /** Cancel button text */
   --color-alertdlg-cancel-hover-bg: var(--color-bg-surface-hover); /** Cancel button hover */
@@ -665,7 +668,9 @@
   --color-btn-ghost-text: var(--color-text-primary);
   --color-btn-disabled-bg: var(--color-interactive-primary-disabled);
   --color-btn-disabled-text: var(--color-text-disabled);
-  --color-card-bg: var(--color-bg-paper); /** White paper background */
+  --color-card-bg: var(--color-bg-elevated); /** Default card background */
+  --color-card-bg-raised: var(--color-bg-elevated); /** Raised card background */
+  --color-card-bg-elevated: var(--color-bg-elevated); /** Elevated card background */
   --color-card-border: var(--color-border-muted);
   --color-chart-1: var(--color-bg-primary); /** Chart color 1 (primary blue) */
   --color-chart-2: var(--color-text-success); /** Chart color 2 (green) */
@@ -974,6 +979,12 @@
   --color-sheet-border: var(--color-border-muted); /** Sheet border */
   --color-sheet-title: var(--color-text-base); /** Sheet title text */
   --color-sheet-description: var(--color-text-muted); /** Sheet description text */
+  --color-sidebar-bg: var(--color-bg-base); /** Sidebar background */
+  --color-sidebar-border: var(--color-border-muted); /** Sidebar right border */
+  --color-sidebar-text: var(--color-text-muted); /** Default item text */
+  --color-sidebar-text-active: var(--color-text-on-primary); /** Active item text */
+  --color-sidebar-item-hover: var(--color-bg-surface-active); /** Item hover background (slate-300 on slate-200 sidebar) */
+  --color-sidebar-item-active: var(--color-bg-primary); /** Active item background */
   --color-skeleton-base: var(--color-bg-surface);
   --color-skeleton-shimmer: var(--color-bg-base);
   --color-slider-track: var(--color-bg-surface); /** Slider track background */
@@ -1272,9 +1283,7 @@
   --spacing-bq-border-width: var(--spacing-component-padding-xs); /** Left border width (4px) */
   --spacing-bq-cite-gap: var(--spacing-component-gap-md); /** Gap before citation */
   --spacing-card-padding-compact: var(--spacing-component-padding-sm);
-  --spacing-card-padding-normal: var(--spacing-component-padding-md);
   --spacing-card-padding-spacious: var(--spacing-component-padding-lg);
-  --spacing-card-gap: var(--spacing-component-gap-md);
   --spacing-carousel-nav-offset: var(--spacing-component-gap-sm); /** Nav button distance from edge (8px) */
   --spacing-carousel-dots-bottom: var(--spacing-component-gap-md); /** Dots distance from bottom (12px) */
   --spacing-carousel-dots-px: var(--spacing-component-gap-xs); /** Dots container horizontal padding (4px) */

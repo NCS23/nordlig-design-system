@@ -2,10 +2,10 @@
   "color": {
     "$description": "Level 3: Role/functional tokens - References Level 2 only",
     "bg": {
-      "paper":          { "$type": "color", "$value": "{color.neutral.1.50}", "$description": "Warm white (not pure #fff) per design principles" },
-      "base":           { "$type": "color", "$value": "{color.neutral.1.50}" },
-      "surface":        { "$type": "color", "$value": "{color.neutral.1.100}" },
-      "elevated":       { "$type": "color", "$value": "{color.neutral.1.50}" },
+      "paper":          { "$type": "color", "$value": "{color.neutral.1.50}", "$description": "Page/content area background" },
+      "base":           { "$type": "color", "$value": "{color.neutral.1.200}", "$description": "App shell/chrome (sidebar, nav bars)" },
+      "surface":        { "$type": "color", "$value": "{color.neutral.1.100}", "$description": "Interactive subtle highlights, hover states" },
+      "elevated":       { "$type": "color", "$value": "{color.neutral.1.0}", "$description": "Cards, panels, floating elements (modals, popovers)" },
       "primary":        { "$type": "color", "$value": "{color.primary.1.500}" },
       "primary-hover":  { "$type": "color", "$value": "{color.primary.1.600}" },
       "primary-active":  { "$type": "color", "$value": "{color.primary.1.700}" },
