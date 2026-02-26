@@ -117,9 +117,9 @@ describe('Sidebar', () => {
     render(<Sidebar data-testid="sidebar">Content</Sidebar>);
     const sidebar = screen.getByTestId('sidebar');
     expect(sidebar.className).toContain('h-full');
-    expect(sidebar.className).toContain('bg-[var(--color-bg-paper)]');
+    expect(sidebar.className).toContain('bg-[var(--color-sidebar-bg)]');
     expect(sidebar.className).toContain('border-r');
-    expect(sidebar.className).toContain('border-[var(--color-border-muted)]');
+    expect(sidebar.className).toContain('border-[var(--color-sidebar-border)]');
     expect(sidebar.className).toContain('flex');
     expect(sidebar.className).toContain('flex-col');
     expect(sidebar.className).toContain('transition-all');
@@ -248,7 +248,7 @@ describe('SidebarFooter', () => {
     );
     const footer = screen.getByTestId('footer');
     expect(footer.className).toContain('border-t');
-    expect(footer.className).toContain('border-[var(--color-border-muted)]');
+    expect(footer.className).toContain('border-[var(--color-sidebar-border)]');
     expect(footer.className).toContain('mt-auto');
   });
 
@@ -312,7 +312,7 @@ describe('SidebarGroup', () => {
     expect(label.className).toContain('[font-weight:var(--font-sidebar-label-weight)]');
     expect(label.className).toContain('uppercase');
     expect(label.className).toContain('tracking-wider');
-    expect(label.className).toContain('text-[var(--color-text-muted)]');
+    expect(label.className).toContain('text-[var(--color-sidebar-text)]');
   });
 
   it('forwards ref', () => {
@@ -395,8 +395,8 @@ describe('SidebarItem', () => {
       </Sidebar>
     );
     const item = screen.getByTestId('item');
-    expect(item.className).toContain('bg-[var(--color-bg-primary)]');
-    expect(item.className).toContain('text-[var(--color-text-on-primary)]');
+    expect(item.className).toContain('bg-[var(--color-sidebar-item-active)]');
+    expect(item.className).toContain('text-[var(--color-sidebar-text-active)]');
     expect(item.className).toContain('[font-weight:var(--font-sidebar-badge-weight)]');
   });
 
@@ -425,8 +425,8 @@ describe('SidebarItem', () => {
       </Sidebar>
     );
     const item = screen.getByTestId('item');
-    expect(item.className).toContain('text-[var(--color-text-base)]');
-    expect(item.className).toContain('hover:bg-[var(--color-bg-muted)]');
+    expect(item.className).toContain('text-[var(--color-sidebar-text)]');
+    expect(item.className).toContain('hover:bg-[var(--color-sidebar-item-hover)]');
   });
 
   it('applies disabled state', () => {
