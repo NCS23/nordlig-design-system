@@ -78,7 +78,7 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
           ref={ref}
           data-collapsed={collapsed || undefined}
           className={cn(
-            'h-full bg-[var(--color-bg-paper)] text-[var(--color-text-base)] border-r border-[var(--color-border-muted)] flex flex-col transition-all duration-200',
+            'h-full bg-[var(--color-sidebar-bg)] text-[var(--color-text-base)] border-r border-[var(--color-sidebar-border)] flex flex-col transition-all duration-200',
             collapsed && !collapsedWidth ? 'w-16' : '',
             !collapsed && !width ? 'w-60' : '',
             className
@@ -146,7 +146,7 @@ const SidebarFooter = React.forwardRef<HTMLDivElement, SidebarFooterProps>(
       <div
         ref={ref}
         className={cn(
-          'p-[var(--spacing-sidebar-header-padding)] border-t border-[var(--color-border-muted)] mt-auto',
+          'p-[var(--spacing-sidebar-header-padding)] border-t border-[var(--color-sidebar-border)] mt-auto',
           className
         )}
         {...props}
@@ -170,7 +170,7 @@ const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
     return (
       <div ref={ref} className={cn('px-[var(--spacing-sidebar-group-px)] py-[var(--spacing-sidebar-group-py)]', className)} {...props}>
         {label && !collapsed && (
-          <div className="text-[length:var(--font-sidebar-label-size)] [font-weight:var(--font-sidebar-label-weight)] text-[var(--color-text-muted)] uppercase tracking-wider px-[var(--spacing-sidebar-label-px)] mb-[var(--spacing-sidebar-label-mb)]">
+          <div className="text-[length:var(--font-sidebar-label-size)] [font-weight:var(--font-sidebar-label-weight)] text-[var(--color-sidebar-text)] uppercase tracking-wider px-[var(--spacing-sidebar-label-px)] mb-[var(--spacing-sidebar-label-mb)]">
             {label}
           </div>
         )}
@@ -218,8 +218,8 @@ const SidebarItem = React.forwardRef<HTMLElement, SidebarItemProps>(
       'flex items-center gap-[var(--spacing-sidebar-item-gap)] min-h-[44px] px-[var(--spacing-sidebar-item-px)] py-[var(--spacing-sidebar-item-py)] rounded-[var(--radius-md)] text-[length:var(--font-sidebar-item-size)] transition-colors w-full',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
       active
-        ? 'bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)] [font-weight:var(--font-sidebar-badge-weight)]'
-        : 'text-[var(--color-text-base)] hover:bg-[var(--color-bg-muted)]',
+        ? 'bg-[var(--color-sidebar-item-active)] text-[var(--color-sidebar-text-active)] [font-weight:var(--font-sidebar-badge-weight)]'
+        : 'text-[var(--color-sidebar-text)] hover:bg-[var(--color-sidebar-item-hover)]',
       disabled && 'opacity-50 pointer-events-none',
       collapsed && 'justify-center',
       className
@@ -288,7 +288,7 @@ const SidebarCollapseButton = React.forwardRef<
       onClick={toggle}
       aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       className={cn(
-        'p-[var(--spacing-sidebar-collapse-padding)] rounded-[var(--radius-md)] text-[var(--color-text-muted)] hover:bg-[var(--color-bg-muted)] transition-colors',
+        'p-[var(--spacing-sidebar-collapse-padding)] rounded-[var(--radius-md)] text-[var(--color-sidebar-text)] hover:bg-[var(--color-sidebar-item-hover)] transition-colors',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
         className
       )}

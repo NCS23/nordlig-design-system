@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: DashboardLayout template tokens",
     "dashboard": {
-      "bg":         { "$type": "color", "$value": "{color.bg.base}", "$description": "Page background" },
+      "bg":         { "$type": "color", "$value": "{color.bg.paper}", "$description": "Page background" },
       "overlay-bg": { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Mobile sidebar backdrop" }
     }
   },

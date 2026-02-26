@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: AppHeader organism tokens",
     "header": {
-      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Header-Hintergrund" },
+      "bg":     { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Header-Hintergrund" },
       "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Header unterer Rand" }
     }
   },
