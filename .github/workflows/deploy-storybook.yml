@@ -1,0 +1,15 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Trigger Coolify Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via Coolify API
+        run: |
+          curl -s -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}" \
+            "http://89.167.78.223:8000/api/v1/deploy?uuid=po4oc8w8sw4c40oows4go8c0&force=false"
