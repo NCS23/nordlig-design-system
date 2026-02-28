@@ -30,7 +30,7 @@ jobs:
         run: npx eslint packages/components/src/ --max-warnings 10
 
       - name: Run unit tests with coverage
-        run: pnpm --filter @nordlig/components vitest run --coverage --reporter=default --reporter=json-summary
+        run: pnpm --filter @nordlig/components vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text
 
       - name: Coverage Summary
         if: always()
