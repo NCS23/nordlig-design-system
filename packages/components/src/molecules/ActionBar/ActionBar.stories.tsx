@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ActionBar } from './ActionBar';
+import { Button } from '../../atoms/Button';
 
 const meta: Meta<typeof ActionBar> = {
   title: 'Molecules/ActionBar',
@@ -23,10 +24,8 @@ export const Default: Story = {
           Ungespeicherte Änderungen
         </span>
         <div className="flex gap-2">
-          <button className="px-3 py-1.5 text-sm rounded">Abbrechen</button>
-          <button className="px-3 py-1.5 text-sm rounded bg-[var(--color-bg-primary)] text-[var(--color-text-on-primary)]">
-            Speichern
-          </button>
+          <Button variant="ghost" size="sm">Abbrechen</Button>
+          <Button variant="primary" size="sm">Speichern</Button>
         </div>
       </ActionBar>
     </div>
@@ -40,7 +39,7 @@ export const EditMode: Story = {
         <span className="text-xs text-[var(--color-actionbar-text)] flex items-center gap-1.5">
           Bearbeitungsmodus
         </span>
-        <button className="px-3 py-1.5 text-sm rounded">Fertig</button>
+        <Button variant="ghost" size="sm">Fertig</Button>
       </ActionBar>
     </div>
   ),
@@ -56,7 +55,7 @@ export const NonSticky: Story = {
         <span className="text-xs text-[var(--color-actionbar-text)]">
           Inline action bar
         </span>
-        <button className="px-3 py-1.5 text-sm rounded">Action</button>
+        <Button variant="ghost" size="sm">Action</Button>
       </ActionBar>
     </div>
   ),
