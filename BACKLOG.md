@@ -50,73 +50,12 @@ Eine Story ist **Done**, wenn alle folgenden Punkte erfuellt sind:
 
 ---
 
-## Epic-Uebersicht
+## Epics & Stories
 
-> 8 Epics strukturieren die gesamte Roadmap. GitHub-Labels: `epic/0` bis `epic/7`.
-> GitHub Epic-Overview-Issues: #26–#33. Story-Issues: #1–#72.
+Alle Epics und Stories werden ueber [GitHub Issues](https://github.com/NCS23/nordlig-design-system/issues) verwaltet.
+Das [GitHub Project Board](https://github.com/orgs/NCS23/projects/1) bietet die Gesamtuebersicht ueber beide Repos.
 
-| Epic | Titel | Stories | GitHub Label |
-|------|-------|---------|-------------|
-| **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-026, NDS-030–NDS-033, NDS-139–NDS-141 | `epic/0-architecture` |
-| **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-047, NDS-133–NDS-138 | `epic/1-components` |
-| **2** | Templates & Page Layouts | NDS-050–NDS-057 | `epic/2-templates` |
-| **3** | Patterns & Recipes | NDS-060–NDS-065 | `epic/3-patterns` |
-| **4** | Figma Pipeline & Form Builder | NDS-070–NDS-074 | `epic/4-figma` |
-| **5** | Testing & QA | NDS-008, NDS-009, NDS-016, NDS-080 | `epic/5-testing` |
-| **6** | DX & Infrastruktur | NDS-014, NDS-015, NDS-090–NDS-092 | `epic/6-dx-infra` |
-| **7** | Dokumentation & Onboarding | NDS-100–NDS-103 | `epic/7-docs` |
-
-### Atomaritaets-Violations (Epic 0 Scope)
-
-| Komponente | Aktuell | Korrekt | Grund |
-|------------|---------|---------|-------|
-| LoadingOverlay | atom | molecule | Importiert Spinner (Atom) |
-| SearchInput | atom | molecule | Importiert Input + Icon (Atoms) |
-| PasswordInput | atom | molecule | Importiert Input + Button (Atoms) |
-| CheckboxField | atom | molecule | Importiert Checkbox + Label (Atoms) |
-| SwitchField | atom | molecule | Importiert Switch + Label (Atoms) |
-| ProgressField | atom | molecule | Importiert Progress + Label (Atoms) |
-| Card | atom | molecule | 4 Sub-Parts (Header/Body/Footer) — Kompositions-Container (NDS-139) |
-| SearchFilter | molecule | pattern | Kombiniert SearchInput + Filter-Layout (NDS-140) |
-
-### Fehlende Layer (Epic 2 + 3)
-
-| Layer | Beschreibung | Beispiele |
-|-------|-------------|-----------|
-| **Template** | Page-Level Layouts, definieren Slot-Positionen | PageShell, AuthLayout, DashboardLayout |
-| **Pattern** | Wiederverwendbare Interaktionsmuster aus mehreren Komponenten | SearchFilter, DataTable, FormWizard |
-
----
-
-## Initiale Komponenten (vor Backlog-Einfuehrung)
-
-Die folgenden 69 Komponenten wurden vor Einfuehrung des Backlogs entwickelt.
-Detaillierte Dokumentation: siehe `COMPONENT_LOG.md`.
-
-**Atoms (32):**
-Alert, AspectRatio, Avatar, Badge, Blockquote, Button, Checkbox, Code, CopyButton,
-Heading, HoverCard, Image, Input, InputOTP, Kbd, Label, Link, NumberInput, Popover,
-Progress, ScrollArea, Separator, Skeleton, Slider, Spinner, Switch, Tag, Text,
-ThemeToggle, ToggleGroup, Tooltip, VisuallyHidden
-
-**Molecules (26):**
-Accordion, AlertDialog, Breadcrumbs, Collapsible, ContextMenu, DatePicker, Dialog,
-Drawer, DropdownMenu, EmptyState, FileUpload, Form, InputField, Menubar,
-NavigationMenu, Pagination, RadioGroup, Resizable, Select, Sheet, Stepper, Tabs,
-Textarea, TimePicker, Toast, Toolbar
-
-**Organisms (12):**
-Card, Carousel, Chart, Command, DataTable, Modal, SessionCard, Sidebar, StatCard,
-Table, Timeline, Tree
-
-**Molecules (27):**
-Accordion, AlertDialog, Breadcrumbs, Collapsible, ContextMenu, DatePicker, Dialog,
-Drawer, DropdownMenu, EmptyState, FileUpload, Form, InputField, Menubar,
-NavigationMenu, Pagination, RadioGroup, Resizable, SearchFilter, Select, Sheet,
-Stepper, Tabs, Textarea, TimePicker, Toast, Toolbar
-
-**Templates (8):**
-PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPage, EmptyStatePage
+Detaillierte Komponentenliste: siehe `COMPONENT_LOG.md`.
 
 ---
 
