@@ -8,11 +8,10 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    name: Version & Publish
+    name: Version Packages
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      packages: write
       pull-requests: write
     steps:
       - uses: actions/checkout@v6
@@ -20,8 +19,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: "20"
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@nordlig"
 
       - uses: pnpm/action-setup@v4
 
@@ -34,12 +31,10 @@ jobs:
       - name: Build components
         run: pnpm --filter @nordlig/components build
 
-      - name: Create Release PR or Publish
+      - name: Create Release PR
         uses: changesets/action@v1
         with:
           title: "chore: version packages"
           commit: "chore: version packages"
-          publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
