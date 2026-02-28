@@ -30,7 +30,27 @@ jobs:
         run: npx eslint packages/components/src/ --max-warnings 10
 
       - name: Run unit tests with coverage
-        run: pnpm --filter @nordlig/components test:coverage
+        run: pnpm --filter @nordlig/components vitest run --coverage --reporter=default --reporter=json-summary
+
+      - name: Coverage Summary
+        if: always()
+        run: |
+          if [ -f packages/components/coverage/coverage-summary.json ]; then
+            echo "## NDS Component Coverage" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            node -e "
+              const c = require('./packages/components/coverage/coverage-summary.json').total;
+              const fmt = (v) => v.pct >= 80 ? '✅' : v.pct >= 60 ? '⚠️' : '❌';
+              console.log('| Metric | Coverage | Status |');
+              console.log('|--------|----------|--------|');
+              console.log('| Statements | ' + c.statements.pct + '% | ' + fmt(c.statements) + ' |');
+              console.log('| Branches | ' + c.branches.pct + '% | ' + fmt(c.branches) + ' |');
+              console.log('| Functions | ' + c.functions.pct + '% | ' + fmt(c.functions) + ' |');
+              console.log('| Lines | ' + c.lines.pct + '% | ' + fmt(c.lines) + ' |');
+              console.log('');
+              console.log('**Total Tests:** ' + Object.keys(require('./packages/components/coverage/coverage-summary.json')).length - 1 + ' files covered');
+            " >> $GITHUB_STEP_SUMMARY || true
+          fi
 
       - name: Validate tokens
         run: pnpm validate:tokens
