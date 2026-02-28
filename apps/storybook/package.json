@@ -17,7 +17,7 @@
     "@storybook/addon-interactions": "^8.4.0",
     "@storybook/addon-links": "^8.4.0",
     "@storybook/blocks": "^8.4.0",
-    "@storybook/react": "^8.4.0",
+    "@storybook/react": "^10.2.13",
     "@storybook/react-vite": "^8.4.0",
     "autoprefixer": "^10.4.24",
     "postcss": "^8.5.6",
