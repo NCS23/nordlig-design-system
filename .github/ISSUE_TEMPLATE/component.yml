@@ -1,0 +1,100 @@
+name: Neue Komponente
+description: Template fuer neue Atom/Molecule/Organism Komponenten
+title: "[NDS-XXX] Komponentenname (Atom/Molecule/Organism)"
+labels:
+  - type/component
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Neue Komponente anlegen
+        Bitte alle Felder ausfuellen. Die Story folgt dem 7-Schritt-Workflow.
+
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - Atom
+        - Molecule
+        - Organism
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioritaet
+      options:
+        - P1 (kritisch)
+        - P2 (wichtig)
+        - P3 (nice-to-have)
+    validations:
+      required: true
+
+  - type: input
+    id: prefix
+    attributes:
+      label: Token-Prefix
+      description: "z.B. btn, cmb, tgl"
+      placeholder: "prefix"
+    validations:
+      required: true
+
+  - type: input
+    id: blueprint
+    attributes:
+      label: Blueprint-Komponente
+      description: "Bestehende Komponente als Vorlage"
+      placeholder: "atoms/Button/Button.tsx"
+
+  - type: input
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: "Externe Abhaengigkeiten"
+      placeholder: "keine / @radix-ui/react-xxx"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung
+      description: "Was tut die Komponente und warum wird sie gebraucht?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Akzeptanzkriterien
+      description: "Checkliste der Anforderungen"
+      placeholder: |
+        - [ ] Kriterium 1
+        - [ ] Kriterium 2
+        - [ ] Accessible (WCAG 2.1 AA)
+    validations:
+      required: true
+
+  - type: textarea
+    id: tokens
+    attributes:
+      label: L4-Token-Mapping
+      description: "Tabelle mit Token -> L3 Referenz -> Zweck"
+      placeholder: |
+        | Token | L3 Referenz | Zweck |
+        |-------|-------------|-------|
+        | `color.xxx.bg` | `{color.bg.surface}` | Hintergrund |
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 7-Schritt Task Breakdown
+        Nach dem Erstellen bitte folgende Checkliste in den Issue Body einfuegen:
+        - [ ] 1. L4-Tokens erstellen + Token Build
+        - [ ] 2. Komponente implementieren
+        - [ ] 3. Unit Tests schreiben
+        - [ ] 4. Stories schreiben
+        - [ ] 5. Infrastructure (index.ts, tokens-annotated.css, COMPONENT_LOG.md)
+        - [ ] 6. Design & UX Review + Fixes
+        - [ ] 7. Visual Tests (Playwright)
+        - [ ] 8. Storybook Build verifizieren

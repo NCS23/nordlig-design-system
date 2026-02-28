@@ -1,5 +1,9 @@
 # Massnahmenplan: Gitea-Funktionen fuer Nordlig DS
 
+> **VERALTET / OBSOLET:** Dieses Dokument bezieht sich auf das fruehere Gitea-Setup (Self-Hosted auf NAS).
+> Das Projekt wurde im Februar 2026 nach GitHub migriert. Issue-Tracking, CI/CD und Package-Registry
+> laufen jetzt ueber GitHub. Diese Datei wird nur als historische Referenz aufbewahrt.
+
 > Ziel: Die manuelle Projektverwaltung (BACKLOG.md, COMPONENT_LOG.md) durch Gitea-native Tools ersetzen und die CI/CD-Pipeline ausbauen.
 
 ---

@@ -856,7 +856,7 @@ git commit -m "docs: update component log for [ComponentName]"
 
 ### Bei Bugs
 
-1. **Issue erstellen** (wenn GitHub/Gitea Issue Tracker)
+1. **Issue erstellen** auf GitHub
 2. **Reproduktion beschreiben**
 3. **Screenshots/Videos** anhängen
 4. **Relevante Token/Component** benennen

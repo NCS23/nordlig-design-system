@@ -1,9 +1,9 @@
 # Nordlig Design System — Backlog
 
-> **Single Source of Truth: [Gitea Issues](http://192.168.68.52:3001/NCSNASadmin/nordlig-design-system/issues)**
+> **Single Source of Truth: [GitHub Issues](https://github.com/NCS23/nordlig-design-system/issues)**
 >
 > Alle Story-Details (Beschreibung, Akzeptanzkriterien, Token-Mapping, Task Breakdown, DoR/DoD)
-> leben ausschliesslich in den Gitea-Issues. Dieses Dokument enthaelt nur die Uebersicht und das Changelog.
+> leben ausschliesslich in den GitHub-Issues. Dieses Dokument enthaelt nur die Uebersicht und das Changelog.
 
 ---
 
@@ -52,10 +52,10 @@ Eine Story ist **Done**, wenn alle folgenden Punkte erfuellt sind:
 
 ## Epic-Uebersicht
 
-> 8 Epics strukturieren die gesamte Roadmap. Gitea-Labels: `epic/0` bis `epic/7`.
-> Gitea Epic-Overview-Issues: #26–#33. Story-Issues: #1–#72.
+> 8 Epics strukturieren die gesamte Roadmap. GitHub-Labels: `epic/0` bis `epic/7`.
+> GitHub Epic-Overview-Issues: #26–#33. Story-Issues: #1–#72.
 
-| Epic | Titel | Stories | Gitea Label |
+| Epic | Titel | Stories | GitHub Label |
 |------|-------|---------|-------------|
 | **0** | Architektur-Bereinigung | NDS-019, NDS-020, NDS-026, NDS-030–NDS-033, NDS-139–NDS-141 | `epic/0-architecture` |
 | **1** | Fehlende Kern-Komponenten | NDS-004, NDS-007, NDS-011, NDS-013, NDS-018, NDS-040–NDS-047, NDS-133–NDS-138 | `epic/1-components` |
@@ -143,7 +143,7 @@ PageShell, DashboardLayout, AuthLayout, FormPage, ListPage, DetailPage, ErrorPag
 | 2026-02-19 | **NDS-019 Done:** 21 Atoms refactored, 19 L4-Token-Dateien, 7 neue L3-Tokens. |
 | 2026-02-19 | **NDS-014 Done:** Component Generator CLI (`pnpm generate:component`). |
 | 2026-02-19 | **NDS-020 Done:** Icon-Migration — 48 Dateien migriert auf Icon-Atom. |
-| 2026-02-19 | **Backlog-Migration:** Story-Details von BACKLOG.md nach Gitea-Issues migriert. 47 Issues aktualisiert mit vollem Template (Akzeptanzkriterien, Token-Mapping, Task Breakdown, DoR/DoD). BACKLOG.md auf Uebersicht + Changelog reduziert. Gitea ist jetzt Single Source of Truth. |
+| 2026-02-19 | **Backlog-Migration:** Story-Details von BACKLOG.md nach Gitea-Issues migriert (spaeter nach GitHub migriert). 47 Issues aktualisiert mit vollem Template (Akzeptanzkriterien, Token-Mapping, Task Breakdown, DoR/DoD). BACKLOG.md auf Uebersicht + Changelog reduziert. GitHub Issues ist jetzt Single Source of Truth. |
 | 2026-02-20 | **Welle 3 gestartet und abgeschlossen:** |
 | 2026-02-20 | **NDS-004 Done:** MultiSelect Enhancement — `maxItems` Prop + Backspace-Handler. 7 neue Tests (38 gesamt), 1 neue Story. |
 | 2026-02-20 | **NDS-011 Done:** TimePicker Molecule — Scroll-Column-Pattern, 19 L4-Tokens (`tpick`), 28 Tests, 10 Stories. |

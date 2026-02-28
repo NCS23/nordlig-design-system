@@ -20,6 +20,14 @@
   "dependencies": {
     "@nordlig/tokens": "workspace:*"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NCS23/nordlig-design-system.git",
+    "directory": "packages/styles"
+  },
   "keywords": [
     "css",
     "tailwind",

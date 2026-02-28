@@ -139,9 +139,9 @@ Ziel: 100% Compliance in allen Komponenten-Quelldateien.
 
 ## CI/CD Integration
 
-### Gitea Actions Workflow
+### GitHub Actions Workflow
 
-Der Workflow (`.gitea/workflows/visual-tests.yml`) fuehrt bei jedem PR und Push auf `main` aus:
+Der Workflow (`.github/workflows/visual-tests.yml`) fuehrt bei jedem PR und Push auf `main` aus:
 
 1. Dependencies installieren + Build
 2. Token-Validierung (schnellster Check zuerst)
@@ -202,6 +202,6 @@ nordlig-design-system/
   scripts/
     validate-tokens.js          # Token-Schicht-Validator
     analyze-css.js              # CSS-Analyse
-  .gitea/workflows/
+  .github/workflows/
     visual-tests.yml            # CI/CD Workflow
 ```

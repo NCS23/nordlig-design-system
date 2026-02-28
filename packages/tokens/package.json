@@ -23,6 +23,14 @@
   "devDependencies": {
     "style-dictionary": "^4.2.0"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NCS23/nordlig-design-system.git",
+    "directory": "packages/tokens"
+  },
   "keywords": [
     "design-tokens",
     "nordlig",

@@ -1,0 +1,45 @@
+name: Publish Packages
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@nordlig'
+
+      - uses: pnpm/action-setup@v4
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build tokens
+        run: pnpm build:tokens
+
+      - name: Build components
+        run: pnpm --filter @nordlig/components build
+
+      - name: Publish @nordlig/tokens
+        run: pnpm --filter @nordlig/tokens publish --no-git-checks --access public 2>&1 | tee /tmp/pub-tokens.log || grep -q "already been published" /tmp/pub-tokens.log
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish @nordlig/styles
+        run: pnpm --filter @nordlig/styles publish --no-git-checks --access public 2>&1 | tee /tmp/pub-styles.log || grep -q "already been published" /tmp/pub-styles.log
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish @nordlig/components
+        run: pnpm --filter @nordlig/components publish --no-git-checks --access public 2>&1 | tee /tmp/pub-components.log || grep -q "already been published" /tmp/pub-components.log
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

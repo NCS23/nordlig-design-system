@@ -13,9 +13,9 @@ Das DS nutzt bereits Playwright fuer Visual Regression Tests in CI (`pr-checks.y
 | Storybook-Integration | Exzellent — direkt aus Stories |
 | PR-Kommentare | Ja, mit Visual Diffs |
 | Self-hosted | Nein — nur Cloud |
-| Gitea-Kompatibilitaet | Schlecht — primaer GitHub/GitLab |
+| Gitea-Kompatibilitaet | Schlecht — primaer GitHub/GitLab (nach Migration zu GitHub jetzt nutzbar) |
 | Kosten | Free bis 5000 Snapshots/Monat |
-| **Fazit** | Nicht kompatibel mit Gitea-Setup |
+| **Fazit** | Nach GitHub-Migration moeglich, wurde aber nicht uebernommen |
 
 ### 2. Percy (percy.io)
 
@@ -24,9 +24,9 @@ Das DS nutzt bereits Playwright fuer Visual Regression Tests in CI (`pr-checks.y
 | Framework-Support | Breit — Storybook, Playwright, Cypress |
 | PR-Kommentare | Ja, via GitHub-Integration |
 | Self-hosted | Nein — nur Cloud |
-| Gitea-Kompatibilitaet | Mittel — CLI nutzbar, aber keine PR-Integration |
+| Gitea-Kompatibilitaet | Mittel — CLI nutzbar, nach GitHub-Migration volle PR-Integration moeglich |
 | Kosten | Free bis 5000 Snapshots/Monat |
-| **Fazit** | CLI nutzbar, aber keine Gitea-PR-Integration |
+| **Fazit** | CLI nutzbar, nach GitHub-Migration auch PR-Integration moeglich |
 
 ### 3. Lost Pixel (lost-pixel.com)
 
@@ -35,7 +35,7 @@ Das DS nutzt bereits Playwright fuer Visual Regression Tests in CI (`pr-checks.y
 | Open Source | Ja — MIT Lizenz |
 | Storybook-Integration | Ja — automatische Story-Erkennung |
 | Self-hosted | Ja — Docker-basiert |
-| Gitea-Kompatibilitaet | Gut — CI-agnostisch |
+| CI-Kompatibilitaet | Gut — CI-agnostisch |
 | Kosten | Kostenlos (self-hosted) |
 | **Fazit** | Gute Option fuer spaeter |
 
@@ -44,8 +44,8 @@ Das DS nutzt bereits Playwright fuer Visual Regression Tests in CI (`pr-checks.y
 | Aspekt | Bewertung |
 |--------|-----------|
 | Bereits integriert | Ja — `pr-checks.yml` |
-| Self-hosted | Ja — laeuft in Gitea Actions |
-| Gitea-Kompatibilitaet | Perfekt |
+| Self-hosted | Ja — laeuft in GitHub Actions |
+| GitHub-Kompatibilitaet | Perfekt |
 | Diff-Reports | Playwright HTML Report als Artifact |
 | Kosten | Keine zusaetzlichen |
 | **Fazit** | Bereits vorhanden, ausbaubar |
@@ -56,7 +56,7 @@ Das DS nutzt bereits Playwright fuer Visual Regression Tests in CI (`pr-checks.y
 
 Gruende:
 1. Laeuft bereits in CI ohne zusaetzliche Abhaengigkeiten
-2. Voll kompatibel mit Gitea Actions
+2. Voll kompatibel mit GitHub Actions
 3. Keine Cloud-Abhaengigkeit oder Kosten
 4. HTML-Report mit Visual Diffs wird als Artifact gespeichert
 

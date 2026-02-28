@@ -1,0 +1,103 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build tokens and components
+        run: pnpm build:tokens && pnpm --filter @nordlig/components build
+
+      # Bundle Size Checks
+      - name: Check component bundle size
+        run: |
+          SIZE=$(du -sk packages/components/dist/ 2>/dev/null | cut -f1)
+          echo "## Bundle Size Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Components bundle: **${SIZE}KB**" >> $GITHUB_STEP_SUMMARY
+          if [ "$SIZE" -gt 512 ]; then
+            echo "::error::Component bundle exceeds 512KB limit (${SIZE}KB)"
+            exit 1
+          fi
+          echo "Components: ${SIZE}KB (limit: 512KB)"
+
+      - name: Check Figma plugin bundle size
+        run: |
+          if [ -f packages/figma-plugin/plugin/dist/code.js ]; then
+            SIZE=$(wc -c < packages/figma-plugin/plugin/dist/code.js)
+            SIZE_KB=$((SIZE / 1024))
+            echo "Figma plugin: **${SIZE_KB}KB**" >> $GITHUB_STEP_SUMMARY
+            if [ "$SIZE_KB" -gt 150 ]; then
+              echo "::error::Figma plugin exceeds 150KB limit (${SIZE_KB}KB)"
+              exit 1
+            fi
+            echo "Figma plugin: ${SIZE_KB}KB (limit: 150KB)"
+          else
+            echo "Figma plugin not built (skipped)"
+          fi
+
+      - name: Check tokens CSS size
+        run: |
+          if [ -f packages/styles/dist/tokens.css ]; then
+            SIZE=$(wc -c < packages/styles/dist/tokens.css)
+            SIZE_KB=$((SIZE / 1024))
+            echo "Tokens CSS: **${SIZE_KB}KB**" >> $GITHUB_STEP_SUMMARY
+            echo "Tokens CSS: ${SIZE_KB}KB"
+          fi
+
+      # Storybook Build
+      - name: Build Storybook
+        run: pnpm --filter @nordlig/storybook build
+
+      - name: Upload Storybook artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-preview
+          path: apps/storybook/storybook-static/
+          retention-days: 7
+
+      # Playwright Tests (a11y + visual)
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run accessibility tests (axe-core)
+        run: npx playwright test a11y.spec.ts
+
+      - name: Run visual tests
+        run: pnpm test:visual
+
+      - name: Upload test results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 14
+
+      - name: Upload visual test screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-test-screenshots
+          path: tests/visual/__screenshots__/
+          retention-days: 14

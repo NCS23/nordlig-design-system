@@ -29,27 +29,19 @@ Konkret bedeutet das, dass JEDE Komponente von Anfang an haben MUSS:
 
 **FEHLER AUS NDS-064 (FileUploadZone): Alle 4 Critical Issues (Focus-Ring, motion-reduce, hardcodierte Groessen, hardcodierter Spacing) waeren vermeidbar gewesen, wenn Phase 0 eingehalten worden waere.**
 
-### A. VOR Arbeitsbeginn: Gitea-Issue anlegen
+### A. VOR Arbeitsbeginn: GitHub-Issue anlegen
 
-1. Remote-URL ermitteln: `git remote -v`
-2. Gitea-Issue via API erstellen (`POST /api/v1/repos/{owner}/{repo}/issues`)
-3. Issue-Nummer in BACKLOG.md Changelog referenzieren
-4. **Gitea ist die Single Source of Truth** — BACKLOG.md ist nur Uebersicht + Changelog
-
-### !! GITEA API-AUTHENTIFIZIERUNG — IMMER SO !!
+1. Issue via `gh` CLI erstellen: `gh issue create -R NCS23/nordlig-design-system --title "..." --body "..."`
+2. Issue-Nummer in BACKLOG.md Changelog referenzieren
+3. **GitHub ist die Single Source of Truth** — BACKLOG.md ist nur Uebersicht + Changelog
 
 ```bash
-# Token liegt im lokalen Git-Config — NIEMALS credential helper oder hardcoded Tokens verwenden!
-TOKEN=$(cd /Users/Nils/Projects/nordlig-design-system && git config --local gitea.token)
+# Issues auflisten
+gh issue list -R NCS23/nordlig-design-system --state open
 
-# API-Calls:
-curl -s -H "Authorization: token $TOKEN" "http://192.168.68.52:3001/api/v1/repos/NCSNASadmin/nordlig-design-system/..."
-
-# Push mit Auth (falls osxkeychain abgelaufen):
-git push "http://NCSNASadmin:$TOKEN@192.168.68.52:3001/NCSNASadmin/nordlig-design-system.git" main
+# Issue erstellen (mit Template)
+gh issue create -R NCS23/nordlig-design-system --template component.yml
 ```
-
-**VERBOTEN:** `git credential fill`, hardcoded Token-Strings, Token aus Umgebungsvariablen raten.
 
 ### B. NACH Abschluss jeder Story: Commit + Push + CI
 
@@ -59,7 +51,7 @@ git push "http://NCSNASadmin:$TOKEN@192.168.68.52:3001/NCSNASadmin/nordlig-desig
 4. Pushen: `git push`
 5. **CI abwarten** — Status pollen bis `completed`
 6. Bei CI-Fehler: sofort fixen, neu pushen, erneut warten
-7. Gitea-Issue kommentieren + schliessen
+7. GitHub-Issue kommentieren + schliessen
 
 ### C. VOR dem Commit: UX/Design Review SELBSTSTAENDIG durchfuehren
 
@@ -73,10 +65,10 @@ git push "http://NCSNASadmin:$TOKEN@192.168.68.52:3001/NCSNASadmin/nordlig-desig
 ### D. Reihenfolge ist VERPFLICHTEND
 
 ```
-Phase 0 (Docs lesen) → Gitea-Issue → Arbeit → UX/Design Review → Fix Issues → Tests → Storybook → Commit → Push → CI gruen → Issue schliessen
+Phase 0 (Docs lesen) → GitHub-Issue → Arbeit → UX/Design Review → Fix Issues → Tests → Storybook → Commit → Push → CI gruen → Issue schliessen
 ```
 
-**FEHLER AUS WELLE 5 (NDS-120 bis NDS-124): Stories wurden OHNE Gitea-Issues und OHNE Commit/Push bearbeitet. Das darf NIE WIEDER passieren.**
+**FEHLER AUS WELLE 5 (NDS-120 bis NDS-124): Stories wurden OHNE GitHub-Issues und OHNE Commit/Push bearbeitet. Das darf NIE WIEDER passieren.**
 **FEHLER AUS NDS-064 (FileUploadZone): UX/Design Review wurde NICHT selbststaendig durchgefuehrt. 4 Critical + 8 Major Issues mussten nachtraeglich gefixt werden. Das darf NIE WIEDER passieren.**
 
 ---
@@ -114,7 +106,7 @@ Kompakte Uebersicht — Details in [PROJEKT_REGELN.md](PROJEKT_REGELN.md):
 - [ ] BACKLOG.md lesen
 
 ### Phase 1 — Setup
-- [ ] Gitea-Issue anlegen (Section A oben)
+- [ ] GitHub-Issue anlegen (Section A oben)
 - [ ] L4-Tokens erstellen, `pnpm build` in `packages/tokens/`, Ergebnis in `tokens.css` pruefen
 
 ### Phase 2 — Implementierung (mit Design Principles im Kopf!)
@@ -130,7 +122,7 @@ Kompakte Uebersicht — Details in [PROJEKT_REGELN.md](PROJEKT_REGELN.md):
 
 ### Phase 4 — Abschluss
 - [ ] Commit + Push + CI abwarten (Section B oben)
-- [ ] Gitea-Issue kommentieren + schliessen
+- [ ] GitHub-Issue kommentieren + schliessen
 
 ---
 
