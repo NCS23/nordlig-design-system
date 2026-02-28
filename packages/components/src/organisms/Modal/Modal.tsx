@@ -28,7 +28,6 @@ ModalOverlay.displayName = 'ModalOverlay';
 
 const modalContentVariants = cva(
   [
-    'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
     'w-full bg-[var(--color-modal-bg)] text-[var(--color-text-base)]',
     'rounded-[var(--radius-modal)] [box-shadow:var(--shadow-modal-content)]',
     'flex flex-col max-h-[90vh]',
@@ -100,14 +99,15 @@ const ModalContent = React.forwardRef<
 >(({ className, children, size, showClose = true, ...props }, ref) => (
   <Dialog.Portal>
     <ModalOverlay />
-    <Dialog.Content
-      ref={ref}
-      className={cn(modalContentVariants({ size, className }))}
-      {...props}
-    >
-      {children}
-      {showClose && (
-        <Dialog.Close
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <Dialog.Content
+        ref={ref}
+        className={cn(modalContentVariants({ size, className }))}
+        {...props}
+      >
+        {children}
+        {showClose && (
+          <Dialog.Close
           className={cn(
             'absolute right-4 top-4 inline-flex items-center justify-center',
             'h-8 w-8 rounded-[var(--radius-modal)]',
@@ -115,12 +115,13 @@ const ModalContent = React.forwardRef<
             'hover:bg-[var(--color-modal-close-hover-bg)] hover:text-[var(--color-modal-close-hover-text)]',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
           )}
-          aria-label="Schließen"
-        >
-          <Icon icon={X} size="sm" />
-        </Dialog.Close>
-      )}
-    </Dialog.Content>
+            aria-label="Schließen"
+          >
+            <Icon icon={X} size="sm" />
+          </Dialog.Close>
+        )}
+      </Dialog.Content>
+    </div>
   </Dialog.Portal>
 ));
 ModalContent.displayName = 'ModalContent';

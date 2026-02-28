@@ -333,6 +333,9 @@ export const ColorAccordionTriggerText = "#0f172a"; // Trigger text
 export const ColorAccordionTriggerHoverBg = "#f1f5f9"; // Trigger hover background
 export const ColorAccordionContentText = "#0f172a"; // Content text
 export const ColorAccordionIcon = "#475569"; // Chevron icon color
+export const ColorActionbarBg = "#e8eef1"; // ActionBar background
+export const ColorActionbarBorder = "#34799c"; // ActionBar top border
+export const ColorActionbarText = "#475569"; // ActionBar label text
 export const ColorAlertTitle = "#0f172a"; // Alert title text
 export const ColorAlertDescription = "#0f172a"; // Alert description text
 export const ColorAlertInfoBg = "#eff6ff"; // Info variant background
@@ -904,6 +907,7 @@ export const RadiusComponentLg = "0.5rem";
 export const RadiusComponentXl = "0.75rem"; // 12px — Modale, Panels, grosse Overlays
 export const RadiusComponentFull = "9999px";
 export const RadiusAccordion = "0.5rem"; // 8px item radius
+export const RadiusActionbar = "0.5rem"; // Top corner radius
 export const RadiusAlert = "0.375rem"; // 6px rounded corners
 export const RadiusAlertdlg = "0.75rem"; // 12px AlertDialog radius (large overlay)
 export const RadiusAuthCard = "0.5rem"; // Card border radius
@@ -1026,6 +1030,7 @@ export const ShadowElevationRaised =
   "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)"; // Subtle lift for cards, headers, tabs
 export const ShadowElevationFloating =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // Floating elements: popovers, dropdowns, modals, tooltips
+export const ShadowActionbarDefault = "0 -4px 12px rgba(0,0,0,0.08)"; // Upward shadow
 export const ShadowAlertdlg =
   "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)"; // AlertDialog panel shadow
 export const ShadowAuthCard =
@@ -1131,6 +1136,9 @@ export const SpacingAccordionTriggerPaddingX = "16px"; // 16px trigger horizonta
 export const SpacingAccordionTriggerPaddingY = "12px"; // 12px trigger vertical padding
 export const SpacingAccordionContentPaddingX = "16px"; // 16px content horizontal padding
 export const SpacingAccordionContentPaddingY = "12px"; // 12px content vertical padding
+export const SpacingActionbarPaddingX = "16px"; // Horizontal padding
+export const SpacingActionbarPaddingY = "16px"; // Vertical padding
+export const SpacingActionbarGap = "8px"; // Gap between items
 export const SpacingAlertPadding = "16px"; // Alert padding all sides (16px)
 export const SpacingAlertGap = "12px"; // Gap between icon and content (12px)
 export const SpacingAlertIconMt = "2px"; // Icon top margin for vertical alignment (2px)

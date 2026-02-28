@@ -165,6 +165,7 @@
   --shadow-base-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-base-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
   --shadow-base-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --shadow-actionbar-default: 0 -4px 12px rgba(0,0,0,0.08); /** Upward shadow */
   --spacing-base-0: 0px;
   --spacing-base-1: 4px;
   --spacing-base-2: 8px;
@@ -392,6 +393,9 @@
   --spacing-xl: var(--spacing-base-8);
   --spacing-2xl: var(--spacing-base-12);
   --spacing-3xl: var(--spacing-base-16);
+  --spacing-actionbar-padding-x: var(--spacing-base-4); /** Horizontal padding */
+  --spacing-actionbar-padding-y: var(--spacing-base-4); /** Vertical padding */
+  --spacing-actionbar-gap: var(--spacing-base-2); /** Gap between items */
   --spacing-card-padding-normal: var(--spacing-base-5); /** 20px card padding (all sides except bottom) */
   --spacing-card-padding-bottom: var(--spacing-base-8); /** 32px card bottom padding */
   --spacing-card-gap: var(--spacing-base-5); /** 20px gap between card sections */
@@ -585,6 +589,9 @@
   --color-accordion-trigger-hover-bg: var(--color-bg-surface); /** Trigger hover background */
   --color-accordion-content-text: var(--color-text-base); /** Content text */
   --color-accordion-icon: var(--color-text-muted); /** Chevron icon color */
+  --color-actionbar-bg: var(--color-bg-primary-muted); /** ActionBar background */
+  --color-actionbar-border: var(--color-border-focus); /** ActionBar top border */
+  --color-actionbar-text: var(--color-text-muted); /** ActionBar label text */
   --color-alert-title: var(--color-text-base); /** Alert title text */
   --color-alert-description: var(--color-text-base); /** Alert description text */
   --color-alert-info-bg: var(--color-bg-info-subtle); /** Info variant background */
@@ -1133,6 +1140,7 @@
   --color-tooltip-text: var(--color-text-inverse); /** Light text on dark bg */
   --color-tooltip-arrow: var(--color-text-base); /** Arrow matches bg */
   --radius-accordion: var(--radius-component-lg); /** 8px item radius */
+  --radius-actionbar: var(--radius-component-lg); /** Top corner radius */
   --radius-alert: var(--radius-component-md); /** 6px rounded corners */
   --radius-alertdlg: var(--radius-component-xl); /** 12px AlertDialog radius (large overlay) */
   --radius-auth-card: var(--radius-component-lg); /** Card border radius */

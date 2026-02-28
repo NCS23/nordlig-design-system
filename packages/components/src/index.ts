@@ -187,6 +187,7 @@ export {
   type CardBodyProps,
   type CardFooterProps,
 } from './molecules/Card';
+export { ActionBar, type ActionBarProps } from './molecules/ActionBar';
 export { SearchInput, type SearchInputProps } from './molecules/SearchInput';
 export { PasswordInput, type PasswordInputProps } from './molecules/PasswordInput';
 export { LoadingOverlay, type LoadingOverlayProps } from './molecules/LoadingOverlay';

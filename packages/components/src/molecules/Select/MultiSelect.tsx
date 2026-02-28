@@ -215,7 +215,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
             <Badge
               key={opt.value}
               variant="info"
-              size="sm"
+              size="xs"
               className="max-w-[120px] gap-[var(--spacing-multiselect-tag-gap)]"
             >
               <span className="truncate">{opt.label}</span>
@@ -233,7 +233,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
             </Badge>
           ))}
           {remaining > 0 && (
-            <Badge variant="neutral" size="sm">
+            <Badge variant="neutral" size="xs">
               +{remaining}
             </Badge>
           )}

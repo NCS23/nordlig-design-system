@@ -133,7 +133,7 @@ const AlertDialogFooter = React.forwardRef<HTMLDivElement, AlertDialogFooterProp
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex justify-end gap-[var(--spacing-alertdlg-gap)]', className)}
+      className={cn('flex justify-end gap-[var(--spacing-alertdlg-gap)] pt-[var(--spacing-alertdlg-gap)]', className)}
       {...props}
     />
   )

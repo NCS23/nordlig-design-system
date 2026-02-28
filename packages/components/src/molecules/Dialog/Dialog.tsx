@@ -58,39 +58,40 @@ const DialogContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <DialogPrimitive.Portal>
     <DialogOverlay />
-    <DialogPrimitive.Content
-      ref={ref}
-      className={cn(
-        'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
-        'w-full max-w-lg',
-        'bg-[var(--color-dialog-bg)] text-[var(--color-text-base)]',
-        'border border-[var(--color-dialog-border)]',
-        'rounded-[var(--radius-dialog)]',
-        '[box-shadow:var(--shadow-dialog)]',
-        'p-[var(--spacing-dialog-padding)]',
-        'flex flex-col gap-[var(--spacing-dialog-gap)]',
-        'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
-        'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
-        'duration-200',
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <DialogPrimitive.Close
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <DialogPrimitive.Content
+        ref={ref}
         className={cn(
-          'absolute right-4 top-4 inline-flex items-center justify-center',
-          'h-8 w-8 rounded-[var(--radius-dialog)]',
-          'text-[var(--color-dialog-description)]',
-          'transition-colors',
-          'hover:bg-[var(--color-dialog-border)] hover:text-[var(--color-dialog-title)]',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
+          'w-full max-w-lg',
+          'bg-[var(--color-dialog-bg)] text-[var(--color-text-base)]',
+          'border border-[var(--color-dialog-border)]',
+          'rounded-[var(--radius-dialog)]',
+          '[box-shadow:var(--shadow-dialog)]',
+          'p-[var(--spacing-dialog-padding)]',
+          'flex flex-col gap-[var(--spacing-dialog-gap)]',
+          'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
+          'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
+          'duration-200',
+          className
         )}
-        aria-label="Schliessen"
+        {...props}
       >
-        <Icon icon={X} size="sm" />
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
+        {children}
+        <DialogPrimitive.Close
+          className={cn(
+            'absolute right-4 top-4 inline-flex items-center justify-center',
+            'h-8 w-8 rounded-[var(--radius-dialog)]',
+            'text-[var(--color-dialog-description)]',
+            'transition-colors',
+            'hover:bg-[var(--color-dialog-border)] hover:text-[var(--color-dialog-title)]',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1'
+          )}
+          aria-label="Schliessen"
+        >
+          <Icon icon={X} size="sm" />
+        </DialogPrimitive.Close>
+      </DialogPrimitive.Content>
+    </div>
   </DialogPrimitive.Portal>
 ));
 DialogContent.displayName = 'DialogContent';
@@ -148,7 +149,7 @@ const DialogFooter = React.forwardRef<HTMLDivElement, DialogFooterProps>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex justify-end gap-[var(--spacing-dialog-gap)]', className)}
+      className={cn('flex justify-end gap-[var(--spacing-dialog-gap)] pt-[var(--spacing-dialog-gap)]', className)}
       {...props}
     />
   )

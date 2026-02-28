@@ -1,0 +1,24 @@
+{
+  "color": {
+    "actionbar": {
+      "bg": { "$type": "color", "$value": "{color.bg.primary-muted}", "$description": "ActionBar background" },
+      "border": { "$type": "color", "$value": "{color.border.focus}", "$description": "ActionBar top border" },
+      "text": { "$type": "color", "$value": "{color.text.muted}", "$description": "ActionBar label text" }
+    }
+  },
+  "spacing": {
+    "actionbar": {
+      "padding-x": { "$type": "dimension", "$value": "{spacing.base.4}", "$description": "Horizontal padding" },
+      "padding-y": { "$type": "dimension", "$value": "{spacing.base.4}", "$description": "Vertical padding" },
+      "gap": { "$type": "dimension", "$value": "{spacing.base.2}", "$description": "Gap between items" }
+    }
+  },
+  "shadow": {
+    "actionbar": {
+      "default": { "$type": "shadow", "$value": "0 -4px 12px rgba(0,0,0,0.08)", "$description": "Upward shadow" }
+    }
+  },
+  "radius": {
+    "actionbar": { "$type": "dimension", "$value": "{radius.component.lg}", "$description": "Top corner radius" }
+  }
+}
