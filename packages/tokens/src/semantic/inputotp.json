@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: InputOTP component tokens",
     "inputotp": {
-      "bg":            { "$type": "color", "$value": "{color.bg.paper}", "$description": "Slot background" },
+      "bg":            { "$type": "color", "$value": "{color.base.white}", "$description": "Pure white for contrast on paper surfaces" },
       "text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Digit text color" },
       "border":        { "$type": "color", "$value": "{color.border.default}", "$description": "Slot border" },
       "border-focus":  { "$type": "color", "$value": "{color.border.focus}", "$description": "Active slot focus ring" },

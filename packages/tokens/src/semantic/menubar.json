@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: Menubar component tokens (dropdown content reuses dropdown.json tokens)",
     "menubar": {
-      "bg":                { "$type": "color", "$value": "{color.bg.paper}", "$description": "Menubar background" },
+      "bg":                { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Menubar background" },
       "border":            { "$type": "color", "$value": "{color.border.muted}", "$description": "Menubar border" },
       "trigger-text":      { "$type": "color", "$value": "{color.text.base}", "$description": "Trigger text" },
       "trigger-hover-bg":  { "$type": "color", "$value": "{color.bg.surface}", "$description": "Trigger hover background" },

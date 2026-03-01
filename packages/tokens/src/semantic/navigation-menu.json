@@ -5,7 +5,7 @@
       "text":            { "$type": "color", "$value": "{color.text.base}", "$description": "Navigation item text" },
       "hover-bg":        { "$type": "color", "$value": "{color.bg.surface}", "$description": "Item hover background" },
       "active-bg":       { "$type": "color", "$value": "{color.bg.surface}", "$description": "Active item background" },
-      "dropdown-bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Dropdown panel background" },
+      "dropdown-bg":     { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Dropdown panel background" },
       "dropdown-border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Dropdown panel border" },
       "focus-ring":      { "$type": "color", "$value": "{color.border.focus}", "$description": "Focus ring color" }
     }

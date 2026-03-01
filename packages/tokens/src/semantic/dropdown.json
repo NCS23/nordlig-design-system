@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: DropdownMenu component tokens",
     "dropdown": {
-      "bg":                     { "$type": "color", "$value": "{color.bg.paper}", "$description": "Menu background" },
+      "bg":                     { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Menu background" },
       "border":                 { "$type": "color", "$value": "{color.border.muted}", "$description": "Menu border" },
       "item-text":              { "$type": "color", "$value": "{color.text.base}", "$description": "Item text" },
       "item-hover-bg":          { "$type": "color", "$value": "{color.bg.surface}", "$description": "Item hover/focus background" },

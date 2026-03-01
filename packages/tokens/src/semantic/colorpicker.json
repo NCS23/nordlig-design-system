@@ -4,7 +4,7 @@
     "cpick": {
       "bg": { "$type": "color", "$value": "{color.bg.paper}", "$description": "Container background" },
       "border": { "$type": "color", "$value": "{color.border.default}", "$description": "Container border" },
-      "input-bg": { "$type": "color", "$value": "{color.bg.paper}", "$description": "Hex input background" },
+      "input-bg": { "$type": "color", "$value": "{color.base.white}", "$description": "Hex input — pure white for contrast" },
       "input-border": { "$type": "color", "$value": "{color.border.default}", "$description": "Hex input border" },
       "input-text": { "$type": "color", "$value": "{color.text.base}", "$description": "Hex input text" },
       "input-border-focus": { "$type": "color", "$value": "{color.border.focus}", "$description": "Hex input focus border" },

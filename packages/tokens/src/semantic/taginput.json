@@ -4,8 +4,8 @@
     "taginput": {
       "bg": {
         "$type": "color",
-        "$value": "{color.bg.paper}",
-        "$description": "Container background"
+        "$value": "{color.base.white}",
+        "$description": "Pure white for contrast on paper surfaces"
       },
       "border": {
         "$type": "color",

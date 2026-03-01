@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: Toast/Notification component tokens",
     "toast": {
-      "bg":              { "$type": "color", "$value": "{color.bg.paper}", "$description": "White toast background" },
+      "bg":              { "$type": "color", "$value": "{color.bg.elevated}", "$description": "White toast background" },
       "border":          { "$type": "color", "$value": "{color.border.muted}", "$description": "Subtle outer border" },
       "title":           { "$type": "color", "$value": "{color.text.base}", "$description": "Toast title text" },
       "description":     { "$type": "color", "$value": "{color.text.muted}", "$description": "Toast description text" },

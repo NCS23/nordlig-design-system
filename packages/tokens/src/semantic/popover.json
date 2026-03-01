@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: Popover component tokens",
     "popover": {
-      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "White popover background" },
+      "bg":     { "$type": "color", "$value": "{color.bg.elevated}", "$description": "White popover background" },
       "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "Subtle outer border" }
     }
   },

@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: Command component tokens",
     "command": {
-      "bg":                { "$type": "color", "$value": "{color.bg.paper}", "$description": "Command palette background" },
+      "bg":                { "$type": "color", "$value": "{color.bg.elevated}", "$description": "Command palette background" },
       "border":            { "$type": "color", "$value": "{color.border.muted}", "$description": "Command palette border" },
       "input-text":        { "$type": "color", "$value": "{color.text.base}", "$description": "Command input text" },
       "input-placeholder": { "$type": "color", "$value": "{color.text.disabled}", "$description": "Command input placeholder" },

@@ -5,7 +5,7 @@
       "family": {
         "sans":  { "$type": "fontFamily", "$value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" },
         "serif": { "$type": "fontFamily", "$value": "'Merriweather', Georgia, serif" },
-        "mono":  { "$type": "fontFamily", "$value": "'JetBrains Mono', 'Fira Code', monospace" }
+        "mono":  { "$type": "fontFamily", "$value": "'DM Mono', 'JetBrains Mono', 'Fira Code', monospace" }
       },
       "size": {
         "xs":   { "$type": "dimension", "$value": "0.75rem" },

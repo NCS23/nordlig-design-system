@@ -39,17 +39,17 @@
   --color-base-zinc-800: #27272a;
   --color-base-zinc-900: #18181b;
   --color-base-zinc-950: #09090b;
-  --color-base-sky-50: #f5f7f8;
-  --color-base-sky-100: #e8eef1;
-  --color-base-sky-200: #cddce4;
-  --color-base-sky-300: #9fc2d4;
-  --color-base-sky-400: #63a3c4;
-  --color-base-sky-500: #34799c;
-  --color-base-sky-600: #2a6887;
-  --color-base-sky-700: #23536b;
-  --color-base-sky-800: #1e4456;
-  --color-base-sky-900: #1a3746;
-  --color-base-sky-950: #13252f;
+  --color-base-sky-50: #f0f9ff;
+  --color-base-sky-100: #e0f2fe;
+  --color-base-sky-200: #bae6fd;
+  --color-base-sky-300: #7dd3fc;
+  --color-base-sky-400: #38bdf8;
+  --color-base-sky-500: #0ea5e9;
+  --color-base-sky-600: #0284c7;
+  --color-base-sky-700: #0369a1;
+  --color-base-sky-800: #075985;
+  --color-base-sky-900: #0c4a6e;
+  --color-base-sky-950: #082f49;
   --color-base-cyan-50: #ecfeff;
   --color-base-cyan-100: #cffafe;
   --color-base-cyan-200: #a5f3fc;
@@ -194,7 +194,7 @@
   --spacing-sidebar-badge-py: 2px; /** Badge vertical padding */
   --font-base-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-base-family-serif: 'Merriweather', Georgia, serif;
-  --font-base-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-base-family-mono: 'DM Mono', 'JetBrains Mono', 'Fira Code', monospace;
   --font-base-size-xs: 0.75rem;
   --font-base-size-sm: 0.875rem;
   --font-base-size-base: 1rem;
@@ -368,6 +368,14 @@
   --color-neutral-2-900: var(--color-base-zinc-900);
   --color-neutral-2-950: var(--color-base-zinc-950);
   --color-neutral-overlay: var(--color-base-overlay);
+  --color-checkbox-bg: var(--color-base-white); /** Unchecked background (pure white) */
+  --color-cpick-input-bg: var(--color-base-white); /** Hex input — pure white for contrast */
+  --color-input-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
+  --color-inputotp-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
+  --color-numberinput-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
+  --color-radio-bg: var(--color-base-white); /** Unchecked background (pure white) */
+  --color-select-checkbox-bg: var(--color-base-white); /** Checkbox unchecked background (pure white) */
+  --color-taginput-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
   --radius-none: var(--radius-base-none);
   --radius-sm: var(--radius-base-sm);
   --radius-default: var(--radius-base-base);
@@ -465,6 +473,8 @@
   --color-bg-surface-active: var(--color-neutral-1-300);
   --color-bg-secondary: var(--color-neutral-1-500); /** Secondary bg (consolidated from secondary.1 = neutral.1) */
   --color-bg-secondary-hover: var(--color-neutral-1-600);
+  --color-bg-accent-subtle: var(--color-primary-2-50); /** Subtle accent bg (secondary brand, e.g. indigo tags) */
+  --color-bg-accent: var(--color-primary-2-100); /** Accent bg (secondary brand) */
   --color-bg-success-subtle: var(--color-accent-1-50); /** Subtle success bg (alerts, toasts) */
   --color-bg-success: var(--color-accent-1-100); /** Default success bg (badges, banners) */
   --color-bg-success-solid: var(--color-accent-1-500); /** Solid success bg (filled indicators) */
@@ -487,6 +497,7 @@
   --color-text-inverse: var(--color-neutral-1-50);
   --color-text-on-primary: var(--color-neutral-1-0);
   --color-text-primary: var(--color-primary-1-600);
+  --color-text-accent: var(--color-primary-2-600); /** Accent text (secondary brand, e.g. indigo) */
   --color-text-success: var(--color-accent-1-700);
   --color-text-warning: var(--color-accent-2-700);
   --color-text-error: var(--color-accent-3-700);
@@ -495,10 +506,15 @@
   --color-border-muted: var(--color-neutral-1-200);
   --color-border-strong: var(--color-neutral-1-400);
   --color-border-focus: var(--color-primary-1-500);
+  --color-border-accent-subtle: var(--color-primary-2-200); /** Subtle accent border (secondary brand tags) */
   --color-border-success: var(--color-accent-1-500);
+  --color-border-success-subtle: var(--color-accent-1-200); /** Subtle success border (tags, indicators) */
   --color-border-warning: var(--color-accent-2-500);
+  --color-border-warning-subtle: var(--color-accent-2-200); /** Subtle warning border (tags, indicators) */
   --color-border-error: var(--color-accent-3-500);
+  --color-border-error-subtle: var(--color-accent-3-200); /** Subtle error border (tags, indicators) */
   --color-border-info: var(--color-accent-4-500);
+  --color-border-info-subtle: var(--color-accent-4-200); /** Subtle info border (tags, indicators) */
   --color-interactive-primary: var(--color-primary-1-500);
   --color-interactive-primary-hover: var(--color-primary-1-600);
   --color-interactive-primary-active: var(--color-primary-1-700);
@@ -607,7 +623,7 @@
   --color-alert-error-border: var(--color-border-error); /** Error left accent border */
   --color-alert-error-icon: var(--color-text-error); /** Error icon color */
   --color-alertdlg-overlay: var(--color-bg-overlay); /** AlertDialog backdrop overlay */
-  --color-alertdlg-bg: var(--color-bg-paper); /** AlertDialog content background */
+  --color-alertdlg-bg: var(--color-bg-elevated); /** AlertDialog content background */
   --color-alertdlg-title: var(--color-text-base); /** AlertDialog title text */
   --color-alertdlg-description: var(--color-text-muted); /** AlertDialog description text */
   --color-alertdlg-border: var(--color-border-muted); /** AlertDialog border */
@@ -685,10 +701,9 @@
   --color-chart-4: var(--color-text-error); /** Chart color 4 (red) */
   --color-chart-5: var(--color-text-info); /** Chart color 5 (info blue) */
   --color-chart-axis: var(--color-text-muted); /** Chart axis text color */
-  --color-chart-tooltip-bg: var(--color-bg-paper); /** Chart tooltip background */
+  --color-chart-tooltip-bg: var(--color-bg-elevated); /** Chart tooltip background */
   --color-chart-tooltip-border: var(--color-border-muted); /** Chart tooltip border */
   --color-chart-tooltip-text: var(--color-text-base); /** Chart tooltip text */
-  --color-checkbox-bg: var(--color-bg-paper); /** Unchecked background (white) */
   --color-checkbox-border: var(--color-border-default); /** Unchecked border */
   --color-checkbox-border-hover: var(--color-border-strong); /** Hover border */
   --color-checkbox-checked-bg: var(--color-interactive-primary); /** Sky blue checked bg */
@@ -706,7 +721,6 @@
   --color-code-line-number: var(--color-text-muted); /** Line number text color */
   --color-cpick-bg: var(--color-bg-paper); /** Container background */
   --color-cpick-border: var(--color-border-default); /** Container border */
-  --color-cpick-input-bg: var(--color-bg-paper); /** Hex input background */
   --color-cpick-input-border: var(--color-border-default); /** Hex input border */
   --color-cpick-input-text: var(--color-text-base); /** Hex input text */
   --color-cpick-input-border-focus: var(--color-border-focus); /** Hex input focus border */
@@ -715,14 +729,14 @@
   --color-cpick-label-text: var(--color-text-muted); /** Label text color */
   --color-cmb-trigger-text: var(--color-text-base); /** Trigger text */
   --color-cmb-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
-  --color-cmb-content-bg: var(--color-bg-paper); /** Dropdown background */
+  --color-cmb-content-bg: var(--color-bg-elevated); /** Dropdown background */
   --color-cmb-content-border: var(--color-border-muted); /** Dropdown border (subtle) */
   --color-cmb-item-hover-bg: var(--color-bg-surface-hover); /** Item hover */
   --color-cmb-item-selected-bg: var(--color-bg-primary-subtle); /** Selected item background */
   --color-cmb-item-selected-text: var(--color-text-primary); /** Selected item text */
-  --color-cmb-search-bg: var(--color-bg-paper); /** Search input background */
+  --color-cmb-search-bg: var(--color-bg-elevated); /** Search input background */
   --color-cmb-empty-text: var(--color-text-muted); /** No results text */
-  --color-command-bg: var(--color-bg-paper); /** Command palette background */
+  --color-command-bg: var(--color-bg-elevated); /** Command palette background */
   --color-command-border: var(--color-border-muted); /** Command palette border */
   --color-command-input-text: var(--color-text-base); /** Command input text */
   --color-command-input-placeholder: var(--color-text-disabled); /** Command input placeholder */
@@ -746,7 +760,7 @@
   --color-dtpattern-bulk-bg: var(--color-bg-info-subtle); /** Bulk actions bar background */
   --color-dtpattern-bulk-border: var(--color-border-info); /** Bulk actions bar border */
   --color-dtpattern-bulk-text: var(--color-text-base); /** Bulk actions bar text */
-  --color-datepicker-popover-bg: var(--color-bg-paper); /** White popover background */
+  --color-datepicker-popover-bg: var(--color-bg-elevated); /** White popover background */
   --color-datepicker-popover-border: var(--color-border-muted); /** Subtle popover border */
   --color-datepicker-header-text: var(--color-text-base); /** Month/year header text */
   --color-datepicker-weekday-text: var(--color-text-muted); /** Mo Di Mi weekday labels */
@@ -759,7 +773,7 @@
   --color-datepicker-day-range-bg: var(--color-bg-primary-muted); /** Subtle sky-100 for range middle days */
   --color-datepicker-nav-hover-bg: var(--color-bg-surface); /** Chevron hover bg */
   --color-dialog-overlay: var(--color-bg-overlay); /** Dialog backdrop overlay */
-  --color-dialog-bg: var(--color-bg-paper); /** Dialog content background */
+  --color-dialog-bg: var(--color-bg-elevated); /** Dialog content background */
   --color-dialog-title: var(--color-text-base); /** Dialog title text */
   --color-dialog-description: var(--color-text-muted); /** Dialog description text */
   --color-dialog-border: var(--color-border-muted); /** Dialog border */
@@ -769,7 +783,7 @@
   --color-drawer-description: var(--color-text-muted); /** Drawer description text */
   --color-drawer-border: var(--color-border-muted); /** Drawer top border */
   --color-drawer-handle: var(--color-border-strong); /** Drag handle bar color */
-  --color-dropdown-bg: var(--color-bg-paper); /** Menu background */
+  --color-dropdown-bg: var(--color-bg-elevated); /** Menu background */
   --color-dropdown-border: var(--color-border-muted); /** Menu border */
   --color-dropdown-item-text: var(--color-text-base); /** Item text */
   --color-dropdown-item-hover-bg: var(--color-bg-surface); /** Item hover/focus background */
@@ -821,12 +835,11 @@
   --color-header-border: var(--color-border-muted); /** Header unterer Rand */
   --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
   --color-hl-text: var(--color-text-base); /** Highlight text */
-  --color-hovercard-bg: var(--color-bg-paper); /** HoverCard background */
+  --color-hovercard-bg: var(--color-bg-elevated); /** HoverCard background */
   --color-hovercard-border: var(--color-border-muted); /** HoverCard border */
   --color-img-bg: var(--color-bg-surface); /** Loading placeholder background */
   --color-img-fallback-bg: var(--color-bg-surface-hover); /** Error fallback background */
   --color-img-fallback-text: var(--color-text-muted); /** Error fallback icon/text */
-  --color-input-bg: var(--color-bg-paper); /** White paper background */
   --color-input-bg-disabled: var(--color-bg-surface);
   --color-input-text: var(--color-text-base);
   --color-input-text-placeholder: var(--color-text-muted);
@@ -834,7 +847,6 @@
   --color-input-border-hover: var(--color-border-strong);
   --color-input-border-focus: var(--color-border-focus);
   --color-input-border-error: var(--color-border-error);
-  --color-inputotp-bg: var(--color-bg-paper); /** Slot background */
   --color-inputotp-text: var(--color-text-base); /** Digit text color */
   --color-inputotp-border: var(--color-border-default); /** Slot border */
   --color-inputotp-border-focus: var(--color-border-focus); /** Active slot focus ring */
@@ -849,13 +861,13 @@
   --color-ldovl-bg: var(--color-bg-overlay); /** Overlay background (semi-transparent) */
   --color-ldovl-text: var(--color-text-base); /** Loading text color */
   --color-ldovl-spinner: var(--color-interactive-primary); /** Spinner color */
-  --color-menubar-bg: var(--color-bg-paper); /** Menubar background */
+  --color-menubar-bg: var(--color-bg-elevated); /** Menubar background */
   --color-menubar-border: var(--color-border-muted); /** Menubar border */
   --color-menubar-trigger-text: var(--color-text-base); /** Trigger text */
   --color-menubar-trigger-hover-bg: var(--color-bg-surface); /** Trigger hover background */
   --color-menubar-trigger-active-bg: var(--color-bg-surface); /** Trigger active/open background */
   --color-modal-overlay: var(--color-bg-overlay); /** Dark backdrop behind modal */
-  --color-modal-bg: var(--color-bg-paper); /** White content background */
+  --color-modal-bg: var(--color-bg-elevated); /** White content background */
   --color-modal-title: var(--color-text-base); /** Modal title text */
   --color-modal-description: var(--color-text-muted); /** Modal description text */
   --color-modal-divider: var(--color-border-muted); /** Header/footer border */
@@ -864,7 +876,7 @@
   --color-nav-text: var(--color-text-base); /** Navigation item text */
   --color-nav-hover-bg: var(--color-bg-surface); /** Item hover background */
   --color-nav-active-bg: var(--color-bg-surface); /** Active item background */
-  --color-nav-dropdown-bg: var(--color-bg-paper); /** Dropdown panel background */
+  --color-nav-dropdown-bg: var(--color-bg-elevated); /** Dropdown panel background */
   --color-nav-dropdown-border: var(--color-border-muted); /** Dropdown panel border */
   --color-nav-focus-ring: var(--color-border-focus); /** Focus ring color */
   --color-notifcenter-item-bg: var(--color-bg-paper); /** Gelesenes Item Hintergrund */
@@ -873,7 +885,6 @@
   --color-notifcenter-timestamp: var(--color-text-muted); /** Zeitstempel-Farbe */
   --color-notifcenter-dot-unread: var(--color-interactive-primary); /** Ungelesen-Punkt */
   --color-notifcenter-empty-text: var(--color-text-muted); /** Leer-Nachricht */
-  --color-numberinput-bg: var(--color-bg-paper); /** Input background */
   --color-numberinput-bg-disabled: var(--color-bg-surface); /** Disabled background */
   --color-numberinput-text: var(--color-text-base); /** Input value text */
   --color-numberinput-border: var(--color-border-default); /** Default border */
@@ -896,7 +907,7 @@
   --color-pwinput-strength-weak: var(--color-text-error); /** Strength: weak */
   --color-pwinput-strength-medium: var(--color-text-warning); /** Strength: medium */
   --color-pwinput-strength-strong: var(--color-text-success); /** Strength: strong */
-  --color-popover-bg: var(--color-bg-paper); /** White popover background */
+  --color-popover-bg: var(--color-bg-elevated); /** White popover background */
   --color-popover-border: var(--color-border-muted); /** Subtle outer border */
   --color-progress-track: var(--color-bg-surface);
   --color-progress-fill: var(--color-interactive-primary);
@@ -905,7 +916,6 @@
   --color-progress-fill-error: var(--color-bg-error-solid);
   --color-progress-label: var(--color-text-base);
   --color-progress-value: var(--color-text-muted);
-  --color-radio-bg: var(--color-bg-paper); /** Unchecked background (white) */
   --color-radio-border: var(--color-border-default); /** Unchecked border */
   --color-radio-border-hover: var(--color-border-strong); /** Hover border */
   --color-radio-selected-border: var(--color-interactive-primary); /** Sky blue selected border */
@@ -951,7 +961,7 @@
   --color-select-trigger-border: var(--color-border-default); /** Default border */
   --color-select-trigger-disabled-bg: var(--color-bg-surface); /** Disabled background */
   --color-select-icon: var(--color-text-muted); /** Chevron/search icon color */
-  --color-select-popover-bg: var(--color-bg-paper); /** White dropdown background */
+  --color-select-popover-bg: var(--color-bg-elevated); /** White dropdown background */
   --color-select-popover-border: var(--color-border-muted); /** Dropdown border */
   --color-select-item-text: var(--color-text-base); /** Option text */
   --color-select-item-hover-bg: var(--color-bg-surface); /** Option hover/focus bg */
@@ -964,7 +974,6 @@
   --color-select-search-bg: var(--color-bg-base); /** Combobox search input bg */
   --color-select-empty-text: var(--color-text-muted); /** No results text */
   --color-select-checkbox-text: var(--color-text-on-primary); /** Checkbox checked text (white) */
-  --color-select-checkbox-bg: var(--color-bg-paper); /** Checkbox unchecked background */
   --color-separator: var(--color-border-muted); /** Separator line color */
   --color-session-card-border-hover: var(--color-border-default); /** Hover border */
   --color-session-card-bg-hover: var(--color-bg-surface); /** Hover background */
@@ -1007,7 +1016,7 @@
   --color-spl-hint: var(--color-text-muted); /** Hinweistext-Farbe (Klick-Aufforderung) */
   --color-spl-border: var(--color-border-muted); /** Rahmenfarbe */
   --color-spotlight-overlay: var(--color-bg-overlay); /** Backdrop overlay */
-  --color-spotlight-bg: var(--color-bg-paper); /** Palette background */
+  --color-spotlight-bg: var(--color-bg-elevated); /** Palette background */
   --color-spotlight-border: var(--color-border-muted); /** Palette border */
   --color-spotlight-input-text: var(--color-text-base); /** Search input text */
   --color-spotlight-input-placeholder: var(--color-text-disabled); /** Search input placeholder */
@@ -1073,7 +1082,6 @@
   --color-tag-border-error: var(--color-border-error); /** Error variant border */
   --color-tag-border-info: var(--color-border-info); /** Info variant border */
   --color-tag-border-focus: var(--color-border-focus); /** Focus ring color */
-  --color-taginput-bg: var(--color-bg-paper); /** Container background */
   --color-taginput-border: var(--color-border-default); /** Container border */
   --color-taginput-border-hover: var(--color-border-strong); /** Container border on hover */
   --color-taginput-border-focus: var(--color-border-focus); /** Container border/ring on focus */
@@ -1097,7 +1105,7 @@
   --color-timeline-title: var(--color-text-base); /** Item title */
   --color-timeline-description: var(--color-text-muted); /** Item description */
   --color-timeline-timestamp: var(--color-text-muted); /** Item timestamp */
-  --color-tpick-popover-bg: var(--color-bg-paper); /** Popover background */
+  --color-tpick-popover-bg: var(--color-bg-elevated); /** Popover background */
   --color-tpick-popover-border: var(--color-border-muted); /** Popover border */
   --color-tpick-column-text: var(--color-text-base); /** Time value text */
   --color-tpick-column-hover-bg: var(--color-bg-surface); /** Hover background on time cell */
@@ -1106,7 +1114,7 @@
   --color-tpick-column-disabled-text: var(--color-text-disabled); /** Out-of-range time text */
   --color-tpick-label-text: var(--color-text-muted); /** Column header label (Std/Min/Sek) */
   --color-tpick-separator: var(--color-border-muted); /** Separator between columns */
-  --color-toast-bg: var(--color-bg-paper); /** White toast background */
+  --color-toast-bg: var(--color-bg-elevated); /** White toast background */
   --color-toast-border: var(--color-border-muted); /** Subtle outer border */
   --color-toast-title: var(--color-text-base); /** Toast title text */
   --color-toast-description: var(--color-text-muted); /** Toast description text */

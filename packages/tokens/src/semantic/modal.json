@@ -3,7 +3,7 @@
     "$description": "Level 4: Modal/Dialog component tokens",
     "modal": {
       "overlay":          { "$type": "color", "$value": "{color.bg.overlay}", "$description": "Dark backdrop behind modal" },
-      "bg":               { "$type": "color", "$value": "{color.bg.paper}", "$description": "White content background" },
+      "bg":               { "$type": "color", "$value": "{color.bg.elevated}", "$description": "White content background" },
       "title":            { "$type": "color", "$value": "{color.text.base}", "$description": "Modal title text" },
       "description":      { "$type": "color", "$value": "{color.text.muted}", "$description": "Modal description text" },
       "divider":          { "$type": "color", "$value": "{color.border.muted}", "$description": "Header/footer border" },

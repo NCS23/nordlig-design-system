@@ -3,7 +3,7 @@
     "$description": "Level 4: AlertDialog component tokens",
     "alertdlg": {
       "overlay":     { "$type": "color", "$value": "{color.bg.overlay}", "$description": "AlertDialog backdrop overlay" },
-      "bg":          { "$type": "color", "$value": "{color.bg.paper}", "$description": "AlertDialog content background" },
+      "bg":          { "$type": "color", "$value": "{color.bg.elevated}", "$description": "AlertDialog content background" },
       "title":       { "$type": "color", "$value": "{color.text.base}", "$description": "AlertDialog title text" },
       "description": { "$type": "color", "$value": "{color.text.muted}", "$description": "AlertDialog description text" },
       "border":      { "$type": "color", "$value": "{color.border.muted}", "$description": "AlertDialog border" },

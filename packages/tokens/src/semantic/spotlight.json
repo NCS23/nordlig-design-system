@@ -9,7 +9,7 @@
       },
       "bg": {
         "$type": "color",
-        "$value": "{color.bg.paper}",
+        "$value": "{color.bg.elevated}",
         "$description": "Palette background"
       },
       "border": {

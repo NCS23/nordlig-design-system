@@ -7,7 +7,7 @@
       "trigger-border":     { "$type": "color", "$value": "{color.border.default}", "$description": "Default border" },
       "trigger-disabled-bg": { "$type": "color", "$value": "{color.bg.surface}", "$description": "Disabled background" },
       "icon":               { "$type": "color", "$value": "{color.text.muted}", "$description": "Chevron/search icon color" },
-      "popover-bg":         { "$type": "color", "$value": "{color.bg.paper}", "$description": "White dropdown background" },
+      "popover-bg":         { "$type": "color", "$value": "{color.bg.elevated}", "$description": "White dropdown background" },
       "popover-border":     { "$type": "color", "$value": "{color.border.muted}", "$description": "Dropdown border" },
       "item-text":          { "$type": "color", "$value": "{color.text.base}", "$description": "Option text" },
       "item-hover-bg":      { "$type": "color", "$value": "{color.bg.surface}", "$description": "Option hover/focus bg" },
@@ -20,7 +20,7 @@
       "search-bg":          { "$type": "color", "$value": "{color.bg.base}", "$description": "Combobox search input bg" },
       "empty-text":         { "$type": "color", "$value": "{color.text.muted}", "$description": "No results text" },
       "checkbox-text":      { "$type": "color", "$value": "{color.text.on-primary}", "$description": "Checkbox checked text (white)" },
-      "checkbox-bg":        { "$type": "color", "$value": "{color.bg.paper}", "$description": "Checkbox unchecked background" }
+      "checkbox-bg":        { "$type": "color", "$value": "{color.base.white}", "$description": "Checkbox unchecked background (pure white)" }
     }
   },
   "shadow": {

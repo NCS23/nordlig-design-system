@@ -2,7 +2,7 @@
   "color": {
     "$description": "Level 4: HoverCard component tokens",
     "hovercard": {
-      "bg":     { "$type": "color", "$value": "{color.bg.paper}", "$description": "HoverCard background" },
+      "bg":     { "$type": "color", "$value": "{color.bg.elevated}", "$description": "HoverCard background" },
       "border": { "$type": "color", "$value": "{color.border.muted}", "$description": "HoverCard border" }
     }
   },

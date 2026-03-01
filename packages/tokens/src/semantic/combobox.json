@@ -4,12 +4,12 @@
     "cmb": {
       "trigger-text":        { "$type": "color", "$value": "{color.text.base}",         "$description": "Trigger text" },
       "trigger-placeholder": { "$type": "color", "$value": "{color.text.muted}",        "$description": "Placeholder text" },
-      "content-bg":          { "$type": "color", "$value": "{color.bg.paper}",          "$description": "Dropdown background" },
+      "content-bg":          { "$type": "color", "$value": "{color.bg.elevated}",          "$description": "Dropdown background" },
       "content-border":      { "$type": "color", "$value": "{color.border.muted}",      "$description": "Dropdown border (subtle)" },
       "item-hover-bg":       { "$type": "color", "$value": "{color.bg.surface-hover}",  "$description": "Item hover" },
       "item-selected-bg":    { "$type": "color", "$value": "{color.bg.primary-subtle}", "$description": "Selected item background" },
       "item-selected-text":  { "$type": "color", "$value": "{color.text.primary}",      "$description": "Selected item text" },
-      "search-bg":           { "$type": "color", "$value": "{color.bg.paper}",          "$description": "Search input background" },
+      "search-bg":           { "$type": "color", "$value": "{color.bg.elevated}",          "$description": "Search input background" },
       "empty-text":          { "$type": "color", "$value": "{color.text.muted}",        "$description": "No results text" }
     }
   },
