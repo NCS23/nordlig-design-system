@@ -502,10 +502,15 @@
   --color-text-warning: var(--color-accent-2-700);
   --color-text-error: var(--color-accent-3-700);
   --color-text-info: var(--color-accent-4-700);
+  --color-text-success-strong: var(--color-accent-1-800); /** Strong success text — Emerald 800 */
+  --color-text-warning-strong: var(--color-accent-2-800); /** Strong warning text — Amber 800 */
+  --color-text-error-strong: var(--color-accent-3-800); /** Strong error text — Red 800 */
+  --color-text-info-strong: var(--color-accent-4-800); /** Strong info text — Blue 800 */
   --color-border-default: var(--color-neutral-1-300);
   --color-border-muted: var(--color-neutral-1-200);
   --color-border-strong: var(--color-neutral-1-400);
   --color-border-focus: var(--color-primary-1-500);
+  --color-border-primary-subtle: var(--color-primary-1-200); /** Subtle primary border (tags, indicators) */
   --color-border-accent-subtle: var(--color-primary-2-200); /** Subtle accent border (secondary brand tags) */
   --color-border-success: var(--color-accent-1-500);
   --color-border-success-subtle: var(--color-accent-1-200); /** Subtle success border (tags, indicators) */
@@ -523,6 +528,18 @@
   --color-interactive-secondary-hover: var(--color-neutral-1-600);
   --color-interactive-secondary-active: var(--color-neutral-1-700);
   --color-interactive-hover-overlay: var(--color-neutral-1-200); /** Subtle hover feedback (replaces bg-black/5, bg-black/10) */
+  --color-badge-primary-bg: var(--color-primary-1-100); /** Sky-100 — clearly visible light blue */
+  --color-badge-primary-text: var(--color-primary-1-700);
+  --color-badge-primary-border: var(--color-primary-1-300);
+  --color-badge-primary-bold-bg: var(--color-primary-1-200); /** Sky-200 — stronger blue for emphasis */
+  --color-badge-primary-bold-text: var(--color-primary-1-800);
+  --color-badge-primary-bold-border: var(--color-primary-1-400);
+  --color-badge-accent-bg: var(--color-primary-2-100); /** Indigo-100 — clearly visible violet */
+  --color-badge-accent-text: var(--color-primary-2-700);
+  --color-badge-accent-border: var(--color-primary-2-300);
+  --color-badge-accent-bold-bg: var(--color-primary-2-200); /** Indigo-200 — stronger violet for emphasis */
+  --color-badge-accent-bold-text: var(--color-primary-2-800);
+  --color-badge-accent-bold-border: var(--color-primary-2-400);
   --radius-component-sm: var(--radius-sm);
   --radius-component-md: var(--radius-md);
   --radius-component-lg: var(--radius-lg);
@@ -608,20 +625,28 @@
   --color-actionbar-bg: var(--color-bg-primary-muted); /** ActionBar background */
   --color-actionbar-border: var(--color-border-focus); /** ActionBar top border */
   --color-actionbar-text: var(--color-text-muted); /** ActionBar label text */
-  --color-alert-title: var(--color-text-base); /** Alert title text */
-  --color-alert-description: var(--color-text-base); /** Alert description text */
+  --color-alert-title: var(--color-text-base); /** Alert title text (fallback) */
+  --color-alert-description: var(--color-text-base); /** Alert description text (fallback) */
   --color-alert-info-bg: var(--color-bg-info-subtle); /** Info variant background */
   --color-alert-info-border: var(--color-border-info); /** Info left accent border */
   --color-alert-info-icon: var(--color-text-info); /** Info icon color */
+  --color-alert-info-title: var(--color-text-info-strong); /** Info title text — Blue 800 */
+  --color-alert-info-description: var(--color-text-info-strong); /** Info description text — Blue 800 */
   --color-alert-success-bg: var(--color-bg-success-subtle); /** Success variant background */
   --color-alert-success-border: var(--color-border-success); /** Success left accent border */
   --color-alert-success-icon: var(--color-text-success); /** Success icon color */
+  --color-alert-success-title: var(--color-text-success-strong); /** Success title text — Emerald 800 */
+  --color-alert-success-description: var(--color-text-success-strong); /** Success description text — Emerald 800 */
   --color-alert-warning-bg: var(--color-bg-warning-subtle); /** Warning variant background */
   --color-alert-warning-border: var(--color-border-warning); /** Warning left accent border */
   --color-alert-warning-icon: var(--color-text-warning); /** Warning icon color */
+  --color-alert-warning-title: var(--color-text-warning-strong); /** Warning title text — Amber 800 */
+  --color-alert-warning-description: var(--color-text-warning-strong); /** Warning description text — Amber 800 */
   --color-alert-error-bg: var(--color-bg-error-subtle); /** Error variant background */
   --color-alert-error-border: var(--color-border-error); /** Error left accent border */
   --color-alert-error-icon: var(--color-text-error); /** Error icon color */
+  --color-alert-error-title: var(--color-text-error-strong); /** Error title text — Red 800 */
+  --color-alert-error-description: var(--color-text-error-strong); /** Error description text — Red 800 */
   --color-alertdlg-overlay: var(--color-bg-overlay); /** AlertDialog backdrop overlay */
   --color-alertdlg-bg: var(--color-bg-elevated); /** AlertDialog content background */
   --color-alertdlg-title: var(--color-text-base); /** AlertDialog title text */

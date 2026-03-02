@@ -7,7 +7,7 @@ const meta: Meta<typeof Badge> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['success', 'warning', 'error', 'info', 'neutral'],
+      options: ['success', 'warning', 'error', 'info', 'neutral', 'primary', 'primary-bold', 'accent', 'accent-bold'],
     },
     size: {
       control: 'select',
@@ -47,6 +47,22 @@ export const Neutral: Story = {
   args: { variant: 'neutral', children: 'Standard' },
 };
 
+export const Primary: Story = {
+  args: { variant: 'primary', children: 'Primär' },
+};
+
+export const PrimaryBold: Story = {
+  args: { variant: 'primary-bold', children: 'Primär Kräftig' },
+};
+
+export const Accent: Story = {
+  args: { variant: 'accent', children: 'Akzent' },
+};
+
+export const AccentBold: Story = {
+  args: { variant: 'accent-bold', children: 'Akzent Kräftig' },
+};
+
 export const AllVariants: Story = {
   name: 'All Variants',
   render: () => (
@@ -56,6 +72,10 @@ export const AllVariants: Story = {
       <Badge variant="error">Error</Badge>
       <Badge variant="info">Info</Badge>
       <Badge variant="neutral">Neutral</Badge>
+      <Badge variant="primary">Primary</Badge>
+      <Badge variant="primary-bold">Primary Bold</Badge>
+      <Badge variant="accent">Accent</Badge>
+      <Badge variant="accent-bold">Accent Bold</Badge>
     </div>
   ),
 };
@@ -124,9 +144,9 @@ export const WorkoutTypes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
       <Badge variant="neutral">Krafttraining</Badge>
-      <Badge variant="info">Intervalle</Badge>
-      <Badge variant="success">Longrun</Badge>
-      <Badge variant="warning">Tempo</Badge>
+      <Badge variant="accent">Intervalle</Badge>
+      <Badge variant="primary">Longrun</Badge>
+      <Badge variant="primary">Tempo</Badge>
       <Badge variant="neutral">Mobility</Badge>
     </div>
   ),

@@ -17,6 +17,14 @@ const badgeVariants = cva(
           'bg-[var(--color-badge-info-bg)] text-[var(--color-badge-info-text)] border-[var(--color-badge-info-border)]',
         neutral:
           'bg-[var(--color-badge-neutral-bg)] text-[var(--color-badge-neutral-text)] border-[var(--color-badge-neutral-border)]',
+        primary:
+          'bg-[var(--color-badge-primary-bg)] text-[var(--color-badge-primary-text)] border-[var(--color-badge-primary-border)]',
+        'primary-bold':
+          'bg-[var(--color-badge-primary-bold-bg)] text-[var(--color-badge-primary-bold-text)] border-[var(--color-badge-primary-bold-border)]',
+        accent:
+          'bg-[var(--color-badge-accent-bg)] text-[var(--color-badge-accent-text)] border-[var(--color-badge-accent-border)]',
+        'accent-bold':
+          'bg-[var(--color-badge-accent-bold-bg)] text-[var(--color-badge-accent-bold-text)] border-[var(--color-badge-accent-bold-border)]',
       },
       size: {
         xs: 'px-[var(--sizing-badge-xs-padding-x)] py-[var(--sizing-badge-xs-padding-y)] text-[length:var(--sizing-badge-xs-font-size)]',
@@ -38,7 +46,7 @@ export interface BadgeProps
     VariantProps<typeof badgeVariants> {
   /** Semantic color variant.
    * @default 'neutral' */
-  variant?: 'success' | 'warning' | 'error' | 'info' | 'neutral';
+  variant?: 'success' | 'warning' | 'error' | 'info' | 'neutral' | 'primary' | 'primary-bold' | 'accent' | 'accent-bold';
   /** Size preset controlling padding and font-size.
    * @default 'md' */
   size?: 'xs' | 'sm' | 'md' | 'lg';

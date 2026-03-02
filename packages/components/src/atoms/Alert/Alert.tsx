@@ -9,10 +9,10 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        info: 'bg-[var(--color-alert-info-bg)] border-l-[var(--color-alert-info-border)]',
-        success: 'bg-[var(--color-alert-success-bg)] border-l-[var(--color-alert-success-border)]',
-        warning: 'bg-[var(--color-alert-warning-bg)] border-l-[var(--color-alert-warning-border)]',
-        error: 'bg-[var(--color-alert-error-bg)] border-l-[var(--color-alert-error-border)]',
+        info: 'bg-[var(--color-alert-info-bg)] border-l-[var(--color-alert-info-border)] [--color-alert-title:var(--color-alert-info-title)] [--color-alert-description:var(--color-alert-info-description)]',
+        success: 'bg-[var(--color-alert-success-bg)] border-l-[var(--color-alert-success-border)] [--color-alert-title:var(--color-alert-success-title)] [--color-alert-description:var(--color-alert-success-description)]',
+        warning: 'bg-[var(--color-alert-warning-bg)] border-l-[var(--color-alert-warning-border)] [--color-alert-title:var(--color-alert-warning-title)] [--color-alert-description:var(--color-alert-warning-description)]',
+        error: 'bg-[var(--color-alert-error-bg)] border-l-[var(--color-alert-error-border)] [--color-alert-title:var(--color-alert-error-title)] [--color-alert-description:var(--color-alert-error-description)]',
       },
     },
     defaultVariants: {

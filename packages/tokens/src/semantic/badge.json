@@ -26,6 +26,26 @@
         "bg":     { "$type": "color", "$value": "{color.bg.surface}" },
         "text":   { "$type": "color", "$value": "{color.text.muted}" },
         "border": { "$type": "color", "$value": "{color.border.muted}" }
+      },
+      "primary": {
+        "bg":     { "$type": "color", "$value": "{color.primary.1.100}", "$description": "Sky-100 — clearly visible light blue" },
+        "text":   { "$type": "color", "$value": "{color.primary.1.700}" },
+        "border": { "$type": "color", "$value": "{color.primary.1.300}" }
+      },
+      "primary-bold": {
+        "bg":     { "$type": "color", "$value": "{color.primary.1.200}", "$description": "Sky-200 — stronger blue for emphasis" },
+        "text":   { "$type": "color", "$value": "{color.primary.1.800}" },
+        "border": { "$type": "color", "$value": "{color.primary.1.400}" }
+      },
+      "accent": {
+        "bg":     { "$type": "color", "$value": "{color.primary.2.100}", "$description": "Indigo-100 — clearly visible violet" },
+        "text":   { "$type": "color", "$value": "{color.primary.2.700}" },
+        "border": { "$type": "color", "$value": "{color.primary.2.300}" }
+      },
+      "accent-bold": {
+        "bg":     { "$type": "color", "$value": "{color.primary.2.200}", "$description": "Indigo-200 — stronger violet for emphasis" },
+        "text":   { "$type": "color", "$value": "{color.primary.2.800}" },
+        "border": { "$type": "color", "$value": "{color.primary.2.400}" }
       }
     }
   },

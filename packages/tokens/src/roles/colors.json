@@ -45,13 +45,18 @@
       "success":  { "$type": "color", "$value": "{color.accent.1.700}" },
       "warning":  { "$type": "color", "$value": "{color.accent.2.700}" },
       "error":    { "$type": "color", "$value": "{color.accent.3.700}" },
-      "info":     { "$type": "color", "$value": "{color.accent.4.700}" }
+      "info":     { "$type": "color", "$value": "{color.accent.4.700}" },
+      "success-strong": { "$type": "color", "$value": "{color.accent.1.800}", "$description": "Strong success text — Emerald 800" },
+      "warning-strong": { "$type": "color", "$value": "{color.accent.2.800}", "$description": "Strong warning text — Amber 800" },
+      "error-strong":   { "$type": "color", "$value": "{color.accent.3.800}", "$description": "Strong error text — Red 800" },
+      "info-strong":    { "$type": "color", "$value": "{color.accent.4.800}", "$description": "Strong info text — Blue 800" }
     },
     "border": {
       "default": { "$type": "color", "$value": "{color.neutral.1.300}" },
       "muted":   { "$type": "color", "$value": "{color.neutral.1.200}" },
       "strong":  { "$type": "color", "$value": "{color.neutral.1.400}" },
       "focus":   { "$type": "color", "$value": "{color.primary.1.500}" },
+      "primary-subtle":  { "$type": "color", "$value": "{color.primary.1.200}", "$description": "Subtle primary border (tags, indicators)" },
       "accent-subtle":  { "$type": "color", "$value": "{color.primary.2.200}", "$description": "Subtle accent border (secondary brand tags)" },
       "success":        { "$type": "color", "$value": "{color.accent.1.500}" },
       "success-subtle": { "$type": "color", "$value": "{color.accent.1.200}", "$description": "Subtle success border (tags, indicators)" },

@@ -51,6 +51,38 @@ describe('Badge', () => {
     expect(badge.className).toContain('text-[var(--color-badge-info-text)]');
   });
 
+  it('applies variant=primary', () => {
+    render(<Badge data-testid="badge" variant="primary">Primary</Badge>);
+    const badge = screen.getByTestId('badge');
+    expect(badge.className).toContain('bg-[var(--color-badge-primary-bg)]');
+    expect(badge.className).toContain('text-[var(--color-badge-primary-text)]');
+    expect(badge.className).toContain('border-[var(--color-badge-primary-border)]');
+  });
+
+  it('applies variant=primary-bold', () => {
+    render(<Badge data-testid="badge" variant="primary-bold">Bold</Badge>);
+    const badge = screen.getByTestId('badge');
+    expect(badge.className).toContain('bg-[var(--color-badge-primary-bold-bg)]');
+    expect(badge.className).toContain('text-[var(--color-badge-primary-bold-text)]');
+    expect(badge.className).toContain('border-[var(--color-badge-primary-bold-border)]');
+  });
+
+  it('applies variant=accent', () => {
+    render(<Badge data-testid="badge" variant="accent">Accent</Badge>);
+    const badge = screen.getByTestId('badge');
+    expect(badge.className).toContain('bg-[var(--color-badge-accent-bg)]');
+    expect(badge.className).toContain('text-[var(--color-badge-accent-text)]');
+    expect(badge.className).toContain('border-[var(--color-badge-accent-border)]');
+  });
+
+  it('applies variant=accent-bold', () => {
+    render(<Badge data-testid="badge" variant="accent-bold">Bold</Badge>);
+    const badge = screen.getByTestId('badge');
+    expect(badge.className).toContain('bg-[var(--color-badge-accent-bold-bg)]');
+    expect(badge.className).toContain('text-[var(--color-badge-accent-bold-text)]');
+    expect(badge.className).toContain('border-[var(--color-badge-accent-bold-border)]');
+  });
+
   it('applies size=xs', () => {
     render(<Badge data-testid="badge" size="xs">Tiny</Badge>);
     const badge = screen.getByTestId('badge');

@@ -171,6 +171,64 @@ describe('Alert', () => {
     expect(svg).toHaveClass('text-[var(--color-alert-error-icon)]');
   });
 
+  // ─── Variant text color overrides ───────────────────────────────────────────
+
+  it('applies info variant text color overrides', () => {
+    render(
+      <Alert data-testid="alert" variant="info">
+        <AlertTitle>Info</AlertTitle>
+      </Alert>
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-title:var(--color-alert-info-title)]'
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-description:var(--color-alert-info-description)]'
+    );
+  });
+
+  it('applies success variant text color overrides', () => {
+    render(
+      <Alert data-testid="alert" variant="success">
+        <AlertTitle>Success</AlertTitle>
+      </Alert>
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-title:var(--color-alert-success-title)]'
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-description:var(--color-alert-success-description)]'
+    );
+  });
+
+  it('applies warning variant text color overrides', () => {
+    render(
+      <Alert data-testid="alert" variant="warning">
+        <AlertTitle>Warning</AlertTitle>
+      </Alert>
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-title:var(--color-alert-warning-title)]'
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-description:var(--color-alert-warning-description)]'
+    );
+  });
+
+  it('applies error variant text color overrides', () => {
+    render(
+      <Alert data-testid="alert" variant="error">
+        <AlertTitle>Error</AlertTitle>
+      </Alert>
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-title:var(--color-alert-error-title)]'
+    );
+    expect(screen.getByTestId('alert')).toHaveClass(
+      '[--color-alert-description:var(--color-alert-error-description)]'
+    );
+  });
+
   // ─── Close button ───────────────────────────────────────────────────────────
 
   it('shows close button when closeable', () => {
