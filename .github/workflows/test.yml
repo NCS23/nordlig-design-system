@@ -57,3 +57,12 @@ jobs:
 
       - name: Analyze CSS
         run: pnpm analyze:css
+
+      - name: Notify consuming apps
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          curl -s -X POST \
+            -H "Authorization: token ${{ secrets.TA_DISPATCH_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/NCS23/training-analyzer/dispatches" \
+            -d '{"event_type":"nds-updated","client_payload":{"sha":"${{ github.sha }}"}}'
