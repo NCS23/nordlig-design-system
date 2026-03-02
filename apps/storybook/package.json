@@ -9,7 +9,7 @@
   "dependencies": {
     "@nordlig/components": "workspace:*",
     "@nordlig/tokens": "workspace:*",
-    "lucide-react": "^0.469.0"
+    "lucide-react": "^0.575.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^8.4.0",
@@ -19,7 +19,7 @@
     "@storybook/blocks": "^8.4.0",
     "@storybook/react": "^8.4.0",
     "@storybook/react-vite": "^8.4.0",
-    "autoprefixer": "^10.4.24",
+    "autoprefixer": "^10.4.27",
     "postcss": "^8.5.6",
     "storybook": "^8.6.17",
     "tailwindcss": "3"
