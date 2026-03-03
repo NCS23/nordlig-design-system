@@ -287,7 +287,11 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
             <Popover.Content
               sideOffset={4}
               align="start"
-              style={{ width: 'var(--radix-popover-trigger-width)' }}
+              style={{
+                minWidth: 'var(--radix-popover-trigger-width)',
+                width: 'max-content',
+                maxWidth: 'var(--radix-popover-available-width)',
+              }}
               onOpenAutoFocus={(e) => e.preventDefault()}
               className={cn(
                 'z-50 overflow-hidden',
