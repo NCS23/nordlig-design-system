@@ -784,6 +784,11 @@
   --color-btn-ghost-bg-active: #e2e8f0;
   --color-btn-disabled-bg: #cbd5e1;
   --color-btn-disabled-text: #94a3b8;
+  --color-btn-destructive-bg: #ffffff;
+  --color-btn-destructive-bg-hover: #fef2f2;
+  --color-btn-destructive-bg-active: #fee2e2;
+  --color-btn-destructive-text: #b91c1c;
+  --color-btn-destructive-border: #ef4444;
   /* @end */
 
   /* @tokens L4 Button: Spacing */

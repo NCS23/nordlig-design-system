@@ -77,6 +77,16 @@ describe('Button', () => {
     expect(btn.className).toContain('active:bg-[var(--color-btn-ghost-bg-active)]');
   });
 
+  it('wendet destructive-Variante korrekt an', () => {
+    render(<Button data-testid="btn" variant="destructive">Entfernen</Button>);
+    const btn = screen.getByTestId('btn');
+    expect(btn.className).toContain('bg-[var(--color-btn-destructive-bg)]');
+    expect(btn.className).toContain('text-[var(--color-btn-destructive-text)]');
+    expect(btn.className).toContain('border-[var(--color-btn-destructive-border)]');
+    expect(btn.className).toContain('hover:bg-[var(--color-btn-destructive-bg-hover)]');
+    expect(btn.className).toContain('active:bg-[var(--color-btn-destructive-bg-active)]');
+  });
+
   // --- Größen ---
 
   it('wendet sm-Größe korrekt an', () => {

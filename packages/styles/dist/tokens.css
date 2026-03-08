@@ -716,6 +716,11 @@
   --color-btn-ghost-text: var(--color-text-primary);
   --color-btn-disabled-bg: var(--color-interactive-primary-disabled);
   --color-btn-disabled-text: var(--color-text-disabled);
+  --color-btn-destructive-bg: var(--color-bg-surface);
+  --color-btn-destructive-bg-hover: var(--color-bg-error-subtle);
+  --color-btn-destructive-bg-active: var(--color-bg-error);
+  --color-btn-destructive-text: var(--color-text-error);
+  --color-btn-destructive-border: var(--color-border-error);
   --color-card-bg: var(--color-bg-elevated); /** Default card background */
   --color-card-bg-raised: var(--color-bg-elevated); /** Raised card background */
   --color-card-bg-elevated: var(--color-bg-elevated); /** Elevated card background */
