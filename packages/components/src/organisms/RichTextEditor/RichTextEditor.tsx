@@ -1,5 +1,29 @@
 import React, { useCallback, useEffect } from 'react';
-import { useEditor, EditorContent, type Editor } from '@tiptap/react';
+import { useEditor, EditorContent } from '@tiptap/react';
+import type { Editor, ChainedCommands } from '@tiptap/core';
+
+// tiptap extensions augment ChainedCommands at runtime but type declarations
+// may not resolve correctly across pinned versions. This helper provides
+// type-safe access to extension commands available via StarterKit + Underline.
+type ExtendedChain = ChainedCommands & {
+  toggleBold: () => ChainedCommands;
+  toggleItalic: () => ChainedCommands;
+  toggleUnderline: () => ChainedCommands;
+  toggleStrike: () => ChainedCommands;
+  toggleHeading: (attrs: { level: 1 | 2 | 3 }) => ChainedCommands;
+  toggleBulletList: () => ChainedCommands;
+  toggleOrderedList: () => ChainedCommands;
+  toggleBlockquote: () => ChainedCommands;
+  toggleCodeBlock: () => ChainedCommands;
+  extendMarkRange: (type: string) => ChainedCommands;
+  setLink: (attrs: { href: string }) => ChainedCommands;
+  unsetLink: () => ChainedCommands;
+};
+
+/** Type-safe chain accessor for the tiptap editor */
+function chain(editor: Editor): ExtendedChain {
+  return editor.chain().focus() as unknown as ExtendedChain;
+}
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 import Placeholder from '@tiptap/extension-placeholder';
@@ -118,33 +142,33 @@ function Toolbar({ editor, features, disabled }: ToolbarProps) {
 
   const handleLink = () => {
     if (editor.isActive('link')) {
-      editor.chain().focus().unsetLink().run();
+      chain(editor).unsetLink().run();
       return;
     }
     const url = window.prompt('URL eingeben:');
     if (url) {
-      editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
+      chain(editor).extendMarkRange('link').setLink({ href: url }).run();
     }
   };
 
   const inlineFormats = [
-    has('bold') && { icon: Bold, label: 'Fett', active: editor.isActive('bold'), onClick: () => editor.chain().focus().toggleBold().run() },
-    has('italic') && { icon: Italic, label: 'Kursiv', active: editor.isActive('italic'), onClick: () => editor.chain().focus().toggleItalic().run() },
-    has('underline') && { icon: UnderlineIcon, label: 'Unterstrichen', active: editor.isActive('underline'), onClick: () => editor.chain().focus().toggleUnderline().run() },
-    has('strikethrough') && { icon: Strikethrough, label: 'Durchgestrichen', active: editor.isActive('strike'), onClick: () => editor.chain().focus().toggleStrike().run() },
+    has('bold') && { icon: Bold, label: 'Fett', active: editor.isActive('bold'), onClick: () => chain(editor).toggleBold().run() },
+    has('italic') && { icon: Italic, label: 'Kursiv', active: editor.isActive('italic'), onClick: () => chain(editor).toggleItalic().run() },
+    has('underline') && { icon: UnderlineIcon, label: 'Unterstrichen', active: editor.isActive('underline'), onClick: () => chain(editor).toggleUnderline().run() },
+    has('strikethrough') && { icon: Strikethrough, label: 'Durchgestrichen', active: editor.isActive('strike'), onClick: () => chain(editor).toggleStrike().run() },
   ].filter(Boolean) as ToolbarButtonProps[];
 
   const headingFormats = [
-    has('heading1') && { icon: Heading1, label: 'Ueberschrift 1', active: editor.isActive('heading', { level: 1 }), onClick: () => editor.chain().focus().toggleHeading({ level: 1 }).run() },
-    has('heading2') && { icon: Heading2, label: 'Ueberschrift 2', active: editor.isActive('heading', { level: 2 }), onClick: () => editor.chain().focus().toggleHeading({ level: 2 }).run() },
-    has('heading3') && { icon: Heading3, label: 'Ueberschrift 3', active: editor.isActive('heading', { level: 3 }), onClick: () => editor.chain().focus().toggleHeading({ level: 3 }).run() },
+    has('heading1') && { icon: Heading1, label: 'Überschrift 1', active: editor.isActive('heading', { level: 1 }), onClick: () => chain(editor).toggleHeading({ level: 1 }).run() },
+    has('heading2') && { icon: Heading2, label: 'Überschrift 2', active: editor.isActive('heading', { level: 2 }), onClick: () => chain(editor).toggleHeading({ level: 2 }).run() },
+    has('heading3') && { icon: Heading3, label: 'Überschrift 3', active: editor.isActive('heading', { level: 3 }), onClick: () => chain(editor).toggleHeading({ level: 3 }).run() },
   ].filter(Boolean) as ToolbarButtonProps[];
 
   const blockFormats = [
-    has('bulletList') && { icon: List, label: 'Aufzaehlung', active: editor.isActive('bulletList'), onClick: () => editor.chain().focus().toggleBulletList().run() },
-    has('orderedList') && { icon: ListOrdered, label: 'Nummerierte Liste', active: editor.isActive('orderedList'), onClick: () => editor.chain().focus().toggleOrderedList().run() },
-    has('blockquote') && { icon: Quote, label: 'Zitat', active: editor.isActive('blockquote'), onClick: () => editor.chain().focus().toggleBlockquote().run() },
-    has('codeBlock') && { icon: Code, label: 'Codeblock', active: editor.isActive('codeBlock'), onClick: () => editor.chain().focus().toggleCodeBlock().run() },
+    has('bulletList') && { icon: List, label: 'Aufzählung', active: editor.isActive('bulletList'), onClick: () => chain(editor).toggleBulletList().run() },
+    has('orderedList') && { icon: ListOrdered, label: 'Nummerierte Liste', active: editor.isActive('orderedList'), onClick: () => chain(editor).toggleOrderedList().run() },
+    has('blockquote') && { icon: Quote, label: 'Zitat', active: editor.isActive('blockquote'), onClick: () => chain(editor).toggleBlockquote().run() },
+    has('codeBlock') && { icon: Code, label: 'Codeblock', active: editor.isActive('codeBlock'), onClick: () => chain(editor).toggleCodeBlock().run() },
     has('link') && { icon: LinkIcon, label: 'Link', active: editor.isActive('link'), onClick: handleLink },
   ].filter(Boolean) as ToolbarButtonProps[];
 
@@ -228,7 +252,7 @@ const RichTextEditor = React.forwardRef<HTMLDivElement, RichTextEditorProps>(
       ],
       content: value ?? defaultValue,
       editable: isEditable,
-      onUpdate: ({ editor: e }) => {
+      onUpdate: ({ editor: e }: { editor: Editor }) => {
         onChange?.(e.getHTML());
       },
     });
