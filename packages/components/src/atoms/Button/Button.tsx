@@ -30,6 +30,12 @@ const buttonVariants = cva(
           'hover:bg-[var(--color-btn-destructive-bg-hover)]',
           'active:bg-[var(--color-btn-destructive-bg-active)]',
         ].join(' '),
+        'destructive-outline': [
+          'bg-transparent text-[var(--color-btn-destructive-text)]',
+          '[border-width:var(--sizing-btn-border-width)] border-[var(--color-btn-destructive-border)]',
+          'hover:bg-[var(--color-btn-destructive-bg-hover)]',
+          'active:bg-[var(--color-btn-destructive-bg-active)]',
+        ].join(' '),
       },
       size: {
         sm: [
@@ -66,9 +72,9 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  /** Visual style — `primary` (filled), `secondary` (outlined), `ghost` (transparent), `destructive` (outlined red).
+  /** Visual style — `primary` (filled), `secondary` (outlined), `ghost` (transparent), `destructive` (danger), `destructive-outline` (transparent danger with border).
    * @default 'primary' */
-  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive' | 'destructive-outline';
   /** Size preset controlling height, padding, font-size and border-radius.
    * @default 'md' */
   size?: 'sm' | 'md' | 'lg';

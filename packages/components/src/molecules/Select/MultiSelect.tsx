@@ -48,6 +48,9 @@ export interface MultiSelectProps {
   maxBadges?: number;
   /** Maximum number of items that can be selected (undefined = unlimited) */
   maxItems?: number;
+  /** Badge variant for selected items.
+   * @default 'info' */
+  badgeVariant?: 'info' | 'primary' | 'primary-bold' | 'success' | 'warning' | 'error' | 'neutral';
   /** Additional class name */
   className?: string;
   /** aria-label */
@@ -70,6 +73,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
       deselectAllLabel = 'Alle abwählen',
       emptyText = 'Keine Ergebnisse',
       maxBadges = 3,
+      badgeVariant = 'info',
       maxItems,
       className,
       'aria-label': ariaLabel,
@@ -214,7 +218,7 @@ const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
           {visible.map((opt) => (
             <Badge
               key={opt.value}
-              variant="info"
+              variant={badgeVariant}
               size="xs"
               className="max-w-[120px] gap-[var(--spacing-multiselect-tag-gap)]"
             >
