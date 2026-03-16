@@ -86,16 +86,16 @@ describe('RichTextEditor', () => {
   it('renders heading buttons', async () => {
     render(<RichTextEditor />);
     await waitFor(() => {
-      expect(screen.getByLabelText('Ueberschrift 1')).toBeInTheDocument();
-      expect(screen.getByLabelText('Ueberschrift 2')).toBeInTheDocument();
-      expect(screen.getByLabelText('Ueberschrift 3')).toBeInTheDocument();
+      expect(screen.getByLabelText('Überschrift 1')).toBeInTheDocument();
+      expect(screen.getByLabelText('Überschrift 2')).toBeInTheDocument();
+      expect(screen.getByLabelText('Überschrift 3')).toBeInTheDocument();
     });
   });
 
   it('renders list buttons', async () => {
     render(<RichTextEditor />);
     await waitFor(() => {
-      expect(screen.getByLabelText('Aufzaehlung')).toBeInTheDocument();
+      expect(screen.getByLabelText('Aufzählung')).toBeInTheDocument();
       expect(screen.getByLabelText('Nummerierte Liste')).toBeInTheDocument();
     });
   });
@@ -129,7 +129,7 @@ describe('RichTextEditor', () => {
       expect(screen.getByLabelText('Fett')).toBeInTheDocument();
       expect(screen.getByLabelText('Kursiv')).toBeInTheDocument();
       expect(screen.queryByLabelText('Unterstrichen')).not.toBeInTheDocument();
-      expect(screen.queryByLabelText('Ueberschrift 1')).not.toBeInTheDocument();
+      expect(screen.queryByLabelText('Überschrift 1')).not.toBeInTheDocument();
     });
   });
 
