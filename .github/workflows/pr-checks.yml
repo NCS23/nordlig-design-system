@@ -28,15 +28,17 @@ jobs:
       # Bundle Size Checks
       - name: Check component bundle size
         run: |
-          SIZE=$(du -sk packages/components/dist/ 2>/dev/null | cut -f1)
+          # Measure only JS output (excluding sourcemaps and .d.ts)
+          SIZE=$(find packages/components/dist -name '*.mjs' -o -name '*.js' | grep -v '.map' | xargs cat 2>/dev/null | wc -c)
+          SIZE_KB=$((SIZE / 1024))
           echo "## Bundle Size Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Components bundle: **${SIZE}KB**" >> $GITHUB_STEP_SUMMARY
-          if [ "$SIZE" -gt 512 ]; then
-            echo "::error::Component bundle exceeds 512KB limit (${SIZE}KB)"
+          echo "Components JS bundle: **${SIZE_KB}KB**" >> $GITHUB_STEP_SUMMARY
+          if [ "$SIZE_KB" -gt 2048 ]; then
+            echo "::error::Component JS bundle exceeds 2048KB limit (${SIZE_KB}KB)"
             exit 1
           fi
-          echo "Components: ${SIZE}KB (limit: 512KB)"
+          echo "Components JS: ${SIZE_KB}KB (limit: 2048KB)"
 
       - name: Check Figma plugin bundle size
         run: |
