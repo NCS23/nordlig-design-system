@@ -82,7 +82,7 @@ export interface FormFieldProps {
   /** Helper text rendered below the field (hidden when error is shown). */
   description?: string;
   /** Input element to register (Input, Select, Textarea, etc.). */
-  children: React.ReactElement;
+  children: React.ReactElement<Record<string, unknown>>;
   className?: string;
 }
 

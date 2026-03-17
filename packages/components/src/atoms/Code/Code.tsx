@@ -37,7 +37,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
         : React.Children.toArray(children)
             .map((child) => {
               if (typeof child === 'string') return child;
-              if (React.isValidElement(child) && child.props.children) {
+              if (React.isValidElement<{ children?: React.ReactNode }>(child) && child.props.children) {
                 return typeof child.props.children === 'string'
                   ? child.props.children
                   : '';
