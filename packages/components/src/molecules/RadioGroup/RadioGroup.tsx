@@ -77,8 +77,16 @@ const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
     );
 
     // Clone children to inject name, checked, onChange, and disabled props
+    interface RadioChildProps {
+      value?: string;
+      checked?: boolean;
+      name?: string;
+      disabled?: boolean;
+      onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    }
+
     const enhancedChildren = React.Children.map(children, (child) => {
-      if (!React.isValidElement(child)) return child;
+      if (!React.isValidElement<RadioChildProps>(child)) return child;
 
       const childProps: Record<string, unknown> = {};
 
@@ -95,7 +103,7 @@ const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
       // Manage onChange
       childProps.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (child.props.value !== undefined) {
-          handleChange(child.props.value as string);
+          handleChange(child.props.value);
         }
         // Also call the child's original onChange if present
         if (typeof child.props.onChange === 'function') {
