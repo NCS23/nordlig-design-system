@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ThemeProvider, useTheme } from '../../system/ThemeProvider';
 import { ThemeToggle } from './ThemeToggle';

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DetailPage } from './DetailPage';
 import { Heading } from '../../atoms/Heading';
 import { Text } from '../../atoms/Text';

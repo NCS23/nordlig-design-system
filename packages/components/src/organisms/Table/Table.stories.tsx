@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from './Table';
 import { Badge } from '../../atoms/Badge';
 import { Heading } from '../../atoms/Heading';

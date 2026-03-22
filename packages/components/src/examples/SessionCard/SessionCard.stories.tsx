@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import SessionCard, { type SessionData } from './SessionCard';
 import { Heading } from '../../atoms/Heading';
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { AppFooter } from './AppFooter';
 import { Text } from '../../atoms/Text';
 import { Link } from '../../atoms/Link';

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ThemeProvider, useTheme, type Theme } from './ThemeProvider';
 import { Button } from '../../atoms/Button';

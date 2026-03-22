@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Home, Bell, Search, User } from 'lucide-react';
 import { AppHeader } from './AppHeader';
 import { Icon } from '../../atoms/Icon';

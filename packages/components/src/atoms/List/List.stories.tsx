@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { List, ListItem, DescriptionList, DescriptionTerm, DescriptionDetails } from './List';
 import { Icon } from '../Icon';
 import { Check, Clock, AlertCircle, Activity, Bike, Waves, FileText, ChevronRight } from 'lucide-react';

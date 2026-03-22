@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { BarChart3, Dumbbell, Calendar, TrendingUp, Settings, User, Timer, Activity } from 'lucide-react';
 import { Icon } from '../../atoms/Icon';
 import { Heading } from '../../atoms/Heading';

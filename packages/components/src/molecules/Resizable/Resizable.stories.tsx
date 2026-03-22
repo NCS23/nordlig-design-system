@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './Resizable';
 
 const meta: Meta<typeof ResizablePanelGroup> = {

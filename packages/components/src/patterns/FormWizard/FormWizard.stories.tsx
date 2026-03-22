@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { z } from 'zod';
 import { FormWizard, type FormWizardStep } from './FormWizard';
 import { FormField, FormFieldController } from '../../molecules/Form/Form';

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ListPage } from './ListPage';
 import { SearchFilter } from '../../patterns/SearchFilter';

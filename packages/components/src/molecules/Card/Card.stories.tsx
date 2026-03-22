@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Card, CardHeader, CardBody, CardFooter } from './Card';
 import { Button } from '../../atoms/Button';
 import { Heading } from '../../atoms/Heading';

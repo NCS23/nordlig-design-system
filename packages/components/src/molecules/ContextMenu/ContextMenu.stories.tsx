@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Edit, Copy, Clipboard, Trash2, Share, Download, RefreshCw } from 'lucide-react';
 import { Icon } from '../../atoms/Icon';
 import { Heading } from '../../atoms/Heading';
