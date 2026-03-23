@@ -1,0 +1,11 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-detailpage-sidebar-width: 280px; /** Sidebar width on desktop */
+  --spacing-detailpage-header-gap: var(--spacing-component-gap-lg); /** Gap between header elements (16px) */
+  --spacing-detailpage-section-gap: var(--spacing-component-gap-xl); /** Gap between major sections (32px) */
+  --spacing-detailpage-sidebar-gap: var(--spacing-layout-gutter); /** Gap between content and sidebar (24px) */
+  --spacing-detailpage-content-gap: var(--spacing-layout-gutter); /** Gap between cards in content (24px) */
+}

@@ -1,0 +1,24 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-seg-sm-height: 28px; /** Height sm */
+  --sizing-seg-md-height: 32px; /** Height md */
+  --sizing-seg-lg-height: 36px; /** Height lg */
+  --color-seg-bg: var(--color-bg-surface); /** Container background */
+  --color-seg-active-bg: var(--color-bg-paper); /** Active segment background */
+  --color-seg-text: var(--color-text-muted); /** Inactive segment text */
+  --color-seg-active-text: var(--color-text-base); /** Active segment text */
+  --color-seg-hover-bg: var(--color-bg-surface-hover); /** Hover background (inactive) */
+  --radius-seg-container: var(--radius-component-md); /** Outer container radius */
+  --radius-seg-item: var(--radius-component-sm); /** Segment item radius */
+  --shadow-seg-active: var(--shadow-elevation-raised); /** Active segment shadow */
+  --spacing-seg-padding: var(--spacing-component-padding-xs); /** Container inner padding */
+  --spacing-seg-item-px: var(--spacing-component-padding-sm); /** Segment horizontal padding */
+  --spacing-seg-gap: var(--spacing-component-gap-xs); /** Gap between segments */
+  --font-seg-size-sm: var(--font-component-size-xs); /** Font size sm */
+  --font-seg-size-md: var(--font-component-size-sm); /** Font size md */
+  --font-seg-size-lg: var(--font-component-size-md); /** Font size lg */
+  --font-seg-weight: var(--font-component-weight-medium); /** Segment font weight */
+}

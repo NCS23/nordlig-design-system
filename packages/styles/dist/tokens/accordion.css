@@ -1,0 +1,20 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-accordion-bg: var(--color-bg-paper); /** Item background */
+  --color-accordion-border: var(--color-border-muted); /** Item border/divider */
+  --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-accordion-trigger-hover-bg: var(--color-bg-surface); /** Trigger hover background */
+  --color-accordion-content-text: var(--color-text-base); /** Content text */
+  --color-accordion-icon: var(--color-text-muted); /** Chevron icon color */
+  --radius-accordion: var(--radius-component-lg); /** 8px item radius */
+  --spacing-accordion-trigger-padding-x: var(--spacing-component-padding-md); /** 16px trigger horizontal padding */
+  --spacing-accordion-trigger-padding-y: var(--spacing-component-padding-sm); /** 12px trigger vertical padding */
+  --spacing-accordion-content-padding-x: var(--spacing-component-padding-md); /** 16px content horizontal padding */
+  --spacing-accordion-content-padding-y: var(--spacing-component-padding-sm); /** 12px content vertical padding */
+  --font-accordion-trigger-size: var(--font-component-size-sm); /** Trigger text font size (text-sm equivalent) */
+  --font-accordion-trigger-weight: var(--font-component-weight-medium); /** Trigger text font weight (font-medium) */
+  --font-accordion-content-size: var(--font-component-size-sm); /** Content text font size (text-sm equivalent) */
+}

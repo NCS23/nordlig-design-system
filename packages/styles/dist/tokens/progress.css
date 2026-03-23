@@ -1,0 +1,27 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-fileupload-progress-bg: var(--color-bg-surface-hover); /** Progress track */
+  --color-fileupload-progress-fill: var(--color-bg-primary); /** Progress bar */
+  --color-progress-track: var(--color-bg-surface);
+  --color-progress-fill: var(--color-interactive-primary);
+  --color-progress-fill-success: var(--color-bg-success-solid);
+  --color-progress-fill-warning: var(--color-bg-warning-solid);
+  --color-progress-fill-error: var(--color-bg-error-solid);
+  --color-progress-label: var(--color-text-base);
+  --color-progress-value: var(--color-text-muted);
+  --radius-fileupload-progress: var(--radius-component-full); /** Pill progress bar */
+  --radius-progress: var(--radius-component-full);
+  --spacing-fileupload-progress-px: var(--spacing-component-padding-md); /** Progress bar horizontal padding */
+  --spacing-fileupload-progress-pb: var(--spacing-component-padding-md); /** Progress bar bottom padding */
+  --spacing-progress-label-gap: var(--spacing-component-gap-lg);
+  --font-progress-label-size: var(--font-component-size-sm); /** ProgressField label font size (text-sm) */
+  --font-progress-label-weight: var(--font-component-weight-medium); /** ProgressField label font weight (500) */
+  --font-progress-value-size: var(--font-component-size-sm); /** ProgressField value font size (text-sm) */
+  --sizing-fuzpattern-progress-height: var(--sizing-component-track-sm); /** Fortschrittsbalken Hoehe */
+  --sizing-progress-sm-height: var(--sizing-component-track-sm);
+  --sizing-progress-md-height: var(--sizing-component-track-md);
+  --sizing-progress-lg-height: var(--sizing-component-track-lg);
+}

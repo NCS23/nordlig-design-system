@@ -2,6 +2,9 @@ import React from 'react';
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/scrollarea';
+
 export interface ScrollAreaProps
   extends React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root> {
   orientation?: 'vertical' | 'horizontal' | 'both';

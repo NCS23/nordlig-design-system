@@ -1,0 +1,18 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-code-bg: var(--color-bg-surface); /** Inline code background */
+  --color-code-text: var(--color-text-primary); /** Inline code text */
+  --color-code-block-bg: var(--color-bg-inverse); /** Code block dark background */
+  --color-code-block-text: var(--color-text-inverse); /** Code block text on dark bg */
+  --color-code-copy-hover-bg: var(--color-bg-inverse-hover); /** Copy button hover on dark bg */
+  --color-code-line-number: var(--color-text-muted); /** Line number text color */
+  --color-errorpage-code-text: var(--color-text-muted); /** Error code text color */
+  --radius-code: var(--radius-component-sm); /** Inline code border radius */
+  --radius-code-block: var(--radius-component-lg); /** Code block border radius */
+  --font-code-size: var(--font-component-size-sm); /** Code font size (14px) */
+  --font-errorpage-code-size: var(--font-heading-size-2xl); /** Error code font size (e.g. 404) */
+  --font-errorpage-code-weight: var(--font-component-weight-semibold); /** Error code font weight */
+}

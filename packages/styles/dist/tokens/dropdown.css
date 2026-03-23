@@ -1,0 +1,33 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-dropdown-bg: var(--color-bg-elevated); /** Menu background */
+  --color-dropdown-border: var(--color-border-muted); /** Menu border */
+  --color-dropdown-item-text: var(--color-text-base); /** Item text */
+  --color-dropdown-item-hover-bg: var(--color-bg-surface); /** Item hover/focus background */
+  --color-dropdown-item-disabled-text: var(--color-text-disabled); /** Disabled item text */
+  --color-dropdown-item-icon: var(--color-text-muted); /** Item icon color */
+  --color-dropdown-destructive-text: var(--color-text-error); /** Destructive item text (red) */
+  --color-dropdown-destructive-hover-bg: var(--color-bg-error-subtle); /** Destructive item hover bg */
+  --color-dropdown-separator: var(--color-border-muted); /** Separator line */
+  --color-dropdown-label-text: var(--color-text-muted); /** Group label text */
+  --color-nav-dropdown-bg: var(--color-bg-elevated); /** Dropdown panel background */
+  --color-nav-dropdown-border: var(--color-border-muted); /** Dropdown panel border */
+  --radius-dropdown-menu: var(--radius-component-lg); /** 8px menu radius */
+  --radius-dropdown-item: var(--radius-component-md); /** 6px item radius */
+  --radius-nav-dropdown: var(--radius-component-lg); /** Dropdown panel radius */
+  --shadow-dropdown-menu: var(--shadow-elevation-floating); /** Menu elevation */
+  --shadow-nav-dropdown: var(--shadow-elevation-floating); /** Dropdown panel shadow */
+  --spacing-dropdown-padding: var(--spacing-component-padding-xs); /** 4px inner padding */
+  --spacing-dropdown-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
+  --spacing-dropdown-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
+  --spacing-dropdown-item-gap: var(--spacing-component-gap-sm); /** 8px gap between icon and text */
+  --spacing-dropdown-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --font-dropdown-item-size: var(--font-component-size-sm); /** Menu item font size (text-sm equivalent) */
+  --font-dropdown-label-size: var(--font-component-size-xs); /** Group label font size (text-xs equivalent) */
+  --font-dropdown-label-weight: var(--font-component-weight-semibold); /** Group label font weight (font-semibold) */
+  --font-dropdown-shortcut-size: var(--font-component-size-xs); /** Shortcut text font size (text-xs equivalent) */
+  --sizing-dropdown-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+}

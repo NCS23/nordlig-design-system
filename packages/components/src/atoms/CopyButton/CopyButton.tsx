@@ -3,6 +3,9 @@ import { Copy, Check } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/copybutton';
+
 /** Groessen-Konfiguration fuer die drei Button-Varianten (token-basiert) */
 const sizeMap = {
   sm: { btn: 'h-[var(--sizing-cpybtn-sm)] w-[var(--sizing-cpybtn-sm)]', icon: 14 },

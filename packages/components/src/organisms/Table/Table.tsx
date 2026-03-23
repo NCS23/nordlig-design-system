@@ -1,6 +1,9 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/table';
+
 /* ─── Density CSS custom properties ─── */
 const densityMap = {
   compact: {

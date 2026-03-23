@@ -18,6 +18,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/datepicker';
+
 const WEEKDAYS = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'] as const;
 
 export interface DateRange {

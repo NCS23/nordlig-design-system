@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-tpick-column-width: 64px; /** Column width per unit */
+  --color-tpick-popover-bg: var(--color-bg-elevated); /** Popover background */
+  --color-tpick-popover-border: var(--color-border-muted); /** Popover border */
+  --color-tpick-column-text: var(--color-text-base); /** Time value text */
+  --color-tpick-column-hover-bg: var(--color-bg-surface); /** Hover background on time cell */
+  --color-tpick-column-selected-bg: var(--color-bg-primary); /** Selected time cell background */
+  --color-tpick-column-selected-text: var(--color-text-inverse); /** Selected time cell text */
+  --color-tpick-column-disabled-text: var(--color-text-disabled); /** Out-of-range time text */
+  --color-tpick-label-text: var(--color-text-muted); /** Column header label (Std/Min/Sek) */
+  --color-tpick-separator: var(--color-border-muted); /** Separator between columns */
+  --radius-tpick-popover: var(--radius-component-lg); /** 8px popover radius */
+  --radius-tpick-cell: var(--radius-component-md); /** 6px time cell radius */
+  --shadow-tpick-popover: var(--shadow-elevation-floating); /** Popover elevation */
+  --spacing-tpick-popover-padding: var(--spacing-component-padding-sm); /** 8px popover inner padding */
+  --spacing-tpick-column-gap: var(--spacing-component-gap-xs); /** 4px gap between cells */
+  --spacing-tpick-columns-gap: var(--spacing-component-gap-xs); /** 4px gap between time columns */
+  --font-tpick-cell-size: var(--font-component-size-sm); /** Time cell font size (14px) */
+  --font-tpick-label-size: var(--font-component-size-xs); /** Column label font size (12px) */
+  --font-tpick-label-weight: var(--font-component-weight-medium); /** Column label font weight (500) */
+  --sizing-tpick-cell-height: var(--sizing-component-height-sm); /** Time cell height */
+}

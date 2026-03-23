@@ -2,6 +2,10 @@ import React, { useState, useRef, useCallback, useId } from 'react';
 import { cn } from '../../utils/cn';
 import { Tag } from '../../atoms/Tag';
 
+// Component token CSS
+import '@nordlig/styles/tokens/tag';
+import '@nordlig/styles/tokens/taginput';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface TagInputProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {

@@ -1,0 +1,18 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-footer-height: 48px; /** Feste Footer-Hoehe */
+  --color-auth-footer-text: var(--color-text-muted); /** Footer text color */
+  --color-footer-bg: var(--color-bg-paper); /** Footer-Hintergrund */
+  --color-footer-border: var(--color-border-muted); /** Footer oberer Rand */
+  --spacing-auth-footer-gap: var(--spacing-component-gap-xl); /** Gap between card and footer (32px) */
+  --spacing-drawer-footer-pt: var(--spacing-component-gap-sm); /** 8px footer top padding */
+  --spacing-footer-px: var(--spacing-component-padding-lg); /** Horizontales Padding (24px) */
+  --spacing-footer-py: var(--spacing-component-padding-sm); /** Vertikales Padding (12px) */
+  --spacing-listpage-footer-gap: var(--spacing-component-gap-md); /** Gap in footer area (8px) */
+  --spacing-sheet-footer-gap: var(--spacing-component-gap-sm); /** Gap between footer buttons (8px) */
+  --spacing-sheet-footer-pt: var(--spacing-component-padding-md); /** 16px footer top padding */
+  --spacing-textarea-footer-gap: var(--spacing-component-gap-sm); /** Gap between hint and character count (8px) */
+}

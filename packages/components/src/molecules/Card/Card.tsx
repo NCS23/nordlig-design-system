@@ -2,6 +2,10 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/card';
+import '@nordlig/styles/tokens/text';
+
 const cardVariants = cva(
   'rounded-[var(--radius-card)] bg-[var(--color-card-bg)] text-[var(--color-text-base)] flex flex-col gap-[var(--spacing-card-gap)] transition-shadow',
   {

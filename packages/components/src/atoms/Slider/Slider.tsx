@@ -2,6 +2,10 @@ import React from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/slider';
+import '@nordlig/styles/tokens/text';
+
 export interface SliderProps
   extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
   showValue?: boolean;

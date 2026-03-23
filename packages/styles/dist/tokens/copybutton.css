@@ -1,0 +1,15 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-cpybtn-bg: var(--color-bg-surface); /** Default background */
+  --color-cpybtn-bg-hover: var(--color-bg-surface-hover); /** Hover background */
+  --color-cpybtn-icon: var(--color-text-muted); /** Copy icon color */
+  --color-cpybtn-icon-copied: var(--color-text-success); /** Check icon after copy */
+  --color-cpybtn-border: var(--color-border-default); /** Button border */
+  --radius-cpybtn: var(--radius-component-md); /** Button radius */
+  --sizing-cpybtn-sm: var(--sizing-component-height-sm); /** CopyButton size sm (36px) */
+  --sizing-cpybtn-md: var(--sizing-component-height-md); /** CopyButton size md (40px) */
+  --sizing-cpybtn-lg: var(--sizing-component-height-lg); /** CopyButton size lg (44px, touch-target safe) */
+}

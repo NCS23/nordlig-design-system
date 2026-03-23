@@ -1,6 +1,10 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/label';
+import '@nordlig/styles/tokens/text';
+
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   /** Zeigt einen roten Stern (*) an, um Pflichtfelder zu kennzeichnen */
   required?: boolean;

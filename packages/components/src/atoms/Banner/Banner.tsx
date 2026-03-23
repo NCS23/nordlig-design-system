@@ -4,6 +4,9 @@ import { Info, CheckCircle, AlertTriangle, XCircle, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/banner';
+
 const bannerVariants = cva(
   'flex items-center w-full px-[var(--spacing-banner-padding-x)] py-[var(--spacing-banner-padding-y)] gap-[var(--spacing-banner-gap)] border-b',
   {

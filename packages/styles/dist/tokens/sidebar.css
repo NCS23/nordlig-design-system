@@ -1,0 +1,35 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-sidebar-badge-py: 2px; /** Badge vertical padding */
+  --sizing-dashboard-sidebar-width: 240px; /** Sidebar expanded width */
+  --sizing-dashboard-sidebar-collapsed-width: 64px; /** Sidebar collapsed width */
+  --sizing-detailpage-sidebar-width: 280px; /** Sidebar width on desktop */
+  --color-sidebar-bg: var(--color-bg-base); /** Sidebar background */
+  --color-sidebar-border: var(--color-border-muted); /** Sidebar right border */
+  --color-sidebar-text: var(--color-text-muted); /** Default item text */
+  --color-sidebar-text-active: var(--color-text-on-primary); /** Active item text */
+  --color-sidebar-item-hover: var(--color-bg-surface-active); /** Item hover background (slate-300 on slate-200 sidebar) */
+  --color-sidebar-item-active: var(--color-bg-primary); /** Active item background */
+  --radius-sidebar-badge: var(--radius-component-full); /** Pill-shaped badge (9999px) */
+  --spacing-detailpage-sidebar-gap: var(--spacing-layout-gutter); /** Gap between content and sidebar (24px) */
+  --spacing-sidebar-header-gap: var(--spacing-component-gap-md); /** Gap between items in sidebar header (12px) */
+  --spacing-sidebar-item-gap: var(--spacing-component-gap-md); /** Gap between icon and label in sidebar item (12px) */
+  --spacing-sidebar-header-padding: var(--spacing-component-padding-lg); /** Header/footer padding (16px) */
+  --spacing-sidebar-content-py: var(--spacing-component-gap-md); /** Content vertical padding (8px) */
+  --spacing-sidebar-group-px: var(--spacing-component-padding-md); /** Group horizontal padding (12px) */
+  --spacing-sidebar-group-py: var(--spacing-component-gap-md); /** Group vertical padding (8px) */
+  --spacing-sidebar-item-px: var(--spacing-component-padding-md); /** Item horizontal padding (12px) */
+  --spacing-sidebar-item-py: var(--spacing-component-gap-md); /** Item vertical padding (8px) */
+  --spacing-sidebar-label-px: var(--spacing-component-padding-md); /** Label horizontal padding (12px) */
+  --spacing-sidebar-label-mb: var(--spacing-component-gap-xs); /** Label bottom margin (4px) */
+  --spacing-sidebar-badge-px: var(--spacing-component-gap-xs); /** Badge horizontal padding */
+  --spacing-sidebar-collapse-padding: var(--spacing-component-gap-xs); /** Collapse button padding */
+  --font-sidebar-label-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-sidebar-label-weight: var(--font-component-weight-semibold); /** Group label weight */
+  --font-sidebar-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-sidebar-badge-size: var(--font-component-size-xs); /** Badge text size (12px) */
+  --font-sidebar-badge-weight: var(--font-component-weight-medium); /** Badge weight */
+}

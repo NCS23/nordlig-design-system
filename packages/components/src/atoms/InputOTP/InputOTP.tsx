@@ -2,6 +2,10 @@ import React from 'react';
 import { OTPInput, OTPInputContext, type OTPInputProps as BaseOTPInputProps } from 'input-otp';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/inputotp';
+
 /* ─── InputOTP ──────────────────────────────────────────────────────────────── */
 
 export type InputOTPProps = BaseOTPInputProps & {

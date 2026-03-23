@@ -1,6 +1,10 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/form';
+import '@nordlig/styles/tokens/formpage';
+
 // ─── FormPage (Root) ────────────────────────────────────────────────────────
 
 export interface FormPageProps extends React.HTMLAttributes<HTMLDivElement> {

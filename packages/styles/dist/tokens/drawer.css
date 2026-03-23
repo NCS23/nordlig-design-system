@@ -1,0 +1,24 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-drawer-overlay: var(--color-bg-overlay); /** Drawer backdrop overlay */
+  --color-drawer-bg: var(--color-bg-paper); /** Drawer content background */
+  --color-drawer-title: var(--color-text-base); /** Drawer title text */
+  --color-drawer-description: var(--color-text-muted); /** Drawer description text */
+  --color-drawer-border: var(--color-border-muted); /** Drawer top border */
+  --color-drawer-handle: var(--color-border-strong); /** Drag handle bar color */
+  --radius-drawer: var(--radius-component-xl); /** 12px drawer radius (large overlay) */
+  --radius-drawer-handle: var(--radius-component-full); /** Pill-shaped handle bar (9999px) */
+  --shadow-drawer: var(--shadow-elevation-floating); /** Drawer elevation shadow */
+  --spacing-drawer-padding: var(--spacing-component-padding-lg); /** Drawer content padding */
+  --spacing-drawer-gap: var(--spacing-component-gap-md); /** Drawer section gap */
+  --spacing-drawer-handle-mt: var(--spacing-component-padding-md); /** 16px handle top margin */
+  --spacing-drawer-footer-pt: var(--spacing-component-gap-sm); /** 8px footer top padding */
+  --font-drawer-title-size: var(--font-component-size-lg); /** Drawer title font size (text-lg equivalent) */
+  --font-drawer-title-weight: var(--font-component-weight-semibold); /** Drawer title font weight (font-semibold) */
+  --font-drawer-description-size: var(--font-component-size-sm); /** Drawer description font size (text-sm equivalent) */
+  --sizing-drawer-handle-h: var(--spacing-component-gap-xs); /** 6px handle height */
+  --sizing-drawer-handle-w: var(--spacing-component-padding-xl); /** 48px handle width */
+}

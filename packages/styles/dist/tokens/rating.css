@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-rtg-filled: var(--color-text-warning); /** Filled star (gold/amber) */
+  --color-rtg-empty: var(--color-text-disabled); /** Empty star */
+  --color-rtg-hover: var(--color-border-warning); /** Hover color */
+  --radius-rtg-focus: var(--radius-component-sm); /** 4px focus outline radius */
+  --spacing-rtg-gap: var(--spacing-component-gap-sm); /** Gap between stars */
+  --sizing-rtg-sm: var(--sizing-component-icon-sm); /** Star size sm */
+  --sizing-rtg-md: var(--sizing-component-icon-md); /** Star size md */
+  --sizing-rtg-lg: var(--sizing-component-icon-lg); /** Star size lg */
+}

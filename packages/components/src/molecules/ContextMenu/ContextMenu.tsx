@@ -2,6 +2,10 @@ import React from 'react';
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/dropdown';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type ContextMenuProps = React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Root>;

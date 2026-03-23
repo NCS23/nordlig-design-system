@@ -2,6 +2,9 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/spinner';
+
 // ─── CVA: Spinner ────────────────────────────────────────────────────────────
 
 const spinnerVariants = cva('animate-spin', {

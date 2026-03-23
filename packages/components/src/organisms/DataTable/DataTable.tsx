@@ -19,6 +19,9 @@ import { Input } from '../../atoms/Input';
 import { Button } from '../../atoms/Button';
 import { Checkbox } from '../../atoms/Checkbox';
 
+// Component token CSS
+import '@nordlig/styles/tokens/datatable';
+
 /* ─── DataTable ─── */
 
 /** Feature-rich data table with sorting, filtering, pagination and row selection. Built on TanStack Table. */

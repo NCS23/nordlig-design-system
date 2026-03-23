@@ -1,0 +1,25 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-rte-bg: var(--color-bg-paper); /** Editor background */
+  --color-rte-border: var(--color-border-default); /** Editor border */
+  --color-rte-border-focus: var(--color-border-focus); /** Editor border/ring on focus */
+  --color-rte-border-error: var(--color-border-error); /** Editor border on error */
+  --color-rte-text: var(--color-text-base); /** Editor content text color */
+  --color-rte-placeholder: var(--color-text-disabled); /** Placeholder text color */
+  --color-rte-toolbar-bg: var(--color-bg-surface); /** Toolbar background */
+  --color-rte-toolbar-border: var(--color-border-muted); /** Toolbar bottom border */
+  --color-rte-toolbar-btn-text: var(--color-text-base); /** Toolbar button text */
+  --color-rte-toolbar-btn-hover-bg: var(--color-bg-surface); /** Toolbar button hover background */
+  --color-rte-toolbar-btn-active-bg: var(--color-bg-primary-subtle); /** Toolbar button active state background */
+  --color-rte-toolbar-btn-active-text: var(--color-text-primary); /** Toolbar button active state text */
+  --radius-rte: var(--radius-component-md); /** Editor border radius */
+  --radius-rte-toolbar-btn: var(--radius-component-sm); /** Toolbar button border radius */
+  --spacing-rte-padding: var(--spacing-component-padding-md); /** Editor content padding (16px) */
+  --spacing-rte-toolbar-padding: var(--spacing-component-gap-sm); /** Toolbar padding (8px) */
+  --spacing-rte-toolbar-gap: var(--spacing-component-gap-2xs); /** Toolbar button gap (2px) */
+  --font-rte-content-size: var(--font-component-size-md); /** Editor content font size */
+  --sizing-rte-toolbar-btn: var(--sizing-component-height-sm); /** Toolbar button size (32px) */
+}

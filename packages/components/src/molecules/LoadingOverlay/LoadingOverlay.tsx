@@ -2,6 +2,9 @@ import React from 'react';
 import { cn } from '../../utils/cn';
 import { Spinner } from '../../atoms/Spinner';
 
+// Component token CSS
+import '@nordlig/styles/tokens/loadingoverlay';
+
 export interface LoadingOverlayProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Lade-Text unter dem Spinner */
   text?: string;

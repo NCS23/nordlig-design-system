@@ -3,6 +3,10 @@ import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/toggle';
+import '@nordlig/styles/tokens/togglegroup';
+
 // ─── Variant Context ────────────────────────────────────────────────────────
 
 type ToggleGroupVariant = 'default' | 'outline';

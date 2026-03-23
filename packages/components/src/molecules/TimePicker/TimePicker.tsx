@@ -5,6 +5,11 @@ import { Input, type InputProps } from '../../atoms/Input';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/text';
+import '@nordlig/styles/tokens/timepicker';
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function pad(n: number): string {

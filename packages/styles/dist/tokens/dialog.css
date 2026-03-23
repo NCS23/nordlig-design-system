@@ -1,0 +1,18 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-dialog-overlay: var(--color-bg-overlay); /** Dialog backdrop overlay */
+  --color-dialog-bg: var(--color-bg-elevated); /** Dialog content background */
+  --color-dialog-title: var(--color-text-base); /** Dialog title text */
+  --color-dialog-description: var(--color-text-muted); /** Dialog description text */
+  --color-dialog-border: var(--color-border-muted); /** Dialog border */
+  --radius-dialog: var(--radius-component-xl); /** 12px dialog radius (large overlay) */
+  --shadow-dialog: var(--shadow-elevation-floating); /** Dialog panel shadow */
+  --spacing-dialog-padding: var(--spacing-component-padding-lg); /** Dialog content padding */
+  --spacing-dialog-gap: var(--spacing-component-gap-md); /** Dialog content gap */
+  --font-dialog-title-size: var(--font-component-size-lg); /** Dialog title font size (text-lg equivalent) */
+  --font-dialog-title-weight: var(--font-component-weight-semibold); /** Dialog title font weight (font-semibold) */
+  --font-dialog-description-size: var(--font-component-size-sm); /** Dialog description font size (text-sm equivalent) */
+}

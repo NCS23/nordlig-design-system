@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-ldovl-spinner: var(--color-interactive-primary); /** Spinner color */
+  --color-spinner-primary: var(--color-interactive-primary);
+  --color-spinner-track: var(--color-border-muted);
+  --color-spinner-label: var(--color-text-muted);
+  --spacing-spinner-gap: var(--spacing-component-gap-sm); /** Gap between spinner and label (8px) */
+  --font-spinner-label-size: var(--font-component-size-sm); /** Spinner label font size (text-sm) */
+  --sizing-spinner-sm: var(--sizing-component-icon-sm);
+  --sizing-spinner-md: var(--sizing-component-icon-md);
+  --sizing-spinner-lg: var(--sizing-component-icon-lg);
+  --sizing-spinner-xl: var(--sizing-component-icon-xl);
+}

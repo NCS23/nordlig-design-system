@@ -1,0 +1,13 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-adash-chart-height: 300px; /** Default chart container height */
+  --spacing-adash-section-gap: var(--spacing-component-padding-lg); /** Gap between dashboard sections (24px) */
+  --spacing-adash-metrics-gap: var(--spacing-component-gap-md); /** Gap between metric cards (12px) */
+  --spacing-adash-charts-gap: var(--spacing-component-gap-md); /** Gap between charts (12px) */
+  --spacing-adash-header-gap: var(--spacing-component-gap-md); /** Gap between header elements */
+  --font-adash-section-title-size: var(--font-component-size-lg); /** Section title font size */
+  --font-adash-section-title-weight: var(--font-component-weight-semibold); /** Section title font weight */
+}

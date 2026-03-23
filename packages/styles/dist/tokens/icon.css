@@ -1,0 +1,54 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-fuzpattern-zone-icon: var(--spacing-base-12); /** Upload-Icon Groesse (48px) */
+  --sizing-component-icon-sm: var(--spacing-md);
+  --sizing-component-icon-control: var(--spacing-md-lg); /** 20px — checkbox, switch thumb, slider thumb */
+  --sizing-component-icon-md: var(--spacing-lg);
+  --sizing-component-icon-lg: var(--spacing-xl);
+  --sizing-component-icon-xl: var(--spacing-2xl);
+  --color-accordion-icon: var(--color-text-muted); /** Chevron icon color */
+  --color-alert-info-icon: var(--color-text-info); /** Info icon color */
+  --color-alert-success-icon: var(--color-text-success); /** Success icon color */
+  --color-alert-warning-icon: var(--color-text-warning); /** Warning icon color */
+  --color-alert-error-icon: var(--color-text-error); /** Error icon color */
+  --color-checkbox-checked-icon: var(--color-text-on-primary); /** White check icon */
+  --color-cpybtn-icon: var(--color-text-muted); /** Copy icon color */
+  --color-cpybtn-icon-copied: var(--color-text-success); /** Check icon after copy */
+  --color-datatable-sort-icon: var(--color-text-muted); /** Sort icon inactive */
+  --color-datatable-sort-icon-active: var(--color-interactive-primary); /** Sort icon active */
+  --color-dropdown-item-icon: var(--color-text-muted); /** Item icon color */
+  --color-emptystate-icon: var(--color-text-muted); /** Default icon color (muted) */
+  --color-emptystate-icon-error: var(--color-text-error); /** Error variant icon color */
+  --color-emptystate-icon-success: var(--color-text-success); /** Success variant icon color */
+  --color-fileupload-zone-icon: var(--color-interactive-primary); /** Upload cloud icon */
+  --color-fileupload-drag-icon: var(--color-bg-primary); /** Drag-over icon */
+  --color-fileupload-file-icon: var(--color-text-muted); /** File type icon */
+  --color-sinput-icon: var(--color-text-muted); /** Search icon color */
+  --color-sinput-icon-focus: var(--color-text-base); /** Search icon on focus */
+  --color-select-icon: var(--color-text-muted); /** Chevron/search icon color */
+  --color-select-check-icon: var(--color-bg-primary); /** Checkmark icon color (sky) */
+  --color-toast-success-icon: var(--color-text-success); /** Green icon color */
+  --color-toast-error-icon: var(--color-text-error); /** Red icon color */
+  --color-toast-warning-icon: var(--color-text-warning); /** Amber icon color */
+  --color-toast-info-icon: var(--color-text-info); /** Sky blue icon color */
+  --spacing-alert-icon-mt: var(--spacing-component-gap-2xs); /** Icon top margin for vertical alignment (2px) */
+  --spacing-cmb-icon-mr: var(--spacing-component-gap-sm); /** 8px icon margin right */
+  --spacing-emptystate-icon-mb: var(--spacing-component-gap-lg); /** 16px below icon */
+  --spacing-input-icon-inset: var(--sizing-component-height-md); /** 40px – right padding when icon present */
+  --spacing-input-icon-padding: var(--spacing-component-padding-sm); /** 12px – icon button internal padding */
+  --spacing-select-search-icon-left: var(--spacing-component-padding-sm); /** 10px search icon left offset */
+  --spacing-spotlight-icon-mr: var(--spacing-component-gap-sm); /** Icon right margin (8px) */
+  --spacing-toast-icon-pt: var(--spacing-component-gap-2xs); /** 2px top padding for variant icon alignment */
+  --sizing-dropdown-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+  --sizing-fuzpattern-remove-icon: var(--sizing-component-icon-sm); /** Entfernen-Icon Groesse (16px) */
+  --sizing-icon-sm: var(--sizing-component-icon-sm); /** Small icon (16x16) */
+  --sizing-icon-md: var(--sizing-component-icon-control); /** Medium icon (20x20) — default */
+  --sizing-icon-lg: var(--sizing-component-icon-md); /** Large icon (24x24) */
+  --sizing-icon-xl: var(--sizing-component-icon-lg); /** Extra large icon (32x32) */
+  --sizing-menubar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+  --sizing-notifcenter-icon-size: var(--sizing-component-icon-md); /** Varianten-Icon Groesse */
+  --sizing-toolbar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+}

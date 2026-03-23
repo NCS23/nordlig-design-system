@@ -1,0 +1,37 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-alert-title: var(--color-text-base); /** Alert title text (fallback) */
+  --color-alert-description: var(--color-text-base); /** Alert description text (fallback) */
+  --color-alert-info-bg: var(--color-bg-info-subtle); /** Info variant background */
+  --color-alert-info-border: var(--color-border-info); /** Info left accent border */
+  --color-alert-info-icon: var(--color-text-info); /** Info icon color */
+  --color-alert-info-title: var(--color-text-info-strong); /** Info title text — Blue 800 */
+  --color-alert-info-description: var(--color-text-info-strong); /** Info description text — Blue 800 */
+  --color-alert-success-bg: var(--color-bg-success-subtle); /** Success variant background */
+  --color-alert-success-border: var(--color-border-success); /** Success left accent border */
+  --color-alert-success-icon: var(--color-text-success); /** Success icon color */
+  --color-alert-success-title: var(--color-text-success-strong); /** Success title text — Emerald 800 */
+  --color-alert-success-description: var(--color-text-success-strong); /** Success description text — Emerald 800 */
+  --color-alert-warning-bg: var(--color-bg-warning-subtle); /** Warning variant background */
+  --color-alert-warning-border: var(--color-border-warning); /** Warning left accent border */
+  --color-alert-warning-icon: var(--color-text-warning); /** Warning icon color */
+  --color-alert-warning-title: var(--color-text-warning-strong); /** Warning title text — Amber 800 */
+  --color-alert-warning-description: var(--color-text-warning-strong); /** Warning description text — Amber 800 */
+  --color-alert-error-bg: var(--color-bg-error-subtle); /** Error variant background */
+  --color-alert-error-border: var(--color-border-error); /** Error left accent border */
+  --color-alert-error-icon: var(--color-text-error); /** Error icon color */
+  --color-alert-error-title: var(--color-text-error-strong); /** Error title text — Red 800 */
+  --color-alert-error-description: var(--color-text-error-strong); /** Error description text — Red 800 */
+  --radius-alert: var(--radius-component-md); /** 6px rounded corners */
+  --spacing-alert-padding: var(--spacing-component-padding-md); /** Alert padding all sides (16px) */
+  --spacing-alert-gap: var(--spacing-component-gap-md); /** Gap between icon and content (12px) */
+  --spacing-alert-icon-mt: var(--spacing-component-gap-2xs); /** Icon top margin for vertical alignment (2px) */
+  --spacing-alert-close-padding: var(--spacing-component-gap-xs); /** Close button padding (4px) */
+  --spacing-alert-title-mb: var(--spacing-component-gap-xs); /** Title bottom margin (4px) */
+  --sizing-alert-border-width: var(--sizing-component-track-sm); /** Left accent border width (4px) */
+  --sizing-alert-font-size: var(--font-component-size-sm); /** Text font size (14px) */
+  --sizing-alert-title-weight: var(--font-component-weight-semibold); /** Title font weight (600) */
+}

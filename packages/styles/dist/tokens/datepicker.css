@@ -1,0 +1,35 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-datepicker-popover-bg: var(--color-bg-elevated); /** White popover background */
+  --color-datepicker-popover-border: var(--color-border-muted); /** Subtle popover border */
+  --color-datepicker-header-text: var(--color-text-base); /** Month/year header text */
+  --color-datepicker-weekday-text: var(--color-text-muted); /** Mo Di Mi weekday labels */
+  --color-datepicker-day-text: var(--color-text-base); /** Default day number */
+  --color-datepicker-day-hover-bg: var(--color-bg-surface); /** Day hover background */
+  --color-datepicker-day-selected-bg: var(--color-bg-primary); /** Sky Blue selected day */
+  --color-datepicker-day-selected-text: var(--color-text-inverse); /** White text on selected */
+  --color-datepicker-day-today-border: var(--color-border-focus); /** Sky Blue ring for today */
+  --color-datepicker-day-disabled-text: var(--color-text-disabled); /** Disabled/outside day */
+  --color-datepicker-day-range-bg: var(--color-bg-primary-muted); /** Subtle sky-100 for range middle days */
+  --color-datepicker-nav-hover-bg: var(--color-bg-surface); /** Chevron hover bg */
+  --radius-datepicker-popover: var(--radius-component-lg); /** 8px popover radius */
+  --radius-datepicker-day: var(--radius-component-md); /** 6px day cell radius */
+  --shadow-datepicker-popover: var(--shadow-elevation-floating); /** Popover elevation */
+  --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
+  --spacing-datepicker-grid-gap: var(--spacing-component-gap-sm); /** 2px gap between day cells */
+  --spacing-datepicker-range-gap: var(--spacing-component-gap-sm); /** Gap between date inputs in range picker (8px) */
+  --spacing-datepicker-header-mb: var(--spacing-component-gap-sm); /** 8px header bottom margin */
+  --spacing-datepicker-weekday-mb: var(--spacing-component-gap-xs); /** 4px weekday row bottom margin */
+  --font-datepicker-header-size: var(--font-component-size-sm); /** Month/year header size (14px) */
+  --font-datepicker-header-weight: var(--font-component-weight-semibold); /** Month/year header weight */
+  --font-datepicker-weekday-size: var(--font-component-size-xs); /** Weekday label size (12px) */
+  --font-datepicker-weekday-weight: var(--font-component-weight-medium); /** Weekday label weight */
+  --font-datepicker-day-size: var(--font-component-size-sm); /** Day number size (14px) */
+  --font-datepicker-selected-weight: var(--font-component-weight-semibold); /** Selected day weight */
+  --font-datepicker-today-weight: var(--font-component-weight-medium); /** Today day weight */
+  --font-datepicker-range-text-size: var(--font-component-size-sm); /** 14px range separator text size */
+  --sizing-datepicker-day-size: var(--sizing-component-height-sm); /** Day cell width/height */
+}

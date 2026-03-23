@@ -1,0 +1,35 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-timeline-inner-dot: 10px; /** 10px inner dot */
+  --color-timeline-dot-default-bg: var(--color-bg-surface); /** Default dot background */
+  --color-timeline-dot-default-text: var(--color-text-muted); /** Default dot icon */
+  --color-timeline-dot-success-bg: var(--color-bg-success-subtle); /** Success dot — subtle green */
+  --color-timeline-dot-success-text: var(--color-text-success); /** Success dot icon (dark green) */
+  --color-timeline-dot-warning-bg: var(--color-bg-warning-subtle); /** Warning dot — subtle amber */
+  --color-timeline-dot-warning-text: var(--color-text-warning); /** Warning dot icon (dark amber) */
+  --color-timeline-dot-error-bg: var(--color-bg-error-subtle); /** Error dot — subtle red */
+  --color-timeline-dot-error-text: var(--color-text-error); /** Error dot icon (dark red) */
+  --color-timeline-inner-dot-default: var(--color-text-muted); /** Default inner dot */
+  --color-timeline-inner-dot-variant: var(--color-bg-paper); /** Variant inner dot */
+  --color-timeline-line: var(--color-border-muted); /** Connecting line — softer */
+  --color-timeline-title: var(--color-text-base); /** Item title */
+  --color-timeline-description: var(--color-text-muted); /** Item description */
+  --color-timeline-timestamp: var(--color-text-muted); /** Item timestamp */
+  --radius-timeline-dot: var(--radius-component-full); /** Circular dot (9999px) */
+  --radius-timeline-inner-dot: var(--radius-component-full); /** Circular inner dot (9999px) */
+  --spacing-timeline-item-pb: var(--spacing-component-padding-xl); /** 32px item bottom padding */
+  --spacing-timeline-line-left: var(--spacing-component-padding-md); /** 16px line left offset */
+  --spacing-timeline-line-top: var(--spacing-component-padding-xl); /** 32px line top offset */
+  --spacing-timeline-content-ml: var(--spacing-component-padding-md); /** 16px content left margin */
+  --spacing-timeline-desc-mt: var(--spacing-component-gap-sm); /** 8px description margin top */
+  --spacing-timeline-desc-text-mt: var(--spacing-component-gap-2xs); /** 2px description text margin top */
+  --font-timeline-timestamp-size: var(--font-component-size-xs); /** Timestamp text size (12px) */
+  --font-timeline-title-size: var(--font-component-size-sm); /** Title text size (14px) */
+  --font-timeline-title-weight: var(--font-component-weight-medium); /** Title text weight */
+  --font-timeline-desc-size: var(--font-component-size-sm); /** Description text size (14px) */
+  --sizing-timeline-dot: var(--spacing-component-padding-xl); /** 32px dot diameter */
+  --sizing-timeline-line-w: var(--sizing-component-border-width-default); /** 1px line width (reduced from 2px) */
+}

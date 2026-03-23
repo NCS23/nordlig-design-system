@@ -1,0 +1,12 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-breadcrumbs-text: var(--color-text-muted); /** Breadcrumb link text */
+  --color-breadcrumbs-text-current: var(--color-text-base); /** Current breadcrumb text */
+  --color-breadcrumbs-separator: var(--color-text-disabled); /** Breadcrumb separator color */
+  --color-breadcrumbs-hover-text: var(--color-text-primary); /** Breadcrumb link hover text */
+  --font-breadcrumbs-item-size: var(--font-component-size-sm); /** Breadcrumb item font size */
+  --font-breadcrumbs-current-weight: var(--font-component-weight-medium); /** Current breadcrumb font weight */
+}

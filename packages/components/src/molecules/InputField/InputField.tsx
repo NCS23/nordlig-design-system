@@ -2,6 +2,11 @@ import React from 'react';
 import { Input, type InputProps } from '../../atoms/Input';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/inputfield';
+import '@nordlig/styles/tokens/text';
+
 export interface InputFieldProps extends InputProps {
   label?: string;
   helperText?: string;

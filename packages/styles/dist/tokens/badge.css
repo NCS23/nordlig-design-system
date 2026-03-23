@@ -1,0 +1,53 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-sidebar-badge-py: 2px; /** Badge vertical padding */
+  --color-badge-primary-bg: var(--color-primary-1-100); /** Sky-100 — clearly visible light blue */
+  --color-badge-primary-text: var(--color-primary-1-700);
+  --color-badge-primary-border: var(--color-primary-1-300);
+  --color-badge-primary-bold-bg: var(--color-primary-1-200); /** Sky-200 — stronger blue for emphasis */
+  --color-badge-primary-bold-text: var(--color-primary-1-800);
+  --color-badge-primary-bold-border: var(--color-primary-1-400);
+  --color-badge-accent-bg: var(--color-primary-2-100); /** Indigo-100 — clearly visible violet */
+  --color-badge-accent-text: var(--color-primary-2-700);
+  --color-badge-accent-border: var(--color-primary-2-300);
+  --color-badge-accent-bold-bg: var(--color-primary-2-200); /** Indigo-200 — stronger violet for emphasis */
+  --color-badge-accent-bold-text: var(--color-primary-2-800);
+  --color-badge-accent-bold-border: var(--color-primary-2-400);
+  --color-badge-success-bg: var(--color-bg-success);
+  --color-badge-success-text: var(--color-text-success);
+  --color-badge-success-border: var(--color-border-success);
+  --color-badge-warning-bg: var(--color-bg-warning);
+  --color-badge-warning-text: var(--color-text-warning);
+  --color-badge-warning-border: var(--color-border-warning);
+  --color-badge-error-bg: var(--color-bg-error);
+  --color-badge-error-text: var(--color-text-error);
+  --color-badge-error-border: var(--color-border-error);
+  --color-badge-info-bg: var(--color-bg-info);
+  --color-badge-info-text: var(--color-text-info);
+  --color-badge-info-border: var(--color-border-info);
+  --color-badge-neutral-bg: var(--color-bg-surface);
+  --color-badge-neutral-text: var(--color-text-muted);
+  --color-badge-neutral-border: var(--color-border-muted);
+  --radius-badge: var(--radius-component-full);
+  --radius-sidebar-badge: var(--radius-component-full); /** Pill-shaped badge (9999px) */
+  --spacing-sidebar-badge-px: var(--spacing-component-gap-xs); /** Badge horizontal padding */
+  --font-badge-weight: var(--font-component-weight-medium); /** Font weight 500 (medium) */
+  --font-sidebar-badge-size: var(--font-component-size-xs); /** Badge text size (12px) */
+  --font-sidebar-badge-weight: var(--font-component-weight-medium); /** Badge weight */
+  --sizing-badge-border-width: var(--sizing-component-border-width-default); /** Badge border width (1px) */
+  --sizing-badge-xs-padding-x: var(--sizing-component-padding-x-xs);
+  --sizing-badge-xs-padding-y: var(--sizing-component-padding-y-xs);
+  --sizing-badge-xs-font-size: var(--font-component-size-xs);
+  --sizing-badge-sm-padding-x: var(--sizing-component-padding-x-sm);
+  --sizing-badge-sm-padding-y: var(--sizing-component-padding-y-sm);
+  --sizing-badge-sm-font-size: var(--font-component-size-sm);
+  --sizing-badge-md-padding-x: var(--sizing-component-padding-x-md);
+  --sizing-badge-md-padding-y: var(--sizing-component-padding-y-sm);
+  --sizing-badge-md-font-size: var(--font-component-size-sm);
+  --sizing-badge-lg-padding-x: var(--sizing-component-padding-x-md);
+  --sizing-badge-lg-padding-y: var(--sizing-component-padding-y-md);
+  --sizing-badge-lg-font-size: var(--font-component-size-md);
+}

@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/pagination';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface PaginationProps extends Omit<React.HTMLAttributes<HTMLElement>, 'onChange'> {

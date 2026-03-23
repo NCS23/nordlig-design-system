@@ -3,6 +3,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/card';
+import '@nordlig/styles/tokens/carousel';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {

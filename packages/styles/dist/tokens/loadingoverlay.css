@@ -1,0 +1,12 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-ldovl-bg: var(--color-bg-overlay); /** Overlay background (semi-transparent) */
+  --color-ldovl-text: var(--color-text-base); /** Loading text color */
+  --color-ldovl-spinner: var(--color-interactive-primary); /** Spinner color */
+  --radius-ldovl: var(--radius-component-md); /** Corner radius (matching container) */
+  --spacing-ldovl-gap: var(--spacing-component-gap-md); /** Gap between spinner and text */
+  --font-ldovl-text-size: var(--font-component-size-sm); /** Loading text font size */
+}

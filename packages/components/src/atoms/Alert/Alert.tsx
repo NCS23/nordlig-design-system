@@ -4,6 +4,9 @@ import { Info, CheckCircle, AlertTriangle, XCircle, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/alert';
+
 const alertVariants = cva(
   'relative flex items-start gap-[var(--spacing-alert-gap)] p-[var(--spacing-alert-padding)] [border-left-width:var(--sizing-alert-border-width)] rounded-[var(--radius-alert)]',
   {

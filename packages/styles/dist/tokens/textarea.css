@@ -1,0 +1,18 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-textarea-min-height: 100px; /** Default minimum height */
+  --color-textarea-counter-text: var(--color-text-muted); /** Character counter default */
+  --color-textarea-counter-text-over: var(--color-text-error); /** Counter when over limit */
+  --spacing-textarea-padding-y-sm: var(--sizing-component-padding-y-md); /** 8px – sm size vertical padding */
+  --spacing-textarea-padding-y-md: var(--sizing-component-padding-y-lg); /** 10px – md size vertical padding */
+  --spacing-textarea-padding-y-lg: var(--sizing-component-padding-y-xl); /** 12px – lg size vertical padding */
+  --spacing-textarea-field-gap: var(--sizing-component-gap-sm); /** Gap between label, textarea, and hint (6px) */
+  --spacing-textarea-footer-gap: var(--spacing-component-gap-sm); /** Gap between hint and character count (8px) */
+  --font-textarea-label-weight: var(--font-component-weight-medium); /** Label font weight (font-medium) */
+  --font-textarea-hint-size: var(--font-component-size-xs); /** Helper/error text font size (text-xs equivalent) */
+  --font-textarea-counter-size: var(--font-component-size-xs); /** Character counter font size (text-xs equivalent) */
+  --font-textarea-counter-weight: var(--font-component-weight-medium); /** Counter over-limit font weight (font-medium) */
+}

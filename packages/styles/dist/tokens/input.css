@@ -1,0 +1,45 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-cpick-input-bg: var(--color-base-white); /** Hex input — pure white for contrast */
+  --color-input-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
+  --color-cpick-input-border: var(--color-border-default); /** Hex input border */
+  --color-cpick-input-text: var(--color-text-base); /** Hex input text */
+  --color-cpick-input-border-focus: var(--color-border-focus); /** Hex input focus border */
+  --color-command-input-text: var(--color-text-base); /** Command input text */
+  --color-command-input-placeholder: var(--color-text-disabled); /** Command input placeholder */
+  --color-input-bg-disabled: var(--color-bg-surface);
+  --color-input-text: var(--color-text-base);
+  --color-input-text-placeholder: var(--color-text-muted);
+  --color-input-border: var(--color-border-default);
+  --color-input-border-hover: var(--color-border-strong);
+  --color-input-border-focus: var(--color-border-focus);
+  --color-input-border-error: var(--color-border-error);
+  --color-spotlight-input-text: var(--color-text-base); /** Search input text */
+  --color-spotlight-input-placeholder: var(--color-text-disabled); /** Search input placeholder */
+  --color-taginput-input-text: var(--color-text-base); /** Inline input text color */
+  --color-taginput-input-placeholder: var(--color-text-disabled); /** Placeholder text color */
+  --spacing-command-input-px: var(--spacing-component-padding-sm); /** 12px input wrapper horizontal padding */
+  --spacing-input-padding-x: var(--spacing-component-padding-md); /** 16px */
+  --spacing-input-icon-inset: var(--sizing-component-height-md); /** 40px – right padding when icon present */
+  --spacing-input-icon-padding: var(--spacing-component-padding-sm); /** 12px – icon button internal padding */
+  --spacing-input-field-gap: var(--sizing-component-gap-sm); /** 6px — Gap between Label, Input/Select/Textarea, and Hint in Field wrappers */
+  --spacing-pwinput-input-pr: var(--spacing-component-padding-xl); /** 40px input right padding for toggle */
+  --spacing-spotlight-input-px: var(--spacing-component-padding-md); /** Search input horizontal padding (16px) */
+  --font-cpick-input-size: var(--font-component-size-sm); /** Hex input font size */
+  --font-cmb-input-size: var(--font-component-size-sm); /** Search input text size (14px) */
+  --font-command-input-size: var(--font-component-size-sm); /** Input text size (14px) */
+  --font-spotlight-input-size: var(--font-component-size-md); /** Search input font size */
+  --font-taginput-input-size: var(--font-component-size-sm); /** Inline input font size (14px) */
+  --sizing-input-sm-height: var(--sizing-component-height-sm); /** 36px – matches Button sm */
+  --sizing-input-sm-font-size: var(--font-component-size-sm); /** 0.875rem */
+  --sizing-input-sm-radius: var(--radius-component-md); /** 6px */
+  --sizing-input-md-height: var(--sizing-component-height-md); /** 40px – matches Button md */
+  --sizing-input-md-font-size: var(--font-component-size-md); /** 1rem */
+  --sizing-input-md-radius: var(--radius-component-md); /** 6px */
+  --sizing-input-lg-height: var(--sizing-component-height-lg); /** 44px – matches Button lg */
+  --sizing-input-lg-font-size: var(--font-component-size-lg); /** 1.125rem */
+  --sizing-input-lg-radius: var(--radius-component-md); /** 6px */
+}

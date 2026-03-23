@@ -1,6 +1,9 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/skeleton';
+
 // ─── Shimmer animation via inline style ──────────────────────────────────────
 // Using inline keyframes since tailwindcss-animate doesn't include shimmer.
 // The animation is applied via a CSS class with inline style for the gradient.

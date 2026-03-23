@@ -2,6 +2,10 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/heading';
+import '@nordlig/styles/tokens/text';
+
 const headingVariants = cva('', {
   variants: {
     level: {

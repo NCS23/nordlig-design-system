@@ -4,6 +4,9 @@ import { ImageOff } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/image';
+
 // CVA-Varianten fuer Rundung und Objektanpassung
 const imageVariants = cva(
   'overflow-hidden relative',

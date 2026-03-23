@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-auth-card-max-width: 420px; /** Card max width */
+  --color-auth-bg: var(--color-bg-base); /** Full-page background */
+  --color-auth-card-bg: var(--color-bg-paper); /** Form card background */
+  --color-auth-card-border: var(--color-border-muted); /** Card border */
+  --color-auth-footer-text: var(--color-text-muted); /** Footer text color */
+  --radius-auth-card: var(--radius-component-lg); /** Card border radius */
+  --shadow-auth-card: var(--shadow-elevation-floating); /** Card elevation shadow */
+  --spacing-auth-card-padding: var(--spacing-component-padding-xl); /** Card inner padding (32px) */
+  --spacing-auth-logo-gap: var(--spacing-component-gap-lg); /** Gap between logo and card (16px) */
+  --spacing-auth-footer-gap: var(--spacing-component-gap-xl); /** Gap between card and footer (32px) */
+}

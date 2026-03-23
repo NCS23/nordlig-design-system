@@ -1,6 +1,9 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/text';
+
 /** Visual divider between content sections. Supports labels and icons. */
 export interface SeparatorProps extends React.HTMLAttributes<HTMLElement> {
   /** Direction of the divider line.

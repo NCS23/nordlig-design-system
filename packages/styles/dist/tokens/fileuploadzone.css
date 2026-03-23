@@ -1,0 +1,22 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-fuzpattern-zone-icon: var(--spacing-base-12); /** Upload-Icon Groesse (48px) */
+  --sizing-fuzpattern-remove-target: var(--spacing-base-11); /** Touch-Target Entfernen-Button (44px) */
+  --color-fuzpattern-header-text: var(--color-text-base); /** Header Titel */
+  --color-fuzpattern-summary-text: var(--color-text-muted); /** Zusammenfassung */
+  --color-fuzpattern-item-bg: var(--color-bg-surface); /** Datei-Item Hintergrund */
+  --color-fuzpattern-item-border: var(--color-border-muted); /** Datei-Item Rand */
+  --radius-fuzpattern-item: var(--radius-component-md); /** Datei-Item Border-Radius */
+  --radius-fuzpattern-preview: var(--radius-component-sm); /** Bild-Vorschau Border-Radius */
+  --spacing-fuzpattern-section-gap: var(--spacing-component-gap-lg); /** Gap zwischen Sektionen */
+  --spacing-fuzpattern-header-gap: var(--spacing-component-gap-sm); /** Gap im Header */
+  --spacing-fuzpattern-list-gap: var(--spacing-component-gap-sm); /** Gap zwischen Datei-Items */
+  --spacing-fuzpattern-item-padding: var(--spacing-component-padding-sm); /** Padding der Datei-Items */
+  --spacing-fuzpattern-error-gap: var(--spacing-component-gap-sm); /** Gap vor Fehlermeldung im Item */
+  --sizing-fuzpattern-preview-size: var(--sizing-component-icon-xl); /** Bild-Vorschau Groesse (40px) */
+  --sizing-fuzpattern-remove-icon: var(--sizing-component-icon-sm); /** Entfernen-Icon Groesse (16px) */
+  --sizing-fuzpattern-progress-height: var(--sizing-component-track-sm); /** Fortschrittsbalken Hoehe */
+}

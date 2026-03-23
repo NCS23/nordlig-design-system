@@ -3,6 +3,9 @@ import { cn } from '../../utils/cn';
 import { AppHeader } from '../../organisms/AppHeader';
 import { AppFooter } from '../../organisms/AppFooter';
 
+// Component token CSS
+import '@nordlig/styles/tokens/pageshell';
+
 // ─── Context ────────────────────────────────────────────────────────────────
 
 interface PageShellContextValue {

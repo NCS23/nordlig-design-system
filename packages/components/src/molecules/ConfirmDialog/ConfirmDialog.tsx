@@ -12,6 +12,10 @@ import {
 } from '../AlertDialog';
 import type { ConfirmOptions } from './useConfirm';
 
+// Component token CSS
+import '@nordlig/styles/tokens/button';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface ConfirmDialogInnerProps {

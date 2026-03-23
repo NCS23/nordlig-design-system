@@ -2,6 +2,9 @@ import React from 'react';
 import { cn } from '../../utils/cn';
 import { SearchInput, type SearchInputProps } from '../../molecules/SearchInput';
 
+// Component token CSS
+import '@nordlig/styles/tokens/searchfilter';
+
 export interface SearchFilterProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Placeholder fuer das Suchfeld */
   searchPlaceholder?: string;

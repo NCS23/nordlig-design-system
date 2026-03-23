@@ -3,6 +3,9 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { Check, Minus } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/checkbox';
+
 // ─── Checkbox ────────────────────────────────────────────────────────────────
 
 export interface CheckboxProps

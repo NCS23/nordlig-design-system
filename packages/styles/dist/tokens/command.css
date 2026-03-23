@@ -1,0 +1,29 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-command-bg: var(--color-bg-elevated); /** Command palette background */
+  --color-command-border: var(--color-border-muted); /** Command palette border */
+  --color-command-input-text: var(--color-text-base); /** Command input text */
+  --color-command-input-placeholder: var(--color-text-disabled); /** Command input placeholder */
+  --color-command-item-text: var(--color-text-base); /** Command item text */
+  --color-command-item-hover-bg: var(--color-bg-surface); /** Command item hover background */
+  --color-command-group-heading: var(--color-text-muted); /** Command group heading text */
+  --color-command-separator: var(--color-border-muted); /** Command separator color */
+  --color-command-empty-text: var(--color-text-muted); /** Command empty state text */
+  --radius-command: var(--radius-component-lg); /** Command palette border radius */
+  --shadow-command: var(--shadow-elevation-floating); /** Command palette shadow */
+  --spacing-command-input-px: var(--spacing-component-padding-sm); /** 12px input wrapper horizontal padding */
+  --spacing-command-list-padding: var(--spacing-component-gap-xs); /** 4px list inner padding */
+  --spacing-command-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
+  --spacing-command-group-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
+  --spacing-command-item-px: var(--spacing-component-padding-xs); /** 8px item horizontal padding */
+  --spacing-command-item-py: var(--spacing-component-gap-xs); /** 6px item vertical padding */
+  --spacing-command-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --font-command-input-size: var(--font-component-size-sm); /** Input text size (14px) */
+  --font-command-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-command-heading-size: var(--font-component-size-xs); /** Group heading size (12px) */
+  --font-command-heading-weight: var(--font-component-weight-medium); /** Group heading weight */
+  --font-command-shortcut-size: var(--font-component-size-xs); /** Shortcut text size (12px) */
+}

@@ -5,6 +5,10 @@ import { Icon as IconAtom } from '../../atoms/Icon';
 import { Heading } from '../../atoms/Heading';
 import { Text } from '../../atoms/Text';
 
+// Component token CSS
+import '@nordlig/styles/tokens/fileupload';
+import '@nordlig/styles/tokens/fileuploadzone';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type FileUploadZoneStatus = 'pending' | 'uploading' | 'complete' | 'error';

@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-link-text: var(--color-interactive-primary); /** Default link text color */
+  --color-link-text-hover: var(--color-interactive-primary-hover); /** Link hover text color */
+  --color-toolbar-link-text: var(--color-text-primary); /** Link text */
+  --color-toolbar-link-hover-text: var(--color-interactive-primary-hover); /** Link hover text */
+  --spacing-link-gap: var(--spacing-component-gap-xs); /** Gap between text and external icon (4px) */
+  --font-nav-link-size: var(--font-component-size-sm); /** Link text font size (text-sm equivalent) */
+  --font-nav-link-weight: var(--font-component-weight-medium); /** Active link font weight (font-medium) */
+  --font-toolbar-link-size: var(--font-component-size-sm); /** Link text size (14px) */
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/breadcrumbs';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface BreadcrumbsProps extends React.HTMLAttributes<HTMLElement> {

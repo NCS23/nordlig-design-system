@@ -6,6 +6,11 @@ import { inputVariants } from '../../atoms/Input';
 import { Icon } from '../../atoms/Icon';
 import type { SelectOption, SelectGroup, SelectOptions } from './Select';
 
+// Component token CSS
+import '@nordlig/styles/tokens/combobox';
+import '@nordlig/styles/tokens/popover';
+import '@nordlig/styles/tokens/select';
+
 function isGrouped(options: SelectOptions): options is SelectGroup[] {
   return options.length > 0 && 'options' in options[0];
 }

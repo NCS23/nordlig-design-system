@@ -1,0 +1,20 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-avatar-bg: var(--color-bg-surface); /** Avatar fallback background */
+  --color-avatar-text: var(--color-text-muted); /** Avatar fallback text */
+  --color-avatar-border: var(--color-border-default); /** Avatar border */
+  --radius-avatar: var(--radius-component-full); /** Avatar border radius (circle) */
+  --font-avatar-fallback-weight: var(--font-component-weight-medium); /** Fallback initials font weight (500) */
+  --font-avatar-sm-size: var(--font-component-size-xs); /** Fallback text size sm (text-xs) */
+  --font-avatar-md-size: var(--font-component-size-sm); /** Fallback text size md (text-sm) */
+  --font-avatar-lg-size: var(--font-component-size-md); /** Fallback text size lg (text-base) */
+  --font-avatar-xl-size: var(--font-component-size-lg); /** Fallback text size xl (text-lg) */
+  --sizing-avatar-sm: var(--sizing-component-height-sm); /** Avatar size sm (h-9 = 36px) */
+  --sizing-avatar-md: var(--sizing-component-height-md); /** Avatar size md (h-10 = 40px) */
+  --sizing-avatar-lg: var(--sizing-component-height-lg); /** Avatar size lg (h-11 = 44px) */
+  --sizing-avatar-xl: var(--sizing-component-height-xl); /** Avatar size xl (64px) */
+  --sizing-avatar-border-width: var(--sizing-component-border-width-default); /** Avatar border width (1px) */
+}

@@ -2,6 +2,9 @@ import React from 'react';
 import { Star } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/rating';
+
 export interface RatingProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   /** Aktuelle Bewertung */
   value?: number;

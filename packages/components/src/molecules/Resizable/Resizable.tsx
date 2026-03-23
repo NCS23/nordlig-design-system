@@ -11,6 +11,9 @@ import { GripVertical } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/resizable';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type ResizablePanelGroupProps = GroupProps;

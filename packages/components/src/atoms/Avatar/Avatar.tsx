@@ -3,6 +3,9 @@ import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/avatar';
+
 const avatarVariants = cva(
   'relative inline-flex items-center justify-center overflow-hidden rounded-[var(--radius-avatar)] bg-[var(--color-avatar-bg)] [border-width:var(--sizing-avatar-border-width)] border-[var(--color-avatar-border)]',
   {

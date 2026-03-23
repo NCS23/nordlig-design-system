@@ -2,6 +2,9 @@ import React from 'react';
 import { Switch, type SwitchProps } from '../../atoms/Switch';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/switch';
+
 // ─── SwitchField ─────────────────────────────────────────────────────────────
 
 export interface SwitchFieldProps extends SwitchProps {

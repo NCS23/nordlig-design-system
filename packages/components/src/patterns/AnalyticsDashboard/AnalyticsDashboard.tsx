@@ -28,6 +28,10 @@ import { Skeleton } from '../../atoms/Skeleton';
 import { Heading } from '../../atoms/Heading';
 import type { ColumnDef } from '@tanstack/react-table';
 
+// Component token CSS
+import '@nordlig/styles/tokens/analyticsdashboard';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface AnalyticsDashboardMetric {

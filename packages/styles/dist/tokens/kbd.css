@@ -1,0 +1,15 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --font-kbd-sm-size: 11px; /** Kbd sm font size (11px, no L3 equivalent) */
+  --color-kbd-bg: var(--color-bg-paper); /** Key background */
+  --color-kbd-text: var(--color-text-base); /** Key text */
+  --color-kbd-border: var(--color-border-muted); /** Key border */
+  --radius-kbd: var(--radius-component-sm); /** Key border radius */
+  --shadow-kbd: var(--shadow-elevation-raised); /** Key pressed effect shadow */
+  --font-kbd-md-size: var(--font-component-size-xs); /** Kbd md font size (12px) */
+  --font-kbd-lg-size: var(--font-component-size-sm); /** Kbd lg font size (14px) */
+  --sizing-kbd-border-width: var(--sizing-component-border-width-default); /** Key border width (1px) */
+}

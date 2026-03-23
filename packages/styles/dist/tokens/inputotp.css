@@ -1,0 +1,19 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-inputotp-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
+  --color-inputotp-text: var(--color-text-base); /** Digit text color */
+  --color-inputotp-border: var(--color-border-default); /** Slot border */
+  --color-inputotp-border-focus: var(--color-border-focus); /** Active slot focus ring */
+  --color-inputotp-border-error: var(--color-border-error); /** Error state border */
+  --color-inputotp-caret: var(--color-interactive-primary); /** Blinking caret color */
+  --color-inputotp-separator: var(--color-text-muted); /** Group separator color */
+  --radius-inputotp: var(--radius-component-md); /** Slot border radius */
+  --spacing-inputotp-gap: var(--spacing-component-gap-sm); /** Gap between slots */
+  --font-inputotp-size: var(--font-component-size-sm); /** OTP digit font size (text-sm) */
+  --font-inputotp-weight: var(--font-component-weight-medium); /** OTP digit font weight (500) */
+  --sizing-inputotp-slot-size: var(--sizing-component-height-md); /** Slot width and height (40px) */
+  --sizing-inputotp-border-width: var(--sizing-component-border-width-default); /** Slot border width (1px) */
+}

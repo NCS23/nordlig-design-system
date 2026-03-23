@@ -1,0 +1,8 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-tree-item-gap: var(--spacing-component-gap-xs); /** Gap between icon and label in tree item (4px) */
+  --font-tree-label-size: var(--font-component-size-sm); /** Tree node label font size */
+}

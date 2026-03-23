@@ -3,6 +3,9 @@ import * as ProgressPrimitive from '@radix-ui/react-progress';
 import { Progress, type ProgressProps } from '../../atoms/Progress';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/progress';
+
 // ─── ProgressField ───────────────────────────────────────────────────────────
 
 export interface ProgressFieldProps extends ProgressProps {

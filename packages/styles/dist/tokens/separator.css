@@ -1,0 +1,20 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-breadcrumbs-separator: var(--color-text-disabled); /** Breadcrumb separator color */
+  --color-command-separator: var(--color-border-muted); /** Command separator color */
+  --color-dropdown-separator: var(--color-border-muted); /** Separator line */
+  --color-inputotp-separator: var(--color-text-muted); /** Group separator color */
+  --color-select-separator: var(--color-border-muted); /** Separator line */
+  --color-separator: var(--color-border-muted); /** Separator line color */
+  --color-spotlight-separator: var(--color-border-muted); /** Input/list separator */
+  --color-tpick-separator: var(--color-border-muted); /** Separator between columns */
+  --color-toolbar-separator: var(--color-border-muted); /** Separator color */
+  --spacing-command-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-dropdown-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-menubar-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-select-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-toolbar-separator-mx: var(--spacing-component-gap-xs); /** 4px separator horizontal margin */
+}

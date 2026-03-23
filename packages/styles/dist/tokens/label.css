@@ -1,0 +1,52 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-checkbox-label: var(--color-text-base); /** Label text color */
+  --color-cpick-label-text: var(--color-text-muted); /** Label text color */
+  --color-dropdown-label-text: var(--color-text-muted); /** Group label text */
+  --color-progress-label: var(--color-text-base);
+  --color-radio-label: var(--color-text-base); /** Label text color */
+  --color-select-group-label: var(--color-text-muted); /** Option group label */
+  --color-spinner-label: var(--color-text-muted);
+  --color-stepper-label-current: var(--color-text-base); /** Current step label */
+  --color-stepper-label-default: var(--color-text-muted); /** Other step labels */
+  --color-switch-label: var(--color-text-base); /** Label text color */
+  --color-tpick-label-text: var(--color-text-muted); /** Column header label (Std/Min/Sek) */
+  --spacing-chart-tooltip-label-mb: var(--spacing-component-gap-xs); /** Tooltip label bottom margin (4px) */
+  --spacing-progress-label-gap: var(--spacing-component-gap-lg);
+  --spacing-session-card-zone-label-mt: var(--spacing-component-gap-xs); /** Zone label top margin (4px) */
+  --spacing-sidebar-label-px: var(--spacing-component-padding-md); /** Label horizontal padding (12px) */
+  --spacing-sidebar-label-mb: var(--spacing-component-gap-xs); /** Label bottom margin (4px) */
+  --font-checkbox-label-size: var(--font-component-size-sm); /** Label font size 14px (text-sm) */
+  --font-checkbox-label-weight: var(--font-component-weight-medium); /** Label font weight 500 (font-medium) */
+  --font-cpick-label-size: var(--font-component-size-sm); /** Label text font size */
+  --font-dropdown-label-size: var(--font-component-size-xs); /** Group label font size (text-xs equivalent) */
+  --font-dropdown-label-weight: var(--font-component-weight-semibold); /** Group label font weight (font-semibold) */
+  --font-form-label-size: var(--font-component-size-sm); /** Label text size (14px) */
+  --font-form-label-weight: var(--font-component-weight-medium); /** Label text weight */
+  --font-inputfield-label-weight: var(--font-component-weight-medium); /** Label font weight */
+  --font-label-size: var(--font-component-size-sm); /** Label font size (14px) */
+  --font-label-weight: var(--font-component-weight-medium); /** Label font weight (500) */
+  --font-menubar-label-size: var(--font-component-size-xs); /** Label text size (12px) */
+  --font-menubar-label-weight: var(--font-component-weight-semibold); /** Label text weight */
+  --font-multiselect-group-label-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-multiselect-group-label-weight: var(--font-component-weight-medium); /** Group label weight */
+  --font-progress-label-size: var(--font-component-size-sm); /** ProgressField label font size (text-sm) */
+  --font-progress-label-weight: var(--font-component-weight-medium); /** ProgressField label font weight (500) */
+  --font-radio-label-size: var(--font-component-size-sm); /** 14px label text */
+  --font-radio-label-weight: var(--font-component-weight-medium); /** 500 label weight */
+  --font-sidebar-label-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-sidebar-label-weight: var(--font-component-weight-semibold); /** Group label weight */
+  --font-spinner-label-size: var(--font-component-size-sm); /** Spinner label font size (text-sm) */
+  --font-statcard-label-size: var(--font-component-size-xs); /** Trend label size (12px) */
+  --font-stepper-label-size: var(--font-component-size-sm); /** Step label size (14px) */
+  --font-stepper-label-weight: var(--font-component-weight-medium); /** Step label weight */
+  --font-switch-label-size: var(--font-component-size-sm); /** SwitchField label font size (text-sm) */
+  --font-switch-label-weight: var(--font-component-weight-medium); /** SwitchField label font weight (500) */
+  --font-textarea-label-weight: var(--font-component-weight-medium); /** Label font weight (font-medium) */
+  --font-tpick-label-size: var(--font-component-size-xs); /** Column label font size (12px) */
+  --font-tpick-label-weight: var(--font-component-weight-medium); /** Column label font weight (500) */
+  --font-tree-label-size: var(--font-component-size-sm); /** Tree node label font size */
+}

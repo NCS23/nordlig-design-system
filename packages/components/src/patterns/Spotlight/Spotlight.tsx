@@ -6,6 +6,9 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 import { Kbd } from '../../atoms/Kbd';
 
+// Component token CSS
+import '@nordlig/styles/tokens/spotlight';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface SpotlightItem {

@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-bq-border: var(--color-border-strong); /** Left accent border */
+  --color-bq-bg: var(--color-bg-surface); /** Background */
+  --color-bq-text: var(--color-text-base); /** Quote text */
+  --color-bq-cite-text: var(--color-text-muted); /** Citation/author text */
+  --radius-bq: var(--radius-component-sm); /** Corner radius */
+  --spacing-bq-padding: var(--spacing-component-padding-lg); /** Internal padding */
+  --spacing-bq-border-width: var(--spacing-component-padding-xs); /** Left border width (4px) */
+  --spacing-bq-cite-gap: var(--spacing-component-gap-md); /** Gap before citation */
+  --font-bq-cite-size: var(--font-component-size-sm); /** Citation font size (14px) */
+  --font-bq-cite-weight: var(--font-component-weight-medium); /** Citation author font weight (500) */
+}

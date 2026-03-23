@@ -1,0 +1,20 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-table-header-bg: var(--color-bg-base);
+  --color-table-header-text: var(--color-text-base);
+  --color-table-border: var(--color-border-muted);
+  --color-table-row-stripe: var(--color-bg-base);
+  --color-table-row-hover: var(--color-bg-surface);
+  --spacing-table-cell-x-compact: var(--spacing-component-padding-md); /** 16px – airy even at compact */
+  --spacing-table-cell-y-compact: var(--spacing-component-padding-sm); /** 12px – body vertical compact */
+  --spacing-table-cell-x-normal: var(--spacing-component-padding-lg); /** 24px – generous horizontal */
+  --spacing-table-cell-y-normal: var(--spacing-component-padding-md); /** 16px – body vertical normal */
+  --spacing-table-cell-x-spacious: var(--spacing-component-padding-xl); /** 32px – luxurious horizontal */
+  --spacing-table-cell-y-spacious: var(--spacing-component-padding-lg); /** 24px – body vertical spacious */
+  --spacing-table-head-y-compact: var(--spacing-component-padding-xs); /** 8px – compact flat header */
+  --spacing-table-head-y-normal: var(--spacing-component-padding-xs); /** 8px – slim elegant header */
+  --spacing-table-head-y-spacious: var(--spacing-component-padding-sm); /** 12px – still compact vs 24px body */
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/listpage';
+
 // ─── ListPage (Root) ────────────────────────────────────────────────────────
 
 export interface ListPageProps extends React.HTMLAttributes<HTMLDivElement> {}

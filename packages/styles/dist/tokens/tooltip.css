@@ -1,0 +1,25 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-chart-tooltip-bg: var(--color-bg-elevated); /** Chart tooltip background */
+  --color-chart-tooltip-border: var(--color-border-muted); /** Chart tooltip border */
+  --color-chart-tooltip-text: var(--color-text-base); /** Chart tooltip text */
+  --color-tooltip-bg: var(--color-text-base); /** Dark tooltip background */
+  --color-tooltip-text: var(--color-text-inverse); /** Light text on dark bg */
+  --color-tooltip-arrow: var(--color-text-base); /** Arrow matches bg */
+  --radius-chart-tooltip: var(--radius-component-md); /** Chart tooltip border radius */
+  --radius-tooltip: var(--radius-component-md); /** 6px rounded corners */
+  --shadow-chart-tooltip: var(--shadow-elevation-floating); /** Chart tooltip shadow */
+  --shadow-tooltip: var(--shadow-elevation-floating); /** Tooltip elevation */
+  --spacing-chart-tooltip-gap: var(--spacing-component-gap-xs); /** Gap in tooltip items (4px) */
+  --spacing-chart-tooltip-px: var(--spacing-component-gap-md); /** Tooltip horizontal padding (12px) */
+  --spacing-chart-tooltip-py: var(--spacing-component-gap-sm); /** Tooltip vertical padding (8px) */
+  --spacing-chart-tooltip-label-mb: var(--spacing-component-gap-xs); /** Tooltip label bottom margin (4px) */
+  --spacing-tooltip-padding-x: var(--spacing-component-padding-sm); /** 12px horizontal padding */
+  --spacing-tooltip-padding-y: var(--spacing-component-padding-xs); /** 8px vertical padding */
+  --font-chart-tooltip-size: var(--font-component-size-sm); /** Chart tooltip font size */
+  --font-chart-tooltip-weight: var(--font-component-weight-medium); /** Chart tooltip label/value font weight */
+  --font-tooltip-content-size: var(--font-component-size-sm); /** Tooltip content font size */
+}

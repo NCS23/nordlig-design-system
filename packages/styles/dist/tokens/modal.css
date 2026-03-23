@@ -1,0 +1,21 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-modal-overlay: var(--color-bg-overlay); /** Dark backdrop behind modal */
+  --color-modal-bg: var(--color-bg-elevated); /** White content background */
+  --color-modal-title: var(--color-text-base); /** Modal title text */
+  --color-modal-description: var(--color-text-muted); /** Modal description text */
+  --color-modal-divider: var(--color-border-muted); /** Header/footer border */
+  --color-modal-close-hover-bg: var(--color-bg-surface); /** Close button hover bg */
+  --color-modal-close-hover-text: var(--color-interactive-primary); /** Close button hover color (sky blue) */
+  --radius-modal: var(--radius-component-xl); /** 12px rounded corners (large overlay) */
+  --shadow-modal-content: var(--shadow-elevation-floating); /** Prominent modal shadow */
+  --spacing-modal-padding-x: var(--spacing-component-padding-lg); /** 24px horizontal padding */
+  --spacing-modal-padding-y: var(--spacing-component-padding-md); /** 16px vertical padding */
+  --spacing-modal-gap: var(--spacing-component-gap-md); /** 8px footer button gap */
+  --font-modal-title-size: var(--font-component-size-lg); /** Modal title font size (text-lg equivalent) */
+  --font-modal-title-weight: var(--font-component-weight-semibold); /** Modal title font weight (font-semibold) */
+  --font-modal-description-size: var(--font-component-size-sm); /** Modal description font size (text-sm equivalent) */
+}
