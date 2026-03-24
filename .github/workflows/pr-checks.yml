@@ -80,10 +80,7 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run accessibility tests (axe-core)
-        run: npx playwright test a11y.spec.ts
-
-      - name: Run visual tests
+      - name: Run accessibility and visual tests
         run: pnpm test:visual
 
       - name: Upload test results
