@@ -9,12 +9,14 @@ import '@nordlig/styles/tokens/text';
 export interface SliderProps
   extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
   showValue?: boolean;
+  /** Accessible label for the slider (required for a11y) */
+  'aria-label'?: string;
 }
 
 const Slider = React.forwardRef<
   React.ComponentRef<typeof SliderPrimitive.Root>,
   SliderProps
->(({ className, showValue = false, value, defaultValue, ...props }, ref) => {
+>(({ className, showValue = false, value, defaultValue, 'aria-label': ariaLabel, ...props }, ref) => {
   const [internalValue, setInternalValue] = React.useState(
     defaultValue ?? value ?? [0]
   );
@@ -35,6 +37,7 @@ const Slider = React.forwardRef<
         value={value}
         defaultValue={value ? undefined : defaultValue}
         onValueChange={handleValueChange}
+        aria-label={ariaLabel || 'Slider'}
         className={cn(
           'relative flex w-full touch-none select-none items-center',
           className

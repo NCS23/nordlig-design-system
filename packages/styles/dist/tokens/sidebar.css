@@ -9,7 +9,7 @@
   --sizing-detailpage-sidebar-width: 280px; /** Sidebar width on desktop */
   --color-sidebar-bg: var(--color-bg-base); /** Sidebar background */
   --color-sidebar-border: var(--color-border-muted); /** Sidebar right border */
-  --color-sidebar-text: var(--color-text-muted); /** Default item text */
+  --color-sidebar-text: var(--color-text-base); /** Default item text (slate-900 for WCAG AA on slate-200 base bg) */
   --color-sidebar-text-active: var(--color-text-on-primary); /** Active item text */
   --color-sidebar-item-hover: var(--color-bg-surface-active); /** Item hover background (slate-300 on slate-200 sidebar) */
   --color-sidebar-item-active: var(--color-bg-primary); /** Active item background */

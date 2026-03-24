@@ -27,7 +27,7 @@ export default meta;
 type Story = StoryObj<typeof Slider>;
 
 export const Default: Story = {
-  render: () => <Slider defaultValue={[50]} />,
+  render: () => <Slider defaultValue={[50]} aria-label="Wert auswählen" />,
 };
 
 export const WithValue: Story = {

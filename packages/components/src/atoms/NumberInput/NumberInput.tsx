@@ -221,6 +221,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
           type="number"
           role="spinbutton"
           inputMode={hasDecimalStep ? 'decimal' : 'numeric'}
+          aria-label={ariaLabel || 'Numerische Eingabe'}
           value={displayValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}

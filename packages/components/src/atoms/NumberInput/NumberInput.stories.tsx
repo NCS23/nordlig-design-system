@@ -37,6 +37,7 @@ type Story = StoryObj<typeof NumberInput>;
 export const Default: Story = {
   args: {
     defaultValue: 0,
+    'aria-label': 'Anzahl',
   },
 };
 

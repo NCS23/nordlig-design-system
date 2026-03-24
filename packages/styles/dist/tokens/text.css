@@ -9,7 +9,7 @@
   --color-text-disabled: var(--color-neutral-1-400);
   --color-text-inverse: var(--color-neutral-1-50);
   --color-text-on-primary: var(--color-neutral-1-0);
-  --color-text-primary: var(--color-primary-1-600);
+  --color-text-primary: var(--color-primary-1-700); /** Sky-700 for WCAG AA contrast on light surfaces */
   --color-text-accent: var(--color-primary-2-600); /** Accent text (secondary brand, e.g. indigo) */
   --color-text-success: var(--color-accent-1-700);
   --color-text-warning: var(--color-accent-2-700);
@@ -114,7 +114,7 @@
   --color-session-card-text-secondary: var(--color-text-muted); /** Date, labels, description */
   --color-session-card-text-tertiary: var(--color-text-disabled); /** Zone labels (Z1-Z5) */
   --color-session-card-text-error: var(--color-text-error); /** Error message text */
-  --color-sidebar-text: var(--color-text-muted); /** Default item text */
+  --color-sidebar-text: var(--color-text-base); /** Default item text (slate-900 for WCAG AA on slate-200 base bg) */
   --color-sidebar-text-active: var(--color-text-on-primary); /** Active item text */
   --color-spl-text: var(--color-text-base); /** Textfarbe im aufgedeckten Zustand */
   --color-spotlight-input-text: var(--color-text-base); /** Search input text */

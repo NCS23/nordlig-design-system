@@ -464,9 +464,9 @@
   --color-bg-base: var(--color-neutral-1-200); /** App shell/chrome (sidebar, nav bars) */
   --color-bg-surface: var(--color-neutral-1-100); /** Interactive subtle highlights, hover states */
   --color-bg-elevated: var(--color-neutral-1-0); /** Cards, panels, floating elements (modals, popovers) */
-  --color-bg-primary: var(--color-primary-1-500);
-  --color-bg-primary-hover: var(--color-primary-1-600);
-  --color-bg-primary-active: var(--color-primary-1-700);
+  --color-bg-primary: var(--color-primary-1-600); /** Sky-600 for WCAG AA contrast with white text (4.56:1) */
+  --color-bg-primary-hover: var(--color-primary-1-700);
+  --color-bg-primary-active: var(--color-primary-1-800);
   --color-bg-primary-subtle: var(--color-primary-1-50);
   --color-bg-primary-muted: var(--color-primary-1-100);
   --color-bg-surface-hover: var(--color-neutral-1-200);
@@ -496,7 +496,7 @@
   --color-text-disabled: var(--color-neutral-1-400);
   --color-text-inverse: var(--color-neutral-1-50);
   --color-text-on-primary: var(--color-neutral-1-0);
-  --color-text-primary: var(--color-primary-1-600);
+  --color-text-primary: var(--color-primary-1-700); /** Sky-700 for WCAG AA contrast on light surfaces */
   --color-text-accent: var(--color-primary-2-600); /** Accent text (secondary brand, e.g. indigo) */
   --color-text-success: var(--color-accent-1-700);
   --color-text-warning: var(--color-accent-2-700);
@@ -509,7 +509,7 @@
   --color-border-default: var(--color-neutral-1-300);
   --color-border-muted: var(--color-neutral-1-200);
   --color-border-strong: var(--color-neutral-1-400);
-  --color-border-focus: var(--color-primary-1-500);
+  --color-border-focus: var(--color-primary-1-600); /** Sky-600 focus ring */
   --color-border-primary-subtle: var(--color-primary-1-200); /** Subtle primary border (tags, indicators) */
   --color-border-accent-subtle: var(--color-primary-2-200); /** Subtle accent border (secondary brand tags) */
   --color-border-success: var(--color-accent-1-500);
@@ -520,9 +520,9 @@
   --color-border-error-subtle: var(--color-accent-3-200); /** Subtle error border (tags, indicators) */
   --color-border-info: var(--color-accent-4-500);
   --color-border-info-subtle: var(--color-accent-4-200); /** Subtle info border (tags, indicators) */
-  --color-interactive-primary: var(--color-primary-1-500);
-  --color-interactive-primary-hover: var(--color-primary-1-600);
-  --color-interactive-primary-active: var(--color-primary-1-700);
+  --color-interactive-primary: var(--color-primary-1-700); /** Sky-700 for WCAG AA contrast on white/light backgrounds (6.33:1) */
+  --color-interactive-primary-hover: var(--color-primary-1-800);
+  --color-interactive-primary-active: var(--color-primary-1-900);
   --color-interactive-primary-disabled: var(--color-neutral-1-300);
   --color-interactive-secondary: var(--color-neutral-1-500); /** Consolidated from secondary.1 = neutral.1 */
   --color-interactive-secondary-hover: var(--color-neutral-1-600);
@@ -1022,7 +1022,7 @@
   --color-sheet-description: var(--color-text-muted); /** Sheet description text */
   --color-sidebar-bg: var(--color-bg-base); /** Sidebar background */
   --color-sidebar-border: var(--color-border-muted); /** Sidebar right border */
-  --color-sidebar-text: var(--color-text-muted); /** Default item text */
+  --color-sidebar-text: var(--color-text-base); /** Default item text (slate-900 for WCAG AA on slate-200 base bg) */
   --color-sidebar-text-active: var(--color-text-on-primary); /** Active item text */
   --color-sidebar-item-hover: var(--color-bg-surface-active); /** Item hover background (slate-300 on slate-200 sidebar) */
   --color-sidebar-item-active: var(--color-bg-primary); /** Active item background */

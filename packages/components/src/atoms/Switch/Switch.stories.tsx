@@ -13,22 +13,22 @@ type Story = StoryObj;
 // ─── Basic ───────────────────────────────────────────────────────────────────
 
 export const Basic: Story = {
-  render: () => <Switch />,
+  render: () => <Switch aria-label="Option aktivieren" />,
 };
 
 export const Checked: Story = {
-  render: () => <Switch defaultChecked />,
+  render: () => <Switch aria-label="Option aktivieren" defaultChecked />,
 };
 
 export const Unchecked: Story = {
-  render: () => <Switch />,
+  render: () => <Switch aria-label="Option aktivieren" />,
 };
 
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
-      <Switch disabled />
-      <Switch disabled defaultChecked />
+      <Switch aria-label="Deaktivierte Option" disabled />
+      <Switch aria-label="Deaktivierte Option (aktiv)" disabled defaultChecked />
     </div>
   ),
 };
