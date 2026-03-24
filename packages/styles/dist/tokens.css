@@ -464,9 +464,9 @@
   --color-bg-base: var(--color-neutral-1-200); /** App shell/chrome (sidebar, nav bars) */
   --color-bg-surface: var(--color-neutral-1-100); /** Interactive subtle highlights, hover states */
   --color-bg-elevated: var(--color-neutral-1-0); /** Cards, panels, floating elements (modals, popovers) */
-  --color-bg-primary: var(--color-primary-1-600); /** Sky-600 for WCAG AA contrast with white text (4.56:1) */
-  --color-bg-primary-hover: var(--color-primary-1-700);
-  --color-bg-primary-active: var(--color-primary-1-800);
+  --color-bg-primary: var(--color-primary-1-700); /** Sky-700 for WCAG AA contrast with white text (5.37:1) */
+  --color-bg-primary-hover: var(--color-primary-1-800);
+  --color-bg-primary-active: var(--color-primary-1-900);
   --color-bg-primary-subtle: var(--color-primary-1-50);
   --color-bg-primary-muted: var(--color-primary-1-100);
   --color-bg-surface-hover: var(--color-neutral-1-200);

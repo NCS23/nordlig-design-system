@@ -50,6 +50,7 @@ const Slider = React.forwardRef<
         {currentValue.map((_, i) => (
           <SliderPrimitive.Thumb
             key={i}
+            aria-label={ariaLabel || 'Slider'}
             className="block h-[var(--sizing-slider-thumb-size)] w-[var(--sizing-slider-thumb-size)] rounded-[var(--radius-slider-thumb)] bg-[var(--color-slider-thumb)] [border-width:var(--sizing-slider-thumb-border-width)] border-[var(--color-slider-thumb-border)] hover:border-[var(--color-slider-thumb-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 disabled:pointer-events-none disabled:opacity-50 transition-colors cursor-pointer"
           />
         ))}
