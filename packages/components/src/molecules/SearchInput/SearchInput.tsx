@@ -4,6 +4,9 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 import { inputVariants } from '../../atoms/Input';
 
+// Component token CSS
+import '@nordlig/styles/tokens/searchinput';
+
 export interface SearchInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
   /** Groesse der Eingabe */

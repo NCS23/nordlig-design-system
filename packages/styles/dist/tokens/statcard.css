@@ -1,0 +1,28 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-statcard-text-primary: var(--color-text-base); /** Main value text */
+  --color-statcard-text-secondary: var(--color-text-muted); /** Title, unit, description */
+  --color-statcard-border-success: var(--color-border-success); /** Success variant left accent */
+  --color-statcard-border-warning: var(--color-border-warning); /** Warning variant left accent */
+  --color-statcard-border-error: var(--color-border-error); /** Error variant left accent */
+  --color-statcard-trend-up: var(--color-text-success); /** Positive trend indicator */
+  --color-statcard-trend-down: var(--color-text-error); /** Negative trend indicator */
+  --spacing-statcard-value-mt: var(--spacing-component-gap-sm); /** 8px above value */
+  --spacing-statcard-trend-mt: var(--spacing-component-gap-xs); /** 4px above trend */
+  --spacing-statcard-trend-gap: var(--spacing-component-gap-xs); /** 4px trend arrow-text gap */
+  --spacing-statcard-trend-inner-gap: var(--spacing-component-gap-2xs); /** 4px gap within trend indicator */
+  --spacing-statcard-header-gap: var(--spacing-component-gap-sm); /** Gap between icon and title (8px) */
+  --font-statcard-title-size: var(--font-component-size-sm); /** Title text size (14px) */
+  --font-statcard-title-weight: var(--font-component-weight-medium); /** Title font weight */
+  --font-statcard-value-size: var(--font-heading-size-lg); /** Main value size (30px) */
+  --font-statcard-value-weight: var(--font-component-weight-semibold); /** Main value weight */
+  --font-statcard-unit-size: var(--font-component-size-lg); /** Unit text size (18px) */
+  --font-statcard-unit-weight: var(--font-component-weight-normal); /** Unit font weight */
+  --font-statcard-desc-size: var(--font-component-size-sm); /** Description text size (14px) */
+  --font-statcard-trend-size: var(--font-component-size-sm); /** Trend value size (14px) */
+  --font-statcard-trend-weight: var(--font-component-weight-medium); /** Trend value weight */
+  --font-statcard-label-size: var(--font-component-size-xs); /** Trend label size (12px) */
+}

@@ -3,6 +3,10 @@ import { Check } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/stepper';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface StepperStep {

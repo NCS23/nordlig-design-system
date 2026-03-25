@@ -3,6 +3,9 @@ import { Copy, Check } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/code';
+
 export interface CodeProps extends React.HTMLAttributes<HTMLElement> {}
 
 const Code = React.forwardRef<HTMLElement, CodeProps>(

@@ -3,6 +3,9 @@ import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/tabs';
+
 // ─── Variant Context ────────────────────────────────────────────────────────
 
 type TabsVariant = 'underline' | 'pills';

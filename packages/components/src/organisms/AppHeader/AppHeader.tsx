@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/header';
+import '@nordlig/styles/tokens/text';
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------

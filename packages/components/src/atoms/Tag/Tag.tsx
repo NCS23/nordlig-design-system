@@ -4,6 +4,9 @@ import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/tag';
+
 const tagVariants = cva(
   'inline-flex items-center gap-[var(--spacing-tag-gap)] rounded-[var(--radius-tag)] [border-width:var(--sizing-tag-border-width)] [font-weight:var(--font-tag-weight)] transition-colors duration-200',
   {

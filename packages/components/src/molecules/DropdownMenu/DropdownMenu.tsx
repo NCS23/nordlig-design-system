@@ -2,6 +2,10 @@ import React from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/dropdown';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface DropdownMenuProps extends DropdownMenuPrimitive.DropdownMenuProps {}

@@ -6,6 +6,12 @@ import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/combobox';
+import '@nordlig/styles/tokens/popover';
+import '@nordlig/styles/tokens/select';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface ComboboxOption {

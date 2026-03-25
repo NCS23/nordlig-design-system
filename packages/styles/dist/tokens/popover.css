@@ -1,0 +1,27 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-datepicker-popover-bg: var(--color-bg-elevated); /** White popover background */
+  --color-datepicker-popover-border: var(--color-border-muted); /** Subtle popover border */
+  --color-popover-bg: var(--color-bg-elevated); /** White popover background */
+  --color-popover-border: var(--color-border-muted); /** Subtle outer border */
+  --color-select-popover-bg: var(--color-bg-elevated); /** White dropdown background */
+  --color-select-popover-border: var(--color-border-muted); /** Dropdown border */
+  --color-tpick-popover-bg: var(--color-bg-elevated); /** Popover background */
+  --color-tpick-popover-border: var(--color-border-muted); /** Popover border */
+  --radius-datepicker-popover: var(--radius-component-lg); /** 8px popover radius */
+  --radius-popover: var(--radius-component-lg); /** 8px rounded corners */
+  --radius-select-popover: var(--radius-component-lg); /** 8px dropdown radius */
+  --radius-tpick-popover: var(--radius-component-lg); /** 8px popover radius */
+  --shadow-datepicker-popover: var(--shadow-elevation-floating); /** Popover elevation */
+  --shadow-popover: var(--shadow-elevation-floating); /** Elevated popover shadow */
+  --shadow-select-popover: var(--shadow-elevation-floating); /** Dropdown elevation */
+  --shadow-tpick-popover: var(--shadow-elevation-floating); /** Popover elevation */
+  --spacing-datepicker-popover-padding: var(--spacing-component-padding-md); /** 16px popover inner padding */
+  --spacing-popover-padding: var(--spacing-component-padding-md); /** 16px internal padding */
+  --spacing-select-popover-padding: var(--spacing-component-padding-xs); /** 4px inner padding for item list */
+  --spacing-tpick-popover-padding: var(--spacing-component-padding-sm); /** 8px popover inner padding */
+  --font-popover-content-size: var(--font-component-size-sm); /** Popover content font size */
+}

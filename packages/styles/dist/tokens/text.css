@@ -1,0 +1,167 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-text-base: var(--color-neutral-1-900);
+  --color-text-heading: var(--color-neutral-1-900);
+  --color-text-muted: var(--color-neutral-1-600);
+  --color-text-disabled: var(--color-neutral-1-400);
+  --color-text-inverse: var(--color-neutral-1-50);
+  --color-text-on-primary: var(--color-neutral-1-0);
+  --color-text-primary: var(--color-primary-1-700); /** Sky-700 for WCAG AA contrast on light surfaces */
+  --color-text-accent: var(--color-primary-2-600); /** Accent text (secondary brand, e.g. indigo) */
+  --color-text-success: var(--color-accent-1-700);
+  --color-text-warning: var(--color-accent-2-700);
+  --color-text-error: var(--color-accent-3-700);
+  --color-text-info: var(--color-accent-4-700);
+  --color-text-success-strong: var(--color-accent-1-800); /** Strong success text — Emerald 800 */
+  --color-text-warning-strong: var(--color-accent-2-800); /** Strong warning text — Amber 800 */
+  --color-text-error-strong: var(--color-accent-3-800); /** Strong error text — Red 800 */
+  --color-text-info-strong: var(--color-accent-4-800); /** Strong info text — Blue 800 */
+  --color-badge-primary-text: var(--color-primary-1-700);
+  --color-badge-primary-bold-text: var(--color-primary-1-800);
+  --color-badge-accent-text: var(--color-primary-2-700);
+  --color-badge-accent-bold-text: var(--color-primary-2-800);
+  --color-accordion-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-accordion-content-text: var(--color-text-base); /** Content text */
+  --color-actionbar-text: var(--color-text-muted); /** ActionBar label text */
+  --color-alertdlg-action-text: var(--color-text-on-primary); /** Destructive action button text (white) */
+  --color-alertdlg-cancel-text: var(--color-text-base); /** Cancel button text */
+  --color-auth-footer-text: var(--color-text-muted); /** Footer text color */
+  --color-avatar-text: var(--color-text-muted); /** Avatar fallback text */
+  --color-badge-success-text: var(--color-text-success);
+  --color-badge-warning-text: var(--color-text-warning);
+  --color-badge-error-text: var(--color-text-error);
+  --color-badge-info-text: var(--color-text-info);
+  --color-badge-neutral-text: var(--color-text-muted);
+  --color-banner-info-text: var(--color-text-info); /** Info text */
+  --color-banner-success-text: var(--color-text-success); /** Success text */
+  --color-banner-warning-text: var(--color-text-warning); /** Warning text */
+  --color-banner-error-text: var(--color-text-error); /** Error text */
+  --color-bq-text: var(--color-text-base); /** Quote text */
+  --color-bq-cite-text: var(--color-text-muted); /** Citation/author text */
+  --color-breadcrumbs-text: var(--color-text-muted); /** Breadcrumb link text */
+  --color-breadcrumbs-text-current: var(--color-text-base); /** Current breadcrumb text */
+  --color-breadcrumbs-hover-text: var(--color-text-primary); /** Breadcrumb link hover text */
+  --color-btn-primary-text: var(--color-text-inverse);
+  --color-btn-secondary-text: var(--color-text-base);
+  --color-btn-ghost-text: var(--color-text-primary);
+  --color-btn-disabled-text: var(--color-text-disabled);
+  --color-chart-tooltip-text: var(--color-text-base); /** Chart tooltip text */
+  --color-code-text: var(--color-text-primary); /** Inline code text */
+  --color-code-block-text: var(--color-text-inverse); /** Code block text on dark bg */
+  --color-cpick-input-text: var(--color-text-base); /** Hex input text */
+  --color-cpick-label-text: var(--color-text-muted); /** Label text color */
+  --color-cmb-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-cmb-item-selected-text: var(--color-text-primary); /** Selected item text */
+  --color-cmb-empty-text: var(--color-text-muted); /** No results text */
+  --color-command-input-text: var(--color-text-base); /** Command input text */
+  --color-command-item-text: var(--color-text-base); /** Command item text */
+  --color-command-empty-text: var(--color-text-muted); /** Command empty state text */
+  --color-datatable-empty-text: var(--color-text-muted); /** Empty state text */
+  --color-dtpattern-bulk-text: var(--color-text-base); /** Bulk actions bar text */
+  --color-datepicker-header-text: var(--color-text-base); /** Month/year header text */
+  --color-datepicker-weekday-text: var(--color-text-muted); /** Mo Di Mi weekday labels */
+  --color-datepicker-day-text: var(--color-text-base); /** Default day number */
+  --color-datepicker-day-selected-text: var(--color-text-inverse); /** White text on selected */
+  --color-datepicker-day-disabled-text: var(--color-text-disabled); /** Disabled/outside day */
+  --color-dropdown-item-text: var(--color-text-base); /** Item text */
+  --color-dropdown-item-disabled-text: var(--color-text-disabled); /** Disabled item text */
+  --color-dropdown-destructive-text: var(--color-text-error); /** Destructive item text (red) */
+  --color-dropdown-label-text: var(--color-text-muted); /** Group label text */
+  --color-emptypage-title-text: var(--color-text-base); /** Title text color */
+  --color-emptypage-desc-text: var(--color-text-muted); /** Description text color */
+  --color-errorpage-code-text: var(--color-text-muted); /** Error code text color */
+  --color-errorpage-desc-text: var(--color-text-muted); /** Description text color */
+  --color-fileupload-zone-text: var(--color-text-base); /** Zone primary instruction text */
+  --color-fileupload-zone-text-sub: var(--color-text-muted); /** Zone secondary/sub text */
+  --color-fileupload-drag-text: var(--color-text-primary); /** Drag-over text */
+  --color-fileupload-file-text: var(--color-text-base); /** File name text */
+  --color-fileupload-error-text: var(--color-text-error); /** Error message */
+  --color-fuzpattern-header-text: var(--color-text-base); /** Header Titel */
+  --color-fuzpattern-summary-text: var(--color-text-muted); /** Zusammenfassung */
+  --color-hl-text: var(--color-text-base); /** Highlight text */
+  --color-img-fallback-text: var(--color-text-muted); /** Error fallback icon/text */
+  --color-input-text: var(--color-text-base);
+  --color-input-text-placeholder: var(--color-text-muted);
+  --color-inputotp-text: var(--color-text-base); /** Digit text color */
+  --color-kbd-text: var(--color-text-base); /** Key text */
+  --color-link-text: var(--color-interactive-primary); /** Default link text color */
+  --color-link-text-hover: var(--color-interactive-primary-hover); /** Link hover text color */
+  --color-ldovl-text: var(--color-text-base); /** Loading text color */
+  --color-menubar-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-modal-close-hover-text: var(--color-interactive-primary); /** Close button hover color (sky blue) */
+  --color-nav-text: var(--color-text-base); /** Navigation item text */
+  --color-notifcenter-empty-text: var(--color-text-muted); /** Leer-Nachricht */
+  --color-numberinput-text: var(--color-text-base); /** Input value text */
+  --color-numberinput-stepper-text: var(--color-text-muted); /** Stepper button icon color */
+  --color-numberinput-stepper-text-hover: var(--color-text-base); /** Stepper button icon hover color */
+  --color-pagination-item-text: var(--color-text-base); /** Page button text */
+  --color-pagination-item-active-text: var(--color-text-on-primary); /** Active page text (white) */
+  --color-rte-text: var(--color-text-base); /** Editor content text color */
+  --color-rte-toolbar-btn-text: var(--color-text-base); /** Toolbar button text */
+  --color-rte-toolbar-btn-active-text: var(--color-text-primary); /** Toolbar button active state text */
+  --color-seg-text: var(--color-text-muted); /** Inactive segment text */
+  --color-seg-active-text: var(--color-text-base); /** Active segment text */
+  --color-select-trigger-text: var(--color-text-base); /** Trigger text color */
+  --color-select-item-text: var(--color-text-base); /** Option text */
+  --color-select-item-selected-text: var(--color-text-primary); /** Selected option text (sky) */
+  --color-select-item-disabled-text: var(--color-text-disabled); /** Disabled option text */
+  --color-select-empty-text: var(--color-text-muted); /** No results text */
+  --color-select-checkbox-text: var(--color-text-on-primary); /** Checkbox checked text (white) */
+  --color-session-card-text-primary: var(--color-text-base); /** Title and value text */
+  --color-session-card-text-secondary: var(--color-text-muted); /** Date, labels, description */
+  --color-session-card-text-tertiary: var(--color-text-disabled); /** Zone labels (Z1-Z5) */
+  --color-session-card-text-error: var(--color-text-error); /** Error message text */
+  --color-sidebar-text: var(--color-text-base); /** Default item text (slate-900 for WCAG AA on slate-200 base bg) */
+  --color-sidebar-text-active: var(--color-text-on-primary); /** Active item text */
+  --color-spl-text: var(--color-text-base); /** Textfarbe im aufgedeckten Zustand */
+  --color-spotlight-input-text: var(--color-text-base); /** Search input text */
+  --color-spotlight-item-text: var(--color-text-base); /** Item text */
+  --color-spotlight-empty-text: var(--color-text-muted); /** Empty state text */
+  --color-spotlight-shortcut-text: var(--color-text-muted); /** Keyboard shortcut text */
+  --color-statcard-text-primary: var(--color-text-base); /** Main value text */
+  --color-statcard-text-secondary: var(--color-text-muted); /** Title, unit, description */
+  --color-stepper-completed-text: var(--color-text-success); /** Completed step check icon */
+  --color-stepper-current-text: var(--color-text-on-primary); /** Current step number/icon */
+  --color-stepper-pending-text: var(--color-text-muted); /** Pending step number */
+  --color-table-header-text: var(--color-text-base);
+  --color-tabs-trigger-text: var(--color-text-muted); /** Inactive tab text */
+  --color-tabs-trigger-text-active: var(--color-interactive-primary); /** Active tab text (sky) */
+  --color-tabs-trigger-text-hover: var(--color-text-base); /** Hovered tab text */
+  --color-tabs-content-text: var(--color-text-base); /** Tab content text */
+  --color-tag-text-default: var(--color-text-base); /** Default tag text color */
+  --color-tag-text-success: var(--color-text-success); /** Success variant text color */
+  --color-tag-text-warning: var(--color-text-warning); /** Warning variant text color */
+  --color-tag-text-error: var(--color-text-error); /** Error variant text color */
+  --color-tag-text-info: var(--color-text-info); /** Info variant text color */
+  --color-taginput-input-text: var(--color-text-base); /** Inline input text color */
+  --color-textarea-counter-text: var(--color-text-muted); /** Character counter default */
+  --color-textarea-counter-text-over: var(--color-text-error); /** Counter when over limit */
+  --color-timeline-dot-default-text: var(--color-text-muted); /** Default dot icon */
+  --color-timeline-dot-success-text: var(--color-text-success); /** Success dot icon (dark green) */
+  --color-timeline-dot-warning-text: var(--color-text-warning); /** Warning dot icon (dark amber) */
+  --color-timeline-dot-error-text: var(--color-text-error); /** Error dot icon (dark red) */
+  --color-tpick-column-text: var(--color-text-base); /** Time value text */
+  --color-tpick-column-selected-text: var(--color-text-inverse); /** Selected time cell text */
+  --color-tpick-column-disabled-text: var(--color-text-disabled); /** Out-of-range time text */
+  --color-tpick-label-text: var(--color-text-muted); /** Column header label (Std/Min/Sek) */
+  --color-toggle-text: var(--color-text-base); /** Toggle button text */
+  --color-toggle-active-text: var(--color-text-inverse); /** Active toggle text */
+  --color-toolbar-btn-text: var(--color-text-base); /** Button text */
+  --color-toolbar-link-text: var(--color-text-primary); /** Link text */
+  --color-toolbar-link-hover-text: var(--color-interactive-primary-hover); /** Link hover text */
+  --color-toolbar-toggle-on-text: var(--color-text-primary); /** Toggle pressed text */
+  --color-tooltip-text: var(--color-text-inverse); /** Light text on dark bg */
+  --spacing-emptypage-text-gap: var(--spacing-component-gap-sm); /** Gap between title and description */
+  --spacing-errorpage-text-gap: var(--spacing-component-gap-sm); /** Gap between title and description */
+  --spacing-timeline-desc-text-mt: var(--spacing-component-gap-2xs); /** 2px description text margin top */
+  --font-datepicker-range-text-size: var(--font-component-size-sm); /** 14px range separator text size */
+  --font-ldovl-text-size: var(--font-component-size-sm); /** Loading text font size */
+  --font-session-card-text-size: var(--font-component-size-sm); /** Body text size — 14px */
+  --font-text-body-size: var(--font-component-size-md); /** Body variant font size (text-base) */
+  --font-text-caption-size: var(--font-component-size-sm); /** Caption variant font size (text-sm) */
+  --font-text-small-size: var(--font-component-size-xs); /** Small variant font size (text-xs) */
+  --font-text-muted-size: var(--font-component-size-sm); /** Muted variant font size (text-sm) */
+}

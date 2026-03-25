@@ -1,0 +1,35 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-tag-bg-default: var(--color-bg-surface); /** Default tag background */
+  --color-tag-bg-success: var(--color-bg-success-subtle); /** Success variant background */
+  --color-tag-bg-warning: var(--color-bg-warning-subtle); /** Warning variant background */
+  --color-tag-bg-error: var(--color-bg-error-subtle); /** Error variant background */
+  --color-tag-bg-info: var(--color-bg-info-subtle); /** Info variant background */
+  --color-tag-text-default: var(--color-text-base); /** Default tag text color */
+  --color-tag-text-success: var(--color-text-success); /** Success variant text color */
+  --color-tag-text-warning: var(--color-text-warning); /** Warning variant text color */
+  --color-tag-text-error: var(--color-text-error); /** Error variant text color */
+  --color-tag-text-info: var(--color-text-info); /** Info variant text color */
+  --color-tag-border-default: var(--color-border-muted); /** Default tag border */
+  --color-tag-border-success: var(--color-border-success); /** Success variant border */
+  --color-tag-border-warning: var(--color-border-warning); /** Warning variant border */
+  --color-tag-border-error: var(--color-border-error); /** Error variant border */
+  --color-tag-border-info: var(--color-border-info); /** Info variant border */
+  --color-tag-border-focus: var(--color-border-focus); /** Focus ring color */
+  --radius-tag: var(--radius-component-md); /** Tag border radius */
+  --radius-tag-dismiss: var(--radius-component-full); /** Dismiss button border radius (fully round) */
+  --spacing-multiselect-tag-gap: var(--spacing-component-gap-xs); /** Gap between tags in trigger (4px) */
+  --spacing-tag-gap: var(--spacing-component-gap-xs); /** Gap between text and remove icon (4px) */
+  --spacing-tag-sm-px: var(--spacing-component-gap-sm); /** 8px horizontal padding for sm size */
+  --spacing-tag-sm-py: var(--spacing-component-gap-2xs); /** 2px vertical padding for sm size */
+  --spacing-tag-md-px: var(--spacing-component-padding-sm); /** 12px horizontal padding for md size */
+  --spacing-tag-md-py: var(--spacing-component-gap-xs); /** 4px vertical padding for md size */
+  --spacing-tag-dismiss-p: var(--spacing-component-gap-2xs); /** 2px padding for dismiss button */
+  --font-tag-weight: var(--font-component-weight-medium); /** Tag font weight (500) */
+  --font-tag-sm-size: var(--font-component-size-xs); /** Tag sm font size (12px) */
+  --font-tag-md-size: var(--font-component-size-sm); /** Tag md font size (14px) */
+  --sizing-tag-border-width: var(--sizing-component-border-width-default); /** Tag border width (1px) */
+}

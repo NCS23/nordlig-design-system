@@ -1,0 +1,21 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-cpick-slider-height: 12px; /** Hue/alpha slider track height */
+  --color-slider-track: var(--color-bg-surface); /** Slider track background */
+  --color-slider-range: var(--color-bg-primary); /** Slider filled range */
+  --color-slider-thumb: var(--color-bg-paper); /** Slider thumb background */
+  --color-slider-thumb-border: var(--color-bg-primary); /** Slider thumb border */
+  --color-slider-thumb-hover: var(--color-bg-primary-hover); /** Slider thumb hover border */
+  --radius-cpick-slider: var(--radius-component-full); /** Pill slider track */
+  --radius-slider-track: var(--radius-component-full); /** Slider track radius */
+  --radius-slider-thumb: var(--radius-component-full); /** Slider thumb radius */
+  --spacing-slider-gap: var(--spacing-component-gap-md); /** Gap between slider and value display (12px) */
+  --font-slider-value-size: var(--font-component-size-sm); /** Slider value display font size (text-sm) */
+  --font-slider-value-weight: var(--font-component-weight-medium); /** Slider value display font weight (500) */
+  --sizing-slider-track-height: var(--sizing-component-track-md); /** Slider track height (8px) */
+  --sizing-slider-thumb-size: var(--sizing-component-icon-control); /** Slider thumb size (20px) */
+  --sizing-slider-thumb-border-width: var(--sizing-component-border-width-thick); /** Slider thumb border width (2px) */
+}

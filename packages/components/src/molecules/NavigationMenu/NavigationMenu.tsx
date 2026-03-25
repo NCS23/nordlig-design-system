@@ -4,6 +4,10 @@ import { ChevronDown } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/navigation-menu';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type NavigationMenuProps = React.ComponentPropsWithoutRef<

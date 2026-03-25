@@ -2,6 +2,11 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/text';
+import '@nordlig/styles/tokens/textarea';
+
 const textareaVariants = cva(
   [
     'w-full border bg-[var(--color-input-bg)] text-[var(--color-input-text)]',

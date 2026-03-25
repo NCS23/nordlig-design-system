@@ -1,0 +1,10 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-sinput-icon: var(--color-text-muted); /** Search icon color */
+  --color-sinput-icon-focus: var(--color-text-base); /** Search icon on focus */
+  --color-sinput-clear: var(--color-text-muted); /** Clear button color */
+  --color-sinput-clear-hover: var(--color-text-base); /** Clear button hover */
+}

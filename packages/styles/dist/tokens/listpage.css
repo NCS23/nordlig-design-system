@@ -1,0 +1,10 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-listpage-header-gap: var(--spacing-component-gap-md); /** Gap between title and action button (8px) */
+  --spacing-listpage-toolbar-gap: var(--spacing-component-gap-sm); /** Gap between toolbar items (8px) */
+  --spacing-listpage-section-gap: var(--spacing-component-gap-lg); /** Gap between page sections (16px) */
+  --spacing-listpage-footer-gap: var(--spacing-component-gap-md); /** Gap in footer area (8px) */
+}

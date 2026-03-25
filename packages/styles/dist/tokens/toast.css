@@ -1,0 +1,30 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-toast-bg: var(--color-bg-elevated); /** White toast background */
+  --color-toast-border: var(--color-border-muted); /** Subtle outer border */
+  --color-toast-title: var(--color-text-base); /** Toast title text */
+  --color-toast-description: var(--color-text-muted); /** Toast description text */
+  --color-toast-close-hover-bg: var(--color-bg-surface); /** Close button hover bg */
+  --color-toast-success-border: var(--color-border-success); /** Green left accent border */
+  --color-toast-success-icon: var(--color-text-success); /** Green icon color */
+  --color-toast-error-border: var(--color-border-error); /** Red left accent border */
+  --color-toast-error-icon: var(--color-text-error); /** Red icon color */
+  --color-toast-warning-border: var(--color-border-warning); /** Amber left accent border */
+  --color-toast-warning-icon: var(--color-text-warning); /** Amber icon color */
+  --color-toast-info-border: var(--color-border-info); /** Sky blue left accent border */
+  --color-toast-info-icon: var(--color-text-info); /** Sky blue icon color */
+  --radius-toast: var(--radius-component-lg); /** 8px rounded corners */
+  --shadow-toast: var(--shadow-elevation-floating); /** Medium elevation shadow */
+  --spacing-toast-padding: var(--spacing-component-padding-md); /** 16px internal padding */
+  --spacing-toast-gap: var(--spacing-component-gap-md); /** 8px gap between icon/content/close */
+  --spacing-toast-viewport-padding: var(--spacing-component-padding-md); /** 16px distance from screen edges */
+  --spacing-toast-icon-pt: var(--spacing-component-gap-2xs); /** 2px top padding for variant icon alignment */
+  --spacing-toast-desc-mt: var(--spacing-component-gap-xs); /** 4px margin-top between title and description */
+  --spacing-toast-close-nm: var(--spacing-component-gap-sm); /** 8px negative margin for close button touch target */
+  --font-toast-title-size: var(--font-component-size-sm); /** Toast title font size (text-sm equivalent) */
+  --font-toast-title-weight: var(--font-component-weight-semibold); /** Toast title font weight (font-semibold) */
+  --font-toast-description-size: var(--font-component-size-sm); /** Toast description font size (text-sm equivalent) */
+}

@@ -4,6 +4,10 @@ import { Minus, Plus } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/number-input';
+
 /** Berechnet die Anzahl Dezimalstellen eines Wertes */
 function getPrecision(val: number): number {
   const str = String(val);
@@ -217,6 +221,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
           type="number"
           role="spinbutton"
           inputMode={hasDecimalStep ? 'decimal' : 'numeric'}
+          aria-label={ariaLabel || 'Numerische Eingabe'}
           value={displayValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}

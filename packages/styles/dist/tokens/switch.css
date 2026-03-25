@@ -1,0 +1,24 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-switch-track-bg: var(--color-border-default); /** Unchecked track (gray-300) */
+  --color-switch-track-bg-checked: var(--color-interactive-primary); /** Checked track (sky blue) */
+  --color-switch-thumb-bg: var(--color-bg-paper); /** White thumb */
+  --color-switch-focus-ring: var(--color-border-focus); /** Sky blue focus ring */
+  --color-switch-disabled-track-bg: var(--color-bg-surface); /** Disabled track */
+  --color-switch-label: var(--color-text-base); /** Label text color */
+  --color-switch-description: var(--color-text-muted); /** Description text color */
+  --radius-switch-track: var(--radius-component-full); /** Pill-shaped track (9999px) */
+  --radius-switch-thumb: var(--radius-component-full); /** Circular thumb (9999px) */
+  --shadow-switch-thumb: var(--shadow-elevation-raised); /** Thumb shadow */
+  --spacing-switch-field-gap: var(--spacing-component-gap-lg); /** Gap between switch and label area (16px) */
+  --spacing-switch-content-gap: var(--spacing-component-gap-2xs); /** Gap between label and description (2px) */
+  --font-switch-label-size: var(--font-component-size-sm); /** SwitchField label font size (text-sm) */
+  --font-switch-label-weight: var(--font-component-weight-medium); /** SwitchField label font weight (500) */
+  --font-switch-desc-size: var(--font-component-size-xs); /** SwitchField description font size (text-xs) */
+  --sizing-switch-track-height: var(--sizing-component-icon-md); /** Switch track height (24px = h-6) */
+  --sizing-switch-track-width: var(--sizing-component-height-lg); /** Switch track width (44px = w-11) */
+  --sizing-switch-thumb-size: var(--sizing-component-icon-control); /** Switch thumb size (20px) */
+}

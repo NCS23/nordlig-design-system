@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-datatable-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
+  --color-datatable-row-selected-bg: var(--color-bg-surface); /** Selected row background */
+  --color-datatable-sort-icon: var(--color-text-muted); /** Sort icon inactive */
+  --color-datatable-sort-icon-active: var(--color-interactive-primary); /** Sort icon active */
+  --color-datatable-empty-text: var(--color-text-muted); /** Empty state text */
+  --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
+  --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
+  --font-datatable-pagination-size: var(--font-component-size-sm); /** Pagination info font size */
+}

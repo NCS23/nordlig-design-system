@@ -1,0 +1,41 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-select-checkbox-bg: var(--color-base-white); /** Checkbox unchecked background (pure white) */
+  --color-select-trigger-text: var(--color-text-base); /** Trigger text color */
+  --color-select-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
+  --color-select-trigger-border: var(--color-border-default); /** Default border */
+  --color-select-trigger-disabled-bg: var(--color-bg-surface); /** Disabled background */
+  --color-select-icon: var(--color-text-muted); /** Chevron/search icon color */
+  --color-select-popover-bg: var(--color-bg-elevated); /** White dropdown background */
+  --color-select-popover-border: var(--color-border-muted); /** Dropdown border */
+  --color-select-item-text: var(--color-text-base); /** Option text */
+  --color-select-item-hover-bg: var(--color-bg-surface); /** Option hover/focus bg */
+  --color-select-item-selected-bg: var(--color-bg-primary-subtle); /** Selected option background */
+  --color-select-item-selected-text: var(--color-text-primary); /** Selected option text (sky) */
+  --color-select-item-disabled-text: var(--color-text-disabled); /** Disabled option text */
+  --color-select-check-icon: var(--color-bg-primary); /** Checkmark icon color (sky) */
+  --color-select-group-label: var(--color-text-muted); /** Option group label */
+  --color-select-separator: var(--color-border-muted); /** Separator line */
+  --color-select-search-bg: var(--color-bg-base); /** Combobox search input bg */
+  --color-select-empty-text: var(--color-text-muted); /** No results text */
+  --color-select-checkbox-text: var(--color-text-on-primary); /** Checkbox checked text (white) */
+  --radius-select-popover: var(--radius-component-lg); /** 8px dropdown radius */
+  --radius-select-item: var(--radius-component-md); /** 6px item radius */
+  --shadow-select-popover: var(--shadow-elevation-floating); /** Dropdown elevation */
+  --spacing-select-popover-padding: var(--spacing-component-padding-xs); /** 4px inner padding for item list */
+  --spacing-select-item-padding-x: var(--spacing-component-padding-sm); /** 12px item horizontal padding */
+  --spacing-select-item-padding-y: var(--spacing-component-padding-xs); /** 8px item vertical padding */
+  --spacing-select-item-gap: var(--spacing-component-gap-sm); /** Gap between icon and text in item */
+  --spacing-select-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
+  --spacing-select-search-padding: var(--spacing-component-gap-sm); /** 8px search container padding */
+  --spacing-select-search-icon-left: var(--spacing-component-padding-sm); /** 10px search icon left offset */
+  --spacing-select-search-py: var(--spacing-component-gap-xs); /** 6px search input vertical padding */
+  --spacing-select-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-select-group-py: var(--spacing-component-gap-xs); /** 4px group label vertical padding */
+  --font-select-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-select-group-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-select-group-weight: var(--font-component-weight-medium); /** Group label weight */
+}

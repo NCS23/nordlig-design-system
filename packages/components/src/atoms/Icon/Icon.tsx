@@ -2,6 +2,9 @@ import React from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/icon';
+
 export type IconSize = 'sm' | 'md' | 'lg' | 'xl';
 
 export interface IconProps extends Omit<React.SVGAttributes<SVGSVGElement>, 'ref'> {

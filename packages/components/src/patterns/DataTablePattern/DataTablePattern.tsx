@@ -7,6 +7,9 @@ import { Heading } from '../../atoms/Heading';
 import { Text } from '../../atoms/Text';
 import type { ColumnDef } from '@tanstack/react-table';
 
+// Component token CSS
+import '@nordlig/styles/tokens/datatablepattern';
+
 export interface DataTablePatternProps<TData> {
   /** Spaltendefinitionen fuer die Tabelle */
   columns: ColumnDef<TData, unknown>[];

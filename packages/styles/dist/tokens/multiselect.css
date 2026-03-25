@@ -1,0 +1,20 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-multiselect-tag-gap: var(--spacing-component-gap-xs); /** Gap between tags in trigger (4px) */
+  --spacing-multiselect-item-gap: var(--spacing-component-gap-sm); /** Gap between check and label in item (8px) */
+  --spacing-multiselect-trigger-gap: var(--spacing-component-gap-sm); /** Gap in trigger between content and chevron (8px) */
+  --spacing-multiselect-trigger-py: var(--spacing-component-gap-xs); /** Trigger vertical padding */
+  --spacing-multiselect-search-py: var(--spacing-component-gap-xs); /** Search input vertical padding */
+  --spacing-multiselect-item-px: var(--spacing-component-padding-md); /** Item horizontal padding (12px) */
+  --spacing-multiselect-section-px: var(--spacing-component-padding-sm); /** Popover section padding (8px) */
+  --spacing-multiselect-selectall-px: var(--spacing-component-padding-md); /** Select-all horizontal padding (12px) */
+  --spacing-multiselect-selectall-py: var(--spacing-component-gap-xs); /** Select-all vertical padding (4px) */
+  --font-multiselect-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-multiselect-selectall-size: var(--font-component-size-xs); /** Select-all text size (12px) */
+  --font-multiselect-selectall-weight: var(--font-component-weight-medium); /** Select-all weight */
+  --font-multiselect-group-label-size: var(--font-component-size-xs); /** Group label size (12px) */
+  --font-multiselect-group-label-weight: var(--font-component-weight-medium); /** Group label weight */
+}

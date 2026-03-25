@@ -1,0 +1,11 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-searchfilter-search-max-width: 320px; /** Max width of search input on desktop */
+  --color-searchfilter-count: var(--color-text-muted); /** Result count text color */
+  --spacing-searchfilter-gap: var(--spacing-component-gap-sm); /** Gap between search input and filter slots (8px) */
+  --spacing-searchfilter-py: var(--spacing-component-padding-sm); /** Vertical padding (8px) */
+  --font-searchfilter-count-size: var(--font-component-size-sm); /** Result count font size */
+}

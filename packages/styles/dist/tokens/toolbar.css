@@ -1,0 +1,41 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-datatable-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
+  --color-rte-toolbar-bg: var(--color-bg-surface); /** Toolbar background */
+  --color-rte-toolbar-border: var(--color-border-muted); /** Toolbar bottom border */
+  --color-rte-toolbar-btn-text: var(--color-text-base); /** Toolbar button text */
+  --color-rte-toolbar-btn-hover-bg: var(--color-bg-surface); /** Toolbar button hover background */
+  --color-rte-toolbar-btn-active-bg: var(--color-bg-primary-subtle); /** Toolbar button active state background */
+  --color-rte-toolbar-btn-active-text: var(--color-text-primary); /** Toolbar button active state text */
+  --color-toolbar-bg: var(--color-bg-paper); /** Toolbar background */
+  --color-toolbar-border: var(--color-border-muted); /** Toolbar border */
+  --color-toolbar-btn-text: var(--color-text-base); /** Button text */
+  --color-toolbar-btn-hover-bg: var(--color-bg-surface); /** Button hover background */
+  --color-toolbar-btn-active-bg: var(--color-bg-surface-active); /** Button active/pressed */
+  --color-toolbar-link-text: var(--color-text-primary); /** Link text */
+  --color-toolbar-link-hover-text: var(--color-interactive-primary-hover); /** Link hover text */
+  --color-toolbar-toggle-on-bg: var(--color-bg-primary-subtle); /** Toggle pressed background */
+  --color-toolbar-toggle-on-text: var(--color-text-primary); /** Toggle pressed text */
+  --color-toolbar-separator: var(--color-border-muted); /** Separator color */
+  --radius-rte-toolbar-btn: var(--radius-component-sm); /** Toolbar button border radius */
+  --radius-toolbar-bar: var(--radius-component-md); /** Toolbar container radius */
+  --radius-toolbar-item: var(--radius-component-sm); /** Button/toggle item radius */
+  --spacing-datatable-toolbar-padding: var(--spacing-component-padding-md); /** Toolbar padding */
+  --spacing-datatable-toolbar-gap: var(--spacing-component-gap-md); /** Toolbar item gap */
+  --spacing-listpage-toolbar-gap: var(--spacing-component-gap-sm); /** Gap between toolbar items (8px) */
+  --spacing-rte-toolbar-padding: var(--spacing-component-gap-sm); /** Toolbar padding (8px) */
+  --spacing-rte-toolbar-gap: var(--spacing-component-gap-2xs); /** Toolbar button gap (2px) */
+  --spacing-toolbar-padding: var(--spacing-component-padding-xs); /** Toolbar inner padding */
+  --spacing-toolbar-gap: var(--spacing-component-gap-sm); /** Gap between items */
+  --spacing-toolbar-btn-padding-x: var(--spacing-component-padding-md); /** Button horizontal padding */
+  --spacing-toolbar-btn-padding-y: var(--spacing-component-padding-xs); /** Button vertical padding */
+  --spacing-toolbar-separator-mx: var(--spacing-component-gap-xs); /** 4px separator horizontal margin */
+  --font-toolbar-btn-size: var(--font-component-size-sm); /** Button text size (14px) */
+  --font-toolbar-btn-weight: var(--font-component-weight-medium); /** Button text weight */
+  --font-toolbar-link-size: var(--font-component-size-sm); /** Link text size (14px) */
+  --sizing-rte-toolbar-btn: var(--sizing-component-height-sm); /** Toolbar button size (32px) */
+  --sizing-toolbar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+}

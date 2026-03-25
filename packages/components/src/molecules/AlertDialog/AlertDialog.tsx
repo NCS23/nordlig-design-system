@@ -2,6 +2,11 @@ import React from 'react';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/alert';
+import '@nordlig/styles/tokens/alertdialog';
+import '@nordlig/styles/tokens/text';
+
 // ─── AlertDialog Root ──────────────────────────────────────────────────────
 
 const AlertDialog = AlertDialogPrimitive.Root;

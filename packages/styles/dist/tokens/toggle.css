@@ -1,0 +1,30 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-pwinput-toggle: var(--color-text-muted); /** Toggle icon color */
+  --color-pwinput-toggle-hover: var(--color-text-base); /** Toggle icon hover */
+  --color-toggle-bg: var(--color-bg-surface); /** Toggle button default background */
+  --color-toggle-border: var(--color-border-default); /** Toggle button border */
+  --color-toggle-text: var(--color-text-base); /** Toggle button text */
+  --color-toggle-hover-bg: var(--color-bg-surface-hover); /** Toggle button hover background */
+  --color-toggle-active-bg: var(--color-bg-primary); /** Active toggle background */
+  --color-toggle-active-text: var(--color-text-inverse); /** Active toggle text */
+  --color-toggle-active-border: var(--color-bg-primary); /** Active toggle border */
+  --color-toolbar-toggle-on-bg: var(--color-bg-primary-subtle); /** Toggle pressed background */
+  --color-toolbar-toggle-on-text: var(--color-text-primary); /** Toggle pressed text */
+  --radius-pwinput-toggle: var(--radius-component-sm); /** 4px toggle button radius */
+  --radius-toggle: var(--radius-component-md); /** Toggle button border radius */
+  --spacing-pwinput-toggle-inset: var(--spacing-component-padding-sm); /** 12px toggle button right offset */
+  --font-toggle-weight: var(--font-component-weight-medium); /** Toggle/ToggleGroup font weight (500) */
+  --sizing-toggle-sm-height: var(--sizing-component-height-sm); /** Toggle item height sm */
+  --sizing-toggle-sm-padding-x: var(--sizing-component-padding-x-sm); /** Toggle item horizontal padding sm */
+  --sizing-toggle-sm-font-size: var(--font-component-size-sm); /** Toggle item font size sm */
+  --sizing-toggle-md-height: var(--sizing-component-height-md); /** Toggle item height md */
+  --sizing-toggle-md-padding-x: var(--sizing-component-padding-x-md); /** Toggle item horizontal padding md */
+  --sizing-toggle-md-font-size: var(--font-component-size-sm); /** Toggle item font size md */
+  --sizing-toggle-lg-height: var(--sizing-component-height-lg); /** Toggle item height lg */
+  --sizing-toggle-lg-padding-x: var(--sizing-component-padding-x-lg); /** Toggle item horizontal padding lg */
+  --sizing-toggle-lg-font-size: var(--font-component-size-md); /** Toggle item font size lg */
+}

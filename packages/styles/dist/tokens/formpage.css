@@ -1,0 +1,12 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-formpage-max-width-sm: 480px; /** Narrow form (login, simple) */
+  --sizing-formpage-max-width-md: 640px; /** Medium form (default) */
+  --sizing-formpage-max-width-lg: 800px; /** Wide form (complex) */
+  --spacing-formpage-header-gap: var(--spacing-component-gap-lg); /** Gap below header section (16px) */
+  --spacing-formpage-body-gap: var(--spacing-component-gap-md); /** Gap between form fields (8px) */
+  --spacing-formpage-actions-gap: var(--spacing-component-gap-sm); /** Gap between action buttons (8px) */
+}

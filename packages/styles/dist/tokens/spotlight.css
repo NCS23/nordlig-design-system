@@ -1,0 +1,32 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-spotlight-overlay: var(--color-bg-overlay); /** Backdrop overlay */
+  --color-spotlight-bg: var(--color-bg-elevated); /** Palette background */
+  --color-spotlight-border: var(--color-border-muted); /** Palette border */
+  --color-spotlight-input-text: var(--color-text-base); /** Search input text */
+  --color-spotlight-input-placeholder: var(--color-text-disabled); /** Search input placeholder */
+  --color-spotlight-item-text: var(--color-text-base); /** Item text */
+  --color-spotlight-item-hover-bg: var(--color-bg-surface); /** Item hover background */
+  --color-spotlight-group-heading: var(--color-text-muted); /** Group heading text */
+  --color-spotlight-empty-text: var(--color-text-muted); /** Empty state text */
+  --color-spotlight-shortcut-text: var(--color-text-muted); /** Keyboard shortcut text */
+  --color-spotlight-separator: var(--color-border-muted); /** Input/list separator */
+  --radius-spotlight: var(--radius-component-xl); /** Palette border radius */
+  --shadow-spotlight: var(--shadow-elevation-floating); /** Palette drop shadow */
+  --spacing-spotlight-input-px: var(--spacing-component-padding-md); /** Search input horizontal padding (16px) */
+  --spacing-spotlight-list-padding: var(--spacing-component-gap-xs); /** List padding (4px) */
+  --spacing-spotlight-item-px: var(--spacing-component-padding-sm); /** Item horizontal padding (12px) */
+  --spacing-spotlight-item-py: var(--spacing-component-gap-sm); /** Item vertical padding (8px) */
+  --spacing-spotlight-group-heading-px: var(--spacing-component-padding-sm); /** Group heading horizontal padding */
+  --spacing-spotlight-group-heading-py: var(--spacing-component-gap-sm); /** Group heading vertical padding */
+  --spacing-spotlight-empty-py: var(--spacing-component-padding-lg); /** Empty state vertical padding */
+  --spacing-spotlight-icon-mr: var(--spacing-component-gap-sm); /** Icon right margin (8px) */
+  --font-spotlight-input-size: var(--font-component-size-md); /** Search input font size */
+  --font-spotlight-item-size: var(--font-component-size-sm); /** Item font size */
+  --font-spotlight-heading-size: var(--font-component-size-xs); /** Group heading font size */
+  --font-spotlight-heading-weight: var(--font-component-weight-semibold); /** Group heading font weight */
+  --font-spotlight-shortcut-size: var(--font-component-size-xs); /** Shortcut text font size */
+}

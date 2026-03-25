@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-spl-bg: var(--color-bg-surface); /** Hintergrund im verdeckten Zustand */
+  --color-spl-text: var(--color-text-base); /** Textfarbe im aufgedeckten Zustand */
+  --color-spl-hint: var(--color-text-muted); /** Hinweistext-Farbe (Klick-Aufforderung) */
+  --color-spl-border: var(--color-border-muted); /** Rahmenfarbe */
+  --radius-spl: var(--radius-component-sm); /** Border-Radius */
+  --spacing-spl-px: var(--spacing-component-padding-xs); /** Horizontales Padding */
+  --spacing-spl-py: var(--spacing-component-padding-xs); /** Vertikales Padding */
+  --font-spl-hint-size: var(--font-component-size-sm); /** Schriftgroesse Hinweistext */
+}

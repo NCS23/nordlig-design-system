@@ -40,7 +40,7 @@ const moleculeStories: StoryConfig[] = [
   { component: 'TimePicker',      stories: ['default', 'with-value', 'with-seconds', 'twelve-hour', 'all-sizes', 'error', 'disabled'] },
   { component: 'Toolbar',         stories: ['default', 'with-toggle-group', 'with-separators', 'vertical'] },
   { component: 'Resizable',       stories: ['default', 'vertical', 'with-handle', 'three-panels'] },
-  { component: 'SearchFilter',    stories: ['default'] },
+  { component: 'Card',            stories: ['flat', 'raised', 'elevated', 'all-elevations', 'all-paddings'] },
 ];
 
 for (const { component, stories } of moleculeStories) {

@@ -11,6 +11,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/form';
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/text';
+
 // ---------------------------------------------------------------------------
 // FormContext
 // ---------------------------------------------------------------------------

@@ -2,15 +2,21 @@ import React from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/slider';
+import '@nordlig/styles/tokens/text';
+
 export interface SliderProps
   extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
   showValue?: boolean;
+  /** Accessible label for the slider (required for a11y) */
+  'aria-label'?: string;
 }
 
 const Slider = React.forwardRef<
   React.ComponentRef<typeof SliderPrimitive.Root>,
   SliderProps
->(({ className, showValue = false, value, defaultValue, ...props }, ref) => {
+>(({ className, showValue = false, value, defaultValue, 'aria-label': ariaLabel, ...props }, ref) => {
   const [internalValue, setInternalValue] = React.useState(
     defaultValue ?? value ?? [0]
   );
@@ -31,6 +37,7 @@ const Slider = React.forwardRef<
         value={value}
         defaultValue={value ? undefined : defaultValue}
         onValueChange={handleValueChange}
+        aria-label={ariaLabel || 'Slider'}
         className={cn(
           'relative flex w-full touch-none select-none items-center',
           className
@@ -43,6 +50,7 @@ const Slider = React.forwardRef<
         {currentValue.map((_, i) => (
           <SliderPrimitive.Thumb
             key={i}
+            aria-label={ariaLabel || 'Slider'}
             className="block h-[var(--sizing-slider-thumb-size)] w-[var(--sizing-slider-thumb-size)] rounded-[var(--radius-slider-thumb)] bg-[var(--color-slider-thumb)] [border-width:var(--sizing-slider-thumb-border-width)] border-[var(--color-slider-thumb-border)] hover:border-[var(--color-slider-thumb-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1 disabled:pointer-events-none disabled:opacity-50 transition-colors cursor-pointer"
           />
         ))}

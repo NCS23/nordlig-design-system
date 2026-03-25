@@ -1,0 +1,10 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-form-field-gap: var(--sizing-component-gap-sm); /** Gap between label, input, and hint in FormItem (6px) */
+  --font-form-label-size: var(--font-component-size-sm); /** Label text size (14px) */
+  --font-form-label-weight: var(--font-component-weight-medium); /** Label text weight */
+  --font-form-message-size: var(--font-component-size-sm); /** Error/description text size (14px) */
+}

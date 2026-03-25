@@ -4,6 +4,10 @@ import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/dialog';
+import '@nordlig/styles/tokens/text';
+
 // ─── Dialog Root ────────────────────────────────────────────────────────────
 
 const Dialog = DialogPrimitive.Root;

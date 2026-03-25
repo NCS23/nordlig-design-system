@@ -16,6 +16,7 @@ import { Button } from '../../atoms/Button';
 import { Text } from '../../atoms/Text';
 import { Separator } from '../../atoms/Separator';
 import {
+
   Sheet,
   SheetTrigger,
   SheetContent,
@@ -23,6 +24,12 @@ import {
   SheetTitle,
   SheetDescription,
 } from '../../molecules/Sheet';
+
+// Component token CSS
+import '@nordlig/styles/tokens/badge';
+import '@nordlig/styles/tokens/notifcenter';
+import '@nordlig/styles/tokens/text';
+import '@nordlig/styles/tokens/toast';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 

@@ -6,6 +6,7 @@ import { gotoStory, screenshotStory, screenshotFullPage } from './helpers';
 interface StoryConfig {
   component: string;
   stories: string[];
+  prefix?: string; // Override fuer Story-ID Prefix (default: 'organisms')
 }
 
 const organismStories: StoryConfig[] = [
@@ -18,19 +19,22 @@ const organismStories: StoryConfig[] = [
   { component: 'Sidebar',  stories: ['default', 'collapsed', 'with-badges'] },
   { component: 'Carousel',     stories: ['default', 'with-arrows', 'with-dots', 'all-features'] },
   // Visual Regression Baseline Expansion
-  { component: 'SessionCard',  stories: ['default', 'compact', 'loading', 'error', 'all-states'] },
+  { component: 'SessionCard',  stories: ['default', 'compact', 'loading', 'error', 'all-states'], prefix: 'examples' },
   { component: 'DataTable',    stories: ['basic', 'with-sorting', 'with-pagination', 'full-featured', 'empty'] },
   { component: 'AppHeader',    stories: ['default', 'with-navigation', 'no-border', 'flat'] },
   { component: 'AppFooter',    stories: ['default', 'with-links', 'no-border'] },
+  // Patterns (eigenes Storybook-Prefix)
+  { component: 'SearchFilter', stories: ['default'], prefix: 'patterns' },
 ];
 
-for (const { component, stories } of organismStories) {
+for (const { component, stories, prefix } of organismStories) {
+  const storyPrefix = prefix || 'organisms';
   test.describe(component, () => {
     for (const story of stories) {
-      const storyId = `organisms-${component.toLowerCase()}--${story}`;
+      const storyId = `${storyPrefix}-${component.toLowerCase()}--${story}`;
       test(story, async ({ page }) => {
         await gotoStory(page, storyId);
-        await screenshotStory(page, `organisms-${component.toLowerCase()}-${story}`);
+        await screenshotStory(page, `${storyPrefix}-${component.toLowerCase()}-${story}`);
       });
     }
   });

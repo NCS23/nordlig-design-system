@@ -47,6 +47,10 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 import { Separator } from '../../atoms/Separator';
 
+// Component token CSS
+import '@nordlig/styles/tokens/richtexteditor';
+import '@nordlig/styles/tokens/text';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type RichTextFeature =

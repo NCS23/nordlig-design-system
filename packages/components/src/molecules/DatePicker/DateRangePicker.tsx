@@ -7,6 +7,11 @@ import { cn } from '../../utils/cn';
 import { Calendar, type DateRange } from './Calendar';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/datepicker';
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/text';
+
 const DATE_FORMAT = 'dd.MM.yyyy';
 
 function getInitialMonth(value?: DateRange, minDate?: Date, maxDate?: Date): Date {

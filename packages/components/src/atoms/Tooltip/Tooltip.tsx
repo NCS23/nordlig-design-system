@@ -2,6 +2,9 @@ import React from 'react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/tooltip';
+
 export interface TooltipProps {
   /** Tooltip content (text or rich content) */
   content: React.ReactNode;

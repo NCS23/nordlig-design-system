@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --radius-img-none: 0px; /** No radius */
+  --color-img-bg: var(--color-bg-surface); /** Loading placeholder background */
+  --color-img-fallback-bg: var(--color-bg-surface-hover); /** Error fallback background */
+  --color-img-fallback-text: var(--color-text-muted); /** Error fallback icon/text */
+  --radius-img-sm: var(--radius-component-sm); /** Small radius */
+  --radius-img-md: var(--radius-component-md); /** Medium radius */
+  --radius-img-lg: var(--radius-component-lg); /** Large radius */
+  --radius-img-full: var(--radius-component-full); /** Circle radius */
+}

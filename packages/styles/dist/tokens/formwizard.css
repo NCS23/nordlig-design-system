@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-fwizard-summary-bg: var(--color-bg-surface); /** Summary section background */
+  --color-fwizard-summary-border: var(--color-border-muted); /** Summary section border */
+  --radius-fwizard-summary: var(--radius-component-lg); /** Summary section border radius */
+  --spacing-fwizard-stepper-mb: var(--spacing-component-padding-xl); /** 24px stepper bottom margin */
+  --spacing-fwizard-content-py: var(--spacing-component-padding-lg); /** 20px step content vertical padding */
+  --spacing-fwizard-content-gap: var(--spacing-component-gap-lg); /** 16px gap between form fields */
+  --spacing-fwizard-nav-gap: var(--spacing-component-gap-md); /** 8px gap between navigation buttons */
+  --spacing-fwizard-nav-pt: var(--spacing-component-padding-lg); /** 20px navigation top padding */
+  --spacing-fwizard-summary-gap: var(--spacing-component-gap-md); /** 8px gap in summary items */
+  --spacing-fwizard-summary-padding: var(--spacing-component-padding-md); /** 16px summary card padding */
+}

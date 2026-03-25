@@ -1,0 +1,19 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-taginput-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
+  --color-taginput-border: var(--color-border-default); /** Container border */
+  --color-taginput-border-hover: var(--color-border-strong); /** Container border on hover */
+  --color-taginput-border-focus: var(--color-border-focus); /** Container border/ring on focus */
+  --color-taginput-border-error: var(--color-border-error); /** Container border on error */
+  --color-taginput-input-text: var(--color-text-base); /** Inline input text color */
+  --color-taginput-input-placeholder: var(--color-text-disabled); /** Placeholder text color */
+  --color-taginput-bg-disabled: var(--color-bg-surface); /** Container background when disabled */
+  --radius-taginput: var(--radius-component-md); /** Container border radius */
+  --spacing-taginput-padding: var(--spacing-component-gap-sm); /** Container inner padding (8px) */
+  --spacing-taginput-gap: var(--spacing-component-gap-xs); /** Gap between tags (4px) */
+  --font-taginput-input-size: var(--font-component-size-sm); /** Inline input font size (14px) */
+  --sizing-taginput-min-height: var(--sizing-component-height-md); /** Minimum container height */
+}

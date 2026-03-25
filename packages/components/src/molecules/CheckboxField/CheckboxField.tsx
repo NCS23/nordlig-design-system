@@ -2,6 +2,9 @@ import React from 'react';
 import { Checkbox, type CheckboxProps } from '../../atoms/Checkbox';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/checkbox';
+
 // ─── CheckboxField ───────────────────────────────────────────────────────────
 
 export interface CheckboxFieldProps extends CheckboxProps {

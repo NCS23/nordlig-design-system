@@ -1,0 +1,49 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-text-heading: var(--color-neutral-1-900);
+  --font-heading-size-xs: var(--font-size-base);
+  --font-heading-size-sm: var(--font-size-lg);
+  --font-heading-size-md: var(--font-size-xl);
+  --font-heading-size-lg: var(--font-size-2xl);
+  --font-heading-size-xl: var(--font-size-3xl);
+  --font-heading-size-2xl: var(--font-size-4xl);
+  --font-heading-line-height-xs: var(--font-line-height-base); /** h6: 16px font → 24px LH (1.5x, body-sized) */
+  --font-heading-line-height-sm: var(--font-line-height-base); /** h5: 18px font → 24px LH (1.33x) */
+  --font-heading-line-height-md: var(--font-line-height-lg); /** h4: 20px font → 27px LH (1.35x) */
+  --font-heading-line-height-lg: var(--font-line-height-xl); /** h3: 24px font → 30px LH (1.25x) */
+  --font-heading-line-height-xl: var(--font-line-height-2xl); /** h2: 30px font → 36px LH (1.2x) */
+  --font-heading-line-height-2xl: var(--font-line-height-3xl); /** h1: 36px font → 45px LH (1.25x) */
+  --color-command-group-heading: var(--color-text-muted); /** Command group heading text */
+  --color-spotlight-group-heading: var(--color-text-muted); /** Group heading text */
+  --spacing-cmb-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
+  --spacing-command-group-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
+  --spacing-spotlight-group-heading-px: var(--spacing-component-padding-sm); /** Group heading horizontal padding */
+  --spacing-spotlight-group-heading-py: var(--spacing-component-gap-sm); /** Group heading vertical padding */
+  --font-heading-h1-size: var(--font-heading-size-2xl); /** h1 font size (2.25rem / text-4xl) */
+  --font-heading-h1-weight: var(--font-component-weight-semibold); /** h1 font weight (600) */
+  --font-heading-h1-line-height: var(--font-heading-line-height-2xl); /** h1 line-height (45px / 1.25x) */
+  --font-heading-h2-size: var(--font-heading-size-xl); /** h2 font size (1.875rem / text-3xl) */
+  --font-heading-h2-weight: var(--font-component-weight-semibold); /** h2 font weight (600) */
+  --font-heading-h2-line-height: var(--font-heading-line-height-xl); /** h2 line-height (36px / 1.2x) */
+  --font-heading-h3-size: var(--font-heading-size-lg); /** h3 font size (1.5rem / text-2xl) */
+  --font-heading-h3-weight: var(--font-component-weight-semibold); /** h3 font weight (600) */
+  --font-heading-h3-line-height: var(--font-heading-line-height-lg); /** h3 line-height (30px / 1.25x) */
+  --font-heading-h4-size: var(--font-heading-size-md); /** h4 font size (1.25rem / text-xl) */
+  --font-heading-h4-weight: var(--font-component-weight-semibold); /** h4 font weight (600) */
+  --font-heading-h4-line-height: var(--font-heading-line-height-md); /** h4 line-height (27px / 1.35x) */
+  --font-heading-h5-size: var(--font-heading-size-sm); /** h5 font size (1.125rem / text-lg) */
+  --font-heading-h5-weight: var(--font-component-weight-medium); /** h5 font weight (500) */
+  --font-heading-h5-line-height: var(--font-heading-line-height-sm); /** h5 line-height (24px / 1.33x) */
+  --font-heading-h6-size: var(--font-heading-size-xs); /** h6 font size (1rem / text-base) */
+  --font-heading-h6-weight: var(--font-component-weight-medium); /** h6 font weight (500) */
+  --font-heading-h6-line-height: var(--font-heading-line-height-xs); /** h6 line-height (24px / 1.5x) */
+  --font-cmb-heading-size: var(--font-component-size-xs); /** Group heading size (12px) */
+  --font-cmb-heading-weight: var(--font-component-weight-medium); /** Group heading weight */
+  --font-command-heading-size: var(--font-component-size-xs); /** Group heading size (12px) */
+  --font-command-heading-weight: var(--font-component-weight-medium); /** Group heading weight */
+  --font-spotlight-heading-size: var(--font-component-size-xs); /** Group heading font size */
+  --font-spotlight-heading-weight: var(--font-component-weight-semibold); /** Group heading font weight */
+}

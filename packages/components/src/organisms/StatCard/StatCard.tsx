@@ -5,6 +5,9 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 import { Card } from '../../molecules/Card';
 
+// Component token CSS
+import '@nordlig/styles/tokens/statcard';
+
 const statCardVariants = cva(
   '',
   {

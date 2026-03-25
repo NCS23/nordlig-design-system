@@ -4,6 +4,10 @@ import { Eye, EyeOff } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/input';
+import '@nordlig/styles/tokens/text';
+
 const inputVariants = cva(
   [
     'w-full border bg-[var(--color-input-bg)] text-[var(--color-input-text)]',

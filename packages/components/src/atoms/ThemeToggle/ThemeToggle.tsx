@@ -4,6 +4,9 @@ import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 import { useTheme, type Theme } from '../../system/ThemeProvider';
 
+// Component token CSS
+import '@nordlig/styles/tokens/toggle';
+
 export interface ThemeToggleProps {
   className?: string;
 }

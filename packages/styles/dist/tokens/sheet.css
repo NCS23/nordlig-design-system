@@ -1,0 +1,22 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-sheet-overlay: var(--color-bg-overlay); /** Sheet backdrop overlay */
+  --color-sheet-bg: var(--color-bg-paper); /** Sheet panel background */
+  --color-sheet-border: var(--color-border-muted); /** Sheet border */
+  --color-sheet-title: var(--color-text-base); /** Sheet title text */
+  --color-sheet-description: var(--color-text-muted); /** Sheet description text */
+  --shadow-sheet: var(--shadow-elevation-floating); /** Sheet panel shadow */
+  --spacing-sheet-padding: var(--spacing-component-padding-lg); /** Sheet content padding */
+  --spacing-sheet-header-gap: var(--sizing-component-gap-sm); /** Gap between title and description in header (6px) */
+  --spacing-sheet-footer-gap: var(--spacing-component-gap-sm); /** Gap between footer buttons (8px) */
+  --spacing-sheet-close-inset: var(--spacing-component-padding-md); /** 16px close button offset from edge */
+  --spacing-sheet-header-mb: var(--spacing-component-padding-md); /** 16px header bottom margin */
+  --spacing-sheet-footer-pt: var(--spacing-component-padding-md); /** 16px footer top padding */
+  --font-sheet-title-size: var(--font-component-size-lg); /** Sheet title font size (text-lg equivalent) */
+  --font-sheet-title-weight: var(--font-component-weight-semibold); /** Sheet title font weight (font-semibold) */
+  --font-sheet-description-size: var(--font-component-size-sm); /** Sheet description font size (text-sm equivalent) */
+  --sizing-sheet-close-size: var(--sizing-component-icon-lg); /** 32px close button width/height */
+}

@@ -1,0 +1,29 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-cpick-field-height: 160px; /** Saturation field height */
+  --sizing-cpick-slider-height: 12px; /** Hue/alpha slider track height */
+  --sizing-cpick-thumb-size: 16px; /** Slider/field thumb size */
+  --sizing-cpick-swatch-size: 24px; /** Color swatch size */
+  --color-cpick-input-bg: var(--color-base-white); /** Hex input — pure white for contrast */
+  --color-cpick-bg: var(--color-bg-paper); /** Container background */
+  --color-cpick-border: var(--color-border-default); /** Container border */
+  --color-cpick-input-border: var(--color-border-default); /** Hex input border */
+  --color-cpick-input-text: var(--color-text-base); /** Hex input text */
+  --color-cpick-input-border-focus: var(--color-border-focus); /** Hex input focus border */
+  --color-cpick-swatch-border: var(--color-border-muted); /** Swatch border */
+  --color-cpick-swatch-border-active: var(--color-border-focus); /** Active swatch border */
+  --color-cpick-label-text: var(--color-text-muted); /** Label text color */
+  --radius-cpick-container: var(--radius-component-lg); /** 8px container radius */
+  --radius-cpick-swatch: var(--radius-component-sm); /** 4px swatch radius */
+  --radius-cpick-field: var(--radius-component-md); /** 6px saturation field radius */
+  --radius-cpick-slider: var(--radius-component-full); /** Pill slider track */
+  --radius-cpick-thumb: var(--radius-component-full); /** Circular thumb */
+  --spacing-cpick-padding: var(--spacing-component-padding-md); /** 12px container padding */
+  --spacing-cpick-gap: var(--spacing-component-gap-sm); /** 8px gap between sections */
+  --spacing-cpick-swatch-gap: var(--spacing-component-gap-xs); /** 4px gap between swatches */
+  --font-cpick-label-size: var(--font-component-size-sm); /** Label text font size */
+  --font-cpick-input-size: var(--font-component-size-sm); /** Hex input font size */
+}

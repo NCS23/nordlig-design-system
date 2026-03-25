@@ -1,0 +1,12 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-hovercard-bg: var(--color-bg-elevated); /** HoverCard background */
+  --color-hovercard-border: var(--color-border-muted); /** HoverCard border */
+  --radius-hovercard: var(--radius-component-lg); /** HoverCard border radius */
+  --shadow-hovercard: var(--shadow-elevation-floating); /** HoverCard shadow */
+  --spacing-hovercard-padding: var(--spacing-component-padding-md); /** HoverCard content padding */
+  --font-hovercard-content-size: var(--font-component-size-sm); /** HoverCard content font size */
+}

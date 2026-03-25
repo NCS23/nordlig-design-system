@@ -3,6 +3,9 @@ import * as ProgressPrimitive from '@radix-ui/react-progress';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/progress';
+
 // ─── CVA: Track ──────────────────────────────────────────────────────────────
 
 const progressTrackVariants = cva(
@@ -63,7 +66,7 @@ export interface ProgressProps
 const Progress = React.forwardRef<
   React.ComponentRef<typeof ProgressPrimitive.Root>,
   ProgressProps
->(({ className, value, max = 100, size, color = 'default', indeterminate = false, ...props }, ref) => {
+>(({ className, value, max = 100, size, color = 'default', indeterminate = false, 'aria-label': ariaLabel, ...props }, ref) => {
   const percentage = indeterminate ? undefined : Math.min(100, Math.max(0, ((value ?? 0) / max) * 100));
 
   return (
@@ -72,6 +75,7 @@ const Progress = React.forwardRef<
       className={cn(progressTrackVariants({ size, className }))}
       value={indeterminate ? undefined : (value ?? 0)}
       max={max}
+      aria-label={ariaLabel || 'Progress'}
       {...props}
     >
       <ProgressPrimitive.Indicator

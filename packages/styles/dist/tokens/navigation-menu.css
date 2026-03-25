@@ -1,0 +1,31 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-datepicker-nav-hover-bg: var(--color-bg-surface); /** Chevron hover bg */
+  --color-nav-text: var(--color-text-base); /** Navigation item text */
+  --color-nav-hover-bg: var(--color-bg-surface); /** Item hover background */
+  --color-nav-active-bg: var(--color-bg-surface); /** Active item background */
+  --color-nav-dropdown-bg: var(--color-bg-elevated); /** Dropdown panel background */
+  --color-nav-dropdown-border: var(--color-border-muted); /** Dropdown panel border */
+  --color-nav-focus-ring: var(--color-border-focus); /** Focus ring color */
+  --radius-carousel-nav: var(--radius-component-full); /** Nav button border radius (full) */
+  --radius-nav: var(--radius-component-md); /** Navigation item radius */
+  --radius-nav-dropdown: var(--radius-component-lg); /** Dropdown panel radius */
+  --shadow-nav-dropdown: var(--shadow-elevation-floating); /** Dropdown panel shadow */
+  --spacing-carousel-nav-offset: var(--spacing-component-gap-sm); /** Nav button distance from edge (8px) */
+  --spacing-fwizard-nav-gap: var(--spacing-component-gap-md); /** 8px gap between navigation buttons */
+  --spacing-fwizard-nav-pt: var(--spacing-component-padding-lg); /** 20px navigation top padding */
+  --spacing-navmenu-gap: var(--spacing-component-gap-xs); /** Gap between nav items (4px) */
+  --spacing-navmenu-trigger-px: var(--spacing-component-padding-sm); /** 12px trigger horizontal padding */
+  --spacing-navmenu-trigger-py: var(--spacing-component-padding-xs); /** 8px trigger vertical padding */
+  --spacing-navmenu-content-p: var(--spacing-component-padding-md); /** 16px content padding */
+  --spacing-navmenu-indicator-mt: var(--spacing-component-gap-xs); /** 4px indicator margin-top */
+  --spacing-pagination-nav-gap: var(--spacing-component-gap-sm); /** Gap between pagination nav elements (8px) */
+  --font-nav-trigger-size: var(--font-component-size-sm); /** Trigger text font size (text-sm equivalent) */
+  --font-nav-trigger-weight: var(--font-component-weight-medium); /** Trigger text font weight (font-medium) */
+  --font-nav-link-size: var(--font-component-size-sm); /** Link text font size (text-sm equivalent) */
+  --font-nav-link-weight: var(--font-component-weight-medium); /** Active link font weight (font-medium) */
+  --sizing-carousel-nav-size: var(--sizing-component-height-md); /** Nav button size 40px */
+}

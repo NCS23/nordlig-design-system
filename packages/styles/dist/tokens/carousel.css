@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-carousel-dot-size: var(--sizing-component-indicator-dot-sm); /** Dot indicator size 8px */
+  --radius-carousel-nav: var(--radius-component-full); /** Nav button border radius (full) */
+  --radius-carousel-dots: var(--radius-component-full); /** Dots container border radius (full) */
+  --radius-carousel-dot-btn: var(--radius-component-full); /** Dot button border radius (full) */
+  --radius-carousel-dot: var(--radius-component-full); /** Dot indicator border radius (full) */
+  --spacing-carousel-nav-offset: var(--spacing-component-gap-sm); /** Nav button distance from edge (8px) */
+  --spacing-carousel-dots-bottom: var(--spacing-component-gap-md); /** Dots distance from bottom (12px) */
+  --spacing-carousel-dots-px: var(--spacing-component-gap-xs); /** Dots container horizontal padding (4px) */
+  --spacing-carousel-dots-py: var(--spacing-component-gap-xs); /** Dots container vertical padding (4px) */
+  --sizing-carousel-nav-size: var(--sizing-component-height-md); /** Nav button size 40px */
+}

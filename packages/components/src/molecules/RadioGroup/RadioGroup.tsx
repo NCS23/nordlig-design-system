@@ -1,6 +1,9 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/radio';
+
 // ─── RadioGroup ──────────────────────────────────────────────────────────────
 
 export interface RadioGroupProps extends React.HTMLAttributes<HTMLDivElement> {

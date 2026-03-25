@@ -1,0 +1,21 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-pagination-item-bg: var(--color-bg-paper); /** Page button background */
+  --color-pagination-item-border: var(--color-border-default); /** Page button border */
+  --color-pagination-item-text: var(--color-text-base); /** Page button text */
+  --color-pagination-item-hover-bg: var(--color-bg-surface); /** Page button hover background */
+  --color-pagination-item-active-bg: var(--color-bg-primary); /** Active page background (Sky Blue) */
+  --color-pagination-item-active-text: var(--color-text-on-primary); /** Active page text (white) */
+  --color-pagination-item-active-border: var(--color-bg-primary); /** Active page border (Sky Blue) */
+  --radius-pagination-item: var(--radius-component-md); /** 6px rounded corners */
+  --spacing-pagination-nav-gap: var(--spacing-component-gap-sm); /** Gap between pagination nav elements (8px) */
+  --spacing-pagination-item-gap: var(--spacing-component-gap-xs); /** Gap between page buttons (4px) */
+  --font-datatable-pagination-size: var(--font-component-size-sm); /** Pagination info font size */
+  --font-pagination-item-weight: var(--font-component-weight-medium); /** Page button font weight */
+  --font-pagination-info-size: var(--font-component-size-sm); /** Compact variant info text font size */
+  --sizing-pagination-item-size: var(--sizing-component-height-sm); /** Page button width & height (36px square) */
+  --sizing-pagination-font-size: var(--font-component-size-sm); /** Page button font size */
+}

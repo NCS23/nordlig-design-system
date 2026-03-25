@@ -1,0 +1,34 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-layout-header-height: var(--spacing-base-14); /** 56px shared header height for templates */
+  --sizing-header-height: var(--sizing-layout-header-height); /** Feste Header-Hoehe (56px) */
+  --color-datepicker-header-text: var(--color-text-base); /** Month/year header text */
+  --color-fuzpattern-header-text: var(--color-text-base); /** Header Titel */
+  --color-header-bg: var(--color-bg-elevated); /** Header-Hintergrund */
+  --color-header-border: var(--color-border-muted); /** Header unterer Rand */
+  --color-table-header-bg: var(--color-bg-base);
+  --color-table-header-text: var(--color-text-base);
+  --shadow-header: var(--shadow-elevation-raised); /** Header-Elevation */
+  --spacing-adash-header-gap: var(--spacing-component-gap-md); /** Gap between header elements */
+  --spacing-dtpattern-header-gap: var(--spacing-component-gap-sm); /** 8px gap in header between title/actions */
+  --spacing-datepicker-header-mb: var(--spacing-component-gap-sm); /** 8px header bottom margin */
+  --spacing-detailpage-header-gap: var(--spacing-component-gap-lg); /** Gap between header elements (16px) */
+  --spacing-fuzpattern-header-gap: var(--spacing-component-gap-sm); /** Gap im Header */
+  --spacing-formpage-header-gap: var(--spacing-component-gap-lg); /** Gap below header section (16px) */
+  --spacing-header-px: var(--spacing-component-padding-lg); /** Horizontales Padding (24px) */
+  --spacing-header-py: var(--spacing-component-padding-sm); /** Vertikales Padding (12px) */
+  --spacing-header-gap: var(--spacing-component-gap-md); /** Gap zwischen Header-Elementen (12px) */
+  --spacing-listpage-header-gap: var(--spacing-component-gap-md); /** Gap between title and action button (8px) */
+  --spacing-notifcenter-header-gap: var(--spacing-component-gap-md); /** Gap im Header (Titel + Actions) (12px) */
+  --spacing-session-card-zone-header-mb: var(--spacing-component-gap-md); /** Zone header bottom margin (8px) */
+  --spacing-sheet-header-gap: var(--sizing-component-gap-sm); /** Gap between title and description in header (6px) */
+  --spacing-sheet-header-mb: var(--spacing-component-padding-md); /** 16px header bottom margin */
+  --spacing-sidebar-header-gap: var(--spacing-component-gap-md); /** Gap between items in sidebar header (12px) */
+  --spacing-sidebar-header-padding: var(--spacing-component-padding-lg); /** Header/footer padding (16px) */
+  --spacing-statcard-header-gap: var(--spacing-component-gap-sm); /** Gap between icon and title (8px) */
+  --font-datepicker-header-size: var(--font-component-size-sm); /** Month/year header size (14px) */
+  --font-datepicker-header-weight: var(--font-component-weight-semibold); /** Month/year header weight */
+}

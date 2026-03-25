@@ -1,0 +1,43 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-fileupload-zone-bg: var(--color-bg-surface); /** Upload zone background */
+  --color-fileupload-zone-border: var(--color-border-default); /** Dashed border */
+  --color-fileupload-zone-text: var(--color-text-base); /** Zone primary instruction text */
+  --color-fileupload-zone-text-sub: var(--color-text-muted); /** Zone secondary/sub text */
+  --color-fileupload-zone-icon: var(--color-interactive-primary); /** Upload cloud icon */
+  --color-fileupload-hover-bg: var(--color-bg-primary-subtle); /** Hover bg */
+  --color-fileupload-hover-border: var(--color-border-focus); /** Hover border */
+  --color-fileupload-drag-bg: var(--color-bg-primary-subtle); /** Drag-over bg */
+  --color-fileupload-drag-border: var(--color-border-focus); /** Drag-over border */
+  --color-fileupload-drag-icon: var(--color-bg-primary); /** Drag-over icon */
+  --color-fileupload-drag-text: var(--color-text-primary); /** Drag-over text */
+  --color-fileupload-file-text: var(--color-text-base); /** File name text */
+  --color-fileupload-file-size: var(--color-text-muted); /** File size text */
+  --color-fileupload-file-icon: var(--color-text-muted); /** File type icon */
+  --color-fileupload-file-remove: var(--color-text-muted); /** Remove button */
+  --color-fileupload-file-remove-hover: var(--color-text-error); /** Remove hover */
+  --color-fileupload-progress-bg: var(--color-bg-surface-hover); /** Progress track */
+  --color-fileupload-progress-fill: var(--color-bg-primary); /** Progress bar */
+  --color-fileupload-error-text: var(--color-text-error); /** Error message */
+  --color-fileupload-error-border: var(--color-border-error); /** Error zone border */
+  --radius-fileupload-zone: var(--radius-component-lg); /** Zone radius */
+  --radius-fileupload-item: var(--radius-component-md); /** File item radius */
+  --radius-fileupload-progress: var(--radius-component-full); /** Pill progress bar */
+  --spacing-fileupload-zone-padding: var(--spacing-component-padding-lg); /** Zone inner padding */
+  --spacing-fileupload-file-gap: var(--spacing-component-gap-sm); /** Gap between file items */
+  --spacing-fileupload-file-item-gap: var(--spacing-component-gap-md); /** Gap inside file item row (12px) */
+  --spacing-fileupload-list-padding: var(--spacing-component-padding-md); /** File list container padding (12px) */
+  --spacing-fileupload-item-padding: var(--spacing-component-padding-sm); /** File item padding (8px) */
+  --spacing-fileupload-remove-padding: var(--spacing-component-padding-xs); /** Remove button padding (4px) */
+  --spacing-fileupload-progress-px: var(--spacing-component-padding-md); /** Progress bar horizontal padding */
+  --spacing-fileupload-progress-pb: var(--spacing-component-padding-md); /** Progress bar bottom padding */
+  --spacing-fileupload-subtext-mt: var(--spacing-component-gap-xs); /** Sub-text top margin (4px) */
+  --spacing-fileupload-addmore-mt: var(--spacing-component-gap-md); /** Add-more hint top margin (8px) */
+  --font-fileupload-instruction-size: var(--font-component-size-sm); /** Instruction text size (14px) */
+  --font-fileupload-instruction-weight: var(--font-component-weight-medium); /** Instruction text weight */
+  --font-fileupload-filename-size: var(--font-component-size-sm); /** File name size (14px) */
+  --font-fileupload-hint-size: var(--font-component-size-xs); /** Hint/sub/size text (12px) */
+}

@@ -4,8 +4,22 @@
   "description": "Nordlig Design System - Generated CSS & Tailwind Config",
   "main": "dist/tokens.css",
   "exports": {
-    ".": "./dist/tokens.css",
-    "./dark": "./dist/dark-tokens.css",
+    ".": {
+      "style": "./dist/tokens.css",
+      "default": "./dist/tokens.css"
+    },
+    "./core": {
+      "style": "./dist/tokens-core.css",
+      "default": "./dist/tokens-core.css"
+    },
+    "./tokens/*": {
+      "style": "./dist/tokens/*.css",
+      "default": "./dist/tokens/*.css"
+    },
+    "./dark": {
+      "style": "./dist/dark-tokens.css",
+      "default": "./dist/dark-tokens.css"
+    },
     "./tailwind": "./dist/tailwind-tokens.js"
   },
   "sideEffects": [

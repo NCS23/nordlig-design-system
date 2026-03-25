@@ -1,0 +1,13 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-skeleton-base: var(--color-bg-surface);
+  --color-skeleton-shimmer: var(--color-bg-base);
+  --radius-skeleton: var(--radius-component-md);
+  --radius-skeleton-circle: var(--radius-component-full);
+  --sizing-skeleton-circle-sm: var(--sizing-component-height-sm); /** Skeleton circle sm (36px) */
+  --sizing-skeleton-circle-md: var(--sizing-component-height-md); /** Skeleton circle md (40px) */
+  --sizing-skeleton-circle-lg: var(--sizing-component-height-lg); /** Skeleton circle lg (44px) */
+}

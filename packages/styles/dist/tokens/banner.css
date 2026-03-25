@@ -1,0 +1,25 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-banner-info-bg: var(--color-bg-info); /** Info background */
+  --color-banner-info-text: var(--color-text-info); /** Info text */
+  --color-banner-info-border: var(--color-border-info); /** Info border */
+  --color-banner-success-bg: var(--color-bg-success); /** Success background */
+  --color-banner-success-text: var(--color-text-success); /** Success text */
+  --color-banner-success-border: var(--color-border-success); /** Success border */
+  --color-banner-warning-bg: var(--color-bg-warning); /** Warning background */
+  --color-banner-warning-text: var(--color-text-warning); /** Warning text */
+  --color-banner-warning-border: var(--color-border-warning); /** Warning border */
+  --color-banner-error-bg: var(--color-bg-error); /** Error background */
+  --color-banner-error-text: var(--color-text-error); /** Error text */
+  --color-banner-error-border: var(--color-border-error); /** Error border */
+  --color-banner-dismiss: var(--color-text-muted); /** Dismiss icon color */
+  --radius-banner-dismiss: var(--radius-component-sm); /** Dismiss button border radius (rounded-sm) */
+  --spacing-banner-padding-x: var(--spacing-component-padding-lg); /** Horizontal padding */
+  --spacing-banner-padding-y: var(--spacing-component-padding-md); /** Vertical padding */
+  --spacing-banner-gap: var(--spacing-component-gap-md); /** Gap between elements */
+  --spacing-banner-dismiss-padding: var(--spacing-component-gap-xs); /** 4px dismiss button padding */
+  --font-banner-size: var(--font-component-size-sm); /** Banner content font size (text-sm) */
+}

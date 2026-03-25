@@ -1,0 +1,11 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-rsz-handle-bg: var(--color-border-muted); /** Handle default background */
+  --color-rsz-handle-hover-bg: var(--color-interactive-primary); /** Handle hover/active */
+  --color-rsz-handle-border: var(--color-border-default); /** Handle grip border */
+  --color-rsz-panel-border: var(--color-border-muted); /** Panel divider border */
+  --radius-rsz-handle: var(--radius-component-sm); /** Handle grip radius */
+}

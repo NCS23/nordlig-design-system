@@ -1,0 +1,19 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-emptystate-padding-y: 48px; /** 48px vertical padding */
+  --color-emptystate-icon: var(--color-text-muted); /** Default icon color (muted) */
+  --color-emptystate-icon-error: var(--color-text-error); /** Error variant icon color */
+  --color-emptystate-icon-success: var(--color-text-success); /** Success variant icon color */
+  --color-emptystate-title: var(--color-text-base); /** Title text color */
+  --color-emptystate-description: var(--color-text-muted); /** Description text color (muted) */
+  --spacing-emptystate-padding-x: var(--spacing-component-padding-md); /** 16px horizontal padding */
+  --spacing-emptystate-icon-mb: var(--spacing-component-gap-lg); /** 16px below icon */
+  --spacing-emptystate-title-mb: var(--spacing-component-gap-sm); /** 8px below title */
+  --spacing-emptystate-desc-mb: var(--spacing-component-padding-lg); /** 24px below description */
+  --font-emptystate-title-size: var(--font-component-size-lg); /** Title font size (text-lg) */
+  --font-emptystate-title-weight: var(--font-component-weight-semibold); /** Title font weight (semibold) */
+  --font-emptystate-desc-size: var(--font-component-size-sm); /** Description font size (text-sm) */
+}

@@ -1,0 +1,15 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-dtpattern-bulk-bg: var(--color-bg-info-subtle); /** Bulk actions bar background */
+  --color-dtpattern-bulk-border: var(--color-border-info); /** Bulk actions bar border */
+  --color-dtpattern-bulk-text: var(--color-text-base); /** Bulk actions bar text */
+  --radius-dtpattern-bulk: var(--radius-component-md); /** Bulk actions bar border radius */
+  --spacing-dtpattern-section-gap: var(--spacing-component-gap-lg); /** 16px gap between sections */
+  --spacing-dtpattern-header-gap: var(--spacing-component-gap-sm); /** 8px gap in header between title/actions */
+  --spacing-dtpattern-bulk-px: var(--spacing-component-padding-sm); /** 12px bulk actions horizontal padding */
+  --spacing-dtpattern-bulk-py: var(--spacing-component-gap-sm); /** 8px bulk actions vertical padding */
+  --spacing-dtpattern-bulk-gap: var(--spacing-component-gap-md); /** 8px gap in bulk actions bar */
+}

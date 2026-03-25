@@ -1,0 +1,24 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-notifcenter-remove-target: var(--spacing-base-11); /** Touch-Target Entfernen-Button (44px) */
+  --sizing-notifcenter-dot: var(--sizing-component-indicator-dot-sm); /** Ungelesen-Punkt Groesse (8px) */
+  --color-notifcenter-item-bg: var(--color-bg-paper); /** Gelesenes Item Hintergrund */
+  --color-notifcenter-item-bg-unread: var(--color-bg-info-subtle); /** Ungelesenes Item Hintergrund */
+  --color-notifcenter-item-border: var(--color-border-muted); /** Item Rand */
+  --color-notifcenter-timestamp: var(--color-text-muted); /** Zeitstempel-Farbe */
+  --color-notifcenter-dot-unread: var(--color-interactive-primary); /** Ungelesen-Punkt */
+  --color-notifcenter-empty-text: var(--color-text-muted); /** Leer-Nachricht */
+  --radius-notifcenter-item: var(--radius-component-md); /** Notification-Item Border-Radius */
+  --spacing-notifcenter-section-gap: var(--spacing-component-padding-lg); /** Gap zwischen Header und Liste (24px) */
+  --spacing-notifcenter-item-gap: var(--spacing-component-gap-md); /** Gap zwischen Notification-Items (12px) */
+  --spacing-notifcenter-item-padding: var(--spacing-component-padding-md); /** Padding eines Notification-Items (16px) */
+  --spacing-notifcenter-header-gap: var(--spacing-component-gap-md); /** Gap im Header (Titel + Actions) (12px) */
+  --spacing-notifcenter-empty-padding: var(--spacing-component-padding-xl); /** Vertikales Padding im leeren Zustand */
+  --font-notifcenter-timestamp-size: var(--font-caption-size); /** Zeitstempel Schriftgroesse */
+  --sizing-notifcenter-icon-size: var(--sizing-component-icon-md); /** Varianten-Icon Groesse */
+  --font-notifcenter-title-size: var(--font-label-size); /** Item-Titel Schriftgroesse */
+  --font-notifcenter-title-weight: var(--font-label-weight); /** Item-Titel Schriftgewicht */
+}

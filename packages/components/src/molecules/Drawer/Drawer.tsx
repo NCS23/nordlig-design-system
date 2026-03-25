@@ -2,6 +2,10 @@ import React from 'react';
 import { Drawer as DrawerPrimitive, type DialogProps } from 'vaul';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/drawer';
+import '@nordlig/styles/tokens/text';
+
 // ─── Drawer Root ─────────────────────────────────────────────────────────────
 
 export type DrawerProps = DialogProps & {

@@ -1,0 +1,55 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-btn-primary-bg: var(--color-bg-primary);
+  --color-btn-primary-bg-hover: var(--color-bg-primary-hover);
+  --color-btn-primary-bg-active: var(--color-bg-primary-active);
+  --color-btn-primary-text: var(--color-text-inverse);
+  --color-btn-primary-border: var(--color-bg-primary);
+  --color-btn-secondary-bg: var(--color-bg-surface);
+  --color-btn-secondary-bg-hover: var(--color-bg-surface-hover);
+  --color-btn-secondary-bg-active: var(--color-bg-surface-active);
+  --color-btn-secondary-text: var(--color-text-base);
+  --color-btn-secondary-border: var(--color-border-default);
+  --color-btn-ghost-bg-hover: var(--color-bg-surface);
+  --color-btn-ghost-bg-active: var(--color-bg-surface-hover);
+  --color-btn-ghost-text: var(--color-text-primary);
+  --color-btn-disabled-bg: var(--color-interactive-primary-disabled);
+  --color-btn-disabled-text: var(--color-text-disabled);
+  --color-rte-toolbar-btn-text: var(--color-text-base); /** Toolbar button text */
+  --color-rte-toolbar-btn-hover-bg: var(--color-bg-surface); /** Toolbar button hover background */
+  --color-rte-toolbar-btn-active-bg: var(--color-bg-primary-subtle); /** Toolbar button active state background */
+  --color-rte-toolbar-btn-active-text: var(--color-text-primary); /** Toolbar button active state text */
+  --color-toolbar-btn-text: var(--color-text-base); /** Button text */
+  --color-toolbar-btn-hover-bg: var(--color-bg-surface); /** Button hover background */
+  --color-toolbar-btn-active-bg: var(--color-bg-surface-active); /** Button active/pressed */
+  --radius-carousel-dot-btn: var(--radius-component-full); /** Dot button border radius (full) */
+  --radius-rte-toolbar-btn: var(--radius-component-sm); /** Toolbar button border radius */
+  --spacing-toolbar-btn-padding-x: var(--spacing-component-padding-md); /** Button horizontal padding */
+  --spacing-toolbar-btn-padding-y: var(--spacing-component-padding-xs); /** Button vertical padding */
+  --font-btn-weight: var(--font-component-weight-medium); /** Button font weight (500) */
+  --font-toolbar-btn-size: var(--font-component-size-sm); /** Button text size (14px) */
+  --font-toolbar-btn-weight: var(--font-component-weight-medium); /** Button text weight */
+  --sizing-btn-sm-height: var(--sizing-component-height-sm);
+  --sizing-btn-sm-padding-x: var(--sizing-component-padding-x-sm);
+  --sizing-btn-sm-padding-y: var(--sizing-component-padding-y-sm);
+  --sizing-btn-sm-gap: var(--sizing-component-gap-sm);
+  --sizing-btn-sm-font-size: var(--font-component-size-sm);
+  --sizing-btn-sm-radius: var(--radius-component-md);
+  --sizing-btn-md-height: var(--sizing-component-height-md);
+  --sizing-btn-md-padding-x: var(--sizing-component-padding-x-md);
+  --sizing-btn-md-padding-y: var(--sizing-component-padding-y-md);
+  --sizing-btn-md-gap: var(--sizing-component-gap-md);
+  --sizing-btn-md-font-size: var(--font-component-size-md);
+  --sizing-btn-md-radius: var(--radius-component-md);
+  --sizing-btn-lg-height: var(--sizing-component-height-lg);
+  --sizing-btn-lg-padding-x: var(--sizing-component-padding-x-lg);
+  --sizing-btn-lg-padding-y: var(--sizing-component-padding-y-lg);
+  --sizing-btn-lg-gap: var(--sizing-component-gap-lg);
+  --sizing-btn-lg-font-size: var(--font-component-size-lg);
+  --sizing-btn-lg-radius: var(--radius-component-md);
+  --sizing-btn-border-width: var(--sizing-component-border-width-default);
+  --sizing-rte-toolbar-btn: var(--sizing-component-height-sm); /** Toolbar button size (32px) */
+}

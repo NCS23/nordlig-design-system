@@ -3,6 +3,10 @@ import { UploadCloud, File, FileText, Image, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon as IconAtom } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/fileupload';
+import '@nordlig/styles/tokens/input';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface UploadedFile {

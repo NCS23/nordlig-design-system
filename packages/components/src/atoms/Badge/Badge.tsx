@@ -2,6 +2,9 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/badge';
+
 const badgeVariants = cva(
   'inline-flex items-center whitespace-nowrap shrink-0 rounded-[var(--radius-badge)] [border-width:var(--sizing-badge-border-width)] [font-weight:var(--font-badge-weight)] leading-none',
   {

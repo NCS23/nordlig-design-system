@@ -1,0 +1,34 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-adash-chart-height: 300px; /** Default chart container height */
+  --sizing-chart-indicator-dot: var(--sizing-component-indicator-dot-md); /** Tooltip dot indicator size (10px) */
+  --sizing-chart-legend-dot: var(--sizing-component-indicator-dot-md); /** Legend dot size (10px) */
+  --color-chart-1: var(--color-bg-primary); /** Chart color 1 (primary blue) */
+  --color-chart-2: var(--color-text-success); /** Chart color 2 (green) */
+  --color-chart-3: var(--color-text-warning); /** Chart color 3 (amber) */
+  --color-chart-4: var(--color-text-error); /** Chart color 4 (red) */
+  --color-chart-5: var(--color-text-info); /** Chart color 5 (info blue) */
+  --color-chart-axis: var(--color-text-muted); /** Chart axis text color */
+  --color-chart-tooltip-bg: var(--color-bg-elevated); /** Chart tooltip background */
+  --color-chart-tooltip-border: var(--color-border-muted); /** Chart tooltip border */
+  --color-chart-tooltip-text: var(--color-text-base); /** Chart tooltip text */
+  --radius-chart-tooltip: var(--radius-component-md); /** Chart tooltip border radius */
+  --radius-chart-indicator: var(--radius-component-full); /** Indicator border radius (full) */
+  --radius-chart-legend-dot: var(--radius-component-full); /** Legend dot border radius (full) */
+  --shadow-chart-tooltip: var(--shadow-elevation-floating); /** Chart tooltip shadow */
+  --spacing-chart-tooltip-gap: var(--spacing-component-gap-xs); /** Gap in tooltip items (4px) */
+  --spacing-chart-legend-gap: var(--spacing-component-gap-lg); /** Gap between legend items (16px) */
+  --spacing-chart-legend-item-gap: var(--sizing-component-gap-sm); /** Gap within legend item (6px) */
+  --spacing-chart-tooltip-px: var(--spacing-component-gap-md); /** Tooltip horizontal padding (12px) */
+  --spacing-chart-tooltip-py: var(--spacing-component-gap-sm); /** Tooltip vertical padding (8px) */
+  --spacing-chart-tooltip-label-mb: var(--spacing-component-gap-xs); /** Tooltip label bottom margin (4px) */
+  --spacing-chart-legend-pt: var(--spacing-component-gap-md); /** Legend top padding (12px) */
+  --font-chart-tooltip-size: var(--font-component-size-sm); /** Chart tooltip font size */
+  --font-chart-tooltip-weight: var(--font-component-weight-medium); /** Chart tooltip label/value font weight */
+  --font-chart-legend-size: var(--font-component-size-sm); /** Chart legend item font size */
+  --sizing-chart-indicator-line-h: var(--spacing-component-gap-2xs); /** Line indicator height (2px) */
+  --sizing-chart-indicator-line-w: var(--spacing-component-gap-md); /** Line indicator width (14px) */
+}

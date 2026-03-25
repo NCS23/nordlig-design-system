@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-alertdlg-overlay: var(--color-bg-overlay); /** AlertDialog backdrop overlay */
+  --color-alertdlg-bg: var(--color-bg-elevated); /** AlertDialog content background */
+  --color-alertdlg-title: var(--color-text-base); /** AlertDialog title text */
+  --color-alertdlg-description: var(--color-text-muted); /** AlertDialog description text */
+  --color-alertdlg-border: var(--color-border-muted); /** AlertDialog border */
+  --color-alertdlg-action-bg: var(--color-bg-error-solid); /** Destructive action button background (solid red) */
+  --color-alertdlg-action-text: var(--color-text-on-primary); /** Destructive action button text (white) */
+  --color-alertdlg-action-hover-bg: var(--color-text-error); /** Destructive action button hover (darker red) */
+  --color-alertdlg-cancel-bg: var(--color-bg-surface); /** Cancel button background */
+  --color-alertdlg-cancel-text: var(--color-text-base); /** Cancel button text */
+  --color-alertdlg-cancel-hover-bg: var(--color-bg-surface-hover); /** Cancel button hover */
+  --radius-alertdlg: var(--radius-component-xl); /** 12px AlertDialog radius (large overlay) */
+  --shadow-alertdlg: var(--shadow-elevation-floating); /** AlertDialog panel shadow */
+  --spacing-alertdlg-padding: var(--spacing-component-padding-lg); /** AlertDialog content padding */
+  --spacing-alertdlg-gap: var(--spacing-component-gap-md); /** AlertDialog content gap */
+  --font-alertdlg-title-size: var(--font-component-size-lg); /** Title text size (18px) */
+  --font-alertdlg-title-weight: var(--font-component-weight-semibold); /** Title text weight */
+  --font-alertdlg-desc-size: var(--font-component-size-sm); /** Description text size (14px) */
+  --font-alertdlg-action-size: var(--font-component-size-sm); /** Button text size (14px) */
+  --font-alertdlg-action-weight: var(--font-component-weight-medium); /** Button text weight */
+}

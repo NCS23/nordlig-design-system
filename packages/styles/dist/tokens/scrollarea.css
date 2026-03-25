@@ -1,0 +1,9 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-scrollarea-thumb: var(--color-border-default); /** Scrollbar thumb color */
+  --color-scrollarea-thumb-hover: var(--color-border-strong); /** Scrollbar thumb hover color */
+  --radius-scrollarea-thumb: var(--radius-component-full); /** Scrollbar thumb radius */
+}

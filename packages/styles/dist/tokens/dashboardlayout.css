@@ -1,0 +1,11 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-dashboard-sidebar-width: 240px; /** Sidebar expanded width */
+  --sizing-dashboard-sidebar-collapsed-width: 64px; /** Sidebar collapsed width */
+  --color-dashboard-bg: var(--color-bg-paper); /** Page background */
+  --color-dashboard-overlay-bg: var(--color-bg-overlay); /** Mobile sidebar backdrop */
+  --spacing-dashboard-content-p: var(--spacing-component-padding-xl); /** Content area padding (32px) */
+}

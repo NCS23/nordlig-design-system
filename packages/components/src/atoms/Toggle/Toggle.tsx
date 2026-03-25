@@ -3,6 +3,9 @@ import * as TogglePrimitive from '@radix-ui/react-toggle';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/toggle';
+
 // ─── CVA: Toggle ────────────────────────────────────────────────────────────
 
 const toggleVariants = cva(

@@ -4,7 +4,7 @@
     "sidebar": {
       "bg":             { "$type": "color", "$value": "{color.bg.base}", "$description": "Sidebar background" },
       "border":         { "$type": "color", "$value": "{color.border.muted}", "$description": "Sidebar right border" },
-      "text":           { "$type": "color", "$value": "{color.text.muted}", "$description": "Default item text" },
+      "text":           { "$type": "color", "$value": "{color.text.base}", "$description": "Default item text (slate-900 for WCAG AA on slate-200 base bg)" },
       "text-active":    { "$type": "color", "$value": "{color.text.on-primary}", "$description": "Active item text" },
       "item-hover":     { "$type": "color", "$value": "{color.bg.surface-active}", "$description": "Item hover background (slate-300 on slate-200 sidebar)" },
       "item-active":    { "$type": "color", "$value": "{color.bg.primary}", "$description": "Active item background" }

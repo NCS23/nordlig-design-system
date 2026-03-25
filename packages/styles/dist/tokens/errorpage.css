@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-errorpage-bg: var(--color-bg-base); /** Page background */
+  --color-errorpage-code-text: var(--color-text-muted); /** Error code text color */
+  --color-errorpage-desc-text: var(--color-text-muted); /** Description text color */
+  --spacing-errorpage-content-gap: var(--spacing-component-gap-lg); /** Gap between content sections */
+  --spacing-errorpage-text-gap: var(--spacing-component-gap-sm); /** Gap between title and description */
+  --font-errorpage-code-size: var(--font-heading-size-2xl); /** Error code font size (e.g. 404) */
+  --font-errorpage-code-weight: var(--font-component-weight-semibold); /** Error code font weight */
+  --font-errorpage-title-size: var(--font-heading-size-lg); /** Error title font size */
+  --font-errorpage-title-weight: var(--font-component-weight-semibold); /** Error title font weight */
+  --font-errorpage-desc-size: var(--font-component-size-md); /** Description font size */
+}

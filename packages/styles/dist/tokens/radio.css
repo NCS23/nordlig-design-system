@@ -1,0 +1,30 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-radio-bg: var(--color-base-white); /** Unchecked background (pure white) */
+  --color-radio-border: var(--color-border-default); /** Unchecked border */
+  --color-radio-border-hover: var(--color-border-strong); /** Hover border */
+  --color-radio-selected-border: var(--color-interactive-primary); /** Sky blue selected border */
+  --color-radio-selected-dot: var(--color-interactive-primary); /** Sky blue inner dot */
+  --color-radio-focus-ring: var(--color-border-focus); /** Sky blue focus ring */
+  --color-radio-disabled-bg: var(--color-bg-surface); /** Disabled background */
+  --color-radio-item-hover-bg: var(--color-bg-surface); /** Row hover background */
+  --color-radio-label: var(--color-text-base); /** Label text color */
+  --color-radio-description: var(--color-text-muted); /** Description text color */
+  --radius-radio-item: var(--radius-component-md); /** 6px item row rounding */
+  --radius-radio-button: var(--radius-component-full); /** Circular radio button (9999px) */
+  --radius-radio-dot: var(--radius-component-full); /** Circular inner dot (9999px) */
+  --spacing-radio-group-gap-v: var(--spacing-component-gap-md); /** Vertical gap between radio items (12px) */
+  --spacing-radio-group-gap-h: var(--spacing-component-gap-lg); /** Horizontal gap between radio items (16px) */
+  --spacing-radio-item-gap: var(--spacing-component-gap-sm); /** Gap between radio and label (8px) */
+  --spacing-radio-content-gap: var(--spacing-component-gap-2xs); /** Gap between label and description (2px) */
+  --spacing-radio-item-padding: var(--spacing-component-gap-sm); /** 8px item row padding */
+  --spacing-radio-visual-mt: var(--spacing-component-gap-2xs); /** 2px visual container top margin */
+  --font-radio-label-size: var(--font-component-size-sm); /** 14px label text */
+  --font-radio-label-weight: var(--font-component-weight-medium); /** 500 label weight */
+  --font-radio-description-size: var(--font-component-size-xs); /** 12px description text */
+  --sizing-radio-button-size: var(--sizing-component-icon-control); /** Radio button outer size (20px via L3 icon.control) */
+  --sizing-radio-dot-size: var(--sizing-component-track-lg); /** Radio inner dot size (12px) */
+}

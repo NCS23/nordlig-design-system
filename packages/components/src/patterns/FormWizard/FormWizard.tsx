@@ -6,6 +6,9 @@ import { Button } from '../../atoms/Button';
 import { z } from 'zod';
 import type { UseFormReturn, FieldValues } from 'react-hook-form';
 
+// Component token CSS
+import '@nordlig/styles/tokens/formwizard';
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------

@@ -1,0 +1,29 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-cmb-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-cmb-trigger-placeholder: var(--color-text-muted); /** Placeholder text */
+  --color-cmb-content-bg: var(--color-bg-elevated); /** Dropdown background */
+  --color-cmb-content-border: var(--color-border-muted); /** Dropdown border (subtle) */
+  --color-cmb-item-hover-bg: var(--color-bg-surface-hover); /** Item hover */
+  --color-cmb-item-selected-bg: var(--color-bg-primary-subtle); /** Selected item background */
+  --color-cmb-item-selected-text: var(--color-text-primary); /** Selected item text */
+  --color-cmb-search-bg: var(--color-bg-elevated); /** Search input background */
+  --color-cmb-empty-text: var(--color-text-muted); /** No results text */
+  --radius-cmb-content: var(--radius-component-lg); /** Dropdown border radius */
+  --spacing-cmb-content-padding: var(--spacing-component-padding-xs); /** Dropdown inner padding */
+  --spacing-cmb-item-padding-x: var(--spacing-component-padding-md); /** Item horizontal padding */
+  --spacing-cmb-item-padding-y: var(--spacing-component-padding-sm); /** Item vertical padding */
+  --spacing-cmb-trigger-gap: var(--spacing-component-gap-sm); /** Gap between text and chevron in trigger (8px) */
+  --spacing-cmb-search-py: var(--spacing-component-gap-xs); /** 6px search input vertical padding */
+  --spacing-cmb-search-px: var(--spacing-component-padding-sm); /** 12px search input horizontal padding */
+  --spacing-cmb-empty-py: var(--spacing-component-padding-lg); /** 24px empty state vertical padding */
+  --spacing-cmb-heading-py: var(--spacing-component-gap-xs); /** 6px group heading vertical padding */
+  --spacing-cmb-icon-mr: var(--spacing-component-gap-sm); /** 8px icon margin right */
+  --font-cmb-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-cmb-input-size: var(--font-component-size-sm); /** Search input text size (14px) */
+  --font-cmb-heading-size: var(--font-component-size-xs); /** Group heading size (12px) */
+  --font-cmb-heading-weight: var(--font-component-weight-medium); /** Group heading weight */
+}

@@ -1,0 +1,9 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-hl-bg: var(--color-bg-warning); /** Highlight background (yellow) */
+  --color-hl-text: var(--color-text-base); /** Highlight text */
+  --radius-hl: var(--radius-component-sm); /** Highlight border radius */
+}

@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --shadow-actionbar-default: 0 -4px 12px rgba(0,0,0,0.08); /** Upward shadow */
+  --spacing-actionbar-padding-x: var(--spacing-base-4); /** Horizontal padding */
+  --spacing-actionbar-padding-y: var(--spacing-base-4); /** Vertical padding */
+  --spacing-actionbar-gap: var(--spacing-base-2); /** Gap between items */
+  --color-actionbar-bg: var(--color-bg-primary-muted); /** ActionBar background */
+  --color-actionbar-border: var(--color-border-focus); /** ActionBar top border */
+  --color-actionbar-text: var(--color-text-muted); /** ActionBar label text */
+  --radius-actionbar: var(--radius-component-lg); /** Top corner radius */
+}

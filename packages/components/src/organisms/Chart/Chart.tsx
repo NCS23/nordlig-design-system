@@ -1,6 +1,9 @@
 import React, { createContext, useContext } from 'react';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/chart';
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 /** Configuration map for chart data series — maps data keys to labels, colors and icons. */

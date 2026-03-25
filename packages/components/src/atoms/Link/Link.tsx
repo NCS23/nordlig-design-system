@@ -4,6 +4,10 @@ import { ExternalLink } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/link';
+import '@nordlig/styles/tokens/text';
+
 const linkVariants = cva(
   'inline-flex items-center gap-[var(--spacing-link-gap)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-1',
   {

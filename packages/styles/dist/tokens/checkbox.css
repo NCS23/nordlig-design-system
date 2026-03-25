@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-checkbox-bg: var(--color-base-white); /** Unchecked background (pure white) */
+  --color-select-checkbox-bg: var(--color-base-white); /** Checkbox unchecked background (pure white) */
+  --color-checkbox-border: var(--color-border-default); /** Unchecked border */
+  --color-checkbox-border-hover: var(--color-border-strong); /** Hover border */
+  --color-checkbox-checked-bg: var(--color-interactive-primary); /** Sky blue checked bg */
+  --color-checkbox-checked-border: var(--color-interactive-primary); /** Sky blue checked border */
+  --color-checkbox-checked-icon: var(--color-text-on-primary); /** White check icon */
+  --color-checkbox-focus-ring: var(--color-border-focus); /** Sky blue focus ring */
+  --color-checkbox-disabled-bg: var(--color-bg-surface); /** Disabled background */
+  --color-checkbox-label: var(--color-text-base); /** Label text color */
+  --color-checkbox-description: var(--color-text-muted); /** Description text color */
+  --color-select-checkbox-text: var(--color-text-on-primary); /** Checkbox checked text (white) */
+  --radius-checkbox: var(--radius-component-sm); /** 2px subtle rounding */
+  --spacing-checkbox-field-gap: var(--spacing-component-gap-sm); /** 8px — Gap between checkbox and content */
+  --spacing-checkbox-content-gap: var(--spacing-component-gap-2xs); /** 2px — Gap between label and description */
+  --font-checkbox-label-size: var(--font-component-size-sm); /** Label font size 14px (text-sm) */
+  --font-checkbox-label-weight: var(--font-component-weight-medium); /** Label font weight 500 (font-medium) */
+  --font-checkbox-desc-size: var(--font-caption-size); /** Description font size 12px (text-xs) */
+  --sizing-checkbox-box-size: var(--sizing-component-icon-control); /** Checkbox box size (20px) */
+  --sizing-checkbox-border-width: var(--sizing-component-border-width-thick); /** 2px */
+}

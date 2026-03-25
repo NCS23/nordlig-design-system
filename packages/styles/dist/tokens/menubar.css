@@ -1,0 +1,27 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-menubar-bg: var(--color-bg-elevated); /** Menubar background */
+  --color-menubar-border: var(--color-border-muted); /** Menubar border */
+  --color-menubar-trigger-text: var(--color-text-base); /** Trigger text */
+  --color-menubar-trigger-hover-bg: var(--color-bg-surface); /** Trigger hover background */
+  --color-menubar-trigger-active-bg: var(--color-bg-surface); /** Trigger active/open background */
+  --radius-menubar-bar: var(--radius-component-md); /** Menubar container radius */
+  --radius-menubar-item: var(--radius-component-sm); /** Trigger item radius */
+  --spacing-menubar-padding: var(--spacing-component-padding-xs); /** Menubar inner padding */
+  --spacing-menubar-trigger-padding-x: var(--spacing-component-padding-md); /** Trigger horizontal padding */
+  --spacing-menubar-trigger-padding-y: var(--spacing-component-padding-xs); /** Trigger vertical padding */
+  --spacing-menubar-gap: var(--spacing-component-gap-xs); /** Gap between menubar items (4px) */
+  --spacing-menubar-item-py: var(--spacing-component-gap-xs); /** 6px dropdown item vertical padding */
+  --spacing-menubar-separator-my: var(--spacing-component-gap-xs); /** 4px separator vertical margin */
+  --spacing-menubar-indicator-left: var(--spacing-component-gap-sm); /** 8px checkbox/radio indicator left offset */
+  --font-menubar-trigger-size: var(--font-component-size-sm); /** Trigger text size (14px) */
+  --font-menubar-trigger-weight: var(--font-component-weight-medium); /** Trigger text weight */
+  --font-menubar-item-size: var(--font-component-size-sm); /** Item text size (14px) */
+  --font-menubar-label-size: var(--font-component-size-xs); /** Label text size (12px) */
+  --font-menubar-label-weight: var(--font-component-weight-semibold); /** Label text weight */
+  --font-menubar-shortcut-size: var(--font-component-size-xs); /** Shortcut text size (12px) */
+  --sizing-menubar-item-icon: var(--sizing-component-icon-sm); /** 16px item icon size */
+}

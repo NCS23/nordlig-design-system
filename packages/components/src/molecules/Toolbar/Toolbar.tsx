@@ -2,6 +2,9 @@ import React from 'react';
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/toolbar';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export interface ToolbarProps

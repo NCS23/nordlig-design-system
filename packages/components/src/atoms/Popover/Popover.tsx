@@ -2,6 +2,9 @@ import React from 'react';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/popover';
+
 // Re-export Root and Trigger
 const Popover = PopoverPrimitive.Root;
 Popover.displayName = 'Popover';

@@ -2,6 +2,9 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/kbd';
+
 const kbdVariants = cva(
   'inline-flex items-center justify-center font-mono rounded-[var(--radius-kbd)] [border-width:var(--sizing-kbd-border-width)] border-[var(--color-kbd-border)] bg-[var(--color-kbd-bg)] text-[var(--color-kbd-text)] [box-shadow:var(--shadow-kbd)]',
   {

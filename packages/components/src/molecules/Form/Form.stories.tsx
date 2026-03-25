@@ -47,10 +47,10 @@ export const Default: StoryObj = {
           className="flex flex-col gap-4 max-w-md"
         >
           <FormField name="name" label="Name">
-            <Input placeholder="Max Mustermann" />
+            <Input placeholder="Max Mustermann" aria-label="Name" />
           </FormField>
           <FormField name="email" label="E-Mail">
-            <Input type="email" placeholder="max@example.com" />
+            <Input type="email" placeholder="max@example.com" aria-label="E-Mail" />
           </FormField>
           <Button type="submit">Absenden</Button>
         </Form>

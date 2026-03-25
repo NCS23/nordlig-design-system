@@ -1,0 +1,25 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-tabs-list-bg: var(--color-bg-surface); /** Pills variant list background */
+  --color-tabs-trigger-text: var(--color-text-muted); /** Inactive tab text */
+  --color-tabs-trigger-text-active: var(--color-interactive-primary); /** Active tab text (sky) */
+  --color-tabs-trigger-text-hover: var(--color-text-base); /** Hovered tab text */
+  --color-tabs-trigger-bg-active: var(--color-bg-paper); /** Pills active tab background (white) */
+  --color-tabs-trigger-hover-bg: var(--color-bg-surface); /** Underline hover background */
+  --color-tabs-underline: var(--color-interactive-primary); /** Active underline indicator (sky) */
+  --color-tabs-border: var(--color-border-muted); /** Underline variant bottom border */
+  --color-tabs-content-text: var(--color-text-base); /** Tab content text */
+  --radius-tabs-list: var(--radius-component-lg); /** 8px pills list radius */
+  --radius-tabs-trigger: var(--radius-component-md); /** 6px pills trigger radius */
+  --shadow-tabs-trigger-active: var(--shadow-elevation-raised); /** Pills active tab shadow */
+  --spacing-tabs-list-padding: var(--spacing-component-padding-xs); /** 4px pills list inner padding */
+  --spacing-tabs-trigger-padding-x: var(--spacing-component-padding-md); /** 16px tab horizontal padding */
+  --spacing-tabs-trigger-padding-y: var(--spacing-component-padding-sm); /** 12px tab vertical padding */
+  --spacing-tabs-content-padding: var(--spacing-component-padding-md); /** 16px content padding-top */
+  --spacing-tabs-list-gap: var(--spacing-component-gap-sm); /** 4px gap between pills */
+  --font-tabs-trigger-size: var(--font-component-size-sm); /** Tab trigger font size */
+  --font-tabs-trigger-weight: var(--font-component-weight-medium); /** Tab trigger font weight */
+}

@@ -1,0 +1,36 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-numberinput-stepper-text: var(--color-text-muted); /** Stepper button icon color */
+  --color-numberinput-stepper-text-hover: var(--color-text-base); /** Stepper button icon hover color */
+  --color-numberinput-stepper-bg-hover: var(--color-bg-surface); /** Stepper button hover background */
+  --color-stepper-completed-bg: var(--color-bg-success-subtle); /** Completed step bg — subtle, NOT solid */
+  --color-stepper-completed-border: var(--color-border-success); /** Completed step ring */
+  --color-stepper-completed-text: var(--color-text-success); /** Completed step check icon */
+  --color-stepper-current-bg: var(--color-bg-primary); /** Current step bg — solid primary focus */
+  --color-stepper-current-text: var(--color-text-on-primary); /** Current step number/icon */
+  --color-stepper-pending-bg: var(--color-bg-surface); /** Pending step bg */
+  --color-stepper-pending-border: var(--color-border-muted); /** Pending step ring */
+  --color-stepper-pending-text: var(--color-text-muted); /** Pending step number */
+  --color-stepper-line-completed: var(--color-border-success); /** Completed connecting line */
+  --color-stepper-line-pending: var(--color-border-muted); /** Pending connecting line */
+  --color-stepper-label-current: var(--color-text-base); /** Current step label */
+  --color-stepper-label-default: var(--color-text-muted); /** Other step labels */
+  --radius-stepper-indicator: var(--radius-component-full); /** Circular indicator (9999px) */
+  --spacing-fwizard-stepper-mb: var(--spacing-component-padding-xl); /** 24px stepper bottom margin */
+  --spacing-numberinput-stepper-px: var(--spacing-component-gap-sm); /** 8px stepper button horizontal padding */
+  --spacing-stepper-step-gap: var(--spacing-component-gap-md); /** 12px gap between indicator and content */
+  --spacing-stepper-content-gap: var(--spacing-component-gap-sm); /** 8px gap within step content */
+  --spacing-stepper-line-offset: var(--spacing-component-padding-md); /** 16px vertical line offset (half of 32px indicator) */
+  --font-stepper-indicator-size: var(--font-component-size-sm); /** Indicator number size (14px) */
+  --font-stepper-indicator-weight: var(--font-component-weight-medium); /** Indicator number weight */
+  --font-stepper-label-size: var(--font-component-size-sm); /** Step label size (14px) */
+  --font-stepper-label-weight: var(--font-component-weight-medium); /** Step label weight */
+  --font-stepper-desc-size: var(--font-component-size-xs); /** Step description size (12px) */
+  --sizing-stepper-indicator: var(--spacing-component-padding-xl); /** 32px indicator diameter */
+  --sizing-stepper-line-h: var(--sizing-component-border-width-default); /** 1px horizontal line height */
+  --sizing-stepper-line-v-w: var(--sizing-component-border-width-default); /** 1px vertical line width */
+  --sizing-stepper-line-v-min: var(--spacing-component-padding-lg); /** 24px min vertical line height */
+}

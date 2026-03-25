@@ -1,0 +1,20 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-numberinput-bg: var(--color-base-white); /** Pure white for contrast on paper surfaces */
+  --color-numberinput-bg-disabled: var(--color-bg-surface); /** Disabled background */
+  --color-numberinput-text: var(--color-text-base); /** Input value text */
+  --color-numberinput-border: var(--color-border-default); /** Default border */
+  --color-numberinput-border-hover: var(--color-border-strong); /** Hover border */
+  --color-numberinput-border-focus: var(--color-border-focus); /** Focus ring color */
+  --color-numberinput-border-error: var(--color-border-error); /** Error border */
+  --color-numberinput-stepper-text: var(--color-text-muted); /** Stepper button icon color */
+  --color-numberinput-stepper-text-hover: var(--color-text-base); /** Stepper button icon hover color */
+  --color-numberinput-stepper-bg-hover: var(--color-bg-surface); /** Stepper button hover background */
+  --radius-numberinput: var(--radius-component-md); /** NumberInput border radius */
+  --spacing-numberinput-stepper-px: var(--spacing-component-gap-sm); /** 8px stepper button horizontal padding */
+  --font-numberinput-weight: var(--font-component-weight-medium); /** Input value font weight (500) */
+  --sizing-numberinput-border-width: var(--sizing-component-border-width-default); /** NumberInput border width (1px) */
+}

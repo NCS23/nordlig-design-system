@@ -5,6 +5,10 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/modal';
+import '@nordlig/styles/tokens/text';
+
 // ─── Overlay ─────────────────────────────────────────────────────────────────
 
 const ModalOverlay = React.forwardRef<

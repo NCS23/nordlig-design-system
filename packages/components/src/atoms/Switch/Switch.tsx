@@ -2,6 +2,9 @@ import React from 'react';
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 import { cn } from '../../utils/cn';
 
+// Component token CSS
+import '@nordlig/styles/tokens/switch';
+
 // ─── Switch ──────────────────────────────────────────────────────────────────
 
 export interface SwitchProps

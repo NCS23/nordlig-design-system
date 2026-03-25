@@ -4,6 +4,9 @@ import { cn } from '../../utils/cn';
 import { inputVariants } from '../../atoms/Input';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/passwordinput';
+
 export interface PasswordInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
   /** Groesse der Eingabe */

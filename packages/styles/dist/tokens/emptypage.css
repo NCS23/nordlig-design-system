@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-emptypage-max-width: 420px; /** Max width of content area */
+  --sizing-emptypage-illustration-size: 160px; /** Illustration max width/height */
+  --color-emptypage-title-text: var(--color-text-base); /** Title text color */
+  --color-emptypage-desc-text: var(--color-text-muted); /** Description text color */
+  --spacing-emptypage-padding-y: var(--spacing-component-padding-xl); /** Vertical padding for centering area */
+  --spacing-emptypage-content-gap: var(--spacing-component-gap-lg); /** Gap between illustration, text and CTA */
+  --spacing-emptypage-text-gap: var(--spacing-component-gap-sm); /** Gap between title and description */
+  --font-emptypage-title-size: var(--font-heading-size-md); /** Title font size */
+  --font-emptypage-title-weight: var(--font-component-weight-semibold); /** Title font weight */
+  --font-emptypage-desc-size: var(--font-component-size-md); /** Description font size */
+}

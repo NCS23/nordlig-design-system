@@ -4,6 +4,10 @@ import { ChevronDown } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { Icon } from '../../atoms/Icon';
 
+// Component token CSS
+import '@nordlig/styles/tokens/accordion';
+import '@nordlig/styles/tokens/tabs';
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type AccordionProps = React.ComponentPropsWithoutRef<

@@ -32,6 +32,7 @@ export const Default: Story = {
 export const Outline: Story = {
   args: {
     variant: 'outline',
+    'aria-label': 'Fett',
     children: <Icon icon={Bold} size="sm" />,
   },
 };
@@ -39,6 +40,7 @@ export const Outline: Story = {
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
+    'aria-label': 'Kursiv',
     children: <Icon icon={Italic} size="sm" />,
   },
 };

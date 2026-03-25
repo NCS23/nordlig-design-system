@@ -13,7 +13,7 @@ const atomStories: StoryConfig[] = [
   { component: 'Badge',       stories: ['all-variants', 'all-sizes'] },
   { component: 'Input',       stories: ['default', 'with-value', 'error', 'disabled', 'all-sizes', 'password'] },
   { component: 'Checkbox',    stories: ['all-states'] },
-  { component: 'Switch',      stories: ['all-states'] },
+  { component: 'Switch',      stories: ['basic', 'checked', 'unchecked', 'disabled'] },
   { component: 'Progress',    stories: ['default', 'all-sizes', 'all-colors'] },
   { component: 'Spinner',     stories: ['default', 'all-sizes'] },
   { component: 'Skeleton',    stories: ['basic', 'card-loading'] },
@@ -47,7 +47,6 @@ const atomStories: StoryConfig[] = [
   { component: 'InputOTP',      stories: ['default', 'four-digit', 'with-groups', 'with-error', 'disabled'] },
   { component: 'Radio',         stories: ['default', 'with-label', 'checked', 'disabled', 'group'] },
   { component: 'CopyButton',    stories: ['default', 'all-sizes', 'disabled'] },
-  { component: 'Card',          stories: ['flat', 'raised', 'elevated', 'all-elevations', 'all-paddings'] },
   { component: 'Spoiler',       stories: ['default', 'mit-label', 'inline-text'] },
   { component: 'SegmentedControl', stories: ['default', 'all-sizes', 'disabled', 'many-items'] },
 ];

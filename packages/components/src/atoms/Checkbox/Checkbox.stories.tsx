@@ -13,15 +13,15 @@ type Story = StoryObj;
 // ─── Basic ───────────────────────────────────────────────────────────────────
 
 export const Basic: Story = {
-  render: () => <Checkbox />,
+  render: () => <Checkbox aria-label="Option auswählen" />,
 };
 
 export const Checked: Story = {
-  render: () => <Checkbox defaultChecked />,
+  render: () => <Checkbox aria-label="Option auswählen" defaultChecked />,
 };
 
 export const Unchecked: Story = {
-  render: () => <Checkbox />,
+  render: () => <Checkbox aria-label="Option auswählen" />,
 };
 
 export const Indeterminate: Story = {
@@ -31,8 +31,8 @@ export const Indeterminate: Story = {
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
-      <Checkbox disabled />
-      <Checkbox disabled defaultChecked />
+      <Checkbox aria-label="Deaktivierte Option" disabled />
+      <Checkbox aria-label="Deaktivierte Option (ausgewählt)" disabled defaultChecked />
     </div>
   ),
 };

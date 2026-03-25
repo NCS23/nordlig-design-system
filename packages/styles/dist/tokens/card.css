@@ -1,0 +1,52 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sizing-auth-card-max-width: 420px; /** Card max width */
+  --spacing-card-padding-normal: var(--spacing-base-5); /** 20px card padding (all sides except bottom) */
+  --spacing-card-padding-bottom: var(--spacing-base-8); /** 32px card bottom padding */
+  --spacing-card-gap: var(--spacing-base-5); /** 20px gap between card sections */
+  --color-auth-card-bg: var(--color-bg-paper); /** Form card background */
+  --color-auth-card-border: var(--color-border-muted); /** Card border */
+  --color-card-bg: var(--color-bg-elevated); /** Default card background */
+  --color-card-bg-raised: var(--color-bg-elevated); /** Raised card background */
+  --color-card-bg-elevated: var(--color-bg-elevated); /** Elevated card background */
+  --color-card-border: var(--color-border-muted);
+  --color-session-card-border-hover: var(--color-border-default); /** Hover border */
+  --color-session-card-bg-hover: var(--color-bg-surface); /** Hover background */
+  --color-session-card-bg-error: var(--color-bg-error-subtle); /** Error state background */
+  --color-session-card-border-error: var(--color-border-error); /** Error state border */
+  --color-session-card-text-primary: var(--color-text-base); /** Title and value text */
+  --color-session-card-text-secondary: var(--color-text-muted); /** Date, labels, description */
+  --color-session-card-text-tertiary: var(--color-text-disabled); /** Zone labels (Z1-Z5) */
+  --color-session-card-text-error: var(--color-text-error); /** Error message text */
+  --color-session-card-zone-bg: var(--color-bg-surface); /** Zone bar background */
+  --color-session-card-zone-1: var(--color-border-strong); /** HR Zone 1 Recovery */
+  --color-session-card-zone-2: var(--color-border-success); /** HR Zone 2 Aerobic */
+  --color-session-card-zone-3: var(--color-border-warning); /** HR Zone 3 Tempo */
+  --color-session-card-zone-4: var(--color-text-warning); /** HR Zone 4 Threshold */
+  --color-session-card-zone-5: var(--color-border-error); /** HR Zone 5 Maximum */
+  --color-session-card-focus-ring: var(--color-border-focus); /** Focus ring for interactive state */
+  --radius-auth-card: var(--radius-component-lg); /** Card border radius */
+  --radius-card: var(--radius-component-lg);
+  --shadow-auth-card: var(--shadow-elevation-floating); /** Card elevation shadow */
+  --shadow-card-raised: var(--shadow-elevation-raised);
+  --shadow-card-elevated: var(--shadow-elevation-floating);
+  --shadow-card-hover: var(--shadow-elevation-floating);
+  --shadow-session-card-hover: var(--shadow-elevation-floating); /** Hover card shadow */
+  --spacing-auth-card-padding: var(--spacing-component-padding-xl); /** Card inner padding (32px) */
+  --spacing-card-padding-compact: var(--spacing-component-padding-sm);
+  --spacing-card-padding-spacious: var(--spacing-component-padding-lg);
+  --spacing-session-card-grid-gap: var(--spacing-component-gap-lg); /** Gap between grid items (16px) */
+  --spacing-session-card-section-gap: var(--spacing-component-gap-lg); /** Gap between sections (16px) */
+  --spacing-session-card-zone-header-mb: var(--spacing-component-gap-md); /** Zone header bottom margin (8px) */
+  --spacing-session-card-zone-label-mt: var(--spacing-component-gap-xs); /** Zone label top margin (4px) */
+  --spacing-session-card-error-padding: var(--spacing-component-padding-xl); /** Error state padding (32px) */
+  --spacing-session-card-error-gap: var(--spacing-component-gap-xs); /** Error text gap (4px) */
+  --spacing-session-card-date-mt: var(--spacing-component-gap-xs); /** Date top margin (4px) */
+  --font-session-card-title-weight: var(--font-component-weight-semibold); /** Title font weight */
+  --font-session-card-value-weight: var(--font-component-weight-medium); /** Metric value/duration weight */
+  --font-session-card-text-size: var(--font-component-size-sm); /** Body text size — 14px */
+  --font-session-card-hint-size: var(--font-component-size-xs); /** Label/hint text size — 12px */
+}

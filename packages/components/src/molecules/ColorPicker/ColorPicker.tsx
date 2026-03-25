@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 import {
+
   clamp,
   hexToHsv,
   hsvToHex,
@@ -9,6 +10,10 @@ import {
   normalizeHex,
   type HSVA,
 } from '../../utils/color';
+
+// Component token CSS
+import '@nordlig/styles/tokens/colorpicker';
+import '@nordlig/styles/tokens/text';
 
 // ─── SaturationField ────────────────────────────────────────────────────────
 
