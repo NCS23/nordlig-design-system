@@ -93,7 +93,7 @@
     "react-dom": "^19.2.4",
     "tsup": "^8.3.0",
     "typescript": "^5.3.3",
-    "vitest": "^1.2.2"
+    "vitest": "^4.1.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
