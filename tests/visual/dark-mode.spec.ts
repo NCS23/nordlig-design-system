@@ -10,7 +10,7 @@ const darkModeStories = [
   { id: 'atoms-input--default',          name: 'input-default' },
   { id: 'atoms-alert--all-variants',     name: 'alert-all-variants' },
   { id: 'atoms-checkbox--all-states',    name: 'checkbox-all-states' },
-  { id: 'atoms-switch--all-states',      name: 'switch-all-states' },
+  { id: 'atoms-switch--basic',            name: 'switch-basic' },
   { id: 'atoms-progress--all-colors',    name: 'progress-all-colors' },
   { id: 'atoms-separator--default',      name: 'separator-default' },
   // Molecules
@@ -19,7 +19,7 @@ const darkModeStories = [
   { id: 'molecules-accordion--single-default',     name: 'accordion-default' },
   { id: 'molecules-pagination--default',            name: 'pagination-default' },
   // Organisms
-  { id: 'atoms-card--all-elevations',     name: 'card-all-elevations' },
+  { id: 'molecules-card--all-elevations', name: 'card-all-elevations' },
   { id: 'organisms-table--basic',         name: 'table-basic' },
   { id: 'organisms-appheader--default',   name: 'appheader-default' },
   { id: 'organisms-appfooter--default',   name: 'appfooter-default' },
@@ -43,11 +43,11 @@ const darkModeStories = [
   // Tier-2 Batch
   { id: 'atoms-toggle--default',                 name: 'toggle-default' },
   { id: 'atoms-banner--all-variants',            name: 'banner-all-variants' },
-  { id: 'atoms-searchinput--default',            name: 'searchinput-default' },
+  { id: 'molecules-searchinput--default',         name: 'searchinput-default' },
   { id: 'molecules-combobox--default',           name: 'combobox-default' },
   // P2 Batch
-  { id: 'atoms-passwordinput--default',         name: 'passwordinput-default' },
-  { id: 'atoms-loadingoverlay--default',        name: 'loadingoverlay-default' },
+  { id: 'molecules-passwordinput--default',      name: 'passwordinput-default' },
+  { id: 'molecules-loadingoverlay--default',    name: 'loadingoverlay-default' },
   { id: 'atoms-rating--default',                name: 'rating-default' },
   { id: 'atoms-highlight--default',             name: 'highlight-default' },
   // Visual Regression Baseline Expansion
@@ -61,7 +61,7 @@ const darkModeStories = [
   { id: 'molecules-checkboxfield--with-label',   name: 'checkboxfield-default' },
   { id: 'molecules-switchfield--all-states',     name: 'switchfield-all-states' },
   { id: 'molecules-toolbar--default',            name: 'toolbar-default' },
-  { id: 'organisms-sessioncard--all-states',     name: 'sessioncard-all-states' },
+  { id: 'examples-sessioncard--all-states',      name: 'sessioncard-all-states' },
   { id: 'organisms-datatable--basic',            name: 'datatable-basic' },
   { id: 'templates-pageshell--default',          name: 'pageshell-default' },
   { id: 'templates-dashboardlayout--default',    name: 'dashboardlayout-default' },
@@ -103,7 +103,7 @@ const darkModeStories = [
   { id: 'molecules-menubar--default',            name: 'menubar-default' },
   { id: 'molecules-progressfield--with-label',   name: 'progressfield-default' },
   { id: 'molecules-resizable--default',          name: 'resizable-default' },
-  { id: 'molecules-searchfilter--default',       name: 'searchfilter-default' },
+  { id: 'patterns-searchfilter--default',         name: 'searchfilter-default' },
   // Organisms
   { id: 'organisms-command--default',            name: 'command-default' },
   { id: 'organisms-modal--basic',                 name: 'modal-basic' },
