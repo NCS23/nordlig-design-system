@@ -678,6 +678,137 @@ Dark Mode:     L1(hex) → L2(DARK)  → L3(role) → L4(component) → CSS var
 
 ---
 
+## 🎭 Role Completeness Rule
+
+### Prinzip
+
+**Eine L3-Rolle ist vollständig, wenn sie alle relevanten Properties ihrer Domäne besitzt — nicht nur eine einzelne.**
+
+### Beispiel Typography
+
+Eine Typography-Rolle wie `display/lg` braucht:
+- `family` (z.B. Fraunces)
+- `weight` (z.B. SemiBold)
+- `size` (z.B. 34)
+- `line-height` (z.B. 42)
+- `letter-spacing` (z.B. -0.5)
+
+❌ **Falsch:** Nur `display/lg/size = 34` anlegen → Konsumenten müssen Line-Height, Family etc. anderswo her picken → Inkonsistenz.
+
+✅ **Richtig:** Alle 5 Properties pro Rolle anlegen → Konsumenten binden 5 Variables gegen dieselbe Rolle → automatisch konsistent.
+
+### Welche Properties pro Domäne
+
+| Domäne | Pflicht-Properties pro Rolle |
+|---|---|
+| **Color** | (eine Farbe) |
+| **Typography** | family, weight, size, line-height, letter-spacing |
+| **Spacing** | (ein Wert) |
+| **Sizing** | (ein Wert) |
+| **Radius** | (ein Wert) |
+| **Shadow** | (ein Shadow-Objekt oder Shadow-Farbe + Offsets) |
+
+### Konsequenz
+
+Wenn du eine neue Rolle anlegst (z.B. `overline`), musst du **gleich das volle Property-Set** anlegen, auch wenn du anfangs nur `size` brauchst. Sonst häuft sich Debt und spätere Komponenten picken sich Properties aus unterschiedlichen Rollen zusammen.
+
+### Ausnahme
+
+Wenn eine Rolle definitionsgemäß eine Property nicht benötigt (z.B. `overline` hat immer uppercase → `letter-spacing` ist Teil der Rolle, aber `weight` könnte in jedem Produkt identisch sein), kann diese Property auf L4-Ebene fallback-gelöst werden. Aber: dokumentiere die Entscheidung explizit.
+
+---
+
+## 🌙 Dark-Mode-Best-Practice
+
+### Prinzip: Mode-Switching auf L2-Ebene
+
+Mode-spezifische Werte gehören **an L2-Ebene**, nicht an L3 oder L4. Die höheren Layer (L3, L4) sollen **denselben L2-Alias in beiden Modi** verwenden — die L2-Variable löst sich je nach Mode zu unterschiedlichen L1-Primitives auf.
+
+### Beispiel
+
+```
+✅ RICHTIG:
+L3 · text/base
+  Light-Mode:  → L2 · neutral-1/900
+  Dark-Mode:   → L2 · neutral-1/900   (SAME ALIAS!)
+
+L2 · neutral-1/900
+  Light-Mode:  → L1 · slate/900
+  Dark-Mode:   → L1 · slate/50       (INVERSION HIER)
+
+❌ FALSCH:
+L3 · text/base
+  Light-Mode:  → L2 · neutral-1/900
+  Dark-Mode:   → #ffffff              (RAW!)
+  OR
+  Dark-Mode:   → L2 · neutral-1/100  (alias zur anderen Skala-Position)
+```
+
+### Warum?
+
+- **Single source of truth:** Mode-Logik existiert nur einmal (in L2), nicht verteilt über L3+L4
+- **Konsistenz:** Zwei L3-Rollen, die denselben L2 nutzen, wechseln gemeinsam im Dark-Mode
+- **Wartbarkeit:** Änderung der Mode-Inversion erfordert nur L2-Update
+
+### Ausnahme
+
+Falls eine L3-Rolle im Dark-Mode einen **anderen L2-Alias** braucht (z.B. `interactive/primary/hover` im Light brand-1/800 aber im Dark brand-1/300, weil Hover-Semantik sich umkehrt), ist das OK — aber **immer Alias, nie Raw**.
+
+### Dark-Mode-Audit
+
+Alle L3-Color-Tokens sollten im Dark-Mode entweder:
+- Denselben L2-Alias haben wie Light (Standard-Fall), ODER
+- Einen anderen, aber gültigen L2-Alias haben (Ausnahmefall).
+
+**Niemals Raw-Werte in Dark-Mode.**
+
+---
+
+## 🌍 Multi-Product-Strategie
+
+### Prinzip: Eine Collection pro Domäne
+
+Seit 2026-04-22 gilt: **5 Collections** in Figma, eine pro Domäne:
+
+```
+Color
+Typography
+Spacing
+Sizing
+Radius
+```
+
+**Keine Core/Product-Trennung auf Collection-Ebene** — die Unterscheidung passiert durch die **Schichten (L1/L2/L3/L4)** innerhalb einer Collection.
+
+### Warum nicht Core/Product-Suffixe?
+
+Die frühere Trennung (`Color · Core` + `Color · Minsaga`) war konzeptionell unklar:
+- Welche Farbe ist "generisch"? Alle Farb-Auswahlen sind schon Identität.
+- Es gab keinen echten "product-agnostischen" Core — die L1-Palette in Core war faktisch Minsaga's Palette.
+- Cross-Collection-Aliases wurden zur Regel statt Ausnahme.
+
+Die Layer selbst tragen die Semantik:
+- **L1** = Primitives (Rohwerte: `#0ea5e9`, `16px`, `600`)
+- **L2** = Global Scale (Abstraktionen: `brand-1/500`, `space/md`)
+- **L3** = Semantic Role (Zweck: `bg/primary`, `body/size`)
+- **L4** = Component (Ort: `button/primary/bg`)
+
+### Wenn ein zweites Produkt hinzukommt
+
+Zwei Wege:
+
+1. **Sehr ähnlich** (gleiche Design-DNA, andere Farben) → **Modes** in bestehenden Collections erweitern. Die `Color`-Collection bekommt zusätzliche Modes (`ProductX-Light`, `ProductX-Dark`). Skaliert bis ~3-5 Produkte.
+
+2. **Signifikant anders** (andere Fonts, andere Look-and-Feel-Philosophie) → Figma-File **forken**. Eigenes Produkt-DS mit eigenen Collection-Sets, ohne Kopplung.
+
+### Komponenten-Propagation
+
+Bei Änderungen an Komponenten:
+- **Code:** NPM-Package `@nordlig/components` propagiert automatisch (Source of Truth)
+- **Figma:** Änderungen im DS-File müssen ggf. manuell ins Produkt-File portiert werden, wenn Produkt-File eigenständig gepflegt wird (Fork-Modell)
+
+---
+
 **Naechste Schritte:**
 - [ARCHITECTURE.md](ARCHITECTURE.md) - 4-Layer System verstehen
 - [COMPONENT_GUIDELINES.md](COMPONENT_GUIDELINES.md) - Tokens in Components nutzen
