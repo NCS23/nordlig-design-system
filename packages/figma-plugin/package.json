@@ -14,9 +14,9 @@
     "build": "pnpm extract && pnpm build:plugin"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.100.0",
-    "esbuild": "^0.24.0",
-    "playwright": "^1.49.0",
+    "@figma/plugin-typings": "^1.125.0",
+    "esbuild": "^0.28.0",
+    "playwright": "^1.59.1",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"
   }
