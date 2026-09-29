@@ -7,6 +7,13 @@ import {
 import Anthropic from "@anthropic-ai/sdk";
 import fs from "fs/promises";
 import path from "path";
+import { fileURLToPath } from "url";
+
+// Repo-Wurzel: vier Ebenen über src/ bzw. build/ (packages/mcp-agents/<agent>/…) — nicht fest eingetragen,
+// seit dem Umzug auf den Mac Studio (29.09.2026) heißt der Home-Ordner anders.
+const PROJECT_ROOT =
+  process.env.PROJECT_ROOT ||
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
 
 // ─── Embedded Knowledge ─────────────────────────────────────────────────────
 
@@ -64,7 +71,7 @@ L3 REFERENCES (available for L4 tokens):
 - shadow.elevation.low/medium/high/overlay
 - radius.component.sm/md/lg/full
 
-PROJECT ROOT: /Users/Nils/Projects/nordlig-design-system
+PROJECT ROOT: ${PROJECT_ROOT}
 `;
 
 // ─── JSON Extraction Helper ─────────────────────────────────────────────────
@@ -103,9 +110,7 @@ class DesignSystemAgent {
     this.anthropic = new Anthropic({
       apiKey: process.env.ANTHROPIC_API_KEY!,
     });
-    this.projectRoot =
-      process.env.PROJECT_ROOT ||
-      "/Users/Nils/Projects/nordlig-design-system";
+    this.projectRoot = PROJECT_ROOT;
   }
 
   async validateComponent(componentPath: string) {
